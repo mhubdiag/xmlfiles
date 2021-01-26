@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GlobalFlags>
+		<item id="1" description="State of the Ignition Input" name="Ignition State" dtu="1" />
+		<item id="2" description="State of input 1" name="Input 1 State" dtu="1" />
+		<item id="3" description="State of input 2" name="Input 2 State" dtu="1" />
+		<item id="4" description="State of Input 3" name="Input 3 State" dtu="1" />
+		<item id="5" description="State of Input 4" name="Input 4 State" dtu="1" />
+		<item id="6" description="State of Input 5" name="Input 5 State" dtu="1" />
+		<item id="7" description="State of Input 6" name="Input 6 State" dtu="1" />
+		<item id="8" description="State of Input 7" name="Input 7 State" dtu="1" />
+		<item id="9" description="State of Input 8" name="Input 8 State" dtu="1" />
+		<item id="10" description="State of Input 9" name="Input 9 State" dtu="0" />
+		<item id="11" description="State of Input 10" name="Input 10 State" dtu="0" />
+		<item id="12" description="State of Input 11" name="Input 11 State" dtu="0" />
+		<item id="13" description="State of Input 12" name="Input 12 State" dtu="0" />
+		<item id="14" description="State of Input 13" name="Input 13 State" dtu="0" />
+		<item id="15" description="State of Output 1" name="Output 1 State" dtu="1" />
+		<item id="16" description="State of Output 2" name="Output 2 State" dtu="1" />
+		<item id="17" description="State of Output 3" name="Output 3 State" dtu="1" />
+		<item id="18" description="State of Output 4" name="Output 4 State" dtu="1" />
+		<item id="19" description="Trip is in progress" name="Trip in Progress" dtu="1" />
+		<item id="20" description="This is a flag that indicates if the Li-ion battery is low" name="Battery Low" dtu="1" />
+		<item id="21" description="Vehicle is speeding" name="Speeding" dtu="1" />
+		<item id="22" description="Excessive RPM indicator" name="Excess RPM" dtu="1" />
+		<item id="23" description="Excessive Idle indicator" name="Excess Idle" dtu="1" />
+		<item id="24" description="Excessive Acceleration Indicator" name="Excess Acceleration" dtu="1" />
+		<item id="25" description="Harsh Braking Indicator" name="Harsh Braking" dtu="1" />
+		<item id="26" description="Vehicle is inside the Geoloc" name="Inside Geoloc" dtu="1" />
+		<item id="27" description="The geoloc boundary was breached" name="Geoloc Breached" dtu="1" />
+		<item id="28" description="The vehicle is inside a geofence" name="Inside Geofence" dtu="1" />
+		<item id="29" description="A geofence was exited" name="Geofence Exit" dtu="0" />
+		<item id="30" description="Geofence was entered" name="Geofence Entry" dtu="0" />
+		<item id="31" description="The presented driver id was validated OK" name="Driver ID Validated" dtu="1" />
+		<item id="32" description="Mains Voltage Low" name="Mains Voltage Low" dtu="1" />
+		<item id="33" description="The day has changed indicator" name="Day Changed" dtu="1" />
+		<item id="34" description="The Year has changed indicator" name="Year Changed" dtu="1" />
+		<item id="35" description="The month has changed indicator" name="Month Changed" dtu="1" />
+		<item id="36" description="The hour has changed indicator" name="Hour Changed" dtu="1" />
+		<item id="37" description="The minute has changed indicator" name="Minute Changed" dtu="1" />
+		<item id="38" description="The second changed indicator" name="Second Changed" dtu="1" />
+		<item id="39" description="Temperature sensor 1 is above the set limit" name="Temperature 1 High" dtu="1" />
+		<item id="40" description="Temperature sensor 2 is above the set limit" name="Temperature 2 High" dtu="1" />
+		<item id="41" description="Temperature sensor 3 is above the set limit" name="Temperature 3 High" dtu="1" />
+		<item id="42" description="Temperature sensor 4 is above the set limit" name="Temperature 4 High" dtu="1" />
+		<item id="43" description="Temperature sensor 1 is below the set limit" name="Temperature 1 Low" dtu="1" />
+		<item id="44" description="Temperature sensor 2 is below the set limit" name="Temperature 2 Low" dtu="1" />
+		<item id="45" description="Temperature sensor 3 is below the set limit" name="Temperature 3 Low" dtu="1" />
+		<item id="46" description="Temperature sensor 4 is below the set limit" name="Temperature 4 Low" dtu="1" />
+		<item id="47" description="Temperature sensor 1 is back into the normal range" name="Temperature 1 Normal" dtu="1" />
+		<item id="48" description="Temperature sensor 2 is back into the normal range" name="Temperature 2 Normal" dtu="1" />
+		<item id="49" description="Temperature sensor 3 is back into the normal range" name="Temperature 3 Normal" dtu="1" />
+		<item id="50" description="Temperature sensor 4 is back into the normal range" name="Temperature 4 Normal" dtu="1" />
+		<item id="51" description="The GPS module has a valid position" name="Valid GPS Lock" dtu="1" />
+		<item id="52" description="A Position Poll was requested" name="Position Poll" dtu="0" />
+		<item id="53" description="The CAN Bus is connected" name="CAN Bus Connected" dtu="1" />
+		<item id="54" description="The PDA is connected" name="PDA Connected" dtu="1" />
+		<item id="55" description="This flag indicates that the vehicle is disabled. Setting this flag would disable the vehicle if vehicle speed is below the Disable Speed Threshold" name="Vehicle Disabled" dtu="0" />
+		<item id="56" description="This flag indicates that the vehicle is immobilized. Setting this flag would immobilize the vehicle if ignition is not in the ON state" name="Vehicle Immobilized" dtu="1" />
+		<item id="57" description="CAN Clutch Switch Status" name="Clutch Switch Status" dtu="0" />
+		<item id="58" description="CAN Brake Switch Status" name="Brake Switch Status" dtu="0" />
+		<item id="59" description="Geofence Maximum Distance checking is enabled" name="Geofence Maximum Distance" dtu="0" />
+		<item id="60" description="Vehicle Free Wheeling" name="Free Wheeling" dtu="1" />
+		<item id="61" description="Geofence was visited Out of Sequence" name="Geofence Out of Sequence" dtu="0" />
+		<item id="62" description="Force a flush of all events not currently sent" name="Flush Events" dtu="0" />
+		<item id="63" description="Setting this flag will cause the box to do a Warm Reboot after 10 seconds" name="Forced Reset" dtu="0" />
+		<item id="64" description="MHub has been powered up" name="MHub Power-Up" dtu="0" />
+		<item id="65" description="Indicate that the MHub should power down" name="Power Down" dtu="0" />
+		<item id="66" description="Indicate if the unit is running in sealed unit mode" name="Sealed Unit" dtu="0" />
+		<item id="67" description="Indicates that the unit was woken because of the tamper switch" name="Tamper Wakeup" dtu="0" />
+		<item id="68" description="Indicate if the voice kit should be on or off" name="Voice Kit ON/OFF" dtu="1" />
+		<item id="69" description="This indicates if the socket is in transparent mode or command mode" name="Socket Transparant" dtu="1" />
+		<item id="70" description="Indicates if a socket is open" name="Socket Open" dtu="1" />
+		<item id="71" description="Indicates that an APN session has been initialised" name="APN Registered" dtu="1" />
+		<item id="72" description="Indicates Attachement to the Network" name="GPRS Attached" dtu="0" />
+		<item id="73" description="Flag to indicate that the geofence upload has been completed" name="Gefence Upload Completed" dtu="0" />
+		<item id="74" description="Main Voltage below voltage threshold" name="Main Voltage Low" dtu="1" />
+		<item id="75" description="Custom Variables Changed" name="Custom Variables Flag" dtu="1" />
+		<item id="76" description="Custom Variables Changed 1" name="Custom Variables Flag 1" dtu="1" />
+		<item id="77" description="Vehicle stationary as per Trip Stationary threshold" name="Vehicle Stationary" dtu="1" />
+		<item id="78" description="MHub918 Unit" name="MHub918" dtu="0" />
+		<item id="79" description="State of Beeper" name="Beeper State" dtu="0" />
+		<item id="80" description="Service Value Reached" name="Service" dtu="1" />
+		<item id="81" description="If set Health Status message is raised" name="Health Status" dtu="0" />
+		<item id="82" description="Custom Flag 0" name="Custom Flag 0" dtu="1" />
+		<item id="83" description="Custom Flag 1" name="Custom Flag 1" dtu="1" />
+		<item id="84" description="Custom Flag 2" name="Custom Flag 2" dtu="1" />
+		<item id="85" description="Custom Flag 3" name="Custom Flag 3" dtu="1" />
+		<item id="86" description="Custom Flag 4" name="Custom Flag 4" dtu="1" />
+		<item id="87" description="Custom Flag 5" name="Custom Flag 5" dtu="1" />
+		<item id="88" description="Custom Flag 6" name="Custom Flag 6" dtu="1" />
+		<item id="89" description="Custom Flag 7" name="Custom Flag 7" dtu="1" />
+		<item id="90" description="Unregistered Driver busy in trip" name="Unregistered Driver" dtu="1" />
+		<item id="91" description="ISU registered on the GSS" name="Iridium Registered" dtu="0" />
+		<item id="92" description="A report has been queued for transmission on the Iridium Module" name="Tx Report Queued" dtu="0" />
+		<item id="93" description="Signal strength is high enough to transceive" name="Iridium Satellites in View" dtu="0" />
+		<item id="94" description="The Iridium module will initiate a session with the GSS asap" name="Iridium Session Pending" dtu="0" />
+		<item id="95" description="A FMS Canbus Poll was requested" name="FMS Canbus Poll" dtu="0" />
+		<item id="96" description="General Warning Flag e.g. Disable Vehicle" name="Warning Flag" dtu="0" />
+		<item id="97" description="Indicates that a voice call is currently active" name="Voice Call Active" dtu="1" />
+		<item id="98" description="Indicates that a data call is active." name="Data Call Active" dtu="1" />
+		<item id="99" description="Clear All Insurance Related variables" name="Clear Insurance" dtu="0" />
+		<item id="100" description="GSM IO Ready" name="GSM IO Ready" dtu="0" />
+		<item id="101" description=" Custom Variables Changed 3" name="Custom Variables Flag 3" dtu="1" />
+		<item id="102" description="Safe Mode Active indicator" name="Safe Mode Active indicator" dtu="1" />
+		<item id="103" description="Private (Clear) or Business (Set) trip indicator " name="Private (Clear) or Business (Set) trip indicator " dtu="1" />
+		<item id="104" description="Set Flag to Generate Tachograph Event" name="Raise Tacho Graph" dtu="0" />
+		<item id="105" description="Active Tracking Enabled" name="Active Tracking" dtu="1" />
+		<item id="106" description="Set Geoloc around current location" name="Set Geoloc" dtu="1" />
+		<item id="107" description="Clears or Disables Geoloc" name="Clear Geoloc" dtu="1" />
+		<item id="108" description="RF ID Read and Updated" name="RF ID" dtu="1" />
+		<item id="109" description="Accident Detected" name="Accident Detected" dtu="1" />
+		<item id="110" description="Power take off " name="PTO" dtu="1" />
+		<item id="111" description="Indicate if the Fuel Cap is open or closed" name="Fuel Cap" dtu="1" />
+		<item id="112" description="Harsh Cornering" name="Harsh Cornering" dtu="1" />
+		<item id="113" description="OBD2 in Active State" name="OBD2 Active" dtu="0" />
+		<item id="114" description="Accelerometer Calibration Completed" name="Accelerometer Calibrated" dtu="1" />
+		<item id="115" description="Ignition Off Time Updated" name="Ignition Off Time Updated" dtu="0" />
+		<item id="116" description="Ignition On from Mains Noise" name="Ignition On from Mains Noise" dtu="1" />
+		<item id="117" description="GPS RTC Regulator Power Down Sequence Required" name="Gps Rtc Power Reset" dtu="0" />
+		<item id="118" description="GPS Comms Active" name="GPS Comms" dtu="0" />
+		<item id="119" description="MProfiler GPS Aid Request" name="GPS Aid Req" dtu="0" />
+		<item id="120" description="GPS Best Guess Position" name="GPS Best Guess" dtu="0" />
+		<item id="121" description="Request the Facility Status Event to be raised" name="Fascility Status Poll" dtu="1" />
+		<item id="122" description="Lane Change" name="Lane Change" dtu="0" />
+		<item id="123" description="Swerve" name="Swerve" dtu="0" />
+		<item id="124" description="Speed Bump" name="Speed Bump" dtu="0" />
+		<item id="125" description="Ignition from Accelerometer movement" name="Accelerometer Ignition" dtu="0" />
+		<item id="126" description="GPS Ignition with Speed" name="GPS Ignition" dtu="0" />
+		<item id="127" description="Ignition from Trigger" name="Ignition from Trigger" dtu="0" />
+		<item id="128" description="Ignition from CANBus" name="Ignition from CANBus" dtu="0" />
+		<item id="129" description="Door Closed" name="Door Closed" dtu="0" />
+		<item id="130" description="Set when one or more advertising devices have been detected" name="BLE Remote Found" dtu="1" />
+		<item id="131" description="Set when a remote is connecting or disconnecting" name="BLE Remote Connection Processing" dtu="1" />
+		<item id="132" description="BLE device is in an established connection" name="BLE Remote Connected" dtu="1" />
+		<item id="133" description="A different / new key to the previous key has been detected" name="New BLE Remote Found" dtu="1" />
+		<item id="134" description="Input state or button pressed. (If used as a button-pressed indication then this field should be cleared when used.)" name="BLE Input 1 Activated " dtu="1" />
+		<item id="135" description="Input state or button pressed. (If used as a button-pressed indication then this field should be cleared when used.)" name="BLE Input 2 Activated " dtu="1" />
+		<item id="136" description="Input state or button pressed. (If used as a button-pressed indication then this field should be cleared when used.)" name="BLE Input 3 Activated " dtu="1" />
+		<item id="137" description="Input state or button pressed. (If used as a button-pressed indication then this field should be cleared when used.)" name="BLE Input 4 Activated " dtu="1" />
+		<item id="138" description="Input state or button pressed. (If used as a button-pressed indication then this field should be cleared when used.)" name="BLE Input 5 Activated " dtu="1" />
+		<item id="139" description="Input state or button pressed. (If used as a button-pressed indication then this field should be cleared when used.)" name="BLE Input 6 Activated" dtu="1" />
+		<item id="140" description="Input state or button pressed. (If used as a button-pressed indication then this field should be cleared when used.)" name="BLE Input 7 Activated" dtu="0" />
+		<item id="141" description="Input state or button pressed. (If used as a button-pressed indication then this field should be cleared when used.)" name="BLE Input 8 Activated" dtu="0" />
+		<item id="142" description="Unused" name="Unused" dtu="0" />
+		<item id="143" description="Unused" name="Unused" dtu="0" />
+		<item id="144" description="Dashboard Streaming enable" name="Dashboard Streaming" dtu="0" />
+		<item id="145" description="OBD2 Speed Valid" name="OBD2 Speed Valid" dtu="1" />
+		<item id="146" description="Device in tracking list come into range" name="Device in tracking list come into range" dtu="1" />
+		<item id="147" description="Device in tracking list gone out of range" name="Device in tracking list gone out of range" dtu="1" />
+		<item id="148" description="Central/Host device Initialised " name="Central Host device Initialised " dtu="1" />
+		<item id="149" description="Indicates that the GSM Modem has detected that it is being Jammed on its active frequencies." name="GSM Jamming Active" dtu="1" />
+		<item id="150" description="indicates that GSM jamming has been active for the prescribed minimum time as set in the GSM Jamming Debounce Time parameter" name="GSM Jamming Active (Debounced)" dtu="1" />
+		<item id="151" description="GPS Jamming Active" name="GPS Jamming" dtu="1" />
+		<item id="152" description="Speed OK" name="Speed OK" dtu="1" />
+		<item id="153" description="Special flag, used for client specific integrations" name="Special" dtu="1" />
+		<item id="154" description="Driver Fatigue Exception Beeper" name="Driver Fatigue Beeper" dtu="1" />
+		<item id="155" description="Indicates that the unit detected fuel theft" name="Fuel Theft Detected" dtu="1" />
+		<item id="156" description="Indicate that the MHub thinks that Ignition will go ON" name="Ignition ON Pending" dtu="1" />
+		<item id="157" description="Indicate that the MHub was wrong about a pending ignition ON" name="False Trip" dtu="0" />
+		<item id="158" description="Power Mode Idle" name="Power Mode Idle" dtu="1" />
+		<item id="159" description="Power Mode Sleep" name="Power Mode Sleep" dtu="1" />
+		<item id="160" description="License Type 1" name="License Type 1" dtu="1" />
+		<item id="161" description="License Type 2" name="License Type 2" dtu="1" />
+		<item id="162" description="License Type 3" name="License Type 3" dtu="1" />
+		<item id="163" description="License Type 4" name="License Type 4" dtu="1" />
+		<item id="164" description="License Type 5" name="License Type 5" dtu="1" />
+		<item id="165" description="License Type 6" name="License Type 6" dtu="1" />
+		<item id="166" description="License Type 7" name="License Type 7" dtu="1" />
+		<item id="167" description="License Type 8" name="License Type 8" dtu="1" />
+		<item id="168" description="Driver Authorized" name="Driver Authorized" dtu="1" />
+		<item id="169" description="VNI Module running" name="VNI Module running" dtu="1" />
+		<item id="170" description="VNI Detecting or Initialising Protocol" name="VNI Init Protocol" dtu="1" />
+		<item id="171" description="VNI Channel Opened" name="VNI Channel Opened" dtu="1" />
+		<item id="172" description="VNI Suspended" name="VNI Suspended" dtu="1" />
+		<item id="173" description="Personal License Type" name="License Type Personal" dtu="1" />
+		<item id="174" description="Update Telemetry Event Data" name="Update Telemetry" dtu="1" />
+		<item id="175" description="The current geofence's speed limit is used for over speed checking" name="Geofence Speed Limit in Effect" dtu="1" />
+		<item id="176" description="State of Output 5" name="Output 5 State" dtu="1" />
+		<item id="177" description="IPC Pass Through active indicator" name="IPC Pass Through" dtu="0" />
+		<item id="178" description="Bluetooth Communication Medium State" name="CM Bluetooth" dtu="1" />
+		<item id="179" description="Wifi Communication Medium State" name="CM Wifi" dtu="1" />
+		<item id="180" description="Radio Communication Medium State" name="CM Radio" dtu="1" />
+		<item id="181" description="State of Output 6" name="Output 6" dtu="1" />
+		<item id="182" description="State of Output 7" name="Output 7" dtu="1" />
+		<item id="183" description="HF Data capture in progress" name="VNI Data Capture Active" dtu="1" />
+		<item id="184" description="If TRUE Trigger State is checked by code to determine if capture should occur" name="Data Capture Trigger Enabled" dtu="0" />
+		<item id="185" description="Trigger State is checked by code to determine if capture should occur" name="Data Capture Trigger State" dtu="1" />
+		<item id="186" description="State of Output 8" name="Output 8" dtu="1" />
+		<item id="187" description="The vehicle is traveling faster than geofence speed warning limit" name="Geofence Speed Warning" dtu="1" />
+		<item id="188" description="Roll Warning Threshold Exceeded" name="Roll Warning" dtu="1" />
+		<item id="189" description="Pitch Warning Threshold Exceeded" name="Pitch Warning " dtu="0" />
+		<item id="190" description="Send part of the Journey Log as events" name="Send Journey Log" dtu="1" />
+		<item id="191" description="GSM Edge is available to be used" name="GSM Edge Available" dtu="0" />
+		<item id="192" description="GSM 3G is available to be used" name="GSM 3G Available" dtu="0" />
+		<item id="193" description="HSDPA Available to be used" name="HSDPA" dtu="0" />
+		<item id="194" description="HSUPA available " name="HSUPA" dtu="0" />
+		<item id="195" description="LTE Available" name="LTE" dtu="0" />
+		<item id="196" description="Indicates that the profile used for Wifi is active" name="PSD Profile Active" dtu="0" />
+		<item id="197" description="Indicates Wifi Status" name="Wifi On" dtu="0" />
+		<item id="198" description="Indicates whether Wifi configuration GUI is enabled" name="Wifi GUI Status" dtu="0" />
+		<item id="199" description="Causes the generation of the Cell Info event if the event is enabled." name="GSM Cell Info Event Trigger" dtu="1" />
+		<item id="200" description="State of Input 14" name="Input 14 State" dtu="1" />
+		<item id="201" description="State of Input 15" name="Input 15 State" dtu="1" />
+		<item id="202" description="State of Input 16" name="Input 16 State" dtu="1" />
+</GlobalFlags>

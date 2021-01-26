@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GlobalVariables>
+		<item id="0" description="Not Used" name="Reserved" size="1" scale="1" offset="0" units="" min="0" max="1" dtu="0" />
+		<item id="1" description="Speed as reported by the selected speed source (Sensor, GPS, CAN)" name="Speed" size="1" scale="1" offset="0" units="km/h" min="0" max="255" dtu="1" />
+		<item id="2" description="Speed from GPS" name="GPS Speed" size="1" scale="1" offset="0" units="km/h" min="0" max="255" dtu="1" />
+		<item id="3" description="RPM as reported by the selected RPM source (Sensor, CAN)" name="RPM" size="1" scale="100" offset="0" units="rpm" min="0" max="25500" dtu="1" />
+		<item id="4" description="Latitude coordinate from the GPS module (Signed 32 Bit Value)" name="Latitude" size="4" scale="0.0000001" offset="0" units="Degrees" min="-90" max="90" dtu="1" />
+		<item id="5" description="Longitude coordinate from the GPS module (Signed 32 Bit Value)" name="Longitude" size="4" scale="0.0000001" offset="0" units="Degrees" min="-180" max="180" dtu="1" />
+		<item id="6" description="Speed from speed sensor" name="Sensor Speed" size="1" scale="1" offset="0" units="km/h" min="0" max="255" dtu="1" />
+		<item id="7" description="Speed from the CAN Bus" name="CAN Speed" size="1" scale="1" offset="0" units="km/h" min="0" max="255" dtu="1" />
+		<item id="8" description="Acceleration calculated from the change in speed of 1 second" name="Acceleration" size="1" scale="1" offset="0" units="km/h/s" min="0" max="255" dtu="1" />
+		<item id="9" description="This is the odometer value calculated from speed or reported by CAN Bus" name="Odometer" size="4" scale="1" offset="0" units="m" min="0" max="4294967295" dtu="1" />
+		<item id="10" description="Trip distance as calculated from speed or as reported by CAN Bus" name="Trip Distance" size="4" scale="1" offset="0" units="m" min="0" max="4294967295" dtu="1" />
+		<item id="11" description="The assigned Driver ID stored on the Driver Key" name="Driver ID Own" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="12" description="The Lower 4 bytes of the Driver ID as read from the Driver Key when last presented by the Driver" name="Driver ID Button" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="0" />
+		<item id="13" description="Altitude of current position as received from the GPS module (Signed 16 Bit Value)" name="Altitude" size="2" scale="1" offset="0" units="m" min="0" max="65535" dtu="1" />
+		<item id="14" description="Current direction of travel" name="Heading" size="2" scale="0.1" offset="0" units="Degrees" min="0" max="360" dtu="1" />
+		<item id="15" description="GPS Status" name="GPS Status" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="16" description="Time since the last valid GPS position" name="GPS Position Age" size="2" scale="1" offset="0" units="s" min="0" max="65535" dtu="1" />
+		<item id="17" description="Legacy Socket State" name="Legacy Socket State" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="18" description="The current GSM Area Code" name="GSM Area" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="19" description="The current GSM Cell ID" name="GSM Cell ID" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="20" description="The current GSM RSSI" name="GSM RSSI" size="1" scale="1" offset="0" units="dB" min="0" max="99" dtu="1" />
+		<item id="21" description="Temperature Value from Temperature Sensor 1." name="Temperature 1" size="2" scale="0.0625" offset="-50" units="Degrees C" min="-50" max="150" dtu="1" />
+		<item id="22" description="Temperature Value from Temperature Sensor 2." name="Temperature 2" size="2" scale="0.0625" offset="-50" units="Degrees C" min="-50" max="150" dtu="1" />
+		<item id="23" description="Temperature Value from Temperature Sensor 3." name="Temperature 3" size="2" scale="0.0625" offset="-50" units="Degrees C" min="-50" max="150" dtu="1" />
+		<item id="24" description="Temperature Value from Temperature Sensor 4." name="Temperature 4" size="2" scale="0.0625" offset="-50" units="Degrees C" min="-50" max="150" dtu="1" />
+		<item id="25" description="The current Power Mode of the box" name="Power Mode" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="0" />
+		<item id="26" description="The Year part of the date" name="Year" size="1" scale="1" offset="2000" units="Years" min="2000" max="2255" dtu="1" />
+		<item id="27" description="The Month part of the Date" name="Month" size="1" scale="1" offset="0" units="Month" min="1" max="12" dtu="1" />
+		<item id="28" description="The Day part of the current date" name="Day" size="1" scale="1" offset="0" units="Day" min="1" max="31" dtu="1" />
+		<item id="29" description="The Hour part of the current Time" name="Hour" size="1" scale="1" offset="0" units="Hr" min="0" max="23" dtu="1" />
+		<item id="30" description="The Minute part of the current time" name="Minute" size="1" scale="1" offset="0" units="Minute" min="0" max="59" dtu="1" />
+		<item id="31" description="The Second part of the current time" name="Second" size="1" scale="1" offset="0" units="Second" min="0" max="59" dtu="1" />
+		<item id="32" description="Mains Voltage" name="Battery Voltage" size="1" scale="0.1" offset="0" units="V" min="0" max="25.5" dtu="0" />
+		<item id="33" description="The number of times the battery has been charged" name="Charge Cycles" size="1" scale="1" offset="0" units="Cycle" min="0" max="255" dtu="0" />
+		<item id="34" description="Temperature of the internal backup battery" name="Battery Temperature" size="1" scale="0.5" offset="0" units="Degrees C" min="0" max="127" dtu="0" />
+		<item id="35" description="The date and time the backup battery was inserted - Julian Time" name="Battery Insertion Date and Time" size="4" scale="1" offset="0" units="Second" min="0" max="4294967295" dtu="0" />
+		<item id="36" description="The state the backup battery is in" name="Current Battery State" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="0" />
+		<item id="37" description="This a count of the current number of triggers defined" name="Triggers Used" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="0" />
+		<item id="38" description="Number of SMS\'s the box sent" name="SMS Tx" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="39" description="Number of SMS\'s received by the box" name="SMS Rx" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="40" description="Number of GPRS Packets sent by the box" name="GPRS Packets Sent" size="2" scale="1" offset="0" units="packets" min="0" max="65535" dtu="0" />
+		<item id="41" description="Number of GPRS Packets received by the box" name="GPRS Packets Received" size="2" scale="1" offset="0" units="packets" min="0" max="65535" dtu="0" />
+		<item id="42" description="The total number of bytes sent by the box over GPRS" name="Total GPRS Data Sent" size="4" scale="1" offset="0" units="bytes" min="0" max="4294967295" dtu="0" />
+		<item id="43" description="The total number of bytes received by the box over GPRS" name="Total GPRS Data Recieved" size="4" scale="1" offset="0" units="bytes" min="0" max="4294967295" dtu="0" />
+		<item id="44" description="Julian Timestamp of the last socket opening. This will be the current socket open time if one is currently open." name="Socket Last Open Timestamp" size="4" scale="1" offset="0" units="bytes" min="0" max="4294967295" dtu="0" />
+		<item id="45" description="Number of seconds that the current socket has been open." name="Socket Open Time" size="4" scale="1" offset="0" units="bytes" min="0" max="4294967295" dtu="1" />
+		<item id="46" description="32Bit Driver ID for use where the 16bit value is not big enough" name="Driver ID 32Bit" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="1" />
+		<item id="47" description="Variable is available for use" name="Available 2" size="4" scale="" offset="0" units="" min="0" max="1" dtu="0" />
+		<item id="48" description="Julian Time of the box - this is the number of seconds since 01-01-2000" name="Julian Time" size="4" scale="1" offset="0" units="Second" min="0" max="4294967295" dtu="0" />
+		<item id="49" description="This is the odometer value where the Maximum Distance Geofence Event will be raised" name="Geofence Maximum Distance Trigger" size="4" scale="1" offset="0" units="m" min="0" max="65535" dtu="0" />
+		<item id="50" description="This is the maximum allowed travel distance between the just exited geofence and the next geofence" name="Geofence Maximum Distance" size="2" scale="1" offset="0" units="Km" min="0" max="65535" dtu="0" />
+		<item id="51" description="The maximum speed attained by the vehicle since it was last cleared" name="Maximum Speed" size="1" scale="1" offset="0" units="km/h" min="0" max="255" dtu="1" />
+		<item id="52" description="The maximum RPM attained by the vehicle since it was last cleared" name="Maximum RPM" size="1" scale="100" offset="0" units="rpm" min="0" max="25500" dtu="1" />
+		<item id="53" description="The maximum acceleration attained by the vehicle since it was last cleared" name="Maximum Acceleration" size="1" scale="1" offset="0" units="km/h/s" min="0" max="255" dtu="1" />
+		<item id="54" description="Periodic Position Report Counter" name="Periodic Position Counter" size="2" scale="1" offset="0" units="Second" min="0" max="65535" dtu="1" />
+		<item id="55" description="Periodic  Non Trip Position Counter" name="Periodic  Non Trip Position Counter" size="2" scale="1" offset="0" units="Second" min="0" max="65535" dtu="1" />
+		<item id="56" description="Tachograph Counter" name="Tachograph Counter" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535" dtu="1" />
+		<item id="57" description="Periodic Temperature Report Counter" name="Periodic Temperature Report Counter" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535" dtu="1" />
+		<item id="58" description="Main Voltage Low Counter" name="Main Voltage Low Counter" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535" dtu="1" />
+		<item id="59" description="Periodic FMS Canbus Counter" name="Periodic FMS Canbus Counter" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535" dtu="1" />
+		<item id="60" description="Periodic Custom Canbus Counter" name="Periodic Custom Canbus Counter" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535" dtu="1" />
+		<item id="61" description="CAN Vehicle Info Counter" name="CAN Vehicle Info Counter" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535" dtu="1" />
+		<item id="62" description="Generic Counter" name="Counter 9" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535" dtu="1" />
+		<item id="63" description="Generic Counter" name="Counter 10" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535" dtu="1" />
+		<item id="64" description="Generic Counter" name="Counter 11" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535" dtu="1" />
+		<item id="65" description="Generic Counter" name="Counter 12" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535" dtu="1" />
+		<item id="66" description="Generic Counter" name="Counter 13" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535" dtu="1" />
+		<item id="67" description="Generic Counter" name="Counter 14" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535" dtu="1" />
+		<item id="68" description="Generic Counter" name="Counter 15" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535" dtu="1" />
+		<item id="69" description="Generic Counter" name="Counter 16" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535" dtu="1" />
+		<item id="70" description="Trip ID is the ID of the current trip" name="Trip ID" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="71" description="Percentage of the trip travel time spent in the the green band" name="Green Band Percentage" size="1" scale="1" offset="0" units="" min="0" max="100" dtu="0" />
+		<item id="72" description="Major Software Version" name="Major Software Version" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="0" />
+		<item id="73" description="Minor Software Version" name="Minor Software Version" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="0" />
+		<item id="74" description="Temperature Sensor Status. Two Bits per sensor - H: Sensor Present, L: Valid Reading" name="Temperature Status" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="0" />
+		<item id="75" description="Clutch Duration in Seconds. Number of seconds clutch is disengaged." name="Clutch Duration" size="2" scale="0.1" offset="0" units="Seconds" min="0" max="6553" dtu="0" />
+		<item id="76" description="Clutch Count. Count increments on every complete transition." name="Clutch Count" size="2" scale="1" offset="0" units="Counts" min="0" max="65535" dtu="0" />
+		<item id="77" description="Brake Duration in Seconds. Number of seconds Brake is engaged." name="Brake Duration" size="2" scale="0.1" offset="0" units="Seconds" min="0" max="6553" dtu="0" />
+		<item id="78" description="Brake Count. Count increments on every complete transition." name="Brake Count" size="2" scale="1" offset="0" units="Counts" min="0" max="65535" dtu="0" />
+		<item id="79" description="Fuel Level Percentage. For a Full Tank the Fuel Level is indicated as 250" name="Fuel Level" size="1" scale="0.4" offset="0" units="%" min="0" max="100" dtu="0" />
+		<item id="80" description="Total Fuel in 0.0001 litres units" name="Total Fuel - Generic" size="4" scale="0.0001" offset="0" units="Litres" min="0" max="4294967295" dtu="0" />
+		<item id="81" description="Trip Fuel in Litres units" name="Trip Fuel" size="2" scale="1" offset="0" units="Litres" min="0" max="65535" dtu="0" />
+		<item id="82" description="Decceleration calculated from the change in speed of 1 second" name="Harsh Braking" size="1" scale="1" offset="0" units="km/h/s" min="0" max="255" dtu="1" />
+		<item id="83" description="Maximum Decceleration calculated from the change in speed in 1 second" name="Maximum Braking" size="1" scale="1" offset="0" units="km/h/s" min="0" max="255" dtu="1" />
+		<item id="84" description="Running count of the number of hours the box has been running" name="Running Hours" size="2" scale="1" offset="0" units="Hours" min="0" max="65535" dtu="1" />
+		<item id="85" description="Geofence ID of the last geofence entered or exited" name="Last Geofence Id" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="86" description="Distance traveled inside the last geofence" name="Last Geofence Distance" size="2" scale="1" offset="0" units="km" min="0" max="65535" dtu="0" />
+		<item id="88" description="Duration the unit was in the Last Geofence exited" name="Last Geofence Duration" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535" dtu="0" />
+		<item id="89" description="GSM Status" name="GSM Status" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="90" description="Number of satellites used in the calculation of the position" name="GPS Satellite Count" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="0" />
+		<item id="91" description="GPS Nav Mode" name="GPS Nav Mode" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="92" description="Modem Temperature" name="Modem Temperature" size="1" scale="1" offset="0" units="Celcius" min="0" max="255" dtu="1" />
+		<item id="93" description="Total distance vehicle has free wheeled" name="Free Wheeling Distance" size="4" scale="1" offset="0" units="m" min="0" max="4294967295" dtu="1" />
+		<item id="94" description="Size of Flash 0" name="Flash 0 Size" size="1" scale="1" offset="0" units="" min="0" max="7" dtu="0" />
+		<item id="95" description="Size of Flash 1" name="Flash 1 Size" size="1" scale="1" offset="0" units="" min="0" max="7" dtu="0" />
+		<item id="96" description="Size of the Data Flash Card" name="Data Flash Card Size" size="1" scale="1" offset="0" units="" min="0" max="7" dtu="0" />
+		<item id="97" description="ID of the last  event that were raised" name="Last Event" size="2" scale="1" offset="0" units="" min="1" max="512" dtu="0" />
+		<item id="98" description="Number of Geofences on the Mhub" name="Geofence Count" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="99" description="Main Loop Frequency" name="Main Loop Frequency" size="4" scale="1" offset="0" units="Hz" min="0" max="600000" dtu="0" />
+		<item id="100" description="The Type of the last Geofence Entered or Exited" name="Last Geofence Type" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="0" />
+		<item id="101" description="The speed limit of the Geofence the unit is in currently if any" name="Geofence Speel Limit" size="1" scale="1" offset="0" units="km/h" min="0" max="255" dtu="1" />
+		<item id="102" description="Number of Cold Boots" name="Cold Boot Count" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="103" description="Number of Warm Boots" name="Warm Boot Count" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="104" description="Number of Reboots due to the Watchdog" name="Watchdog Reboot Count" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="105" description="Number of Brownouts the Box experienced" name="Brownout Count" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="106" description="CPU Usage as a persentage" name="CPU Usage" size="1" scale="1" offset="0" units="%" min="0" max="100" dtu="0" />
+		<item id="107" description="The duration of the current trip in seconds" name="Trip Duration" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535" dtu="1" />
+		<item id="108" description="Geoloc Status" name="Geoloc Status" size="1" scale="1" offset="0" units="" min="0" max="4" dtu="0" />
+		<item id="109" description="Current Status of the GPRS Socket Login" name="Socket Login Status" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="110" description="This is the service odometer at which the service event was generated" name="Service Odometer" size="4" scale="1" offset="0" units="m" min="0" max="4294967295" dtu="0" />
+		<item id="111" description="The amount of time that a vehicle\'s speed was below a preset threshold during a trip," name="Stationary Time" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535" dtu="0" />
+		<item id="112" description="UTC Year from GPS" name="GPS UTC Year" size="1" scale="1" offset="2000" units="Years" min="2000" max="2200" dtu="0" />
+		<item id="113" description="UTC month from GPS" name="GPS UTC Month" size="1" scale="1" offset="0" units="Month" min="1" max="12" dtu="0" />
+		<item id="114" description="UTC Day from GPS" name="GPS UTC Day" size="1" scale="1" offset="0" units="day" min="1" max="31" dtu="0" />
+		<item id="115" description="UTC Hour from GPS" name="GPS UTC Hour" size="1" scale="1" offset="0" units="Hrs" min="0" max="23" dtu="0" />
+		<item id="116" description="UTC Minute from GPS" name="GPS UTC Minute" size="1" scale="1" offset="0" units="min" min="0" max="59" dtu="0" />
+		<item id="117" description="UTC secomds from GPS" name="GPS UTC Seconds" size="1" scale="1" offset="0" units="sec" min="0" max="59" dtu="0" />
+		<item id="118" description="The total number of login attempts that a unit has made since its last boot sequence." name="MProfiler Login Attempts" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="119" description="The number of successful logins into MProfiler that a unit has made since its last reboot." name="MProfiler Logins" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="120" description="Number of attempts at opening a socket to MProfiler" name="Socket Open Attempts" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="121" description="Number of sockets that have been opened to MProfiler successfully." name="Socket Count" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="122" description="Number of attempts at establishing a connection to the APN and starting the TCP stack." name="Stack Start Attempts" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="123" description="Number of successful connections to the APN" name="Stack Start Count" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="124" description="This token is used when geofence uploads are completed to indicate to the goefence download application that the download was completed" name="Geofence Upload Token" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="125" description="Input 1 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 1 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
+		<item id="126" description="Input 2 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 2 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
+		<item id="127" description="Input 3 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 3 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
+		<item id="128" description="Input 4 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 4 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
+		<item id="129" description="Input 5 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 5 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
+		<item id="130" description="Input 6 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 6 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
+		<item id="131" description="Input 7 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 7 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
+		<item id="132" description="Input 8 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 8 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
+		<item id="133" description="Ignition transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Ignition Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
+		<item id="134" description="PDOP 1 = Optimal; 8 = poor; 30 = More than 150m out scaling 0.01" name="GPS Position DOP" size="2" scale="0.01" offset="0" units="" min="0" max="655.35" dtu="0" />
+		<item id="135" description="GPS 3D Position Accuracy Estimate" name="GPS 3D Position Accuracy Estimate" size="2" scale="1" offset="0" units="m" min="0" max="65535" dtu="0" />
+		<item id="136" description="Custom 1 Variable 0" name="Custom 1 Variable 0" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="137" description="Custom 1 Variable 1" name="Custom 1 Variable 1" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="138" description="Custom 1 Variable 2" name="Custom 1 Variable 2" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="139" description="Custom 1 Variable 3" name="Custom 1 Variable 3" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="140" description="Custom 1 Variable 4" name="Custom 1 Variable 4" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="141" description="Custom 1 Variable 5" name="Custom 1 Variable 5" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="142" description="Custom 1 Variable 6" name="Custom 1 Variable 6" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="143" description="Engine Coolant Temperature - CANBus" name="Engine Coolant Temperature" size="1" scale="1" offset="-40" units="Celcius" min="-40" max="215" dtu="1" />
+		<item id="144" description="Engine Oil Temperature - CANBus" name="Engine Oil Temperature" size="1" scale="1" offset="-20" units="Celcius" min="-20" max="235" dtu="1" />
+		<item id="145" description="Fuel Level - CANBus" name="Fuel Level - CANBus" size="1" scale="0.4" offset="0" units="%" min="0" max="100" dtu="1" />
+		<item id="146" description="Accelerator Pedal Position - CANBus" name="Accelerator Pedal Position" size="1" scale="1" offset="0" units="%" min="0" max="255" dtu="1" />
+		<item id="147" description="Instantaneous Fuel Rate - CANBus" name="Instantaneous Fuel Rate" size="2" scale="0.05" offset="0" units="L/h" min="0" max="3276.75" dtu="1" />
+		<item id="148" description="Instantaneous Fuel Economy - CANBus" name="Instantaneous Fuel Economy" size="1" scale="1" offset="0" units="km / L" min="0" max="255" dtu="1" />
+		<item id="149" description="Transmission Oil Level - CANBus" name="Transmission Oil Level" size="1" scale="1" offset="0" units="%" min="0" max="255" dtu="1" />
+		<item id="150" description="Transmission Oil Temperature - CANBus" name="Transmission Oil Temperature" size="1" scale="1" offset="0" units="Celcius" min="0" max="255" dtu="1" />
+		<item id="151" description="Service Distance - CANBus" name="Service Distance" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="1" />
+		<item id="152" description="Engine Oil Level" name="Engine Oil Level" size="1" scale="1" offset="0" units="%" min="0" max="255" dtu="1" />
+		<item id="153" description="Engine Coolant Level - CANBus" name="Engine Coolant Level" size="1" scale="1" offset="0" units="%" min="0" max="255" dtu="1" />
+		<item id="154" description="Trip Fuel - Generic" name="Trip Fuel - Generic" size="4" scale="0.000001" offset="0" units="Litres" min="0" max="4294.967295" dtu="1" />
+		<item id="155" description="Higher Resolution Total Fuel" name="High Resolution Total Fuel - CANBus" size="4" scale="1" offset="0" units="ml" min="0" max="4294967295" dtu="1" />
+		<item id="156" description="Total Engine Hours - CANBus" name="Total Engine Hours - CANBus" size="4" scale="1" offset="0" units="h" min="0" max="4294967295" dtu="1" />
+		<item id="157" description="Total Distance - CANBus" name="Total Distance - CANBus" size="4" scale="1" offset="0" units="m" min="0" max="4294967295" dtu="1" />
+		<item id="158" description="Trip Distance - CANBus" name="Trip Distance - CANBus" size="4" scale="1" offset="0" units="m" min="0" max="4294967295" dtu="1" />
+		<item id="159" description="Voice call status byte that is sent to the button box or similar device." name="Voice Call Status" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="160" description="Accelerometer Pitch Calculation" name="Pitch" size="1" scale="0.6666667" offset="-128" units="Degrees" min="-180" max="180" dtu="0" />
+		<item id="161" description="Accelerometer Roll Calculation" name="Roll" size="1" scale="0.6666667" offset="-128" units="Degrees" min="-180" max="180" dtu="0" />
+		<item id="162" description="Accelerometer X-Axis Average" name="Accelerometer X-Axis" size="1" scale="0.02" offset="-2.56" units="g" min="-2.56" max="2.56" dtu="0" />
+		<item id="163" description="Accelerometer Y-Axis Average" name="Accelerometer Y-Axis" size="1" scale="0.02" offset="-2.56" units="g" min="-2.56" max="2.56" dtu="0" />
+		<item id="164" description="Count of the number of packets transmitted to the GSS" name="Iridium Tx Packet Count" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="165" description="Count of the number of packets received from the GSS" name="Iridium Rx Packet Count" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="166" description="Signal strength received from the Iridium satellites" name="Iridium Signal Strength" size="1" scale="1" offset="0" units="" min="0" max="5" dtu="0" />
+		<item id="167" description="MHub Hardware Features: If not MHub918 individual features can be enabled" name="MHub Hardware Features" size="2" scale="1" offset="0" units="1" min="0" max="65535" dtu="0" />
+		<item id="168" description="Trip Green Band Time" name="Green Band Time" size="2" scale="1" offset="0" units="seconds" min="0" max="255" dtu="0" />
+		<item id="169" description="GPRS Status from CGREG" name="GPRS Status" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="0" />
+		<item id="170" description="FMS Axle Weight 0. Axle defined with parameters" name="FMS Axle Weight 0" size="2" scale="1" offset="0" units="kg" min="0" max="65535" dtu="1" />
+		<item id="171" description="FMS Axle Weight 1. Axle defined with parameters" name="FMS Axle Weight 1" size="2" scale="1" offset="0" units="kg" min="0" max="65535" dtu="1" />
+		<item id="172" description="FMS TCO information" name="FMS TCO" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="0" />
+		<item id="173" description="FMS Custom Message Data 0 Byte 0 to 3" name="FMS Custom Message Data 0 Byte 0 to 3" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="0" />
+		<item id="174" description="FMS Custom Message Data 0 Byte 4 to 7" name="FMS Custom Message Data 0 Byte 4 to 7" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="0" />
+		<item id="175" description="FMS Custom Message Data 1 Byte 0 to 3" name="FMS Custom Message Data 1 Byte 0 to 3" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="0" />
+		<item id="176" description="FMS Custom Message Data 1 Byte 4 to 7" name="FMS Custom Message Data 1 Byte 4 to 7" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="0" />
+		<item id="177" description="Custom 2 Variable 0" name="Custom 2 Variable 0" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="178" description="Custom 2 Variable 1" name="Custom 2 Variable 1" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="179" description="Custom 2 Variable 2" name="Custom 2 Variable 2" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="180" description="Custom 2 Variable 3" name="Custom 2 Variable 3" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="181" description="Custom 2 Variable 4" name="Custom 2 Variable 4" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="182" description="Custom 2 Variable 5" name="Custom 2 Variable 5" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="183" description="Custom 2 Variable 6" name="Custom 2 Variable 6" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="184" description="The Lower 4 bytes of the Passenger ID as read from the Driver Key when last presented by the Passenger" name="Passenger ID Button" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="0" />
+		<item id="185" description="Temperature 1 Low Resolution    50 == 0 DegreesC" name="Temperature 1 Low Res" size="1" scale="1" offset="-50" units="Celcius" min="-50" max="205" dtu="0" />
+		<item id="186" description="Temperature 2 Low Resolution    50 == 0 DegreesC" name="Temperature 2 Low Res" size="1" scale="1" offset="-50" units="Celcius" min="-50" max="205" dtu="0" />
+		<item id="187" description="Temperature 3 Low Resolution    50 == 0 DegreesC" name="Temperature 3 Low Res" size="1" scale="1" offset="-50" units="Celcius" min="-50" max="205" dtu="0" />
+		<item id="188" description="Temperature 4 Low Resolution    50 == 0 DegreesC" name="Temperature 4 Low Res" size="1" scale="1" offset="-50" units="Celcius" min="-50" max="205" dtu="0" />
+		<item id="189" description="Engine Load - CANBus" name="Engine Load" size="1" scale="1" offset="0" units="%" min="0" max="255" dtu="1" />
+		<item id="190" description="Li-Ion Battery Voltage" name="Li-Ion Voltage" size="2" scale="0.01" offset="0" units="V" min="0" max="5.0" dtu="1" />
+		<item id="191" description="Number of Trips" name="Insurance Trips" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="0" />
+		<item id="192" description="Total Distance Traveled" name="Insurance Total Trip Distance" size="4" scale="1" offset="0" units="m" min="0" max="4294967295" dtu="0" />
+		<item id="193" description="Total Time Traveled" name="Insurance Total Trip Time" size="4" scale="1" offset="0" units="Seconds" min="0" max="4294967295" dtu="0" />
+		<item id="194" description="Total Time in Slot 1" name="Insurance Time in Slot 1" size="4" scale="1" offset="0" units="Seconds" min="0" max="4294967295" dtu="0" />
+		<item id="195" description="Total Time in Slot 2" name="Insurance Time in Slot 2" size="4" scale="1" offset="0" units="Seconds" min="0" max="4294967295" dtu="0" />
+		<item id="196" description="Max Speed" name="Insurance Max Speed" size="1" scale="1" offset="0" units="km/h" min="0" max="255" dtu="0" />
+		<item id="197" description="Total Speeding Time" name="Insurance Total Speeding Time" size="4" scale="1" offset="0" units="Seconds" min="0" max="4294967295" dtu="0" />
+		<item id="198" description="Geofence Entries Type 1 Count" name="Insurance Geofence Entries Type 1" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="0" />
+		<item id="199" description="Geofence Type 1 Time" name="Insurance Geofence Type 1 Time" size="4" scale="1" offset="0" units="Seconds" min="0" max="4294967295" dtu="0" />
+		<item id="200" description="Geofence Type 1 Distance" name="Insurance Geofence Type 1 Distance" size="4" scale="1" offset="0" units="m" min="0" max="4294967295" dtu="0" />
+		<item id="201" description="Geofence Entries Type 2 Count" name="Insurance Geofence Entries Type 2" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="0" />
+		<item id="202" description="Geofence Type 2 Time" name="Insurance Geofence Type 2 Time" size="4" scale="1" offset="0" units="Seconds" min="0" max="4294967295 " dtu="0" />
+		<item id="203" description="Geofence Type 2 Distance" name="Insurance Geofence Type 2 Distance" size="4" scale="1" offset="0" units="m" min="0" max="4294967295 " dtu="0" />
+		<item id="204" description="Maximum Speed in Trip" name="Trip Max Speed" size="1" scale="1" offset="0" units="km/h" min="0" max="255" dtu="1" />
+		<item id="205" description="Latitude coordinate from the GPS module (Signed 32 Bit Value) of start position" name="Latitude start" size="4" scale="0.0000001" offset="0" units="Degrees" min="-90" max="90" dtu="0" />
+		<item id="206" description="Longitude coordinate from the GPS module (Signed 32 Bit Value) of start position" name="Longitude Start" size="4" scale="0.0000001" offset="0" units="Degrees" min="-180" max="180" dtu="0" />
+		<item id="207" description="GPS Status of start position" name="GPS Status Start" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="0" />
+		<item id="208" description="Custom 3 Variable 0" name="Custom 3 Variable 0" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="1" />
+		<item id="209" description="Custom 3 Variable 1" name="Custom 3 Variable 1" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="1" />
+		<item id="210" description="Custom 3 Variable 2" name="Custom 3 Variable 2" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="1" />
+		<item id="211" description="Custom 3 Variable 3" name="Custom 3 Variable 3" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="1" />
+		<item id="212" description="Custom 3 Variable 4" name="Custom 3 Variable 4" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="1" />
+		<item id="213" description="Custom 3 Variable 5" name="Custom 3 Variable 5" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="1" />
+		<item id="214" description="Custom 3 Variable 6" name="Custom 3 Variable 6" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="1" />
+		<item id="215" description="Insurance Geofence Entries Type 3" name="Insurance Geofence Entries Type 3" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="0" />
+		<item id="216" description="Insurance Geofence Type 3 Time" name="Insurance Geofence Type 3 Time" size="4" scale="1" offset="0" units="Seconds" min="0" max="4294967295" dtu="0" />
+		<item id="217" description="Insurance Geofence Type 3 Distance" name="Insurance Geofence Type 3 Distance" size="4" scale="1" offset="0" units="m" min="0" max="4294967295" dtu="0" />
+		<item id="218" description="Current State of the GSM module" name="GSM State" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="219" description="Total Ignition On Hours" name="Total Ignition On Hours" size="2" scale="1" offset="0" units="Hours" min="0" max="65535" dtu="1" />
+		<item id="220" description="The geofence type of the last geofence that were entered" name="Last Geofence Type Entered" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="221" description="The geofence type of the last geofence that were exited" name="Last Geofence Type Exited" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="222" description="To extend the trip duration past the 18 hour limit we currently have" name="Trip Duration Extender" size="2" scale="65536" offset="0" units="Seconds" min="0" max="4294967295" dtu="1" />
+		<item id="223" description="RF ID Low 4 Bytes" name="RF ID" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="0" />
+		<item id="224" description="RF ID Extended 4 Bytes" name="RF ID Extended" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="0" />
+		<item id="225" description="RF ID Type" name="RF ID Type" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="226" description="Accelerometer Z-Axis Average" name="Accelerometer Z-Axis" size="1" scale="0.02" offset="-2.56" units="g" min="-2.56" max="2.56" dtu="0" />
+		<item id="227" description="Impact Direction 0-No Accident 1-Front 2-Front Left 3-Left 4-Rear Left 5-Rear 6-Rear Right 7-Right 8-Front Right" name="Impact Direction" size="1" scale="1" offset="0" units="" min="0" max="16" dtu="0" />
+		<item id="228" description="Accident Recon Current Index" name="Accident Recon Index" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="0" />
+		<item id="229" description="Malfunction Indicator Lamp Status" name="MIL Status" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="0" />
+		<item id="230" description="Throttle Position" name="Throttle Position" size="1" scale="1" offset="0" units="%" min="0" max="255" dtu="0" />
+		<item id="231" description="Custom 4 Variable 0" name="Custom 4 Variable 0" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="232" description="Custom 4 Variable 1" name="Custom 4 Variable 1" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="233" description="Custom 4 Variable 2" name="Custom 4 Variable 2" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="234" description="Custom 4 Variable 3" name="Custom 4 Variable 3" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="235" description="Custom 4 Variable 4" name="Custom 4 Variable 4" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="236" description="Custom 4 Variable 5" name="Custom 4 Variable 5" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="237" description="Custom 4 Variable 6" name="Custom 4 Variable 6" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="238" description="Fuel in Trip Driving" name="Fuel Driving" size="2" scale="1" offset="0" units="Litres" min="0" max="65535" dtu="0" />
+		<item id="239" description="Fuel in trip Stopped" name="Fuel Stop" size="2" scale="1" offset="0" units="Litres" min="0" max="65535" dtu="0" />
+		<item id="240" description="Fuel in trip PTO" name="Fuel PTO" size="2" scale="1" offset="0" units="Litres" min="0" max="65535" dtu="0" />
+		<item id="241" description="Fuel Level as reported by an external fuel level measurement device" name="Fuel Level" size="2" scale="1" offset="0" units="Litres" min="0" max="65535" dtu="1" />
+		<item id="242" description="Total Fuel that flowed out of the tank as measured by an external fuel flow meter, this value is never zeroed" name="Total Fuel" size="4" scale="0.1" offset="0" units="Litres" min="0" max="429496729.5" dtu="1" />
+		<item id="243" description="The reason the Fuel Data Event was generated" name="Fuel Data Event Reason" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="244" description="Mass Airflow Sensor in g/s" name="Mass Airflow Sensor" size="2" scale="0.01" offset="0" units="g/s" min="0" max="655.35" dtu="0" />
+		<item id="245" description="Intake Air Temperature" name="Intake Air Temperature" size="1" scale="1" offset="-40" units="Celcius" min="-40" max="215" dtu="0" />
+		<item id="246" description="OBD-II Protocol" name="OBD-II Protocol" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="247" description="Time from last ignition OFF to device removal" name="Disconnected Time" size="4" scale="1" offset="0" units="s" min="0" max="4294967295" dtu="1" />
+		<item id="248" description="Custom 5 Variable 0" name="Custom 5 Variable 0" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="0" />
+		<item id="249" description="Custom 5 Variable 1" name="Custom 5 Variable 1" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="0" />
+		<item id="250" description="Custom 5 Variable 2" name="Custom 5 Variable 2" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="0" />
+		<item id="251" description="Custom 5 Variable 3" name="Custom 5 Variable 3" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="0" />
+		<item id="252" description="Custom 5 Variable 4" name="Custom 5 Variable 4" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="0" />
+		<item id="253" description="Custom 5 Variable 5" name="Custom 5 Variable 5" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="0" />
+		<item id="254" description="Custom 5 Variable 6" name="Custom 5 Variable 6" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="0" />
+		<item id="255" description="Variable available to be used" name="Available 3" size="1" scale="" offset="0" units="" min="0" max="1" dtu="0" />
+</GlobalVariables>

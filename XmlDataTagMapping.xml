@@ -1,0 +1,1128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="./XmlDataTagMapping.xslt"?>
+<mappings>
+	<tag id="1" description="TriggerValues">
+		<data config="0" name="Duration" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535"/>
+		<data config="0" name="Delay" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535"/>
+	</tag>
+	<tag id="2" description="SpeedSpecificValues">
+		<data config="0" name="MaximumSpeed" size="1" scale="1" offset="0" units="km/h" min="0" max="255"/>
+		<data config="1" name="SpeedLimit" size="1" scale="1" offset="0" units="km/h" min="0" max="255"/>
+	</tag>
+	<tag id="3" description="BasicTripData">
+		<data config="0" name="RPM" size="1" scale="100" offset="0" units="rpm" min="0" max="25500"/>
+		<data config="0" name="Speed" size="1" scale="1" offset="0" units="km/h" min="0" max="255"/>
+		<data config="1" name="TripSpeedfrom" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+	</tag>
+	<tag id="4" description="MoreTripData">
+		<data config="0" name="TripDuration" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535"/>
+		<data config="0" name="TripDistance" size="4" scale="1" offset="0" units="m" min="0" max="4294967295"/>
+	</tag>
+	<tag id="5" description="TripBoundryData">
+		<data config="0" name="TripID" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="1" name="TripStartDelay" size="1" scale="1" offset="0" units="seconds" min="0" max="255"/>
+	</tag>
+	<tag id="6" description="SpecificTripEnd">
+		<data config="0" name="GreenBandPercentage" size="1" scale="1" offset="0" units="" min="0" max="100"/>
+	</tag>
+	<tag id="7" description="AccidentLog">
+		<data config="0" name="RPM" size="1" scale="100" offset="0" units="rpm" min="0" max="25500"/>
+		<data config="0" name="TripDistance" size="4" scale="1" offset="0" units="m" min="0" max="4294967295"/>
+		<data config="0" name="AccelerometerX-Axis" size="1" scale="0.02" offset="-2.56" units="g" min="-2.56" max="2.56"/>
+		<data config="0" name="AccelerometerY-Axis" size="1" scale="0.02" offset="-2.56" units="g" min="-2.56" max="2.56"/>
+		<data config="0" name="AccelerometerZ-Axis" size="1" scale="0.02" offset="-2.56" units="g" min="-2.56" max="2.56"/>
+		<data config="0" name="AccidentReconIndex" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+		<data config="0" name="Altitude" size="2" scale="1" offset="0" units="m" min="0" max="65535"/>
+	</tag>
+	<tag id="8" description="StandardTemperatureData">
+		<data config="0" name="Temperature1" size="2" scale="0.0625" offset="-50" units="Degrees C" min="-50" max="150"/>
+		<data config="0" name="Temperature2" size="2" scale="0.0625" offset="-50" units="Degrees C" min="-50" max="150"/>
+		<data config="0" name="Temperature3" size="2" scale="0.0625" offset="-50" units="Degrees C" min="-50" max="150"/>
+		<data config="0" name="Temperature4" size="2" scale="0.0625" offset="-50" units="Degrees C" min="-50" max="150"/>
+		<data config="0" name="TemperatureStatus" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+	</tag>
+	<tag id="9" description="TransmissionStatus">
+		<data config="0" name="SMSTx" size="2" scale="1" offset="0" units="" min="0" max="65535"/>
+		<data config="0" name="SMSRx" size="2" scale="1" offset="0" units="" min="0" max="65535"/>
+	</tag>
+	<tag id="10" description="PowerFailure">
+	</tag>
+	<tag id="11" description="BatteryStatus">
+		<data config="0" name="BatteryVoltage" size="1" scale="0.1" offset="0" units="V" min="0" max="25.5"/>
+		<data config="0" name="BatteryTemperature" size="1" scale="0.5" offset="0" units="Degrees C" min="0" max="127"/>
+		<data config="0" name="ChargeCycles" size="1" scale="1" offset="0" units="Cycle" min="0" max="255"/>
+	</tag>
+	<tag id="12" description="HealthCheck">
+		<data config="0" name="MajorSoftwareVersion" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="MinorSoftwareVersion" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="RunningHours" size="2" scale="1" offset="0" units="Hours" min="0" max="65535"/>
+	</tag>
+	<tag id="13" description="FreeWheelData">
+		<data config="0" name="Duration" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535"/>
+		<data config="0" name="FreeWheelingDistance" size="4" scale="1" offset="0" units="m" min="0" max="4294967295"/>
+	</tag>
+	<tag id="14" description="Generic31Bytes">
+		<data config="0" name="Custom3Variable0" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+		<data config="0" name="Custom3Variable1" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+		<data config="0" name="Custom3Variable2" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+		<data config="0" name="Custom3Variable3" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+		<data config="0" name="Custom3Variable4" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+		<data config="0" name="Custom3Variable5" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+		<data config="0" name="Custom3Variable6" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+		<data config="0" name="Custom4Variable0" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="Custom4Variable1" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="Custom4Variable2" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+	</tag>
+	<tag id="16" description="DriverInfo">
+		<data config="1" name="FleetCode" size="2" scale="1" offset="0" units="" min="0" max="65535"/>
+		<data config="1" name="VehicleClass" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="DriverIDOwn" size="2" scale="1" offset="0" units="" min="0" max="65535"/>
+	</tag>
+	<tag id="17" description="DisablementStatus">
+		<data config="0" name="VehicleDisabled" size="1" scale="1" offset="0" units="" min="0" max="1"/>
+	</tag>
+	<tag id="18" description="BasicGeofenceData">
+		<data config="0" name="LastGeofenceId" size="2" scale="1" offset="0" units="" min="0" max="65535"/>
+		<data config="0" name="LastGeofenceType" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+	</tag>
+	<tag id="19" description="GeofenceData1">
+		<data config="0" name="LastGeofenceDuration" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535"/>
+		<data config="0" name="LastGeofenceDistance" size="2" scale="1" offset="0" units="km" min="0" max="65535"/>
+	</tag>
+	<tag id="20" description="LateGeofenceData">
+	</tag>
+	<tag id="21" description="GeofenceSequenceError">
+	</tag>
+	<tag id="22" description="OdometerInfo">
+		<data config="0" name="Odometer" size="4" scale="1" offset="0" units="m" min="0" max="4294967295"/>
+	</tag>
+	<tag id="23" description="MonthlyOdometer">
+		<data config="0" name="Month" size="1" scale="1" offset="0" units="Month" min="1" max="12"/>
+	</tag>
+	<tag id="24" description="ServiceOdometer">
+		<data config="0" name="ServiceOdometer" size="4" scale="1" offset="0" units="m" min="0" max="4294967295"/>
+	</tag>
+	<tag id="25" description="FMSClutchandBrakeData">
+		<data config="0" name="ClutchDuration" size="2" scale="0.1" offset="0" units="Seconds" min="0" max="6553"/>
+		<data config="0" name="ClutchCount" size="2" scale="1" offset="0" units="Counts" min="0" max="65535"/>
+		<data config="0" name="BrakeCount" size="2" scale="1" offset="0" units="Counts" min="0" max="65535"/>
+		<data config="0" name="BrakeDuration" size="2" scale="0.1" offset="0" units="Seconds" min="0" max="6553"/>
+	</tag>
+	<tag id="26" description="CANPeriodicInformation">
+		<data config="0" name="InstantaneousFuelEconomy" size="1" scale="1" offset="0" units="km / L" min="0" max="255"/>
+		<data config="0" name="BrakeCount" size="2" scale="1" offset="0" units="Counts" min="0" max="65535"/>
+		<data config="0" name="BrakeDuration" size="2" scale="0.1" offset="0" units="Seconds" min="0" max="6553"/>
+		<data config="0" name="EngineLoad" size="1" scale="1" offset="0" units="%" min="0" max="255"/>
+		<data config="0" name="EngineCoolantTemperature" size="1" scale="1" offset="-40" units="Celcius" min="-40" max="215"/>
+		<data config="0" name="EngineOilTemperature" size="1" scale="1" offset="-20" units="Celcius" min="-20" max="235"/>
+	</tag>
+	<tag id="27" description="CANFuelData">
+		<data config="0" name="FuelLevel" size="1" scale="0.4" offset="0" units="%" min="0" max="100"/>
+		<data config="0" name="HighResolutionTotalFuel-CANBus" size="4" scale="1" offset="0" units="ml" min="0" max="4294967295"/>
+		<data config="0" name="TripFuel" size="2" scale="1" offset="0" units="Litres" min="0" max="65535"/>
+	</tag>
+	<tag id="28" description="RPMSpecificValues">
+		<data config="0" name="MaximumRPM" size="1" scale="100" offset="0" units="rpm" min="0" max="25500"/>
+		<data config="1" name="RPMLimit" size="1" scale="100" offset="0" units="100 rpm" min="0" max="65535"/>
+	</tag>
+	<tag id="29" description="HarshBrakingValues">
+		<data config="0" name="MaximumBraking" size="1" scale="1" offset="0" units="km/h/s" min="0" max="255"/>
+		<data config="1" name="BrakingLimit" size="1" scale="1" offset="0" units="km/h/s" min="0" max="255"/>
+	</tag>
+	<tag id="30" description="ExcessiveAccelerationValues">
+		<data config="0" name="MaximumAcceleration" size="1" scale="1" offset="0" units="km/h/s" min="0" max="255"/>
+		<data config="1" name="AccelerationLimit" size="1" scale="1" offset="0" units="km/h/s" min="0" max="255"/>
+	</tag>
+	<tag id="31" description="Temperature1HighException">
+		<data config="1" name="Temperature1HighThreshold" size="1" scale="1" offset="-50" units="Celcius" min="0" max="255"/>
+		<data config="0" name="Temperature1" size="2" scale="0.0625" offset="-50" units="Degrees C" min="-50" max="150"/>
+	</tag>
+	<tag id="32" description="Temperature1LowException">
+		<data config="1" name="Temperature1LowThreshold" size="1" scale="1" offset="-50" units="Celcius" min="0" max="255"/>
+		<data config="0" name="Temperature1" size="2" scale="0.0625" offset="-50" units="Degrees C" min="-50" max="150"/>
+	</tag>
+	<tag id="33" description="Temperature1NormalData">
+		<data config="1" name="Temperature1HighThreshold" size="1" scale="1" offset="-50" units="Celcius" min="0" max="255"/>
+		<data config="1" name="Temperature1LowThreshold" size="1" scale="1" offset="-50" units="Celcius" min="0" max="255"/>
+		<data config="0" name="Temperature1" size="2" scale="0.0625" offset="-50" units="Degrees C" min="-50" max="150"/>
+	</tag>
+	<tag id="34" description="Temperature2HighException">
+		<data config="1" name="Temperature2HighThreshold" size="1" scale="1" offset="-50" units="Celsius" min="0" max="255"/>
+		<data config="0" name="Temperature2" size="2" scale="0.0625" offset="-50" units="Degrees C" min="-50" max="150"/>
+	</tag>
+	<tag id="35" description="Temperature2LowException">
+		<data config="1" name="Temperature2LowThreshold" size="1" scale="1" offset="-50" units="Celsius" min="0" max="255"/>
+		<data config="0" name="Temperature2" size="2" scale="0.0625" offset="-50" units="Degrees C" min="-50" max="150"/>
+	</tag>
+	<tag id="36" description="Temperature2NormalData">
+		<data config="1" name="Temperature2HighThreshold" size="1" scale="1" offset="-50" units="Celsius" min="0" max="255"/>
+		<data config="1" name="Temperature2LowThreshold" size="1" scale="1" offset="-50" units="Celsius" min="0" max="255"/>
+		<data config="0" name="Temperature2" size="2" scale="0.0625" offset="-50" units="Degrees C" min="-50" max="150"/>
+	</tag>
+	<tag id="37" description="Temperature3HighException">
+		<data config="1" name="Temperature3HighThreshold" size="1" scale="1" offset="-50" units="Celsius" min="0" max="255"/>
+		<data config="0" name="Temperature3" size="2" scale="0.0625" offset="-50" units="Degrees C" min="-50" max="150"/>
+	</tag>
+	<tag id="38" description="Temperature3LowException">
+		<data config="1" name="Temperature3LowThreshold" size="1" scale="1" offset="-50" units="Celsius" min="0" max="255"/>
+		<data config="0" name="Temperature3" size="2" scale="0.0625" offset="-50" units="Degrees C" min="-50" max="150"/>
+	</tag>
+	<tag id="39" description="Temperature3NormalData">
+		<data config="1" name="Temperature3HighThreshold" size="1" scale="1" offset="-50" units="Celsius" min="0" max="255"/>
+		<data config="1" name="Temperature3LowThreshold" size="1" scale="1" offset="-50" units="Celsius" min="0" max="255"/>
+		<data config="0" name="Temperature3" size="2" scale="0.0625" offset="-50" units="Degrees C" min="-50" max="150"/>
+	</tag>
+	<tag id="40" description="Temperature4HighException">
+		<data config="1" name="Temperature4HighThreshold" size="1" scale="1" offset="-50" units="Celsius" min="0" max="255"/>
+		<data config="0" name="Temperature4" size="2" scale="0.0625" offset="-50" units="Degrees C" min="-50" max="150"/>
+	</tag>
+	<tag id="41" description="Temperature4LowException">
+		<data config="1" name="Temperature4LowThreshold" size="1" scale="1" offset="-50" units="Celsius" min="0" max="255"/>
+		<data config="0" name="Temperature4" size="2" scale="0.0625" offset="-50" units="Degrees C" min="-50" max="150"/>
+	</tag>
+	<tag id="42" description="Temperature4NormalData">
+		<data config="1" name="Temperature4HighThreshold" size="1" scale="1" offset="-50" units="Celsius" min="0" max="255"/>
+		<data config="1" name="Temperature4LowThreshold" size="1" scale="1" offset="-50" units="Celsius" min="0" max="255"/>
+		<data config="0" name="Temperature4" size="2" scale="0.0625" offset="-50" units="Degrees C" min="-50" max="150"/>
+	</tag>
+	<tag id="43" description="MainsVoltageData">
+		<data config="1" name="MainVoltageLowThreshold" size="1" scale="1" offset="0" units="0.1 V" min="0" max="255"/>
+		<data config="0" name="BatteryVoltage" size="1" scale="0.1" offset="0" units="V" min="0" max="25.5"/>
+	</tag>
+	<tag id="44" description="GeofenceUploadData">
+		<data config="0" name="GeofenceUploadToken" size="2" scale="1" offset="0" units="" min="0" max="65535"/>
+	</tag>
+	<tag id="45" description="CustomEvent1Data">
+		<data config="0" name="Custom1Variable0" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="Custom1Variable1" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="Custom1Variable2" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="Custom1Variable3" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="Custom1Variable4" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="Custom1Variable5" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="Custom1Variable6" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+	</tag>
+	<tag id="46" description="CustomEvent2Data">
+		<data config="0" name="Custom2Variable0" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="Custom2Variable1" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="Custom2Variable2" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="Custom2Variable3" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="Custom2Variable4" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="Custom2Variable5" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="Custom2Variable6" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+	</tag>
+	<tag id="47" description="FMSData">
+		<data config="0" name="TripDistance-CANBus" size="4" scale="1" offset="0" units="m" min="0" max="4294967295"/>
+		<data config="0" name="FuelLevel" size="1" scale="0.4" offset="0" units="%" min="0" max="100"/>
+		<data config="0" name="HighResolutionTotalFuel-CANBus" size="4" scale="1" offset="0" units="ml" min="0" max="4294967295"/>
+		<data config="0" name="FMSTCO" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+		<data config="0" name="FMSAxleWeight0" size="2" scale="1" offset="0" units="kg" min="0" max="65535"/>
+		<data config="0" name="FMSAxleWeight1" size="2" scale="1" offset="0" units="kg" min="0" max="65535"/>
+		<data config="0" name="TotalEngineHours-CANBus" size="4" scale="1" offset="0" units="h" min="0" max="4294967295"/>
+	</tag>
+	<tag id="48" description="CustomCANMessageData">
+		<data config="1" name="CustomJ1939PGN0" size="2" scale="1" offset="0" units="" min="0" max="65535"/>
+		<data config="0" name="FMSCustomMessageData0Byte0to3" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+		<data config="0" name="FMSCustomMessageData0Byte4to7" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+		<data config="1" name="CustomJ1939PGN1" size="2" scale="1" offset="0" units="" min="0" max="65535"/>
+		<data config="0" name="FMSCustomMessageData1Byte0to3" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+		<data config="0" name="FMSCustomMessageData1Byte4to7" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+	</tag>
+	<tag id="49" description="LogBook">
+		<data config="0" name="Latitudestart" size="4" scale="0.0000001" offset="0" units="Degrees" min="-90" max="90"/>
+		<data config="0" name="TripMaxSpeed" size="1" scale="1" offset="0" units="km/h" min="0" max="255"/>
+		<data config="0" name="DriverIDOwn" size="2" scale="1" offset="0" units="" min="0" max="65535"/>
+		<data config="0" name="StationaryTime" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535"/>
+		<data config="0" name="LongitudeStart" size="4" scale="0.0000001" offset="0" units="Degrees" min="-180" max="180"/>
+		<data config="0" name="GPSStatusStart" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+	</tag>
+	<tag id="50" description="InsuranceTrips">
+		<data config="0" name="InsuranceTotalTripDistance" size="4" scale="1" offset="0" units="m" min="0" max="4294967295"/>
+		<data config="0" name="InsuranceTrips" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="InsuranceTotalTripTime" size="4" scale="1" offset="0" units="Seconds" min="0" max="4294967295"/>
+		<data config="0" name="InsuranceTimeinSlot1" size="4" scale="1" offset="0" units="Seconds" min="0" max="4294967295"/>
+		<data config="0" name="InsuranceTimeinSlot2" size="4" scale="1" offset="0" units="Seconds" min="0" max="4294967295"/>
+		<data config="0" name="InsuranceMaxSpeed" size="1" scale="1" offset="0" units="km/h" min="0" max="255"/>
+		<data config="0" name="InsuranceTotalSpeedingTime" size="4" scale="1" offset="0" units="Seconds" min="0" max="4294967295"/>
+	</tag>
+	<tag id="51" description="InsuranceGeofences">
+		<data config="0" name="InsuranceGeofenceEntriesType1" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="InsuranceGeofenceType1Time" size="4" scale="1" offset="0" units="Seconds" min="0" max="4294967295"/>
+		<data config="0" name="InsuranceGeofenceType1Distance" size="4" scale="1" offset="0" units="m" min="0" max="4294967295"/>
+		<data config="0" name="InsuranceGeofenceEntriesType2" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="InsuranceGeofenceType2Time" size="4" scale="1" offset="0" units="Seconds" min="0" max="4294967295 "/>
+		<data config="0" name="InsuranceGeofenceType2Distance" size="4" scale="1" offset="0" units="m" min="0" max="4294967295 "/>
+		<data config="0" name="InsuranceGeofenceEntriesType3" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="InsuranceGeofenceType3Time" size="4" scale="1" offset="0" units="Seconds" min="0" max="4294967295"/>
+		<data config="0" name="InsuranceGeofenceType3Distance" size="4" scale="1" offset="0" units="m" min="0" max="4294967295"/>
+	</tag>
+	<tag id="52" description="CustomEvent3Data">
+		<data config="0" name="Custom3Variable0" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+		<data config="0" name="Custom3Variable1" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+		<data config="0" name="Custom3Variable2" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+		<data config="0" name="Custom3Variable3" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+		<data config="0" name="Custom3Variable4" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+		<data config="0" name="Custom3Variable5" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+		<data config="0" name="Custom3Variable6" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+	</tag>
+	<tag id="53" description="ScopeDebug">
+		<data config="0" name="BatteryVoltage" size="1" scale="0.1" offset="0" units="V" min="0" max="25.5"/>
+		<data config="0" name="GSMRSSI" size="1" scale="1" offset="0" units="dB" min="0" max="99"/>
+	</tag>
+	<tag id="54" description="TripDurationExtension">
+		<data config="0" name="TripDurationExtender" size="2" scale="65536" offset="0" units="Seconds" min="0" max="4294967295"/>
+	</tag>
+	<tag id="55" description="InputCounters">
+		<data config="0" name="Input1Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767"/>
+		<data config="0" name="Input2Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767"/>
+		<data config="0" name="Input3Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767"/>
+		<data config="0" name="Input4Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767"/>
+		<data config="0" name="Input5Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767"/>
+		<data config="0" name="Input6Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767"/>
+		<data config="0" name="Input7Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767"/>
+	</tag>
+	<tag id="56" description="RFID">
+		<data config="0" name="RFID" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+		<data config="0" name="RFIDExtended" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+		<data config="0" name="RFIDType" size="2" scale="1" offset="0" units="" min="0" max="65535"/>
+	</tag>
+	<tag id="57" description="Accident">
+		<data config="0" name="ImpactDirection" size="1" scale="1" offset="0" units="" min="0" max="16"/>
+		<data config="0" name="AccelerometerX-Axis" size="1" scale="0.02" offset="-2.56" units="g" min="-2.56" max="2.56"/>
+		<data config="0" name="AccelerometerY-Axis" size="1" scale="0.02" offset="-2.56" units="g" min="-2.56" max="2.56"/>
+		<data config="0" name="AccelerometerZ-Axis" size="1" scale="0.02" offset="-2.56" units="g" min="-2.56" max="2.56"/>
+		<data config="1" name="AccidentG-ForceLimitX-Axis" size="1" scale="1" offset="0" units="" min="0" max="128"/>
+		<data config="1" name="AccidentG-ForceLimitY-Axis" size="1" scale="1" offset="0" units="" min="0" max="128"/>
+		<data config="1" name="RecklessCorneringG-Force" size="1" scale="1" offset="0" units="" min="0" max="128"/>
+		<data config="1" name="RecklessAccelerationandBrakingG-Force" size="1" scale="1" offset="0" units="" min="0" max="128"/>
+		<data config="0" name="AccidentReconIndex" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+	</tag>
+	<tag id="58" description="OBD2">
+		<data config="0" name="MILStatus" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="RPM" size="1" scale="100" offset="0" units="rpm" min="0" max="25500"/>
+		<data config="0" name="ThrottlePosition" size="1" scale="1" offset="0" units="%" min="0" max="255"/>
+		<data config="0" name="EngineLoad" size="1" scale="1" offset="0" units="%" min="0" max="255"/>
+		<data config="1" name="EngineLoadLimit" size="1" scale="1" offset="0" units="" min="0" max="100"/>
+		<data config="1" name="EngineLoadTimeLimit" size="2" scale="1" offset="0" units="" min="0" max="65535"/>
+		<data config="0" name="EngineCoolantTemperature" size="1" scale="1" offset="-40" units="Celcius" min="-40" max="215"/>
+		<data config="1" name="EngineCoolantTemperatureLimit" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="FuelLevel" size="1" scale="0.4" offset="0" units="%" min="0" max="100"/>
+		<data config="1" name="FuelLevelLowLimit" size="1" scale="1" offset="0" units="" min="0" max="100"/>
+		<data config="0" name="InstantaneousFuelRate" size="2" scale="0.05" offset="0" units="L/h" min="0" max="3276.75"/>
+	</tag>
+	<tag id="59" description="CustomEvent4Data">
+		<data config="0" name="Custom4Variable0" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="Custom4Variable1" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="Custom4Variable2" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="Custom4Variable3" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="Custom4Variable4" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="Custom4Variable5" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="Custom4Variable6" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+	</tag>
+	<tag id="60" description="FuelUsage">
+		<data config="0" name="FuelDriving" size="2" scale="1" offset="0" units="Litres" min="0" max="65535"/>
+		<data config="0" name="FuelStop" size="2" scale="1" offset="0" units="Litres" min="0" max="65535"/>
+		<data config="0" name="FuelPTO" size="2" scale="1" offset="0" units="Litres" min="0" max="65535"/>
+	</tag>
+	<tag id="61" description="FuelData">
+		<data config="0" name="FuelLevel" size="2" scale="1" offset="0" units="Litres" min="0" max="65535"/>
+		<data config="0" name="TotalFuel" size="4" scale="0.1" offset="0" units="Litres" min="0" max="429496729.5"/>
+		<data config="0" name="FuelCap" size="1" scale="1" offset="0" units="" min="0" max="1"/>
+		<data config="0" name="FuelDataEventReason" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="1" name="MinimumFuelLevel" size="2" scale="1" offset="0" units="liters" min="0" max="65535"/>
+	</tag>
+	<tag id="62" description="InsuranceData">
+		<data config="0" name="Custom3Variable0" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+		<data config="0" name="Custom3Variable1" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+		<data config="0" name="Custom3Variable2" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+		<data config="0" name="Custom3Variable3" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+		<data config="0" name="Custom3Variable4" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+		<data config="0" name="OBD-IIProtocol" size="1" scale="1" offset="0" units="" min="0" max="255"/>
+		<data config="0" name="DisconnectedTime" size="4" scale="1" offset="0" units="s" min="0" max="4294967295"/>
+	</tag>
+	<tag id="63" description="DriverIDData">
+		<data config="0" name="DriverID32Bit" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
+	</tag>
+	<events>
+		<event id="1" description="Periodic Position">
+			<tags>
+				<tag id="3" description="Basic Trip Data" />
+				<tag id="4" description="More Trip Data" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="2" description="Polled Position">
+			<tags>
+				<tag id="4" description="More Trip Data" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="4" description="Periodic Temperature">
+			<tags>
+				<tag id="8" description="Standard Temperature Data" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="6" description="Non Trip Position">
+			<tags>
+				<tag id="9" description="Transmission Status" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="9" description="Tacho Graph">
+			<tags>
+				<tag id="3" description="Basic Trip Data" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="10" description="Recovery">
+			<tags>
+			</tags>
+		</event>
+		<event id="11" description="Accident Log">
+			<tags>
+				<tag id="7" description="Accident Log" />
+			</tags>
+		</event>
+		<event id="12" description="Output 1 OFF">
+			<tags>
+				<tag id="3" description="Basic Trip Data" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="13" description="Output 1 ON">
+			<tags>
+				<tag id="3" description="Basic Trip Data" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="14" description="Output 2 OFF">
+			<tags>
+				<tag id="3" description="Basic Trip Data" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="15" description="Output 2 ON">
+			<tags>
+				<tag id="3" description="Basic Trip Data" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="16" description="Output 3 OFF">
+			<tags>
+				<tag id="3" description="Basic Trip Data" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="17" description="Output 3 ON">
+			<tags>
+				<tag id="3" description="Basic Trip Data" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="18" description="Output 4 OFF">
+			<tags>
+				<tag id="3" description="Basic Trip Data" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="19" description="Output 4 ON">
+			<tags>
+				<tag id="3" description="Basic Trip Data" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="70" description="Analog Sensor">
+			<tags>
+				<tag id="52" description="Custom Event 3 Data" />
+			</tags>
+		</event>
+		<event id="80" description="J1939 Threshold Breach">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="81" description="J1939 Threshold Reset">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="82" description="J1939 Trip-Start Parameter Update">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="83" description="J1939 Trip-End Parameter Update">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="84" description="J1939 Periodic Parameter Update">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="85" description="J1939 Delta Parameter Update">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="86" description="J1939 Switch State Change">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="88" description="FMS Brake Clutch">
+			<tags>
+				<tag id="25" description="FMS Clutch and Brake Data" />
+			</tags>
+		</event>
+		<event id="89" description="CAN Vehicle Info">
+			<tags>
+				<tag id="26" description="CAN Periodic Information" />
+			</tags>
+		</event>
+		<event id="90" description="Selected Speed Signal Loss">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="91" description="Detailed DTC Information">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="95" description="Vehicle Information">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="96" description="Environment Information">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="102" description="Battery Low">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="103" description="Service">
+			<tags>
+				<tag id="24" description="Service Odometer" />
+			</tags>
+		</event>
+		<event id="105" description="Monthly Odometer">
+			<tags>
+				<tag id="22" description="Odometer Info" />
+				<tag id="23" description="Monthly Odometer" />
+			</tags>
+		</event>
+		<event id="108" description="Geofence Entry">
+			<tags>
+				<tag id="16" description="Driver Info" />
+				<tag id="18" description="Basic Geofence Data" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="109" description="Geofence Exit">
+			<tags>
+				<tag id="16" description="Driver Info" />
+				<tag id="18" description="Basic Geofence Data" />
+				<tag id="19" description="Geofence Data 1" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="114" description="Geofence Download Complete">
+			<tags>
+				<tag id="44" description="Geofence Upload Data" />
+			</tags>
+		</event>
+		<event id="117" description="Geoloc Breached">
+			<tags>
+				<tag id="3" description="Basic Trip Data" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="118" description="Health Status">
+			<tags>
+				<tag id="12" description="Health Check" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="119" description="Health Metrics">
+			<tags>
+				<tag id="52" description="Custom Event 3 Data" />
+				<tag id="53" description="Scope Debug" />
+			</tags>
+		</event>
+		<event id="122" description="Trip Start">
+			<tags>
+				<tag id="5" description="Trip Boundry Data" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="123" description="Trip End">
+			<tags>
+				<tag id="4" description="More Trip Data" />
+				<tag id="5" description="Trip Boundry Data" />
+				<tag id="6" description="Specific Trip End" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+				<tag id="54" description="Trip Duration Extension" />
+			</tags>
+		</event>
+		<event id="125" description="Vehicle Disabled">
+			<tags>
+				<tag id="3" description="Basic Trip Data" />
+				<tag id="16" description="Driver Info" />
+				<tag id="17" description="Disablement Status" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="126" description="GSM Notice">
+			<tags>
+				<tag id="52" description="Custom Event 3 Data" />
+			</tags>
+		</event>
+		<event id="130" description="Input 1 ON">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="131" description="Input 1 OFF">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="132" description="Input 2 ON">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="133" description="Input 2 OFF">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="134" description="Input 3 ON">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="135" description="Input 3 OFF">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="136" description="Input 4 ON">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="137" description="Input 4 OFF">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="138" description="Input 5 ON">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="139" description="Input 5 OFF">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="140" description="Free Wheeling">
+			<tags>
+				<tag id="3" description="Basic Trip Data" />
+				<tag id="13" description="FreeWheel Data" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="143" description="Start of Excessive Idle">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="3" description="Basic Trip Data" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="144" description="Excessive Idle">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="3" description="Basic Trip Data" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="149" description="Start of Speeding">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="2" description="Speed Specific Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="150" description="Speeding">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="2" description="Speed Specific Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="151" description="Start of Excessive RPM">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+				<tag id="28" description="RPM Specific Values" />
+			</tags>
+		</event>
+		<event id="152" description="Excessive RPM">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+				<tag id="28" description="RPM Specific Values" />
+			</tags>
+		</event>
+		<event id="153" description="Excessive Acceleration">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+				<tag id="30" description="Excessive Acceleration Values" />
+			</tags>
+		</event>
+		<event id="155" description="Harsh Braking">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+				<tag id="29" description="Harsh Braking Values" />
+			</tags>
+		</event>
+		<event id="160" description="Input 6 ON">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="161" description="Input 6 OFF">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="162" description="Input 7 ON">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="163" description="Input 7 OFF">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="164" description="Input 8 ON">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="165" description="Input 8 OFF">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+			</tags>
+		</event>
+		<event id="170" description="Input Counters">
+			<tags>
+				<tag id="55" description="Input Counters" />
+			</tags>
+		</event>
+		<event id="171" description="Pulse Count">
+			<tags>
+				<tag id="52" description="Custom Event 3 Data" />
+			</tags>
+		</event>
+		<event id="172" description="Consolidated Fuel Data">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="173" description="Bulk">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="175" description="Facility Status">
+			<tags>
+				<tag id="52" description="Custom Event 3 Data" />
+			</tags>
+		</event>
+		<event id="176" description="Fuel Levels">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="180" description="Load Sensor">
+			<tags>
+				<tag id="52" description="Custom Event 3 Data" />
+			</tags>
+		</event>
+		<event id="181" description="Driver Fatigue">
+			<tags>
+				<tag id="52" description="Custom Event 3 Data" />
+			</tags>
+		</event>
+		<event id="190" description="Temperature 1 High">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+				<tag id="31" description="Temperature 1 High Exception" />
+			</tags>
+		</event>
+		<event id="191" description="Temperature 2 High">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+				<tag id="34" description="Temperature 2 High Exception" />
+			</tags>
+		</event>
+		<event id="192" description="Temperature 3 High">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+				<tag id="37" description="Temperature 3 High Exception" />
+			</tags>
+		</event>
+		<event id="193" description="Temperature 4 High">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+				<tag id="40" description="Temperature 4 High Exception" />
+			</tags>
+		</event>
+		<event id="194" description="Temperature 1 Low">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+				<tag id="32" description="Temperature 1 Low Exception" />
+			</tags>
+		</event>
+		<event id="195" description="Temperature 2 Low">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+				<tag id="35" description="Temperature 2 Low Exception" />
+			</tags>
+		</event>
+		<event id="196" description="Temperature 3 Low">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+				<tag id="38" description="Temperature 3 Low Exception" />
+			</tags>
+		</event>
+		<event id="197" description="Temperature 4 Low">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+				<tag id="41" description="Temperature 4 Low Exception" />
+			</tags>
+		</event>
+		<event id="198" description="Temperature 1 Normal">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+				<tag id="33" description="Temperature 1 Normal Data" />
+			</tags>
+		</event>
+		<event id="199" description="Temperature 2 Normal">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+				<tag id="36" description="Temperature 2 Normal Data" />
+			</tags>
+		</event>
+		<event id="200" description="Temperature 3 Normal">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+				<tag id="39" description="Temperature 3 Normal Data" />
+			</tags>
+		</event>
+		<event id="201" description="Temperature 4 Normal">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+				<tag id="42" description="Temperature 4 Normal Data" />
+			</tags>
+		</event>
+		<event id="205" description="HF Data Collection Status">
+			<tags>
+				<tag id="52" description="Custom Event 3 Data" />
+			</tags>
+		</event>
+		<event id="210" description="Tamper">
+			<tags>
+				<tag id="52" description="Custom Event 3 Data" />
+			</tags>
+		</event>
+		<event id="215" description="Mains Low Voltage">
+			<tags>
+				<tag id="1" description="Trigger Values" />
+				<tag id="22" description="Odometer Info" />
+				<tag id="43" description="Mains Voltage Data" />
+			</tags>
+		</event>
+		<event id="220" description="Driver Registered">
+			<tags>
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+				<tag id="63" description="Driver ID Data" />
+			</tags>
+		</event>
+		<event id="221" description="RFID Information">
+			<tags>
+				<tag id="56" description="RF ID" />
+			</tags>
+		</event>
+		<event id="222" description="Custom Event 1">
+			<tags>
+				<tag id="3" description="Basic Trip Data" />
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+				<tag id="45" description="Custom Event 1 Data" />
+			</tags>
+		</event>
+		<event id="223" description="Custom Event 2">
+			<tags>
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+				<tag id="46" description="Custom Event 2 Data" />
+			</tags>
+		</event>
+		<event id="224" description="Custom Event 3">
+			<tags>
+				<tag id="52" description="Custom Event 3 Data" />
+			</tags>
+		</event>
+		<event id="225" description="Bluetooth Low Energy Tracking">
+			<tags>
+				<tag id="52" description="Custom Event 3 Data" />
+			</tags>
+		</event>
+		<event id="226" description="Bluetooth Low Energy IO">
+			<tags>
+				<tag id="52" description="Custom Event 3 Data" />
+			</tags>
+		</event>
+		<event id="227" description="Bluetooth Low Energy Driver Key Write">
+			<tags>
+				<tag id="52" description="Custom Event 3 Data" />
+			</tags>
+		</event>
+		<event id="228" description="Driver Identification">
+			<tags>
+				<tag id="52" description="Custom Event 3 Data" />
+			</tags>
+		</event>
+		<event id="229" description="Driver Absent">
+			<tags>
+				<tag id="52" description="Custom Event 3 Data" />
+			</tags>
+		</event>
+		<event id="230" description="FMS Data">
+			<tags>
+				<tag id="22" description="Odometer Info" />
+				<tag id="47" description="FMS Data" />
+			</tags>
+		</event>
+		<event id="231" description="Custom CAN Data">
+			<tags>
+				<tag id="16" description="Driver Info" />
+				<tag id="22" description="Odometer Info" />
+				<tag id="48" description="Custom CAN Message Data" />
+			</tags>
+		</event>
+		<event id="232" description="Trip Summary">
+			<tags>
+				<tag id="4" description="More Trip Data" />
+				<tag id="22" description="Odometer Info" />
+				<tag id="49" description="Log Book" />
+			</tags>
+		</event>
+		<event id="233" description="Daily Trip Summary">
+			<tags>
+				<tag id="50" description="Insurance Trips" />
+			</tags>
+		</event>
+		<event id="234" description="Daily Geofence Summary">
+			<tags>
+				<tag id="51" description="Insurance Geofences" />
+			</tags>
+		</event>
+		<event id="235" description="Accident">
+			<tags>
+				<tag id="16" description="Driver Info" />
+				<tag id="57" description="Accident" />
+			</tags>
+		</event>
+		<event id="236" description="Reckless Driving">
+			<tags>
+				<tag id="16" description="Driver Info" />
+				<tag id="57" description="Accident" />
+			</tags>
+		</event>
+		<event id="237" description="MIL Status">
+			<tags>
+				<tag id="52" description="Custom Event 3 Data" />
+			</tags>
+		</event>
+		<event id="238" description="Coolant Temperature">
+			<tags>
+				<tag id="58" description="OBD2" />
+			</tags>
+		</event>
+		<event id="239" description="Fuel Level">
+			<tags>
+				<tag id="58" description="OBD2" />
+			</tags>
+		</event>
+		<event id="240" description="Engine Load">
+			<tags>
+				<tag id="58" description="OBD2" />
+			</tags>
+		</event>
+		<event id="241" description="Trip Analysis">
+			<tags>
+				<tag id="45" description="Custom Event 1 Data" />
+				<tag id="46" description="Custom Event 2 Data" />
+				<tag id="59" description="Custom Event 4 Data" />
+				<tag id="60" description="Fuel Usage" />
+			</tags>
+		</event>
+		<event id="242" description="Fuel Data">
+			<tags>
+				<tag id="61" description="Fuel Data" />
+			</tags>
+		</event>
+		<event id="243" description="Device Activation">
+			<tags>
+				<tag id="22" description="Odometer Info" />
+				<tag id="62" description="Insurance Data" />
+			</tags>
+		</event>
+		<event id="244" description="Device Plug-In">
+			<tags>
+				<tag id="22" description="Odometer Info" />
+				<tag id="62" description="Insurance Data" />
+			</tags>
+		</event>
+		<event id="245" description="Device Removal">
+			<tags>
+				<tag id="22" description="Odometer Info" />
+				<tag id="62" description="Insurance Data" />
+			</tags>
+		</event>
+		<event id="246" description="Detailed Vehicle Signature">
+			<tags>
+				<tag id="52" description="Custom Event 3 Data" />
+			</tags>
+		</event>
+		<event id="247" description="Driver Behaviour">
+			<tags>
+				<tag id="52" description="Custom Event 3 Data" />
+			</tags>
+		</event>
+		<event id="248" description="Consumption">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="249" description="Histogram">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="250" description="Accident Analysis">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="251" description="Telemetry">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="252" description="BLE Device Data">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="255" description="Scope Debug">
+			<tags>
+				<tag id="52" description="Custom Event 3 Data" />
+				<tag id="53" description="Scope Debug" />
+			</tags>
+		</event>
+	</events>
+</mappings>

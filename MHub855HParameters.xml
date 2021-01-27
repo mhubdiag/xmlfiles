@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="6" unitType="MHub855H" created="2021-01-27T10:10:29+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="6" unitType="MHub855H" created="2021-01-27T12:54:10+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="2" level="10" status="0" datatype="Word" address="256" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
@@ -12102,6 +12102,79 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 		</Category>
 	</Categories>
 	<Groups>
+		<Group grpName="Accident Detection">
+			<grpDescription>
+				Group to configure accident detection and reporting settings
+			</grpDescription>
+			<grpValues>
+				<grpValue grpValueName="Disable">
+					<grpValueDescription>
+						This set of parameters disables accident detection on the MHub
+					</grpValueDescription>
+					<grpParameterValues>
+						<grpParameterValue parID="1311" value="1" display="0" />
+						<grpParameterValue parID="1359" value="0" display="0" />
+						<grpParameterValue parID="902" value="75" display="0" />
+						<grpParameterValue parID="903" value="75" display="0" />
+						<grpParameterValue parID="1557" value="3" display="0" />
+						<grpParameterValue parID="1738" value="1" display="0" />
+						<grpParameterValue parID="1796" value="95" display="0" />
+						<grpParameterValue parID="1797" value="50" display="0" />
+						<grpParameterValue parID="1798" value="10" display="0" />
+						<grpParameterValue parID="1595" value="0" display="0" />
+						<grpParameterValue parID="1597" value="200" display="0" />
+						<grpParameterValue parID="1598" value="200" display="0" />
+						<grpParameterValue parID="1759" value="1" display="0" />
+						<grpParameterValue parID="1760" value="1" display="0" />
+						<grpParameterValue parID="1764" value="0" display="0" />
+						<grpParameterValue parID="1625" value="0" display="0" />
+						<grpParameterValue parID="1671" value="0" display="0" />
+						<grpParameterValue parID="1302" value="40" display="0" />
+						<grpParameterValue parID="1303" value="60" display="0" />
+						<grpParameterValue parID="1755" value="0" display="0" />
+						<grpParameterValue parID="1775" value="0" display="0" />
+						<grpParameterValue parID="1776" value="0" display="0" />
+						<grpParameterValue parID="1795" value="0" display="0" />
+						<grpParameterValue parID="1291" value="0" display="0" />
+						<grpParameterValue parID="1559" value="0" display="0" />
+						<grpParameterValue parID="1304" value="0" display="0" />
+					</grpParameterValues>
+				</grpValue>
+				<grpValue grpValueName="Standard Settings">
+					<grpValueDescription>
+						This set of parameters configure the MHub for accident detection with standard values for all detection parameters. It also enables the journey log and specific accident related events. Data streaming is enabled to automatically stream any incident related data to MProfiler for offline analysis.
+					</grpValueDescription>
+					<grpParameterValues>
+						<grpParameterValue parID="1311" value="1" display="0" />
+						<grpParameterValue parID="1359" value="0" display="0" />
+						<grpParameterValue parID="902" value="75" display="0" />
+						<grpParameterValue parID="903" value="75" display="0" />
+						<grpParameterValue parID="1557" value="3" display="0" />
+						<grpParameterValue parID="1738" value="1" display="0" />
+						<grpParameterValue parID="1796" value="95" display="0" />
+						<grpParameterValue parID="1797" value="50" display="0" />
+						<grpParameterValue parID="1798" value="10" display="0" />
+						<grpParameterValue parID="1595" value="0" display="0" />
+						<grpParameterValue parID="1597" value="200" display="0" />
+						<grpParameterValue parID="1598" value="200" display="0" />
+						<grpParameterValue parID="1759" value="1" display="0" />
+						<grpParameterValue parID="1760" value="1" display="0" />
+						<grpParameterValue parID="1764" value="0" display="0" />
+						<grpParameterValue parID="1625" value="1" display="0" />
+						<grpParameterValue parID="1671" value="1" display="0" />
+						<grpParameterValue parID="1302" value="40" display="0" />
+						<grpParameterValue parID="1303" value="60" display="0" />
+						<grpParameterValue parID="1755" value="1" display="0" />
+						<grpParameterValue parID="1775" value="1" display="0" />
+						<grpParameterValue parID="1776" value="0" display="0" />
+						<grpParameterValue parID="1795" value="1" display="0" />
+						<grpParameterValue parID="1291" value="0" display="0" />
+						<grpParameterValue parID="1559" value="247" display="0" />
+						<grpParameterValue parID="1304" value="247" display="0" />
+					</grpParameterValues>
+				</grpValue>
+			</grpValues>
+		</Group>
 		<Group grpName="Addon Devices">
 			<grpDescription>
 				Group to configure the auxiliary port

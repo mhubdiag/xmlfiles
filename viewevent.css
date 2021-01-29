@@ -1,0 +1,41 @@
+body {
+    font-family: arial, helvetica, sans-serif;
+}
+
+
+Table.heading {
+    background-color: #183CE6;
+}
+
+
+Table {
+    font-size: 14px;
+    background-color: #A4B6F6;
+}
+
+TH {
+    background-color: #183CE6;
+    color: yellow;
+}
+
+TH.sub {
+    font-size: 13px;
+    font-weight:normal;
+    background-color: #4973E6;
+    color: yellow;
+    text-align:left;
+}
+
+
+TD.value {
+    background-color: LightYellow;
+    font-weight: Normal;
+    font-size: 12px;
+    border: 1px solid #183CE6;
+    padding: 0px 2px 0px 2px;
+}
+
+
+TD.heading {
+    font-weight: Bold;
+}

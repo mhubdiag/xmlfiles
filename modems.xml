@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modems>
+   <modem name="Wavecom Modem">
+      <sections>
+         <section name="Datacall">
+            <statemachines>
+               <statemachine name="Connect">
+                  <state name="RESET_MODEM" active="True" skipto="ECHO_OFF">
+                     <description>Reset the modem</description>
+                     <command timeout="3" retries="3">AT</command>
+                     <responses>
+                        <response nextstate="ECHO_OFF" description="OK">OK</response> </responses>
+                  </state>
+                  <state name="ECHO_OFF" active="True" skipto="DATA_CARRIER">
+                     <description>Set Echo Off</description>
+                     <command timeout="3" retries="3">ATE0</command>
+                     <responses>
+                        <response nextstate="DATA_CARRIER" description="Echo changed to OFF">OK</response>
+                     </responses>
+                  </state>
+                  <state name="DATA_CARRIER" active="True" skipto="DIAL">
+                     <description>Select Data Carrier</description>
+                     <command timeout="3" retries="3">AT+CBST=7,0,0</command>
+                     <responses>
+                        <response nextstate="DIAL" description="Data Carrier set">OK</response>
+                        <response nextstate="ERROR" description="Could not set the data carrier">ERROR</response>
+                     </responses>
+                  </state>
+                  <state name="DIAL" active="True" skipto="DONE">
+                     <description>Dial the number</description>
+                     <command timeout="120" retries="0">ATD</command>
+                     <responses>
+                        <response nextstate="DONE" description="Connected to remote party">CONNECT</response>
+                        <response nextstate="ERROR" description="No Carrier Available">NO CARRIER</response>
+                        <response nextstate="ERROR" description="The Line is busy">BUSY</response>
+                        <response nextstate="ERROR" description="No Answer by remote">NO ANSWER</response>
+                     </responses>
+                  </state>
+                  <state name="ERROR" active="True" skipto="">
+                     <description>An error occured</description>
+                  </state>
+                  <state name="DONE" active="True" skipto="">
+                     <description>Done</description>
+                  </state>
+               </statemachine>
+               <statemachine name="Disconnect">
+                  <state name="COMMAND_MODE" active="True" skipto="HANG_UP_CALL">
+                     <description>Put modem in command mode</description>
+                     <command timeout="10" retries="3">+++</command>
+                     <responses>
+                        <response nextstate="HANG_UP_CALL" description="Modem now in command mode">OK</response>
+                     </responses>
+                  </state>
+                  <state name="HANG_UP_CALL" active="True" skipto="ECHO_ON">
+                     <description>Hang-up Call</description>
+                     <command timeout="5" retries="1">ATH</command>
+                     <responses>
+                        <response nextstate="ECHO_ON" description="Echo changed to OFF">OK</response>
+                        <response nextstate="ERROR" description="Could not cancel call">NO CARRIER</response>
+                     </responses>
+                  </state>
+                  <state name="ECHO_ON" active="True" skipto="DONE">
+                     <description>Set echo ON</description>
+                     <command timeout="3" retries="3">ATE1</command>
+                     <responses>
+                        <response nextstate="DONE" description="Echo set to ON">OK</response>
+                     </responses>
+                  </state>
+                  <state name="ERROR" active="True" skipto="">
+                     <description>An error occured</description>
+                  </state>
+                  <state name="DONE" active="True" skipto="">
+                     <description>Done</description>
+                  </state>
+               </statemachine>
+            </statemachines>
+         </section>
+         <section name="SMS">
+            <statemachines>
+               <statemachine name="Initialize">
+                  <state name="RESET_MODEM" active="True" skipto="ECHO_OFF">
+                     <description>Reset the modem</description>
+                     <command timeout="3" retries="3">ATZ</command>
+                     <responses>
+                        <response nextstate="ECHO_OFF" description="Modem Reset OK">OK</response>
+                     </responses>
+                  </state>
+                  <state name="ECHO_OFF" active="True" skipto="MODEM_TYPE">
+                     <description>Set Echo Off</description>
+                     <command timeout="3" retries="3">ATE0</command>
+                     <responses>
+                        <response nextstate="MODEM_TYPE" description="Echo changed to OFF">OK</response>
+                     </responses>
+                  </state>
+                  <state name="MODEM_TYPE" active="True" skipto="ERROR_MODE">
+                     <description>Read modem type</description>
+                     <command timeout="3" retries="3">AT+CGMI</command>
+                     <responses>
+                        <response nextstate="ERROR_MODE" description="OK">OK</response>
+                     </responses>
+                  </state>
+                  <state name="ERROR_MODE" active="True" skipto="SET_SMSC">
+                     <description>Set Error mode to verbose</description>
+                     <command timeout="3" retries="0">AT+CMEE=1</command>
+                     <responses>
+                        <response nextstate="SET_SMSC" description="OK">OK</response> </responses>
+                  </state>
+                  <state name="SET_SMSC" active="True" skipto="PDU_MODE">
+                     <description>Set the SMSC</description>
+                     <command timeout="3" retries="0">AT+CSCA=[SMSC]</command>
+                     <responses>
+                        <response nextstate="PDU_MODE" description="OK">OK</response>
+                     </responses>
+                  </state>
+                  <state name="PDU_MODE" active="True" skipto="SET_REG_MODE">
+                     <description>Change to PDU mode</description>
+                     <command timeout="3" retries="0">AT+CMGF=0</command>
+                     <responses>
+                        <response nextstate="SET_REG_MODE" description="OK">OK</response>
+                     </responses>
+                  </state>
+                  <state name="SET_REG_MODE" active="True" skipto="NETWORK_REG">
+                     <description>Set Registration info to unsolicited</description>
+                     <command timeout="3" retries="0">AT+CREG=1</command>
+                     <responses>
+                        <response nextstate="NETWORK_REG" description="OK">OK</response>
+                     </responses>
+                  </state>
+                  <state name="NETWORK_REG" active="True" skipto="DONE">
+                     <description>Get Network Registration</description>
+                     <command timeout="10" retries="0">AT+CREG?</command>
+                     <responses>
+                        <response nextstate="DONE" description="OK">+CREG: 1,1</response>
+                        <response nextstate="DONE" description="OK - Roaming">+CREG: 1,5</response>
+                        <response nextstate="ERROR" description="Not registered on the network">+CREG: 1,0</response>
+                     </responses>
+                  </state>
+                  <state name="ERROR" active="True" skipto="">
+                     <description>An error occured</description>
+                  </state>
+                  <state name="DONE" active="True" skipto="">
+                     <description>Done</description>
+                  </state>
+               </statemachine>
+               <statemachine name="Message Count">
+                  <state name="MESSAGE_COUNT" active="True" skipto="DONE">
+                     <description>Get Message Count</description>
+                     <command timeout="3" retries="3">AT+CPMS?</command>
+                     <responses>
+                        <response nextstate="DONE" description="OK">+CPMS:</response>
+                     </responses>
+                  </state>
+                  <state name="ERROR" active="True" skipto="">
+                     <description>An error occured</description>
+                  </state>
+                  <state name="DONE" active="True" skipto="">
+                     <description>Done</description>
+                  </state>
+               </statemachine>
+               <statemachine name="Message Read">
+                  <state name="MESSAGE_READ" active="True" skipto="DONE">
+                     <description>Read Message</description>
+                     <command timeout="10" retries="3">AT+CMGR=[MsgNr]</command>
+                     <responses>
+                        <response nextstate="DONE" description="OK">OK</response>
+                        <response nextstate="ERROR" description="Message Read Failure">CMS ERROR</response>
+                     </responses>
+                  </state>
+                  <state name="ERROR" active="True" skipto="">
+                     <description>An error occured</description>
+                  </state>
+                  <state name="DONE" active="True" skipto="">
+                     <description>Done</description>
+                  </state>
+               </statemachine>
+               <statemachine name="Message Delete">
+                  <state name="MESSAGE_DELETE" active="True" skipto="DONE">
+                     <description>Delete Message</description>
+                     <command timeout="10" retries="3">AT+CMGD=[MsgNr]</command>
+                     <responses>
+                        <response nextstate="DONE" description="OK">OK</response>
+                        <response nextstate="ERROR" description="Message delete Failure">CMS ERROR</response>
+                     </responses>
+                  </state>
+                  <state name="ERROR" active="True" skipto="">
+                     <description>An error occured</description>
+                  </state>
+                  <state name="DONE" active="True" skipto="">
+                     <description>Done</description>
+                  </state>
+               </statemachine>
+               <statemachine name="Message Send">
+                  <state name="MESSAGE_SEND_CMD" active="True" skipto="MESSAGE_SEND">
+                     <description>Send Message - Command</description>
+                     <command timeout="10" retries="3">AT+CMGS=[SMSLen]</command>
+                     <responses>
+                     </responses>
+                  </state>
+                  <state name="MESSAGE_SEND" active="True" skipto="DONE">
+                     <description>Send Message</description>
+                     <command timeout="10" retries="3">[SMStoSend]</command>
+                     <responses>
+                        <response nextstate="DONE" description="OK">OK</response>
+                        <response nextstate="ERROR" description="Message sent Failure">CMS ERROR</response>
+                     </responses>
+                  </state>
+                  <state name="ERROR" active="True" skipto="">
+                     <description>An error occured</description>
+                  </state>
+                  <state name="DONE" active="True" skipto="">
+                     <description>Done</description>
+                  </state>
+               </statemachine>
+            </statemachines>
+         </section>
+      </sections>
+   </modem>
+</modems>

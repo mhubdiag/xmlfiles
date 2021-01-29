@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="9" unitType="MHub846Ext" created="2021-01-27T12:54:10+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="9" unitType="MHub846Ext" created="2021-01-29T10:19:57+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="170" level="10" status="0" datatype="Byte" address="430" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
@@ -560,7 +560,7 @@ NOTE: This is necessary to recover from some errors"</parNotes>
 			<grpValues>
 				<grpValue grpValueName="Card Reader">
 					<grpValueDescription>
-						Settings specific to the HID Magstripe Card Reader&lt;hr /&gt;&lt;table&gt;&lt;tr&gt;&lt;th colspan=&quot;2&quot;&gt;Specifications&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;sub&quot;&gt;Manufacturer&lt;/td&gt;&lt;td class=&quot;value&quot;&gt;HID Global&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;sub&quot;&gt;Interface&lt;/td&gt;&lt;td class=&quot;value&quot;&gt;Serial&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br /&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://wiki.scopetechnology.com/index.php/MHub_Geofence_Implementation#Loading_Geofences_onto_a_MHub&quot;&gt;Test Link&lt;/a&gt;
+						Settings specific to the HID Magstripe Card Reader&lt;hr /&gt;&lt;table&gt;&lt;tr&gt;&lt;th colspan=&quot;2&quot;&gt;Specifications&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;sub&quot;&gt;Manufacturer&lt;/td&gt;&lt;td class=&quot;value&quot;&gt;HID Global&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;sub&quot;&gt;Interface&lt;/td&gt;&lt;td class=&quot;value&quot;&gt;Serial&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 					</grpValueDescription>
 					<grpParameterValues>
 						<grpParameterValue parID="868" value="13" display="0" />

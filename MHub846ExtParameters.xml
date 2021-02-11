@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="9" unitType="MHub846Ext" created="2021-01-29T10:19:57+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="9" unitType="MHub846Ext" created="2021-02-11T09:22:47+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="170" level="10" status="0" datatype="Byte" address="430" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
@@ -553,171 +553,183 @@ NOTE: This is necessary to recover from some errors"</parNotes>
 		</Category>
 	</Categories>
 	<Groups>
-		<Group grpName="Addon Devices">
+		<Group grpName="Addon Devices" isDefault="0">
 			<grpDescription>
 				Group to configure the auxiliary port
 			</grpDescription>
 			<grpValues>
-				<grpValue grpValueName="Card Reader">
+				<grpValue grpValueName="Card Reader - Serial" isDefault="0">
 					<grpValueDescription>
-						Settings specific to the HID Magstripe Card Reader&lt;hr /&gt;&lt;table&gt;&lt;tr&gt;&lt;th colspan=&quot;2&quot;&gt;Specifications&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;sub&quot;&gt;Manufacturer&lt;/td&gt;&lt;td class=&quot;value&quot;&gt;HID Global&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;sub&quot;&gt;Interface&lt;/td&gt;&lt;td class=&quot;value&quot;&gt;Serial&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+						Settings specific to the HID Magstripe Card Reader&lt;hr /&gt;&lt;table&gt;&lt;tr&gt;&lt;th colspan=&quot;2&quot;&gt;Specifications&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;sub&quot;&gt;Manufacturer&lt;/td&gt;&lt;td class=&quot;value&quot;&gt;HID Global&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;sub&quot;&gt;Interface&lt;/td&gt;&lt;td class=&quot;value&quot;&gt;Serial&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br /&gt;
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="868" value="13" display="0" />
-						<grpParameterValue parID="1019" value="9600" display="0" />
+						<grpParameterValue parID="868" value="13" display="0" ovr="0" />
+						<grpParameterValue parID="1019" value="9600" display="0" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
-				<grpValue grpValueName="Standard Scope">
+				<grpValue grpValueName="No Serial Add-on device" isDefault="0">
 					<grpValueDescription>
-						Standard Scope
+						Auxiliary port is configured as a standard serial port at a baud-rate of 115200 with no add-on device connected to it
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="1019" value="115200" display="0" />
-						<grpParameterValue parID="868" value="0" display="0" />
+						<grpParameterValue parID="1019" value="115200" display="0" ovr="1" />
+						<grpParameterValue parID="868" value="0" display="0" ovr="1" />
 					</grpParameterValues>
 				</grpValue>
-				<grpValue grpValueName="UL202 Fuel Level Probe">
+				<grpValue grpValueName="UL202 Fuel Level Probe - Serial" isDefault="0">
 					<grpValueDescription>
 						UL202 Fuel Level Probe
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="1019" value="9600" display="0" />
-						<grpParameterValue parID="868" value="35" display="0" />
+						<grpParameterValue parID="1019" value="9600" display="0" ovr="0" />
+						<grpParameterValue parID="868" value="35" display="0" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
 			</grpValues>
 		</Group>
-		<Group grpName="CAN Bus">
+		<Group grpName="CAN Bus" isDefault="0">
 			<grpDescription>
 				Set up CAN functionality
 			</grpDescription>
 			<grpValues>
-				<grpValue grpValueName="846 Extender J1939 250kbps Active">
+				<grpValue grpValueName="846 Extender J1939 250kbps Active" isDefault="0">
 					<grpValueDescription>
 						Configures J1939 250kbps ACTIVE on the MHub846 Extender
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="853" value="1" display="0" />
-						<grpParameterValue parID="976" value="1" display="0" />
-						<grpParameterValue parID="1277" value="0" display="0" />
-						<grpParameterValue parID="1278" value="1" display="0" />
-						<grpParameterValue parID="1307" value="0" display="0" />
-						<grpParameterValue parID="1700" value="0" display="0" />
-						<grpParameterValue parID="1702" value="0" display="0" />
-						<grpParameterValue parID="1714" value="0" display="0" />
-						<grpParameterValue parID="1707" value="0" display="0" />
-						<grpParameterValue parID="1715" value="0" display="0" />
+						<grpParameterValue parID="853" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="976" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1277" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1278" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1307" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1700" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1702" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1714" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1707" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1715" value="0" display="0" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
-				<grpValue grpValueName="846 Extender J1939 250kbps Passive">
+				<grpValue grpValueName="846 Extender J1939 250kbps Passive" isDefault="0">
 					<grpValueDescription>
 						Configures the CAN controller on the MHub846 Extender
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="853" value="1" display="0" />
-						<grpParameterValue parID="976" value="0" display="0" />
-						<grpParameterValue parID="1277" value="0" display="0" />
-						<grpParameterValue parID="1278" value="1" display="0" />
-						<grpParameterValue parID="1307" value="0" display="0" />
-						<grpParameterValue parID="1700" value="0" display="0" />
-						<grpParameterValue parID="1702" value="0" display="0" />
-						<grpParameterValue parID="1714" value="0" display="0" />
-						<grpParameterValue parID="1707" value="0" display="0" />
-						<grpParameterValue parID="1715" value="0" display="0" />
+						<grpParameterValue parID="853" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="976" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1277" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1278" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1307" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1700" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1702" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1714" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1707" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1715" value="0" display="0" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
-				<grpValue grpValueName="846 Extender J1939 500kbps Active">
+				<grpValue grpValueName="846 Extender J1939 500kbps Active" isDefault="0">
 					<grpValueDescription>
 						Configures the CAN controller on the MHub846 Extender
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="853" value="1" display="0" />
-						<grpParameterValue parID="976" value="1" display="0" />
-						<grpParameterValue parID="1277" value="0" display="0" />
-						<grpParameterValue parID="1278" value="1" display="0" />
-						<grpParameterValue parID="1307" value="1" display="0" />
-						<grpParameterValue parID="1700" value="0" display="0" />
-						<grpParameterValue parID="1702" value="0" display="0" />
-						<grpParameterValue parID="1714" value="0" display="0" />
-						<grpParameterValue parID="1707" value="0" display="0" />
-						<grpParameterValue parID="1715" value="0" display="0" />
+						<grpParameterValue parID="853" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="976" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1277" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1278" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1307" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1700" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1702" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1714" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1707" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1715" value="0" display="0" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
-				<grpValue grpValueName="846 Extender J1939 500kbps Passive">
+				<grpValue grpValueName="846 Extender J1939 500kbps Passive" isDefault="0">
 					<grpValueDescription>
 						Configures the CAN controller on the MHub846 Extender
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="853" value="1" display="0" />
-						<grpParameterValue parID="976" value="0" display="0" />
-						<grpParameterValue parID="1277" value="0" display="0" />
-						<grpParameterValue parID="1278" value="1" display="0" />
-						<grpParameterValue parID="1307" value="1" display="0" />
-						<grpParameterValue parID="1700" value="0" display="0" />
-						<grpParameterValue parID="1702" value="0" display="0" />
-						<grpParameterValue parID="1714" value="0" display="0" />
-						<grpParameterValue parID="1707" value="0" display="0" />
-						<grpParameterValue parID="1715" value="0" display="0" />
+						<grpParameterValue parID="853" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="976" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1277" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1278" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1307" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1700" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1702" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1714" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1707" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1715" value="0" display="0" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
-				<grpValue grpValueName="Extender OBD">
+				<grpValue grpValueName="Extender OBD" isDefault="0">
 					<grpValueDescription>
 						Configures the CAN controller on the MHub846 Extender
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="853" value="0" display="0" />
-						<grpParameterValue parID="976" value="0" display="0" />
-						<grpParameterValue parID="1277" value="0" display="0" />
-						<grpParameterValue parID="1278" value="1" display="0" />
-						<grpParameterValue parID="1307" value="0" display="0" />
-						<grpParameterValue parID="1700" value="0" display="0" />
-						<grpParameterValue parID="1702" value="0" display="0" />
-						<grpParameterValue parID="1714" value="0" display="0" />
-						<grpParameterValue parID="1707" value="0" display="0" />
-						<grpParameterValue parID="1715" value="0" display="0" />
+						<grpParameterValue parID="853" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="976" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1277" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1278" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1307" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1700" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1702" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1714" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1707" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1715" value="0" display="0" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
 			</grpValues>
 		</Group>
-		<Group grpName="Debugs">
+		<Group grpName="Debugs" isDefault="0">
 			<grpDescription>
 				Frequently used debug configurations
 			</grpDescription>
 			<grpValues>
-				<grpValue grpValueName="Fuel Module">
+				<grpValue grpValueName="Debugs Disabled" isDefault="0">
+					<grpValueDescription>
+						All debugs disabled
+					</grpValueDescription>
+					<grpParameterValues>
+						<grpParameterValue parID="170" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="239" value="0000000000000000" display="0" ovr="0" />
+						<grpParameterValue parID="171" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="172" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="173" value="0" display="0" ovr="0" />
+					</grpParameterValues>
+				</grpValue>
+				<grpValue grpValueName="Fuel Module" isDefault="0">
 					<grpValueDescription>
 						Fuel Related debugs
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="170" value="255" display="0" />
-						<grpParameterValue parID="239" value="0080204000000024" display="0" />
-						<grpParameterValue parID="171" value="1" display="0" />
-						<grpParameterValue parID="172" value="1" display="0" />
-						<grpParameterValue parID="173" value="1" display="0" />
+						<grpParameterValue parID="170" value="255" display="0" ovr="0" />
+						<grpParameterValue parID="239" value="0080204000000024" display="0" ovr="0" />
+						<grpParameterValue parID="171" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="172" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="173" value="1" display="0" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
-				<grpValue grpValueName="GSM">
+				<grpValue grpValueName="GSM" isDefault="0">
 					<grpValueDescription>
 						GSM related debugs
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="170" value="255" display="0" />
-						<grpParameterValue parID="239" value="0408014000040000" display="0" />
-						<grpParameterValue parID="171" value="1" display="0" />
-						<grpParameterValue parID="172" value="1" display="0" />
-						<grpParameterValue parID="173" value="1" display="0" />
+						<grpParameterValue parID="170" value="255" display="0" ovr="0" />
+						<grpParameterValue parID="239" value="0408014000040000" display="0" ovr="0" />
+						<grpParameterValue parID="171" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="172" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="173" value="1" display="0" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
-				<grpValue grpValueName="VNI / FMS CAN bus">
+				<grpValue grpValueName="VNI / FMS CAN bus" isDefault="0">
 					<grpValueDescription>
 						CAN bus VNI and FMS related 
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="170" value="255" display="0" />
-						<grpParameterValue parID="239" value="0080200000420020" display="0" />
-						<grpParameterValue parID="171" value="1" display="0" />
-						<grpParameterValue parID="172" value="1" display="0" />
-						<grpParameterValue parID="173" value="1" display="0" />
+						<grpParameterValue parID="170" value="255" display="0" ovr="0" />
+						<grpParameterValue parID="239" value="0080200000420020" display="0" ovr="0" />
+						<grpParameterValue parID="171" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="172" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="173" value="1" display="0" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
 			</grpValues>

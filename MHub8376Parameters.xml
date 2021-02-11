@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="14" unitType="MHub8376" created="2021-01-29T10:19:56+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="14" unitType="MHub8376" created="2021-02-11T09:22:46+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="2" level="10" status="0" datatype="Word" address="256" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
@@ -5817,7 +5817,7 @@ None"</parNotes>
 		<Parameter parID="254" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Output4 used for Immobilisation</parName>
+				<parName>Driver Key used for Immobilisation</parName>
 				<parDescription>"Driver Key Immobilisation"</parDescription>
 				<parNotes>"If the driver key is intended to control the immobilizer connection to the vehicle, then this parameter must be set to 1."</parNotes>
 			</parInfo>
@@ -10423,197 +10423,211 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 		</Category>
 	</Categories>
 	<Groups>
-		<Group grpName="Accident Detection">
+		<Group grpName="Accident Detection" isDefault="0">
 			<grpDescription>
 				Group to configure accident detection and reporting settings
 			</grpDescription>
 			<grpValues>
-				<grpValue grpValueName="Disable">
+				<grpValue grpValueName="Disable" isDefault="0">
 					<grpValueDescription>
 						This set of parameters disables accident detection on the MHub
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="1311" value="1" display="0" />
-						<grpParameterValue parID="1359" value="0" display="0" />
-						<grpParameterValue parID="902" value="75" display="0" />
-						<grpParameterValue parID="903" value="75" display="0" />
-						<grpParameterValue parID="1557" value="3" display="0" />
-						<grpParameterValue parID="1738" value="1" display="0" />
-						<grpParameterValue parID="1796" value="95" display="0" />
-						<grpParameterValue parID="1797" value="50" display="0" />
-						<grpParameterValue parID="1798" value="10" display="0" />
-						<grpParameterValue parID="1595" value="0" display="0" />
-						<grpParameterValue parID="1597" value="200" display="0" />
-						<grpParameterValue parID="1598" value="200" display="0" />
-						<grpParameterValue parID="1759" value="1" display="0" />
-						<grpParameterValue parID="1760" value="1" display="0" />
-						<grpParameterValue parID="1764" value="0" display="0" />
-						<grpParameterValue parID="1625" value="0" display="0" />
-						<grpParameterValue parID="1671" value="0" display="0" />
-						<grpParameterValue parID="1302" value="40" display="0" />
-						<grpParameterValue parID="1303" value="60" display="0" />
-						<grpParameterValue parID="1755" value="0" display="0" />
-						<grpParameterValue parID="1775" value="0" display="0" />
-						<grpParameterValue parID="1776" value="0" display="0" />
-						<grpParameterValue parID="1795" value="0" display="0" />
-						<grpParameterValue parID="1291" value="0" display="0" />
-						<grpParameterValue parID="1559" value="0" display="0" />
-						<grpParameterValue parID="1304" value="0" display="0" />
+						<grpParameterValue parID="1311" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1359" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="902" value="75" display="0" ovr="0" />
+						<grpParameterValue parID="903" value="75" display="0" ovr="0" />
+						<grpParameterValue parID="1557" value="3" display="0" ovr="0" />
+						<grpParameterValue parID="1738" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1796" value="95" display="0" ovr="0" />
+						<grpParameterValue parID="1797" value="50" display="0" ovr="0" />
+						<grpParameterValue parID="1798" value="10" display="0" ovr="0" />
+						<grpParameterValue parID="1595" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1597" value="200" display="0" ovr="0" />
+						<grpParameterValue parID="1598" value="200" display="0" ovr="0" />
+						<grpParameterValue parID="1759" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1760" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1764" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1625" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1671" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1302" value="40" display="0" ovr="0" />
+						<grpParameterValue parID="1303" value="60" display="0" ovr="0" />
+						<grpParameterValue parID="1755" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1775" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1776" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1795" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1291" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1559" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1304" value="0" display="0" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
-				<grpValue grpValueName="Standard Settings">
+				<grpValue grpValueName="Standard Settings" isDefault="0">
 					<grpValueDescription>
 						This set of parameters configure the MHub for accident detection with standard values for all detection parameters. It also enables the journey log and specific accident related events. Data streaming is enabled to automatically stream any incident related data to MProfiler for offline analysis.
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="1311" value="1" display="0" />
-						<grpParameterValue parID="1359" value="0" display="0" />
-						<grpParameterValue parID="902" value="75" display="0" />
-						<grpParameterValue parID="903" value="75" display="0" />
-						<grpParameterValue parID="1557" value="3" display="0" />
-						<grpParameterValue parID="1738" value="1" display="0" />
-						<grpParameterValue parID="1796" value="95" display="0" />
-						<grpParameterValue parID="1797" value="50" display="0" />
-						<grpParameterValue parID="1798" value="10" display="0" />
-						<grpParameterValue parID="1595" value="0" display="0" />
-						<grpParameterValue parID="1597" value="200" display="0" />
-						<grpParameterValue parID="1598" value="200" display="0" />
-						<grpParameterValue parID="1759" value="1" display="0" />
-						<grpParameterValue parID="1760" value="1" display="0" />
-						<grpParameterValue parID="1764" value="0" display="0" />
-						<grpParameterValue parID="1625" value="1" display="0" />
-						<grpParameterValue parID="1671" value="1" display="0" />
-						<grpParameterValue parID="1302" value="40" display="0" />
-						<grpParameterValue parID="1303" value="60" display="0" />
-						<grpParameterValue parID="1755" value="1" display="0" />
-						<grpParameterValue parID="1775" value="1" display="0" />
-						<grpParameterValue parID="1776" value="0" display="0" />
-						<grpParameterValue parID="1795" value="1" display="0" />
-						<grpParameterValue parID="1291" value="0" display="0" />
-						<grpParameterValue parID="1559" value="247" display="0" />
-						<grpParameterValue parID="1304" value="247" display="0" />
+						<grpParameterValue parID="1311" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1359" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="902" value="75" display="0" ovr="0" />
+						<grpParameterValue parID="903" value="75" display="0" ovr="0" />
+						<grpParameterValue parID="1557" value="3" display="0" ovr="0" />
+						<grpParameterValue parID="1738" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1796" value="95" display="0" ovr="0" />
+						<grpParameterValue parID="1797" value="50" display="0" ovr="0" />
+						<grpParameterValue parID="1798" value="10" display="0" ovr="0" />
+						<grpParameterValue parID="1595" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1597" value="200" display="0" ovr="0" />
+						<grpParameterValue parID="1598" value="200" display="0" ovr="0" />
+						<grpParameterValue parID="1759" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1760" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1764" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1625" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1671" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1302" value="40" display="0" ovr="0" />
+						<grpParameterValue parID="1303" value="60" display="0" ovr="0" />
+						<grpParameterValue parID="1755" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1775" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1776" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1795" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1291" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1559" value="247" display="0" ovr="0" />
+						<grpParameterValue parID="1304" value="247" display="0" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
 			</grpValues>
 		</Group>
-		<Group grpName="CAN Bus">
+		<Group grpName="CAN Bus" isDefault="0">
 			<grpDescription>
 				Set up CAN functionality
 			</grpDescription>
 			<grpValues>
-				<grpValue grpValueName="Force MAF Calculation -- Absolute Load">
+				<grpValue grpValueName="Force MAF Calculation -- Absolute Load" isDefault="0">
 					<grpValueDescription>
 						Force Maf extrapolation using Absolute Load only
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="1806" value="1" display="1" />
-						<grpParameterValue parID="1820" value="3" display="1" />
+						<grpParameterValue parID="1806" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="1820" value="3" display="1" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
-				<grpValue grpValueName="Force MAF Calculation -- Calculated Load">
+				<grpValue grpValueName="Force MAF Calculation -- Calculated Load" isDefault="0">
 					<grpValueDescription>
 						Force Maf extrapolation using Calculated Load only
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="1806" value="1" display="1" />
-						<grpParameterValue parID="1820" value="2" display="1" />
+						<grpParameterValue parID="1806" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="1820" value="2" display="1" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
-				<grpValue grpValueName="OBD Basic Setup All Parameters">
+				<grpValue grpValueName="OBD Basic Setup All Parameters" isDefault="0">
 					<grpValueDescription>
 						Set OBD2 all parameters requested including Service 3 DTC's 
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="1578" value="1" display="1" />
-						<grpParameterValue parID="853" value="0" display="0" />
-						<grpParameterValue parID="1743" value="1" display="0" />
-						<grpParameterValue parID="1278" value="1" display="1" />
-						<grpParameterValue parID="1277" value="0" display="0" />
-						<grpParameterValue parID="1700" value="0" display="0" />
-						<grpParameterValue parID="1702" value="0" display="0" />
-						<grpParameterValue parID="1707" value="1" display="1" />
-						<grpParameterValue parID="1440" value="1892" display="1" />
-						<grpParameterValue parID="1441" value="218" display="1" />
-						<grpParameterValue parID="1803" value="1" display="0" />
-						<grpParameterValue parID="1442" value="1" display="1" />
+						<grpParameterValue parID="1578" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="853" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1743" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1278" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="1277" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1700" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1702" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1707" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="1440" value="1892" display="1" ovr="0" />
+						<grpParameterValue parID="1441" value="218" display="1" ovr="0" />
+						<grpParameterValue parID="1803" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1442" value="1" display="1" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
-				<grpValue grpValueName="OBD2 Basic Setup MIL, Speed and RPM">
+				<grpValue grpValueName="OBD2 Basic Setup MIL, Speed and RPM" isDefault="0">
 					<grpValueDescription>
 						Set up OBD2 MIL, Speed, RPM and Service 3 DTC's 
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="1578" value="1" display="1" />
-						<grpParameterValue parID="853" value="0" display="0" />
-						<grpParameterValue parID="1743" value="1" display="0" />
-						<grpParameterValue parID="1278" value="1" display="1" />
-						<grpParameterValue parID="1277" value="0" display="0" />
-						<grpParameterValue parID="1700" value="0" display="0" />
-						<grpParameterValue parID="1702" value="0" display="0" />
-						<grpParameterValue parID="1707" value="1" display="1" />
-						<grpParameterValue parID="1440" value="1" display="1" />
-						<grpParameterValue parID="1441" value="24" display="1" />
-						<grpParameterValue parID="1803" value="1" display="0" />
-						<grpParameterValue parID="1442" value="1" display="1" />
+						<grpParameterValue parID="1578" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="853" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1743" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1278" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="1277" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1700" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1702" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1707" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="1440" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="1441" value="24" display="1" ovr="0" />
+						<grpParameterValue parID="1803" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1442" value="1" display="1" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
 			</grpValues>
 		</Group>
-		<Group grpName="Debugs">
+		<Group grpName="Debugs" isDefault="0">
 			<grpDescription>
 				Frequently used debug configurations
 			</grpDescription>
 			<grpValues>
-				<grpValue grpValueName="Fuel Module">
+				<grpValue grpValueName="Debugs Disabled" isDefault="0">
+					<grpValueDescription>
+						All debugs disabled
+					</grpValueDescription>
+					<grpParameterValues>
+						<grpParameterValue parID="170" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="239" value="0000000000000000" display="0" ovr="0" />
+						<grpParameterValue parID="732" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="719" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="171" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="172" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="173" value="0" display="0" ovr="0" />
+					</grpParameterValues>
+				</grpValue>
+				<grpValue grpValueName="Fuel Module" isDefault="0">
 					<grpValueDescription>
 						Fuel Related debugs
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="170" value="255" display="0" />
-						<grpParameterValue parID="239" value="0080204000000024" display="0" />
-						<grpParameterValue parID="732" value="1" display="0" />
-						<grpParameterValue parID="719" value="1" display="0" />
-						<grpParameterValue parID="171" value="1" display="0" />
-						<grpParameterValue parID="172" value="1" display="0" />
-						<grpParameterValue parID="173" value="1" display="0" />
+						<grpParameterValue parID="170" value="255" display="0" ovr="0" />
+						<grpParameterValue parID="239" value="0080204000000024" display="0" ovr="0" />
+						<grpParameterValue parID="732" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="719" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="171" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="172" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="173" value="1" display="0" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
-				<grpValue grpValueName="GSM">
+				<grpValue grpValueName="GSM" isDefault="0">
 					<grpValueDescription>
 						GSM related debugs
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="170" value="255" display="0" />
-						<grpParameterValue parID="239" value="0408014000040000" display="0" />
-						<grpParameterValue parID="732" value="1" display="1" />
-						<grpParameterValue parID="719" value="1" display="0" />
-						<grpParameterValue parID="171" value="1" display="0" />
-						<grpParameterValue parID="172" value="1" display="0" />
-						<grpParameterValue parID="173" value="1" display="0" />
+						<grpParameterValue parID="170" value="255" display="0" ovr="0" />
+						<grpParameterValue parID="239" value="0408014000040000" display="0" ovr="0" />
+						<grpParameterValue parID="732" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="719" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="171" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="172" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="173" value="1" display="0" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
-				<grpValue grpValueName="VNI / FMS CAN bus">
+				<grpValue grpValueName="VNI / FMS CAN bus" isDefault="0">
 					<grpValueDescription>
 						CAN bus VNI and FMS related 
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="170" value="255" display="0" />
-						<grpParameterValue parID="239" value="0080200000420020" display="0" />
-						<grpParameterValue parID="732" value="1" display="1" />
-						<grpParameterValue parID="719" value="1" display="0" />
-						<grpParameterValue parID="171" value="1" display="0" />
-						<grpParameterValue parID="172" value="1" display="0" />
-						<grpParameterValue parID="173" value="1" display="0" />
+						<grpParameterValue parID="170" value="255" display="0" ovr="0" />
+						<grpParameterValue parID="239" value="0080200000420020" display="0" ovr="0" />
+						<grpParameterValue parID="732" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="719" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="171" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="172" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="173" value="1" display="0" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
 			</grpValues>
 		</Group>
-		<Group grpName="Fuel Module">
+		<Group grpName="Fuel Module" isDefault="0">
 			<grpDescription>
 				Consolidated Fuel Module Event Setups
 			</grpDescription>
 			<grpValues>
-				<grpValue grpValueName="OBD-2 Fuel Consumption and Fuel level where engine size is known for Diesel Engine ">
+				<grpValue grpValueName="OBD-2 Fuel Consumption and Fuel level where engine size is known for Diesel Engine " isDefault="0">
 					<grpValueDescription>
 						Use this setup for diesel vehicles when the engine size is accurately known.
 
@@ -10622,22 +10636,22 @@ NB: THIS SETUP CHANGES SOME OBD2/J1979 parameters. Make sure the final configura
 
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="1677" value="247" display="0" />
-						<grpParameterValue parID="1673" value="6" display="1" />
-						<grpParameterValue parID="1674" value="11" display="0" />
-						<grpParameterValue parID="1804" value="2" display="0" />
-						<grpParameterValue parID="1440" value="1829" display="1" />
-						<grpParameterValue parID="1441" value="218" display="1" />
-						<grpParameterValue parID="1578" value="1" display="1" />
-						<grpParameterValue parID="1708" value="0" display="0" />
-						<grpParameterValue parID="1813" value="1000" display="0" />
-						<grpParameterValue parID="1806" value="0" display="1" />
-						<grpParameterValue parID="1814" value="2500" display="0" />
-						<grpParameterValue parID="1820" value="1" display="1" />
-						<grpParameterValue parID="1442" value="1" display="1" />
+						<grpParameterValue parID="1677" value="247" display="0" ovr="0" />
+						<grpParameterValue parID="1673" value="6" display="1" ovr="0" />
+						<grpParameterValue parID="1674" value="11" display="0" ovr="0" />
+						<grpParameterValue parID="1804" value="2" display="0" ovr="0" />
+						<grpParameterValue parID="1440" value="1829" display="1" ovr="0" />
+						<grpParameterValue parID="1441" value="218" display="1" ovr="0" />
+						<grpParameterValue parID="1578" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="1708" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1813" value="1000" display="0" ovr="0" />
+						<grpParameterValue parID="1806" value="0" display="1" ovr="0" />
+						<grpParameterValue parID="1814" value="2500" display="0" ovr="0" />
+						<grpParameterValue parID="1820" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="1442" value="1" display="1" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
-				<grpValue grpValueName="OBD-2 Fuel Consumption and Fuel level where engine size is known for Petrol Engine ">
+				<grpValue grpValueName="OBD-2 Fuel Consumption and Fuel level where engine size is known for Petrol Engine " isDefault="0">
 					<grpValueDescription>
 						Use this when the Engine size of the vehicle is known and the vehicle is a petrol engine
 
@@ -10645,251 +10659,251 @@ This configures the Fuel Module parameters only. It is assumed that there is a w
 NB: THIS SETUP CHANGES SOME OBD2/J1979 parameters. Make sure the final configuration is reviewed and vetted before writing to multiple units.
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="1440" value="1829" display="1" />
-						<grpParameterValue parID="1441" value="218" display="1" />
-						<grpParameterValue parID="1442" value="1" display="1" />
-						<grpParameterValue parID="1578" value="1" display="1" />
-						<grpParameterValue parID="1708" value="0" display="0" />
-						<grpParameterValue parID="1813" value="1000" display="0" />
-						<grpParameterValue parID="1806" value="0" display="1" />
-						<grpParameterValue parID="1814" value="2000" display="0" />
-						<grpParameterValue parID="1820" value="2" display="1" />
-						<grpParameterValue parID="1804" value="1" display="0" />
-						<grpParameterValue parID="1673" value="6" display="1" />
-						<grpParameterValue parID="1674" value="11" display="0" />
-						<grpParameterValue parID="1677" value="247" display="0" />
+						<grpParameterValue parID="1440" value="1829" display="1" ovr="0" />
+						<grpParameterValue parID="1441" value="218" display="1" ovr="0" />
+						<grpParameterValue parID="1442" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="1578" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="1708" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1813" value="1000" display="0" ovr="0" />
+						<grpParameterValue parID="1806" value="0" display="1" ovr="0" />
+						<grpParameterValue parID="1814" value="2000" display="0" ovr="0" />
+						<grpParameterValue parID="1820" value="2" display="1" ovr="0" />
+						<grpParameterValue parID="1804" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1673" value="6" display="1" ovr="0" />
+						<grpParameterValue parID="1674" value="11" display="0" ovr="0" />
+						<grpParameterValue parID="1677" value="247" display="0" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
-				<grpValue grpValueName="OBD-2 Fuel Consumption from MAF and Fuel Level GENERIC">
+				<grpValue grpValueName="OBD-2 Fuel Consumption from MAF and Fuel Level GENERIC" isDefault="0">
 					<grpValueDescription>
 						This configures the Fuel Module parameters only. It is assumed that there is a working OBD-2 configuration already in place.
 NB: THIS SETUP CHANGES SOME OBD2/J1979 parameters. Make sure the final configuration is reviewed and vetted before writing to multiple units.
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="1677" value="247" display="0" />
-						<grpParameterValue parID="1673" value="6" display="1" />
-						<grpParameterValue parID="1674" value="11" display="0" />
-						<grpParameterValue parID="1804" value="1" display="0" />
-						<grpParameterValue parID="1440" value="1289" display="1" />
-						<grpParameterValue parID="1441" value="218" display="1" />
-						<grpParameterValue parID="1442" value="1" display="1" />
-						<grpParameterValue parID="1578" value="1" display="1" />
-						<grpParameterValue parID="1708" value="0" display="0" />
-						<grpParameterValue parID="1813" value="1000" display="0" />
-						<grpParameterValue parID="1806" value="0" display="1" />
-						<grpParameterValue parID="1814" value="2000" display="0" />
-						<grpParameterValue parID="1820" value="2" display="1" />
+						<grpParameterValue parID="1677" value="247" display="0" ovr="0" />
+						<grpParameterValue parID="1673" value="6" display="1" ovr="0" />
+						<grpParameterValue parID="1674" value="11" display="0" ovr="0" />
+						<grpParameterValue parID="1804" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1440" value="1289" display="1" ovr="0" />
+						<grpParameterValue parID="1441" value="218" display="1" ovr="0" />
+						<grpParameterValue parID="1442" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="1578" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="1708" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1813" value="1000" display="0" ovr="0" />
+						<grpParameterValue parID="1806" value="0" display="1" ovr="0" />
+						<grpParameterValue parID="1814" value="2000" display="0" ovr="0" />
+						<grpParameterValue parID="1820" value="2" display="1" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
 			</grpValues>
 		</Group>
-		<Group grpName="Ignition">
+		<Group grpName="Ignition" isDefault="0">
 			<grpDescription>
 				Group to set Ignition specific parameters
 			</grpDescription>
 			<grpValues>
-				<grpValue grpValueName="12V Vehicle">
+				<grpValue grpValueName="12V Vehicle" isDefault="0">
 					<grpValueDescription>
 						Ignition settings for 12V vehicle using Mains Voltage as one of the sources
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="818" value="0" display="0" />
-						<grpParameterValue parID="1432" value="1" display="0" />
-						<grpParameterValue parID="1427" value="0" display="0" />
-						<grpParameterValue parID="1697" value="0" display="0" />
-						<grpParameterValue parID="1428" value="0" display="0" />
-						<grpParameterValue parID="1429" value="0" display="0" />
-						<grpParameterValue parID="1430" value="0" display="0" />
-						<grpParameterValue parID="125" value="10" display="1" />
-						<grpParameterValue parID="126" value="10" display="1" />
-						<grpParameterValue parID="1582" value="0" display="0" />
-						<grpParameterValue parID="1341" value="128" display="1" />
-						<grpParameterValue parID="823" value="131" display="1" />
-						<grpParameterValue parID="1353" value="1220" display="1" />
+						<grpParameterValue parID="818" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1432" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1427" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1697" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1428" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1429" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1430" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="125" value="10" display="1" ovr="0" />
+						<grpParameterValue parID="126" value="10" display="1" ovr="0" />
+						<grpParameterValue parID="1582" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1341" value="128" display="1" ovr="0" />
+						<grpParameterValue parID="823" value="131" display="1" ovr="0" />
+						<grpParameterValue parID="1353" value="1220" display="1" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
-				<grpValue grpValueName="24V Vehicle">
+				<grpValue grpValueName="24V Vehicle" isDefault="0">
 					<grpValueDescription>
 						Ignition settings for 24V vehicle using Mains Voltage as one of the sources
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="818" value="0" display="0" />
-						<grpParameterValue parID="1432" value="1" display="0" />
-						<grpParameterValue parID="1427" value="0" display="0" />
-						<grpParameterValue parID="1697" value="0" display="0" />
-						<grpParameterValue parID="1428" value="0" display="0" />
-						<grpParameterValue parID="1429" value="0" display="0" />
-						<grpParameterValue parID="1430" value="0" display="0" />
-						<grpParameterValue parID="125" value="10" display="1" />
-						<grpParameterValue parID="126" value="10" display="1" />
-						<grpParameterValue parID="1582" value="100" display="0" />
-						<grpParameterValue parID="1341" value="148" display="1" />
-						<grpParameterValue parID="823" value="151" display="1" />
-						<grpParameterValue parID="1353" value="1420" display="1" />
+						<grpParameterValue parID="818" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1432" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1427" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1697" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1428" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1429" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1430" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="125" value="10" display="1" ovr="0" />
+						<grpParameterValue parID="126" value="10" display="1" ovr="0" />
+						<grpParameterValue parID="1582" value="100" display="0" ovr="0" />
+						<grpParameterValue parID="1341" value="148" display="1" ovr="0" />
+						<grpParameterValue parID="823" value="151" display="1" ovr="0" />
+						<grpParameterValue parID="1353" value="1420" display="1" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
-				<grpValue grpValueName="Ignition Set 3">
+				<grpValue grpValueName="Ignition Set 3" isDefault="0">
 					<grpValueDescription>
 						Parameters to configure the MHub to detect ignition from Mains Voltage, Mains Deviation and Accelerometer
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="818" value="0" display="0" />
-						<grpParameterValue parID="1432" value="0" display="0" />
-						<grpParameterValue parID="1427" value="0" display="0" />
-						<grpParameterValue parID="1697" value="0" display="0" />
-						<grpParameterValue parID="1428" value="0" display="0" />
-						<grpParameterValue parID="1429" value="0" display="0" />
-						<grpParameterValue parID="1430" value="0" display="0" />
-						<grpParameterValue parID="125" value="10" display="1" />
-						<grpParameterValue parID="1421" value="1" display="0" />
-						<grpParameterValue parID="1422" value="1" display="0" />
-						<grpParameterValue parID="1423" value="1" display="0" />
-						<grpParameterValue parID="1424" value="0" display="0" />
-						<grpParameterValue parID="1425" value="0" display="0" />
-						<grpParameterValue parID="1426" value="0" display="0" />
-						<grpParameterValue parID="126" value="90" display="1" />
+						<grpParameterValue parID="818" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1432" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1427" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1697" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1428" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1429" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1430" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="125" value="10" display="1" ovr="0" />
+						<grpParameterValue parID="1421" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1422" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1423" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1424" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1425" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1426" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="126" value="90" display="1" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
-				<grpValue grpValueName="Ignition Set 4">
+				<grpValue grpValueName="Ignition Set 4" isDefault="0">
 					<grpValueDescription>
 						Parameters to configure the MHub to detect ignition from Mains Voltage, Mains Deviation, Accelerometer and GPS Speed
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="818" value="0" display="0" />
-						<grpParameterValue parID="1432" value="0" display="0" />
-						<grpParameterValue parID="1427" value="0" display="0" />
-						<grpParameterValue parID="1697" value="0" display="0" />
-						<grpParameterValue parID="1428" value="0" display="0" />
-						<grpParameterValue parID="1429" value="0" display="0" />
-						<grpParameterValue parID="1430" value="0" display="0" />
-						<grpParameterValue parID="125" value="10" display="1" />
-						<grpParameterValue parID="1421" value="1" display="0" />
-						<grpParameterValue parID="1422" value="1" display="0" />
-						<grpParameterValue parID="1423" value="1" display="0" />
-						<grpParameterValue parID="1424" value="1" display="0" />
-						<grpParameterValue parID="1425" value="0" display="0" />
-						<grpParameterValue parID="1426" value="0" display="0" />
-						<grpParameterValue parID="126" value="90" display="1" />
+						<grpParameterValue parID="818" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1432" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1427" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1697" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1428" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1429" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1430" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="125" value="10" display="1" ovr="0" />
+						<grpParameterValue parID="1421" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1422" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1423" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1424" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1425" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1426" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="126" value="90" display="1" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
-				<grpValue grpValueName="Ignition Set 5">
+				<grpValue grpValueName="Ignition Set 5" isDefault="0">
 					<grpValueDescription>
 						Parameters to configure the MHub to detect ignition from Mains Voltage, Mains Deviation, Accelerometer, OBD Speed and OBD RPM
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="818" value="0" display="0" />
-						<grpParameterValue parID="1432" value="0" display="0" />
-						<grpParameterValue parID="1427" value="0" display="0" />
-						<grpParameterValue parID="1697" value="0" display="0" />
-						<grpParameterValue parID="1428" value="0" display="0" />
-						<grpParameterValue parID="1429" value="0" display="0" />
-						<grpParameterValue parID="1430" value="0" display="0" />
-						<grpParameterValue parID="125" value="10" display="1" />
-						<grpParameterValue parID="1421" value="1" display="0" />
-						<grpParameterValue parID="1422" value="1" display="0" />
-						<grpParameterValue parID="1423" value="1" display="0" />
-						<grpParameterValue parID="1424" value="0" display="0" />
-						<grpParameterValue parID="1425" value="1" display="0" />
-						<grpParameterValue parID="1426" value="1" display="0" />
-						<grpParameterValue parID="126" value="90" display="1" />
+						<grpParameterValue parID="818" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1432" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1427" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1697" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1428" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1429" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1430" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="125" value="10" display="1" ovr="0" />
+						<grpParameterValue parID="1421" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1422" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1423" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1424" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1425" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1426" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="126" value="90" display="1" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
-				<grpValue grpValueName="Trigger Only">
+				<grpValue grpValueName="Trigger Only" isDefault="0">
 					<grpValueDescription>
 						Only sets a the trigger flag as THE ONLY ignition source.
 This is only useful for diagnostics and should not be used in the field.
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="1420" value="0" display="0" />
-						<grpParameterValue parID="1421" value="0" display="0" />
-						<grpParameterValue parID="820" value="0" display="0" />
-						<grpParameterValue parID="1422" value="0" display="0" />
-						<grpParameterValue parID="1432" value="1" display="1" />
-						<grpParameterValue parID="1424" value="0" display="0" />
-						<grpParameterValue parID="1423" value="0" display="0" />
-						<grpParameterValue parID="1425" value="0" display="0" />
-						<grpParameterValue parID="1426" value="0" display="0" />
-						<grpParameterValue parID="1427" value="0" display="0" />
-						<grpParameterValue parID="1428" value="0" display="0" />
-						<grpParameterValue parID="1429" value="1" display="1" />
-						<grpParameterValue parID="1430" value="0" display="0" />
-						<grpParameterValue parID="125" value="2" display="1" />
-						<grpParameterValue parID="126" value="2" display="1" />
+						<grpParameterValue parID="1420" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1421" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="820" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1422" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1432" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="1424" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1423" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1425" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1426" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1427" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1428" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1429" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="1430" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="125" value="2" display="1" ovr="0" />
+						<grpParameterValue parID="126" value="2" display="1" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
 			</grpValues>
 		</Group>
-		<Group grpName="VNI PID Masks">
+		<Group grpName="VNI PID Masks" isDefault="0">
 			<grpDescription>
 				Group to set VNI PID Mask parameters
 			</grpDescription>
 			<grpValues>
-				<grpValue grpValueName="Set 1">
+				<grpValue grpValueName="Set 1" isDefault="0">
 					<grpValueDescription>
 						Enable MIL Status, Engine Speed and Vehicle Speed
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="1707" value="1" display="1" />
-						<grpParameterValue parID="1278" value="1" display="1" />
-						<grpParameterValue parID="1442" value="1" display="1" />
-						<grpParameterValue parID="1441" value="25" display="1" />
-						<grpParameterValue parID="1440" value="0" display="1" />
-						<grpParameterValue parID="1298" value="247" display="1" />
+						<grpParameterValue parID="1707" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="1278" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="1442" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="1441" value="25" display="1" ovr="0" />
+						<grpParameterValue parID="1440" value="0" display="1" ovr="0" />
+						<grpParameterValue parID="1298" value="247" display="1" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
-				<grpValue grpValueName="Set 2">
+				<grpValue grpValueName="Set 2" isDefault="0">
 					<grpValueDescription>
 						Enable MIL Status, Engine Speed, Vehicle Speed and Fuel Level
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="1707" value="1" display="1" />
-						<grpParameterValue parID="1278" value="1" display="1" />
-						<grpParameterValue parID="1442" value="1" display="1" />
-						<grpParameterValue parID="1441" value="25" display="1" />
-						<grpParameterValue parID="1440" value="256" display="1" />
-						<grpParameterValue parID="1298" value="247" display="1" />
-						<grpParameterValue parID="1523" value="1" display="0" />
-						<grpParameterValue parID="1673" value="2" display="1" />
+						<grpParameterValue parID="1707" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="1278" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="1442" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="1441" value="25" display="1" ovr="0" />
+						<grpParameterValue parID="1440" value="256" display="1" ovr="0" />
+						<grpParameterValue parID="1298" value="247" display="1" ovr="0" />
+						<grpParameterValue parID="1523" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1673" value="2" display="1" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
 			</grpValues>
 		</Group>
-		<Group grpName="VNI UDS">
+		<Group grpName="VNI UDS" isDefault="0">
 			<grpDescription>
 				Group to set VNI UDS specific parameters
 			</grpDescription>
 			<grpValues>
-				<grpValue grpValueName="Kia Picanto">
+				<grpValue grpValueName="Kia Picanto" isDefault="0">
 					<grpValueDescription>
 						Enable UDS - Kia Picanto
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="1707" value="1" display="1" />
-						<grpParameterValue parID="1278" value="1" display="1" />
-						<grpParameterValue parID="1732" value="0" display="0" />
-						<grpParameterValue parID="1781" value="1" display="0" />
-						<grpParameterValue parID="1705" value="1" display="0" />
-						<grpParameterValue parID="1706" value="100" display="0" />
-						<grpParameterValue parID="1729" value="0" display="0" />
-						<grpParameterValue parID="1733" value="1" display="0" />
-						<grpParameterValue parID="1298" value="247" display="1" />
-						<grpParameterValue parID="1768" value="KIA_PICANTOxx" display="0" />
+						<grpParameterValue parID="1707" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="1278" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="1732" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1781" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1705" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1706" value="100" display="0" ovr="0" />
+						<grpParameterValue parID="1729" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1733" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1298" value="247" display="1" ovr="0" />
+						<grpParameterValue parID="1768" value="KIA_PICANTOxx" display="0" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
-				<grpValue grpValueName="Toyota Quantum">
+				<grpValue grpValueName="Toyota Quantum" isDefault="0">
 					<grpValueDescription>
 						Enable UDS - Toyota Quantum
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="1707" value="1" display="1" />
-						<grpParameterValue parID="1278" value="1" display="1" />
-						<grpParameterValue parID="1732" value="166" display="0" />
-						<grpParameterValue parID="1781" value="1" display="0" />
-						<grpParameterValue parID="1705" value="1" display="0" />
-						<grpParameterValue parID="1706" value="14" display="0" />
-						<grpParameterValue parID="1729" value="1" display="0" />
-						<grpParameterValue parID="1733" value="1" display="0" />
-						<grpParameterValue parID="1298" value="247" display="1" />
+						<grpParameterValue parID="1707" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="1278" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="1732" value="166" display="0" ovr="0" />
+						<grpParameterValue parID="1781" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1705" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1706" value="14" display="0" ovr="0" />
+						<grpParameterValue parID="1729" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1733" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="1298" value="247" display="1" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
 			</grpValues>

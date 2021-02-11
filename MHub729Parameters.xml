@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="8" unitType="MHub729" created="2021-01-29T10:19:55+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="8" unitType="MHub729" created="2021-02-11T09:22:45+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="2" level="10" status="0" datatype="Word" address="256" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
@@ -5736,7 +5736,7 @@ None"</parNotes>
 		<Parameter parID="254" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Output4 used for Immobilisation</parName>
+				<parName>Driver Key used for Immobilisation</parName>
 				<parDescription>"Driver Key Immobilisation"</parDescription>
 				<parNotes>"If the driver key is intended to control the immobilizer connection to the vehicle, then this parameter must be set to 1."</parNotes>
 			</parInfo>
@@ -11066,56 +11066,70 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 		</Category>
 	</Categories>
 	<Groups>
-		<Group grpName="Debugs">
+		<Group grpName="Debugs" isDefault="0">
 			<grpDescription>
 				Frequently used debug configurations
 			</grpDescription>
 			<grpValues>
-				<grpValue grpValueName="Fuel Module">
+				<grpValue grpValueName="Debugs Disabled" isDefault="0">
+					<grpValueDescription>
+						All debugs disabled
+					</grpValueDescription>
+					<grpParameterValues>
+						<grpParameterValue parID="170" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="239" value="0000000000000000" display="0" ovr="0" />
+						<grpParameterValue parID="732" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="719" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="171" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="172" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="173" value="0" display="0" ovr="0" />
+					</grpParameterValues>
+				</grpValue>
+				<grpValue grpValueName="Fuel Module" isDefault="0">
 					<grpValueDescription>
 						Fuel Related debugs
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="170" value="255" display="0" />
-						<grpParameterValue parID="239" value="0080204000000024" display="0" />
-						<grpParameterValue parID="732" value="1" display="0" />
-						<grpParameterValue parID="719" value="1" display="0" />
-						<grpParameterValue parID="171" value="1" display="0" />
-						<grpParameterValue parID="172" value="1" display="0" />
-						<grpParameterValue parID="173" value="1" display="0" />
+						<grpParameterValue parID="170" value="255" display="0" ovr="0" />
+						<grpParameterValue parID="239" value="0080204000000024" display="0" ovr="0" />
+						<grpParameterValue parID="732" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="719" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="171" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="172" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="173" value="1" display="0" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
-				<grpValue grpValueName="GSM">
+				<grpValue grpValueName="GSM" isDefault="0">
 					<grpValueDescription>
 						GSM related debugs
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="170" value="255" display="0" />
-						<grpParameterValue parID="239" value="0408014000040000" display="0" />
-						<grpParameterValue parID="732" value="1" display="1" />
-						<grpParameterValue parID="719" value="1" display="0" />
-						<grpParameterValue parID="171" value="1" display="0" />
-						<grpParameterValue parID="172" value="1" display="0" />
-						<grpParameterValue parID="173" value="1" display="0" />
+						<grpParameterValue parID="170" value="255" display="0" ovr="0" />
+						<grpParameterValue parID="239" value="0408014000040000" display="0" ovr="0" />
+						<grpParameterValue parID="732" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="719" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="171" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="172" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="173" value="1" display="0" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
-				<grpValue grpValueName="VNI / FMS CAN bus">
+				<grpValue grpValueName="VNI / FMS CAN bus" isDefault="0">
 					<grpValueDescription>
 						CAN bus VNI and FMS related 
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="170" value="255" display="0" />
-						<grpParameterValue parID="239" value="0080200000420020" display="0" />
-						<grpParameterValue parID="732" value="1" display="1" />
-						<grpParameterValue parID="719" value="1" display="0" />
-						<grpParameterValue parID="171" value="1" display="0" />
-						<grpParameterValue parID="172" value="1" display="0" />
-						<grpParameterValue parID="173" value="1" display="0" />
+						<grpParameterValue parID="170" value="255" display="0" ovr="0" />
+						<grpParameterValue parID="239" value="0080200000420020" display="0" ovr="0" />
+						<grpParameterValue parID="732" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="719" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="171" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="172" value="1" display="0" ovr="0" />
+						<grpParameterValue parID="173" value="1" display="0" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
 			</grpValues>
 		</Group>
-		<Group grpName="Ignition">
+		<Group grpName="Ignition" isDefault="0">
 			<grpDescription>
 				Group to set Ignition specific parameters
 			</grpDescription>

@@ -1,4 +1,4 @@
-<MhubParameterSet created="2021-01-27T10:10:33+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2021-02-11T09:22:40+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -1421,7 +1421,7 @@ e.g. AB0123456 78901 23
 			<Help>Vehicle Disablement Delay</Help>
 			<Notes>Vehicle Disablement Delay from request to vehicle disabled in seconds.</Notes>
 		</Parameter>
-		<Parameter name="Output4 used for Immobilisation" level="10" datatype="Bit" address="1981" length="1" bitmask="1" dtu="0">
+		<Parameter name="Driver Key used for Immobilisation" level="10" datatype="Bit" address="1981" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Driver Key Immobilisation</Help>
 			<Notes>If the driver key is intended to control the immobilizer connection to the vehicle, then this parameter must be set to 1.</Notes>
@@ -4962,15 +4962,15 @@ If set to zero then reports will continue indefinitely</Notes>
 			<Help>Ignition Source: Trigger</Help>
 			<Notes>Ignition Source is set to Trigger which is a software controlled ignition source.</Notes>
 		</Parameter>
-		<Parameter name="Ignition Source: Accelerometer" level="5" datatype="Bit" address="1829" length="1" bitmask="64" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Ignition Source: Accelerometer</Help>
-			<Notes>One more possible source of ignition is to use Accelerometer movement. If Accelerometer movement is greater than the value specified in parameter "Accelerometer Ignition On Threshold", the vehicle is moving. If Accelerometer is to be used as ignition, this parameter is set to 1.</Notes>
-		</Parameter>
 		<Parameter name="Ignition Source: Alternate" level="10" datatype="Bit" address="1829" length="1" bitmask="128" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Ignition Source: Alternate</Help>
 			<Notes>Ignition Source Alternate uses new method for ignition. Configure sources with Trip Source Ignition Line etc.</Notes>
+		</Parameter>
+		<Parameter name="Ignition Source: Accelerometer" level="5" datatype="Bit" address="1829" length="1" bitmask="64" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Ignition Source: Accelerometer</Help>
+			<Notes>One more possible source of ignition is to use Accelerometer movement. If Accelerometer movement is greater than the value specified in parameter "Accelerometer Ignition On Threshold", the vehicle is moving. If Accelerometer is to be used as ignition, this parameter is set to 1.</Notes>
 		</Parameter>
 		<Parameter name="Ignition Source from RPM Threshold" level="10" datatype="Byte" address="1830" length="1" bitmask="255" dtu="0">
 			<Values min="1" max="255" default="3" previous="" current="" units="RPM" />

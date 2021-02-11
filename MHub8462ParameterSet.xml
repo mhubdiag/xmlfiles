@@ -1,4 +1,4 @@
-<MhubParameterSet created="2021-01-27T10:10:33+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2021-02-11T09:22:40+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -1392,7 +1392,7 @@ e.g. AB0123456 78901 23
 			<Help>Vehicle Disablement Delay</Help>
 			<Notes>Vehicle Disablement Delay from request to vehicle disabled in seconds.</Notes>
 		</Parameter>
-		<Parameter name="Output4 used for Immobilisation" level="10" datatype="Bit" address="1981" length="1" bitmask="1" dtu="0">
+		<Parameter name="Driver Key used for Immobilisation" level="10" datatype="Bit" address="1981" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Driver Key Immobilisation</Help>
 			<Notes>If the driver key is intended to control the immobilizer connection to the vehicle, then this parameter must be set to 1.</Notes>
@@ -4680,11 +4680,6 @@ If Accelerometer value is greater than this parameter, Accelerometer Ignition fl
 
 Mains Dev. Threshold</Notes>
 		</Parameter>
-		<Parameter name="Trip Source Ignition Line" level="10" datatype="Bit" address="472" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Trip Source Ignition Line </Help>
-			<Notes>Trip Source Ignition Line using ignition input</Notes>
-		</Parameter>
 		<Parameter name="Trip Source GPS Speed" level="10" datatype="Bit" address="472" length="1" bitmask="16" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Trip Source GPS Speed</Help>
@@ -4694,6 +4689,11 @@ Mains Dev. Threshold</Notes>
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Trip Source CANBus</Help>
 			<Notes>Trip Source CANBus if CANBus activity is present ignition on. Most vehicles switch off the Vehicle CANBus outside of trip. Verify in the vehicle before enabling.</Notes>
+		</Parameter>
+		<Parameter name="Trip Source Ignition Line" level="10" datatype="Bit" address="472" length="1" bitmask="1" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Trip Source Ignition Line </Help>
+			<Notes>Trip Source Ignition Line using ignition input</Notes>
 		</Parameter>
 		<Parameter name="Trip Source Mains Voltage" level="10" datatype="Bit" address="472" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />

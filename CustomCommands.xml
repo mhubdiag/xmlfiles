@@ -1,0 +1,318 @@
+<CustomCommands version="2.0">
+    <group name="RTC">
+        <command heading="Set RTC time" description="Set RTC Time to the given time">
+            <module>20</module>
+            <session>0</session>
+            <send cmd="00">
+            	<argument heading="Year" length="1" type="Byte" wantHex="No" />
+                <argument heading="Month" length="1" type="Byte" wantHex="No" />
+                <argument heading="Day" length="1" type="Byte" wantHex="No" />
+            	<argument heading="Hour" length="1" type="Byte" wantHex="No" />
+                <argument heading="Minute" length="1" type="Byte" wantHex="No" />
+                <argument heading="Second" length="1" type="Byte" wantHex="No" />
+            </send>
+            <expect timeout="1000">
+                <response rsp="00" display="Time Sync OK" />
+                <response rsp="FF01" display="GPS does not have UTC Time lock" />
+            </expect>
+        </command>
+        <command heading="Set RTC to GPS" description="Set RTC Time to the GPS Time if GPS has UTC Timelock">
+            <module>20</module>
+            <session>10</session>
+            <send cmd="09">
+            </send>
+            <expect timeout="1000">
+                <response rsp="09" display="Time Sync OK" />
+                <response rsp="FF01" display="GPS does not have UTC Time lock" />
+            </expect>
+        </command>
+    </group>
+    <group name="Setup">
+        <command heading="Factory Reset" description="Reset the box to factory condition - WARNING all configuration would be lost!!!">
+            <module>12</module>
+            <session>0</session>
+            <send cmd="640008">
+            </send>
+            <expect timeout="5000">
+                <response rsp="64" display="Factory Reset Done" />
+                <response rsp="FF01" display="Unknown Command" />
+            </expect>
+        </command>
+        <command heading="Data Flash Reset" description="Reset all the Data Tag and Event Data Tag Configuration back to factory defaults">
+            <module>12</module>
+            <session>0</session>
+            <send cmd="650008">
+            </send>
+            <expect timeout="5000">
+                <response rsp="65" display="Data Flash Reset Done" />
+                <response rsp="FF01" display="Unknown Command" />
+            </expect>
+        </command>
+        <command heading="Zero Odometer" description="Reset the odometer back to 0">
+            <module>12</module>
+            <session>0</session>
+            <send cmd="0800000000">
+            </send>
+            <expect timeout="1000">
+                <response rsp="08" display="Odometer Reset Done" />
+                <response rsp="FF01" display="Unknown Command" />
+            </expect>
+        </command>
+        <command heading="Set Odometer" description="Set the odometer to the given value">
+            <module>12</module>
+            <session>0</session>
+            <send cmd="08">
+                <argument heading="Odometer (meters)" length="4" type="Long" wantHex="No" />
+            </send>
+            <expect timeout="1000">
+                <response rsp="08" display="Odometer Changed" />
+                <response rsp="FF01" display="Unknown Command" />
+            </expect>
+        </command>
+        <command heading="Enable Modem Class Checking" description="Enables the unit to check the class of the modem and change it back to class B if changed">
+            <module>12</module>
+            <session>0</session>
+            <send cmd="025A02010001">
+            </send>
+            <expect timeout="1000">
+                <response rsp="02" display="Parameter Change OK" />
+                <response rsp="FF01" display="Unknown Command" />
+            </expect>
+        </command>
+        <command heading="Set Ignition ON Hours" description="Set the Ignition ON Hours to the given value">
+            <module>12</module>
+            <session>0</session>
+            <send cmd="21">
+                <argument heading="Ignition ON Hours" length="4" type="Long" wantHex="No" />
+            </send>
+            <expect timeout="1000">
+                <response rsp="15" display="Ignition ON Hours Changed" />
+                <response rsp="FF01" display="Unknown Command" />
+            </expect>
+        </command>
+    </group>
+    <group name="Non Volatile Ram">
+        <command heading="Clear Ram" description="Clears all Variables">
+            <module>23</module>
+            <session>0</session>
+            <send cmd="6408">
+            </send>
+            <expect timeout="2000">
+                <response rsp="64" display="Variables Cleared" />
+            </expect>
+        </command>
+    </group>
+    <group name="Event Commands">
+        <command heading="Clear Events" description="Clears all events and resets counters">
+            <module>21</module>
+            <session>0</session>
+            <send cmd="05">
+            </send>
+            <expect timeout="16000">
+                <response rsp="05" display="Events Cleared" />
+            </expect>
+        </command>
+        <command heading="Detain Events" description="Detain unsent events">
+            <module>21</module>
+            <session>0</session>
+            <send cmd="07">
+            </send>
+            <expect timeout="16000">
+                <response rsp="07" display="Events detained" />
+            </expect>
+        </command>
+    </group>
+    <group name="Power">
+        <command heading="Reset Power" description="Power cycles the unit">
+            <module>32</module>
+            <session>0</session>
+            <send cmd="00">
+            </send>
+            <expect timeout="">
+            </expect>
+        </command>
+        <command heading="Power down - No Alarm" description="Clear Wake up alarm and power down unit">
+            <module>32</module>
+            <session>0</session>
+            <send cmd="01">
+            </send>
+            <expect timeout="">
+            </expect>
+        </command>
+        <command heading="Power down - Set Alarm" description="Set Wake up alarm and power down unit">
+            <module>32</module>
+            <session>0</session>
+            <send cmd="02">
+            </send>
+            <expect timeout="">
+            </expect>
+        </command>
+    </group>
+    <group name="Outputs">
+        <command heading="Set Output 1 ON or OFF" description="Change the Output's state to ON or OFF">
+            <module>23</module>
+            <session>0</session>
+            <send cmd="030F">
+            	<argument heading="Output 1 State [0 for OFF, 1 for ON]" length="1" type="Byte" wantHex="No" />
+            </send>
+            <expect timeout="1000">
+                <response rsp="03" display="Output State Change Done" />
+            </expect>
+        </command>
+        <command heading="Set Output 2 ON or OFF" description="Change the Output's state to ON or OFF">
+            <module>23</module>
+            <session>0</session>
+            <send cmd="0310">
+            	<argument heading="Output 2 State [0 for OFF, 1 for ON]" length="1" type="Byte" wantHex="No" />
+            </send>
+            <expect timeout="1000">
+                <response rsp="03" display="Output State Change Done" />
+            </expect>
+        </command>
+        <command heading="Set Output 3 ON or OFF" description="Change the Output's state to ON or OFF">
+            <module>23</module>
+            <session>0</session>
+            <send cmd="0311">
+            	<argument heading="Output 3 State [0 for OFF, 1 for ON]" length="1" type="Byte" wantHex="No" />
+            </send>
+            <expect timeout="1000">
+                <response rsp="03" display="Output State Change Done" />
+            </expect>
+        </command>
+        <command heading="Set Output 4 ON or OFF" description="Change the Output's state to ON or OFF">
+            <module>23</module>
+            <session>0</session>
+            <send cmd="0312">
+            	<argument heading="Output 4 State [0 for OFF, 1 for ON]" length="1" type="Byte" wantHex="No" />
+            </send>
+            <expect timeout="1000">
+                <response rsp="03" display="Output State Change Done" />
+            </expect>
+        </command>
+    </group>
+    <group name="Other">
+        <command heading="Force a Poll Event" description="This would force the unit to send a Poll event">
+            <module>23</module>
+            <session>0</session>
+            <send cmd="033401">
+            </send>
+            <expect timeout="1000">
+                <response rsp="03" display="Poll initiated" />
+            </expect>
+        </command>
+    </group>
+    <group name="Erase">
+        <command heading="Clear All Geofences" description="Clears all geofences of the Unit">
+            <module>31</module>
+            <session>0</session>
+            <send cmd="067233">
+            </send>
+            <expect timeout="16000">
+                <response rsp="06" display="Geofences Cleared" />
+            </expect>
+        </command>
+    </group>
+	<group name="MTB">
+        <command heading="Set Input ON or OFF on MTB" description="Change the Input state to ON or OFF on the Test Box">
+            <module>99</module>
+            <session>0</session>
+            <send cmd="01">
+				<argument heading="Input Number [0 for Ignition or 1 to 5 for Inputs]" length="1" type="Byte" wantHex="No" />
+            	<argument heading="Input State [0 or 1]" length="1" type="Byte" wantHex="No" />
+            </send>
+            <expect timeout="1000">
+                <response rsp="01" display="Input State Change Done" />
+            </expect>
+        </command>
+	</group>
+	<group name="Eng">
+        <command heading="Set DTR ON or OFF" description="Change the DTR state to ON or OFF">
+            <module>254</module>
+            <session>0</session>
+            <send cmd="06030001">				
+            	<argument heading="Input State [0 or 1]" length="1" type="Byte" wantHex="No" />
+            </send>
+            <expect timeout="1000">
+                <response rsp="06" display="Input State Change Done" />
+            </expect>
+        </command>
+        <command heading="Set RTS ON or OFF" description="Change the RTS state to ON or OFF">
+            <module>254</module>
+            <session>0</session>
+            <send cmd="06030401">				
+            	<argument heading="Input State [0 or 1]" length="1" type="Byte" wantHex="No" />
+            </send>
+            <expect timeout="1000">
+                <response rsp="06" display="Input State Change Done" />
+            </expect>
+        </command>
+        <command heading="Get CTS State" description="Get CTS State">
+            <module>254</module>
+            <session>0</session>
+            <send cmd="050303">
+            </send>
+            <expect timeout="1000">
+                <response rsp="05" display="Input State Read" />
+            </expect>
+        </command>
+	</group>
+	<group name="Fuel Level Sensors">
+        <command heading="Send Command" description="Send Command">
+            <module>199</module>
+            <session>0</session>
+            <send cmd="01">				
+            	<argument heading="Command Text" length="0" type="String" wantHex="No" />
+            </send>
+            <expect timeout="1000">
+                <response rsp="01" display="Command Sent" />
+            </expect>
+        </command>
+	</group>
+<group name="BLE Nina">
+        <command heading="Scan for Devices" description="Scan for Devices">
+            <module>80</module>
+            <session>0</session>
+            <send cmd="01">
+            </send>
+            <expect timeout="1000">
+                <response rsp="01" display="Scan Started" />
+            </expect>
+        </command>
+        <command heading="Scan Status" description="Scan Status">
+            <module>80</module>
+            <session>0</session>
+            <send cmd="03">
+            </send>
+            <expect timeout="1000">
+                <response rsp="0301" display="Scanning in Progress" />
+                <response rsp="0300" display="No Scan in Progress" />
+            </expect>
+        </command>
+        <command heading="Add Device" description="Add Device">
+            <module>80</module>
+            <session>0</session>
+            <send cmd="04">
+                <argument heading="RAM(0) or Flash(1)" length="1" type="Byte" wantHex="No" />   
+                <argument heading="Slot (0-9)" length="1" type="Byte" wantHex="No" />
+                   <argument heading="Device Type (0-4)" length="1" type="Byte" wantHex="No" />
+                <argument heading="Device Address" length="12" type="String" wantHex="No" />
+                <argument heading="Device Settings" length="7" type="Byte" wantHex="Yes" />
+            </send>
+            <expect timeout="1000">
+                <response rsp="04" display="Device Added" />
+                <response rsp="FF0401" display="Slot out of Range" />
+                <response rsp="FF0402" display="Unknown Device Type" />
+            </expect>
+        </command>
+		<command heading="Send AT Command" description="Send Command">
+            <module>80</module>
+            <session>0</session>
+            <send cmd="64">				
+            	<argument heading="AT Command Text" length="0" type="String" wantHex="No" />
+            </send>
+            <expect timeout="1000">
+                <response rsp="64" display="Command Sent" />
+            </expect>
+        </command>
+   </group>    
+</CustomCommands>

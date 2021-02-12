@@ -1,0 +1,1409 @@
+<Commands xmlns="http://tempuri.org/XMLFile1.xsd">
+	<commandGroup name="Accident Reconstruction">
+		<unitCommand MHubUnit="81" name="Enable Accident Reconstruction Logging" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Bit" name="Enable Accident Reconstruction Logging" max="1" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="436" length="1" bitmask="1"/>
+			<help>Enable Accident Reconstruction Logging </help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Verify Ignition On" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Bit" name="Verify Ignition On" max="1" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="436" length="1" bitmask="2"/>
+			<help>Only write accident reconstruction records if ignition is ON</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Verify Speed" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Bit" name="Verify Speed" max="1" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="436" length="1" bitmask="4"/>
+			<help>Set this bit to verify that the selected speed of the vehicle is greater than required minimum</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Minimum Required Speed" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Minimum Required Speed" max="255" min="0" dvalue="10" uvalue="" mvalue="" value="" />
+			<dataLocation address="437" length="1"/>
+			<help>Minimum Speed at which any accident reconstruction records will be written if this option is selected</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Accident Reconstruction Log" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Accident Reconstruction Log" max="2" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="438" length="1"/>
+			<help>Use Flash 1 or Data Flash Card for the Accident Reconstruction Log</help>
+		</unitCommand>
+	</commandGroup>
+	<commandGroup name="Communications">
+		<unitCommand MHubUnit="81" name="SMS Fallback Timer" expectResponse="true" commandType="param" read="10" write="15" modify="10" view="10">
+			<argument ptype="Word" name="SMS Fallback Timer" max="65534" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="256" length="2"/>
+			<help>Fallback Timer for SMS Communications Medium</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="GPRS Fallback Timer" expectResponse="true" commandType="param" read="10" write="15" modify="10" view="10">
+			<argument ptype="Word" name="GPRS Fallback Timer" max="65534" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="258" length="2"/>
+			<help>Fallback Timer for GPRS Communications Medium</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Roaming SMS Fallback Timer" expectResponse="true" commandType="param" read="10" write="15" modify="10" view="10">
+			<argument ptype="Word" name="Roaming SMS Fallback Timer" max="65534" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="260" length="2"/>
+			<help>Fallback Timer for Roaming SMS Communications Medium</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Roaming GPRS Fallback Timer" expectResponse="true" commandType="param" read="10" write="15" modify="10" view="10">
+			<argument ptype="Word" name="Roaming GPRS Fallback Timer" max="65534" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="262" length="2"/>
+			<help>Fallback Timer for Roaming GPRS Communications Medium</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="CM4 Fallback Timer" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Word" name="CM4 Fallback Timer" max="65534" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="264" length="2"/>
+			<help>Fallback Timer for Communications Medium 4</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="CM5 Fallback Timer" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Word" name="CM5 Fallback Timer" max="65534" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="266" length="2"/>
+			<help>Fallback Timer for Communications Medium 5</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="CM6 Fallback Timer" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Word" name="CM6 Fallback Timer" max="65534" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="268" length="2"/>
+			<help>Fallback Timer for Communications Medium 6</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="CM7 Fallback Timer" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Word" name="CM7 Fallback Timer" max="65534" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="270" length="2"/>
+			<help>Fallback Timer for Communications Medium 7</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="User CM Preference Order" expectResponse="true" commandType="param" read="10" write="15" modify="10" view="10">
+			<argument ptype="Byte[]" name="User CM Preference Order" max="254" min="0" dvalue="100" uvalue="" mvalue="" value="" />
+			<dataLocation address="272" length="8"/>
+			<help>Preference order of communications mediums usage as selected by user</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Periodic Scanning" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Word" name="Periodic Scanning" max="1440" min="5" dvalue="10" uvalue="" mvalue="" value="" />
+			<dataLocation address="1893" length="2"/>
+			<help>Periodic time in minutes where events for all communications mediums are scanned and sent if over that communications medium if enough events exist</help>
+		</unitCommand>
+	</commandGroup>
+	<commandGroup name="Debug">
+		<unitCommand MHubUnit="81" name="Enable All Debug" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Enable All Debug" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="430" length="1"/>
+			<help>Switch all debug statements ON or OFF</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Enable Info Debug Messages" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Bit" name="Enable Info Debug Messages" max="1" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="439" length="1" bitmask="1"/>
+			<help>Enable Info Debug Messages</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Enable Warning Debug Messages" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Bit" name="Enable Warning Debug Messages" max="1" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="439" length="1" bitmask="2"/>
+			<help>Enable Warning Debug Messages</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Enable Error Debug Messages" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Bit" name="Enable Error Debug Messages" max="1" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="439" length="1" bitmask="4"/>
+			<help>Enable Error Debug Messages</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Enable Box Leds" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Bit" name="Enable Box Leds" max="1" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="439" length="1" bitmask="8"/>
+			<help>Enable Box Leds</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Trace Level" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Trace Level" max="255" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="598" length="1"/>
+			<help>This is the level of trace information that would be sent to the debug port</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Module Debug Mask" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte[]" name="Module Debug Mask" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1896" length="8"/>
+			<help>Enable debug statements for a specific Module</help>
+		</unitCommand>
+	</commandGroup>
+	<commandGroup name="Driver Key">
+		<unitCommand MHubUnit="81" name="Driver Key Start Time out" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Driver Key Start Time out" dvalue="10" uvalue="" mvalue="" value="" />
+			<dataLocation address="1146" length="1"/>
+			<help>Driver key time out before trip start</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Driver Key End Time out" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Driver Key End Time out" dvalue="10" uvalue="" mvalue="" value="" />
+			<dataLocation address="1147" length="1"/>
+			<help>Driver key time out after trip end</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Fleet Code" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Fleet Code" max="255" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1158" length="1"/>
+			<help>Fleet code assigned to the MHub</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Vehicle Class" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Byte" name="Vehicle Class" max="255" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1159" length="1"/>
+			<help>Vehicle class the MHub is installed into</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Driver Key Bitmask" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Driver Key Bitmask" max="255" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1981" length="1"/>
+			<help>Driver Key Enable mask: 1: Enable Immobilisation</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Customer Driver ID 1" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Word" name="Customer Driver ID 1" max="65535" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1985" length="2"/>
+			<help>Customer Driver ID 1</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Customer Driver ID 2" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Word" name="Customer Driver ID 2" max="65535" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1987" length="2"/>
+			<help>Customer Driver ID 2</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Customer Driver ID 3" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Word" name="Customer Driver ID 3" max="65535" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1989" length="2"/>
+			<help>Customer Driver ID 3</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Customer Driver ID 4" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Word" name="Customer Driver ID 4" max="65535" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1991" length="2"/>
+			<help>Customer Driver ID 4</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Customer Driver ID 5" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Word" name="Customer Driver ID 5" max="65535" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1993" length="2"/>
+			<help>Customer Driver ID 5</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Customer Driver ID 6" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Word" name="Customer Driver ID 6" max="65535" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1995" length="2"/>
+			<help>Customer Driver ID 6</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Customer Driver ID 7" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Word" name="Customer Driver ID 7" max="65535" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1997" length="2"/>
+			<help>Customer Driver ID 7</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Customer Driver ID 8" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Word" name="Customer Driver ID 8" max="65535" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1999" length="2"/>
+			<help>Customer Driver ID 8</help>
+		</unitCommand>
+	</commandGroup>
+	<commandGroup name="Event Configuration">
+		<unitCommand MHubUnit="81" name="Input Delay" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Word" name="Input Delay" max="65535" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1108" length="2"/>
+			<help>Delay for Input Event  Generation</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Default Delay 2" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Word" name="Default Delay 2" max="65535" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1110" length="2"/>
+			<help>Default Delay 2 to be used in Event Generation</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Default Delay 3" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Word" name="Default Delay 3" max="65535" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1112" length="2"/>
+			<help>Default Delay 3 to be used in Event Generation</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Excess Acceleration and Harsh Braking Delay" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Word" name="Excess Acceleration and Harsh Braking Delay" max="65535" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1114" length="2"/>
+			<help>Delay used for Excess Acceleration and Harsh Braking Event Generation</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Output Delay" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Word" name="Output Delay" max="65535" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1116" length="2"/>
+			<help>Delay used for Output Changed Event Generation</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Excess Idle Delay" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Word" name="Excess Idle Delay" max="65535" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1118" length="2"/>
+			<help>Delay used for Excess Idle Event Generation</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Minimum Speeding Time" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Word" name="Minimum Speeding Time" max="65535" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1120" length="2"/>
+			<help>Minimum time of excessive speed before a Speeding Event is generated</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Minimum Excess RPM Time" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Word" name="Minimum Excess RPM Time" max="65535" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1122" length="2"/>
+			<help>Minimum time of excessive RPM before a Excess RPM Event is generated</help>
+		</unitCommand>
+	</commandGroup>
+	<commandGroup name="Events">
+		<unitCommand MHubUnit="81" name="Specific Event Enable" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte[]" name="Specific Event Enable" max="255" min="0" dvalue="255" uvalue="" mvalue="" value="" />
+			<dataLocation address="327" length="64"/>
+			<help>Global Enable and Disable of Events</help>
+		</unitCommand>
+	</commandGroup>
+	<commandGroup name="Geofence">
+		<unitCommand MHubUnit="81" name="Geofence Entry and Exit debounce" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Geofence Entry and Exit debounce" max="255" min="0" dvalue="10" uvalue="" mvalue="" value="" />
+			<dataLocation address="1868" length="1"/>
+			<help>Geofence Entry and Exit debounce ensure that travelling on the boundary of the geofence does not cause exsessive entry and exit events</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Geofence Scanning Enabled" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Bit" name="Geofence Scanning Enabled" max="1" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1982" length="1" bitmask="1"/>
+			<help>Geofence Scanning enabled or not</help>
+		</unitCommand>
+	</commandGroup>
+	<commandGroup name="Geoloc">
+		<unitCommand MHubUnit="81" name="Geoloc Radius" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Word" name="Geoloc Radius" max="60000" min="50" dvalue="100" uvalue="" mvalue="" value="" />
+			<dataLocation address="1792" length="2"/>
+			<help>Geoloc Radius in meters</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Geoloc Debounce Time" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Word" name="Geoloc Debounce Time" max="65535" min="1" dvalue="10" uvalue="" mvalue="" value="" />
+			<dataLocation address="2043" length="2"/>
+			<help>Time the unit need to be outside the geoloc before a breach is triggered</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Enable Geoloc Functionality" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Bit" name="Enable Geoloc Functionality" max="1" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="2045" length="1" bitmask="1"/>
+			<help>Switch the Geoloc functionality ON and OFF</help>
+		</unitCommand>
+	</commandGroup>
+	<commandGroup name="GSM External Configuration">
+		<unitCommand MHubUnit="81" name="Data Link Escape Enable" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="Data Link Escape Enable" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="391" length="1"/>
+			<help>Enables the use of the Data Link escape character. This should not be disabled.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="GPRS Domain Name Server Address" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="String" name="GPRS Domain Name Server Address" dvalue="0.0.0.0" uvalue="" mvalue="" value="" />
+			<dataLocation address="768" length="30"/>
+			<help>Domain Name Server IP address</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="External Modem Control Time" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Word" name="External Modem Control Time" max="3600" min="60" dvalue="600" uvalue="" mvalue="" value="" />
+			<dataLocation address="798" length="2"/>
+			<help>The amount of time  that an external entity will be allowed control of the modem.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Access Point Node" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="String" name="Access Point Node" dvalue="" uvalue="" mvalue="" value="" />
+			<dataLocation address="1280" length="121"/>
+			<help>Access Point Node identifier e.g. internet</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="APN User Name" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="String" name="APN User Name" dvalue="" uvalue="" mvalue="" value="" />
+			<dataLocation address="1401" length="121"/>
+			<help>GSM Network supplied APN User Name</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="APN Password" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="String" name="APN Password" dvalue="" uvalue="" mvalue="" value="" />
+			<dataLocation address="1536" length="121"/>
+			<help>GSM Network supplied APN Password</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Server IP Address" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="String" name="Server IP Address" dvalue="" uvalue="" mvalue="" value="" />
+			<dataLocation address="1657" length="121"/>
+			<help>The IP address of the server that the external device wishes to open a socket to. This may be in the form of an IP address or URL in which case there must be a valid DNS IP configured.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="TCP Port ID" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Word" name="TCP Port ID" dvalue="52767" uvalue="" mvalue="" value="" />
+			<dataLocation address="1855" length="2"/>
+			<help>TCP Port through which the socket will be opened to third party server.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="External Control Hold State" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Byte" name="External Control Hold State" dvalue="10" uvalue="" mvalue="" value="" />
+			<dataLocation address="1857" length="1"/>
+			<help>The amount of time that the MHub will wait after a socket has closed before taking back control of the modem.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="External Socket Maximum allow time" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Word" name="External Socket Maximum allow time" dvalue="600" uvalue="" mvalue="" value="" />
+			<dataLocation address="1858" length="2"/>
+			<help>The maximum amount of time that the MHub will allow control of the socket to be handled by an external device. When this timer has expired the socket will be closed. If a new request is initiated the socket will be immediately re-opened.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="External Modem Control Enable" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Bit" name="External Modem Control Enable" max="1" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1864" length="1" bitmask="1"/>
+			<help>Enables control of the modem to be given over to an external device</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="External Socket Enable" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Bit" name="External Socket Enable" max="1" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1864" length="1" bitmask="2"/>
+			<help>Enables the opening of a socket before control is handed over to the external device</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="External PDP Context" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Byte" name="External PDP Context" max="4" min="1" dvalue="2" uvalue="" mvalue="" value="" />
+			<dataLocation address="1867" length="1"/>
+			<help>PDP Context that must be used for the external socket. Note that all external socket settings will be written into this context. It should be different  from the PDP context used by the socket used by the unit.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Maximum External Silence Time" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Word" name="Maximum External Silence Time" dvalue="120" uvalue="" mvalue="" value="" />
+			<dataLocation address="2046" length="2"/>
+			<help>Maximum time that there may be no traffic on the external modem interface before the MHub takes back control of the modem.</help>
+		</unitCommand>
+	</commandGroup>
+	<commandGroup name="GSM GPRS Configuration">
+		<unitCommand MHubUnit="81" name="GPRS Domain Name Server Address" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="String" name="GPRS Domain Name Server Address" dvalue="0.0.0.0" uvalue="" mvalue="" value="" />
+			<dataLocation address="441" length="30"/>
+			<help>Domain Name Server IP address</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Access Point Node" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="String" name="Access Point Node" dvalue="internet" uvalue="" mvalue="" value="" />
+			<dataLocation address="2048" length="121"/>
+			<help>Access Point Node identifier e.g. internet</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="APN User Name" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="String" name="APN User Name" dvalue="" uvalue="" mvalue="" value="" />
+			<dataLocation address="2304" length="121"/>
+			<help>GSM Network supplied APN User Name</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="APN Password" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="String" name="APN Password" dvalue="" uvalue="" mvalue="" value="" />
+			<dataLocation address="2425" length="121"/>
+			<help>GSM Network supplied APN Password</help>
+		</unitCommand>
+	</commandGroup>
+	<commandGroup name="GSM SMS Configuration">
+		<unitCommand MHubUnit="81" name="SMS over GPRS" expectResponse="true" commandType="param" read="10" write="10" modify="5" view="5">
+			<argument ptype="Byte" name="SMS over GPRS" max="3" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="280" length="1"/>
+			<help>Allows selection of GPRS SMS or Circuit switched SMS. This should not be changed from the default value unless there are network reasons. If this is changed SMS\'s will not work if there is no GPRS !</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="SMS First Octet" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="SMS First Octet" max="3" min="0" dvalue="17" uvalue="" mvalue="" value="" />
+			<dataLocation address="281" length="1"/>
+			<help></help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="SMS Reference" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="SMS Reference" max="0" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="282" length="1"/>
+			<help>This is set by the modem</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="SMS Validity Period" expectResponse="true" commandType="param" read="10" write="10" modify="5" view="5">
+			<argument ptype="Byte" name="SMS Validity Period" max="255" min="0" dvalue="180" uvalue="" mvalue="" value="" />
+			<dataLocation address="283" length="1"/>
+			<help>Validity time of a sent SMS.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="SMS Protocol Identifier" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="SMS Protocol Identifier" max="0" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="284" length="1"/>
+			<help>Protocol identifier byte.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="SMS 7 bit coding scheme" expectResponse="true" commandType="param" read="10" write="10" modify="5" view="5">
+			<argument ptype="Byte" name="SMS 7 bit coding scheme" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="285" length="1"/>
+			<help>7 bit SMS coding Scheme</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="SMS 8 bit coding scheme" expectResponse="true" commandType="param" read="10" write="10" modify="5" view="5">
+			<argument ptype="Byte" name="SMS 8 bit coding scheme" max="247" min="244" dvalue="246" uvalue="" mvalue="" value="" />
+			<dataLocation address="286" length="1"/>
+			<help>8 bit SMS coding scheme</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="SMS Message Retry" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Byte" name="SMS Message Retry" max="255" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="287" length="1"/>
+			<help>Number of times that an SMS must be retried</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="SMS International TON" expectResponse="true" commandType="param" read="10" write="10" modify="5" view="5">
+			<argument ptype="Byte" name="SMS International TON" max="255" min="0" dvalue="145" uvalue="" mvalue="" value="" />
+			<dataLocation address="288" length="1"/>
+			<help>International Type of number value</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="SMS National TON" expectResponse="true" commandType="param" read="10" write="10" modify="5" view="5">
+			<argument ptype="Byte" name="SMS National TON" max="255" min="0" dvalue="129" uvalue="" mvalue="" value="" />
+			<dataLocation address="289" length="1"/>
+			<help>NAtional type of number</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="SMS PDU or Text" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="SMS PDU or Text" max="1" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="293" length="1"/>
+			<help>Sets SMS to PDU or Text mode.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Last dial out MSISDN" expectResponse="true" commandType="param" read="5" write="5" modify="5" view="10">
+			<argument ptype="String" name="Last dial out MSISDN" dvalue="" uvalue="" mvalue="" value="" />
+			<dataLocation address="307" length="20"/>
+			<help>Storage area for number about to be used for voice call completion</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Last Received SMS" expectResponse="true" commandType="param" read="5" write="5" modify="5" view="10">
+			<argument ptype="String" name="Last Received SMS" dvalue="" uvalue="" mvalue="" value="" />
+			<dataLocation address="536" length="20"/>
+			<help>MSIDSN of last received SMS</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Last Transmitted SMS" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="String" name="Last Transmitted SMS" dvalue="" uvalue="" mvalue="" value="" />
+			<dataLocation address="556" length="20"/>
+			<help>MSIDSN of last transmitted SMS</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Service Centre Address (1)" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="String" name="Service Centre Address (1)" dvalue="" uvalue="" mvalue="" value="" />
+			<dataLocation address="1024" length="21"/>
+			<help>Primary Service Centre Address</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Service Centre Address (2)" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="String" name="Service Centre Address (2)" dvalue="" uvalue="" mvalue="" value="" />
+			<dataLocation address="1045" length="21"/>
+			<help>Secondary Service Centre Address.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Service Centre Address (3)" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="String" name="Service Centre Address (3)" dvalue="" uvalue="" mvalue="" value="" />
+			<dataLocation address="1066" length="21"/>
+			<help>Tertiary Service Centre address</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Service Centre Address (4)" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="String" name="Service Centre Address (4)" dvalue="" uvalue="" mvalue="" value="" />
+			<dataLocation address="1087" length="21"/>
+			<help>Service centre address</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="SMS Destination Address" expectResponse="true" commandType="param" read="5" write="5" modify="5" view="10">
+			<argument ptype="String" name="SMS Destination Address" dvalue="" uvalue="" mvalue="" value="" />
+			<dataLocation address="1125" length="21"/>
+			<help>The destination address of the next sms to be sent. This excludes event report sms\'s</help>
+		</unitCommand>
+	</commandGroup>
+	<commandGroup name="GSM TCP Socket Configuration">
+		<unitCommand MHubUnit="81" name="Maximum Message Completion time" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="Maximum Message Completion time" max="255" min="1" dvalue="5" uvalue="" mvalue="" value="" />
+			<dataLocation address="423" length="1"/>
+			<help>This is the maximum amount of time that the unit will wait, after receiving a header, for the rest of a message to be received.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Maximum Socket Login Attempts" expectResponse="true" commandType="param" read="10" write="10" modify="5" view="5">
+			<argument ptype="Byte" name="Maximum Socket Login Attempts" max="255" min="1" dvalue="3" uvalue="" mvalue="" value="" />
+			<dataLocation address="425" length="1"/>
+			<help>The maximum number of attempts that a unit may make to login, before tearing down the socket.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Socket Transmission Timeout" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Word" name="Socket Transmission Timeout" max="65535" min="120" dvalue="120" uvalue="" mvalue="" value="" />
+			<dataLocation address="426" length="2"/>
+			<help>The time that the (N)Ack may take to reach the MHub before the related transmission attempt expires.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Socket Block Time" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Byte" name="Socket Block Time" max="120" min="0" dvalue="30" uvalue="" mvalue="" value="" />
+			<dataLocation address="428" length="1"/>
+			<help>The amount of time that establishment of a socket will be blocked after a socket is deliberately closed to allow for incoming voice or data calls.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Maximum Socket Transmission Attempts" expectResponse="true" commandType="param" read="10" write="10" modify="5" view="5">
+			<argument ptype="Byte" name="Maximum Socket Transmission Attempts" min="1" dvalue="3" uvalue="" mvalue="" value="" />
+			<dataLocation address="429" length="1"/>
+			<help>Maximum number of attempts the MHub will make to transmit a packet before the socket is torn down. The message is also failed.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Data Link Escape Enable" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="Data Link Escape Enable" max="1" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="473" length="1"/>
+			<help>Data Link escape enable</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Socket Pre-Suspend Pause" expectResponse="true" commandType="param" read="10" write="5" modify="0" view="0">
+			<argument ptype="Byte" name="Socket Pre-Suspend Pause" max="30" min="0" dvalue="15" uvalue="" mvalue="" value="" />
+			<dataLocation address="476" length="1"/>
+			<help>Amount of time that the socket will wait before suspension so that current transactions are allowed to complete.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Connection Type" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Bit" name="Connection Type" max="2" min="0" dvalue="2" uvalue="" mvalue="" value="" />
+			<dataLocation address="477" length="2" bitmask="3"/>
+			<help>Sets the connection behaviour of the socket. 0 = No socket; 1 = Temporary, 2 = Permanent ; 3 = Invalid (will be interpreted as permanent socket)</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Enable Suspend" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Bit" name="Enable Suspend" max="1" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="477" length="1" bitmask="4"/>
+			<help>Enables suspension of a socket for maintenance purposes</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Enable Socket Close" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Bit" name="Enable Socket Close" max="1" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="477" length="1" bitmask="8"/>
+			<help>Enables the unit to close a socket so that voice and data calls may be dealt with</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Socket Suspend Time" expectResponse="true" commandType="param" read="10" write="10" modify="5" view="5">
+			<argument ptype="Byte" name="Socket Suspend Time" max="200" min="5" dvalue="15" uvalue="" mvalue="" value="" />
+			<dataLocation address="528" length="1"/>
+			<help>Maximum amount of time that the GPRS socket may be suspended for the modem to take care of other tasks e.g handling SMS\'s</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Socket Suspend Period" expectResponse="true" commandType="param" read="10" write="10" modify="5" view="5">
+			<argument ptype="Word" name="Socket Suspend Period" min="0" dvalue="60" uvalue="" mvalue="" value="" />
+			<dataLocation address="530" length="2"/>
+			<help>Number of seconds between successive suspends, i.e. Periodic suspend period</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Enable Suspend Report" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Bit" name="Enable Suspend Report" max="1" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="1124" length="1" bitmask="1"/>
+			<help>Enables the generation of notifications to MProfiler when a socket is suspended</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Enable Socket Close Report" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="0">
+			<argument ptype="Bit" name="Enable Socket Close Report" max="1" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="1124" length="1" bitmask="2"/>
+			<help>Enables the generation of notifications to MProfiler when a socket is closed.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Enable Resume Report" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Bit" name="Enable Resume Report" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="1124" length="1" bitmask="4"/>
+			<help>Enables the generation of notifications to MProfiler when a socket is resumed after a suspend.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Enable Power State Report" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Bit" name="Enable Power State Report" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="1124" length="1" bitmask="8"/>
+			<help>Enables the generation of notifications to MProfiler when the power state of the 801 changes.</help>
+		</unitCommand>
+	</commandGroup>
+	<commandGroup name="GSM Voice Configuration">
+		<unitCommand MHubUnit="81" name="Auto Answer Ringcount" expectResponse="true" commandType="param" read="10" write="10" modify="5" view="5">
+			<argument ptype="Byte" name="Auto Answer Ringcount" max="255" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="482" length="1"/>
+			<help>Number of rings before modem auto answers. 0 switches this feature off</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Last Received Call" expectResponse="true" commandType="param" read="0" write="0" modify="5" view="10">
+			<argument ptype="String" name="Last Received Call" dvalue="" uvalue="" mvalue="" value="" />
+			<dataLocation address="576" length="20"/>
+			<help>MSIDSN of last incoming call</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Voice Number 1" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="String" name="Voice Number 1" dvalue="" uvalue="" mvalue="" value="" />
+			<dataLocation address="1171" length="20"/>
+			<help>Voice Number 1</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Voice Number 2" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="String" name="Voice Number 2" dvalue="" uvalue="" mvalue="" value="" />
+			<dataLocation address="1191" length="20"/>
+			<help>Voice Number 2</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Voice Number 3" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="String" name="Voice Number 3" dvalue="" uvalue="" mvalue="" value="" />
+			<dataLocation address="1211" length="20"/>
+			<help>Voice Number 3</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Voice Number 4" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="String" name="Voice Number 4" dvalue="" uvalue="" mvalue="" value="" />
+			<dataLocation address="1231" length="20"/>
+			<help>Voice Number 4</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Voice Number 5" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="String" name="Voice Number 5" dvalue="" uvalue="" mvalue="" value="" />
+			<dataLocation address="1251" length="20"/>
+			<help>Voice Number 5</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="External Voice dialing Enabled" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Byte" name="External Voice dialing Enabled" max="1" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1271" length="1"/>
+			<help>Enable voice dialing from an external command</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Incoming Voice Melody" expectResponse="true" commandType="param" read="10" write="10" modify="5" view="5">
+			<argument ptype="Byte" name="Incoming Voice Melody" max="10" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="1883" length="1"/>
+			<help>Melody alert for incoming voice call</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Incoming Voice Melody Volume" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Byte" name="Incoming Voice Melody Volume" max="15" min="0" dvalue="6" uvalue="" mvalue="" value="" />
+			<dataLocation address="1886" length="1"/>
+			<help>Volume of the ringer for incoming voice alerts</help>
+		</unitCommand>
+	</commandGroup>
+	<commandGroup name="Logging">
+		<unitCommand MHubUnit="81" name="Enable System Log" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Bit" name="Enable System Log" max="1" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="431" length="1" bitmask="1"/>
+			<help>Enable the system log</help>
+		</unitCommand>
+	</commandGroup>
+	<commandGroup name="Modem Configuration">
+		<unitCommand MHubUnit="81" name="Wismo Indication" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Word" name="Wismo Indication" max="16383" min="0" dvalue="511" uvalue="" mvalue="" value="" />
+			<dataLocation address="290" length="2"/>
+			<help>Wismo status indication enable state</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Wismo Registration Message Type" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="Wismo Registration Message Type" max="3" min="0" dvalue="2" uvalue="" mvalue="" value="" />
+			<dataLocation address="292" length="1"/>
+			<help></help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="SIM PIN" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="String" name="SIM PIN" dvalue="00000" uvalue="" mvalue="" value="" />
+			<dataLocation address="297" length="10"/>
+			<help>Sim PIN</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Calling Line Identification" expectResponse="true" commandType="param" read="10" write="10" modify="5" view="5">
+			<argument ptype="Byte" name="Calling Line Identification" max="1" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="424" length="1"/>
+			<help>Switches the calling line identification on or off. This allows the unit to know the origin of a voice or data call.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Modem No-Network Restart Delay" expectResponse="true" commandType="param" read="10" write="10" modify="5" view="5">
+			<argument ptype="Word" name="Modem No-Network Restart Delay" dvalue="120" uvalue="" mvalue="" value="" />
+			<dataLocation address="433" length="2"/>
+			<help>The amount of time that the unit will wait after rebooting the modem before repeating the process when GSM registration fails.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Reboot Limit" expectResponse="true" commandType="param" read="10" write="10" modify="5" view="5">
+			<argument ptype="Byte" name="Reboot Limit" min="0" dvalue="4" uvalue="" mvalue="" value="" />
+			<dataLocation address="474" length="1"/>
+			<help>Maximum number of times that the modem can be soft rebooted before it is power cycled</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Error Limit" expectResponse="true" commandType="param" read="10" write="10" modify="5" view="5">
+			<argument ptype="Byte" name="Error Limit" min="0" dvalue="5" uvalue="" mvalue="" value="" />
+			<dataLocation address="475" length="1"/>
+			<help>Maximum number of accumulated errors before the modem is rebooted</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Cell Result Code" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="Cell Result Code" max="1" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="478" length="1"/>
+			<help>Enables extended reporting on incoming call type</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Data Rate Report" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="Data Rate Report" max="1" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="479" length="1"/>
+			<help>Enables report of data rate of established data call</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Flow Control DCE-by-DTE" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="Flow Control DCE-by-DTE" max="3" min="0" dvalue="2" uvalue="" mvalue="" value="" />
+			<dataLocation address="480" length="1"/>
+			<help>DTE invokes flow control through RTS</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Flow Control DTE-by-DCE" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="Flow Control DTE-by-DCE" max="3" min="0" dvalue="2" uvalue="" mvalue="" value="" />
+			<dataLocation address="481" length="1"/>
+			<help>DCE invokes flow control through CTS</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Service Reporting" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="Service Reporting" max="3" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="483" length="1"/>
+			<help>Enables reporting of type of Data call that has been established</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Character Framing Format" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="Character Framing Format" max="6" min="0" dvalue="3" uvalue="" mvalue="" value="" />
+			<dataLocation address="484" length="1"/>
+			<help>Data, parity and stop bit format</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Character Framing Parity" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="Character Framing Parity" max="4" min="0" dvalue="4" uvalue="" mvalue="" value="" />
+			<dataLocation address="485" length="1"/>
+			<help>Type of parity.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Incoming Default Call" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Byte" name="Incoming Default Call" max="2" min="0" dvalue="2" uvalue="" mvalue="" value="" />
+			<dataLocation address="486" length="1"/>
+			<help>Sets the incoming call bearer when none is given by the network. Ref AT command set documnetation for value meanings. Defaults to voice.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="SMS Check Period" expectResponse="true" commandType="param" read="10" write="10" modify="5" view="10">
+			<argument ptype="Word" name="SMS Check Period" min="0" dvalue="2" uvalue="" mvalue="" value="" />
+			<dataLocation address="532" length="2"/>
+			<help>Number of seconds between checking for messages during maintenance cycles</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Net Info Check Period" expectResponse="true" commandType="param" read="10" write="10" modify="5" view="10">
+			<argument ptype="Word" name="Net Info Check Period" min="0" dvalue="20" uvalue="" mvalue="" value="" />
+			<dataLocation address="534" length="2"/>
+			<help>Number of seconds between checking net information during maintenance cycles</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="External AT Command Run Time" expectResponse="true" commandType="param" read="10" write="10" modify="5" view="5">
+			<argument ptype="Byte" name="External AT Command Run Time" max="255" min="0" dvalue="5" uvalue="" mvalue="" value="" />
+			<dataLocation address="1879" length="1"/>
+			<help>The amount of time that an AT command from outside the MHub will be allowed to complete execution before the MHub gathers the response.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Incoming Fax Melody" expectResponse="true" commandType="param" read="10" write="10" modify="5" view="5">
+			<argument ptype="Byte" name="Incoming Fax Melody" max="10" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1884" length="1"/>
+			<help>Incoming fax call alert.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Incoming Data Melody" expectResponse="true" commandType="param" read="10" write="10" modify="5" view="5">
+			<argument ptype="Byte" name="Incoming Data Melody" max="10" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1885" length="1"/>
+			<help>Incoming data call alert melody.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Enable Modem Hardware Flow Control" expectResponse="true" commandType="param" read="10" write="10" modify="5" view="5">
+			<argument ptype="Byte" name="Enable Modem Hardware Flow Control" max="1" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1890" length="1"/>
+			<help>Configures  hardware flow control between the modem and the processor. 1 - Flow control on; 0 - Flow control off. Should be used in conjunction with the modem\'s internal flow control settings.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="SMS Transmission Timeout" expectResponse="true" commandType="param" read="10" write="10" modify="5" view="5">
+			<argument ptype="Byte" name="SMS Transmission Timeout" dvalue="10" uvalue="" mvalue="" value="" />
+			<dataLocation address="1892" length="1"/>
+			<help>The amount of time that the MHub will wait for to modem to transmit a message before deciding to carry on.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Incoming SMS Melody" expectResponse="true" commandType="param" read="10" write="10" modify="5" view="5">
+			<argument ptype="Byte" name="Incoming SMS Melody" max="3" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1895" length="1"/>
+			<help>Incoming SMS alert.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="GSM Major Firmware Version" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="10">
+			<argument ptype="Word" name="GSM Major Firmware Version" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="2035" length="2"/>
+			<help>Firmware version of the firmware running on the Wismo</help>
+		</unitCommand>
+	</commandGroup>
+	<commandGroup name="Modem Data Call Configuration">
+		<unitCommand MHubUnit="81" name="Error Correction" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="Error Correction" max="0" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="487" length="1"/>
+			<help>Data Call error correction</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Data Call Bearer speed" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="Data Call Bearer speed" max="75" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="488" length="1"/>
+			<help>Data call bearer baud rate.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Data Call Connection Element" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="Data Call Connection Element" max="3" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="489" length="1"/>
+			<help>Transparency of connection</help>
+		</unitCommand>
+	</commandGroup>
+	<commandGroup name="Modem GPRS Configuration">
+		<unitCommand MHubUnit="81" name="GPRS Registration Status Message" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="GPRS Registration Status Message" max="1" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="294" length="1"/>
+			<help>GPRS Unsolicitied Status Message setting</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="GPRS Mode" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="GPRS Mode" max="1" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="295" length="1"/>
+			<help>Sets TCP stack to work over GPRS or datacall</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="GPRS PDP Context" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="GPRS PDP Context" max="1" min="1" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="296" length="1"/>
+			<help>Sets the PDP context that the modem must use.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="TCP Transmission Delay" expectResponse="true" commandType="param" read="10" write="10" modify="5" view="5">
+			<argument ptype="Word" name="TCP Transmission Delay" max="32760" min="0" dvalue="100" uvalue="" mvalue="" value="" />
+			<dataLocation address="471" length="2"/>
+			<help>Delay between the modem receiving a character and transimitting a TCP frame</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="DTR Suspend Active" expectResponse="true" commandType="param" read="10" write="10" modify="5" view="5">
+			<argument ptype="Byte" name="DTR Suspend Active" max="1" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="1891" length="1"/>
+			<help>Causes the unit to use the DTR line to suspend a socket and put the unit into command mode instead of  +++</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Stack Major Version" expectResponse="true" commandType="param" read="10" write="0" modify="0" view="10">
+			<argument ptype="Byte" name="Stack Major Version" max="0" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="2034" length="1"/>
+			<help>Major version of the stack that is running on the Wismo module. This should be set to zero, the module will then correct it.</help>
+		</unitCommand>
+	</commandGroup>
+	<commandGroup name="Modem Voice Call Configuration">
+		<unitCommand MHubUnit="81" name="Audio Channel Selection" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="Audio Channel Selection" max="1" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="490" length="1"/>
+			<help>Speaker and microphone channel selection.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Side Tone Modifier 1" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="Side Tone Modifier 1" max="1" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="491" length="1"/>
+			<help></help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Side Tone Modifier 2" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="Side Tone Modifier 2" max="3" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="492" length="1"/>
+			<help></help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Audio Transmission Gain" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Audio Transmission Gain" max="255" min="0" dvalue="127" uvalue="" mvalue="" value="" />
+			<dataLocation address="493" length="1"/>
+			<help>Sets the transmission gain.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Audio Reception Gain" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="Audio Reception Gain" max="255" min="0" dvalue="127" uvalue="" mvalue="" value="" />
+			<dataLocation address="494" length="1"/>
+			<help>Sets the Audion reception gain.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Audio Echo Cancellation Enable" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="Audio Echo Cancellation Enable" max="1" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="495" length="1"/>
+			<help></help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Audio Echo Cancellation AlgoLd" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="Audio Echo Cancellation AlgoLd" max="3" min="1" dvalue="3" uvalue="" mvalue="" value="" />
+			<dataLocation address="496" length="1"/>
+			<help></help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Audio Echo Cancellation Echo Vol Out" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="Audio Echo Cancellation Echo Vol Out" max="15" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="497" length="1"/>
+			<help></help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Audio Echo Cancellation Step" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="Audio Echo Cancellation Step" max="3" min="0" dvalue="3" uvalue="" mvalue="" value="" />
+			<dataLocation address="498" length="1"/>
+			<help></help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Audio Echo Cancellation Pcm Threshold" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="Audio Echo Cancellation Pcm Threshold" max="31" min="0" dvalue="10" uvalue="" mvalue="" value="" />
+			<dataLocation address="499" length="1"/>
+			<help></help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Audio Echo Cancellation Pcm Threshold Max" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="Audio Echo Cancellation Pcm Threshold Max" max="31" min="0" dvalue="7" uvalue="" mvalue="" value="" />
+			<dataLocation address="500" length="1"/>
+			<help></help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Audio Echo Cancellation Algo Param" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="Audio Echo Cancellation Algo Param" max="63" min="0" dvalue="30" uvalue="" mvalue="" value="" />
+			<dataLocation address="501" length="1"/>
+			<help></help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Audio Echo Cancellation Noise Threshold" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Word" name="Audio Echo Cancellation Noise Threshold" max="32767" min="0" dvalue="8000" uvalue="" mvalue="" value="" />
+			<dataLocation address="502" length="2"/>
+			<help></help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Audio Echo Cancellation Nmb Taps" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Word" name="Audio Echo Cancellation Nmb Taps" max="256" min="64" dvalue="256" uvalue="" mvalue="" value="" />
+			<dataLocation address="504" length="2"/>
+			<help></help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Standard Tone Sound Level" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="Standard Tone Sound Level" max="15" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="506" length="1"/>
+			<help></help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Standard Tone Ring Tone Level" expectResponse="true" commandType="param" read="10" write="10" modify="0" view="0">
+			<argument ptype="Byte" name="Standard Tone Ring Tone Level" max="15" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="507" length="1"/>
+			<help></help>
+		</unitCommand>
+	</commandGroup>
+	<commandGroup name="MProfiler Details">
+		<unitCommand MHubUnit="81" name="TCP Port ID" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Word" name="TCP Port ID" max="65535" min="0" dvalue="52767" uvalue="" mvalue="" value="" />
+			<dataLocation address="421" length="2"/>
+			<help>TCP Port through which the socket will be opened</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="TCP Socket Login Timeout" expectResponse="true" commandType="param" read="10" write="10" modify="5" view="5">
+			<argument ptype="Word" name="TCP Socket Login Timeout" max="65000" min="10" dvalue="120" uvalue="" mvalue="" value="" />
+			<dataLocation address="596" length="2"/>
+			<help>The amount of time that the unit will allow a login challenge to go unanswered before retrying.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="MProfiler User Name" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="String" name="MProfiler User Name" dvalue="" uvalue="" mvalue="" value="" />
+			<dataLocation address="841" length="65"/>
+			<help>User name used when logging onto MProfiler over a TCP socket.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="MProfiler User Password" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="String" name="MProfiler User Password" dvalue="" uvalue="" mvalue="" value="" />
+			<dataLocation address="906" length="65"/>
+			<help>Password used to log onto a TCP socket session with MProfiler.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="MProfiler MSISDN" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="String" name="MProfiler MSISDN" dvalue="" uvalue="" mvalue="" value="" />
+			<dataLocation address="1003" length="21"/>
+			<help>MSISDN of the MProfiler SMS Gateway.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Text SMS Destination MSISDN" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="String" name="Text SMS Destination MSISDN" dvalue="" uvalue="" mvalue="" value="" />
+			<dataLocation address="1928" length="21"/>
+			<help>Destination MSISDN for Text messages</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="MProfiler IP" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="String" name="MProfiler IP" dvalue="196.38.230.36" uvalue="" mvalue="" value="" />
+			<dataLocation address="2169" length="121"/>
+			<help>MProfiler IP address </help>
+		</unitCommand>
+	</commandGroup>
+	<commandGroup name="OBC">
+		<unitCommand MHubUnit="81" name="OBC RPM Loop" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Word" name="OBC RPM Loop" dvalue="10" uvalue="" mvalue="" value="" />
+			<dataLocation address="995" length="2"/>
+			<help>OBC RPM Timer Prescaler</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="OBC RPM Calibration" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Word" name="OBC RPM Calibration" dvalue="50" uvalue="" mvalue="" value="" />
+			<dataLocation address="997" length="2"/>
+			<help>OBC RPM Calibration Value</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="OBC ODO Loop" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Word" name="OBC ODO Loop" dvalue="20" uvalue="" mvalue="" value="" />
+			<dataLocation address="999" length="2"/>
+			<help>OBC ODO Timer prescaler</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="OBC ODO Calibration" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Word" name="OBC ODO Calibration" dvalue="100" uvalue="" mvalue="" value="" />
+			<dataLocation address="1001" length="2"/>
+			<help>OBC ODO Calibration Value</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Speed Limit" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Byte" name="Speed Limit" max="255" min="0" dvalue="80" uvalue="" mvalue="" value="" />
+			<dataLocation address="1153" length="1"/>
+			<help>The speed limit in km/h</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="RPM Limit" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Byte" name="RPM Limit" max="255" min="0" dvalue="40" uvalue="" mvalue="" value="" />
+			<dataLocation address="1154" length="1"/>
+			<help>RPM limit at which point an exception is occuring</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Position Report Interval" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Word" name="Position Report Interval" max="65535" min="1" dvalue="10" uvalue="" mvalue="" value="" />
+			<dataLocation address="1155" length="2"/>
+			<help>The period between sucessive periodic position reports during a trip</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Disable Speed Threshold" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Byte" name="Disable Speed Threshold" max="255" min="0" dvalue="10" uvalue="" mvalue="" value="" />
+			<dataLocation address="1160" length="1"/>
+			<help>This value indicate the maximum speed threshold at which point it is safe to disable a vehicle</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Braking Limit" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Braking Limit" max="255" min="0" dvalue="12" uvalue="" mvalue="" value="" />
+			<dataLocation address="1169" length="1"/>
+			<help>Braking Limit in km/h/s</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Acceleration Limit" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Acceleration Limit" max="255" min="0" dvalue="12" uvalue="" mvalue="" value="" />
+			<dataLocation address="1170" length="1"/>
+			<help>Acceleration Limit in km/h/s</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Non Trip Position Delay" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Word" name="Non Trip Position Delay" max="65535" min="0" dvalue="120" uvalue="" mvalue="" value="" />
+			<dataLocation address="1272" length="2"/>
+			<help>Periodic Position while a trip is not in progress</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Enable Extra Inputs and Outputs" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Enable Extra Inputs and Outputs" max="1" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1870" length="1"/>
+			<help>Enable Extra Inputs on MCP251x</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="OBC Free Wheeling Debounce" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="OBC Free Wheeling Debounce" max="255" min="0" dvalue="10" uvalue="" mvalue="" value="" />
+			<dataLocation address="1880" length="1"/>
+			<help>OBC Free Wheeling Debounce</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Free Wheel RPM Threshold" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Free Wheel RPM Threshold" max="255" min="0" dvalue="10" uvalue="" mvalue="" value="" />
+			<dataLocation address="1881" length="1"/>
+			<help>RPM High limit for Free Wheel condition</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Speed Free Wheel Threshold" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Speed Free Wheel Threshold" max="255" min="0" dvalue="10" uvalue="" mvalue="" value="" />
+			<dataLocation address="1882" length="1"/>
+			<help>Speed minimum limit for Free Wheel condition</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Auto Calibration Activation" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Auto Calibration Activation" max="1" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1887" length="1"/>
+			<help>Auto Calibration Activation</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Auto Calibration  Speed Threshold" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Auto Calibration  Speed Threshold" max="255" min="10" dvalue="60" uvalue="" mvalue="" value="" />
+			<dataLocation address="1888" length="1"/>
+			<help>Auto Calibration  Speed Min Speed</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Auto Calibration Debounce" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Auto Calibration Debounce" max="255" min="0" dvalue="10" uvalue="" mvalue="" value="" />
+			<dataLocation address="1889" length="1"/>
+			<help>Auto Calibration Debounce debounce time in seconds</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="MHub Description" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="String" name="MHub Description" dvalue="MHub" uvalue="" mvalue="" value="" />
+			<dataLocation address="1949" length="32"/>
+			<help>MHub Description</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Tacho Graph Report Interval" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Word" name="Tacho Graph Report Interval" max="254" min="0" dvalue="120" uvalue="" mvalue="" value="" />
+			<dataLocation address="1983" length="2"/>
+			<help>Tacho Graph Reporting Interval</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="OBC GPS Speed" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Bit" name="OBC GPS Speed" max="255" min="1" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="2033" length="1" bitmask="2"/>
+			<help>OBC GPS Speed</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="OBC CAN Speed" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Bit" name="OBC CAN Speed" max="255" min="1" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="2033" length="1" bitmask="4"/>
+			<help>OBC CAN Speed</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="OBC Sensor Speed" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Bit" name="OBC Sensor Speed" max="255" min="1" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="2033" length="1" bitmask="1"/>
+			<help>OBC Sensor Speed</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="OBC Sensor Odometer" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Bit" name="OBC Sensor Odometer" max="255" min="1" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="2033" length="1" bitmask="16"/>
+			<help>OBC Sensor Odometer</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="OBC GPS Odometer" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Bit" name="OBC GPS Odometer" max="255" min="1" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="2033" length="1" bitmask="32"/>
+			<help>OBC GPS Odometer</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="OBC CAN Odometer" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Bit" name="OBC CAN Odometer" max="255" min="1" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="2033" length="1" bitmask="64"/>
+			<help>OBC CAN Odometer</help>
+		</unitCommand>
+	</commandGroup>
+	<commandGroup name="Outputs">
+		<unitCommand MHubUnit="81" name="Output 1 Style" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Output 1 Style" max="3" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="971" length="1"/>
+			<help>Output Style for Output 1: 0 - Normal, 1 - Timed, 2 - Progressive, 3 - Pattern</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Output 1 Style Repeat Count" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Output 1 Style Repeat Count" max="255" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="972" length="1"/>
+			<help>Output Style Repeat Count 1 for Timed Outputs</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Output 1 Style Map" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte[]" name="Output 1 Style Map" max="255" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="973" length="4"/>
+			<help>Output Style Map 1 for Pattern and Progressive Output</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Output 2 Style" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Output 2 Style" max="3" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="977" length="1"/>
+			<help>Output Style for Output 2: 0 - Normal, 1 - Timed, 2 - Progressive, 3 - Pattern</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Output 2 Style Repeat Count" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Output 2 Style Repeat Count" max="255" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="978" length="1"/>
+			<help>Output Style Repeat Count 2 for Timed Outputs</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Output 2 Style Map" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte[]" name="Output 2 Style Map" max="255" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="979" length="4"/>
+			<help>Output Style Map 2 for Pattern and Progressive Output</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Output 3 Style" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Output 3 Style" max="3" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="983" length="1"/>
+			<help>Output Style for Output 3: 0 - Normal, 1 - Timed, 2 - Progressive, 3 - Pattern</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Output 3 Style Repeat Count" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Output 3 Style Repeat Count" max="255" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="984" length="1"/>
+			<help>Output Style Repeat Count 3 for Timed Outputs</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Output 3 Style Map" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte[]" name="Output 3 Style Map" max="255" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="985" length="4"/>
+			<help>Output Style Map 3 for Pattern and Progressive Output</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Output 4 Style" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Output 4 Style" max="3" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="989" length="1"/>
+			<help>Output Style for Output 4: 0 - Normal, 1 - Timed, 2 - Progressive, 3 - Pattern</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Output 4 Style Repeat Count" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Output 4 Style Repeat Count" max="255" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="990" length="1"/>
+			<help>Output Style Repeat Count 4 for Timed Outputs</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Output 4 Style Map" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte[]" name="Output 4 Style Map" max="255" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="991" length="4"/>
+			<help>Output Style Map 4 for Pattern and Progressive Output</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="OutputStyleBeep" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="OutputStyleBeep" max="3" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1904" length="1"/>
+			<help>Output Style for Beeper: 0 - Normal, 1 - Timed, 2 - Progressive, 3 - Pattern</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Output Beeper Repeat Count" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Output Beeper Repeat Count" max="255" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="1905" length="1"/>
+			<help>Output Style Repeat Count Beeper for Timed Outputs</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Output Beeper Style Map" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte[]" name="Output Beeper Style Map" max="255" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1906" length="4"/>
+			<help>Output Style Map Beep for Pattern and  Progressive Output</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Output One Wire Led 1 Style" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Output One Wire Led 1 Style" max="3" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1910" length="1"/>
+			<help>Output Style for One Wire Led 1: 0 - Normal, 1 - Timed, 2 - Progressive, 3 - Pattern</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Output One Wire Led 1 Repeat Count" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Output One Wire Led 1 Repeat Count" max="255" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="1911" length="1"/>
+			<help>Output Style Repeat Count One Wire Led 1 for Timed Outputs</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Output One Wire Led 1 Style Map" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte[]" name="Output One Wire Led 1 Style Map" max="255" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1912" length="4"/>
+			<help>Output Style Map One Wire Led 1 for Pattern and  Progressive Output</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Output One Wire Led 2 Style" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Output One Wire Led 2 Style" max="3" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1916" length="1"/>
+			<help>Output Style for One Wire Led 2: 0 - Normal, 1 - Timed, 2 - Progressive, 3 - Pattern</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Output One Wire Led 2 Repeat Count" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Output One Wire Led 2 Repeat Count" max="255" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="1917" length="1"/>
+			<help>Output Style Repeat Count One Wire Led 2 for Timed Outputs</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Output One Wire Led 2 Style Map" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte[]" name="Output One Wire Led 2 Style Map" max="255" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1918" length="4"/>
+			<help>Output Style Map One Wire Led 2 for Pattern and  Progressive Output</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Output Led 2 Style" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Output Led 2 Style" max="255" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="1922" length="1"/>
+			<help>Output Style for Led 2: 0 - Normal, 1 - Timed, 2 - Progressive, 3 - Pattern</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Output Led 2 Repeat Count" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Output Led 2 Repeat Count" max="255" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="1923" length="1"/>
+			<help>Output Style Repeat Count Led 2 for Timed Outputs</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Output Led 2 Style Map" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte[]" name="Output Led 2 Style Map" max="255" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1924" length="4"/>
+			<help>Output Style Map Led 2 for Pattern and  Progressive Output</help>
+		</unitCommand>
+	</commandGroup>
+	<commandGroup name="Power Modes">
+		<unitCommand MHubUnit="81" name="Enable Low Power Mode" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Bit" name="Enable Low Power Mode" max="1" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1157" length="1" bitmask="1"/>
+			<help>Enable or Disable the low power mode</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Enable GPS Power Mode" expectResponse="true" commandType="param" read="10" write="10" modify="5" view="10">
+			<argument ptype="Bit" name="Enable GPS Power Mode" max="1" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1157" length="1" bitmask="2"/>
+			<help>Enable GPS Power Mode</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Enable Zero Power Mode" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Bit" name="Enable Zero Power Mode" dvalue="" uvalue="" mvalue="" value="" />
+			<dataLocation address="1157" length="1" bitmask="4"/>
+			<help>Enable Zero Power Mode</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Enable Zero Power Mode with Battery" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Bit" name="Enable Zero Power Mode with Battery" max="1" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1157" length="1" bitmask="8"/>
+			<help>Enable Zero Power Mode with Battery</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="GPS Low Power Enter Delay" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Word" name="GPS Low Power Enter Delay" max="65535" min="0" dvalue="600" uvalue="" mvalue="" value="" />
+			<dataLocation address="1161" length="2"/>
+			<help>GPS Low Power Enter Delay if Ignition Off</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="GPS Low Power Exit Delay" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Word" name="GPS Low Power Exit Delay" max="65535" min="0" dvalue="600" uvalue="" mvalue="" value="" />
+			<dataLocation address="1163" length="2"/>
+			<help>GPS Low Power Exit Delay if Ignition Off</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Zero Power Mode Enter Delay" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Word" name="Zero Power Mode Enter Delay" max="65535" min="1800" dvalue="7200" uvalue="" mvalue="" value="" />
+			<dataLocation address="1860" length="2"/>
+			<help>Delay Time after entering Low Power Mode before Switching of Box</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Zero Power Mode On Period" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Word" name="Zero Power Mode On Period" max="1800" min="300" dvalue="600" uvalue="" mvalue="" value="" />
+			<dataLocation address="1862" length="2"/>
+			<help>Box On duration if wake-up during Zero Power Mode</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Zero Power Mode RTC wake-up time" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Word" name="Zero Power Mode RTC wake-up time" max="65535" min="1" dvalue="600" uvalue="" mvalue="" value="" />
+			<dataLocation address="1865" length="2"/>
+			<help>mZero Power Mode RTC wake-up time in minutes</help>
+		</unitCommand>
+	</commandGroup>
+	<commandGroup name="Sealed Unit">
+		<unitCommand MHubUnit="81" name="RTC Wake-Up Time 0" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Word" name="RTC Wake-Up Time 0" max="1440" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="800" length="2"/>
+			<help>RTC Wake-Up Time 0</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="RTC Wake-Up Time 1" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Word" name="RTC Wake-Up Time 1" max="1440" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="802" length="2"/>
+			<help>RTC Wake-Up Time 1</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="RTC Wake-Up Time 2" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Word" name="RTC Wake-Up Time 2" max="1440" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="804" length="2"/>
+			<help>RTC Wake-Up Time 2</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="RTC Wake-Up Time 3" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Word" name="RTC Wake-Up Time 3" max="1440" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="806" length="2"/>
+			<help>RTC Wake-Up Time 3</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Sealed Unit Enable" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Bit" name="Sealed Unit Enable" max="1" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1165" length="1" bitmask="1"/>
+			<help>This indicates if the MHub is a sealed unit or not.</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Sealed Unit GPS off after lock" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Bit" name="Sealed Unit GPS off after lock" max="1" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1165" length="1" bitmask="16"/>
+			<help>Sealed Unit GPS off after lock</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Enable Test Event" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Bit" name="Enable Test Event" max="2" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1165" length="1" bitmask="2"/>
+			<help>Enable Test Event</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="RTC Offset Type" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Bit" name="RTC Offset Type" max="3" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="1165" length="2" bitmask="12"/>
+			<help>0: RTC Time Offset   1: RTC Periodic Offset 2: RTC HH:MM Offset</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Time on after event sent" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Word" name="Time on after event sent" max="65535" min="5" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1166" length="2"/>
+			<help>This is the time in seconds the unit should stay ON after the wakeup event was sent</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Sealed Unit RTC wake-up time" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Word" name="Sealed Unit RTC wake-up time" max="65535" min="1" dvalue="720" uvalue="" mvalue="" value="" />
+			<dataLocation address="1794" length="2"/>
+			<help>Sealed Unit RTC wake-up time in Minutes</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Maximum ON Time with Ignition" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Word" name="Maximum ON Time with Ignition" max="65535" min="1" dvalue="1800" uvalue="" mvalue="" value="" />
+			<dataLocation address="1796" length="2"/>
+			<help>Maximum on time in seconds with ignition on</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Force Wakeup Event Timeout" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Word" name="Force Wakeup Event Timeout" max="65535" min="0" dvalue="120" uvalue="" mvalue="" value="" />
+			<dataLocation address="1798" length="2"/>
+			<help>Force the unit to send the Wakeup event even when it does not have a 3D GPS lock</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Geoloc Breach Periodic Position" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Word" name="Geoloc Breach Periodic Position" max="65535" min="0" dvalue="120" uvalue="" mvalue="" value="" />
+			<dataLocation address="1800" length="2"/>
+			<help>Periodic Position for when the geoloc has been breached</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Emergency Mode Periodic Position Interval" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Word" name="Emergency Mode Periodic Position Interval" max="65535" min="0" dvalue="120" uvalue="" mvalue="" value="" />
+			<dataLocation address="1802" length="2"/>
+			<help>Periodic Position Interval when the unit is in Emergency Mode </help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Tamper Mode Periodic Position Interval" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Word" name="Tamper Mode Periodic Position Interval" max="65535" min="0" dvalue="120" uvalue="" mvalue="" value="" />
+			<dataLocation address="1804" length="2"/>
+			<help>Periodic Position Interval for when the unit is in Tamper Mode</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Time to wait for GPS Lock" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Word" name="Time to wait for GPS Lock" max="65535" min="0" dvalue="180" uvalue="" mvalue="" value="" />
+			<dataLocation address="2037" length="2"/>
+			<help>Time in seconds to wait for a good GPS Lock</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Time to wait for GSM coverage" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Word" name="Time to wait for GSM coverage" max="65535" min="0" dvalue="180" uvalue="" mvalue="" value="" />
+			<dataLocation address="2039" length="2"/>
+			<help>Time in seconds to wait for GSM Network coverage</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Maximum ON Time" expectResponse="true" commandType="param" read="10" write="10" modify="10" view="10">
+			<argument ptype="Word" name="Maximum ON Time" max="65535" min="0" dvalue="600" uvalue="" mvalue="" value="" />
+			<dataLocation address="2041" length="2"/>
+			<help>Maximum time in seconds the unit should stay ON when something causes any of the logic not to work out</help>
+		</unitCommand>
+	</commandGroup>
+	<commandGroup name="Service">
+		<unitCommand MHubUnit="81" name="Service Odometer 1" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Long" name="Service Odometer 1" max="4294967294" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="2001" length="4"/>
+			<help>Next Service Odometer Reading 1</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Service Odometer 2" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Long" name="Service Odometer 2" max="4294967294" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="2005" length="4"/>
+			<help>Next Service Odometer Reading 2</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Service Odometer 3" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Long" name="Service Odometer 3" max="4294967294" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="2009" length="4"/>
+			<help>Next Service Odometer Reading 3</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Service Odometer 4" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Long" name="Service Odometer 4" max="4294967294" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="2013" length="4"/>
+			<help>Next Service Odometer Reading 4</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Service Odometer 5" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Long" name="Service Odometer 5" max="4294967294" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="2017" length="4"/>
+			<help>Next Service Odometer Reading 5</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Service Odometer 6" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Long" name="Service Odometer 6" max="4294967294" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="2021" length="4"/>
+			<help>Next Service Odometer Reading 6</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Service Odometer 7" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Long" name="Service Odometer 7" max="4294967294" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="2025" length="4"/>
+			<help>Next Service Odometer Reading 7</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Service Odometer 8" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Long" name="Service Odometer 8" max="4294967294" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="2029" length="4"/>
+			<help>Next Service Odometer Reading 8</help>
+		</unitCommand>
+	</commandGroup>
+	<commandGroup name="Temperature Sensors">
+		<unitCommand MHubUnit="81" name="Temperature 1 High Threshold" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Temperature 1 High Threshold" max="255" min="0" dvalue="130" uvalue="" mvalue="" value="" />
+			<dataLocation address="1871" length="1"/>
+			<help>Temperature 1 High Threshold</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Temperature 1 Low Threshold" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Temperature 1 Low Threshold" max="255" min="0" dvalue="50" uvalue="" mvalue="" value="" />
+			<dataLocation address="1872" length="1"/>
+			<help>Temperature 1 Low Threshold</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Temperature 2 High Threshold" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Temperature 2 High Threshold" max="255" min="0" dvalue="130" uvalue="" mvalue="" value="" />
+			<dataLocation address="1873" length="1"/>
+			<help>Temperature 2 High Threshold</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Temperature 2 Low Threshold" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Temperature 2 Low Threshold" max="255" min="0" dvalue="130" uvalue="" mvalue="" value="" />
+			<dataLocation address="1874" length="1"/>
+			<help>Temperature 2 Low Threshold</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Temperature 3 High Threshold" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Temperature 3 High Threshold" max="255" min="0" dvalue="130" uvalue="" mvalue="" value="" />
+			<dataLocation address="1875" length="1"/>
+			<help>Temperature 3 High Threshold</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Temperature 3 Low Threshold" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Temperature 3 Low Threshold" max="255" min="0" dvalue="130" uvalue="" mvalue="" value="" />
+			<dataLocation address="1876" length="1"/>
+			<help>Temperature 3 Low Threshold</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Temperature 4 High Threshold" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Temperature 4 High Threshold" max="255" min="0" dvalue="130" uvalue="" mvalue="" value="" />
+			<dataLocation address="1877" length="1"/>
+			<help>Temperature 4 High Threshold</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Temperature 4 Low Threshold" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Temperature 4 Low Threshold" max="255" min="0" dvalue="130" uvalue="" mvalue="" value="" />
+			<dataLocation address="1878" length="1"/>
+			<help>Temperature 4 Low Threshold</help>
+		</unitCommand>
+	</commandGroup>
+	<commandGroup name="Trip">
+		<unitCommand MHubUnit="81" name="Trip Start Delay" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Trip Start Delay" max="255" min="0" dvalue="30" uvalue="" mvalue="" value="" />
+			<dataLocation address="1148" length="1"/>
+			<help>Delay after Ignition on before trip start indication</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Trip End Delay" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Trip End Delay" max="255" min="0" dvalue="30" uvalue="" mvalue="" value="" />
+			<dataLocation address="1149" length="1"/>
+			<help>Delay after Ignition off before trip end indication</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Trip Stationary Threshold" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Byte" name="Trip Stationary Threshold" max="10" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="1150" length="1"/>
+			<help>Speed Threshold at what vehicle is considered stationary</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Trip Speed from Sensor" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Bit" name="Trip Speed from Sensor" max="1" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="1151" length="1" bitmask="1"/>
+			<help>Trip Speed from Sensor</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Trip Speed from GPS" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Bit" name="Trip Speed from GPS" max="1" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1151" length="1" bitmask="2"/>
+			<help>Trip Speed from GPS</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Trip Speed from CAN" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Bit" name="Trip Speed from CAN" max="1" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1151" length="1" bitmask="4"/>
+			<help>Trip Speed from CAN</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Trip Distance from Sensor" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Bit" name="Trip Distance from Sensor" max="1" min="0" dvalue="1" uvalue="" mvalue="" value="" />
+			<dataLocation address="1152" length="1" bitmask="1"/>
+			<help>Trip Distance from Sensor</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Trip Distance from GPS" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Bit" name="Trip Distance from GPS" max="1" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1152" length="1" bitmask="2"/>
+			<help>Trip Distance from GPS</help>
+		</unitCommand>
+		<unitCommand MHubUnit="81" name="Trip Distance from CAN" expectResponse="true" commandType="param" read="0" write="0" modify="0" view="0">
+			<argument ptype="Bit" name="Trip Distance from CAN" max="1" min="0" dvalue="0" uvalue="" mvalue="" value="" />
+			<dataLocation address="1152" length="1" bitmask="4"/>
+			<help>Trip Distance from CAN</help>
+		</unitCommand>
+	</commandGroup>
+</Commands>

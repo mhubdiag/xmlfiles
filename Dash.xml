@@ -1,0 +1,119 @@
+<DashData>
+    <Flags>
+		<Group heading="Trip">
+            <Flag index="113" heading="OBD2 Active" OnState="1" />
+            <Flag index="1" heading="Ignition ON" OnState="1" />
+			<Flag index="116" heading="Ignition Noise Low" OnState="1" />
+			
+        </Group>
+        <Group heading="Trip">
+            <Flag index="19" heading="Trip In Progress" OnState="1" />
+            <Flag index="55" heading="Vehicle Disabled" OnState="1" />
+			<Flag index="116" heading="Ingition Noise Low" OnState="1" />
+			
+        </Group>
+        <Group heading="Exceptions">
+            <Flag index="21" heading="Speeding" OnState="1" />
+            <Flag index="22" heading="Excessive RPM" OnState="1" />
+            <Flag index="23" heading="Excessive Idle" OnState="1" />
+            <Flag index="24" heading="Excessive Acceleration" OnState="1" />
+            <Flag index="25" heading="Harsh Braking" OnState="1" />
+            <Flag index="60" heading="Free Wheeling" OnState="1" />
+        </Group>
+        <Group heading="GPS">
+            <Flag index="51" heading="Valid GPS Lock" OnState="1" />
+			<Flag index="117" heading="GPS Rtc Cycle" OnState="1" />
+			<Flag index="118" heading="GPS Comms Active" OnState="1" />
+			<Flag index="119" heading="GPS Aid Request" OnState="1" />
+			<Flag index="120" heading="GPS Best Guess" OnState="1" />
+        </Group>
+        <Group heading="GPRS - Socket">
+            <Flag index="69" heading="Socket Transparent" OnState="1" />
+            <Flag index="70" heading="Socket Open" OnState="1" />
+        </Group>
+        <Group heading="Modem - Stack">
+            <Flag index="71" heading="Stack Running" OnState="1" />
+        </Group>
+        <Group heading="GPRS">
+            <Flag index="72" heading="GPRS Attached" OnState="1" />
+        </Group>
+    </Flags>
+    <Globals>
+		<Group heading="OBC">
+			<Global index="246" length="1"  scale="1" offset="0" heading="OBD2 Protocol" unit="" format="" />
+            <Global index="1" length="1"  scale="1" offset="0" heading="Selected Speed" unit="km/h" format="" />
+            <Global index="3" length="1"  scale="1" offset="0" heading="RPM" unit="rpm" format="" />
+            <Global index="9" length="4"  scale="1" offset="0" heading="Odometer" unit="meter" format="" />
+        </Group>
+        <Group heading="GPS">
+			<Global index="4"  length="4" scale="0.0000001" offset="0"  heading="Latitude" unit="Degrees" format="" />
+            <Global index="5"  length="4" scale="0.0000001" offset="0"  heading="Longitude" unit="Degrees" format="" />
+            <Global index="13" length="2" scale="1" offset="0" heading="Altitude" unit="Meters" format="" />
+            <Global index="14" length="2" scale="0.1" offset="0" heading="Heading" unit="Degrees" format="" />
+            <Global index="15" length="1" scale="1" offset="0" heading="GPS Status" unit="" format="Hex" />
+            <Global index="2"  length="1" scale="1" offset="0" heading="GPS Speed" unit="km/h" format="" />
+            <Global index="90" length="1" scale="1" offset="0" heading="Satellite Count" unit="" format="" />
+            <Global index="91" length="2" scale="1" offset="0" heading="Nav Mode" unit="" format="Hex" />
+            <Global index="16" length="2" scale="1" offset="0" heading="Position Age" unit="s" format="" />
+			<Global index="135" length="2" scale="1" offset="0" heading="Pos Accy" unit="m" format="" />
+        </Group>
+        <Group heading="GSM">
+            <Global index="17" length="2" scale="1" offset="0" heading="State" unit="" format="Hex" />
+            <Global index="18" length="2" scale="1" offset="0" heading="Area" unit="" format="" />
+            <Global index="19" length="2" scale="1" offset="0" heading="Cell ID" unit="" format="Hex" />
+            <Global index="20" length="1" scale="1" offset="0" heading="RSSI" unit="dB" format="" />
+            <Global index="89" length="1" scale="1" offset="0" heading="GSM Status" unit="" format="Hex" />
+        </Group>
+        <Group heading="SMS">
+            <Global index="38" length="2" scale="1" offset="0" heading="SMS's Sent" unit="" format="" />
+            <Global index="39" length="2" scale="1" offset="0" heading="SMS's Received" unit="" format="" />
+        </Group>
+        <Group heading="Modem - TCP Stack">
+            <Global index="122" length="2" scale="1" offset="0" heading="Stack Start Attempts" unit="" format="" />                
+            <Global index="123" length="2" scale="1" offset="0" heading="Stack Start Count" unit="" format="" />
+        </Group>
+        <Group heading="GPRS - Data Transfer">
+            <Global index="40" length="2" scale="1" offset="0" heading="GPRS Data Sent" unit="Packets" format="" />
+            <Global index="41" length="2" scale="1" offset="0" heading="GPRS Data Received" unit="Packets" format="" />
+            <Global index="42" length="4" scale="1" offset="0" heading="GPRS Data Sent" unit="Bytes" format="" />
+            <Global index="43" length="4" scale="1" offset="0" heading="GPRS Data Received" unit="Bytes" format="" />
+        </Group>
+        <Group heading="GPRS - Socket">
+            <Global index="45" length="4" scale="1" offset="0" heading="Socket Open Timet" unit="s" format="" />
+            <Global index="109" length="1" scale="1" offset="0" heading="Socket Login Status" unit="" format="Hex" />
+            <Global index="120" length="2" scale="1" offset="0" heading="Socket Open Attempts" unit="" format="" />
+            <Global index="121" length="2" scale="1" offset="0" heading="Socket Count" unit="" format="" />
+
+        </Group>
+        <Group heading="GPRS - MProfiler">
+            <Global index="118" length="2" scale="1" offset="0" heading="MProfiler Login Attempts" unit="" format="" />
+            <Global index="119" length="2" scale="1" offset="0" heading="MProfiler Logins" unit="" format="" />
+        </Group>
+        <Group heading="Trip">
+            <Global index="107" length="2"  scale="1" offset="0" heading="Trip Duration" unit="s" format="" />
+            <Global index="111" length="2"  scale="1" offset="0" heading="Trip Stationary Time" unit="s" format="" />
+            <Global index="10" length="4"  scale="1" offset="0" heading="Trip Distance" unit="m" format="" />
+        </Group>
+        <Group heading="MHub">
+			<Global index="32" length="1"  scale="0.1" offset="0" heading="Mains Voltage" unit="V" format="" />
+			<Global index="190" length="2"  scale="0.01" offset="0" heading="Battery Voltage" unit="V" format="" />
+            <Global index="92" length="1"  scale="1" offset="0" heading="Temperature" unit="Celcius" format="" />
+            <Global index="84" length="2"  scale="1" offset="0" heading="Running Hours" unit="Hrs" format="" />
+		<Global index="219" length="2"  scale="1" offset="0" heading="Ignition Running Hours" unit="Hrs" format="" />
+            <Global index="102" length="2"  scale="1" offset="0" heading="Cold Boot Count" unit="" format="" />
+            <Global index="99" length="4"  scale="1" offset="0" heading="Main Loop Frequency" unit="Hz" format="" />
+            <Global index="106" length="1"  scale="1" offset="0" heading="CPU Usage" unit="%" format="" />
+            <Global index="37" length="1"  scale="1" offset="0" heading="Triggers Used" unit="" format="" />
+        </Group>
+        <Group heading="Date and Time">
+			<Global index="48"  length="4" scale="1" offset="0"  heading="Julian" unit="Seconds" format="" />
+            <Global index="26" length="1"  scale="1" offset="0" heading="Year" unit="" format="" />
+            <Global index="27" length="1"  scale="1" offset="0" heading="Month" unit="" format="" />
+            <Global index="28" length="1"  scale="1" offset="0" heading="Day" unit="" format="" />
+            <Global index="29" length="1"  scale="1" offset="0" heading="Hour" unit="" format="" />
+            <Global index="30" length="1"  scale="1" offset="0" heading="Minute" unit="" format="" />
+            <Global index="31" length="1"  scale="1" offset="0" heading="Second" unit="" format="" />
+        </Group>
+			
+    </Globals>
+</DashData>

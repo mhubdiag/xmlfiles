@@ -1,4 +1,4 @@
-<MhubParameterSet created="2021-02-26T08:53:19+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2021-02-26T09:03:31+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -3002,6 +3002,32 @@ e.g.
 			<Values min="0" max="1023" default="0" previous="" current="" units="0.1 Volt" />
 			<Help>Threshold at which the Analog Low event will be triggered</Help>
 			<Notes>Threshold at which the Analog Low event will be triggered. The value should be stated in 0.1 Volt increments, e.g. 12V = 120</Notes>
+		</Parameter>
+		<Parameter name="Input/Output C Function" level="10" datatype="Byte" address="2407" length="1" bitmask="255" dtu="0">
+			<Values min="255" max="0" default="0" previous="" current="" units="" />
+			<Help>Input/Output C Function</Help>
+			<Notes>Input/Output C Function Configuration: Default Input/Output 3
+1 Input 3
+2 Input 4
+4 Ignition
+8 RPM
+16 Speed
+32 Output 3
+64 Output 4
+128 Invert Logic</Notes>
+		</Parameter>
+		<Parameter name="Input/Output D Function" level="10" datatype="Byte" address="2408" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Input/Output D Function</Help>
+			<Notes>Input/Output D Function Configuration: Default Input/Output 4
+1 Input 3
+2 Input 4
+4 Ignition
+8 RPM
+16 Speed
+32 Output 3
+64 Output 4
+128 Invert Logic</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Insurance">

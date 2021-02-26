@@ -1,4 +1,4 @@
-<MhubParameterSet created="2021-02-11T09:22:40+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2021-02-26T08:53:18+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -2465,9 +2465,9 @@ Distance in meters from Last Valid position up to which the last valid position 
 </Notes>
 		</Parameter>
 		<Parameter name="GPS Accuracy Threshold" level="10" datatype="Byte" address="412" length="1" bitmask="255" dtu="0">
-			<Values min="10" max="255" default="100" previous="" current="" units="meters" />
+			<Values min="10" max="255" default="50" previous="" current="" units="meters" />
 			<Help>GPS minimum Accuracy Threshold in meters</Help>
-			<Notes>GPS minimum Accuracy Threshold required for some gps calculation. If the gps position accuracy is not better than the threshold e.g. lower value, then gps won't be used in calculation. For example not to do geofence checks if the GPS accuracy radius is larger than the geofence radius.</Notes>
+			<Notes>GPS minimum Accuracy Threshold required for some gps calculation. If the gps position accuracy is not better than the threshold e.g. lower value, then gps w ill not be used in calculation. For example not to do geofence checks if the GPS accuracy radius is larger than the geofence radius.</Notes>
 		</Parameter>
 		<Parameter name="GPS Aid Request Interval" level="10" datatype="Word" address="759" length="2" bitmask="255" dtu="0">
 			<Values min="1800" max="65500" default="10800" previous="" current="" units="" />
@@ -2546,7 +2546,7 @@ may be significantly worse than fixes using only broadcast ephemerides.
 GPS Speed Accuracy Filter will require the current GPS Speed to be greater than the current GPS Speed Accuracy measure to be used in calculations and events. </Notes>
 		</Parameter>
 		<Parameter name="GPS Max Speed Filter" level="15" datatype="Byte" address="1566" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="kmph" />
+			<Values min="0" max="255" default="202" previous="" current="" units="kmph" />
 			<Help>GPS Max Speed Filter</Help>
 			<Notes>GPS Max Speed Filter for populating Trip Max Speed.
 0     Disable. Always Populate
@@ -4517,6 +4517,11 @@ Mains Dev. Threshold</Notes>
 			<Help>Trip Source GPS Speed</Help>
 			<Notes>Trip Source GPS Speed the gps speed has to exceed the speed threshold for ignition on. GPS speed is only used if the GPS signal is deemed good e.g. 3D lock for longer than 5 seconds with HDOP less than 100m</Notes>
 		</Parameter>
+		<Parameter name="Trip Source CANBus" level="10" datatype="Bit" address="472" length="1" bitmask="128" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Trip Source CANBus</Help>
+			<Notes>Trip Source CANBus if CANBus activity is present ignition on. Most vehicles switch off the Vehicle CANBus outside of trip. Verify in the vehicle before enabling.</Notes>
+		</Parameter>
 		<Parameter name="Trip Source Ignition Line" level="10" datatype="Bit" address="472" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Trip Source Ignition Line </Help>
@@ -4526,11 +4531,6 @@ Mains Dev. Threshold</Notes>
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Trip Source Mains Voltage</Help>
 			<Notes>Trip Source Mains Voltage the mains supply voltage has to exceed the threshold for ignition on</Notes>
-		</Parameter>
-		<Parameter name="Trip Source CANBus" level="10" datatype="Bit" address="472" length="1" bitmask="128" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Trip Source CANBus</Help>
-			<Notes>Trip Source CANBus if CANBus activity is present ignition on. Most vehicles switch off the Vehicle CANBus outside of trip. Verify in the vehicle before enabling.</Notes>
 		</Parameter>
 		<Parameter name="Trip Source Mains Dev." level="10" datatype="Bit" address="472" length="1" bitmask="4" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -4677,9 +4677,9 @@ This parameter effectively defines the time period over which the distance pulse
 			<Notes>Excessive Idle is when the vehicle is standing still with the ignition or engine still on. In order to prevent the excessive idle event being generated when the vehicle is simply stopped at a traffic light, this parameter will specify the minimum duration in seconds that the vechile must have been in the idle state before the vehicle is assumed to be in an excessive idle state. XXX - is 0 an appropriate default value?</Notes>
 		</Parameter>
 		<Parameter name="Minimum Speeding Time" level="10" datatype="Word" address="1120" length="2" bitmask="255" dtu="1">
-			<Values min="0" max="65535" default="5" previous="" current="" units="Seconds" />
+			<Values min="0" max="65535" default="10" previous="" current="" units="Seconds" />
 			<Help>Minimum time of excessive speed before a Speeding Event is generated</Help>
-			<Notes>In order to provide a driver with a bit of leeway with redard to speeding - for instance when overtaking and exceeding the sped limit for only a short period, the MHub implements a minimum speeding time. The vehicle must therefopre be speeding for longer than the minimum time before a speeding event is generated. This parameter specifies that minimum speeding time in seconds.</Notes>
+			<Notes>In order to provide a driver with a bit of leeway with regard to speeding - for instance when overtaking and exceeding the speed limit for only a short period, the MHub implements a minimum speeding time. The vehicle must therefore be speeding for longer than the minimum time before a speeding event is generated. This parameter specifies that minimum speeding time in seconds.</Notes>
 		</Parameter>
 		<Parameter name="Minimum Excess RPM Time" level="10" datatype="Word" address="1122" length="2" bitmask="255" dtu="1">
 			<Values min="0" max="65535" default="2" previous="" current="" units="Seconds" />

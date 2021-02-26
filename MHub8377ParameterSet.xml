@@ -1,4 +1,4 @@
-<MhubParameterSet created="2021-02-11T09:22:40+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2021-02-26T08:53:19+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -2582,9 +2582,9 @@ Distance in meters from Last Valid position up to which the last valid position 
 </Notes>
 		</Parameter>
 		<Parameter name="GPS Accuracy Threshold" level="10" datatype="Byte" address="412" length="1" bitmask="255" dtu="0">
-			<Values min="10" max="255" default="100" previous="" current="" units="meters" />
+			<Values min="10" max="255" default="50" previous="" current="" units="meters" />
 			<Help>GPS minimum Accuracy Threshold in meters</Help>
-			<Notes>GPS minimum Accuracy Threshold required for some gps calculation. If the gps position accuracy is not better than the threshold e.g. lower value, then gps won't be used in calculation. For example not to do geofence checks if the GPS accuracy radius is larger than the geofence radius.</Notes>
+			<Notes>GPS minimum Accuracy Threshold required for some gps calculation. If the gps position accuracy is not better than the threshold e.g. lower value, then gps w ill not be used in calculation. For example not to do geofence checks if the GPS accuracy radius is larger than the geofence radius.</Notes>
 		</Parameter>
 		<Parameter name="GPS Aid Request Interval" level="10" datatype="Word" address="759" length="2" bitmask="255" dtu="0">
 			<Values min="1800" max="65500" default="10800" previous="" current="" units="" />
@@ -2663,7 +2663,7 @@ may be significantly worse than fixes using only broadcast ephemerides.
 </Notes>
 		</Parameter>
 		<Parameter name="GPS Max Speed Filter" level="15" datatype="Byte" address="1566" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="kmph" />
+			<Values min="0" max="255" default="202" previous="" current="" units="kmph" />
 			<Help>GPS Max Speed Filter</Help>
 			<Notes>GPS Max Speed Filter for populating Trip Max Speed.
 0     Disable. Always Populate
@@ -4089,15 +4089,15 @@ Number of seconds before the Modem/MHub reboots due to failing to contact the MP
 			<Help>Enables the unit to close a socket so that voice and data calls may be dealt with</Help>
 			<Notes>In order to be able to answer an incomming voice call, the MHub must close a socket connection if it is currently open. Setting this parameter to 1 will allow the socket to be closed. If this is set to 0, then the MHUb will not be able to close the socket, and thus a voice call will not be possible.</Notes>
 		</Parameter>
-		<Parameter name="Permanent TCP Socket" level="10" datatype="Bit" address="477" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>Enables a permanent TCP socket to MProfiler</Help>
-			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will remain permanently open. Enabling this parameter will instruct the MHub to open up a socket and attempt to keep the socket open at all time. Should the socket drop for any reason, the MHub will immediately reopen the socket again.</Notes>
-		</Parameter>
 		<Parameter name="Data Triggered TCP Socket" level="10" datatype="Bit" address="477" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>when enabled the unit will only open a socket if there is data to be sent to MProfiler. This is overidden by the Permanent TCP Socket switch.</Help>
 			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will only be opened if there is data to be sent. Enabling this parameter will instruct the MHub to only open a socket to Mprofiler if there is data to be sent. Note that if the Permanent TCP Socket parameter is also enabled, that that will override this parameter.</Notes>
+		</Parameter>
+		<Parameter name="Permanent TCP Socket" level="10" datatype="Bit" address="477" length="1" bitmask="2" dtu="0">
+			<Values min="0" max="1" default="1" previous="" current="" units="" />
+			<Help>Enables a permanent TCP socket to MProfiler</Help>
+			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will remain permanently open. Enabling this parameter will instruct the MHub to open up a socket and attempt to keep the socket open at all time. Should the socket drop for any reason, the MHub will immediately reopen the socket again.</Notes>
 		</Parameter>
 		<Parameter name="Socket Suspend Time" level="5" datatype="Byte" address="528" length="1" bitmask="0" dtu="0">
 			<Values min="5" max="200" default="15" previous="" current="" units="Seconds" />
@@ -4565,9 +4565,9 @@ Harsh Acceleration Source:
 			<Notes>Excessive Idle is when the vehicle is standing still with the ignition or engine still on. In order to prevent the excessive idle event being generated when the vehicle is simply stopped at a traffic light, this parameter will specify the minimum duration in seconds that the vechile must have been in the idle state before the vehicle is assumed to be in an excessive idle state. XXX - is 0 an appropriate default value?</Notes>
 		</Parameter>
 		<Parameter name="Minimum Speeding Time" level="10" datatype="Word" address="1120" length="2" bitmask="255" dtu="1">
-			<Values min="0" max="65535" default="5" previous="" current="" units="Seconds" />
+			<Values min="0" max="65535" default="10" previous="" current="" units="Seconds" />
 			<Help>Minimum time of excessive speed before a Speeding Event is generated</Help>
-			<Notes>In order to provide a driver with a bit of leeway with redard to speeding - for instance when overtaking and exceeding the sped limit for only a short period, the MHub implements a minimum speeding time. The vehicle must therefopre be speeding for longer than the minimum time before a speeding event is generated. This parameter specifies that minimum speeding time in seconds.</Notes>
+			<Notes>In order to provide a driver with a bit of leeway with regard to speeding - for instance when overtaking and exceeding the speed limit for only a short period, the MHub implements a minimum speeding time. The vehicle must therefore be speeding for longer than the minimum time before a speeding event is generated. This parameter specifies that minimum speeding time in seconds.</Notes>
 		</Parameter>
 		<Parameter name="Minimum Excess RPM Time" level="10" datatype="Word" address="1122" length="2" bitmask="255" dtu="1">
 			<Values min="0" max="65535" default="2" previous="" current="" units="Seconds" />
@@ -4677,15 +4677,15 @@ If set to zero then reports will continue indefinitely</Notes>
 			<Help>Ignition Source: Trigger</Help>
 			<Notes>Ignition Source is set to Trigger which is a software controlled ignition source.</Notes>
 		</Parameter>
-		<Parameter name="Ignition Source: Alternate" level="10" datatype="Bit" address="1829" length="1" bitmask="128" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>Ignition Source: Alternate</Help>
-			<Notes>Ignition Source Alternate uses new method for ignition. Configure sources with Trip Source Ignition Line etc.</Notes>
-		</Parameter>
 		<Parameter name="Ignition Source: Accelerometer" level="5" datatype="Bit" address="1829" length="1" bitmask="64" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Ignition Source: Accelerometer</Help>
 			<Notes>One more possible source of ignition is to use Accelerometer movement. If Accelerometer movement is greater than the value specified in parameter "Accelerometer Ignition On Threshold", the vehicle is moving. If Accelerometer is to be used as ignition, this parameter is set to 1.</Notes>
+		</Parameter>
+		<Parameter name="Ignition Source: Alternate" level="10" datatype="Bit" address="1829" length="1" bitmask="128" dtu="0">
+			<Values min="0" max="1" default="1" previous="" current="" units="" />
+			<Help>Ignition Source: Alternate</Help>
+			<Notes>Ignition Source Alternate uses new method for ignition. Configure sources with Trip Source Ignition Line etc.</Notes>
 		</Parameter>
 		<Parameter name="Ignition Source from RPM Threshold" level="10" datatype="Byte" address="1830" length="1" bitmask="255" dtu="0">
 			<Values min="1" max="255" default="3" previous="" current="" units="RPM" />

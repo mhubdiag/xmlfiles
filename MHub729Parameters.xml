@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="8" unitType="MHub729" created="2021-02-11T09:22:45+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="8" unitType="MHub729" created="2021-02-26T08:53:14+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="2" level="10" status="0" datatype="Word" address="256" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
@@ -1237,11 +1237,11 @@ Value of 0 Disables Geoloc lift detection"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1414" level="10" status="0" datatype="Byte" address="412" length="1" bitmask="255" dtu="0" units="meters" min="10" max="255" >
-			<parValues default="100" mhub="" current="" prev="" />
+			<parValues default="50" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>GPS Accuracy Threshold</parName>
 				<parDescription>"GPS minimum Accuracy Threshold in meters"</parDescription>
-				<parNotes>"GPS minimum Accuracy Threshold required for some gps calculation. If the gps position accuracy is not better than the threshold e.g. lower value, then gps won't be used in calculation. For example not to do geofence checks if the GPS accuracy radius is larger than the geofence radius."</parNotes>
+				<parNotes>"GPS minimum Accuracy Threshold required for some gps calculation. If the gps position accuracy is not better than the threshold e.g. lower value, then gps w ill not be used in calculation. For example not to do geofence checks if the GPS accuracy radius is larger than the geofence radius."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1431" level="10" status="0" datatype="Byte" address="413" length="1" bitmask="255" dtu="0" units="" min="0" max="31" >
@@ -3567,11 +3567,11 @@ Acc Min Braking Duration is the minimum duration to trigger accident event. Conf
 			</parInfo>
 		</Parameter>
 		<Parameter parID="114" level="10" status="0" datatype="Word" address="1120" length="2" bitmask="255" dtu="1" units="Seconds" min="0" max="65535" >
-			<parValues default="5" mhub="" current="" prev="" />
+			<parValues default="10" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Minimum Speeding Time</parName>
 				<parDescription>"Minimum time of excessive speed before a Speeding Event is generated"</parDescription>
-				<parNotes>"In order to provide a driver with a bit of leeway with redard to speeding - for instance when overtaking and exceeding the sped limit for only a short period, the MHub implements a minimum speeding time. The vehicle must therefopre be speeding for longer than the minimum time before a speeding event is generated. This parameter specifies that minimum speeding time in seconds."</parNotes>
+				<parNotes>"In order to provide a driver with a bit of leeway with regard to speeding - for instance when overtaking and exceeding the speed limit for only a short period, the MHub implements a minimum speeding time. The vehicle must therefore be speeding for longer than the minimum time before a speeding event is generated. This parameter specifies that minimum speeding time in seconds."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="115" level="10" status="0" datatype="Word" address="1122" length="2" bitmask="255" dtu="1" units="Seconds" min="0" max="65535" >
@@ -4759,7 +4759,7 @@ required would be 750"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1815" level="15" status="0" datatype="Byte" address="1566" length="1" bitmask="255" dtu="0" units="kmph" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
+			<parValues default="202" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>GPS Max Speed Filter</parName>
 				<parDescription>"GPS Max Speed Filter"</parDescription>
@@ -10625,9 +10625,9 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="1275" />
 				<catParameter parID="1419" />
 				<catParameter parID="1424" />
+				<catParameter parID="1427" />
 				<catParameter parID="1420" />
 				<catParameter parID="1421" />
-				<catParameter parID="1427" />
 				<catParameter parID="1422" />
 				<catParameter parID="1423" />
 				<catParameter parID="1425" />

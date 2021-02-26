@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="12" unitType="MHub8463" created="2021-02-11T09:22:47+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="12" unitType="MHub8463" created="2021-02-26T08:53:16+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="2" level="10" status="0" datatype="Word" address="256" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
@@ -1189,11 +1189,11 @@ Value of 0 Disables Geoloc lift detection"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1414" level="10" status="0" datatype="Byte" address="412" length="1" bitmask="255" dtu="0" units="meters" min="10" max="255" >
-			<parValues default="100" mhub="" current="" prev="" />
+			<parValues default="50" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>GPS Accuracy Threshold</parName>
 				<parDescription>"GPS minimum Accuracy Threshold in meters"</parDescription>
-				<parNotes>"GPS minimum Accuracy Threshold required for some gps calculation. If the gps position accuracy is not better than the threshold e.g. lower value, then gps won't be used in calculation. For example not to do geofence checks if the GPS accuracy radius is larger than the geofence radius."</parNotes>
+				<parNotes>"GPS minimum Accuracy Threshold required for some gps calculation. If the gps position accuracy is not better than the threshold e.g. lower value, then gps w ill not be used in calculation. For example not to do geofence checks if the GPS accuracy radius is larger than the geofence radius."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1431" level="10" status="0" datatype="Byte" address="413" length="1" bitmask="255" dtu="0" units="" min="0" max="31" >
@@ -3708,11 +3708,11 @@ Acc Min Braking Duration is the minimum duration to trigger accident event. Conf
 			</parInfo>
 		</Parameter>
 		<Parameter parID="114" level="10" status="0" datatype="Word" address="1120" length="2" bitmask="255" dtu="1" units="Seconds" min="0" max="65535" >
-			<parValues default="5" mhub="" current="" prev="" />
+			<parValues default="10" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Minimum Speeding Time</parName>
 				<parDescription>"Minimum time of excessive speed before a Speeding Event is generated"</parDescription>
-				<parNotes>"In order to provide a driver with a bit of leeway with redard to speeding - for instance when overtaking and exceeding the sped limit for only a short period, the MHub implements a minimum speeding time. The vehicle must therefopre be speeding for longer than the minimum time before a speeding event is generated. This parameter specifies that minimum speeding time in seconds."</parNotes>
+				<parNotes>"In order to provide a driver with a bit of leeway with regard to speeding - for instance when overtaking and exceeding the speed limit for only a short period, the MHub implements a minimum speeding time. The vehicle must therefore be speeding for longer than the minimum time before a speeding event is generated. This parameter specifies that minimum speeding time in seconds."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="115" level="10" status="0" datatype="Word" address="1122" length="2" bitmask="255" dtu="1" units="Seconds" min="0" max="65535" >
@@ -5055,7 +5055,7 @@ Most diesel vehicles will require this parameter to be entered if Fuel usage is 
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1815" level="15" status="0" datatype="Byte" address="1566" length="1" bitmask="255" dtu="0" units="kmph" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
+			<parValues default="202" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>GPS Max Speed Filter</parName>
 				<parDescription>"GPS Max Speed Filter"</parDescription>
@@ -10890,7 +10890,7 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 						<grpParameterValue parID="1795" value="0" display="0" ovr="0" />
 						<grpParameterValue parID="1291" value="0" display="0" ovr="0" />
 						<grpParameterValue parID="1559" value="0" display="0" ovr="0" />
-						<grpParameterValue parID="1304" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1304" value="0" display="1" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
 				<grpValue grpValueName="Standard Settings" isDefault="0">
@@ -10923,7 +10923,7 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 						<grpParameterValue parID="1795" value="1" display="0" ovr="0" />
 						<grpParameterValue parID="1291" value="0" display="0" ovr="0" />
 						<grpParameterValue parID="1559" value="247" display="0" ovr="0" />
-						<grpParameterValue parID="1304" value="247" display="0" ovr="0" />
+						<grpParameterValue parID="1304" value="247" display="1" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
 			</grpValues>
@@ -11097,6 +11097,24 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 						<grpParameterValue parID="1441" value="24" display="1" ovr="0" />
 						<grpParameterValue parID="1803" value="1" display="0" ovr="0" />
 						<grpParameterValue parID="1442" value="1" display="1" ovr="0" />
+					</grpParameterValues>
+				</grpValue>
+			</grpValues>
+		</Group>
+		<Group grpName="Data Reporting" isDefault="0">
+			<grpDescription>
+				Group to set configuration relating to reporting of data to MProfiler and MZone
+			</grpDescription>
+			<grpValues>
+				<grpValue grpValueName="Disable all Accident Log Event reporting" isDefault="1">
+					<grpValueDescription>
+						This group disables all parameters that can result in part of the Journey Log being sent as Accident Log events. To be 100% sure it disables the Accident Log Event as well.
+					</grpValueDescription>
+					<grpParameterValues>
+						<grpParameterValue parID="1799" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1800" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1801" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1304" value="0" display="1" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
 			</grpValues>

@@ -47,7 +47,7 @@
 		<item id="44" description="Julian Timestamp of the last socket opening. This will be the current socket open time if one is currently open." name="Socket Last Open Timestamp" size="4" scale="1" offset="0" units="bytes" min="0" max="4294967295" dtu="0" />
 		<item id="45" description="Number of seconds that the current socket has been open." name="Socket Open Time" size="4" scale="1" offset="0" units="bytes" min="0" max="4294967295" dtu="1" />
 		<item id="46" description="32Bit Driver ID for use where the 16bit value is not big enough" name="Driver ID 32Bit" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="1" />
-		<item id="47" description="Variable is available for use" name="Available 2" size="4" scale="" offset="0" units="" min="0" max="1" dtu="0" />
+		<item id="47" description="Variable is available for use" name="Available 2" size="4" scale="1" offset="0" units="" min="0" max="1" dtu="0" />
 		<item id="48" description="Julian Time of the box - this is the number of seconds since 01-01-2000" name="Julian Time" size="4" scale="1" offset="0" units="Second" min="0" max="4294967295" dtu="0" />
 		<item id="49" description="This is the odometer value where the Maximum Distance Geofence Event will be raised" name="Geofence Maximum Distance Trigger" size="4" scale="1" offset="0" units="m" min="0" max="65535" dtu="0" />
 		<item id="50" description="This is the maximum allowed travel distance between the just exited geofence and the next geofence" name="Geofence Maximum Distance" size="2" scale="1" offset="0" units="Km" min="0" max="65535" dtu="0" />

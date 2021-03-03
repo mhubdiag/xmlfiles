@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="18" unitType="MHub8465" created="2021-02-26T09:03:28+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="18" unitType="MHub8465" created="2021-03-03T08:34:59+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="2" level="10" status="0" datatype="Word" address="256" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
@@ -6825,7 +6825,7 @@ Set the threshold of RSCP in 3G Network.
 None"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1827" level="10" status="0" datatype="Byte" address="2407" length="1" bitmask="255" dtu="0" units="" min="255" max="0" >
+		<Parameter parID="1827" level="10" status="0" datatype="Byte" address="2407" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Input/Output C Function</parName>

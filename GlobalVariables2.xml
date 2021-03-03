@@ -24,8 +24,8 @@
 		<item id="22" description="Timer 1ms" name="Timer 1ms" size="4" scale="1" offset="0" units="ms" min="0" max="4294967295" dtu="0" />
 		<item id="23" description="CAN Status to reflect errors" name="CAN Status" size="2" scale="1" offset="0" units="Bit" min="0" max="65535" dtu="0" />
 		<item id="24" description="Scaled Li-Ion Battery Voltage" name="Li-Ion Battery Voltage" size="1" scale="0.02" offset="0" units="V" min="0" max="5.1" dtu="0" />
-		<item id="25" description="Ignition Source Structure" name="Ignition Source" size="2" scale="" offset="0" units="" min="0" max="65535" dtu="0" />
-		<item id="26" description="Trip Source Structure" name="Trip Source" size="2" scale="" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="25" description="Ignition Source Structure" name="Ignition Source" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="26" description="Trip Source Structure" name="Trip Source" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
 		<item id="27" description="Raw analog value used for Fuel measurement" name="Fuel Raw Analog " size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
 		<item id="28" description="Interval between successive data points in the Telemetry event " name="Telemetry Data Interval" size="2" scale="1" offset="0" units="s" min="0" max="65535" dtu="0" />
 		<item id="29" description="Unsent High Priority Events" name="Unsent HP Events" size="2" scale="1" offset="0" units="Count" min="0" max="65535" dtu="0" />

@@ -1,4 +1,4 @@
-<MhubParameterSet created="2021-02-26T09:03:32+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2021-03-03T08:35:03+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />

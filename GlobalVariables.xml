@@ -254,5 +254,5 @@
 		<item id="252" description="Custom 5 Variable 4" name="Custom 5 Variable 4" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="0" />
 		<item id="253" description="Custom 5 Variable 5" name="Custom 5 Variable 5" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="0" />
 		<item id="254" description="Custom 5 Variable 6" name="Custom 5 Variable 6" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="0" />
-		<item id="255" description="Variable available to be used" name="Available 3" size="1" scale="" offset="0" units="" min="0" max="1" dtu="0" />
+		<item id="255" description="Variable available to be used" name="Available 3" size="1" scale="1" offset="0" units="" min="0" max="1" dtu="0" />
 </GlobalVariables>

@@ -1,4 +1,4 @@
-<MhubParameterSet created="2021-02-26T09:03:31+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2021-03-03T08:35:02+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -3004,7 +3004,7 @@ e.g.
 			<Notes>Threshold at which the Analog Low event will be triggered. The value should be stated in 0.1 Volt increments, e.g. 12V = 120</Notes>
 		</Parameter>
 		<Parameter name="Input/Output C Function" level="10" datatype="Byte" address="2407" length="1" bitmask="255" dtu="0">
-			<Values min="255" max="0" default="0" previous="" current="" units="" />
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
 			<Help>Input/Output C Function</Help>
 			<Notes>Input/Output C Function Configuration: Default Input/Output 3
 1 Input 3

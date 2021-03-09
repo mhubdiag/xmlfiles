@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="12" unitType="MHub8463" created="2021-03-03T08:34:59+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="12" unitType="MHub8463" created="2021-03-09T08:31:45+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="2" level="10" status="0" datatype="Word" address="256" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
@@ -8625,6 +8625,27 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<parNotes>"See Periodic Position Event Configuration"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1830" level="10" status="0" datatype="Byte" address="3614" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
+			<parValues default="183" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>General Purpose IO</parName>
+				<parDescription>"General Purpose IO Event Configuration"</parDescription>
+				<parNotes>"Events can be configured to be high priority as well as what policy to use for sending it and what optional fields to include in the event report. The policy specify what mediums are allowed for communications and are configured in the "Communications" section.
+
+This parameter is a bitfield where the bits have the following meanings:
+
+Configuration = 
+   Bits 1,2,3 [0-7] : Policy, value between 0 and 7
+   Bit  4 : Not Used
+   Bit  5 [16]  : Include Location Optional Field
+   Bit  6 [32]  : Include Status Optional Field
+   Bit  7 [64]  : Event is High Priority
+   Bit  8 [128] : Event is Enabled
+
+How is this value calculated: 
+As an example, configure the event to use policy 5, Include the Location Field, Include the Status Field and is enabled. Use the values in square brackets for each item and add them together, i.e. 5 + 16 + 32 + 128 = 181"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1545" level="10" status="0" datatype="Byte" address="3654" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -9847,6 +9868,7 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="777" />
 				<catParameter parID="778" />
 				<catParameter parID="779" />
+				<catParameter parID="1830" />
 				<catParameter parID="1545" />
 				<catParameter parID="1659" />
 				<catParameter parID="1660" />

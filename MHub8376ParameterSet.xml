@@ -1,4 +1,4 @@
-<MhubParameterSet created="2021-03-03T08:35:02+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2021-03-09T08:31:48+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -1685,6 +1685,24 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
 			<Help>Output 4 ON Event Configuration</Help>
 			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="General Purpose IO" level="10" datatype="Byte" address="3614" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="183" previous="" current="" units="" />
+			<Help>General Purpose IO Event Configuration</Help>
+			<Notes>Events can be configured to be high priority as well as what policy to use for sending it and what optional fields to include in the event report. The policy specify what mediums are allowed for communications and are configured in the "Communications" section.
+
+This parameter is a bitfield where the bits have the following meanings:
+
+Configuration = 
+   Bits 1,2,3 [0-7] : Policy, value between 0 and 7
+   Bit  4 : Not Used
+   Bit  5 [16]  : Include Location Optional Field
+   Bit  6 [32]  : Include Status Optional Field
+   Bit  7 [64]  : Event is High Priority
+   Bit  8 [128] : Event is Enabled
+
+How is this value calculated: 
+As an example, configure the event to use policy 5, Include the Location Field, Include the Status Field and is enabled. Use the values in square brackets for each item and add them together, i.e. 5 + 16 + 32 + 128 = 181</Notes>
 		</Parameter>
 		<Parameter name="Analog Sensor" level="10" datatype="Byte" address="3654" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />

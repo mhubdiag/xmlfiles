@@ -180,12 +180,12 @@
 		<item id="178" description="Bluetooth Communication Medium State" name="CM Bluetooth" dtu="1" />
 		<item id="179" description="Wifi Communication Medium State" name="CM Wifi" dtu="1" />
 		<item id="180" description="Radio Communication Medium State" name="CM Radio" dtu="1" />
-		<item id="181" description="State of Output 6" name="Output 6" dtu="1" />
-		<item id="182" description="State of Output 7" name="Output 7" dtu="1" />
+		<item id="181" description="State of Output 6" name="Output 6 State" dtu="1" />
+		<item id="182" description="State of Output 7" name="Output 7 State" dtu="1" />
 		<item id="183" description="HF Data capture in progress" name="VNI Data Capture Active" dtu="1" />
 		<item id="184" description="If TRUE Trigger State is checked by code to determine if capture should occur" name="Data Capture Trigger Enabled" dtu="0" />
 		<item id="185" description="Trigger State is checked by code to determine if capture should occur" name="Data Capture Trigger State" dtu="1" />
-		<item id="186" description="State of Output 8" name="Output 8" dtu="1" />
+		<item id="186" description="State of Output 8" name="Output 8 State" dtu="1" />
 		<item id="187" description="The vehicle is traveling faster than geofence speed warning limit" name="Geofence Speed Warning" dtu="1" />
 		<item id="188" description="Roll Warning Threshold Exceeded" name="Roll Warning" dtu="1" />
 		<item id="189" description="Pitch Warning Threshold Exceeded" name="Pitch Warning " dtu="0" />

@@ -442,6 +442,11 @@
 				<tag id="22" description="Odometer Info" />
 			</tags>
 		</event>
+		<event id="30" description="General Purpose IO">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
 		<event id="70" description="Analog Sensor">
 			<tags>
 				<tag id="52" description="Custom Event 3 Data" />

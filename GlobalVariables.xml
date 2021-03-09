@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GlobalVariables>
-		<item id="0" description="Not Used" name="Reserved" size="1" scale="1" offset="0" units="" min="0" max="1" dtu="0" />
+		<item id="0" description="Reserved - DO NOT USE" name="Reserved" size="1" scale="1" offset="0" units="" min="0" max="1" dtu="0" />
 		<item id="1" description="Speed as reported by the selected speed source (Sensor, GPS, CAN)" name="Speed" size="1" scale="1" offset="0" units="km/h" min="0" max="255" dtu="1" />
 		<item id="2" description="Speed from GPS" name="GPS Speed" size="1" scale="1" offset="0" units="km/h" min="0" max="255" dtu="1" />
 		<item id="3" description="RPM as reported by the selected RPM source (Sensor, CAN)" name="RPM" size="1" scale="100" offset="0" units="rpm" min="0" max="25500" dtu="1" />
@@ -254,5 +254,41 @@
 		<item id="252" description="Custom 5 Variable 4" name="Custom 5 Variable 4" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="0" />
 		<item id="253" description="Custom 5 Variable 5" name="Custom 5 Variable 5" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="0" />
 		<item id="254" description="Custom 5 Variable 6" name="Custom 5 Variable 6" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="0" />
-		<item id="255" description="Variable available to be used" name="Available 3" size="1" scale="1" offset="0" units="" min="0" max="1" dtu="0" />
+		<item id="255" description="Reserved - DO NOT USE" name="Reserved" size="1" scale="1" offset="0" units="" min="0" max="1" dtu="0" />
+		<item id="256" description="Reserved - DO NOT USE" name="Reserved" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="0" />
+		<item id="257" description="Intake manifold absolute pressure" name="MAP" size="1" scale="1" offset="0" units="kPa" min="0" max="255" dtu="0" />
+		<item id="258" description="Barometric Pressure" name="Barometric Pressure" size="1" scale="1" offset="0" units="kPa" min="0" max="255" dtu="0" />
+		<item id="259" description="Ambient Temperature" name="Ambient Temperature" size="1" scale="1" offset="-40" units="Celcius" min="-40" max="215" dtu="0" />
+		<item id="260" description="Distance traveled since codes cleared" name="Trip DTC Cleared" size="2" scale="1" offset="0" units="km" min="0" max="65535" dtu="0" />
+		<item id="261" description="Time in 10ms units" name="Time 10ms" size="2" scale="1" offset="0" units="10ms" min="0" max="65535" dtu="0" />
+		<item id="262" description="Accelerometer Delta due to movement" name="Accelerometer Delta" size="2" scale="1" offset="0" units="Count" min="0" max="65535" dtu="0" />
+		<item id="263" description="Mains Voltage Delta" name="Mains Delta" size="4" scale="1" offset="0" units="Count" min="0" max="4294967295" dtu="0" />
+		<item id="264" description="Average Voltage before Crank" name="Average Voltage before Crank" size="2" scale="0.01" offset="0" units="V" min="0" max="655.35" dtu="0" />
+		<item id="265" description="Minimum Crank Voltage" name="Minimum Crank Voltage" size="2" scale="0.01" offset="0" units="V" min="0" max="655.35" dtu="0" />
+		<item id="266" description="Minimum Crank Voltage Time" name="Minimum Crank Voltage Time" size="2" scale="0.01" offset="0" units="s" min="0" max="655.35" dtu="0" />
+		<item id="267" description="Average Crank Voltage" name="Average Crank Voltage" size="2" scale="0.01" offset="0" units="V" min="0" max="655.35" dtu="0" />
+		<item id="268" description="Average Crank Voltage Time" name="Average Crank Voltage Time" size="2" scale="0.01" offset="0" units="s" min="0" max="655.35" dtu="0" />
+		<item id="269" description="Post Crank Voltage" name="Post Crank Voltage" size="2" scale="0.01" offset="0" units="V" min="0" max="655.35" dtu="0" />
+		<item id="270" description="Analog 0" name="Analog 0" size="2" scale="0.01" offset="0" units="V" min="0" max="655.35" dtu="0" />
+		<item id="271" description="GPS Automatic Gain Control Value" name="GPS AGC" size="1" scale="0.4" offset="0" units="Gain %" min="0" max="255" dtu="0" />
+		<item id="272" description="GPS Carrier to Noise ratio" name="GPS CNo" size="1" scale="1" offset="0" units="dBHz" min="0" max="255" dtu="0" />
+		<item id="273" description="GPS Carrier to Noise ratio for Strongest Signal" name="GPS CNo Max" size="1" scale="1" offset="0" units="dBHz" min="0" max="255" dtu="0" />
+		<item id="274" description="Number of satellites used for GPS CNo" name="GPS CNo Count" size="1" scale="1" offset="0" units="Count" min="0" max="255" dtu="0" />
+		<item id="275" description="Total Number of Satellite that CNo is available for" name="GPS CNo AllCount " size="1" scale="1" offset="0" units="Count" min="0" max="255" dtu="0" />
+		<item id="276" description="GPS Noise reported by Module" name="GPS Noise" size="1" scale="1" offset="0" units="Noise" min="0" max="255" dtu="0" />
+		<item id="277" description="GPS Jamming Value" name="GPS Jamming" size="1" scale="0.392" offset="0" units="%" min="0" max="255" dtu="0" />
+		<item id="278" description="Timer 1ms" name="Timer 1ms" size="4" scale="1" offset="0" units="ms" min="0" max="4294967295" dtu="0" />
+		<item id="279" description="CAN Status to reflect errors" name="CAN Status" size="2" scale="1" offset="0" units="Bit" min="0" max="65535" dtu="0" />
+		<item id="280" description="Scaled Li-Ion Battery Voltage" name="Li-Ion Battery Voltage" size="1" scale="0.02" offset="0" units="V" min="0" max="5.1" dtu="0" />
+		<item id="281" description="Ignition Source Structure" name="Ignition Source" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="282" description="Trip Source Structure" name="Trip Source" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="283" description="Raw analog value used for Fuel measurement" name="Fuel Raw Analog " size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="284" description="Interval between successive data points in the Telemetry event " name="Telemetry Data Interval" size="2" scale="1" offset="0" units="s" min="0" max="65535" dtu="0" />
+		<item id="285" description="Unsent High Priority Events" name="Unsent HP Events" size="2" scale="1" offset="0" units="Count" min="0" max="65535" dtu="0" />
+		<item id="286" description="Unsent Normal Priority Events" name="Unsent NP Events" size="2" scale="1" offset="0" units="Count" min="0" max="65535" dtu="0" />
+		<item id="287" description="Air Equivalence Ratio currently used by the vehicle" name="Air Equivalence Ratio" size="2" scale="0.0000305" offset="0" units="" min="0" max="2" dtu="0" />
+		<item id="288" description="Lean or richness of fuel mixture" name="Short Term Fuel Trim " size="1" scale="0.78125" offset="-128" units="%" min="-100" max="99" dtu="0" />
+		<item id="289" description="Absolute Engine Load as reported by OBD. This uses a different calculation to Calculated Engine Load" name="Absolute Engine Load" size="2" scale="0.392156" offset="0" units="%" min="0" max="65535" dtu="0" />
+		<item id="290" description="Analog Input 3" name="Analog Input 3" size="2" scale="0.01" offset="0" units="V" min="0" max="655.35" dtu="0" />
+		<item id="291" description="Analog Input 4" name="Analog Input 4" size="2" scale="0.01" offset="0" units="V" min="0" max="655.35" dtu="0" />
 </GlobalVariables>

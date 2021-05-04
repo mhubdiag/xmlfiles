@@ -1,4 +1,4 @@
-<MhubParameterSet created="2021-03-09T08:31:48+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2021-05-04T15:28:03+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -2335,40 +2335,17 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 		</Parameter>
 		<Parameter name="Fuel Level Source" level="10" datatype="Byte" address="1519" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="4" default="0" previous="" current="" units="" />
-			<Help>The source for the fuel level data. Possible values are:
-0 - CANBus
-1 - OBD2
-2 - Analog Input connected to Fuel Gauge
-All other values reserved</Help>
-			<Notes>The source for the fuel level data. Possible values are:
-0 - None
-1 - CANBus
-2 - OBD2 (Deprecated)
-3 - Analog Input connected to Fuel Gauge
-4 - Fuel Probe
-All other values reserved</Notes>
+			<Help>Please see
+https://wiki.scopetechnology.com/index.php/Consolidated_Fuel_Event_Configuration</Help>
+			<Notes>Please see
+https://wiki.scopetechnology.com/index.php/Consolidated_Fuel_Event_Configuration</Notes>
 		</Parameter>
 		<Parameter name="Fuel Consumption Source" level="10" datatype="Byte" address="1520" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="7" default="0" previous="" current="" units="" />
-			<Help>The source for the Fuel Consumption data. Possible values are:
-0 - CANBus
-1 - OBDII
-3 - Fuel Flow Meter
-4 - CO2 Model
-5 - Mass Airflow Sensor
-All other values reserved
-</Help>
-			<Notes>The source for the Fuel Consumption data. Possible values are:
-0 - None
-1 - CANBus
-2 - OBDII
-3 - RFE
-4 - Fuel Flow Meter
-5 - CO2 Model
-6 - Mass Airflow Sensor
-7 - Fuel Probe
-All other values reserved
-</Notes>
+			<Help>Please see
+https://wiki.scopetechnology.com/index.php/Consolidated_Fuel_Event_Configuration</Help>
+			<Notes>Please see
+https://wiki.scopetechnology.com/index.php/Consolidated_Fuel_Event_Configuration</Notes>
 		</Parameter>
 		<Parameter name="Fuel Tank Supply Voltage" level="10" datatype="Word" address="1528" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />

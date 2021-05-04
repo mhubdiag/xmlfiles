@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="12" unitType="MHub8463" created="2021-05-04T15:27:57+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="19" unitType="MHub819U" created="2021-05-04T15:27:55+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="2" level="10" status="0" datatype="Word" address="256" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
@@ -382,7 +382,7 @@ Minimum time between Tachograph events or minimum time that direction needs to b
 				<parNotes>"OBC Calculate Fuel from Equation. Populate OBC Weight and Fuel Model parameters"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1367" level="0" status="0" datatype="Byte" address="322" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+		<Parameter parID="1367" level="0" status="1" datatype="Byte" address="322" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
 			<parValues default="12" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Regulator Register 0</parName>
@@ -2548,7 +2548,7 @@ Other = OFF (No Beep)"</parNotes>
 				<parNotes>"See Beeper 1 Style"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="963" level="15" status="0" datatype="Byte" address="570" length="1" bitmask="255" dtu="0" units="" min="0" max="15" >
+		<Parameter parID="963" level="15" status="1" datatype="Byte" address="570" length="1" bitmask="255" dtu="0" units="" min="0" max="15" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Axle 0 Location</parName>
@@ -2556,7 +2556,7 @@ Other = OFF (No Beep)"</parNotes>
 				<parNotes>"Axle 0 Location. Axle location bit-mapped position number counting front to back facing forward."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="965" level="15" status="0" datatype="Byte" address="571" length="1" bitmask="255" dtu="0" units="" min="0" max="15" >
+		<Parameter parID="965" level="15" status="1" datatype="Byte" address="571" length="1" bitmask="255" dtu="0" units="" min="0" max="15" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Axle 0 Tyre Location</parName>
@@ -2564,7 +2564,7 @@ Other = OFF (No Beep)"</parNotes>
 				<parNotes>"Axle 0 Tyre Location. Tyre location Bit-mapped counting left to right facing forward."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="964" level="15" status="0" datatype="Byte" address="572" length="1" bitmask="255" dtu="0" units="" min="0" max="15" >
+		<Parameter parID="964" level="15" status="1" datatype="Byte" address="572" length="1" bitmask="255" dtu="0" units="" min="0" max="15" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Axle 1 Location</parName>
@@ -2572,7 +2572,7 @@ Other = OFF (No Beep)"</parNotes>
 				<parNotes>"Axle 1 Location. Axle location bit-mapped position number counting front to back facing forward."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="966" level="15" status="0" datatype="Byte" address="573" length="1" bitmask="255" dtu="0" units="" min="0" max="15" >
+		<Parameter parID="966" level="15" status="1" datatype="Byte" address="573" length="1" bitmask="255" dtu="0" units="" min="0" max="15" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Axle 1 Tyre Location</parName>
@@ -2580,7 +2580,7 @@ Other = OFF (No Beep)"</parNotes>
 				<parNotes>"Axle 1 Tyre Location. Tyre location Bit-mapped counting left to right facing forward."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="967" level="10" status="0" datatype="Word" address="574" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
+		<Parameter parID="967" level="10" status="1" datatype="Word" address="574" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Custom J1939 PGN 0</parName>
@@ -2588,7 +2588,7 @@ Other = OFF (No Beep)"</parNotes>
 				<parNotes>"Custom J1939 Parameter Group Number 0. A three byte, 24bit number that uniquely identifies a particular Parameter Group."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="968" level="10" status="0" datatype="Word" address="576" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
+		<Parameter parID="968" level="10" status="1" datatype="Word" address="576" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Custom J1939 PGN 1</parName>
@@ -4870,7 +4870,7 @@ This setting is implemented when Wifi is turned on."</parNotes>
 172 - Disable and clear cache."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1769" level="10" status="0" datatype="Word" address="1548" length="2" bitmask="255" dtu="0" units="mm" min="0" max="65535" >
+		<Parameter parID="1769" level="10" status="1" datatype="Word" address="1548" length="2" bitmask="255" dtu="0" units="mm" min="0" max="65535" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Fuel Tank Length</parName>
@@ -4878,7 +4878,7 @@ This setting is implemented when Wifi is turned on."</parNotes>
 				<parNotes>"Length of the Fuel Tank in mm"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1770" level="10" status="0" datatype="Word" address="1550" length="2" bitmask="255" dtu="0" units="mm" min="0" max="65535" >
+		<Parameter parID="1770" level="10" status="1" datatype="Word" address="1550" length="2" bitmask="255" dtu="0" units="mm" min="0" max="65535" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Fuel Tank Depth or Diameter</parName>
@@ -4886,7 +4886,7 @@ This setting is implemented when Wifi is turned on."</parNotes>
 				<parNotes>"Depth or Diameter of the Fuel Tank in mm. If the tank is rectangular then this is the depth, else if it is cylindrical then it is the diameter "</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1771" level="10" status="0" datatype="Word" address="1552" length="2" bitmask="255" dtu="0" units="mm" min="0" max="65535" >
+		<Parameter parID="1771" level="10" status="1" datatype="Word" address="1552" length="2" bitmask="255" dtu="0" units="mm" min="0" max="65535" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Fuel Tank Height</parName>
@@ -4993,6 +4993,14 @@ This sets the minimum time threshold for the Standard Deviation calculation. Thi
 				<parNotes>"Enable Sending of part of the Journey Log as events around the Excessive Acceleration Transgression"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1805" level="10" status="0" datatype="Word" address="1560" length="2" bitmask="255" dtu="0" units="0.1 KPa" min="0" max="65535" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Low Tyre Pressure Warning</parName>
+				<parDescription>"Low warning level for tyre pressure in 0.1 KPa units"</parDescription>
+				<parNotes>"Low warning level for tyre pressure in 0.1 KPa units. As an example: set the level to 1.2bar = 120 KPa = 1200 0.1KPa units"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1813" level="5" status="0" datatype="Word" address="1562" length="2" bitmask="255" dtu="0" units="" min="0" max="65000" >
 			<parValues default="1000" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -5055,6 +5063,14 @@ GPS Position Accuracy Filter combined with minimum satellite count
 205   Only populate Max Speed if Satellite count 6+ and Position Accuracy 1-5m  "</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1816" level="10" status="0" datatype="Word" address="1567" length="2" bitmask="255" dtu="0" units="seconds" min="0" max="65535" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Periodic Tyre Pressure Report Interval</parName>
+				<parDescription>"Periodic Tyre Pressure Report Interval in seconds"</parDescription>
+				<parNotes>"Periodic Tyre Pressure Report Interval in seconds. If the value is 0 this functionality is disabled"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1818" level="5" status="0" datatype="Byte" address="1569" length="1" bitmask="255" dtu="0" units="" min="0" max="1" >
 			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -5089,6 +5105,70 @@ Note that unless the Force MAF calculation setting is enabled, read MAF will alw
 If set to 0 then multiple downloads disabled. "</parDescription>
 				<parNotes>"Number of files that comprise the complete download.
 If set to 0 then multiple downloads disabled. "</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1831" level="10" status="0" datatype="Word" address="1664" length="2" bitmask="255" dtu="1" units="" min="0" max="65535" >
+			<parValues default="5" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Input 9 Delay</parName>
+				<parDescription>"Delay for Input 9 before General Purpose IO Event Generation"</parDescription>
+				<parNotes>"This parameter will specify the minimum amount of time in seconds for which an input must be in a new state before an event will be generated."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1832" level="10" status="0" datatype="Word" address="1666" length="2" bitmask="255" dtu="1" units="" min="0" max="65535" >
+			<parValues default="5" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Input 10 Delay</parName>
+				<parDescription>"Delay for Input 10 before General Purpose IO Event Generation"</parDescription>
+				<parNotes>"This parameter will specify the minimum amount of time in seconds for which an input must be in a new state before an event will be generated."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1833" level="10" status="0" datatype="Word" address="1668" length="2" bitmask="255" dtu="1" units="" min="0" max="65535" >
+			<parValues default="5" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Input 11 Delay</parName>
+				<parDescription>"Delay for Input 11 before General Purpose IO Event Generation"</parDescription>
+				<parNotes>"This parameter will specify the minimum amount of time in seconds for which an input must be in a new state before an event will be generated."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1834" level="10" status="0" datatype="Word" address="1670" length="2" bitmask="255" dtu="1" units="" min="0" max="65535" >
+			<parValues default="5" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Input 12 Delay</parName>
+				<parDescription>"Delay for Input 12 before General Purpose IO Event Generation"</parDescription>
+				<parNotes>"This parameter will specify the minimum amount of time in seconds for which an input must be in a new state before an event will be generated."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1835" level="10" status="0" datatype="Word" address="1672" length="2" bitmask="255" dtu="1" units="" min="0" max="65535" >
+			<parValues default="5" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Input 13 Delay</parName>
+				<parDescription>"Delay for Input 13 before General Purpose IO Event Generation"</parDescription>
+				<parNotes>"This parameter will specify the minimum amount of time in seconds for which an input must be in a new state before an event will be generated."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1836" level="10" status="0" datatype="Word" address="1674" length="2" bitmask="255" dtu="1" units="" min="0" max="65535" >
+			<parValues default="5" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Input 14 Delay</parName>
+				<parDescription>"Delay for Input 14 before General Purpose IO Event Generation"</parDescription>
+				<parNotes>"This parameter will specify the minimum amount of time in seconds for which an input must be in a new state before an event will be generated."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1837" level="10" status="0" datatype="Word" address="1676" length="2" bitmask="255" dtu="1" units="" min="0" max="65535" >
+			<parValues default="5" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Input 15 Delay</parName>
+				<parDescription>"Delay for Input 15 before General Purpose IO Event Generation"</parDescription>
+				<parNotes>"This parameter will specify the minimum amount of time in seconds for which an input must be in a new state before an event will be generated."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1838" level="10" status="0" datatype="Word" address="1678" length="2" bitmask="255" dtu="1" units="" min="0" max="65535" >
+			<parValues default="5" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Input 16 Delay</parName>
+				<parDescription>"Delay for Input 16 before General Purpose IO Event Generation"</parDescription>
+				<parNotes>"This parameter will specify the minimum amount of time in seconds for which an input must be in a new state before an event will be generated."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1713" level="10" status="0" datatype="Byte" address="1775" length="1" bitmask="255" dtu="0" units="" min="0" max="200" >
@@ -5781,7 +5861,7 @@ None"</parNotes>
 				<parNotes>"This value is used to specify the amount of time in seconds that a vehicle must be constantly in or out of a geofence before the event is generated. The reason for this is that if the vehcile is travelling directly on the border of a geofence, due to the bounce of the GPS location, the MHub may calculate the unit to be bouncing in annd out of the geofence. The entry and exit events must only be generated when the vehicle is definitely entered or exited the geofence."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1075" level="15" status="0" datatype="Bit" address="1869" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
+		<Parameter parID="1075" level="15" status="1" datatype="Bit" address="1869" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Enable TCO Change Event Generation</parName>
@@ -5789,7 +5869,7 @@ None"</parNotes>
 				<parNotes>"Enable TCO Change Event Generation will generate a FMS Data event everytime TCO variable changes value. FMS Data Event has to enables under Event Configuraion."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1077" level="5" status="0" datatype="Bit" address="1869" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
+		<Parameter parID="1077" level="5" status="1" datatype="Bit" address="1869" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Enable Custom 3 Event </parName>
@@ -6297,7 +6377,7 @@ None"</parNotes>
 XXX - there is obviously some parameter that will specify what distance prior to the Service Odometer the MHub must generate the event, and obviously some mechanism that will prevent this message from being generated multiple times."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="265" level="10" status="0" datatype="Long" address="2005" length="4" bitmask="255" dtu="0" units="meters" min="0" max="2147483647" >
+		<Parameter parID="265" level="10" status="1" datatype="Long" address="2005" length="4" bitmask="255" dtu="0" units="meters" min="0" max="2147483647" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Service Odometer 2</parName>
@@ -6305,7 +6385,7 @@ XXX - there is obviously some parameter that will specify what distance prior to
 				<parNotes>"See Service Odometer 1"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="266" level="10" status="0" datatype="Long" address="2009" length="4" bitmask="255" dtu="0" units="meters" min="0" max="2147483647" >
+		<Parameter parID="266" level="10" status="1" datatype="Long" address="2009" length="4" bitmask="255" dtu="0" units="meters" min="0" max="2147483647" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Service Odometer 3</parName>
@@ -6313,7 +6393,7 @@ XXX - there is obviously some parameter that will specify what distance prior to
 				<parNotes>"See Service Odometer 1"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="267" level="10" status="0" datatype="Long" address="2013" length="4" bitmask="255" dtu="0" units="meters" min="0" max="2147483647" >
+		<Parameter parID="267" level="10" status="1" datatype="Long" address="2013" length="4" bitmask="255" dtu="0" units="meters" min="0" max="2147483647" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Service Odometer 4</parName>
@@ -6321,7 +6401,7 @@ XXX - there is obviously some parameter that will specify what distance prior to
 				<parNotes>"See Service Odometer 1"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="268" level="10" status="0" datatype="Long" address="2017" length="4" bitmask="255" dtu="0" units="meters" min="0" max="2147483647" >
+		<Parameter parID="268" level="10" status="1" datatype="Long" address="2017" length="4" bitmask="255" dtu="0" units="meters" min="0" max="2147483647" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Service Odometer 5</parName>
@@ -6329,7 +6409,7 @@ XXX - there is obviously some parameter that will specify what distance prior to
 				<parNotes>"See Service Odometer 1"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="269" level="10" status="0" datatype="Long" address="2021" length="4" bitmask="255" dtu="0" units="meters" min="0" max="2147483647" >
+		<Parameter parID="269" level="10" status="1" datatype="Long" address="2021" length="4" bitmask="255" dtu="0" units="meters" min="0" max="2147483647" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Service Odometer 6</parName>
@@ -6337,7 +6417,7 @@ XXX - there is obviously some parameter that will specify what distance prior to
 				<parNotes>"See Service Odometer 1"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="270" level="10" status="0" datatype="Long" address="2025" length="4" bitmask="255" dtu="0" units="meters" min="0" max="2147483647" >
+		<Parameter parID="270" level="10" status="1" datatype="Long" address="2025" length="4" bitmask="255" dtu="0" units="meters" min="0" max="2147483647" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Service Odometer 7</parName>
@@ -6346,7 +6426,7 @@ XXX - there is obviously some parameter that will specify what distance prior to
 "</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="271" level="10" status="0" datatype="Long" address="2029" length="4" bitmask="255" dtu="0" units="meters" min="0" max="2147483647" >
+		<Parameter parID="271" level="10" status="1" datatype="Long" address="2029" length="4" bitmask="255" dtu="0" units="meters" min="0" max="2147483647" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Service Odometer 8</parName>
@@ -6950,7 +7030,7 @@ E.g.
 "</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1582" level="10" status="0" datatype="Byte" address="2552" length="1" bitmask="255" dtu="0" units="0.1v" min="0" max="255" >
+		<Parameter parID="1582" level="10" status="1" datatype="Byte" address="2552" length="1" bitmask="255" dtu="0" units="0.1v" min="0" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Mains Voltage Offset</parName>
@@ -7236,6 +7316,24 @@ Minimum amount of time between Telit Position requests. It is recommended that t
 "</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1405" level="10" status="0" datatype="Bit" address="2724" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>BLE Enable</parName>
+				<parDescription>"Enable BLE Host Capability"</parDescription>
+				<parNotes>"Enable BLE Host Capability. Host board must be connected."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1547" level="10" status="0" datatype="Bit" address="2724" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Limited Tracking List Enable</parName>
+				<parDescription>"Enables the use of the Limited Tracking List.
+Warning: If this is disabled then the MHub will report the appearance of any BLE device that comes within range."</parDescription>
+				<parNotes>"Enables the use of the Limited Tracking List.
+Warning: If this is disabled then the MHub will report the appearance of any BLE device that comes within range."</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1433" level="10" status="1" datatype="Byte" address="2725" length="1" bitmask="255" dtu="0" units="" min="0" max="50" >
 			<parValues default="50" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -7318,6 +7416,14 @@ UDP Local Port"</parNotes>
 				<parName>UDP Listen Port</parName>
 				<parDescription>"Local Port for UDP Listener"</parDescription>
 				<parNotes>""</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1484" level="10" status="0" datatype="Word" address="2807" length="2" bitmask="255" dtu="0" units="Seconds" min="60" max="65000" >
+			<parValues default="600" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>BLE Fixed Asset Tracking Reporting Timeout</parName>
+				<parDescription>"Amount of time that the MHub will wait before determining that a fixed Asset Tracking device is no longer visible."</parDescription>
+				<parNotes>"Amount of time that the MHub will wait before determining that a fixed Asset Tracking device is no longer visible."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1528" level="10" status="0" datatype="Word" address="2809" length="2" bitmask="255" dtu="0" units="100kg" min="0" max="65535" >
@@ -7573,7 +7679,7 @@ n g / 0.02 = N
 8 g / 0.02 = 800"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1600" level="10" status="0" datatype="Bit" address="2930" length="1" bitmask="1" dtu="1" units="" min="0" max="1" >
+		<Parameter parID="1600" level="10" status="1" datatype="Bit" address="2930" length="1" bitmask="1" dtu="1" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Card Reader control immobilization</parName>
@@ -7581,7 +7687,7 @@ n g / 0.02 = N
 				<parNotes>"When a valid card is read the vehicle is de-immobilized"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1601" level="10" status="0" datatype="Bit" address="2930" length="1" bitmask="2" dtu="1" units="" min="0" max="1" >
+		<Parameter parID="1601" level="10" status="1" datatype="Bit" address="2930" length="1" bitmask="2" dtu="1" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Card Reader Dangerous Goods control immobilization</parName>
@@ -7589,7 +7695,7 @@ n g / 0.02 = N
 				<parNotes>"When a valid card is read and the license type indicate dangerous goods the vehicle is de-immobilized"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1602" level="10" status="0" datatype="Word" address="2932" length="2" bitmask="255" dtu="1" units="" min="0" max="65535" >
+		<Parameter parID="1602" level="10" status="1" datatype="Word" address="2932" length="2" bitmask="255" dtu="1" units="" min="0" max="65535" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Card Reader Driver ID</parName>
@@ -7687,7 +7793,7 @@ Address of the Modem FTP server."</parNotes>
 "</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1636" level="10" status="0" datatype="Byte" address="3072" length="1" bitmask="255" dtu="0" units="Percent" min="0" max="100" >
+		<Parameter parID="1636" level="10" status="1" datatype="Byte" address="3072" length="1" bitmask="255" dtu="0" units="Percent" min="0" max="100" >
 			<parValues default="100" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Percent Clutch Slip</parName>
@@ -7697,7 +7803,7 @@ Address of the Modem FTP server."</parNotes>
 (in percent)."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1637" level="10" status="0" datatype="Byte" address="3073" length="1" bitmask="255" dtu="0" units="Percent" min="0" max="100" >
+		<Parameter parID="1637" level="10" status="1" datatype="Byte" address="3073" length="1" bitmask="255" dtu="0" units="Percent" min="0" max="100" >
 			<parValues default="100" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Percent Engine Load Limit</parName>
@@ -7707,7 +7813,7 @@ indicated torque available at the current engine speed, clipped to zero torque d
 indicated torque available at the current engine speed, clipped to zero torque during engine braking."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1638" level="10" status="0" datatype="Byte" address="3074" length="1" bitmask="255" dtu="0" units="degC" min="0" max="250" >
+		<Parameter parID="1638" level="10" status="1" datatype="Byte" address="3074" length="1" bitmask="255" dtu="0" units="degC" min="0" max="250" >
 			<parValues default="250" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Engine Coolant Temperature Upper Limit</parName>
@@ -7715,7 +7821,7 @@ indicated torque available at the current engine speed, clipped to zero torque d
 				<parNotes>"Upper Temperature limit of liquid found in engine cooling system. -40 degrees C offset."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1639" level="10" status="0" datatype="Byte" address="3075" length="1" bitmask="255" dtu="0" units="degC" min="0" max="250" >
+		<Parameter parID="1639" level="10" status="1" datatype="Byte" address="3075" length="1" bitmask="255" dtu="0" units="degC" min="0" max="250" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Engine Coolant Temperature Lower Limit</parName>
@@ -7723,7 +7829,7 @@ indicated torque available at the current engine speed, clipped to zero torque d
 				<parNotes>"Lower Temperature limit of liquid found in engine cooling system. -40 degrees C offset."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1640" level="10" status="0" datatype="Byte" address="3076" length="1" bitmask="255" dtu="0" units="4kPa/cnt " min="0" max="250" >
+		<Parameter parID="1640" level="10" status="1" datatype="Byte" address="3076" length="1" bitmask="255" dtu="0" units="4kPa/cnt " min="0" max="250" >
 			<parValues default="250" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Engine Oil Pressure Upper Limit </parName>
@@ -7731,7 +7837,7 @@ indicated torque available at the current engine speed, clipped to zero torque d
 				<parNotes>"Upper Gage pressure Limit of oil in engine lubrication system as provided by oil pump. 4kPa/count."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1641" level="10" status="0" datatype="Byte" address="3077" length="1" bitmask="255" dtu="0" units="4kPa/cnt " min="0" max="250" >
+		<Parameter parID="1641" level="10" status="1" datatype="Byte" address="3077" length="1" bitmask="255" dtu="0" units="4kPa/cnt " min="0" max="250" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Engine Oil Pressure Lower Limit</parName>
@@ -7739,7 +7845,7 @@ indicated torque available at the current engine speed, clipped to zero torque d
 				<parNotes>"Lower Gage pressure Limit of oil in engine lubrication system as provided by oil pump. 4kPa/count."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1642" level="10" status="0" datatype="Byte" address="3078" length="1" bitmask="255" dtu="0" units="kPa" min="0" max="250" >
+		<Parameter parID="1642" level="10" status="1" datatype="Byte" address="3078" length="1" bitmask="255" dtu="0" units="kPa" min="0" max="250" >
 			<parValues default="250" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Engine Coolant PressureUpper Limit</parName>
@@ -7747,7 +7853,7 @@ indicated torque available at the current engine speed, clipped to zero torque d
 				<parNotes>"Upper Gage pressure limit of liquid found in engine cooling system. 2kPa/count."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1643" level="10" status="0" datatype="Byte" address="3079" length="1" bitmask="255" dtu="0" units="kPa" min="0" max="250" >
+		<Parameter parID="1643" level="10" status="1" datatype="Byte" address="3079" length="1" bitmask="255" dtu="0" units="kPa" min="0" max="250" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Engine Coolant Pressure Lower Limit</parName>
@@ -7755,7 +7861,7 @@ indicated torque available at the current engine speed, clipped to zero torque d
 				<parNotes>"Lower Gage pressure limit of liquid found in engine cooling system. 2kPa/count."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1644" level="10" status="0" datatype="Byte" address="3080" length="1" bitmask="255" dtu="0" units="%" min="0" max="100" >
+		<Parameter parID="1644" level="10" status="1" datatype="Byte" address="3080" length="1" bitmask="255" dtu="0" units="%" min="0" max="100" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Engine Oil Level Minimum</parName>
@@ -7771,7 +7877,7 @@ indicated torque available at the current engine speed, clipped to zero torque d
 				<parNotes>"Minimum ratio of volume of liquid found in engine cooling system to total cooling system volume."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1646" level="10" status="0" datatype="Word" address="3082" length="2" bitmask="255" dtu="0" units="degC" min="0" max="2008" >
+		<Parameter parID="1646" level="10" status="1" datatype="Word" address="3082" length="2" bitmask="255" dtu="0" units="degC" min="0" max="2008" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Transmission Oil Temperature Upper Limit</parName>
@@ -7779,7 +7885,7 @@ indicated torque available at the current engine speed, clipped to zero torque d
 				<parNotes>"Upper Temperature limit of the transmission lubricant. -273 degC offset."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1647" level="10" status="0" datatype="Word" address="3084" length="2" bitmask="255" dtu="0" units="degC" min="0" max="2008" >
+		<Parameter parID="1647" level="10" status="1" datatype="Word" address="3084" length="2" bitmask="255" dtu="0" units="degC" min="0" max="2008" >
 			<parValues default="2008" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Transmission Oil Temperature Lower Limit</parName>
@@ -7803,7 +7909,7 @@ indicated torque available at the current engine speed, clipped to zero torque d
 				<parNotes>"Lower Gage pressure limit of lubrication fluid in transmission, measured after pump. 16kPa/count."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1650" level="10" status="0" datatype="Byte" address="3088" length="1" bitmask="255" dtu="0" units="%" min="0" max="100" >
+		<Parameter parID="1650" level="10" status="1" datatype="Byte" address="3088" length="1" bitmask="255" dtu="0" units="%" min="0" max="100" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Transmission Oil Level Lower Limit</parName>
@@ -7811,7 +7917,7 @@ indicated torque available at the current engine speed, clipped to zero torque d
 				<parNotes>"Lower limit of the Ratio of volume of transmission sump oil to recommended volume."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1651" level="10" status="0" datatype="Word" address="3089" length="2" bitmask="255" dtu="0" units="degC" min="0" max="2008" >
+		<Parameter parID="1651" level="10" status="1" datatype="Word" address="3089" length="2" bitmask="255" dtu="0" units="degC" min="0" max="2008" >
 			<parValues default="2008" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Cargo Ambient Temperature Upper Limit</parName>
@@ -7819,7 +7925,7 @@ indicated torque available at the current engine speed, clipped to zero torque d
 				<parNotes>"Upper limit of temperature of air inside vehicle container used to accommodate cargo.  -273 degC offset."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1652" level="10" status="0" datatype="Word" address="3091" length="2" bitmask="255" dtu="0" units="degC" min="0" max="2008" >
+		<Parameter parID="1652" level="10" status="1" datatype="Word" address="3091" length="2" bitmask="255" dtu="0" units="degC" min="0" max="2008" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Cargo Ambient Temperature Lower Limit</parName>
@@ -7827,7 +7933,7 @@ indicated torque available at the current engine speed, clipped to zero torque d
 				<parNotes>"Lower limit of temperature of air inside vehicle container used to accommodate cargo. -273 degC offset."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1653" level="10" status="0" datatype="Word" address="3093" length="2" bitmask="255" dtu="0" units="L" min="0" max="64000" >
+		<Parameter parID="1653" level="10" status="1" datatype="Word" address="3093" length="2" bitmask="255" dtu="0" units="L" min="0" max="64000" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Trip Fuel Use Interval</parName>
@@ -7839,7 +7945,7 @@ indicated torque available at the current engine speed, clipped to zero torque d
 "</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1654" level="10" status="0" datatype="Word" address="3095" length="2" bitmask="255" dtu="0" units="kg" min="0" max="32000" >
+		<Parameter parID="1654" level="10" status="1" datatype="Word" address="3095" length="2" bitmask="255" dtu="0" units="kg" min="0" max="32000" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Axle Weight Change Limit</parName>
@@ -7849,7 +7955,7 @@ indicated torque available at the current engine speed, clipped to zero torque d
 0 disables the function."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1655" level="10" status="0" datatype="Word" address="3097" length="2" bitmask="255" dtu="0" units="kg" min="0" max="32000" >
+		<Parameter parID="1655" level="10" status="1" datatype="Word" address="3097" length="2" bitmask="255" dtu="0" units="kg" min="0" max="32000" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Trailer Weight Change Limit</parName>
@@ -7857,7 +7963,7 @@ indicated torque available at the current engine speed, clipped to zero torque d
 				<parNotes>"Change in Axle weight (kg) from start of trip exceeding this limit will be reported. 0 disables the function."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1656" level="10" status="0" datatype="Word" address="3099" length="2" bitmask="255" dtu="0" units="kg" min="0" max="32000" >
+		<Parameter parID="1656" level="10" status="1" datatype="Word" address="3099" length="2" bitmask="255" dtu="0" units="kg" min="0" max="32000" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Cargo Weight Change Limit</parName>
@@ -7976,7 +8082,7 @@ Default setting:
 "</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1658" level="10" status="0" datatype="Word" address="3154" length="2" bitmask="255" dtu="0" units="seconds" min="0" max="64000" >
+		<Parameter parID="1658" level="10" status="1" datatype="Word" address="3154" length="2" bitmask="255" dtu="0" units="seconds" min="0" max="64000" >
 			<parValues default="60" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Periodic Update Event Period</parName>
@@ -8156,6 +8262,14 @@ Mode of operation:
 				<parName>Enable SBAS GAGAN</parName>
 				<parDescription>"Enable SBAS GAGAN"</parDescription>
 				<parNotes>"Enable SBAS GAGAN"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1839" level="5" status="0" datatype="Bit" address="3197" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable Galileo </parName>
+				<parDescription>"Enable use of the Galileo GPS constellation"</parDescription>
+				<parNotes>"Enable use of the Galileo GPS constellation"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1786" level="10" status="0" datatype="Byte" address="3198" length="1" bitmask="255" dtu="1" units="km/h" min="0" max="255" >
@@ -8419,6 +8533,15 @@ Maximum delay is 254 seconds or 4 minutes and 14 seconds
 				<parNotes>"Enable the IPC comms to the MHub Extender"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1829" level="10" status="0" datatype="Bit" address="3578" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>IO Expander Installed</parName>
+				<parDescription>"The IO Expander have been installed and connected to the MHub"</parDescription>
+				<parNotes>"Enable communications with the IO Expander that would give the unit an extra 8 Inputs, 4 Outputs and 2 Analog Inputs.
+It is important to note that the IO Expander is an external device connected to the MHub."</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1790" level="15" status="0" datatype="Byte" address="3579" length="1" bitmask="255" dtu="0" units="degrees" min="0" max="90" >
 			<parValues default="20" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -8451,7 +8574,7 @@ Maximum delay is 254 seconds or 4 minutes and 14 seconds
 				<parNotes>"Pitch Limit in degrees for generating event"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1794" level="10" status="0" datatype="Byte" address="3583" length="1" bitmask="255" dtu="0" units="" min="0" max="5" >
+		<Parameter parID="1794" level="10" status="1" datatype="Byte" address="3583" length="1" bitmask="255" dtu="0" units="" min="0" max="5" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Output for Buzzer</parName>
@@ -9639,6 +9762,18 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="1794" />
 			</catParameters>
 		</Category>
+		<Category catName="Bluetooth Low Energy">
+			<catDescription>
+				Bluetooth Low Energy
+			</catDescription>
+			<catParameters>
+				<catParameter parID="1805" />
+				<catParameter parID="1816" />
+				<catParameter parID="1405" />
+				<catParameter parID="1547" />
+				<catParameter parID="1484" />
+			</catParameters>
+		</Category>
 		<Category catName="Communications">
 			<catDescription>
 				Communications
@@ -9723,6 +9858,7 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="1601" />
 				<catParameter parID="1602" />
 				<catParameter parID="1788" />
+				<catParameter parID="1829" />
 			</catParameters>
 		</Category>
 		<Category catName="Debug">
@@ -10073,6 +10209,7 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="1754" />
 				<catParameter parID="1751" />
 				<catParameter parID="1753" />
+				<catParameter parID="1839" />
 				<catParameter parID="1622" />
 			</catParameters>
 		</Category>
@@ -10106,6 +10243,14 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="961" />
 				<catParameter parID="962" />
 				<catParameter parID="112" />
+				<catParameter parID="1831" />
+				<catParameter parID="1832" />
+				<catParameter parID="1833" />
+				<catParameter parID="1834" />
+				<catParameter parID="1835" />
+				<catParameter parID="1836" />
+				<catParameter parID="1837" />
+				<catParameter parID="1838" />
 				<catParameter parID="1538" />
 				<catParameter parID="1267" />
 				<catParameter parID="240" />
@@ -11245,6 +11390,30 @@ This configures the Fuel Module parameters only. It is assumed that there is a w
 						<grpParameterValue parID="1674" value="12" display="0" ovr="0" />
 						<grpParameterValue parID="1804" value="2" display="0" ovr="0" />
 						<grpParameterValue parID="1677" value="247" display="0" ovr="0" />
+					</grpParameterValues>
+				</grpValue>
+				<grpValue grpValueName="OBD-2 Fuel Consumption and Fuel level where engine size is known for Diesel Engine " isDefault="0">
+					<grpValueDescription>
+						Use this setup for diesel vehicles when the engine size is accurately known.
+
+This configures the Fuel Module parameters only. It is assumed that there is a working OBD-2 configuration already in place.
+NB: THIS SETUP CHANGES SOME OBD2/J1979 parameters. Make sure the final configuration is reviewed and vetted before writing to multiple units.
+
+					</grpValueDescription>
+					<grpParameterValues>
+						<grpParameterValue parID="1677" value="247" display="0" ovr="0" />
+						<grpParameterValue parID="1673" value="6" display="0" ovr="0" />
+						<grpParameterValue parID="1674" value="11" display="0" ovr="0" />
+						<grpParameterValue parID="1804" value="2" display="0" ovr="0" />
+						<grpParameterValue parID="1440" value="1829" display="1" ovr="0" />
+						<grpParameterValue parID="1441" value="218" display="1" ovr="0" />
+						<grpParameterValue parID="1578" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="1708" value="0" display="0" ovr="0" />
+						<grpParameterValue parID="1813" value="1000" display="0" ovr="0" />
+						<grpParameterValue parID="1806" value="0" display="1" ovr="0" />
+						<grpParameterValue parID="1814" value="2500" display="0" ovr="0" />
+						<grpParameterValue parID="1820" value="1" display="1" ovr="0" />
+						<grpParameterValue parID="1442" value="1" display="1" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
 				<grpValue grpValueName="OBD-2 Fuel Consumption and Fuel level where engine size is known for Petrol Engine " isDefault="0">

@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="7" unitType="MHub8462" created="2021-03-09T08:31:45+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="7" unitType="MHub8462" created="2021-05-04T15:27:57+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="2" level="10" status="0" datatype="Word" address="256" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
@@ -4513,43 +4513,20 @@ SLA Battery Crank Time 10mS.
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Fuel Level Source</parName>
-				<parDescription>"The source for the fuel level data. Possible values are:
-0 - CANBus
-1 - OBD2
-2 - Analog Input connected to Fuel Gauge
-All other values reserved"</parDescription>
-				<parNotes>"The source for the fuel level data. Possible values are:
-0 - None
-1 - CANBus
-2 - OBD2 (Deprecated)
-3 - Analog Input connected to Fuel Gauge
-4 - Fuel Probe
-All other values reserved"</parNotes>
+				<parDescription>"Please see
+https://wiki.scopetechnology.com/index.php/Consolidated_Fuel_Event_Configuration"</parDescription>
+				<parNotes>"Please see
+https://wiki.scopetechnology.com/index.php/Consolidated_Fuel_Event_Configuration"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1674" level="10" status="0" datatype="Byte" address="1520" length="1" bitmask="255" dtu="1" units="" min="0" max="7" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Fuel Consumption Source</parName>
-				<parDescription>"The source for the Fuel Consumption data. Possible values are:
-0 - CANBus
-1 - OBDII
-3 - Fuel Flow Meter
-4 - CO2 Model
-5 - Mass Airflow Sensor
-All other values reserved
-"</parDescription>
-				<parNotes>"The source for the Fuel Consumption data. Possible values are:
-0 - None
-1 - CANBus
-2 - OBDII
-3 - RFE
-4 - Fuel Flow Meter
-5 - CO2 Model
-6 - Mass Airflow Sensor
-7 - Fuel Probe
-All other values reserved
-"</parNotes>
+				<parDescription>"Please see
+https://wiki.scopetechnology.com/index.php/Consolidated_Fuel_Event_Configuration"</parDescription>
+				<parNotes>"Please see
+https://wiki.scopetechnology.com/index.php/Consolidated_Fuel_Event_Configuration"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1678" level="10" status="0" datatype="Bit" address="1521" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >

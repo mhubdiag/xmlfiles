@@ -65,13 +65,6 @@ Value of 0 Disables Reckless Acceleration and Braking Checking</Notes>
 
 Minimum of samples required before any checking on data will be done.</Notes>
 		</Parameter>
-		<Parameter name="Acc Max Lane Time" level="0" datatype="Byte" address="587" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="25" previous="" current="" units="100ms" />
-			<Help>Acc Max Lane Time</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Maximum time for lane change duration.</Notes>
-		</Parameter>
 		<Parameter name="Acc Min Lane Duration" level="0" datatype="Byte" address="588" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="50" previous="" current="" units="10ms" />
 			<Help>Acc Min Lane Duration</Help>
@@ -513,30 +506,10 @@ Maximum delay is 254 seconds or 4 minutes and 14 seconds
 			<Help>Anti Theft Feature Enable</Help>
 			<Notes>Anti Theft Feature Enable. Uses Accelerometer Motion Threshold and Delay settings ,Ignition and Input 2</Notes>
 		</Parameter>
-		<Parameter name="Time To Hazard" level="10" datatype="Byte" address="1082" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="254" default="20" previous="" current="" units="" />
-			<Help>Time To Hazard</Help>
-			<Notes>Time To Hazard in seconds</Notes>
-		</Parameter>
-		<Parameter name="Time To Siren" level="10" datatype="Byte" address="1083" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="254" default="10" previous="" current="" units="" />
-			<Help>Time To Siren</Help>
-			<Notes>Time To Siren in seconds</Notes>
-		</Parameter>
-		<Parameter name="Anti-Theft Button Time-Out" level="10" datatype="Byte" address="1085" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="254" default="30" previous="" current="" units="" />
-			<Help>Anti-Theft Button Time-Out</Help>
-			<Notes>Anti-Theft Button Time-Out in seconds</Notes>
-		</Parameter>
 		<Parameter name="Accelerometer Movement Threshold" level="10" datatype="Word" address="1267" length="2" bitmask="255" dtu="0">
 			<Values min="10" max="65534" default="1250" previous="" current="" units="" />
 			<Help>Accelerometer Movement Threshold</Help>
 			<Notes>Accelerometer Movement Threshold used for alarm application. This is used in combination with Accelerometer Movement Delay</Notes>
-		</Parameter>
-		<Parameter name="Total Siren Time" level="10" datatype="Word" address="1790" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="65534" default="300" previous="" current="" units="" />
-			<Help>Total Siren Time</Help>
-			<Notes>Total Siren Time in seconds. After Time-out Siren will go off. 0 will make siren time indefinite. </Notes>
 		</Parameter>
 	</Category>
 	<Category name="Battery Charger">
@@ -778,6 +751,40 @@ Other = OFF (No Beep)</Notes>
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
 			<Help>Beeping style assigned to Beeper 16</Help>
 			<Notes>See Beeper 1 Style</Notes>
+		</Parameter>
+		<Parameter name="Output for Buzzer" level="10" datatype="Byte" address="3583" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="5" default="0" previous="" current="" units="" />
+			<Help>Output connected to the buzzer</Help>
+			<Notes>This is the output that is connected to the buzzer</Notes>
+		</Parameter>
+	</Category>
+	<Category name="Bluetooth Low Energy">
+		<Parameter name="Low Tyre Pressure Warning" level="10" datatype="Word" address="1560" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="0" previous="" current="" units="0.1 KPa" />
+			<Help>Low warning level for tyre pressure in 0.1 KPa units</Help>
+			<Notes>Low warning level for tyre pressure in 0.1 KPa units. As an example: set the level to 1.2bar = 120 KPa = 1200 0.1KPa units</Notes>
+		</Parameter>
+		<Parameter name="Periodic Tyre Pressure Report Interval" level="10" datatype="Word" address="1567" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="0" previous="" current="" units="seconds" />
+			<Help>Periodic Tyre Pressure Report Interval in seconds</Help>
+			<Notes>Periodic Tyre Pressure Report Interval in seconds. If the value is 0 this functionality is disabled</Notes>
+		</Parameter>
+		<Parameter name="BLE Enable" level="10" datatype="Bit" address="2724" length="1" bitmask="1" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enable BLE Host Capability</Help>
+			<Notes>Enable BLE Host Capability. Host board must be connected.</Notes>
+		</Parameter>
+		<Parameter name="Limited Tracking List Enable" level="10" datatype="Bit" address="2724" length="1" bitmask="16" dtu="0">
+			<Values min="0" max="1" default="1" previous="" current="" units="" />
+			<Help>Enables the use of the Limited Tracking List.
+Warning: If this is disabled then the MHub will report the appearance of any BLE device that comes within range.</Help>
+			<Notes>Enables the use of the Limited Tracking List.
+Warning: If this is disabled then the MHub will report the appearance of any BLE device that comes within range.</Notes>
+		</Parameter>
+		<Parameter name="BLE Fixed Asset Tracking Reporting Timeout" level="10" datatype="Word" address="2807" length="2" bitmask="255" dtu="0">
+			<Values min="60" max="65000" default="600" previous="" current="" units="Seconds" />
+			<Help>Amount of time that the MHub will wait before determining that a fixed Asset Tracking device is no longer visible.</Help>
+			<Notes>Amount of time that the MHub will wait before determining that a fixed Asset Tracking device is no longer visible.</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Communications">
@@ -1083,11 +1090,6 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<Help>GPRS Alternative Payload RSSI</Help>
 			<Notes>If the GSM RSSI drops below this threshold, the Communications Medium will reduce the maximum payload size to the Alternative payload size. Value of 0 or greater than 31 will disable this feature.</Notes>
 		</Parameter>
-		<Parameter name="Enable Strict GSM Registration Checks" level="5" datatype="Bit" address="783" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enables the unit to send data only when the Creg is confirmed to be 1 for home PLMN and 5 for Roaming PLMN. </Help>
-			<Notes>Enables the unit to send data only when the Creg is confirmed to be 1 for home PLMN and 5 for Roaming PLMN. Understand the implications of setting this flag before doing so.</Notes>
-		</Parameter>
 	</Category>
 	<Category name="Custom Functionality">
 		<Parameter name="Global Pass-through enable" level="0" datatype="Byte" address="419" length="1" bitmask="255" dtu="0">
@@ -1098,26 +1100,6 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 Set Global Pass-through enable. 
 1 to enable Modem, GPS, Acc, OBD2,Sim passthrough modes
 2 to enable CAN Socket Passthrough</Notes>
-		</Parameter>
-		<Parameter name="Customer Field 1" level="10" datatype="String" address="1280" length="20" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="0" previous="" current="" units="" />
-			<Help>Text field to store customer information to be used with custom functions.</Help>
-			<Notes>Text field to store customer information to be used with custom functions.</Notes>
-		</Parameter>
-		<Parameter name="Customer Field 2" level="10" datatype="String" address="1300" length="20" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="0" previous="" current="" units="" />
-			<Help>Text field to store customer information to be used with custom functions.</Help>
-			<Notes>Text field to store customer information to be used with custom functions.</Notes>
-		</Parameter>
-		<Parameter name="Customer Field 3" level="10" datatype="String" address="1320" length="20" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="0" previous="" current="" units="" />
-			<Help>Text field to store customer information to be used with custom functions.</Help>
-			<Notes>Text field to store customer information to be used with custom functions.</Notes>
-		</Parameter>
-		<Parameter name="Customer Field 4" level="10" datatype="String" address="1340" length="20" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="0" previous="" current="" units="" />
-			<Help>Text field to store customer information to be used with custom functions.</Help>
-			<Notes>Text field to store customer information to be used with custom functions.</Notes>
 		</Parameter>
 		<Parameter name="Vehicle Info Event Mask" level="10" datatype="Word" address="1374" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="65535" previous="" current="" units="" />
@@ -1204,12 +1186,36 @@ n - Custom Functionality n
 			<Help>This is the interval in seconds between successive Weight Sensor Events.</Help>
 			<Notes>This is the interval in seconds between successive Weight Sensor Events. 0 disables the feature</Notes>
 		</Parameter>
-		<Parameter name="Garmin Fleet Functions" level="5" datatype="Byte" address="2931" length="1" bitmask="255" dtu="0">
+		<Parameter name="ERM Relay ID" level="10" datatype="Word" address="2814" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="0" previous="" current="" units="None" />
+			<Help>ERM Remote Relay ID</Help>
+			<Notes>The ID of the ERM Remote Relay</Notes>
+		</Parameter>
+		<Parameter name="Card Reader control immobilization" level="10" datatype="Bit" address="2930" length="1" bitmask="1" dtu="1">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>0 Garmin Fleet Function disabled
-1 Garmin Fleet Function enabled</Help>
-			<Notes>0 Garmin Fleet Function disabled
-1 Garmin Fleet Function enabled</Notes>
+			<Help>When a valid card is read the vehicle is de-immobilized</Help>
+			<Notes>When a valid card is read the vehicle is de-immobilized</Notes>
+		</Parameter>
+		<Parameter name="Card Reader Dangerous Goods control immobilization" level="10" datatype="Bit" address="2930" length="1" bitmask="2" dtu="1">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>When a valid card is read and the license type indicate dangerous goods the vehicle is de-immobilized</Help>
+			<Notes>When a valid card is read and the license type indicate dangerous goods the vehicle is de-immobilized</Notes>
+		</Parameter>
+		<Parameter name="Card Reader Driver ID" level="10" datatype="Word" address="2932" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="0" previous="" current="" units="" />
+			<Help>Driver ID to be used when de-immobilizing a vehicle with a card</Help>
+			<Notes>Driver ID to be used when de-immobilizing a vehicle with a card</Notes>
+		</Parameter>
+		<Parameter name="Enable IPC" level="10" datatype="Bit" address="3578" length="1" bitmask="1" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enable the IPC comms to the MHub Extender</Help>
+			<Notes>Enable the IPC comms to the MHub Extender</Notes>
+		</Parameter>
+		<Parameter name="IO Expander Installed" level="10" datatype="Bit" address="3578" length="1" bitmask="2" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>The IO Expander have been installed and connected to the MHub</Help>
+			<Notes>Enable communications with the IO Expander that would give the unit an extra 8 Inputs, 4 Outputs and 2 Analog Inputs.
+It is important to note that the IO Expander is an external device connected to the MHub.</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Debug">
@@ -1321,6 +1327,28 @@ NB: Valid EOBD data must be present for this to be used.
 NB: Programming filters may affect the ability of the MHub to use the CAN bus for early ignition detection.
 NB: Listen Only Mode must be enabled for this to work,
 NB: Allow Unsolicited CAN Message Parsing must be enabled for this to work.</Notes>
+		</Parameter>
+	</Category>
+	<Category name="Driver Fatigue">
+		<Parameter name="Enable Driver Fatigue Module" level="10" datatype="Bit" address="3156" length="1" bitmask="1" dtu="1">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enable the Driver Fatigue Management and Reporting module</Help>
+			<Notes>This parameter will Enable the Driver Fatigue Management and Reporting module which monitors the drivers time at a speed above a certain threshold and reminds him through the use of a beeper to stop  for a minimum configurable time. If the driver does not stop for the minimum time a violation event will be raised and reported.</Notes>
+		</Parameter>
+		<Parameter name="Driver Fatigue Speed Threshold" level="10" datatype="Byte" address="3157" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="50" previous="" current="" units="km/h" />
+			<Help>Driver Fatigue Speed Threshold</Help>
+			<Notes>The Driver Fatigue Speed Threshold is the speed above which the unit will accumulate time spent above this threshold.</Notes>
+		</Parameter>
+		<Parameter name="Driver Fatigue Minimum Rest Period" level="10" datatype="Word" address="3158" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="15" previous="" current="" units="Minutes" />
+			<Help>Driver Fatigue Minimum Rest Period in minutes</Help>
+			<Notes>This parameter specifies the minimum time (minutes) a driver has to rest before he is allowed to drive again.</Notes>
+		</Parameter>
+		<Parameter name="Driver Fatigue Maximum Time Above Speed Threshold" level="10" datatype="Word" address="3160" length="2" bitmask="255" dtu="1">
+			<Values min="5" max="1440" default="120" previous="" current="" units="Minutes" />
+			<Help>Driver Fatigue Maximum Time Above Speed Threshold in Minutes</Help>
+			<Notes>This is the maximum time (minutes) a driver is allowed to spend above a configured speed threshold before a mandatory rest period is needed.</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Driver Key">
@@ -2315,6 +2343,45 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 			<Help>Level of fuel in the tank at which the Fuel Data event should be sent.</Help>
 			<Notes>Level of fuel in the tank at which the Fuel Data event should be sent. Setting it 0 would disable this functionality.</Notes>
 		</Parameter>
+		<Parameter name="Fuel Level Sensor ID 1" level="10" datatype="Byte" address="1365" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="255" previous="" current="" units="" />
+			<Help>ID of Fuel Sensor used to read the level of fuel in a tank</Help>
+			<Notes>ID of Fuel Sensor used to read the level of fuel in a tank</Notes>
+		</Parameter>
+		<Parameter name="Fuel Level Sensor ID 2" level="10" datatype="Byte" address="1366" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="255" previous="" current="" units="" />
+			<Help>ID of Fuel Sensor used to read the level of fuel in a tank</Help>
+			<Notes>ID of Fuel Sensor used to read the level of fuel in a tank</Notes>
+		</Parameter>
+		<Parameter name="Fuel Level Sensor ID 3" level="10" datatype="Byte" address="1367" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="255" previous="" current="" units="" />
+			<Help>ID of Fuel Sensor used to read the level of fuel in a tank</Help>
+			<Notes>ID of Fuel Sensor used to read the level of fuel in a tank</Notes>
+		</Parameter>
+		<Parameter name="Fuel Level Sensor ID 4" level="10" datatype="Byte" address="1368" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="255" previous="" current="" units="" />
+			<Help>ID of Fuel Sensor used to read the level of fuel in a tank</Help>
+			<Notes>ID of Fuel Sensor used to read the level of fuel in a tank</Notes>
+		</Parameter>
+		<Parameter name="Fuel Level Sensor ID 5" level="10" datatype="Byte" address="1369" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="255" previous="" current="" units="" />
+			<Help>ID of Fuel Sensor used to read the level of fuel in a tank</Help>
+			<Notes>ID of Fuel Sensor used to read the level of fuel in a tank</Notes>
+		</Parameter>
+		<Parameter name="Fuel Level Source" level="10" datatype="Byte" address="1519" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="4" default="0" previous="" current="" units="" />
+			<Help>Please see
+https://wiki.scopetechnology.com/index.php/Consolidated_Fuel_Event_Configuration</Help>
+			<Notes>Please see
+https://wiki.scopetechnology.com/index.php/Consolidated_Fuel_Event_Configuration</Notes>
+		</Parameter>
+		<Parameter name="Fuel Consumption Source" level="10" datatype="Byte" address="1520" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="7" default="0" previous="" current="" units="" />
+			<Help>Please see
+https://wiki.scopetechnology.com/index.php/Consolidated_Fuel_Event_Configuration</Help>
+			<Notes>Please see
+https://wiki.scopetechnology.com/index.php/Consolidated_Fuel_Event_Configuration</Notes>
+		</Parameter>
 		<Parameter name="Fuel Tank Supply Voltage" level="10" datatype="Word" address="1528" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Fuel Tank Supply Voltage</Help>
@@ -2342,6 +2409,36 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 			<Help>Fuel Level Voltage Compensation</Help>
 			<Notes>Fuel Level Voltage Compensation uses analogue input 2 as reference voltage.</Notes>
 		</Parameter>
+		<Parameter name="Fuel Tank 2 Capacity " level="10" datatype="Word" address="1536" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="5000" default="70" previous="" current="" units="liters" />
+			<Help>Fuel tank 2 capacity in liters</Help>
+			<Notes>Fuel tank 2 capacity in liters</Notes>
+		</Parameter>
+		<Parameter name="Fuel Tank 3 Capacity" level="10" datatype="Word" address="1538" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="5000" default="70" previous="" current="" units="liters" />
+			<Help>Fuel tank 3 capacity in liters</Help>
+			<Notes>Fuel tank 3 capacity in liters</Notes>
+		</Parameter>
+		<Parameter name="Fuel Tank 4 Capacity" level="10" datatype="Word" address="1540" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="5000" default="70" previous="" current="" units="liters" />
+			<Help>Fuel tank 4 capacity in liters</Help>
+			<Notes>Fuel tank 4 capacity in liters</Notes>
+		</Parameter>
+		<Parameter name="Fuel Tank 5 Capacity" level="10" datatype="Word" address="1542" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="5000" default="70" previous="" current="" units="liters" />
+			<Help>Fuel tank 5 capacity in liters</Help>
+			<Notes>Fuel tank 5 capacity in liters</Notes>
+		</Parameter>
+		<Parameter name="Fuel Tank Length" level="10" datatype="Word" address="1548" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="0" previous="" current="" units="mm" />
+			<Help>Length of the Fuel Tank in mm</Help>
+			<Notes>Length of the Fuel Tank in mm</Notes>
+		</Parameter>
+		<Parameter name="Fuel Tank Depth or Diameter" level="10" datatype="Word" address="1550" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="0" previous="" current="" units="mm" />
+			<Help>Depth or Diameter of the Fuel Tank in mm. </Help>
+			<Notes>Depth or Diameter of the Fuel Tank in mm. If the tank is rectangular then this is the depth, else if it is cylindrical then it is the diameter </Notes>
+		</Parameter>
 		<Parameter name="Fuel Tank Height" level="10" datatype="Word" address="1552" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="mm" />
 			<Help>Height of the fuel tank in mm</Help>
@@ -2362,6 +2459,45 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 2  Diesel (AFR = 14.5 and Fuel Density = 830g/L)
 
 </Notes>
+		</Parameter>
+		<Parameter name="Report Fuel Level in Liters" level="10" datatype="Bit" address="3103" length="1" bitmask="1" dtu="1">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Report fuel level in Liters in stead of percentage. The Fuel Tank size need to specified in the "Fuel Tank Capacity" parameter.</Help>
+			<Notes>Report fuel level in Liters in stead of percentage. The Fuel Tank size need to specified in the "Fuel Tank Capacity" parameter.</Notes>
+		</Parameter>
+		<Parameter name="Fuel Level Sensor Support Liters" level="10" datatype="Bit" address="3103" length="1" bitmask="2" dtu="1">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>The Fuel Level Sensor support reading the fuel level in the tank as liters</Help>
+			<Notes>The Fuel Level Sensor support reading the fuel level in the tank as liters</Notes>
+		</Parameter>
+		<Parameter name="Out fuel flow meter volume per pulse" level="10" datatype="Word" address="3162" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="0" previous="" current="" units="uL" />
+			<Help>This is the amount of fuel the fuel flow meter connected to the outflow connection of the fuel tank will measure per pulse. The value should be expressed in micro liters. This Fuel Flow Meter should be connected to INPUT 1.</Help>
+			<Notes>This is the amount of fuel the fuel flow meter connected to the outflow connection of the fuel tank will measure per pulse. The value should be expressed in micro liters. This Fuel Flow Meter should be connected to INPUT 1</Notes>
+		</Parameter>
+		<Parameter name="In fuel flow meter volume per pulse" level="10" datatype="Word" address="3164" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="0" previous="" current="" units="uL" />
+			<Help>This is the amount of fuel the fuel flow meter connected to the inflow connection of the fuel tank will measure per pulse. The value should be expressed in micro liters. This Fuel Flow Meter should be connected to INPUT 2</Help>
+			<Notes>This is the amount of fuel the fuel flow meter connected to the inflow connection of the fuel tank will measure per pulse. The value should be expressed in micro liters. This is usually just for diesel engines as unused fuel flow back into the tank. This Fuel Flow Meter should be connected to INPUT 2</Notes>
+		</Parameter>
+		<Parameter name="Fuel Tank 1 Capacity" level="10" datatype="Word" address="3166" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="5000" default="70" previous="" current="" units="liters" />
+			<Help>Fuel Tank 1 Capacity in liters</Help>
+			<Notes>Fuel Tank 1 Capacity in liters</Notes>
+		</Parameter>
+		<Parameter name="Fuel Calibration Points - Liters" level="0" datatype="Byte" address="3168" length="8" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0000000000000000" previous="" current="" units="2 liters" />
+			<Help>Used in determining more accurately the current level of the fuel in the fuel tank. Values are in 2 liter intervals, e.g. 10 means 20 liters</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Used in determining more accurately the current level of the fuel in the fuel tank. Values are in 2 liter intervals, e.g. 10 means 20 liters</Notes>
+		</Parameter>
+		<Parameter name="Fuel Calibration Points - Volt" level="0" datatype="Byte" address="3176" length="16" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="00000000000000000000000000000000" previous="" current="" units="0.01 volt" />
+			<Help>Used in determining more accurately the current level of the fuel in the fuel tank. Values are in 0.01 voltage intervals, e.g. 100 means 1 Volt</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Used in determining more accurately the current level of the fuel in the fuel tank. Values are in 0.01 voltage intervals, e.g. 100 means 1 Volt</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Geofence">
@@ -2443,13 +2579,6 @@ Value of 0 Disables Geoloc lift detection</Notes>
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Geoloc Tow Away Arming Movement Lockout</Help>
 			<Notes>Geoloc Tow Away Acc Noise Delay. The Geoloc Tow Away Arming will only occur if no movement is detected and after the Geoloc Tow Away Arming delay has expired.</Notes>
-		</Parameter>
-		<Parameter name="GSM Tower Geo-Lock Enable " level="15" datatype="Byte" address="2923" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Uses visible GSM towers to determine if a MHub has been moved. 
-NB The MHub will have to move a considerable distance before a Geolock breach will be detected. </Help>
-			<Notes>Uses visible GSM towers to determine if a MHub has been moved. 
-NB The MHub will have to move a considerable distance before a Geolock breach will be detected. </Notes>
 		</Parameter>
 		<Parameter name="GSM Tower Geo-Lock Perimeter Depth" level="5" datatype="Byte" address="2924" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="6" default="3" previous="" current="" units="" />
@@ -2542,6 +2671,13 @@ Distance in meters from Last Valid position up to which the last valid position 
 			<Help>Enable GPS FixNow Mode</Help>
 			<Notes>Enable GPS FixNow Mode will use the GPSs internal power manager to cycle the GPS power for idle and sleep mode.</Notes>
 		</Parameter>
+		<Parameter name="Disable GPS Speed Accuracy Filter" level="10" datatype="Bit" address="1521" length="1" bitmask="8" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Disable GPS Speed Accuracy Filter</Help>
+			<Notes>Disable GPS Speed Accuracy Filter. 
+
+GPS Speed Accuracy Filter will require the current GPS Speed to be greater than the current GPS Speed Accuracy measure to be used in calculations and events. </Notes>
+		</Parameter>
 		<Parameter name="Enable GPS FixNow Mode in Sleep" level="10" datatype="Bit" address="1521" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enable GPS FixNow Mode in Sleep</Help>
@@ -2555,13 +2691,6 @@ AssistNow Autonomous can provide quicker start-up times (lower the TTFF) provide
 The positioning accuracy depends on various factors, such as the satellite position accuracy, the number of visible satellites, and the geometry (DOP) of the visible satellites. Position fixes that include AssistNow Autonomous orbit information
 may be significantly worse than fixes using only broadcast ephemerides.
 </Notes>
-		</Parameter>
-		<Parameter name="Disable GPS Speed Accuracy Filter" level="10" datatype="Bit" address="1521" length="1" bitmask="8" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Disable GPS Speed Accuracy Filter</Help>
-			<Notes>Disable GPS Speed Accuracy Filter. 
-
-GPS Speed Accuracy Filter will require the current GPS Speed to be greater than the current GPS Speed Accuracy measure to be used in calculations and events. </Notes>
 		</Parameter>
 		<Parameter name="GPS Max Speed Filter" level="15" datatype="Byte" address="1566" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="202" previous="" current="" units="kmph" />
@@ -2596,6 +2725,11 @@ Include position accuracy and position source in each event</Notes>
 			<Help>GPS Hardware Reset Time-Out</Help>
 			<Notes>GPS Hardware Reset Time-Out is the delay after a trip start after which it will power cycle the unit in case no GPS lock was acquired. This will recover the GPS in case of a GPS Module Lock-up. Minimum Time is checked and forced to 600seconds in code in case it is configured to a lower value. </Notes>
 		</Parameter>
+		<Parameter name="GPS AID Ephemeris Validity" level="5" datatype="Word" address="3149" length="2" bitmask="255" dtu="0">
+			<Values min="1800" max="65500" default="14390" previous="" current="" units="Seconds" />
+			<Help>Amount of time in seconds that the GPS AID Ephemeris data is deemed good enough to upload to the GNSS </Help>
+			<Notes>Amount of time in seconds that the GPS AID Ephemeris data is deemed good enough to upload to the GNSS </Notes>
+		</Parameter>
 		<Parameter name="Enable GPS Default Config" level="5" datatype="Bit" address="3197" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enable GPS Default Config</Help>
@@ -2620,6 +2754,347 @@ Include position accuracy and position source in each event</Notes>
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Enable SBAS Auto</Help>
 			<Notes>Enable SBAS Auto</Notes>
+		</Parameter>
+		<Parameter name="Enable Galileo " level="5" datatype="Bit" address="3197" length="1" bitmask="64" dtu="0">
+			<Values min="0" max="1" default="1" previous="" current="" units="" />
+			<Help>Enable use of the Galileo GPS constellation</Help>
+			<Notes>Enable use of the Galileo GPS constellation</Notes>
+		</Parameter>
+		<Parameter name="GPS Aid Seed Position from Best-Guess" level="0" datatype="Bit" address="3575" length="1" bitmask="1" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Allow the GPS to be initialised with the Best Guess position the MHub currently has.</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Allow the GPS to be initialised with the Best Guess position the MHub currently has.</Notes>
+		</Parameter>
+	</Category>
+	<Category name="Inputs and Outputs">
+		<Parameter name="Input A Function" level="10" datatype="Byte" address="791" length="1" bitmask="255" dtu="0">
+			<Values min="255" max="0" default="0" previous="" current="" units="" />
+			<Help>Input A Function</Help>
+			<Notes>Input A Function Configuration: Default Input 1
+1 Input 1
+2 Input 2
+4 Ignition
+8 RPM
+16 Speed
+32 Output 1
+64 Output 2
+128 Invert Logic</Notes>
+		</Parameter>
+		<Parameter name="Input B Function" level="10" datatype="Byte" address="792" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Input B Function</Help>
+			<Notes>Input B Function Configuration: Default Input 2
+1 Input 1
+2 Input 2
+4 Ignition
+8 RPM
+16 Speed
+32 Output 1
+64 Output 2
+128 Invert Logic</Notes>
+		</Parameter>
+		<Parameter name="Output A Function" level="10" datatype="Byte" address="793" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Output A Function</Help>
+			<Notes>Output A Function Configuration: Default Output 1
+1 Output 1
+2 Output 2
+4 Output Follow Ignition
+8 Buzzer
+16 Immobiliser
+32 Reserved
+64 Reserved
+128 Inverse Logic</Notes>
+		</Parameter>
+		<Parameter name="Output B Function" level="10" datatype="Byte" address="794" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Output B Function</Help>
+			<Notes>Output B Function Configuration: Default Output 2
+1 Output 1
+2 Output 2
+4 Output Follow Ignition
+8 Buzzer
+16 Immobiliser
+32 Reserved
+64 Reserved
+128 Inverse Logic</Notes>
+		</Parameter>
+		<Parameter name="Output 1 Style" level="10" datatype="Byte" address="971" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="3" default="0" previous="" current="" units="" />
+			<Help>Output Style for Output 1: 0 - Normal, 1 - Timed, 2 - Progressive, 3 - Pattern</Help>
+			<Notes>There are 4 different styles of outputs:
+00 = Normal - this is where the output will be either ON or OFF.
+01 = Timed - This is where a style map will run for the number of seconds specified in the "Style count" parameter, and then go OFF.
+02 = Progressive - The Style Map must be set to progressive. Shift by count bits.
+03 - Pattern - This is where the Style Map is applied to the output and repeats every two seconds indefinitely until the output is turned OFF.</Notes>
+		</Parameter>
+		<Parameter name="Output 1 Style Repeat Count" level="10" datatype="Byte" address="972" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="1" previous="" current="" units="" />
+			<Help>Output Style Repeat Count 1 for Timed Outputs</Help>
+			<Notes>This parameter is used when the output style is set to timed outputs. The value of this paramneter will then specify the number of times that the style map is repeated. The style map is 2 seconds long.
+
+This parameter is also used when the output style is set to progressive. In this instance the value of the repeat count indicates how much longer each sucessive progressive pulse will be. Do not use any values other than indicated below when progressive style is used.
+1 = 100ms
+3 = 200ms
+7 = 300ms
+15 = 400ms
+31 = 500ms
+63 = 600ms
+127 = 700ms
+255 = 800ms
+</Notes>
+		</Parameter>
+		<Parameter name="Output 1 Style Map" level="10" datatype="Long" address="973" length="4" bitmask="255" dtu="1">
+			<Values min="0" max="1048575" default="0" previous="" current="" units="" />
+			<Help>Output Style Map 1 for Pattern and Progressive Output</Help>
+			<Notes>The style Map is used when the output style is set to timed. The output style map is essentially a 20 bit value where each bit represents 100ms, thus the style map takes 2 seconds to complete one cycle, and if a bit in the map is set to 1, the output will be ON, and if a bit is set to zero, the output will be OFF.</Notes>
+		</Parameter>
+		<Parameter name="Output 2 Style" level="10" datatype="Byte" address="977" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="3" default="0" previous="" current="" units="" />
+			<Help>Output Style for Output 2: 0 - Normal, 1 - Timed, 2 - Progressive, 3 - Pattern</Help>
+			<Notes>See Output 1 Style</Notes>
+		</Parameter>
+		<Parameter name="Output 2 Style Repeat Count" level="10" datatype="Byte" address="978" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="1" previous="" current="" units="" />
+			<Help>Output Style Repeat Count 2 for Timed Outputs</Help>
+			<Notes>See Output 1 Style Repeat Count</Notes>
+		</Parameter>
+		<Parameter name="Output 2 Style Map" level="10" datatype="Long" address="979" length="4" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Output Style Map 2 for Pattern and Progressive Output</Help>
+			<Notes>See Output 1 Style Map</Notes>
+		</Parameter>
+		<Parameter name="Output 3 Style" level="10" datatype="Byte" address="983" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="3" default="0" previous="" current="" units="" />
+			<Help>Output Style for Output 3: 0 - Normal, 1 - Timed, 2 - Progressive, 3 - Pattern</Help>
+			<Notes>See output 1 Style</Notes>
+		</Parameter>
+		<Parameter name="Output 3 Style Repeat Count" level="10" datatype="Byte" address="984" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="1" previous="" current="" units="" />
+			<Help>Output Style Repeat Count 3 for Timed Outputs</Help>
+			<Notes>See Output 1 Style Repeat Count</Notes>
+		</Parameter>
+		<Parameter name="Output 3 Style Map" level="10" datatype="Long" address="985" length="4" bitmask="255" dtu="1">
+			<Values min="0" max="1048575" default="0" previous="" current="" units="" />
+			<Help>Output Style Map 3 for Pattern and Progressive Output</Help>
+			<Notes>See Output 1 Style Map</Notes>
+		</Parameter>
+		<Parameter name="Output 4 Style" level="10" datatype="Byte" address="989" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="3" default="0" previous="" current="" units="" />
+			<Help>Output Style for Output 4: 0 - Normal, 1 - Timed, 2 - Progressive, 3 - Pattern</Help>
+			<Notes>See output 1 style</Notes>
+		</Parameter>
+		<Parameter name="Output 4 Style Repeat Count" level="10" datatype="Byte" address="990" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="1" previous="" current="" units="" />
+			<Help>Output Style Repeat Count 4 for Timed Outputs</Help>
+			<Notes>See Output 1 Style Repeat Count</Notes>
+		</Parameter>
+		<Parameter name="Output 4 Style Map" level="10" datatype="Long" address="991" length="4" bitmask="255" dtu="1">
+			<Values min="0" max="1048575" default="0" previous="" current="" units="" />
+			<Help>Output Style Map 4 for Pattern and Progressive Output</Help>
+			<Notes>See Output 1 Style Map</Notes>
+		</Parameter>
+		<Parameter name="Input 1 Delay" level="10" datatype="Word" address="1092" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="0" previous="" current="" units="" />
+			<Help>Delay for Input 1 Event Generation</Help>
+			<Notes>This parameter will specify the minimum amount of time in seconds for which an input must be in a new state before an event will be generated.</Notes>
+		</Parameter>
+		<Parameter name="Input 2 Delay" level="10" datatype="Word" address="1094" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="0" previous="" current="" units="" />
+			<Help>Delay for Input 2 Event Generation</Help>
+			<Notes>This parameter will specify the minimum amount of time in seconds for which an input must be in a new state before an event will be generated.</Notes>
+		</Parameter>
+		<Parameter name="Input 3 Delay" level="10" datatype="Word" address="1096" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="0" previous="" current="" units="" />
+			<Help>Delay for Input 3 Event Generation</Help>
+			<Notes>This parameter will specify the minimum amount of time in seconds for which an input must be in a new state before an event will be generated.</Notes>
+		</Parameter>
+		<Parameter name="Input 4 Delay" level="10" datatype="Word" address="1098" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="0" previous="" current="" units="" />
+			<Help>Delay for Input 4 Event Generation</Help>
+			<Notes>This parameter will specify the minimum amount of time in seconds for which an input must be in a new state before an event will be generated.</Notes>
+		</Parameter>
+		<Parameter name="Input 5 Delay" level="10" datatype="Word" address="1100" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="0" previous="" current="" units="" />
+			<Help>Delay for Input 5 Event Generation</Help>
+			<Notes>This parameter will specify the minimum amount of time in seconds for which an input must be in a new state before an event will be generated.</Notes>
+		</Parameter>
+		<Parameter name="Input 6 Delay" level="10" datatype="Word" address="1102" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="0" previous="" current="" units="" />
+			<Help>Delay for Input 6 Event Generation</Help>
+			<Notes>This parameter will specify the minimum amount of time in seconds for which an input must be in a new state before an event will be generated.</Notes>
+		</Parameter>
+		<Parameter name="Input 7 Delay" level="10" datatype="Word" address="1104" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="0" previous="" current="" units="" />
+			<Help>Delay for Input 7 Event Generation</Help>
+			<Notes>This parameter will specify the minimum amount of time in seconds for which an input must be in a new state before an event will be generated.</Notes>
+		</Parameter>
+		<Parameter name="Input 8 Delay" level="10" datatype="Word" address="1106" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="0" previous="" current="" units="" />
+			<Help>Delay for Input 8 Event Generation</Help>
+			<Notes>This parameter will specify the minimum amount of time in seconds for which an input must be in a new state before an event will be generated.</Notes>
+		</Parameter>
+		<Parameter name="Output Delay" level="10" datatype="Word" address="1116" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="0" previous="" current="" units="Seconds" />
+			<Help>Delay used for Output Changed Event Generation</Help>
+			<Notes>When an Output changes state ON to OFF or OFF to ON, and an event is to be generated. This parameter specifies the minimum duration in seconds of the new state before the event will be generated.</Notes>
+		</Parameter>
+		<Parameter name="Input 9 Delay" level="10" datatype="Word" address="1664" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="5" previous="" current="" units="" />
+			<Help>Delay for Input 9 before General Purpose IO Event Generation</Help>
+			<Notes>This parameter will specify the minimum amount of time in seconds for which an input must be in a new state before an event will be generated.</Notes>
+		</Parameter>
+		<Parameter name="Input 10 Delay" level="10" datatype="Word" address="1666" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="5" previous="" current="" units="" />
+			<Help>Delay for Input 10 before General Purpose IO Event Generation</Help>
+			<Notes>This parameter will specify the minimum amount of time in seconds for which an input must be in a new state before an event will be generated.</Notes>
+		</Parameter>
+		<Parameter name="Input 11 Delay" level="10" datatype="Word" address="1668" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="5" previous="" current="" units="" />
+			<Help>Delay for Input 11 before General Purpose IO Event Generation</Help>
+			<Notes>This parameter will specify the minimum amount of time in seconds for which an input must be in a new state before an event will be generated.</Notes>
+		</Parameter>
+		<Parameter name="Input 12 Delay" level="10" datatype="Word" address="1670" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="5" previous="" current="" units="" />
+			<Help>Delay for Input 12 before General Purpose IO Event Generation</Help>
+			<Notes>This parameter will specify the minimum amount of time in seconds for which an input must be in a new state before an event will be generated.</Notes>
+		</Parameter>
+		<Parameter name="Input 13 Delay" level="10" datatype="Word" address="1672" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="5" previous="" current="" units="" />
+			<Help>Delay for Input 13 before General Purpose IO Event Generation</Help>
+			<Notes>This parameter will specify the minimum amount of time in seconds for which an input must be in a new state before an event will be generated.</Notes>
+		</Parameter>
+		<Parameter name="Input 14 Delay" level="10" datatype="Word" address="1674" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="5" previous="" current="" units="" />
+			<Help>Delay for Input 14 before General Purpose IO Event Generation</Help>
+			<Notes>This parameter will specify the minimum amount of time in seconds for which an input must be in a new state before an event will be generated.</Notes>
+		</Parameter>
+		<Parameter name="Input 15 Delay" level="10" datatype="Word" address="1676" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="5" previous="" current="" units="" />
+			<Help>Delay for Input 15 before General Purpose IO Event Generation</Help>
+			<Notes>This parameter will specify the minimum amount of time in seconds for which an input must be in a new state before an event will be generated.</Notes>
+		</Parameter>
+		<Parameter name="Input 16 Delay" level="10" datatype="Word" address="1678" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="5" previous="" current="" units="" />
+			<Help>Delay for Input 16 before General Purpose IO Event Generation</Help>
+			<Notes>This parameter will specify the minimum amount of time in seconds for which an input must be in a new state before an event will be generated.</Notes>
+		</Parameter>
+		<Parameter name="Analog Sensor Offset DS2450" level="10" datatype="Byte" address="1789" length="1" bitmask="255" dtu="0">
+			<Values min="1" max="254" default="68" previous="" current="" units="" />
+			<Help>Analog Sensor Voltage Offset</Help>
+			<Notes>Analog Sensor Voltage Offset in 0.01V units for DS2450 1-Wire ADC.
+Offset value is Parameter Value - 128 * 0.01 V
+To calculate Parameter Value, take Required Voltage offset divide by 0.01 and add 128
+0 and 255 disables this feature
+e.g.
+1 is -1.27V
+68 is -0.60V
+128 is +0.00V (Default Value)
+188 is +0.60V
+254 is +1.27V</Notes>
+		</Parameter>
+		<Parameter name="Clear Input Counters" level="10" datatype="Bit" address="1891" length="1" bitmask="1" dtu="1">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Clear the Input Counters on Trip Start</Help>
+			<Notes>This will cause the input counters to be cleared when a trip starts</Notes>
+		</Parameter>
+		<Parameter name="OutputStyleBeep" level="10" datatype="Byte" address="1904" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="3" default="0" previous="" current="" units="" />
+			<Help>Output Style for Beeper: 0 - Normal, 1 - Timed, 2 - Progressive, 3 - Pattern</Help>
+			<Notes>See Output 1 style</Notes>
+		</Parameter>
+		<Parameter name="Output Beeper Repeat Count" level="10" datatype="Byte" address="1905" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="1" previous="" current="" units="" />
+			<Help>Output Style Repeat Count Beeper for Timed Outputs</Help>
+			<Notes>See Output Repeat COunt</Notes>
+		</Parameter>
+		<Parameter name="Output Beeper Style Map" level="10" datatype="Long" address="1906" length="4" bitmask="255" dtu="1">
+			<Values min="0" max="1048575" default="0" previous="" current="" units="" />
+			<Help>Output Style Map Beep for Pattern and  Progressive Output</Help>
+			<Notes>See Output 1 Style Map</Notes>
+		</Parameter>
+		<Parameter name="Output One Wire Led 1 Style" level="10" datatype="Byte" address="1910" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="3" default="0" previous="" current="" units="" />
+			<Help>Output Style for One Wire Led 1: 0 - Normal, 1 - Timed, 2 - Progressive, 3 - Pattern</Help>
+			<Notes>See Output 1 Style</Notes>
+		</Parameter>
+		<Parameter name="Output One Wire Led 1 Repeat Count" level="10" datatype="Byte" address="1911" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="1" previous="" current="" units="" />
+			<Help>Output Style Repeat Count One Wire Led 1 for Timed Outputs</Help>
+			<Notes>See Output 1 Repeat Count</Notes>
+		</Parameter>
+		<Parameter name="Output One Wire Led 1 Style Map" level="10" datatype="Long" address="1912" length="4" bitmask="255" dtu="1">
+			<Values min="0" max="1048575" default="0" previous="" current="" units="" />
+			<Help>Output Style Map One Wire Led 1 for Pattern and  Progressive Output</Help>
+			<Notes>See output 1 Style Map</Notes>
+		</Parameter>
+		<Parameter name="Output One Wire Led 2 Style" level="10" datatype="Byte" address="1916" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="3" default="0" previous="" current="" units="" />
+			<Help>Output Style for One Wire Led 2: 0 - Normal, 1 - Timed, 2 - Progressive, 3 - Pattern</Help>
+			<Notes>See Output 1 style</Notes>
+		</Parameter>
+		<Parameter name="Output One Wire Led 2 Repeat Count" level="10" datatype="Byte" address="1917" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="1" previous="" current="" units="" />
+			<Help>Output Style Repeat Count One Wire Led 2 for Timed Outputs</Help>
+			<Notes>See Output 1 Repeat Count</Notes>
+		</Parameter>
+		<Parameter name="Output One Wire Led 2 Style Map" level="10" datatype="Long" address="1918" length="4" bitmask="255" dtu="1">
+			<Values min="0" max="1048575" default="0" previous="" current="" units="" />
+			<Help>Output Style Map One Wire Led 2 for Pattern and  Progressive Output</Help>
+			<Notes>see Output 1 Style Map</Notes>
+		</Parameter>
+		<Parameter name="Output Led 2 Style" level="10" datatype="Byte" address="1922" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="1" previous="" current="" units="" />
+			<Help>Output Style for Led 2: 0 - Normal, 1 - Timed, 2 - Progressive, 3 - Pattern</Help>
+			<Notes>See output 1 style</Notes>
+		</Parameter>
+		<Parameter name="Output Led 2 Repeat Count" level="10" datatype="Byte" address="1923" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="1" previous="" current="" units="" />
+			<Help>Output Style Repeat Count Led 2 for Timed Outputs</Help>
+			<Notes>See output 1 repeat count</Notes>
+		</Parameter>
+		<Parameter name="Output Led 2 Style Map" level="10" datatype="Long" address="1924" length="4" bitmask="255" dtu="1">
+			<Values min="0" max="1048575" default="0" previous="" current="" units="" />
+			<Help>Output Style Map Led 2 for Pattern and  Progressive Output</Help>
+			<Notes>See Output 1 Style Map</Notes>
+		</Parameter>
+		<Parameter name="Analog 1 High Threshold" level="10" datatype="Word" address="2296" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="1023" default="65535" previous="" current="" units="0.1 Volt" />
+			<Help>Threshold at which the Analog High event will be triggered</Help>
+			<Notes>Threshold at which the Analog High event will be triggered. The value should be stated in 0.1 Volt increments, e.g. 12V = 120</Notes>
+		</Parameter>
+		<Parameter name="Analog 1 Low Threshold" level="10" datatype="Word" address="2298" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="1023" default="0" previous="" current="" units="0.1 Volt" />
+			<Help>Threshold at which the Analog Low event will be triggered</Help>
+			<Notes>Threshold at which the Analog Low event will be triggered. The value should be stated in 0.1 Volt increments, e.g. 12V = 120</Notes>
+		</Parameter>
+		<Parameter name="Input/Output C Function" level="10" datatype="Byte" address="2407" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Input/Output C Function</Help>
+			<Notes>Input/Output C Function Configuration: Default Input/Output 3
+1 Input 3
+2 Input 4
+4 Ignition
+8 RPM
+16 Speed
+32 Output 3
+64 Output 4
+128 Invert Logic</Notes>
+		</Parameter>
+		<Parameter name="Input/Output D Function" level="10" datatype="Byte" address="2408" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Input/Output D Function</Help>
+			<Notes>Input/Output D Function Configuration: Default Input/Output 4
+1 Input 3
+2 Input 4
+4 Ignition
+8 RPM
+16 Speed
+32 Output 3
+64 Output 4
+128 Invert Logic</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Insurance">
@@ -2743,23 +3218,6 @@ The Mhub802 can be mounted with a tamper detection in place so that if it is rem
 			<Help>This is the time in seconds before forcing the unit to send the Wakeup event even when it does not have a 3D GPS lock</Help>
 			<Notes>When the MHub802 wakes up, one of its tasks is to get a 3D GPS lock as quickly as possible. However it may be that it is impossible for the MHub802 to get a GPS location at all. To prevent the MHub802 from staying ON for too long and thus reducing the battery life, this parameter specifies a maximum time in seconds that the MHub802 will wait for a 3D GPS lock. If a lock is not achieved after waiting this amount of time, the event will be sent in anyway, indicating that the GPS lock wan not valid.</Notes>
 		</Parameter>
-		<Parameter name="Geoloc Breach Periodic Position" level="10" datatype="Word" address="1800" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="65535" default="120" previous="" current="" units="Seconds" />
-			<Help>Periodic Positions for when the geoloc has been breached - in seconds</Help>
-			<Notes>The Mhub802 has geoloc functionality, whereby a command is sent to the MHub802 that will cause it to create a geofence around its current location. Every time the MHub802 wakes up, the location is checked to see if it is still inside this geoloc geofence. If it is outside of the geofence, the MHub802 will enter an Alarm mode and will send periodic locations at the interval specified by this parameter in seconds.</Notes>
-		</Parameter>
-		<Parameter name="Emergency Mode Periodic Position Interval" level="10" datatype="Word" address="1802" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="65535" default="120" previous="" current="" units="Seconds" />
-			<Help>Periodic Position Interval when the unit is in Emergency Mode - in seconds</Help>
-			<Notes>This is where an emergency event is sent to the MHub to place it into an Emergency mode. In this mode this parameter specifies the time interval in seconds that periodic positions will be sent.</Notes>
-		</Parameter>
-		<Parameter name="Tamper Mode Periodic Position Interval" level="10" datatype="Word" address="1804" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="65535" default="120" previous="" current="" units="Seconds" />
-			<Help>Periodic Position Interval for when the unit is in Tamper Mode - in seconds</Help>
-			<Notes>The tamper mode described in XXX will also result in the MHub802 sending periodic location events. This parameter specifies the interval at which the MHub802 will send periodic events while in Tamper mode.
-
-</Notes>
-		</Parameter>
 		<Parameter name="Time to wait for GPS Lock" level="10" datatype="Word" address="2037" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="180" previous="" current="" units="seconds" />
 			<Help>Time in seconds to wait for a good GPS Lock</Help>
@@ -2791,18 +3249,6 @@ The Mhub802 can be mounted with a tamper detection in place so that if it is rem
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>TCP Port through which the socket will be opened to third party server.</Help>
 			<Notes>XXX - is this GSM external stuff still used. If not it must be removed.</Notes>
-		</Parameter>
-		<Parameter name="External Control Hold State" level="0" datatype="Byte" address="1857" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="10" previous="" current="" units="Seconds" />
-			<Help>The amount of time that the MHub will wait after a socket has closed before taking back control of the modem.</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
-		</Parameter>
-		<Parameter name="External Socket Maximum allow time" level="10" datatype="Word" address="1858" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="65535" default="600" previous="" current="" units="" />
-			<Help>The maximum amount of time that the MHub will allow control of the socket to be handled by an external device. When this timer has expired the socket will be closed. If a new request is initiated the socket will be immediately re-opened.</Help>
-			<Notes>None</Notes>
 		</Parameter>
 		<Parameter name="External Modem Control Enable" level="10" datatype="Bit" address="1864" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
@@ -2930,13 +3376,6 @@ Default setting:
 		</Parameter>
 	</Category>
 	<Category name="Modem - Circuit Switched Data Call">
-		<Parameter name="Error Correction" level="0" datatype="Byte" address="487" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="0" previous="" current="" units="" />
-			<Help>Data Call error correction</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
-		</Parameter>
 		<Parameter name="Data Call Bearer speed" level="0" datatype="Byte" address="488" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="75" default="0" previous="" current="" units="" />
 			<Help>Data call bearer baud rate.</Help>
@@ -3001,13 +3440,6 @@ None</Notes>
 Enables the use of the Telit Trace debug tools. Must used in conjunction with the Custom Functionality->Aux Port Config parameter
 </Notes>
 		</Parameter>
-		<Parameter name="Modem No-Network Restart Delay" level="0" datatype="Word" address="433" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="65535" default="300" previous="" current="" units="Seconds" />
-			<Help>The amount of time that the unit will wait after rebooting the modem before repeating the process.</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
-		</Parameter>
 		<Parameter name="Error Limit" level="5" datatype="Byte" address="475" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="5" previous="" current="" units="" />
 			<Help>Maximum number of accumulated errors before the modem is rebooted</Help>
@@ -3029,11 +3461,6 @@ None</Notes>
 
 Defines the maximum time the modem will be ON trying to connect to the network</Notes>
 		</Parameter>
-		<Parameter name="Modem Power OFF Standoff Time" level="5" datatype="Word" address="775" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="65535" default="300" previous="" current="" units="Seconds" />
-			<Help>Minimum amount of time between modem power-up cycles</Help>
-			<Notes>Minimum amount of time between modem power-up cycles</Notes>
-		</Parameter>
 	</Category>
 	<Category name="Modem - FOTA Firmware Upgrade">
 		<Parameter name="Telit FOTA Upgrade Enable" level="0" datatype="Byte" address="392" length="1" bitmask="255" dtu="0">
@@ -3049,6 +3476,13 @@ This parameter allows the unit to accept and act on Telit Modem firmware upgrade
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
 Path where the GSM firmware file resides. Path must be in the format /GE863-GPS/Fwd2/</Notes>
+		</Parameter>
+		<Parameter name="File Count" level="10" datatype="Word" address="1571" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65000" default="0" previous="" current="" units="" />
+			<Help>Number of files that comprise the complete download.
+If set to 0 then multiple downloads disabled. </Help>
+			<Notes>Number of files that comprise the complete download.
+If set to 0 then multiple downloads disabled. </Notes>
 		</Parameter>
 		<Parameter name="FTP IP/URL" level="0" datatype="String" address="3008" length="32" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="" previous="" current="" units="" />
@@ -3087,24 +3521,10 @@ File name of the GSM firmware file to be uploaded</Notes>
 
 None</Notes>
 		</Parameter>
-		<Parameter name="GPRS Registration Message Format" level="0" datatype="Byte" address="294" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>GPRS Unsolicitied Status Message setting</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
-		</Parameter>
 		<Parameter name="Text White List Enable" level="15" datatype="Byte" address="307" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
 			<Help>Enables White List security for Text SMS commands.</Help>
 			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Modem Type Designator" level="0" datatype="Byte" address="321" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="0" previous="" current="" units="" />
-			<Help>This sets the type of modem that has been populated on the board. DO NOT EVER SET THIS TO ANYTHING OTHER THAN 0. The MHub will automatically configure this parameter. </Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-This parameter is automatically configured by the MHub. Do not set this to anything other than 0.</Notes>
 		</Parameter>
 		<Parameter name="No Network with Signal Timeout" level="0" datatype="Word" address="379" length="2" bitmask="255" dtu="0">
 			<Values min="900" max="65000" default="7210" previous="" current="" units="" />
@@ -3122,24 +3542,12 @@ This parameter is automatically configured by the MHub. Do not set this to anyth
 1 - No sound except for alarms
 2 - No Sound at all.</Notes>
 		</Parameter>
-		<Parameter name="IMEI (Last 9 Digits)" level="0" datatype="Long" address="384" length="4" bitmask="255" dtu="0">
-			<Values min="0" max="2147483647" default="0" previous="" current="" units="" />
-			<Help>The last 9 digits of the IMEI stored as an integer</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-The least significant digit of this number is a check digit that should ensure reasonable uniqueness of the number.</Notes>
-		</Parameter>
 		<Parameter name="Calling Line Identification" level="0" datatype="Byte" address="424" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Switches the calling line identification on or off. This allows the unit to know the origin of a voice or data call.</Help>
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
 None</Notes>
-		</Parameter>
-		<Parameter name="Reboot Limit" level="5" datatype="Byte" address="474" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="4" previous="" current="" units="" />
-			<Help>Maximum number of times that the modem can be soft rebooted before it is power cycled</Help>
-			<Notes>The MHub is fitted with a GSM modem. If the MHub detects a problem with the mode, it will attempt to reboot the modem by issuing a reboot command to the modem. If the error persists, another reboot command will be issued to the modem. This parameter specifies the number of time that the reboot command is sent to the modem before the MHub will power cycle the modem in an attempt to resolve a problem with the modem.</Notes>
 		</Parameter>
 		<Parameter name="Cell Result Code" level="0" datatype="Byte" address="478" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -3176,25 +3584,6 @@ None</Notes>
 
 None</Notes>
 		</Parameter>
-		<Parameter name="Character Framing Format" level="0" datatype="Byte" address="484" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="6" default="3" previous="" current="" units="" />
-			<Help>Data, parity and stop bit format</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
-		</Parameter>
-		<Parameter name="Character Framing Parity" level="0" datatype="Byte" address="485" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="4" default="4" previous="" current="" units="" />
-			<Help>Type of parity.</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
-		</Parameter>
-		<Parameter name="Incoming Default Call" level="5" datatype="Byte" address="486" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="2" default="2" previous="" current="" units="" />
-			<Help>Sets the incoming call bearer when none is given by the network. Ref AT command set documnetation for value meanings. Defaults to voice.</Help>
-			<Notes>When a call is made to the MHub, it can be either a data call, fax call or voice call. The type of incomming call is called the Bearer Type. Now if this call is made from a mobile phone for instance, it will identify to the MHub which type of call it is (its Bearer Type). If the call is made from a fixed line operator, the MHub may not know what type of call it is. If the bearer type is not known to the MHub, then the MHub will have to apply a default Bearer Type. That is what this parameter defines. What Bearer Type must the MHub assign to an incomming call if the Bearer Type of the incomming call is unknown. The default for this is 2, which defines a voice call.</Notes>
-		</Parameter>
 		<Parameter name="SMS Check Period" level="5" datatype="Word" address="532" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="10" previous="" current="" units="Seconds" />
 			<Help>Number of seconds between checking for messages during maintenance cycles</Help>
@@ -3204,18 +3593,6 @@ None</Notes>
 			<Values min="0" max="65535" default="15" previous="" current="" units="Seconds" />
 			<Help>Number of seconds between checking net information during maintenance cycles</Help>
 			<Notes>None</Notes>
-		</Parameter>
-		<Parameter name="SMS Check Period in Power Save" level="5" datatype="Byte" address="600" length="1" bitmask="255" dtu="0">
-			<Values min="16" max="255" default="30" previous="" current="" units="Minutes" />
-			<Help>Number of Minutes between checking for messages during maintenance cycles while the wismo is in W32k Power Save mode</Help>
-			<Notes>When the MHub is in sleep mode with the modem enabled for W32K power save mode, the modem is still able to recieve SMS messages even though it is in a very low power state. This parameter specifies the interval in minutes between which the MHub will check to see if the modem has received any SMS messages.</Notes>
-		</Parameter>
-		<Parameter name="Net Info Check Period in Power Save" level="0" datatype="Byte" address="601" length="1" bitmask="255" dtu="0">
-			<Values min="16" max="255" default="60" previous="" current="" units="Minutes" />
-			<Help>umber of minutes between checking net information during maintenance cycles</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
 		</Parameter>
 		<Parameter name="White List MSISDN 1" level="15" datatype="String" address="603" length="20" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="" previous="" current="" units="" />
@@ -3282,41 +3659,6 @@ Number of seconds that that unit waits before and after powering off the modem t
 			<Help>The amount of time that an AT command from outside the MHub will be allowed to complete execution before the MHub gathers the response.</Help>
 			<Notes>This parameter set the timeout for waiting for a response for an AT command sent from outside the MHub, i.e. via the external communications interface.</Notes>
 		</Parameter>
-		<Parameter name="Incoming Fax Melody" level="0" datatype="Byte" address="1884" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="10" default="0" previous="" current="" units="" />
-			<Help>Incoming fax call alert.</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
-		</Parameter>
-		<Parameter name="Incoming Data Melody" level="0" datatype="Byte" address="1885" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="10" default="0" previous="" current="" units="" />
-			<Help>Incoming data call alert melody.</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
-		</Parameter>
-		<Parameter name="Enable Modem Hardware Flow Control" level="0" datatype="Byte" address="1890" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Configures  hardware flow control between the modem and the processor. 1 - Flow control on; 0 - Flow control off. Should be used in conjunction with the modem\'s internal flow control settings.</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
-		</Parameter>
-		<Parameter name="SMS Transmission Timeout" level="0" datatype="Byte" address="1892" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="10" previous="" current="" units="Seconds" />
-			<Help>The amount of time that the MHub will wait for to modem to transmit a message before deciding to carry on.</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
-		</Parameter>
-		<Parameter name="Incoming SMS Melody" level="0" datatype="Byte" address="1895" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="3" default="0" previous="" current="" units="" />
-			<Help>Incoming SMS alert.</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
-		</Parameter>
 		<Parameter name="Selection of Preferred PLMN List" level="0" datatype="Byte" address="2546" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="2" default="0" previous="" current="" units="" />
 			<Help>Used to select the list of the preferred PLMN list in the SIM/USIM.
@@ -3376,38 +3718,10 @@ E.g.
 		</Parameter>
 	</Category>
 	<Category name="Modem - GPRS UMTS">
-		<Parameter name="GPRS Mode" level="0" datatype="Byte" address="295" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>Sets TCP stack to work over GPRS or datacall</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
-		</Parameter>
 		<Parameter name="Stack Start Retry Delay" level="5" datatype="Word" address="359" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65000" default="30" previous="" current="" units="Seconds" />
 			<Help>Period of Stack Start retries.</Help>
 			<Notes>If the stack fails to connect to the APN it needs to be restarted. The amount of time in between restarts should be enough to allow the unit time to read any incoming SMS's that may contain new APN information that will allow a successful connection.</Notes>
-		</Parameter>
-		<Parameter name="Enable PDP Header Compression" level="5" datatype="Byte" address="382" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enables PDP Header Compression</Help>
-			<Notes>0 - PDP Header compression off
-1 - PDP Header compression ON
-
-Network compatibility needs to be established before enabling this feature. </Notes>
-		</Parameter>
-		<Parameter name="Enable PDP Data Compression" level="5" datatype="Byte" address="383" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enables PDP Data Compression</Help>
-			<Notes>0 - PDP Data Compression turned off
-1 - PDP Data Compression turned ON
-
-Network compatibility needs to be established before this feature is enabled.</Notes>
-		</Parameter>
-		<Parameter name="GPRS Domain Name Server Address" level="10" datatype="String" address="441" length="30" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="0.0.0.0" previous="" current="" units="" />
-			<Help>Domain Name Server IP address</Help>
-			<Notes>When the MHub communicates with the MProifler over GPRS, it opens up a socket to the Mprofiler server. In order to do this, the MHub is configured with the IP address of the MProfiler in parameter XXX. However instead of placing an IP address in this parameter, it is possible to use a url instead. If a url is used, then the MHub will need to know how to resolve the url to an IP address. This is done by a Domain Name Server. So this parameter contains the IP address of the Domain Name Server, when the MHub can then lookup the IP address of the MProfiler url. The disadvantage of using this mechanism, is that if the Mhub cannot contact the Domain Name Server, then it will not be able to get the IP of the Mprofiler, and will then not be able to send messages over GPRS.</Notes>
 		</Parameter>
 		<Parameter name="GPRS Class Configuration" level="5" datatype="Byte" address="602" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="3" default="0" previous="" current="" units="" />
@@ -3419,20 +3733,6 @@ Network compatibility needs to be established before this feature is enabled.</N
 03 - MHub will set the Modem to Class CC
 For correct opetation of the MHUb, the modem should be set to class XXX
 </Notes>
-		</Parameter>
-		<Parameter name="APN Activation Retry before Standoff" level="0" datatype="Byte" address="1077" length="1" bitmask="255" dtu="0">
-			<Values min="2" max="65535" default="5" previous="" current="" units="" />
-			<Help>Number of attempts the MHub must try to activate the APN session before standing off.</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Number of attempts the MHub must try to activate the APN session before standing off.</Notes>
-		</Parameter>
-		<Parameter name="APN Activation Standoff Period" level="0" datatype="Word" address="1078" length="2" bitmask="255" dtu="0">
-			<Values min="60" max="7200" default="300" previous="" current="" units="Seconds" />
-			<Help>The number of seconds an MHub must wait before retrying the activation of a socket after more than the allowed attempts.</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-The number of seconds an MHub must wait before retrying the activation of a socket after more than the allowed attempts. Max value 7200 seconds (2 hours)</Notes>
 		</Parameter>
 		<Parameter name="Allow APN Standoff Cancellation from Tower change" level="5" datatype="Byte" address="1361" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -3570,11 +3870,6 @@ Mode of operation:
 		</Parameter>
 	</Category>
 	<Category name="Modem - GSM SMS">
-		<Parameter name="Normal SMS Sending" level="5" datatype="Byte" address="280" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="3" default="1" previous="" current="" units="" />
-			<Help>Allows selection of GPRS SMS or Circuit switched SMS. This should not be changed from the default value unless there are network reasons. If this is changed SMS\'s will not work if there is no GPRS !</Help>
-			<Notes>In some GSM networks, it is possible to send a SMS from the MHub making use of the GPRS mechanism. There is generally no difference in the cost of sending the SMS, however the SMS will be sent faster. This should really only be used if the MHub is configured in such a way that will require sending many SMS messages quickly in succession. The disadvantage of using the method of sending SMS's, is that if the MHub finds itself outside of GPRS coverage, it will not be able to send the SMS, whereas if this option is turned off, the MHub would be able to send the SMS.</Notes>
-		</Parameter>
 		<Parameter name="SMS First Octet" level="0" datatype="Byte" address="281" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="17" default="17" previous="" current="" units="" />
 			<Help></Help>
@@ -3735,21 +4030,6 @@ Scotch call must be enabled.</Help>
 			<Help>Allows a trip type to be toggled between business and private. 
 Scotch call must be enabled.</Help>
 			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Voice Dial Input 1" level="10" datatype="Bit" address="432" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Use Input 1 for Voice Dialing</Help>
-			<Notes>Use Input 1 for Voice Dialing. Enable Global Input Voice dialing with External Voice Dialing Enabled and Voice Dial with Inputs Enable.</Notes>
-		</Parameter>
-		<Parameter name="Voice Dial Input 2" level="10" datatype="Bit" address="432" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Use Input 2 for Voice Dialing</Help>
-			<Notes>Use Input 2 for Voice Dialing. Enable Global Input Voice dialing with External Voice Dialing Enabled and Voice Dial with Inputs Enable.</Notes>
-		</Parameter>
-		<Parameter name="Voice Dial Input 3" level="10" datatype="Bit" address="432" length="1" bitmask="4" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Use Input 3 for Voice Dialing</Help>
-			<Notes>Use Input 3 for Voice Dialing. Enable Global Input Voice dialing with External Voice Dialing Enabled and Voice Dial with Inputs Enable.</Notes>
 		</Parameter>
 		<Parameter name="Voice Number 1" level="10" datatype="String" address="1171" length="20" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="" previous="" current="" units="" />
@@ -4112,13 +4392,6 @@ DO NOT CHANGE THIS VALUE WITHOUT CONSULTING RELEVANT DOCUMENTATION.</Notes>
 
 DO NOT CHANGE THIS VALUE WITHOUT CONSULTING RELEVANT DOCUMENTATION.</Notes>
 		</Parameter>
-		<Parameter name="Packet Transmission Timeout" level="0" datatype="Byte" address="365" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="50" previous="" current="" units="100ms" />
-			<Help>Maximum amount of time that the modem will wait for a TCP packet to be filled before sending what it has in 100ms units</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-DO NOT CHANGE THIS VALUE WITHOUT CONSULTING RELEVANT DOCUMENTATION.</Notes>
-		</Parameter>
 		<Parameter name="Global Timeout" level="0" datatype="Word" address="367" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="600" default="0" previous="" current="" units="Seconds" />
 			<Help>Socket Configuration: Max amount of time of the socket not going into active state (i.e. being suspended) before connection falls out.</Help>
@@ -4168,11 +4441,6 @@ Number of seconds before the Modem/MHub reboots due to failing to contact the MP
 			<Help>Maximum number of attempts the MHub will make to transmit a packet before the socket is torn down. The message is also failed.</Help>
 			<Notes>When the MHub transmits a message over GPRS to the MProfiler, tyhe MHub expects a response to that message. If it does not recieve the response with the time specified in parameter xxx, then the message is failed and needs to be resent. This parameter specifies the number of retries that the MHub will make to send a specific message before the message is failed completely. If the message is an event to be sent to Mprofiler, event though the specific message fails after all the retries, the event(s) will be resent at a later stage.</Notes>
 		</Parameter>
-		<Parameter name="Socket Pre-Suspend Pause" level="5" datatype="Byte" address="476" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="30" default="15" previous="" current="" units="Seconds" />
-			<Help>Amount of time that the socket will wait before suspension so that current transactions are allowed to complete.</Help>
-			<Notes>Periodically the MHub needs to suspend the socket connection to Mprofiler in order to perform certain functions on the modem such as reading the signal strength. When the socket is about to be suspended, the MHub may still be waiting for a reply back from Mprofiler in response to having sent a message to Mprofiler. In this instance the MHub will wait for the time specified in this parameter for the response from Mprofiler.</Notes>
-		</Parameter>
 		<Parameter name="Enable Suspend" level="5" datatype="Bit" address="477" length="1" bitmask="4" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enables suspension of a socket for maintenance purposes</Help>
@@ -4183,15 +4451,15 @@ Number of seconds before the Modem/MHub reboots due to failing to contact the MP
 			<Help>Enables the unit to close a socket so that voice and data calls may be dealt with</Help>
 			<Notes>In order to be able to answer an incomming voice call, the MHub must close a socket connection if it is currently open. Setting this parameter to 1 will allow the socket to be closed. If this is set to 0, then the MHUb will not be able to close the socket, and thus a voice call will not be possible.</Notes>
 		</Parameter>
-		<Parameter name="Data Triggered TCP Socket" level="10" datatype="Bit" address="477" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>when enabled the unit will only open a socket if there is data to be sent to MProfiler. This is overidden by the Permanent TCP Socket switch.</Help>
-			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will only be opened if there is data to be sent. Enabling this parameter will instruct the MHub to only open a socket to Mprofiler if there is data to be sent. Note that if the Permanent TCP Socket parameter is also enabled, that that will override this parameter.</Notes>
-		</Parameter>
 		<Parameter name="Permanent TCP Socket" level="10" datatype="Bit" address="477" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Enables a permanent TCP socket to MProfiler</Help>
 			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will remain permanently open. Enabling this parameter will instruct the MHub to open up a socket and attempt to keep the socket open at all time. Should the socket drop for any reason, the MHub will immediately reopen the socket again.</Notes>
+		</Parameter>
+		<Parameter name="Data Triggered TCP Socket" level="10" datatype="Bit" address="477" length="1" bitmask="1" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>when enabled the unit will only open a socket if there is data to be sent to MProfiler. This is overidden by the Permanent TCP Socket switch.</Help>
+			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will only be opened if there is data to be sent. Enabling this parameter will instruct the MHub to only open a socket to Mprofiler if there is data to be sent. Note that if the Permanent TCP Socket parameter is also enabled, that that will override this parameter.</Notes>
 		</Parameter>
 		<Parameter name="Socket Suspend Time" level="5" datatype="Byte" address="528" length="1" bitmask="0" dtu="0">
 			<Values min="5" max="200" default="15" previous="" current="" units="Seconds" />
@@ -4489,11 +4757,6 @@ Note that enabling this causes interruptions in the Wifi service of up to 15 sec
 3 - Output 3
 4 - Output 4</Notes>
 		</Parameter>
-		<Parameter name="Recovery Mode Signal Inverted" level="10" datatype="Bit" address="296" length="1" bitmask="128" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Recovery Mode Signal should be inverted</Help>
-			<Notes>This bit determines if the output state should be inverted compared to the state of the recovery mode. E.g. If the unit is in recovery mode then the output is OFF else the output is ON</Notes>
-		</Parameter>
 		<Parameter name="Rate of Change" level="15" datatype="Word" address="310" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="3600" default="50" previous="" current="" units="" />
 			<Help>Rate of Change in 1/10 of Degrees</Help>
@@ -4517,11 +4780,6 @@ Minimum time between Tachograph events or minimum time that direction needs to b
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
 If Accelerometer value is greater than this parameter, Accelerometer Ignition flag will be set.</Notes>
-		</Parameter>
-		<Parameter name="Last Programmed Odometer" level="10" datatype="Long" address="403" length="4" bitmask="255" dtu="0">
-			<Values min="0" max="2147483647" default="0" previous="" current="" units="m" />
-			<Help>The last programmed odometer</Help>
-			<Notes>The last programmed odometer, used for callibration purposes</Notes>
 		</Parameter>
 		<Parameter name="Mains Dev. Ignition On Threshold" level="0" datatype="Byte" address="471" length="1" bitmask="255" dtu="0">
 			<Values min="25" max="255" default="50" previous="" current="" units="" />
@@ -4595,27 +4853,10 @@ Mains Dev. Threshold</Notes>
 			<Help>Periodic Temperature Report Interval</Help>
 			<Notes>The MHub is able to periodically send the values of all 4 the temperature sensors. This parameter specifies the interval in seconds for sending the Periodic Temperature Event. </Notes>
 		</Parameter>
-		<Parameter name="Analog High Threshold" level="15" datatype="Word" address="514" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="1023" default="1020" previous="" current="" units="" />
-			<Help>Analog High Threshold</Help>
-			<Notes>Analog High Threshold</Notes>
-		</Parameter>
-		<Parameter name="Analog Low Threshold" level="15" datatype="Word" address="516" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="1023" default="10" previous="" current="" units="" />
-			<Help>Analog Low Threshold</Help>
-			<Notes>Analog Low Threshold</Notes>
-		</Parameter>
 		<Parameter name="Analog Debounce" level="15" datatype="Word" address="518" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="10" previous="" current="" units="" />
 			<Help>Analog Debounce</Help>
 			<Notes>Minimum time analog value has to be below or above threshold to trigger flag</Notes>
-		</Parameter>
-		<Parameter name="Analog Rate-Of-Change Threshold" level="0" datatype="Word" address="520" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="65535" default="1" previous="" current="" units="" />
-			<Help>Analog Rate-Of-Change Threshold</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Analog Rate-Of-Change Threshold is the maximum allowed Analog value change over the analog debounce period</Notes>
 		</Parameter>
 		<Parameter name="Harsh Braking Source" level="0" datatype="Bit" address="529" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -4645,24 +4886,10 @@ Harsh Acceleration Source:
 			<Help>Main Voltage Low Debounce</Help>
 			<Notes>Main Voltage Low Debounce in 1 minute units</Notes>
 		</Parameter>
-		<Parameter name="OBC RPM Loop" level="0" datatype="Word" address="995" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="65536" default="10" previous="" current="" units="" />
-			<Help>OBC RPM Timer Prescaler</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-This parameter effectively defines the time period over which the RPM pulses are counted to calculate the actual RPM. A value of 10 could equate to 0.5 seconds.</Notes>
-		</Parameter>
 		<Parameter name="OBC RPM Calibration" level="10" datatype="Word" address="997" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="50" previous="" current="" units="" />
 			<Help>OBC RPM Calibration Value</Help>
 			<Notes>This is the RPM calibration factor. </Notes>
-		</Parameter>
-		<Parameter name="OBC ODO Loop" level="0" datatype="Word" address="999" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="65535" default="20" previous="" current="" units="" />
-			<Help>OBC ODO Timer prescaler</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-This parameter effectively defines the time period over which the distance pulses are counted to calculate the actual distance and speed. A value of 20 could equate to 1 second.</Notes>
 		</Parameter>
 		<Parameter name="OBC ODO Calibration" level="10" datatype="Word" address="1001" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="248" previous="" current="" units="" />
@@ -5018,6 +5245,16 @@ In order to calibrate itself, the Vehicle must travel at a constant speed of gre
 			<Help>Input 2 Pulses per Unit</Help>
 			<Notes>Input Pulses per Unit to measure. If the input is used to measure fuel using a fuel flow meter and the meter is calibrated to say 320 pulses per liter then set this value to 320 to get the value reported as liters or set it to 32 to get the value reported in 100ml units.</Notes>
 		</Parameter>
+		<Parameter name="Mains Voltage Offset" level="10" datatype="Byte" address="2552" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="0.1v" />
+			<Help>Mains Voltage Offset for 24v vehicles</Help>
+			<Notes>Mains Voltage Offset for 24v vehicles. 
+100 = 10.0v
+124 = 12.4v
+255 = 25.5v
+
+</Notes>
+		</Parameter>
 		<Parameter name="Engine Hours from Vehicle Network" level="10" datatype="Bit" address="2559" length="1" bitmask="1" dtu="1">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Engine Hours is retrieved from the vehicle network</Help>
@@ -5037,21 +5274,6 @@ In order to calibrate itself, the Vehicle must travel at a constant speed of gre
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>OBC Sensor Filters</Help>
 			<Notes>This feature will enable the filtering of Speed and RPM using a 0.5Hz Low Pass Filter and filtering of SpeedMax and RPMMax using a 0.1Hz Low Pass Filter.</Notes>
-		</Parameter>
-		<Parameter name="Selected Speed Signal Loss Timeout" level="5" datatype="Byte" address="3192" length="1" bitmask="255" dtu="0">
-			<Values min="10" max="250" default="60" previous="" current="" units="seconds" />
-			<Help>The number of seconds of GPS speed being above a threshold and Selected Speed being less than 5km/h before a Selected Speed Signal Loss Timeout event is raised.</Help>
-			<Notes>The number of seconds of GPS speed being above a threshold and Selected Speed being less than 5km/h before a Selected Speed Signal Loss Timeout event is raised.</Notes>
-		</Parameter>
-		<Parameter name="Selected Speed-Signal Loss Speed Difference" level="5" datatype="Byte" address="3193" length="1" bitmask="255" dtu="0">
-			<Values min="10" max="250" default="20" previous="" current="" units="km/h" />
-			<Help>The minimum difference in speed between the GPS speed and the selected speed before a Speed Signal loss is detected</Help>
-			<Notes>The minimum difference in speed between the GPS speed and the selected speed before a Speed Signal loss is detected</Notes>
-		</Parameter>
-		<Parameter name="Speed Warning Limit" level="10" datatype="Byte" address="3199" length="1" bitmask="255" dtu="1">
-			<Values min="0" max="255" default="0" previous="" current="" units="km/h" />
-			<Help>Speed limit warning value</Help>
-			<Notes>This is the speed limit warning value and is the speed limit at which point the MHub may issue a warning by means of a customized trigger. A value of 68 km/h means the trigger can check the current speed and if it is greater than 68 km/h it can set an output. This parameter should not be confused with the Geofence Speed Warning Level parameter.</Notes>
 		</Parameter>
 		<Parameter name="Telemetry Template" level="15" datatype="Byte" address="3327" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
@@ -5413,655 +5635,15 @@ Disable: Any other value</Notes>
 			<Help>Geo Exit Type 1 Notification via Bluetooth</Help>
 			<Notes></Notes>
 		</Parameter>
-		<Parameter name="Geo Entry Type 2: Event " level="10" datatype="Bit" address="2818" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 2 Notification via Event </Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 2: SMS" level="10" datatype="Bit" address="2818" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 2 Notification via SMS</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 2: Audible" level="10" datatype="Bit" address="2818" length="1" bitmask="4" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 2 Notification via Audible</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 2: Bluetooth" level="10" datatype="Bit" address="2818" length="1" bitmask="8" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 2 Notification via Bluetooth</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 2: Event " level="10" datatype="Bit" address="2818" length="1" bitmask="16" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 2 Notification via Event </Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 2: SMS" level="10" datatype="Bit" address="2818" length="1" bitmask="32" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 2 Notification via SMS</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 2: Audible" level="10" datatype="Bit" address="2818" length="1" bitmask="64" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 2 Notification via Audible</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 2: Bluetooth" level="10" datatype="Bit" address="2818" length="1" bitmask="128" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 2 Notification via Bluetooth</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 3: Event " level="10" datatype="Bit" address="2819" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 3 Notification via Event </Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 3: SMS" level="10" datatype="Bit" address="2819" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 3 Notification via SMS</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 3: Audible" level="10" datatype="Bit" address="2819" length="1" bitmask="4" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 3 Notification via Audible</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 3: Bluetooth" level="10" datatype="Bit" address="2819" length="1" bitmask="8" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 3 Notification via Bluetooth</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 3: Event " level="10" datatype="Bit" address="2819" length="1" bitmask="16" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 3 Notification via Event </Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 3: SMS" level="10" datatype="Bit" address="2819" length="1" bitmask="32" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 3 Notification via SMS</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 3: Audible" level="10" datatype="Bit" address="2819" length="1" bitmask="64" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 3 Notification via Audible</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 3: Bluetooth" level="10" datatype="Bit" address="2819" length="1" bitmask="128" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 3 Notification via Bluetooth</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 4: Event " level="10" datatype="Bit" address="2820" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 4 Notification via Event </Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 4: SMS" level="10" datatype="Bit" address="2820" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 4 Notification via SMS</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 4: Audible" level="10" datatype="Bit" address="2820" length="1" bitmask="4" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 4 Notification via Audible</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 4: Bluetooth" level="10" datatype="Bit" address="2820" length="1" bitmask="8" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 4 Notification via Bluetooth</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 4: Event " level="10" datatype="Bit" address="2820" length="1" bitmask="16" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 4 Notification via Event </Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 4: SMS" level="10" datatype="Bit" address="2820" length="1" bitmask="32" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 4 Notification via SMS</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 4: Audible" level="10" datatype="Bit" address="2820" length="1" bitmask="64" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 4 Notification via Audible</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 4: Bluetooth" level="10" datatype="Bit" address="2820" length="1" bitmask="128" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 4 Notification via Bluetooth</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 5: Event " level="10" datatype="Bit" address="2821" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 5 Notification via Event </Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 5: SMS" level="10" datatype="Bit" address="2821" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 5 Notification via SMS</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 5: Audible" level="10" datatype="Bit" address="2821" length="1" bitmask="4" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 5 Notification via Audible</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 5: Bluetooth" level="10" datatype="Bit" address="2821" length="1" bitmask="8" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 5 Notification via Bluetooth</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 5: Event " level="10" datatype="Bit" address="2821" length="1" bitmask="16" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 5 Notification via Event </Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 5: SMS" level="10" datatype="Bit" address="2821" length="1" bitmask="32" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 5 Notification via SMS</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 5: Audible" level="10" datatype="Bit" address="2821" length="1" bitmask="64" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 5 Notification via Audible</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 5: Bluetooth" level="10" datatype="Bit" address="2821" length="1" bitmask="128" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 5 Notification via Bluetooth</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 6: Event " level="10" datatype="Bit" address="2822" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 6 Notification via Event </Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 6: SMS" level="10" datatype="Bit" address="2822" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 6 Notification via SMS</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 6: Audible" level="10" datatype="Bit" address="2822" length="1" bitmask="4" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 6 Notification via Audible</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 6: Bluetooth" level="10" datatype="Bit" address="2822" length="1" bitmask="8" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 6 Notification via Bluetooth</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 6: Event " level="10" datatype="Bit" address="2822" length="1" bitmask="16" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 6 Notification via Event </Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 6: SMS" level="10" datatype="Bit" address="2822" length="1" bitmask="32" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 6 Notification via SMS</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 6: Audible" level="10" datatype="Bit" address="2822" length="1" bitmask="64" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 6 Notification via Audible</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 6: Bluetooth" level="10" datatype="Bit" address="2822" length="1" bitmask="128" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 6 Notification via Bluetooth</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 7: Event " level="10" datatype="Bit" address="2823" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 7 Notification via Event </Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 7: SMS" level="10" datatype="Bit" address="2823" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 7 Notification via SMS</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 7: Audible" level="10" datatype="Bit" address="2823" length="1" bitmask="4" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 7 Notification via Audible</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 7: Bluetooth" level="10" datatype="Bit" address="2823" length="1" bitmask="8" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 7 Notification via Bluetooth</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 7: Event " level="10" datatype="Bit" address="2823" length="1" bitmask="16" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 7 Notification via Event </Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 7: SMS" level="10" datatype="Bit" address="2823" length="1" bitmask="32" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 7 Notification via SMS</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 7: Audible" level="10" datatype="Bit" address="2823" length="1" bitmask="64" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 7 Notification via Audible</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 7: Bluetooth" level="10" datatype="Bit" address="2823" length="1" bitmask="128" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 7 Notification via Bluetooth</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 8: Event " level="10" datatype="Bit" address="2824" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 8 Notification via Event </Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 8: SMS" level="10" datatype="Bit" address="2824" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 8 Notification via SMS</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 8: Audible" level="10" datatype="Bit" address="2824" length="1" bitmask="4" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 8 Notification via Audible</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 8: Bluetooth" level="10" datatype="Bit" address="2824" length="1" bitmask="8" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 8 Notification via Bluetooth</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 8: Event " level="10" datatype="Bit" address="2824" length="1" bitmask="16" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 8 Notification via Event </Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 8: SMS" level="10" datatype="Bit" address="2824" length="1" bitmask="32" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 8 Notification via SMS</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 8: Audible" level="10" datatype="Bit" address="2824" length="1" bitmask="64" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 8 Notification via Audible</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 8: Bluetooth" level="10" datatype="Bit" address="2824" length="1" bitmask="128" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 8 Notification via Bluetooth</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 9: Event " level="10" datatype="Bit" address="2825" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 9 Notification via Event </Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 9: SMS" level="10" datatype="Bit" address="2825" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 9 Notification via SMS</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 9: Audible" level="10" datatype="Bit" address="2825" length="1" bitmask="4" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 9 Notification via Audible</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 9: Bluetooth" level="10" datatype="Bit" address="2825" length="1" bitmask="8" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 9 Notification via Bluetooth</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 9: Event " level="10" datatype="Bit" address="2825" length="1" bitmask="16" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 9 Notification via Event </Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 9: SMS" level="10" datatype="Bit" address="2825" length="1" bitmask="32" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 9 Notification via SMS</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 9: Audible" level="10" datatype="Bit" address="2825" length="1" bitmask="64" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 9 Notification via Audible</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 9: Bluetooth" level="10" datatype="Bit" address="2825" length="1" bitmask="128" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 9 Notification via Bluetooth</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 10: Event " level="10" datatype="Bit" address="2826" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 10 Notification via Event </Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 10: SMS" level="10" datatype="Bit" address="2826" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 10 Notification via SMS</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 10: Audible" level="10" datatype="Bit" address="2826" length="1" bitmask="4" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 10 Notification via Audible</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 10: Bluetooth" level="10" datatype="Bit" address="2826" length="1" bitmask="8" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Entry Type 10 Notification via Bluetooth</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 10: Event " level="10" datatype="Bit" address="2826" length="1" bitmask="16" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 10 Notification via Event </Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 10: SMS" level="10" datatype="Bit" address="2826" length="1" bitmask="32" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 10 Notification via SMS</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 10: Audible" level="10" datatype="Bit" address="2826" length="1" bitmask="64" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 10 Notification via Audible</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 10: Bluetooth" level="10" datatype="Bit" address="2826" length="1" bitmask="128" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Exit Type 10 Notification via Bluetooth</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Type 1 Active: Normal Mode" level="10" datatype="Bit" address="2827" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Type 1 active during normal mode</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Type 1 Active: Safe Mode" level="10" datatype="Bit" address="2827" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Type 1 active during safe mode</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Type 2 Active: Normal Mode" level="10" datatype="Bit" address="2828" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Type 2 active during normal mode</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Type 2 Active: Safe Mode" level="10" datatype="Bit" address="2828" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Type 2 active during safe mode</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Type 3 Active: Normal Mode" level="10" datatype="Bit" address="2829" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Type 3 active during normal mode</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Type 3 Active: Safe Mode" level="10" datatype="Bit" address="2829" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Type 3 active during safe mode</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Type 4 Active: Normal Mode" level="10" datatype="Bit" address="2830" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Type 4 active during normal mode</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Type 4 Active: Safe Mode" level="10" datatype="Bit" address="2830" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Type 4 active during safe mode</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Type 5 Active: Normal Mode" level="10" datatype="Bit" address="2831" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Type 5 active during normal mode</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Type 5 Active: Safe Mode" level="10" datatype="Bit" address="2831" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Type 5 active during safe mode</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Type 6 Active: Normal Mode" level="10" datatype="Bit" address="2832" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Type 6 active during normal mode</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Type 6 Active: Safe Mode" level="10" datatype="Bit" address="2832" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Type 6 active during safe mode</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Type 7 Active: Normal Mode" level="10" datatype="Bit" address="2833" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Type 7 active during normal mode</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Type 7 Active: Safe Mode" level="10" datatype="Bit" address="2833" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Type 7 active during safe mode</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Type 8 Active: Normal Mode" level="10" datatype="Bit" address="2834" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Type 8 active during normal mode</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Type 8 Active: Safe Mode" level="10" datatype="Bit" address="2834" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Type 8 active during safe mode</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Type 9 Active: Normal Mode" level="10" datatype="Bit" address="2835" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Type 9 active during normal mode</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Type 9 Active: Safe Mode" level="10" datatype="Bit" address="2835" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Type 9 active during safe mode</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Type 10 Active: Normal Mode" level="10" datatype="Bit" address="2836" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Type 10 active during normal mode</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Geo Type 10 Active: Safe Mode" level="10" datatype="Bit" address="2836" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Geo Type 10 active during safe mode</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Alert Speed: Event" level="10" datatype="Bit" address="2837" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Speed Alert via event</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Alert Speed: SMS" level="10" datatype="Bit" address="2837" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Speed Alert via SMS</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Alert Speed: Audible" level="10" datatype="Bit" address="2837" length="1" bitmask="4" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Speed Alert via Audible</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Alert Speed: Bluetooth" level="10" datatype="Bit" address="2837" length="1" bitmask="8" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Speed Alert via Bluetooth</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Alert Idle: Event" level="10" datatype="Bit" address="2838" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Idle Alert via Event</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Alert Idle: SMS" level="10" datatype="Bit" address="2838" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Idle Alert via SMS</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Alert Idle: Audible" level="10" datatype="Bit" address="2838" length="1" bitmask="4" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Idle Alert via Audible</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Alert Idle: Bluetooth" level="10" datatype="Bit" address="2838" length="1" bitmask="8" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Idle Alert via Bluetooth</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Alert Inputs: Event" level="10" datatype="Bit" address="2839" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Inputs Alert via Event</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Alert Inputs: SMS" level="10" datatype="Bit" address="2839" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Inputs Alert via SMS</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Alert Inputs: Audible" level="10" datatype="Bit" address="2839" length="1" bitmask="4" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Inputs Alert via Audible</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Alert Inputs: Bluetooth" level="10" datatype="Bit" address="2839" length="1" bitmask="8" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Inputs Alert via Bluetooth</Help>
-			<Notes></Notes>
-		</Parameter>
 		<Parameter name="Audible Tone Length" level="10" datatype="Byte" address="2840" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="60" default="1" previous="" current="" units="" />
 			<Help>Audible Tone Length in seconds.</Help>
 			<Notes>Audible Tone Length in seconds. 0 Tone Disable 1..60 in Seconds</Notes>
 		</Parameter>
-		<Parameter name="Geo Entry Type 1 Tone" level="10" datatype="Byte" address="2841" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="255" default="1" previous="" current="" units="" />
-			<Help>Geo Entry Audible Tone</Help>
-			<Notes>Select Tone That will be played if active</Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 1 Tone" level="10" datatype="Byte" address="2842" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="255" default="2" previous="" current="" units="" />
-			<Help>Geo Exit Audible Tone</Help>
-			<Notes>Select Tone That will be played if active</Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 2 Tone" level="10" datatype="Byte" address="2843" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="255" default="3" previous="" current="" units="" />
-			<Help>Geo Entry Audible Tone</Help>
-			<Notes>Select Tone That will be played if active</Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 2 Tone" level="10" datatype="Byte" address="2844" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="255" default="4" previous="" current="" units="" />
-			<Help>Geo Exit Audible Tone</Help>
-			<Notes>Select Tone That will be played if active</Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 3 Tone" level="10" datatype="Byte" address="2845" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="255" default="5" previous="" current="" units="" />
-			<Help>Geo Entry Audible Tone</Help>
-			<Notes>Select Tone That will be played if active</Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 3 Tone" level="10" datatype="Byte" address="2846" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="255" default="6" previous="" current="" units="" />
-			<Help>Geo Exit Audible Tone</Help>
-			<Notes>Select Tone That will be played if active</Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 4 Tone" level="10" datatype="Byte" address="2847" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="255" default="7" previous="" current="" units="" />
-			<Help>Geo Entry Audible Tone</Help>
-			<Notes>Select Tone That will be played if active</Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 4 Tone" level="10" datatype="Byte" address="2848" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="255" default="8" previous="" current="" units="" />
-			<Help>Geo Exit Audible Tone</Help>
-			<Notes>Select Tone That will be played if active</Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 5 Tone" level="10" datatype="Byte" address="2849" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="255" default="9" previous="" current="" units="" />
-			<Help>Geo Entry Audible Tone</Help>
-			<Notes>Select Tone That will be played if active</Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 5 Tone" level="10" datatype="Byte" address="2850" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="255" default="10" previous="" current="" units="" />
-			<Help>Geo Exit Audible Tone</Help>
-			<Notes>Select Tone That will be played if active</Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 6 Tone" level="10" datatype="Byte" address="2851" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="255" default="11" previous="" current="" units="" />
-			<Help>Geo Entry Audible Tone</Help>
-			<Notes>Select Tone That will be played if active</Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 6 Tone" level="10" datatype="Byte" address="2852" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="255" default="12" previous="" current="" units="" />
-			<Help>Geo Exit Audible Tone</Help>
-			<Notes>Select Tone That will be played if active</Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 7 Tone" level="10" datatype="Byte" address="2853" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="255" default="13" previous="" current="" units="" />
-			<Help>Geo Entry Audible Tone</Help>
-			<Notes>Select Tone That will be played if active</Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 7 Tone" level="10" datatype="Byte" address="2854" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="255" default="14" previous="" current="" units="" />
-			<Help>Geo Exit Audible Tone</Help>
-			<Notes>Select Tone That will be played if active</Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 8 Tone" level="10" datatype="Byte" address="2855" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="255" default="15" previous="" current="" units="" />
-			<Help>Geo Entry Audible Tone</Help>
-			<Notes>Select Tone That will be played if active</Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 8 Tone" level="10" datatype="Byte" address="2856" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="255" default="16" previous="" current="" units="" />
-			<Help>Geo Exit Audible Tone</Help>
-			<Notes>Select Tone That will be played if active</Notes>
-		</Parameter>
-		<Parameter name="Geo Entry Type 9 Tone" level="10" datatype="Byte" address="2857" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="255" default="17" previous="" current="" units="" />
-			<Help>Geo Entry Audible Tone</Help>
-			<Notes>Select Tone That will be played if active</Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 9 Tone" level="10" datatype="Byte" address="2858" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="255" default="18" previous="" current="" units="" />
-			<Help>Geo Exit Audible Tone</Help>
-			<Notes>Select Tone That will be played if active</Notes>
-		</Parameter>
 		<Parameter name="Geo Entry Type 10 Tone" level="10" datatype="Byte" address="2859" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="255" default="19" previous="" current="" units="" />
 			<Help>Geo Entry Audible Tone</Help>
 			<Notes>Select Tone That will be played if active</Notes>
-		</Parameter>
-		<Parameter name="Geo Exit Type 10 Tone" level="10" datatype="Byte" address="2860" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="255" default="20" previous="" current="" units="" />
-			<Help>Geo Exit Audible Tone</Help>
-			<Notes>Select Tone That will be played if active</Notes>
-		</Parameter>
-		<Parameter name="Alert Speed Tone " level="10" datatype="Byte" address="2861" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="255" default="21" previous="" current="" units="" />
-			<Help>Alert Speed Tone </Help>
-			<Notes>Select Tone That will be played if active</Notes>
-		</Parameter>
-		<Parameter name="Alert Idle Tone" level="10" datatype="Byte" address="2862" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="255" default="22" previous="" current="" units="" />
-			<Help>Alert Idle Tone</Help>
-			<Notes>Select Tone That will be played if active</Notes>
-		</Parameter>
-		<Parameter name="Alert Inputs Tone" level="10" datatype="Byte" address="2863" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="255" default="23" previous="" current="" units="" />
-			<Help>Alert Inputs Tone</Help>
-			<Notes>Select Tone That will be played if active</Notes>
-		</Parameter>
-		<Parameter name="Safe Mode On Tone" level="10" datatype="Byte" address="2864" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Safe Mode On Tone</Help>
-			<Notes>Select Tone That will be played if activated</Notes>
-		</Parameter>
-		<Parameter name="Safe Mode Off Tone" level="10" datatype="Byte" address="2865" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Safe Mode Off Tone</Help>
-			<Notes>Select Tone That will be played if deactivated</Notes>
 		</Parameter>
 		<Parameter name="Safe Mode Speed Limit" level="10" datatype="Byte" address="2866" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
@@ -6294,20 +5876,6 @@ Any other value - Same as 0.</Notes>
 			<Values min="1" max="0" default="0" previous="" current="" units="" />
 			<Help>Enable USB Composite</Help>
 			<Notes>Enable USB Composite. If enabled three USB COM Ports will enumerate.</Notes>
-		</Parameter>
-		<Parameter name="Vendor ID" level="0" datatype="Long" address="2934" length="4" bitmask="255" dtu="0">
-			<Values min="0" max="65535" default="8137" previous="" current="" units="" />
-			<Help>Vendor ID</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Vendor ID</Notes>
-		</Parameter>
-		<Parameter name="Product ID" level="0" datatype="Long" address="2938" length="4" bitmask="255" dtu="0">
-			<Values min="0" max="65535" default="8264" previous="" current="" units="" />
-			<Help>Product ID</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Product ID</Notes>
 		</Parameter>
 	</Category>
 	<Category name="VNI - DTCs / MIL-Status">
@@ -6791,6 +6359,254 @@ NOTE: This is necessary to recover from some errors</Help>
 
 Enables the controller to go into listen only mode after closing a session.
 NOTE: This is necessary to recover from some errors</Notes>
+		</Parameter>
+	</Category>
+	<Category name="VNI - Thresholds / Limits / Calculation Parameters">
+		<Parameter name="OBC Calculate J1939 FMS Fuel Used" level="10" datatype="Bit" address="320" length="1" bitmask="1" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Calculate J1939 FMS Fuel Used</Help>
+			<Notes>If Fuel Used is not provided by the vehicle FMS network, but Fuel Economy is, you can estimate fuel used. </Notes>
+		</Parameter>
+		<Parameter name="OBC Use  J1939 FMS Trip Fuel" level="10" datatype="Bit" address="320" length="1" bitmask="2" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Use the J1939 FMS Trip Fuel variable for Trip Fuel</Help>
+			<Notes>Use the J1939 FMS Trip Fuel variable for Trip Fuel. Not standard FMS Variable.</Notes>
+		</Parameter>
+		<Parameter name="OBC Calculate J1939 FMS Fuel Used from Total Fuel" level="10" datatype="Bit" address="320" length="1" bitmask="4" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>OBC Calculate J1939 FMS Fuel Used from Total Fuel</Help>
+			<Notes>OBC Calculate J1939 FMS Fuel Used from Total Fuel. The difference of total fuel at the beginning and end of the trip is used to calculate Fuel</Notes>
+		</Parameter>
+		<Parameter name="OBC Calculate J1939 FMS Fuel Used from L per hour" level="10" datatype="Bit" address="320" length="1" bitmask="8" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>OBC Calculate J1939 FMS Fuel Used from L per hour</Help>
+			<Notes>If Fuel Used is not provided by the vehicle FMS network, but Fuel Rate is, you can estimate fuel used.</Notes>
+		</Parameter>
+		<Parameter name="OBC Calculate Fuel from Equation" level="10" datatype="Bit" address="320" length="1" bitmask="16" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>OBC Calculate Fuel from Equation</Help>
+			<Notes>OBC Calculate Fuel from Equation. Populate OBC Weight and Fuel Model parameters</Notes>
+		</Parameter>
+		<Parameter name="Axle 0 Location" level="15" datatype="Byte" address="570" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="15" default="0" previous="" current="" units="" />
+			<Help>Axle 0 Location</Help>
+			<Notes>Axle 0 Location. Axle location bit-mapped position number counting front to back facing forward.</Notes>
+		</Parameter>
+		<Parameter name="Axle 0 Tyre Location" level="15" datatype="Byte" address="571" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="15" default="0" previous="" current="" units="" />
+			<Help>Axle 0 Tyre Location</Help>
+			<Notes>Axle 0 Tyre Location. Tyre location Bit-mapped counting left to right facing forward.</Notes>
+		</Parameter>
+		<Parameter name="Axle 1 Location" level="15" datatype="Byte" address="572" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="15" default="0" previous="" current="" units="" />
+			<Help>Axle 1 Location</Help>
+			<Notes>Axle 1 Location. Axle location bit-mapped position number counting front to back facing forward.</Notes>
+		</Parameter>
+		<Parameter name="Axle 1 Tyre Location" level="15" datatype="Byte" address="573" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="15" default="0" previous="" current="" units="" />
+			<Help>Axle 1 Tyre Location</Help>
+			<Notes>Axle 1 Tyre Location. Tyre location Bit-mapped counting left to right facing forward.</Notes>
+		</Parameter>
+		<Parameter name="Custom J1939 PGN 0" level="10" datatype="Word" address="574" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="0" previous="" current="" units="" />
+			<Help>Custom J1939 Parameter Group Number 0</Help>
+			<Notes>Custom J1939 Parameter Group Number 0. A three byte, 24bit number that uniquely identifies a particular Parameter Group.</Notes>
+		</Parameter>
+		<Parameter name="Custom J1939 PGN 1" level="10" datatype="Word" address="576" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="0" previous="" current="" units="" />
+			<Help>Custom J1939 Parameter Group Number 1.</Help>
+			<Notes>Custom J1939 Parameter Group Number 1. A three byte, 24bit number that uniquely identifies a particular Parameter Group.</Notes>
+		</Parameter>
+		<Parameter name="Periodic FMS CanBus Delay" level="10" datatype="Word" address="1108" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="0" previous="" current="" units="Seconds" />
+			<Help>Periodic CanBus Delay to be used in Event Generation.</Help>
+			<Notes></Notes>
+		</Parameter>
+		<Parameter name="Periodic Custom CanBus Delay" level="10" datatype="Word" address="1110" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="600" previous="" current="" units="Seconds" />
+			<Help>Periodic Custom CanBus Delay to be used in Event Generation</Help>
+			<Notes>None</Notes>
+		</Parameter>
+		<Parameter name="J1939 FMS Vehicle Info Report Interval" level="10" datatype="Word" address="1278" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="600" previous="" current="" units="seconds" />
+			<Help>J1939 FMS Vehicle Info Report Interval</Help>
+			<Notes>J1939 FMS Vehicle Info Report Interval in seconds. This Event will only be sent during trip.</Notes>
+		</Parameter>
+		<Parameter name="Engine Displacement (ml)" level="10" datatype="Word" address="1564" length="2" bitmask="255" dtu="0">
+			<Values min="500" max="65000" default="0" previous="" current="" units="ml" />
+			<Help>Total engine displacement in ml.
+For example a 2 litre engine would have a value such as 1956 which would be the volumetric displacement of all pistons in all cylinders. 
+This value is unique to each engine model.
+
+This value is needed for the calculation of Fuel Usage where Mass Air Flow is not supplied by the vehicle and Absolute Load is supplied instead.
+Most diesel vehicles will require this parameter to be entered if Fuel usage is to be calculated.</Help>
+			<Notes>Total engine displacement in ml.
+For example a 2 litre engine would have a value such as 1956 which would be the volumetric displacement of all pistons in all cylinders. 
+This value is unique to each engine model.
+
+This value is needed for the calculation of Fuel Usage where Mass Air Flow is not supplied by the vehicle and Absolute Load is supplied instead.
+Most diesel vehicles will require this parameter to be entered if Fuel usage is to be calculated.</Notes>
+		</Parameter>
+		<Parameter name="MAF Calculation Source" level="5" datatype="Byte" address="1570" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="5" default="1" previous="" current="" units="" />
+			<Help>Selects the source of parameters used to extrapolate MAF.
+Note that unless the Force MAF calculation setting is enabled, read MAF will always be preferred if available.
+0 - No MAF calculation. Only use READ MAF values
+1 - Use best available option
+2 - Use only Calculated Engine Load PID
+3 - Use only Absolute Engine Load PID</Help>
+			<Notes>Selects the source of parameters used to extrapolate MAF.
+Note that unless the Force MAF calculation setting is enabled, read MAF will always be preferred if available.
+0 - No MAF calculation. Only use READ MAF values
+1 - Use best available option
+2 - Use only Calculated Engine Load PID
+3 - Use only Absolute Engine Load PID</Notes>
+		</Parameter>
+		<Parameter name="Force MAF from Rpm and Engine Load" level="5" datatype="Bit" address="1824" length="1" bitmask="32" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>If enabled the MAF will be calculated from RPM and Engine Load and not read MAF. 
+NB BE SURE TO SELECT MAF Calculation Source if this parameter is set</Help>
+			<Notes>If enabled the MAF will be calculated from RPM and Engine Load and not read MAF. 
+NB BE SURE TO SELECT MAF Calculation Source if this parameter is set</Notes>
+		</Parameter>
+		<Parameter name="Enable TCO Change Event Generation" level="15" datatype="Bit" address="1869" length="1" bitmask="1" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enable TCO Change Event Generation will generate a FMS Data event everytime TCO variable changes value.</Help>
+			<Notes>Enable TCO Change Event Generation will generate a FMS Data event everytime TCO variable changes value. FMS Data Event has to enables under Event Configuraion.</Notes>
+		</Parameter>
+		<Parameter name="Enable Custom 3 Event " level="5" datatype="Bit" address="1869" length="1" bitmask="2" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enable Custom 3 Event triggered by Driver Identification change</Help>
+			<Notes></Notes>
+		</Parameter>
+		<Parameter name="Percent Clutch Slip" level="10" datatype="Byte" address="3072" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="100" default="100" previous="" current="" units="Percent" />
+			<Help>Limit of ratio of input shaft speed to current engine speed
+(in percent).</Help>
+			<Notes>Limit of ratio of input shaft speed to current engine speed
+(in percent).</Notes>
+		</Parameter>
+		<Parameter name="Percent Engine Load Limit" level="10" datatype="Byte" address="3073" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="100" default="100" previous="" current="" units="Percent" />
+			<Help>The ratio of actual engine percent torque (indicated) to maximum
+indicated torque available at the current engine speed, clipped to zero torque during engine braking.</Help>
+			<Notes>The ratio of actual engine percent torque (indicated) to maximum
+indicated torque available at the current engine speed, clipped to zero torque during engine braking.</Notes>
+		</Parameter>
+		<Parameter name="Engine Coolant Temperature Upper Limit" level="10" datatype="Byte" address="3074" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="250" default="250" previous="" current="" units="degC" />
+			<Help>Upper Temperature limit of liquid found in engine cooling system. -40 degrees C offset.</Help>
+			<Notes>Upper Temperature limit of liquid found in engine cooling system. -40 degrees C offset.</Notes>
+		</Parameter>
+		<Parameter name="Engine Coolant Temperature Lower Limit" level="10" datatype="Byte" address="3075" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="250" default="0" previous="" current="" units="degC" />
+			<Help>Lower Temperature limit of liquid found in engine cooling system. -40 degrees C offset.</Help>
+			<Notes>Lower Temperature limit of liquid found in engine cooling system. -40 degrees C offset.</Notes>
+		</Parameter>
+		<Parameter name="Engine Oil Pressure Upper Limit " level="10" datatype="Byte" address="3076" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="250" default="250" previous="" current="" units="4kPa/cnt " />
+			<Help>Upper Gage pressure Limit of oil in engine lubrication system as provided by oil pump. 4kPa/count.</Help>
+			<Notes>Upper Gage pressure Limit of oil in engine lubrication system as provided by oil pump. 4kPa/count.</Notes>
+		</Parameter>
+		<Parameter name="Engine Oil Pressure Lower Limit" level="10" datatype="Byte" address="3077" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="250" default="0" previous="" current="" units="4kPa/cnt " />
+			<Help>Lower Gage pressure Limit of oil in engine lubrication system as provided by oil pump. 4kPa/count.</Help>
+			<Notes>Lower Gage pressure Limit of oil in engine lubrication system as provided by oil pump. 4kPa/count.</Notes>
+		</Parameter>
+		<Parameter name="Engine Coolant PressureUpper Limit" level="10" datatype="Byte" address="3078" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="250" default="250" previous="" current="" units="kPa" />
+			<Help>Upper Gage pressure limit of liquid found in engine cooling system. 2kPa/count.</Help>
+			<Notes>Upper Gage pressure limit of liquid found in engine cooling system. 2kPa/count.</Notes>
+		</Parameter>
+		<Parameter name="Engine Coolant Pressure Lower Limit" level="10" datatype="Byte" address="3079" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="250" default="0" previous="" current="" units="kPa" />
+			<Help>Lower Gage pressure limit of liquid found in engine cooling system. 2kPa/count.</Help>
+			<Notes>Lower Gage pressure limit of liquid found in engine cooling system. 2kPa/count.</Notes>
+		</Parameter>
+		<Parameter name="Engine Oil Level Minimum" level="10" datatype="Byte" address="3080" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="100" default="0" previous="" current="" units="%" />
+			<Help>Minimum ratio of current volume of engine sump oil to maximum required volume.</Help>
+			<Notes>Ratio of current volume of engine sump oil to maximum required volume.</Notes>
+		</Parameter>
+		<Parameter name="Engine Coolant Level Minimum" level="10" datatype="Byte" address="3081" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="100" default="0" previous="" current="" units="%" />
+			<Help>Minimum ratio of volume of liquid found in engine cooling system to total cooling system volume.</Help>
+			<Notes>Minimum ratio of volume of liquid found in engine cooling system to total cooling system volume.</Notes>
+		</Parameter>
+		<Parameter name="Transmission Oil Temperature Upper Limit" level="10" datatype="Word" address="3082" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="2008" default="0" previous="" current="" units="degC" />
+			<Help>Upper Temperature limit of the transmission lubricant. -273 degC offset.</Help>
+			<Notes>Upper Temperature limit of the transmission lubricant. -273 degC offset.</Notes>
+		</Parameter>
+		<Parameter name="Transmission Oil Temperature Lower Limit" level="10" datatype="Word" address="3084" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="2008" default="2008" previous="" current="" units="degC" />
+			<Help>Upper Temperature limit of the transmission lubricant. -273 degC offset.</Help>
+			<Notes>Upper Temperature limit of the transmission lubricant. -273 degC offset.</Notes>
+		</Parameter>
+		<Parameter name="Transmission Oil Pressure Upper Limit" level="10" datatype="Byte" address="3086" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="250" default="250" previous="" current="" units="kPa" />
+			<Help>Upper Gage pressure limit of lubrication fluid in transmission, measured after pump. 16kPa/count.</Help>
+			<Notes>Upper Gage pressure limit of lubrication fluid in transmission, measured after pump. 16kPa/count.</Notes>
+		</Parameter>
+		<Parameter name="Transmission Oil Pressure Lower Limit" level="10" datatype="Byte" address="3087" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="250" default="0" previous="" current="" units="kPa" />
+			<Help>Lower Gage pressure limit of lubrication fluid in transmission, measured after pump. 16kPa/count.</Help>
+			<Notes>Lower Gage pressure limit of lubrication fluid in transmission, measured after pump. 16kPa/count.</Notes>
+		</Parameter>
+		<Parameter name="Transmission Oil Level Lower Limit" level="10" datatype="Byte" address="3088" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="100" default="0" previous="" current="" units="%" />
+			<Help>Lower limit of the Ratio of volume of transmission sump oil to recommended volume.</Help>
+			<Notes>Lower limit of the Ratio of volume of transmission sump oil to recommended volume.</Notes>
+		</Parameter>
+		<Parameter name="Cargo Ambient Temperature Upper Limit" level="10" datatype="Word" address="3089" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="2008" default="2008" previous="" current="" units="degC" />
+			<Help>Upper limit of temperature of air inside vehicle container used to accommodate cargo.  -273 degC offset.</Help>
+			<Notes>Upper limit of temperature of air inside vehicle container used to accommodate cargo.  -273 degC offset.</Notes>
+		</Parameter>
+		<Parameter name="Cargo Ambient Temperature Lower Limit" level="10" datatype="Word" address="3091" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="2008" default="0" previous="" current="" units="degC" />
+			<Help>Lower limit of temperature of air inside vehicle container used to accommodate cargo. -273 degC offset.</Help>
+			<Notes>Lower limit of temperature of air inside vehicle container used to accommodate cargo. -273 degC offset.</Notes>
+		</Parameter>
+		<Parameter name="Trip Fuel Use Interval" level="10" datatype="Word" address="3093" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="64000" default="0" previous="" current="" units="L" />
+			<Help>Interval in litres between updates in the amount of fuel used during a trip. E.g. if the value is set to 10 then every 10 litres of fuel used during a trip will be reported.
+0 - turns reporting off.
+</Help>
+			<Notes>Interval in litres between updates in the amount of fuel used during a trip. E.g. if the value is set to 10 then every 10 litres of fuel used during a trip will be reported.
+0 - turns reporting off.
+</Notes>
+		</Parameter>
+		<Parameter name="Axle Weight Change Limit" level="10" datatype="Word" address="3095" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="32000" default="0" previous="" current="" units="kg" />
+			<Help>Change in Axle weight (kg) from start of trip exceeding this limit will be reported.
+0 disables the function.</Help>
+			<Notes>Change in Axle weight from start of trip exceeding this limit will be reported.
+0 disables the function.</Notes>
+		</Parameter>
+		<Parameter name="Trailer Weight Change Limit" level="10" datatype="Word" address="3097" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="32000" default="0" previous="" current="" units="kg" />
+			<Help>Change in Trailer weight (kg) from start of trip exceeding this limit will be reported. 0 disables the function.</Help>
+			<Notes>Change in Axle weight (kg) from start of trip exceeding this limit will be reported. 0 disables the function.</Notes>
+		</Parameter>
+		<Parameter name="Cargo Weight Change Limit" level="10" datatype="Word" address="3099" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="32000" default="0" previous="" current="" units="kg" />
+			<Help>Change in Cargo weight (kg) from start of trip exceeding this limit will be reported. 0 disables the function.</Help>
+			<Notes>Change in Cargo weight (kg) from start of trip exceeding this limit will be reported. 0 disables the function.</Notes>
+		</Parameter>
+		<Parameter name="J1939 Event Debounce Time" level="5" datatype="Word" address="3101" length="2" bitmask="255" dtu="0">
+			<Values min="5" max="43200" default="60" previous="" current="" units="seconds" />
+			<Help>Number of seconds between repeats of the same event to prevent malfunctioning sensors or boundary conditions from causing excessive events.
+Timers are reset at trip start and not stored through reboot.</Help>
+			<Notes>Number of seconds between repeats of the same event to prevent malfunctioning sensors or boundary conditions from causing excessive events.
+Timers are reset at trip start.</Notes>
+		</Parameter>
+		<Parameter name="Periodic Update Event Period" level="10" datatype="Word" address="3154" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="64000" default="60" previous="" current="" units="seconds" />
+			<Help>Number of seconds between update of select J1939 data. Triggering of this event will only occur during a trip if valid J1939 messages are being received for the data contained in the events.
+0 - Disable function.</Help>
+			<Notes>Number of seconds between update of select J1939 data. Triggering of this event will only occur during a trip if valid J1939 messages are being received for the data contained in the events.
+0 - Disable function.</Notes>
 		</Parameter>
 	</Category>
 </MhubParameterSet>

@@ -202,4 +202,8 @@
 		<item id="200" description="State of Input 14" name="Input 14 State" dtu="1" />
 		<item id="201" description="State of Input 15" name="Input 15 State" dtu="1" />
 		<item id="202" description="State of Input 16" name="Input 16 State" dtu="1" />
+		<item id="203" description="Flag to trigger the GSM Cell info event to be sent" name="GSM Cell Info Trigger" dtu="1" />
+		<item id="204" description="Vehicle is inside the specified Driver Geofence" name="Inside Driver Geofence" dtu="1" />
+		<item id="205" description="This flag will be set if 1 or more geofences are loaded in the RAM geofence area" name="RAM Geofence Defined" dtu="1" />
+		<item id="206" description="This flag will be set it any of the Geofences in the RAM geofence area were set with the set driver geofence command" name="Driver Geofence Defined" dtu="1" />
 </GlobalFlags>

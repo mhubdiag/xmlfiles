@@ -1,4 +1,4 @@
-<MhubParameterSet created="2021-05-04T15:28:04+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2021-06-23T09:58:26+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -3280,15 +3280,6 @@ Default setting:
 			<Notes>Enables ENS. Refer to documentation.</Notes>
 		</Parameter>
 	</Category>
-	<Category name="Modem - CDMA Specific">
-		<Parameter name="PPP Dial String" level="0" datatype="String" address="2692" length="24" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>Dial string to start PPP session</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-</Notes>
-		</Parameter>
-	</Category>
 	<Category name="Modem - Circuit Switched Data Call">
 		<Parameter name="Error Correction" level="0" datatype="Byte" address="487" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="0" previous="" current="" units="" />
@@ -3442,24 +3433,10 @@ File name of the GSM firmware file to be uploaded</Notes>
 
 None</Notes>
 		</Parameter>
-		<Parameter name="GPRS Registration Message Format" level="0" datatype="Byte" address="294" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>GPRS Unsolicitied Status Message setting</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
-		</Parameter>
-		<Parameter name="Text White List Enable" level="15" datatype="Byte" address="307" length="1" bitmask="255" dtu="0">
+		<Parameter name="Text Auth-List Enable" level="15" datatype="Byte" address="307" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Enables White List security for Text SMS commands.</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Modem Type Designator" level="0" datatype="Byte" address="321" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="0" previous="" current="" units="" />
-			<Help>This sets the type of modem that has been populated on the board. DO NOT EVER SET THIS TO ANYTHING OTHER THAN 0. The MHub will automatically configure this parameter. </Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-This parameter is automatically configured by the MHub. Do not set this to anything other than 0.</Notes>
+			<Help>Enables Auth List security for Text SMS commands.</Help>
+			<Notes>Enables Auth List security for Text SMS commands.</Notes>
 		</Parameter>
 		<Parameter name="No Network with Signal Timeout" level="0" datatype="Word" address="379" length="2" bitmask="255" dtu="0">
 			<Values min="900" max="65000" default="7210" previous="" current="" units="" />
@@ -3477,24 +3454,12 @@ This parameter is automatically configured by the MHub. Do not set this to anyth
 1 - No sound except for alarms
 2 - No Sound at all.</Notes>
 		</Parameter>
-		<Parameter name="IMEI (Last 9 Digits)" level="0" datatype="Long" address="384" length="4" bitmask="255" dtu="0">
-			<Values min="0" max="2147483647" default="0" previous="" current="" units="" />
-			<Help>The last 9 digits of the IMEI stored as an integer</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-The least significant digit of this number is a check digit that should ensure reasonable uniqueness of the number.</Notes>
-		</Parameter>
 		<Parameter name="Calling Line Identification" level="0" datatype="Byte" address="424" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Switches the calling line identification on or off. This allows the unit to know the origin of a voice or data call.</Help>
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
 None</Notes>
-		</Parameter>
-		<Parameter name="Reboot Limit" level="5" datatype="Byte" address="474" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="4" previous="" current="" units="" />
-			<Help>Maximum number of times that the modem can be soft rebooted before it is power cycled</Help>
-			<Notes>The MHub is fitted with a GSM modem. If the MHub detects a problem with the mode, it will attempt to reboot the modem by issuing a reboot command to the modem. If the error persists, another reboot command will be issued to the modem. This parameter specifies the number of time that the reboot command is sent to the modem before the MHub will power cycle the modem in an attempt to resolve a problem with the modem.</Notes>
 		</Parameter>
 		<Parameter name="Cell Result Code" level="0" datatype="Byte" address="478" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -3545,11 +3510,6 @@ None</Notes>
 
 None</Notes>
 		</Parameter>
-		<Parameter name="Incoming Default Call" level="5" datatype="Byte" address="486" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="2" default="2" previous="" current="" units="" />
-			<Help>Sets the incoming call bearer when none is given by the network. Ref AT command set documnetation for value meanings. Defaults to voice.</Help>
-			<Notes>When a call is made to the MHub, it can be either a data call, fax call or voice call. The type of incomming call is called the Bearer Type. Now if this call is made from a mobile phone for instance, it will identify to the MHub which type of call it is (its Bearer Type). If the call is made from a fixed line operator, the MHub may not know what type of call it is. If the bearer type is not known to the MHub, then the MHub will have to apply a default Bearer Type. That is what this parameter defines. What Bearer Type must the MHub assign to an incomming call if the Bearer Type of the incomming call is unknown. The default for this is 2, which defines a voice call.</Notes>
-		</Parameter>
 		<Parameter name="SMS Check Period" level="5" datatype="Word" address="532" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="10" previous="" current="" units="Seconds" />
 			<Help>Number of seconds between checking for messages during maintenance cycles</Help>
@@ -3560,20 +3520,15 @@ None</Notes>
 			<Help>Number of seconds between checking net information during maintenance cycles</Help>
 			<Notes>None</Notes>
 		</Parameter>
-		<Parameter name="SMS Check Period in Power Save" level="5" datatype="Byte" address="600" length="1" bitmask="255" dtu="0">
-			<Values min="16" max="255" default="30" previous="" current="" units="Minutes" />
-			<Help>Number of Minutes between checking for messages during maintenance cycles while the wismo is in W32k Power Save mode</Help>
-			<Notes>When the MHub is in sleep mode with the modem enabled for W32K power save mode, the modem is still able to recieve SMS messages even though it is in a very low power state. This parameter specifies the interval in minutes between which the MHub will check to see if the modem has received any SMS messages.</Notes>
-		</Parameter>
-		<Parameter name="White List MSISDN 1" level="15" datatype="String" address="603" length="20" bitmask="255" dtu="0">
+		<Parameter name="Auth List MSISDN 1" level="15" datatype="String" address="603" length="20" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="" previous="" current="" units="" />
 			<Help>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Help>
-			<Notes></Notes>
+			<Notes>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Notes>
 		</Parameter>
-		<Parameter name="White List MSISDN 2" level="15" datatype="String" address="623" length="20" bitmask="255" dtu="0">
+		<Parameter name="Auth List MSISDN 2" level="15" datatype="String" address="623" length="20" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="" previous="" current="" units="" />
 			<Help>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Help>
-			<Notes></Notes>
+			<Notes>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Notes>
 		</Parameter>
 		<Parameter name="White List MSISDN 3" level="15" datatype="String" address="643" length="20" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="" previous="" current="" units="" />
@@ -3581,20 +3536,20 @@ None</Notes>
 </Help>
 			<Notes></Notes>
 		</Parameter>
-		<Parameter name="White List MSISDN 4" level="15" datatype="String" address="663" length="20" bitmask="255" dtu="0">
+		<Parameter name="Auth List MSISDN 4" level="15" datatype="String" address="663" length="20" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="" previous="" current="" units="" />
 			<Help>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Help>
-			<Notes></Notes>
+			<Notes>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Notes>
 		</Parameter>
-		<Parameter name="White List MSISDN 5" level="15" datatype="String" address="683" length="20" bitmask="255" dtu="0">
+		<Parameter name="Auth List MSISDN 5" level="15" datatype="String" address="683" length="20" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="" previous="" current="" units="" />
 			<Help>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Help>
-			<Notes></Notes>
+			<Notes>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Notes>
 		</Parameter>
-		<Parameter name="White List MSISDN 6" level="15" datatype="String" address="703" length="20" bitmask="255" dtu="0">
+		<Parameter name="Auth List MSISDN 6" level="15" datatype="String" address="703" length="20" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="" previous="" current="" units="" />
 			<Help>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Help>
-			<Notes></Notes>
+			<Notes>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Notes>
 		</Parameter>
 		<Parameter name="Maximum Modem Lockout Time" level="0" datatype="Word" address="761" length="2" bitmask="255" dtu="0">
 			<Values min="300" max="65535" default="1800" previous="" current="" units="Seconds" />
@@ -3643,38 +3598,10 @@ Default is 0. (User controlled PLMN selection)</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Modem - GPRS UMTS">
-		<Parameter name="GPRS Mode" level="0" datatype="Byte" address="295" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>Sets TCP stack to work over GPRS or datacall</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
-		</Parameter>
 		<Parameter name="Stack Start Retry Delay" level="5" datatype="Word" address="359" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65000" default="30" previous="" current="" units="Seconds" />
 			<Help>Period of Stack Start retries.</Help>
 			<Notes>If the stack fails to connect to the APN it needs to be restarted. The amount of time in between restarts should be enough to allow the unit time to read any incoming SMS's that may contain new APN information that will allow a successful connection.</Notes>
-		</Parameter>
-		<Parameter name="Enable PDP Header Compression" level="5" datatype="Byte" address="382" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enables PDP Header Compression</Help>
-			<Notes>0 - PDP Header compression off
-1 - PDP Header compression ON
-
-Network compatibility needs to be established before enabling this feature. </Notes>
-		</Parameter>
-		<Parameter name="Enable PDP Data Compression" level="5" datatype="Byte" address="383" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enables PDP Data Compression</Help>
-			<Notes>0 - PDP Data Compression turned off
-1 - PDP Data Compression turned ON
-
-Network compatibility needs to be established before this feature is enabled.</Notes>
-		</Parameter>
-		<Parameter name="GPRS Domain Name Server Address" level="10" datatype="String" address="441" length="30" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="0.0.0.0" previous="" current="" units="" />
-			<Help>Domain Name Server IP address</Help>
-			<Notes>When the MHub communicates with the MProifler over GPRS, it opens up a socket to the Mprofiler server. In order to do this, the MHub is configured with the IP address of the MProfiler in parameter XXX. However instead of placing an IP address in this parameter, it is possible to use a url instead. If a url is used, then the MHub will need to know how to resolve the url to an IP address. This is done by a Domain Name Server. So this parameter contains the IP address of the Domain Name Server, when the MHub can then lookup the IP address of the MProfiler url. The disadvantage of using this mechanism, is that if the Mhub cannot contact the Domain Name Server, then it will not be able to get the IP of the Mprofiler, and will then not be able to send messages over GPRS.</Notes>
 		</Parameter>
 		<Parameter name="GPRS Class Configuration" level="5" datatype="Byte" address="602" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="3" default="0" previous="" current="" units="" />
@@ -3686,20 +3613,6 @@ Network compatibility needs to be established before this feature is enabled.</N
 03 - MHub will set the Modem to Class CC
 For correct opetation of the MHUb, the modem should be set to class XXX
 </Notes>
-		</Parameter>
-		<Parameter name="APN Activation Retry before Standoff" level="0" datatype="Byte" address="1077" length="1" bitmask="255" dtu="0">
-			<Values min="2" max="65535" default="5" previous="" current="" units="" />
-			<Help>Number of attempts the MHub must try to activate the APN session before standing off.</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Number of attempts the MHub must try to activate the APN session before standing off.</Notes>
-		</Parameter>
-		<Parameter name="APN Activation Standoff Period" level="0" datatype="Word" address="1078" length="2" bitmask="255" dtu="0">
-			<Values min="60" max="7200" default="300" previous="" current="" units="Seconds" />
-			<Help>The number of seconds an MHub must wait before retrying the activation of a socket after more than the allowed attempts.</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-The number of seconds an MHub must wait before retrying the activation of a socket after more than the allowed attempts. Max value 7200 seconds (2 hours)</Notes>
 		</Parameter>
 		<Parameter name="Allow APN Standoff Cancellation from Tower change" level="5" datatype="Byte" address="1361" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -4301,11 +4214,11 @@ NB: This is a service provided by the network and not only dependant on configur
 Scope</Notes>
 		</Parameter>
 		<Parameter name="PTCRB SIM Pre-Read Delay" level="5" datatype="Byte" address="358" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Values min="0" max="250" default="120" previous="" current="" units="" />
 			<Help>The delay before the pin is used again. Necessary for PTCRB compliance.</Help>
 			<Notes>Setting this parameter invokes a delay before the unit reads the SIM card to prevent reads for sims of the incorrect voltage that are inserted. This must be set to 60 seconds for all units deployed in the USA</Notes>
 		</Parameter>
-		<Parameter name="SIM Toolkit Interface Enable`" level="5" datatype="Byte" address="378" length="1" bitmask="255" dtu="0">
+		<Parameter name="SIM Toolkit Interface Enable" level="5" datatype="Byte" address="378" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="3" default="0" previous="" current="" units="" />
 			<Help>Enables the sim toolkit interface. This is only necessary for US applications. For the US set to 1 else set to 0.</Help>
 			<Notes>Enables the sim toolkit interface. This is only necessary for US applications. For the US set to 1 else set to 0.</Notes>
@@ -4408,13 +4321,6 @@ DO NOT CHANGE THIS VALUE WITHOUT CONSULTING RELEVANT DOCUMENTATION.</Notes>
 
 DO NOT CHANGE THIS VALUE WITHOUT CONSULTING RELEVANT DOCUMENTATION.</Notes>
 		</Parameter>
-		<Parameter name="Packet Transmission Timeout" level="0" datatype="Byte" address="365" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="50" previous="" current="" units="100ms" />
-			<Help>Maximum amount of time that the modem will wait for a TCP packet to be filled before sending what it has in 100ms units</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-DO NOT CHANGE THIS VALUE WITHOUT CONSULTING RELEVANT DOCUMENTATION.</Notes>
-		</Parameter>
 		<Parameter name="Global Timeout" level="0" datatype="Word" address="367" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="600" default="0" previous="" current="" units="Seconds" />
 			<Help>Socket Configuration: Max amount of time of the socket not going into active state (i.e. being suspended) before connection falls out.</Help>
@@ -4464,11 +4370,6 @@ Number of seconds before the Modem/MHub reboots due to failing to contact the MP
 			<Help>Maximum number of attempts the MHub will make to transmit a packet before the socket is torn down. The message is also failed.</Help>
 			<Notes>When the MHub transmits a message over GPRS to the MProfiler, tyhe MHub expects a response to that message. If it does not recieve the response with the time specified in parameter xxx, then the message is failed and needs to be resent. This parameter specifies the number of retries that the MHub will make to send a specific message before the message is failed completely. If the message is an event to be sent to Mprofiler, event though the specific message fails after all the retries, the event(s) will be resent at a later stage.</Notes>
 		</Parameter>
-		<Parameter name="Socket Pre-Suspend Pause" level="5" datatype="Byte" address="476" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="30" default="15" previous="" current="" units="Seconds" />
-			<Help>Amount of time that the socket will wait before suspension so that current transactions are allowed to complete.</Help>
-			<Notes>Periodically the MHub needs to suspend the socket connection to Mprofiler in order to perform certain functions on the modem such as reading the signal strength. When the socket is about to be suspended, the MHub may still be waiting for a reply back from Mprofiler in response to having sent a message to Mprofiler. In this instance the MHub will wait for the time specified in this parameter for the response from Mprofiler.</Notes>
-		</Parameter>
 		<Parameter name="Enable Suspend" level="5" datatype="Bit" address="477" length="1" bitmask="4" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enables suspension of a socket for maintenance purposes</Help>
@@ -4479,15 +4380,15 @@ Number of seconds before the Modem/MHub reboots due to failing to contact the MP
 			<Help>Enables the unit to close a socket so that voice and data calls may be dealt with</Help>
 			<Notes>In order to be able to answer an incomming voice call, the MHub must close a socket connection if it is currently open. Setting this parameter to 1 will allow the socket to be closed. If this is set to 0, then the MHUb will not be able to close the socket, and thus a voice call will not be possible.</Notes>
 		</Parameter>
-		<Parameter name="Permanent TCP Socket" level="10" datatype="Bit" address="477" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>Enables a permanent TCP socket to MProfiler</Help>
-			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will remain permanently open. Enabling this parameter will instruct the MHub to open up a socket and attempt to keep the socket open at all time. Should the socket drop for any reason, the MHub will immediately reopen the socket again.</Notes>
-		</Parameter>
 		<Parameter name="Data Triggered TCP Socket" level="10" datatype="Bit" address="477" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>when enabled the unit will only open a socket if there is data to be sent to MProfiler. This is overidden by the Permanent TCP Socket switch.</Help>
 			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will only be opened if there is data to be sent. Enabling this parameter will instruct the MHub to only open a socket to Mprofiler if there is data to be sent. Note that if the Permanent TCP Socket parameter is also enabled, that that will override this parameter.</Notes>
+		</Parameter>
+		<Parameter name="Permanent TCP Socket" level="10" datatype="Bit" address="477" length="1" bitmask="2" dtu="0">
+			<Values min="0" max="1" default="1" previous="" current="" units="" />
+			<Help>Enables a permanent TCP socket to MProfiler</Help>
+			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will remain permanently open. Enabling this parameter will instruct the MHub to open up a socket and attempt to keep the socket open at all time. Should the socket drop for any reason, the MHub will immediately reopen the socket again.</Notes>
 		</Parameter>
 		<Parameter name="Socket Suspend Time" level="5" datatype="Byte" address="528" length="1" bitmask="0" dtu="0">
 			<Values min="5" max="200" default="15" previous="" current="" units="Seconds" />
@@ -4705,34 +4606,6 @@ This has a +1 offset. The default of -1 (0 with the offset) should not be change
 			<Notes>This parameter determines the logic levels of the amplifier Mute signals.
 Set to 0 for Active high i.e. open collector output is OFF (high) for amplifier mute. This is for the Scope Amplifier.
 Set to 1 for Active low i.e. open collector output is ON (low) for amplifier mute.</Notes>
-		</Parameter>
-	</Category>
-	<Category name="Modem - Wireless LAN / Wifi">
-		<Parameter name="Enable Bridge Mode" level="0" datatype="Bit" address="1554" length="1" bitmask="16" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enables bridge mode versus router mode for the Wifi module.
-NB: Setting this prevents MProfiler connections.</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Enables bridge mode versus router mode for the Wifi module.
-NB: Setting this prevents MProfiler connections.</Notes>
-		</Parameter>
-		<Parameter name="Web User Interface Enable" level="5" datatype="Bit" address="1554" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>Enables / Disables the Wifi WebUI for configuring Wifi specific functionality.</Help>
-			<Notes>Enables / Disables the Wifi WebUI for configuring Wifi specific functionality.</Notes>
-		</Parameter>
-		<Parameter name="Wifi Scan Enable" level="5" datatype="Bit" address="1554" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enables periodic scanning of the Wifi environment.
-Note that enabling this causes interruptions in the Wifi service of up to 15 seconds. </Help>
-			<Notes>Enables periodic scanning of the Wifi environment.
-Note that enabling this causes interruptions in the Wifi service of up to 15 seconds. </Notes>
-		</Parameter>
-		<Parameter name="Wifi Enable" level="5" datatype="Bit" address="1864" length="1" bitmask="4" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Turns Wifi ON /OFF on units equipped with WiFi</Help>
-			<Notes>Turns Wifi ON /OFF on units equipped with WiFi</Notes>
 		</Parameter>
 	</Category>
 	<Category name="OBC">
@@ -6531,7 +6404,7 @@ If Fake VIN is programmed then only this will be used to request data.
 			<Notes>Enables UDS/ISO14229 commands sent from XPlatform.</Notes>
 		</Parameter>
 		<Parameter name="Pseudo (Fake) VIN" level="5" datatype="String" address="2457" length="17" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="0" previous="" current="" units="" />
+			<Values min="0" max="0" default="00000000000000000" previous="" current="" units="" />
 			<Help>Used for requesting a parameter set from XPlatform that will be used to retrieve the true VIN from a particular vehicle type.
 Note: 
 The length of the VIN must be 13 characters otherwise XPlatform will reject the ID.

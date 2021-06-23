@@ -1,4 +1,4 @@
-<MhubParameterSet created="2021-05-04T15:28:04+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2021-06-23T09:58:26+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Beeper">
 		<Parameter name="Output for Buzzer" level="10" datatype="Byte" address="3583" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="5" default="0" previous="" current="" units="" />
@@ -89,6 +89,20 @@ None</Notes>
 			<Notes>If the driver key is used, then this parameter must be set to 1</Notes>
 		</Parameter>
 	</Category>
+	<Category name="Modem - CMux Configuration">
+		<Parameter name="Modem No-Network Restart Delay" level="0" datatype="Word" address="433" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="300" previous="" current="" units="Seconds" />
+			<Help>The amount of time that the unit will wait after rebooting the modem before repeating the process.</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+None</Notes>
+		</Parameter>
+		<Parameter name="Error Limit" level="5" datatype="Byte" address="475" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="5" previous="" current="" units="" />
+			<Help>Maximum number of accumulated errors before the modem is rebooted</Help>
+			<Notes>As described in the parameter Reboot Limit, the MHub will issue a reboot command to the modem if it detects a problem with the modem. However if an error is received in response to an instruction to the modem, the MHub will first retry the instruction. This parameter specifies the number of accumulated errors that the MHub can receive from the modem before it will issue a reboot command to the mode.</Notes>
+		</Parameter>
+	</Category>
 	<Category name="OBC">
 		<Parameter name="Ignition OFF Source from Main Voltage Threshold" level="10" datatype="Byte" address="1046" length="1" bitmask="255" dtu="1">
 			<Values min="1" max="255" default="128" previous="" current="" units="10omV" />
@@ -158,7 +172,7 @@ If Fake VIN is programmed then only this will be used to request data.
 			<Notes>Enables UDS/ISO14229 commands sent from XPlatform.</Notes>
 		</Parameter>
 		<Parameter name="Pseudo (Fake) VIN" level="5" datatype="String" address="2457" length="17" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="0" previous="" current="" units="" />
+			<Values min="0" max="0" default="00000000000000000" previous="" current="" units="" />
 			<Help>Used for requesting a parameter set from XPlatform that will be used to retrieve the true VIN from a particular vehicle type.
 Note: 
 The length of the VIN must be 13 characters otherwise XPlatform will reject the ID.

@@ -1,4 +1,4 @@
-<MhubParameterSet created="2021-05-04T15:28:04+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2021-06-23T09:58:26+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -2997,36 +2997,6 @@ Default setting:
 			<Notes>Enables ENS. Refer to documentation.</Notes>
 		</Parameter>
 	</Category>
-	<Category name="Modem - CDMA Specific">
-		<Parameter name="PPP Dial String" level="0" datatype="String" address="2692" length="24" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>Dial string to start PPP session</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-</Notes>
-		</Parameter>
-	</Category>
-	<Category name="Modem - Circuit Switched Data Call">
-		<Parameter name="Data Call Bearer speed" level="0" datatype="Byte" address="488" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="75" default="0" previous="" current="" units="" />
-			<Help>Data call bearer baud rate.</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
-		</Parameter>
-		<Parameter name="Data Call Connection Element" level="0" datatype="Byte" address="489" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="3" default="1" previous="" current="" units="" />
-			<Help>Transparency of connection</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
-		</Parameter>
-		<Parameter name="Maximum Data call time" level="10" datatype="Word" address="507" length="2" bitmask="255" dtu="0">
-			<Values min="60" max="65000" default="600" previous="" current="" units="Seconds" />
-			<Help>Maximum length that the unit may be held in a data call before terminating the call and resuming operation.</Help>
-			<Notes></Notes>
-		</Parameter>
-	</Category>
 	<Category name="Modem - CMux Configuration">
 		<Parameter name="Reboot Limit" level="0" datatype="Byte" address="369" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="5" previous="" current="" units="" />
@@ -3070,6 +3040,13 @@ None</Notes>
 
 Enables the use of the Telit Trace debug tools. Must used in conjunction with the Custom Functionality->Aux Port Config parameter
 </Notes>
+		</Parameter>
+		<Parameter name="Modem No-Network Restart Delay" level="0" datatype="Word" address="433" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="300" previous="" current="" units="Seconds" />
+			<Help>The amount of time that the unit will wait after rebooting the modem before repeating the process.</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+None</Notes>
 		</Parameter>
 		<Parameter name="Error Limit" level="5" datatype="Byte" address="475" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="5" previous="" current="" units="" />
@@ -3152,10 +3129,10 @@ File name of the GSM firmware file to be uploaded</Notes>
 
 None</Notes>
 		</Parameter>
-		<Parameter name="Text White List Enable" level="15" datatype="Byte" address="307" length="1" bitmask="255" dtu="0">
+		<Parameter name="Text Auth-List Enable" level="15" datatype="Byte" address="307" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Enables White List security for Text SMS commands.</Help>
-			<Notes></Notes>
+			<Help>Enables Auth List security for Text SMS commands.</Help>
+			<Notes>Enables Auth List security for Text SMS commands.</Notes>
 		</Parameter>
 		<Parameter name="No Network with Signal Timeout" level="0" datatype="Word" address="379" length="2" bitmask="255" dtu="0">
 			<Values min="900" max="65000" default="7210" previous="" current="" units="" />
@@ -3163,15 +3140,6 @@ None</Notes>
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
 </Notes>
-		</Parameter>
-		<Parameter name="Stealth Mode Enable" level="0" datatype="Byte" address="381" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="2" default="0" previous="" current="" units="" />
-			<Help>Enables Stealth Mode (Silent Running) on the Modem</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-0 - Normal Modem Operation
-1 - No sound except for alarms
-2 - No Sound at all.</Notes>
 		</Parameter>
 		<Parameter name="Calling Line Identification" level="0" datatype="Byte" address="424" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -3225,15 +3193,15 @@ None</Notes>
 			<Help>Number of seconds between checking net information during maintenance cycles</Help>
 			<Notes>None</Notes>
 		</Parameter>
-		<Parameter name="White List MSISDN 1" level="15" datatype="String" address="603" length="20" bitmask="255" dtu="0">
+		<Parameter name="Auth List MSISDN 1" level="15" datatype="String" address="603" length="20" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="" previous="" current="" units="" />
 			<Help>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Help>
-			<Notes></Notes>
+			<Notes>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Notes>
 		</Parameter>
-		<Parameter name="White List MSISDN 2" level="15" datatype="String" address="623" length="20" bitmask="255" dtu="0">
+		<Parameter name="Auth List MSISDN 2" level="15" datatype="String" address="623" length="20" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="" previous="" current="" units="" />
 			<Help>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Help>
-			<Notes></Notes>
+			<Notes>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Notes>
 		</Parameter>
 		<Parameter name="White List MSISDN 3" level="15" datatype="String" address="643" length="20" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="" previous="" current="" units="" />
@@ -3241,20 +3209,20 @@ None</Notes>
 </Help>
 			<Notes></Notes>
 		</Parameter>
-		<Parameter name="White List MSISDN 4" level="15" datatype="String" address="663" length="20" bitmask="255" dtu="0">
+		<Parameter name="Auth List MSISDN 4" level="15" datatype="String" address="663" length="20" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="" previous="" current="" units="" />
 			<Help>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Help>
-			<Notes></Notes>
+			<Notes>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Notes>
 		</Parameter>
-		<Parameter name="White List MSISDN 5" level="15" datatype="String" address="683" length="20" bitmask="255" dtu="0">
+		<Parameter name="Auth List MSISDN 5" level="15" datatype="String" address="683" length="20" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="" previous="" current="" units="" />
 			<Help>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Help>
-			<Notes></Notes>
+			<Notes>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Notes>
 		</Parameter>
-		<Parameter name="White List MSISDN 6" level="15" datatype="String" address="703" length="20" bitmask="255" dtu="0">
+		<Parameter name="Auth List MSISDN 6" level="15" datatype="String" address="703" length="20" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="" previous="" current="" units="" />
 			<Help>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Help>
-			<Notes></Notes>
+			<Notes>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Notes>
 		</Parameter>
 		<Parameter name="Maximum Modem Lockout Time" level="0" datatype="Word" address="761" length="2" bitmask="255" dtu="0">
 			<Values min="300" max="65535" default="1800" previous="" current="" units="Seconds" />
@@ -3594,55 +3562,6 @@ The Default value used to be 0. It has now been changed to 1 as the ATZ can caus
 		</Parameter>
 	</Category>
 	<Category name="Modem - GSM Specific Voice">
-		<Parameter name="Voice Dial Moving Filter - Number 1 Enable " level="10" datatype="Bit" address="345" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>Enables the Button Box to dial the number associated with Button 1 while the vehicle is moving.</Help>
-			<Notes>The voice dial filter is used to limit the use of a particular button while the vehicle exceeds a preset threshold. The threshold is set using the Trip Stationary Threshold found in the Trip subsection. If the relevant bit is set then the button is enabled while the vehicle's speed exceeds this threshold, but if it is cleared then the button is disabled until the vehicle slows to a speed below the threshold. There is no global enable parameter to overide this functionality.</Notes>
-		</Parameter>
-		<Parameter name="Voice Dial Moving Filter - Number 2 Enable " level="10" datatype="Bit" address="345" length="1" bitmask="4" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>Enables the Button Box to dial the number associated with Button 1 while the vehicle is moving.</Help>
-			<Notes>The voice dial filter is used to limit the use of a particular button while the vehicle exceeds a preset threshold. The threshold is set using the Trip Stationary Threshold found in the Trip subsection. If the relevant bit is set then the button is enabled while the vehicle's speed exceeds this threshold, but if it is cleared then the button is disabled until the vehicle slows to a speed below the threshold. There is no global enable parameter to overide this functionality.</Notes>
-		</Parameter>
-		<Parameter name="Voice Dial Moving Filter - Number 3 Enable " level="10" datatype="Bit" address="345" length="1" bitmask="8" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>Enables the Button Box to dial the number associated with Button 1 while the vehicle is moving.</Help>
-			<Notes>The voice dial filter is used to limit the use of a particular button while the vehicle exceeds a preset threshold. The threshold is set using the Trip Stationary Threshold found in the Trip subsection. If the relevant bit is set then the button is enabled while the vehicle's speed exceeds this threshold, but if it is cleared then the button is disabled until the vehicle slows to a speed below the threshold. There is no global enable parameter to overide this functionality.</Notes>
-		</Parameter>
-		<Parameter name="Voice Dial Moving Filter - Number 4 Enable " level="10" datatype="Bit" address="345" length="1" bitmask="16" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>Enables the Button Box to dial the number associated with Button 1 while the vehicle is moving.</Help>
-			<Notes>The voice dial filter is used to limit the use of a particular button while the vehicle exceeds a preset threshold. The threshold is set using the Trip Stationary Threshold found in the Trip subsection. If the relevant bit is set then the button is enabled while the vehicle's speed exceeds this threshold, but if it is cleared then the button is disabled until the vehicle slows to a speed below the threshold. There is no global enable parameter to overide this functionality.</Notes>
-		</Parameter>
-		<Parameter name="Voice Dial Moving Filter - Answer Enable " level="10" datatype="Bit" address="345" length="1" bitmask="32" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>Enables the Button Box to answer a call while the vehicle is moving.</Help>
-			<Notes>The voice dial filter is used to limit the use of a particular button while the vehicle exceeds a preset threshold. The threshold is set using the Trip Stationary Threshold found in the Trip subsection. If the relevant bit is set then the button is enabled while the vehicle's speed exceeds this threshold, but if it is cleared then the button is disabled until the vehicle slows to a speed below the threshold. There is no global enable parameter to overide this functionality.</Notes>
-		</Parameter>
-		<Parameter name="Voice Dial Moving Filter - Hangup Enable " level="10" datatype="Bit" address="345" length="1" bitmask="64" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>Enables the Button Box to terminate a call (hangup) while the vehicle is moving.</Help>
-			<Notes>The voice dial filter is used to limit the use of a particular button while the vehicle exceeds a preset threshold. The threshold is set using the Trip Stationary Threshold found in the Trip subsection. If the relevant bit is set then the button is enabled while the vehicle's speed exceeds this threshold, but if it is cleared then the button is disabled until the vehicle slows to a speed below the threshold. There is no global enable parameter to overide this functionality.
-
-It is suggested that this button not be disabled to prevent the situation where a driver is unable to hangup a call.</Notes>
-		</Parameter>
-		<Parameter name="Voice Call Auto Answer Ringcount Delay" level="10" datatype="Byte" address="346" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="3" previous="" current="" units="" />
-			<Help>Number of rings that must occur before the call is answered by the MHub. If set to zero the MHub will answer the call as soon as it has detected a ring.</Help>
-			<Notes>The MHub has the ability to answer an incoming voice call automatically so the driver does not have to be distracted. Voice Call Auto Answer has to be enabled via the Auto Answer Enable Parameter. It is suggested that it be used in conjunction with the Auto Answer While Moving Enable and the Voice Dial Moving Filters, so that the Button Box is disabled but incoming calls may still be answered without the driver's intervention.
-
-NB: Make sure that the number of rings configured does not exceed the time allowed  by the GSM network for an unanswered call.</Notes>
-		</Parameter>
-		<Parameter name="Voice Call Auto Answer Always" level="10" datatype="Bit" address="347" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Always answer any incoming voice call</Help>
-			<Notes>Always answer any incoming voice call automatically, after waiting for the amount of rings configured in Auto Answer Ring Count Delay.</Notes>
-		</Parameter>
-		<Parameter name="Voice Call Auto Answer When Moving" level="10" datatype="Bit" address="347" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Automatically answer an incoming voice call while the vehicle is moving.</Help>
-			<Notes>While a vehicle is moving at a speed greater than the Trip Stationary Threshold answer any incoming voice call automatically, after waiting for the amount of rings configured in Auto Answer Ring Count Delay.</Notes>
-		</Parameter>
 		<Parameter name="Scotch Call Enable" level="10" datatype="Byte" address="371" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enables the Scotch call control feature. 
@@ -3661,85 +3580,6 @@ Scotch call must be enabled.</Help>
 			<Help>Allows a trip type to be toggled between business and private. 
 Scotch call must be enabled.</Help>
 			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Voice Number 1" level="10" datatype="String" address="1171" length="20" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>Voice Number 1</Help>
-			<Notes>When the handsfree voice kit is connected to the MHub, the MHub has the ability to make and recieve telephone calls. However to limit calls from the MHub being made to any numbers, the voice kit can include a button box with 6 buttons, the will allow Answering and Hanging up of a voice call, and the ability to make a call to preset telephone numbers. One of these numbers is stored in this parameter.</Notes>
-		</Parameter>
-		<Parameter name="Voice Number 2" level="10" datatype="String" address="1191" length="20" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>Voice Number 2</Help>
-			<Notes>When the handsfree voice kit is connected to the MHub, the MHub has the ability to make and recieve telephone calls. However to limit calls from the MHub being made to any numbers, the voice kit can include a button box with 6 buttons, the will allow Answering and Hanging up of a voice call, and the ability to make a call to preset telephone numbers. One of these numbers is stored in this parameter.</Notes>
-		</Parameter>
-		<Parameter name="Voice Number 3" level="10" datatype="String" address="1211" length="20" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>Voice Number 3</Help>
-			<Notes>When the handsfree voice kit is connected to the MHub, the MHub has the ability to make and recieve telephone calls. However to limit calls from the MHub being made to any numbers, the voice kit can include a button box with 6 buttons, the will allow Answering and Hanging up of a voice call, and the ability to make a call to preset telephone numbers. One of these numbers is stored in this parameter.</Notes>
-		</Parameter>
-		<Parameter name="Voice Number 4" level="10" datatype="String" address="1231" length="20" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>Voice Number 4</Help>
-			<Notes>When the handsfree voice kit is connected to the MHub, the MHub has the ability to make and recieve telephone calls. However to limit calls from the MHub being made to any numbers, the voice kit can include a button box with 6 buttons, the will allow Answering and Hanging up of a voice call, and the ability to make a call to preset telephone numbers. One of these numbers is stored in this parameter.</Notes>
-		</Parameter>
-		<Parameter name="External Voice dialing Enabled" level="10" datatype="Bit" address="1271" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enable voice dialing from an external command</Help>
-			<Notes>Enables Button Box, or other entity such as a PDA or MDT emulating button box, functionality including updating the Button Box or PDA as to the current Voice Call status.
-
-If the LED's on the Button Box are not operating correctly check the status of this bit.
-</Notes>
-		</Parameter>
-		<Parameter name="Enable Led Update" level="10" datatype="Bit" address="1271" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enable Button Box LED Update message</Help>
-			<Notes>This bit enables un unsolicited command that is sent to a button box in order for the button box to be aware of the current Voice call state. This should be switched off for intelligent devices such as PDA's that are emulating a button box.</Notes>
-		</Parameter>
-		<Parameter name="Voice Kit Power with Ignition" level="5" datatype="Bit" address="1271" length="1" bitmask="4" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Voice Kit power follows ignition state.</Help>
-			<Notes>If set the voice kit will be powered while the ignition is swtiched on. If this bit is cleared then the voice kit will be switched on with an incoming or outgoing voice call and switched off when the call is terminated.</Notes>
-		</Parameter>
-		<Parameter name="Enable PDA Voice Status Update" level="10" datatype="Bit" address="1271" length="1" bitmask="8" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enables a special PDA message to be sent to a PDA indicating the current call status. This must not be used with a button box.</Help>
-			<Notes>This should be used with the button box update switched off. 
-</Notes>
-		</Parameter>
-		<Parameter name="Voice Dial with Inputs Enable" level="10" datatype="Bit" address="1271" length="1" bitmask="16" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Voice Dial with Inputs Enable</Help>
-			<Notes>Enable Inputs to control Voice Dialing. 
-Input 1:3 - Button 1:3
-Input 4   - Button 6</Notes>
-		</Parameter>
-		<Parameter name="Voice Dial Old Keyboard" level="10" datatype="Bit" address="1271" length="1" bitmask="32" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Revert buttons to original layout</Help>
-			<Notes>New generation Keyboards had the Call End on Button 4 and Dial on Button 6
-Mapping from Old to New Keyboard
-1 -> 1
-2 -> 2
-3 -> 3
-4 -> 5
-5 -> 6
-6 -> 4</Notes>
-		</Parameter>
-		<Parameter name="Incoming Voice Melody" level="10" datatype="Byte" address="1883" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="10" default="1" previous="" current="" units="" />
-			<Help>Melody alert for incoming voice call</Help>
-			<Notes>When there is an imcoming voice call, there is a ring tone that indicates to the driver that there is an incoming call. This parameter can set the melody that is played for the ring tome. Values from 1 to 10 are permissable.</Notes>
-		</Parameter>
-		<Parameter name="Incoming Voice Melody Volume" level="10" datatype="Byte" address="1886" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="4" default="0" previous="" current="" units="" />
-			<Help>Volume of the ringer for incoming voice alerts</Help>
-			<Notes>Incoming Voice Melody Volume is used to select the incoming call ringer sound level 
-
-0 - Off
-1 - low
-2 - middle
-3 - high
-4 - progressive</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Modem - Jamming Detection">
@@ -3916,11 +3756,11 @@ NB: This is a service provided by the network and not only dependant on configur
 Scope</Notes>
 		</Parameter>
 		<Parameter name="PTCRB SIM Pre-Read Delay" level="5" datatype="Byte" address="358" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Values min="0" max="250" default="120" previous="" current="" units="" />
 			<Help>The delay before the pin is used again. Necessary for PTCRB compliance.</Help>
 			<Notes>Setting this parameter invokes a delay before the unit reads the SIM card to prevent reads for sims of the incorrect voltage that are inserted. This must be set to 60 seconds for all units deployed in the USA</Notes>
 		</Parameter>
-		<Parameter name="SIM Toolkit Interface Enable`" level="5" datatype="Byte" address="378" length="1" bitmask="255" dtu="0">
+		<Parameter name="SIM Toolkit Interface Enable" level="5" datatype="Byte" address="378" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="3" default="0" previous="" current="" units="" />
 			<Help>Enables the sim toolkit interface. This is only necessary for US applications. For the US set to 1 else set to 0.</Help>
 			<Notes>Enables the sim toolkit interface. This is only necessary for US applications. For the US set to 1 else set to 0.</Notes>
@@ -3976,6 +3816,19 @@ The purpose of this bit is to prevent legacy configuration incorrectly enabling 
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Attaches SIM Toolkit to the AT instance</Help>
 			<Notes>Attaches SIM Toolkit to the AT instance</Notes>
+		</Parameter>
+		<Parameter name="Disable SIM PIN Safety" level="0" datatype="Byte" address="1573" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="67" default="0" previous="" current="" units="" />
+			<Help>Set as below to disable SIM PIN protection features that prevent blocking a PIN
+0  Pin protection enabled
+1  Pin protection disabled but last attempt will be protected.
+66  All pin protection disabled. NB: Setting this will cause a SIM card to be PUKed in the event the incorrect pin is entered.</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Set as below to disable SIM PIN protection features that prevent blocking a PIN
+0  Pin protection enabled
+1  Pin protection disabled but last attempt will be protected.
+66  All pin protection disabled. NB: Setting this will cause a SIM card to be PUKed in the event the incorrect pin is entered.</Notes>
 		</Parameter>
 		<Parameter name="SIM Network Lock Network ID" level="10" datatype="String" address="2368" length="5" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="0" previous="" current="" units="" />
@@ -4082,15 +3935,15 @@ Number of seconds before the Modem/MHub reboots due to failing to contact the MP
 			<Help>Enables the unit to close a socket so that voice and data calls may be dealt with</Help>
 			<Notes>In order to be able to answer an incomming voice call, the MHub must close a socket connection if it is currently open. Setting this parameter to 1 will allow the socket to be closed. If this is set to 0, then the MHUb will not be able to close the socket, and thus a voice call will not be possible.</Notes>
 		</Parameter>
-		<Parameter name="Data Triggered TCP Socket" level="10" datatype="Bit" address="477" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>when enabled the unit will only open a socket if there is data to be sent to MProfiler. This is overidden by the Permanent TCP Socket switch.</Help>
-			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will only be opened if there is data to be sent. Enabling this parameter will instruct the MHub to only open a socket to Mprofiler if there is data to be sent. Note that if the Permanent TCP Socket parameter is also enabled, that that will override this parameter.</Notes>
-		</Parameter>
 		<Parameter name="Permanent TCP Socket" level="10" datatype="Bit" address="477" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Enables a permanent TCP socket to MProfiler</Help>
 			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will remain permanently open. Enabling this parameter will instruct the MHub to open up a socket and attempt to keep the socket open at all time. Should the socket drop for any reason, the MHub will immediately reopen the socket again.</Notes>
+		</Parameter>
+		<Parameter name="Data Triggered TCP Socket" level="10" datatype="Bit" address="477" length="1" bitmask="1" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>when enabled the unit will only open a socket if there is data to be sent to MProfiler. This is overidden by the Permanent TCP Socket switch.</Help>
+			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will only be opened if there is data to be sent. Enabling this parameter will instruct the MHub to only open a socket to Mprofiler if there is data to be sent. Note that if the Permanent TCP Socket parameter is also enabled, that that will override this parameter.</Notes>
 		</Parameter>
 		<Parameter name="Socket Suspend Time" level="5" datatype="Byte" address="528" length="1" bitmask="0" dtu="0">
 			<Values min="5" max="200" default="15" previous="" current="" units="Seconds" />
@@ -4153,228 +4006,6 @@ Number of seconds before the Modem/MHub reboots due to failing to contact the MP
 0 - Do not alter behaviour
 1 - Enable DNS caching
 172 - Disable and clear cache.</Notes>
-		</Parameter>
-	</Category>
-	<Category name="Modem - Voice Call">
-		<Parameter name="Modem Auto Answer Ringcount" level="5" datatype="Byte" address="482" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Number of rings before modem auto answers. 0 switches this feature off</Help>
-			<Notes>When the voice functionality of the MHub is used, it is possible to enable the Modem so that it will automatically answer incoming calls. This parameter will instruct the Modem after how many rings it must automatically answer the incoming voice call. If this parameter is set to 0, then the Modem will not automatically answer any incoming calls. This is not the recommended method of invoking Auto-Answer.</Notes>
-		</Parameter>
-		<Parameter name="Audio Channel Selection" level="0" datatype="Byte" address="490" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="2" default="1" previous="" current="" units="" />
-			<Help>Speaker and microphone channel selection.</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-0 - audio path follows the AXE input
-1 - enables handsfree external mic/ear audio path
-2 - enables internal mic/ear audio path</Notes>
-		</Parameter>
-		<Parameter name="Side Tone Modifier 1" level="0" datatype="Byte" address="491" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help></Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
-		</Parameter>
-		<Parameter name="Buzzer Channel Selection" level="0" datatype="Byte" address="492" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="3" default="0" previous="" current="" units="" />
-			<Help>Select Buzzer/Ringer Path</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-0 - sound output towards current selected audio path 
-1 - sound output towards handsfree
-2 - sound output towards handset
-3 - sound output towards Buzzer Output pin GPIO7</Notes>
-		</Parameter>
-		<Parameter name="Microphone Gain" level="5" datatype="Byte" address="493" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="6" default="0" previous="" current="" units="" />
-			<Help>This sets the audio transmission gain.</Help>
-			<Notes>This value controls the gain of the microphone. 6 is the lowest gain and 0 represents the highest gain.</Notes>
-		</Parameter>
-		<Parameter name="Speaker Volume" level="5" datatype="Byte" address="494" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="6" default="0" previous="" current="" units="" />
-			<Help>Sets the Speaker Gain.</Help>
-			<Notes>This parameter sets the amplification of the speaker signal, where 6 represents the lowest gain up to maximum at 0</Notes>
-		</Parameter>
-		<Parameter name="Audio Echo Cancellation Enable" level="0" datatype="Byte" address="495" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help></Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
-		</Parameter>
-		<Parameter name="Audio Echo Cancellation Preset" level="0" datatype="Byte" address="496" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Sets one of the preconfigured setups. If set to 0 then the configured parameters are not used and instead the modem's default settings are used.</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
-		</Parameter>
-		<Parameter name="Audio Echo Output Gain" level="0" datatype="Byte" address="497" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="12" default="6" previous="" current="" units="" />
-			<Help>Output Scaling</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-+6 offset i.e. -6 is configured as 0</Notes>
-		</Parameter>
-		<Parameter name="Audio Echo Adaptation Speed" level="0" datatype="Byte" address="498" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="3" default="2" previous="" current="" units="" />
-			<Help>LMS Adaptation speed.</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
-		</Parameter>
-		<Parameter name="Audio Echo Filter Length" level="0" datatype="Byte" address="499" length="1" bitmask="255" dtu="0">
-			<Values min="10" max="50" default="50" previous="" current="" units="" />
-			<Help>LMS Filter Length (number of coefficients)</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
-		</Parameter>
-		<Parameter name="Audio Echo Cancellation Rx/Tx Relation" level="0" datatype="Byte" address="500" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="180" default="70" previous="" current="" units="" />
-			<Help>Relationship of microphone to speaker signal power</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-+90 offset to real value. I.e. -90 is configured as 0; +90 is configured as 180</Notes>
-		</Parameter>
-		<Parameter name="Audio Echo Input Gain" level="0" datatype="Byte" address="501" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="12" default="6" previous="" current="" units="" />
-			<Help>Microphone line digital gain</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-+6 offset to configured value. I.e. -6 is configured as 0; +6 is configured as 12</Notes>
-		</Parameter>
-		<Parameter name="Audio Echo Noise Maximum Attenuation" level="0" datatype="Byte" address="502" length="1" bitmask="255" dtu="0">
-			<Values min="1" max="7" default="2" previous="" current="" units="" />
-			<Help>Noise Maximum Attenuation</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
-		</Parameter>
-		<Parameter name="Audio Echo Noise Reduction Weighting Factor 0" level="0" datatype="Byte" address="503" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="9" default="6" previous="" current="" units="" />
-			<Help>Noise reduction weighting factor band 300Hz - 500Hz. </Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-</Notes>
-		</Parameter>
-		<Parameter name="Audio Echo Side Tone Attenuation" level="0" datatype="Byte" address="504" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="25" default="0" previous="" current="" units="" />
-			<Help>Side tone attenuation factor</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-This has a +1 offset. The default of -1 (0 with the offset) should not be changed as the sidetone messes with the echo cancellation.
-
-</Notes>
-		</Parameter>
-		<Parameter name="Audio Echo Noise Reduction Weighting Factor 1" level="0" datatype="Byte" address="505" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="9" default="6" previous="" current="" units="" />
-			<Help>Noise reduction weighting factor band 500Hz - 4000Hz</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-</Notes>
-		</Parameter>
-		<Parameter name="Standard Tone Sound Level" level="10" datatype="Byte" address="506" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="10" default="10" previous="" current="" units="" />
-			<Help>Sets the basic speaker level.</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Audio Echo AGC Additional Attenuation" level="0" datatype="Byte" address="509" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="90" default="12" previous="" current="" units="" />
-			<Help>Automatic Gain Control additional attenuation.</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-</Notes>
-		</Parameter>
-		<Parameter name="Audio Echo AGC Minimum Attenuation" level="0" datatype="Byte" address="510" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="90" default="0" previous="" current="" units="" />
-			<Help>Minimum Gain Attenuation</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-</Notes>
-		</Parameter>
-		<Parameter name="Audio Echo AGC Maximum Attenuation" level="0" datatype="Byte" address="511" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="90" default="24" previous="" current="" units="" />
-			<Help>Maximum Gain Attenuation</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-</Notes>
-		</Parameter>
-		<Parameter name="Voice Mute Type" level="5" datatype="Byte" address="1251" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Determines the logic of the Voice mute</Help>
-			<Notes>This parameter determines the logic levels of the amplifier Mute signals.
-Set to 0 for Active high i.e. open collector output is OFF (high) for amplifier mute. This is for the Scope Amplifier.
-Set to 1 for Active low i.e. open collector output is ON (low) for amplifier mute.</Notes>
-		</Parameter>
-	</Category>
-	<Category name="Modem - Wireless LAN / Wifi">
-		<Parameter name="Wifi Max Transmission Power" level="5" datatype="Byte" address="1545" length="1" bitmask="255" dtu="0">
-			<Values min="4" max="18" default="4" previous="" current="" units="" />
-			<Help>Sets the Elle Wifi module maximum transmission power.
-4 - Minimum power
-18 -  Maximum power
-This setting is implemented when Wifi is turned on.</Help>
-			<Notes>Sets the Elle Wifi module maximum transmission power.
-4 - Minimum power
-18 -  Maximum power
-This setting is implemented when Wifi is turned on.</Notes>
-		</Parameter>
-		<Parameter name="Wifi Channel Manager Mode" level="5" datatype="Byte" address="1546" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="3" default="3" previous="" current="" units="" />
-			<Help>Sets the mode of operation of the Channel conflict manager
-0 (factory-programmed value): conflict reporting URC disabled
-1: URC enabled, 
-2: URC enabled, semi automatic algorithm
-3: URC enabled, full automatic algorithm</Help>
-			<Notes>Sets the mode of operation of the Channel conflict manager
-0 (factory-programmed value): conflict reporting URC disabled
-1: URC enabled, 
-2: URC enabled, semi automatic algorithm
-3: URC enabled, full automatic algorithm</Notes>
-		</Parameter>
-		<Parameter name="Enable Bridge Mode" level="0" datatype="Bit" address="1554" length="1" bitmask="16" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enables bridge mode versus router mode for the Wifi module.
-NB: Setting this prevents MProfiler connections.</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Enables bridge mode versus router mode for the Wifi module.
-NB: Setting this prevents MProfiler connections.</Notes>
-		</Parameter>
-		<Parameter name="Web User Interface Enable" level="5" datatype="Bit" address="1554" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>Enables / Disables the Wifi WebUI for configuring Wifi specific functionality.</Help>
-			<Notes>Enables / Disables the Wifi WebUI for configuring Wifi specific functionality.</Notes>
-		</Parameter>
-		<Parameter name="Wifi Scan Enable" level="5" datatype="Bit" address="1554" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enables periodic scanning of the Wifi environment.
-Note that enabling this causes interruptions in the Wifi service of up to 15 seconds. </Help>
-			<Notes>Enables periodic scanning of the Wifi environment.
-Note that enabling this causes interruptions in the Wifi service of up to 15 seconds. </Notes>
-		</Parameter>
-		<Parameter name="Wifi Enable" level="5" datatype="Bit" address="1864" length="1" bitmask="4" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Turns Wifi ON /OFF on units equipped with WiFi</Help>
-			<Notes>Turns Wifi ON /OFF on units equipped with WiFi</Notes>
-		</Parameter>
-		<Parameter name="PublicAPN" level="10" datatype="String" address="2944" length="32" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>Public APN that is to be used for external functions such as Wifi and Fota</Help>
-			<Notes>Public APN that is to be used for external functions such as Wifi and Fota</Notes>
-		</Parameter>
-		<Parameter name="Public APN Username" level="10" datatype="String" address="2976" length="16" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>Username for the Public APN</Help>
-			<Notes>Username for the Public APN</Notes>
-		</Parameter>
-		<Parameter name="Public APN Password" level="10" datatype="String" address="2992" length="16" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>Password for the public APN.</Help>
-			<Notes>Password for the public APN.</Notes>
 		</Parameter>
 	</Category>
 	<Category name="OBC">
@@ -5578,7 +5209,7 @@ If Fake VIN is programmed then only this will be used to request data.
 			<Notes>Enables UDS/ISO14229 commands sent from XPlatform.</Notes>
 		</Parameter>
 		<Parameter name="Pseudo (Fake) VIN" level="5" datatype="String" address="2457" length="17" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="0" previous="" current="" units="" />
+			<Values min="0" max="0" default="00000000000000000" previous="" current="" units="" />
 			<Help>Used for requesting a parameter set from XPlatform that will be used to retrieve the true VIN from a particular vehicle type.
 Note: 
 The length of the VIN must be 13 characters otherwise XPlatform will reject the ID.

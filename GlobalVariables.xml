@@ -291,4 +291,12 @@
 		<item id="289" description="Absolute Engine Load as reported by OBD. This uses a different calculation to Calculated Engine Load" name="Absolute Engine Load" size="2" scale="0.392156" offset="0" units="%" min="0" max="65535" dtu="0" />
 		<item id="290" description="Analog Input 3" name="Analog Input 3" size="2" scale="0.01" offset="0" units="V" min="0" max="655.35" dtu="0" />
 		<item id="291" description="Analog Input 4" name="Analog Input 4" size="2" scale="0.01" offset="0" units="V" min="0" max="655.35" dtu="0" />
+		<item id="292" description="Input 9 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 9 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
+		<item id="293" description="Input 10 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 10 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
+		<item id="294" description="Input 11 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 11 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
+		<item id="295" description="Input 12 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 12 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
+		<item id="296" description="Input 13 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 13 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
+		<item id="297" description="Input 14 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 14 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
+		<item id="298" description="Input 15 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 15 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
+		<item id="299" description="Input 16 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 16 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
 </GlobalVariables>

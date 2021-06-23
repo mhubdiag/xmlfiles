@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="9" unitType="MHub846Ext" created="2021-05-04T15:27:57+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="9" unitType="MHub846Ext" created="2021-06-23T09:58:23+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="170" level="10" status="0" datatype="Byte" address="430" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
@@ -6,6 +6,26 @@
 				<parName>Enable All Debug</parName>
 				<parDescription>"Switch all debug statements ON or OFF"</parDescription>
 				<parNotes>"The value represents the debug time-out in minutes. Setting the value to 255 is a special case causing the debugs to be permanently active."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="203" level="0" status="0" datatype="Word" address="433" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65535" >
+			<parValues default="300" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Modem No-Network Restart Delay</parName>
+				<parDescription>"The amount of time that the unit will wait after rebooting the modem before repeating the process."</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+None"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="173" level="0" status="0" datatype="Bit" address="439" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable Error Debug Messages</parName>
+				<parDescription>"Enable Error Debug Messages"</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Setting this parameter to 1 will enable Error Debug messages"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="171" level="0" status="0" datatype="Bit" address="439" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
@@ -28,14 +48,12 @@ Setting this parameter to 1 will enable Info Debug messages"</parNotes>
 Setting this parameter to 1 will enable Warning Debug messages"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="173" level="0" status="0" datatype="Bit" address="439" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
+		<Parameter parID="37" level="5" status="0" datatype="Byte" address="475" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="5" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Enable Error Debug Messages</parName>
-				<parDescription>"Enable Error Debug Messages"</parDescription>
-				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Setting this parameter to 1 will enable Error Debug messages"</parNotes>
+				<parName>Error Limit</parName>
+				<parDescription>"Maximum number of accumulated errors before the modem is rebooted"</parDescription>
+				<parNotes>"As described in the parameter Reboot Limit, the MHub will issue a reboot command to the modem if it detects a problem with the modem. However if an error is received in response to an instruction to the modem, the MHub will first retry the instruction. This parameter specifies the number of accumulated errors that the MHub can receive from the modem before it will issue a reboot command to the mode."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="88" level="0" status="0" datatype="Byte" address="598" length="1" bitmask="255" dtu="0" units="None" min="0" max="255" >
@@ -175,19 +193,6 @@ The intended use is to standoff when another diagnostic tool is detected on the 
 The intended use is to standoff when another diagnostic tool is detected on the bus."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1781" level="5" status="0" datatype="Bit" address="1777" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Lock Fake VIN for EOBD Data Requests</parName>
-				<parDescription>"Prevents the use of the read vehicle VIN for requesting EOBD data.
-If Fake VIN is programmed then only this will be used to request data.
-"</parDescription>
-				<parNotes>"Prevents the use of the read vehicle VIN for requesting EOBD data.
-If Fake VIN is programmed then only this will be used to request data.
-
-"</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1705" level="5" status="0" datatype="Bit" address="1777" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -206,28 +211,25 @@ If Fake VIN is programmed then only this will be used to request data.
 "</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1781" level="5" status="0" datatype="Bit" address="1777" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Lock Fake VIN for EOBD Data Requests</parName>
+				<parDescription>"Prevents the use of the read vehicle VIN for requesting EOBD data.
+If Fake VIN is programmed then only this will be used to request data.
+"</parDescription>
+				<parNotes>"Prevents the use of the read vehicle VIN for requesting EOBD data.
+If Fake VIN is programmed then only this will be used to request data.
+
+"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1707" level="5" status="0" datatype="Bit" address="1777" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
 			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>ISO15765 250kBaud Disable</parName>
 				<parDescription>"Disable 250kBaud detection."</parDescription>
 				<parNotes>"Disable 250kBaud detection."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1277" level="10" status="0" datatype="Bit" address="1824" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable Vehicle K Line Interface</parName>
-				<parDescription>"Enable Vehicle On Board Diagnostics Interface"</parDescription>
-				<parNotes>"Enable ISO9141 and ISO14230 network interface using the LIN line"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1700" level="5" status="0" datatype="Bit" address="1824" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>TP 2.0 Enable</parName>
-				<parDescription>"Enable TP 2.0 Protocol used by VW Group vehicles; VW, Seat, Audi, etc"</parDescription>
-				<parNotes>"Enable TP 2.0 Protocol used by VW Group vehicles; VW, Seat, Audi, etc"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1278" level="10" status="0" datatype="Bit" address="1824" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
@@ -247,15 +249,20 @@ Note: Enable J1939 FMS CANBus Interface = 0"</parDescription>
 				<parNotes>"J1939 Filter Disable will allow all CANBus messages to be received from the bus"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1307" level="10" status="0" datatype="Bit" address="1832" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
+		<Parameter parID="1277" level="10" status="0" datatype="Bit" address="1824" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>OBC 500kbps J1939 FMS CANBus</parName>
-				<parDescription>"Verify with vehicle manufacturer if the CANBus should be 500kbps Baudrate before setting this parameter."</parDescription>
-				<parNotes>"For 250kbps set OBC 500kbps J1939 FMS CANBus = 0,
-for 500kbps set OBC 500kbps J1939 FMS CANBus = 1.
-
-The FMS Standard specifies the baudrate to be 250kbps."</parNotes>
+				<parName>Enable Vehicle K Line Interface</parName>
+				<parDescription>"Enable Vehicle On Board Diagnostics Interface"</parDescription>
+				<parNotes>"Enable ISO9141 and ISO14230 network interface using the LIN line"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1700" level="5" status="0" datatype="Bit" address="1824" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>TP 2.0 Enable</parName>
+				<parDescription>"Enable TP 2.0 Protocol used by VW Group vehicles; VW, Seat, Audi, etc"</parDescription>
+				<parNotes>"Enable TP 2.0 Protocol used by VW Group vehicles; VW, Seat, Audi, etc"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="976" level="10" status="0" datatype="Bit" address="1832" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
@@ -273,6 +280,17 @@ The FMS Standard specifies the baudrate to be 250kbps."</parNotes>
 				<parDescription>"Enable J1939 FMS CANBus Interface.
 Note: Enable OBD2 CANBus Interface = 0"</parDescription>
 				<parNotes>"If the J1939 FMS CANBus is connected to the MHub828 CANbus, this parameter needs to be set to 1 to enable the CAN Bus functionality. Disable the OBD2 CANbus interface"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1307" level="10" status="0" datatype="Bit" address="1832" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>OBC 500kbps J1939 FMS CANBus</parName>
+				<parDescription>"Verify with vehicle manufacturer if the CANBus should be 500kbps Baudrate before setting this parameter."</parDescription>
+				<parNotes>"For 250kbps set OBC 500kbps J1939 FMS CANBus = 0,
+for 500kbps set OBC 500kbps J1939 FMS CANBus = 1.
+
+The FMS Standard specifies the baudrate to be 250kbps."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="868" level="10" status="0" datatype="Byte" address="1836" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
@@ -325,7 +343,7 @@ None"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1768" level="5" status="0" datatype="String" address="2457" length="17" bitmask="255" dtu="0" units="" min="0" max="0" >
-			<parValues default="0" mhub="" current="" prev="" />
+			<parValues default="00000000000000000" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Pseudo (Fake) VIN</parName>
 				<parDescription>"Used for requesting a parameter set from XPlatform that will be used to retrieve the true VIN from a particular vehicle type.
@@ -381,18 +399,6 @@ All other values default to Mobile Eye Parameter Set
 "</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1726" level="0" status="0" datatype="Bit" address="3325" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable OBD2 Login on CAN activity</parName>
-				<parDescription>"Allows the initialisation of OBD when CAN activity is detected. 
-Note: Needs Listen Only mode to be enabled to work."</parDescription>
-				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Allows the initialisation of OBD when CAN activity is detected. 
-Note: Needs Listen Only mode to be enabled to work."</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1733" level="5" status="0" datatype="Bit" address="3325" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -409,6 +415,18 @@ This should only be enabled on vehicles that are known to support this protocol.
 				<parName>Allow Unsolicited CAN Message Parsing</parName>
 				<parDescription>"Allows the MHub to use MProfiler supplied EOBD data to parse unsolicited vehicle proprietary data. This parameter should be managed by MProfiler."</parDescription>
 				<parNotes>"Allows the MHub to use MProfiler supplied EOBD data to parse unsolicited vehicle proprietary data. This parameter should be managed by MProfiler."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1726" level="0" status="0" datatype="Bit" address="3325" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable OBD2 Login on CAN activity</parName>
+				<parDescription>"Allows the initialisation of OBD when CAN activity is detected. 
+Note: Needs Listen Only mode to be enabled to work."</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Allows the initialisation of OBD when CAN activity is detected. 
+Note: Needs Listen Only mode to be enabled to work."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1727" level="0" status="0" datatype="Bit" address="3325" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
@@ -480,6 +498,15 @@ NOTE: This is necessary to recover from some errors"</parNotes>
 			</catDescription>
 			<catParameters>
 				<catParameter parID="826" />
+			</catParameters>
+		</Category>
+		<Category catName="Modem - CMux Configuration">
+			<catDescription>
+				Modem - CMux Configuration
+			</catDescription>
+			<catParameters>
+				<catParameter parID="203" />
+				<catParameter parID="37" />
 			</catParameters>
 		</Category>
 		<Category catName="OBC">

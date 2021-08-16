@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="9" unitType="MHub846Ext" created="2021-08-04T10:50:08+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="9" unitType="MHub846Ext" created="2021-08-16T14:45:34+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="170" level="10" status="0" datatype="Byte" address="430" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
@@ -587,7 +587,7 @@ NOTE: This is necessary to recover from some errors"</parNotes>
 			<grpValues>
 				<grpValue grpValueName="Card Reader - Serial" isDefault="0">
 					<grpValueDescription>
-						Settings specific to the HID Magstripe Card Reader&lt;hr /&gt;&lt;table&gt;&lt;tr&gt;&lt;th colspan=&quot;2&quot;&gt;Specifications&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;sub&quot;&gt;Manufacturer&lt;/td&gt;&lt;td class=&quot;value&quot;&gt;HID Global&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=&quot;sub&quot;&gt;Interface&lt;/td&gt;&lt;td class=&quot;value&quot;&gt;Serial&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br /&gt;
+						Settings specific to the HID Magstripe Card Reader&amp;lt;hr /&amp;gt;&amp;lt;table&amp;gt;&amp;lt;tr&amp;gt;&amp;lt;th colspan=&amp;quot;2&amp;quot;&amp;gt;Specifications&amp;lt;/th&amp;gt;&amp;lt;/tr&amp;gt;&amp;lt;tr&amp;gt;&amp;lt;td class=&amp;quot;sub&amp;quot;&amp;gt;Manufacturer&amp;lt;/td&amp;gt;&amp;lt;td class=&amp;quot;value&amp;quot;&amp;gt;HID Global&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;&amp;lt;tr&amp;gt;&amp;lt;td class=&amp;quot;sub&amp;quot;&amp;gt;Interface&amp;lt;/td&amp;gt;&amp;lt;td class=&amp;quot;value&amp;quot;&amp;gt;Serial&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;&amp;lt;/table&amp;gt;&amp;lt;br /&amp;gt;
 					</grpValueDescription>
 					<grpParameterValues>
 						<grpParameterValue parID="868" value="13" display="0" ovr="0" />

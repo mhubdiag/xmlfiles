@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="14" unitType="MHub8376" created="2021-08-04T10:50:07+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="14" unitType="MHub8376" created="2021-08-16T14:45:33+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="2" level="10" status="0" datatype="Word" address="256" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
@@ -11,14 +11,14 @@
 3. Roaming SMS
 4. Roaming GPRS
 5. Satellite
-The MHub is configured to use the communications mediums in order of priority. Thus an option will be to have GPRS as the highest priority, followed by SMS, and then perhaps Roaming GPRS. This is done in patameter "User CM Preference Order".
+The MHub is configured to use the communications mediums in order of priority. Thus an option will be to have GPRS as the highest priority, followed by SMS, and then perhaps Roaming GPRS. This is done in patameter &quot;User CM Preference Order&quot;.
 What this means is that the MHub will always try to be in a position where it can send data over GPRS, and will send events that have been configured to be sent over GPRS. If however for some reason GPRS is not available, the MHub will fall back to the second priority medium which in this case will be SMS. Now events that have been configured to be sent over SMS will be sent. 
 
 The value of this parameter indicates the amount of time that the particular Communications Medium will be held after the MHub has deemed it to be unavailable, before dropping to the next available Communications Medium. This is to prevent messages being sent over SMS if GPRS becomes available for only a short while. 
 
 For example if the GPRS Debounce Timer  was set to 120 seconds (times are in seconds for the debounce timers) and the GPRS network became unreachable then events that are marked for GPRS transmission will be extracted from the flash and queued for 120 seconds after GPRS has become unavailable. 
 
-Once 120 seconds has passed with no GPRS coverage the next available CM (SMS for example) determined from the "User CM Preference Order" will take over and the current queue will be destroyed and a new queue set up with events that must be sent over that particular CM. In this example, SMS.
+Once 120 seconds has passed with no GPRS coverage the next available CM (SMS for example) determined from the &quot;User CM Preference Order&quot; will take over and the current queue will be destroyed and a new queue set up with events that must be sent over that particular CM. In this example, SMS.
 
 
 "</parNotes>
@@ -243,7 +243,7 @@ None"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>SIM PIN</parName>
 				<parDescription>"Sim PIN"</parDescription>
-				<parNotes>"When a SIM card is used in the MHub that has a PIN which is not "0000", and the PIN Request on the SIM card is enabled, the value of that PIN is entered here. Great care must be taken to ensure that the PIN on the SIM matched the PIN programmed into this parameter. Faulure to ensure correct values here will result in the SIM being blocked, and then requiring the PUK."</parNotes>
+				<parNotes>"When a SIM card is used in the MHub that has a PIN which is not &quot;0000&quot;, and the PIN Request on the SIM card is enabled, the value of that PIN is entered here. Great care must be taken to ensure that the PIN on the SIM matched the PIN programmed into this parameter. Faulure to ensure correct values here will result in the SIM being blocked, and then requiring the PUK."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1031" level="15" status="0" datatype="Byte" address="307" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
@@ -455,7 +455,7 @@ If Accelerometer value is greater than this parameter, Accelerometer Ignition fl
 				<parDescription>"If enabled registration on selected operator networks when roaming will be treated as home network registration allowing normal event reporting."</parDescription>
 				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
 
-In order to provide flexibility in costing of data transmission using both GPRS and SMS over roaming networks, the MHub has the ability to send certain events only when the MHub is in a local network for instance, and not if it is roaming. However, there may be instances where if a MHub roams on a specific "partner" network, that the data costs are similar to those of the local network. So in order to facilitate this, the MHub is able to regard a certain roaming network as actually being a "Home" netwotk. Enabling this parameter will enable the ability of the Mhub to see a roaming netwotk as a Home network, and apply the Home network data transmission rules."</parNotes>
+In order to provide flexibility in costing of data transmission using both GPRS and SMS over roaming networks, the MHub has the ability to send certain events only when the MHub is in a local network for instance, and not if it is roaming. However, there may be instances where if a MHub roams on a specific &quot;partner&quot; network, that the data costs are similar to those of the local network. So in order to facilitate this, the MHub is able to regard a certain roaming network as actually being a &quot;Home&quot; netwotk. Enabling this parameter will enable the ability of the Mhub to see a roaming netwotk as a Home network, and apply the Home network data transmission rules."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="864" level="10" status="0" datatype="Long" address="328" length="4" bitmask="255" dtu="0" units="" min="0" max="2147483647" >
@@ -463,7 +463,7 @@ In order to provide flexibility in costing of data transmission using both GPRS 
 			<parInfo similarToparID="0">
 				<parName>Roaming Operator 1</parName>
 				<parDescription>"Preferred Roaming Operator 1"</parDescription>
-				<parNotes>"When a roaming operator provides lower cost data compared to other roaming operators, the operator ID of that roaming operator can be entered into this parameter, and the MHub will then apply its "home" data transmission rules. Also the MHub will always then try to register onto one of these Preferred Roaming Operators if it is available."</parNotes>
+				<parNotes>"When a roaming operator provides lower cost data compared to other roaming operators, the operator ID of that roaming operator can be entered into this parameter, and the MHub will then apply its &quot;home&quot; data transmission rules. Also the MHub will always then try to register onto one of these Preferred Roaming Operators if it is available."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="865" level="10" status="0" datatype="Long" address="332" length="4" bitmask="255" dtu="0" units="" min="0" max="2147483647" >
@@ -471,7 +471,7 @@ In order to provide flexibility in costing of data transmission using both GPRS 
 			<parInfo similarToparID="0">
 				<parName>Roaming Operator 2</parName>
 				<parDescription>"Preferred Roaming Operator 2"</parDescription>
-				<parNotes>"When a roaming operator provides lower cost data compared to other roaming operators, the operator ID of that roaming operator can be entered into this parameter, and the MHub will then apply its "home" data transmission rules. Also the MHub will always then try to register onto one of these Preferred Roaming Operators if it is available."</parNotes>
+				<parNotes>"When a roaming operator provides lower cost data compared to other roaming operators, the operator ID of that roaming operator can be entered into this parameter, and the MHub will then apply its &quot;home&quot; data transmission rules. Also the MHub will always then try to register onto one of these Preferred Roaming Operators if it is available."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="866" level="10" status="0" datatype="Long" address="336" length="4" bitmask="255" dtu="0" units="" min="0" max="2147483647" >
@@ -479,7 +479,7 @@ In order to provide flexibility in costing of data transmission using both GPRS 
 			<parInfo similarToparID="0">
 				<parName>Roaming Operator 3</parName>
 				<parDescription>"Preferred Roaming Operator 3"</parDescription>
-				<parNotes>"When a roaming operator provides lower cost data compared to other roaming operators, the operator ID of that roaming operator can be entered into this parameter, and the MHub will then apply its "home" data transmission rules. Also the MHub will always then try to register onto one of these Preferred Roaming Operators if it is available."</parNotes>
+				<parNotes>"When a roaming operator provides lower cost data compared to other roaming operators, the operator ID of that roaming operator can be entered into this parameter, and the MHub will then apply its &quot;home&quot; data transmission rules. Also the MHub will always then try to register onto one of these Preferred Roaming Operators if it is available."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="867" level="10" status="0" datatype="Long" address="340" length="4" bitmask="255" dtu="0" units="" min="0" max="2147483647" >
@@ -487,7 +487,7 @@ In order to provide flexibility in costing of data transmission using both GPRS 
 			<parInfo similarToparID="0">
 				<parName>Roaming Operator 4</parName>
 				<parDescription>"Preferred Roaming Operator 4"</parDescription>
-				<parNotes>"When a roaming operator provides lower cost data compared to other roaming operators, the operator ID of that roaming operator can be entered into this parameter, and the MHub will then apply its "home" data transmission rules. Also the MHub will always then try to register onto one of these Preferred Roaming Operators if it is available."</parNotes>
+				<parNotes>"When a roaming operator provides lower cost data compared to other roaming operators, the operator ID of that roaming operator can be entered into this parameter, and the MHub will then apply its &quot;home&quot; data transmission rules. Also the MHub will always then try to register onto one of these Preferred Roaming Operators if it is available."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="870" level="0" status="0" datatype="Byte" address="344" length="1" bitmask="255" dtu="0" units="" min="0" max="4" >
@@ -523,7 +523,7 @@ Scope"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Stack Start Retry Delay</parName>
 				<parDescription>"Period of Stack Start retries."</parDescription>
-				<parNotes>"If the stack fails to connect to the APN it needs to be restarted. The amount of time in between restarts should be enough to allow the unit time to read any incoming SMS's that may contain new APN information that will allow a successful connection."</parNotes>
+				<parNotes>"If the stack fails to connect to the APN it needs to be restarted. The amount of time in between restarts should be enough to allow the unit time to read any incoming SMS&apos;s that may contain new APN information that will allow a successful connection."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1013" level="0" status="0" datatype="Word" address="361" length="2" bitmask="255" dtu="0" units="" min="0" max="1000" >
@@ -667,7 +667,7 @@ Scotch call must be enabled."</parDescription>
 			<parValues default="7210" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>No Network with Signal Timeout</parName>
-				<parDescription>"If the modem detects a CREG of 2 but has a good CSQ reading i.e >10 for this number of seconds then is performs a network deregistration and re-registration."</parDescription>
+				<parDescription>"If the modem detects a CREG of 2 but has a good CSQ reading i.e &gt;10 for this number of seconds then is performs a network deregistration and re-registration."</parDescription>
 				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
 
 "</parNotes>
@@ -703,7 +703,7 @@ Number of seconds before the Modem/MHub reboots due to failing to contact the MP
 				<parDescription>"Connects the Enables the debug channel of the CMUX. "</parDescription>
 				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
 
-Enables the use of the Telit Trace debug tools. Must used in conjunction with the Custom Functionality->Aux Port Config parameter
+Enables the use of the Telit Trace debug tools. Must used in conjunction with the Custom Functionality-&gt;Aux Port Config parameter
 "</parNotes>
 			</parInfo>
 		</Parameter>
@@ -732,7 +732,7 @@ ATnT do not allow this setting. Check that the operator allows this."</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 0 - Enable Roaming GPRS</parName>
 				<parDescription>"Enable Roaming GPRS for Communications Medium Policy 0"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="735" level="10" status="0" datatype="Bit" address="394" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
@@ -751,7 +751,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 0 - Enable GPRS</parName>
 				<parDescription>"Enable GPRS for Communications Medium Policy 0"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="871" level="10" status="0" datatype="Bit" address="394" length="1" bitmask="16" dtu="0" units="" min="0" max="16" >
@@ -759,7 +759,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 0 - Enable Iridium</parName>
 				<parDescription>"Enable Iridium Satellite Coms for Communications Medium Policy 0"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="737" level="10" status="0" datatype="Bit" address="394" length="1" bitmask="4" dtu="0" units="" min="0" max="4" >
@@ -767,7 +767,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 0 - Enable Roaming SMS</parName>
 				<parDescription>"Enable Roaming SMS for Communications Medium Policy 0"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="740" level="10" status="0" datatype="Bit" address="395" length="1" bitmask="2" dtu="0" units="" min="0" max="2" >
@@ -775,7 +775,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 1 - Enable GPRS</parName>
 				<parDescription>"Enable GPRS for Communications Medium Policy 1"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="739" level="10" status="0" datatype="Bit" address="395" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
@@ -783,7 +783,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 1 - Enable SMS</parName>
 				<parDescription>"Enable SMS for Communications Medium Policy 1"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="741" level="10" status="0" datatype="Bit" address="395" length="1" bitmask="4" dtu="0" units="" min="0" max="4" >
@@ -791,7 +791,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 1 - Enable Roaming SMS</parName>
 				<parDescription>"Enable Roaming SMS for Communications Medium Policy 1"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="742" level="10" status="0" datatype="Bit" address="395" length="1" bitmask="8" dtu="0" units="" min="0" max="8" >
@@ -799,7 +799,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 1 - Enable Roaming GPRS</parName>
 				<parDescription>"Enable Roaming GPRS for Communications Medium Policy 1"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="872" level="10" status="0" datatype="Bit" address="395" length="1" bitmask="16" dtu="0" units="" min="0" max="16" >
@@ -807,7 +807,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 1 - Enable Iridium</parName>
 				<parDescription>"Enable Iridium Satellite Coms for Communications Medium Policy 1"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="745" level="10" status="0" datatype="Bit" address="396" length="1" bitmask="4" dtu="0" units="" min="0" max="4" >
@@ -815,7 +815,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 2 - Enable Roaming SMS</parName>
 				<parDescription>"Enable Roaming SMS for Communications Medium Policy 2"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="746" level="10" status="0" datatype="Bit" address="396" length="1" bitmask="8" dtu="0" units="" min="0" max="8" >
@@ -823,7 +823,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 2 - Enable Roaming GPRS</parName>
 				<parDescription>"Enable Roaming GPRS for Communications Medium Policy 2"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="873" level="10" status="0" datatype="Bit" address="396" length="1" bitmask="16" dtu="0" units="" min="0" max="16" >
@@ -831,7 +831,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 2 - Enable Iridium</parName>
 				<parDescription>"Enable Iridium Satellite Coms for Communications Medium Policy 2"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="743" level="10" status="0" datatype="Bit" address="396" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
@@ -839,7 +839,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 2 - Enable SMS</parName>
 				<parDescription>"Enable SMS for Communications Medium Policy 2"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="744" level="10" status="0" datatype="Bit" address="396" length="1" bitmask="2" dtu="0" units="" min="0" max="2" >
@@ -847,7 +847,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 2 - Enable GPRS</parName>
 				<parDescription>"Enable GPRS for Communications Medium Policy 2"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="747" level="10" status="0" datatype="Bit" address="397" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
@@ -855,7 +855,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 3 - Enable SMS</parName>
 				<parDescription>"Enable SMS for Communications Medium Policy 3"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="749" level="10" status="0" datatype="Bit" address="397" length="1" bitmask="4" dtu="0" units="" min="0" max="4" >
@@ -863,7 +863,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 3 - Enable Roaming SMS</parName>
 				<parDescription>"Enable Roaming SMS for Communications Medium Policy 3"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="750" level="10" status="0" datatype="Bit" address="397" length="1" bitmask="8" dtu="0" units="" min="0" max="8" >
@@ -871,7 +871,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 3 - Enable Roaming GPRS</parName>
 				<parDescription>"Enable Roaming GPRS for Communications Medium Policy 3"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="874" level="10" status="0" datatype="Bit" address="397" length="1" bitmask="16" dtu="0" units="" min="0" max="16" >
@@ -879,7 +879,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 3 - Enable Iridium</parName>
 				<parDescription>"Enable Iridium Satellite Coms for Communications Medium Policy 3"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="748" level="10" status="0" datatype="Bit" address="397" length="1" bitmask="2" dtu="0" units="" min="0" max="2" >
@@ -887,7 +887,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 3 - Enable GPRS</parName>
 				<parDescription>"Enable GPRS for Communications Medium Policy 3"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="753" level="10" status="0" datatype="Bit" address="398" length="1" bitmask="4" dtu="0" units="" min="0" max="4" >
@@ -895,7 +895,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 4 - Enable Roaming SMS</parName>
 				<parDescription>"Enable Roaming SMS for Communications Medium Policy 4"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="875" level="10" status="0" datatype="Bit" address="398" length="1" bitmask="16" dtu="0" units="" min="0" max="16" >
@@ -903,7 +903,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 4 - Enable Iridium</parName>
 				<parDescription>"Enable Iridium Satellite Coms for Communications Medium Policy 4"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="751" level="10" status="0" datatype="Bit" address="398" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
@@ -911,7 +911,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 4 - Enable SMS</parName>
 				<parDescription>"Enable SMS for Communications Medium Policy 4"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="754" level="10" status="0" datatype="Bit" address="398" length="1" bitmask="8" dtu="0" units="" min="0" max="8" >
@@ -919,7 +919,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 4 - Enable Roaming GPRS</parName>
 				<parDescription>"Enable Roaming GPRS for Communications Medium Policy 4"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="752" level="10" status="0" datatype="Bit" address="398" length="1" bitmask="2" dtu="0" units="" min="0" max="2" >
@@ -927,7 +927,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 4 - Enable GPRS</parName>
 				<parDescription>"Enable GPRS for Communications Medium Policy 4"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="876" level="10" status="0" datatype="Bit" address="399" length="1" bitmask="16" dtu="0" units="" min="0" max="16" >
@@ -935,7 +935,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 5 - Enable Iridium</parName>
 				<parDescription>"Enable Iridium Satellite Coms for Communications Medium Policy 5"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="758" level="10" status="0" datatype="Bit" address="399" length="1" bitmask="8" dtu="0" units="" min="0" max="8" >
@@ -943,7 +943,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 5 - Enable Roaming GPRS</parName>
 				<parDescription>"Enable Roaming GPRS for Communications Medium Policy 5"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="755" level="10" status="0" datatype="Bit" address="399" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
@@ -951,7 +951,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 5 - Enable SMS</parName>
 				<parDescription>"Enable SMS for Communications Medium Policy 5"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="756" level="10" status="0" datatype="Bit" address="399" length="1" bitmask="2" dtu="0" units="" min="0" max="2" >
@@ -959,7 +959,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 5 - Enable GPRS</parName>
 				<parDescription>"Enable GPRS for Communications Medium Policy 5"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="757" level="10" status="0" datatype="Bit" address="399" length="1" bitmask="4" dtu="0" units="" min="0" max="4" >
@@ -967,7 +967,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 5 - Enable Roaming SMS</parName>
 				<parDescription>"Enable Roaming SMS for Communications Medium Policy 5"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="877" level="10" status="0" datatype="Bit" address="400" length="1" bitmask="16" dtu="0" units="" min="0" max="16" >
@@ -975,7 +975,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 6 - Enable Iridium</parName>
 				<parDescription>"Enable Iridium Satellite Coms for Communications Medium Policy 6"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="761" level="10" status="0" datatype="Bit" address="400" length="1" bitmask="4" dtu="0" units="" min="0" max="4" >
@@ -983,7 +983,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 6 - Enable Roaming SMS</parName>
 				<parDescription>"Enable Roaming SMS for Communications Medium Policy 6"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="760" level="10" status="0" datatype="Bit" address="400" length="1" bitmask="2" dtu="0" units="" min="0" max="2" >
@@ -991,7 +991,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm.Policy 6 - Enable GPRS</parName>
 				<parDescription>"Enable GPRS for Communications Medium Policy 6"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="759" level="10" status="0" datatype="Bit" address="400" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
@@ -999,7 +999,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 6 - Enable SMS</parName>
 				<parDescription>"Enable SMS for Communications Medium Policy 6"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="762" level="10" status="0" datatype="Bit" address="400" length="1" bitmask="8" dtu="0" units="" min="0" max="8" >
@@ -1007,7 +1007,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 6 - Enable Roaming GPRS</parName>
 				<parDescription>"Enable Roaming GPRS for Communications Medium Policy 6"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="878" level="10" status="0" datatype="Bit" address="401" length="1" bitmask="16" dtu="0" units="" min="0" max="16" >
@@ -1015,7 +1015,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 7 - Enable Iridium</parName>
 				<parDescription>"Enable Iridium Satellite Coms for Communications Medium Policy 7"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="766" level="10" status="0" datatype="Bit" address="401" length="1" bitmask="8" dtu="0" units="" min="0" max="8" >
@@ -1023,7 +1023,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 7 - Enable Roaming GPRS</parName>
 				<parDescription>"Enable Roaming GPRS for Communications Medium Policy 7"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="765" level="10" status="0" datatype="Bit" address="401" length="1" bitmask="4" dtu="0" units="" min="0" max="4" >
@@ -1031,7 +1031,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 7 - Enable Roaming SMS</parName>
 				<parDescription>"Enable Roaming SMS for Communications Medium Policy 7"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="764" level="10" status="0" datatype="Bit" address="401" length="1" bitmask="2" dtu="0" units="" min="0" max="2" >
@@ -1039,7 +1039,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 7 - Enable GPRS</parName>
 				<parDescription>"Enable GPRS for Communications Medium Policy 7"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="763" level="10" status="0" datatype="Bit" address="401" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
@@ -1047,7 +1047,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 7 - Enable SMS</parName>
 				<parDescription>"Enable SMS for Communications Medium Policy 7"</parDescription>
-				<parNotes>"See "Communications Medium Policy 0 - Enable SMS""</parNotes>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1022" level="10" status="0" datatype="Bit" address="402" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
@@ -1478,7 +1478,7 @@ Calibrate Thermistor reading for correct temperature read out"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Verify Speed</parName>
 				<parDescription>"Set this bit to verify that the selected speed of the vehicle is greater than required minimum"</parDescription>
-				<parNotes>"Accident reconstruction data is recorded every second. Limitations can be placed on the recording of data to ensure that only relevant data is recorded. The MHub does not really need to record data when the vehicle is standing still. If this value is enabled, then the accident recording will only occur if the speed of the vehicle is greater than the speed specified in the "Minimum Required Speed" parameter under the Accident Reconstruction section."</parNotes>
+				<parNotes>"Accident reconstruction data is recorded every second. Limitations can be placed on the recording of data to ensure that only relevant data is recorded. The MHub does not really need to record data when the vehicle is standing still. If this value is enabled, then the accident recording will only occur if the speed of the vehicle is greater than the speed specified in the &quot;Minimum Required Speed&quot; parameter under the Accident Reconstruction section."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="232" level="10" status="0" datatype="Bit" address="436" length="1" bitmask="2" dtu="0" units="Flag" min="0" max="1" >
@@ -1536,7 +1536,7 @@ Calibrate Thermistor reading for correct temperature read out"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Enable Box Leds</parName>
 				<parDescription>"Enable Box Leds"</parDescription>
-				<parNotes>"The MHub has 3 LED's that are used to indicate various operational states of teh MHub, this is particularly usefull during the installation and fault diagnosis processes to determine of the MHub is operating correctly. However from a vehicle being stolen scenario, flashing LED's will draw attention to the MHub. It is thus possible to turn OFF the LED's completely by disabling this parameter."</parNotes>
+				<parNotes>"The MHub has 3 LED&apos;s that are used to indicate various operational states of teh MHub, this is particularly usefull during the installation and fault diagnosis processes to determine of the MHub is operating correctly. However from a vehicle being stolen scenario, flashing LED&apos;s will draw attention to the MHub. It is thus possible to turn OFF the LED&apos;s completely by disabling this parameter."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1716" level="10" status="0" datatype="Bit" address="439" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
@@ -1889,7 +1889,7 @@ Value of 0 Disables Reckless Acceleration and Braking Checking"</parNotes>
 			<parValues default="15" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Socket Suspend Time</parName>
-				<parDescription>"Maximum amount of time that the GPRS socket may be suspended for the modem to take care of other tasks e.g handling SMS\'s"</parDescription>
+				<parDescription>"Maximum amount of time that the GPRS socket may be suspended for the modem to take care of other tasks e.g handling SMS\&apos;s"</parDescription>
 				<parNotes>"In order to perform some tasks such as looking for SMS messages when there is an open GPRS socket, requires the MHub to suspend the socket for a while. This parameter specifies the maximum time in seconds for which the socket may be suspended"</parNotes>
 			</parInfo>
 		</Parameter>
@@ -1989,7 +1989,7 @@ If Output 3 is Configured as Buzzer Output
 6 = 200ms beeps 200ms apart
 7 = Fast(100ms) to slow (400ms) beep
 8 = Three x 100ms beeps 100ms apart
-9 = Input and Outputs -> Ouput Beeper Configuration
+9 = Input and Outputs -&gt; Ouput Beeper Configuration
 Other = OFF (No Beep)"</parNotes>
 			</parInfo>
 		</Parameter>
@@ -2785,7 +2785,7 @@ e.g. 2 * 0.02 = 0.04g"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Enable APN Reattachment</parName>
 				<parDescription>"Perform APN reattachment during Socket Standoff period."</parDescription>
-				<parNotes>"This works in conjunction with the "Session Attempts Before Standoff" parameter. If this parameter is enabled then the MHub will do an APN reattachment during the standoff period."</parNotes>
+				<parNotes>"This works in conjunction with the &quot;Session Attempts Before Standoff&quot; parameter. If this parameter is enabled then the MHub will do an APN reattachment during the standoff period."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="191" level="10" status="0" datatype="Word" address="798" length="2" bitmask="255" dtu="0" units="Seconds" min="60" max="3600" >
@@ -2937,7 +2937,7 @@ The MHub has the ability to connect to up to a maximum of 4 temperature sensors.
 			<parInfo similarToparID="0">
 				<parName>MProfiler User Name</parName>
 				<parDescription>"User name used when logging onto MProfiler over a TCP socket."</parDescription>
-				<parNotes>"When connecting to MProfiler using GPRS, the MHub needs to uniquely identify itself to MProfiler before the connection will be accepted. It identifies itself by means of the MProfiler User Name. before the connection will be acc epted, an entity on MProfiler must already exist with the same MProfier User Name as the UnitID on MProfiler. Care must be taken to ensure that no two MHub's are configured with the same MProfiler User Name, as then the information from two different MHub units will be sent o to the client application as a single unit. Typically the MSISDN of the SIM card can be used."</parNotes>
+				<parNotes>"When connecting to MProfiler using GPRS, the MHub needs to uniquely identify itself to MProfiler before the connection will be accepted. It identifies itself by means of the MProfiler User Name. before the connection will be acc epted, an entity on MProfiler must already exist with the same MProfier User Name as the UnitID on MProfiler. Care must be taken to ensure that no two MHub&apos;s are configured with the same MProfiler User Name, as then the information from two different MHub units will be sent o to the client application as a single unit. Typically the MSISDN of the SIM card can be used."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="90" level="10" status="0" datatype="String" address="906" length="65" bitmask="255" dtu="0" units="None" min="0" max="0" >
@@ -3197,7 +3197,7 @@ Acc Min Braking Duration is the minimum duration to trigger accident event. Conf
 			<parValues default="" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>SMS Destination Address</parName>
-				<parDescription>"The destination address of the next sms to be sent. This excludes event report sms\'s"</parDescription>
+				<parDescription>"The destination address of the next sms to be sent. This excludes event report sms\&apos;s"</parDescription>
 				<parNotes>"None"</parNotes>
 			</parInfo>
 		</Parameter>
@@ -3408,7 +3408,7 @@ MProfiler - Keep Alive for 10 Minutes"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Power Mode time to IDLE</parName>
 				<parDescription>"Time in seconds to IDLE Mode"</parDescription>
-				<parNotes>"This parameter specifies in seconds how long the MHub will wait in full power mode after ignition is turned off until it enters IDLE mode. Idle mode must be enable in parameter "Enable IDLE Power Mode" before this will take effect."</parNotes>
+				<parNotes>"This parameter specifies in seconds how long the MHub will wait in full power mode after ignition is turned off until it enters IDLE mode. Idle mode must be enable in parameter &quot;Enable IDLE Power Mode&quot; before this will take effect."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="161" level="10" status="0" datatype="Word" address="1164" length="2" bitmask="255" dtu="0" units="seconds" min="0" max="65535" >
@@ -3416,7 +3416,7 @@ MProfiler - Keep Alive for 10 Minutes"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Power Mode time to Sleep</parName>
 				<parDescription>"Time in seconds to Sleep Mode"</parDescription>
-				<parNotes>"This parameter specifies in seconds how long the MHub will wait in IDLE power mode before it enters IDLE mode. Sleep mode must be enable in parameter "Enable Sleep Mode" before this will take effect."</parNotes>
+				<parNotes>"This parameter specifies in seconds how long the MHub will wait in IDLE power mode before it enters IDLE mode. Sleep mode must be enable in parameter &quot;Enable Sleep Mode&quot; before this will take effect."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="718" level="10" status="0" datatype="Bit" address="1166" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
@@ -3453,7 +3453,7 @@ Not used"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Sealed Unit Enable</parName>
 				<parDescription>"This indicates if the MHub is a sealed unit or not."</parDescription>
-				<parNotes>"When the MHub is an 802 unit. This parameter is set, that enables specific MHub802 functioality - XXX change this to MHub802 mode. Let's stop calling it sealed unit."</parNotes>
+				<parNotes>"When the MHub is an 802 unit. This parameter is set, that enables specific MHub802 functioality - XXX change this to MHub802 mode. Let&apos;s stop calling it sealed unit."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="287" level="10" status="0" datatype="Word" address="1167" length="2" bitmask="255" dtu="0" units="seconds" min="5" max="65535" >
@@ -3581,7 +3581,7 @@ Enables the IVR SIM Commissioning"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Power Mode time to Deep Sleep</parName>
 				<parDescription>"Power Mode time to Deep Sleep"</parDescription>
-				<parNotes>"This parameter specifies in seconds how long the MHub will wait from IDLE power mode before it enters Deep Sleepmode. Deep Sleep mode must be enable in parameter "Enable Deep Sleep Mode" before this will take effect."</parNotes>
+				<parNotes>"This parameter specifies in seconds how long the MHub will wait from IDLE power mode before it enters Deep Sleepmode. Deep Sleep mode must be enable in parameter &quot;Enable Deep Sleep Mode&quot; before this will take effect."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="183" level="10" status="0" datatype="Word" address="1272" length="2" bitmask="255" dtu="1" units="Seconds" min="0" max="65535" >
@@ -4388,14 +4388,14 @@ Set as below to disable SIM PIN protection features that prevent blocking a PIN
 				<parName>Main Voltage Low Pre-Sleep Scan Report Count</parName>
 				<parDescription>"The number of reports that must be generated before the unit will expedite sleep scan to send the reports.
 0 - Disables this feature. The event will only be sent at the next scheduled sleep scan.
->0 - Enables immediate sleep scan once the number of events has been generated.
+&gt;0 - Enables immediate sleep scan once the number of events has been generated.
 This number should be less than or equal to the Mains low report count.
 If this parameter is set to any value and the Report Count is zero then sleep scan will be expedited after the first event."</parDescription>
 				<parNotes>"The number of reports that must be generated before the unit will expedite sleep scan to send the reports.
 
 0 - Disables this feature. The event will only be sent at the next scheduled sleep scan.The unit will not wake to sleep scan.
 
->0 - Enables immediate sleep scan once the number of events has been generated.
+&gt;0 - Enables immediate sleep scan once the number of events has been generated.
 
 This number should be less than or equal to the Mains low report count.
 
@@ -4652,7 +4652,7 @@ Enable Output 4 for OBD2 usage"</parNotes>
 
 If USB Power Mode is enabled, Charge-In current will be limited to 100mA and SYSOUT will be powered from BAT
 
-NOTE: MAKE SURE POWER MODES->REGULATOR REGISTER 0 = 0, otherwise charge current can be more than USB POWER restrictions"</parNotes>
+NOTE: MAKE SURE POWER MODES-&gt;REGULATOR REGISTER 0 = 0, otherwise charge current can be more than USB POWER restrictions"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1710" level="10" status="0" datatype="Bit" address="1825" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
@@ -4662,7 +4662,7 @@ NOTE: MAKE SURE POWER MODES->REGULATOR REGISTER 0 = 0, otherwise charge current 
 				<parDescription>"Enable the USB Power Mode if no GPS"</parDescription>
 				<parNotes>"If USB Power Mode is enabled, Charge-In current will be limited to 100mA and SYSOUT will be powered from BAT. 
 
-NOTE: MAKE SURE POWER MODES->REGULATOR REGISTER 0 = 0, otherwise charge current can be more than USB POWER restrictions"</parNotes>
+NOTE: MAKE SURE POWER MODES-&gt;REGULATOR REGISTER 0 = 0, otherwise charge current can be more than USB POWER restrictions"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1473" level="10" status="0" datatype="Bit" address="1825" length="1" bitmask="8" dtu="0" units="" min="1" max="0" >
@@ -4710,7 +4710,7 @@ NOTE: MAKE SURE POWER MODES->REGULATOR REGISTER 0 = 0, otherwise charge current 
 			<parInfo similarToparID="0">
 				<parName>Daily Reset Time</parName>
 				<parDescription>"Daily Reset Time"</parDescription>
-				<parNotes>"If the daily reset is enabled in parameter "Daily Reset Enable", this parameter will specify the time offset in minutes from midnight at which time the reste will occur. Keep in mind that the MHUhb operates only on GMT (UTC) time."</parNotes>
+				<parNotes>"If the daily reset is enabled in parameter &quot;Daily Reset Enable&quot;, this parameter will specify the time offset in minutes from midnight at which time the reste will occur. Keep in mind that the MHUhb operates only on GMT (UTC) time."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1072" level="5" status="0" datatype="Bit" address="1829" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
@@ -4734,7 +4734,7 @@ NOTE: MAKE SURE POWER MODES->REGULATOR REGISTER 0 = 0, otherwise charge current 
 			<parInfo similarToparID="0">
 				<parName>Ignition Source: Speed</parName>
 				<parDescription>"Ignition Source: Speed"</parDescription>
-				<parNotes>"One more possible source of ignition is to use Speed. If Speed is greater than the value specified in parameter "Ignition Source from RPM Threshold", the vehicle is moving. If speed is to be used as ignition, this parameter is set to 1."</parNotes>
+				<parNotes>"One more possible source of ignition is to use Speed. If Speed is greater than the value specified in parameter &quot;Ignition Source from RPM Threshold&quot;, the vehicle is moving. If speed is to be used as ignition, this parameter is set to 1."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="820" level="5" status="0" datatype="Bit" address="1829" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
@@ -4742,7 +4742,7 @@ NOTE: MAKE SURE POWER MODES->REGULATOR REGISTER 0 = 0, otherwise charge current 
 			<parInfo similarToparID="0">
 				<parName>Ignition Source: RPM</parName>
 				<parDescription>"Ignition Source: RPM"</parDescription>
-				<parNotes>"One more possible source of ignition is to use RPM. If RPM is greater than the value specified in parameter "Ignition Source from RPM Threshold", the engine is running and the ignition is ON. If rpm is to be used as ignition, this parameter is set to 1."</parNotes>
+				<parNotes>"One more possible source of ignition is to use RPM. If RPM is greater than the value specified in parameter &quot;Ignition Source from RPM Threshold&quot;, the engine is running and the ignition is ON. If rpm is to be used as ignition, this parameter is set to 1."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="821" level="5" status="0" datatype="Bit" address="1829" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
@@ -4758,7 +4758,7 @@ NOTE: MAKE SURE POWER MODES->REGULATOR REGISTER 0 = 0, otherwise charge current 
 			<parInfo similarToparID="0">
 				<parName>Ignition Source: Main Voltage</parName>
 				<parDescription>"Ignition Source: Main Voltage"</parDescription>
-				<parNotes>"In addition to being able to use the ignition line as the source of ignition for the MHub, to make an installation easier without having to connect the ignition line, the source fro ignition can be set to main voltage. To do this, this parameter is enable. If ignition is set to main voltage, the MHub will monitor the input voltage, and if it is above the threshold specified in "Ignition Source from Main Voltage Threshold", the ignition is ON, and below the threshold, ignition is OFF."</parNotes>
+				<parNotes>"In addition to being able to use the ignition line as the source of ignition for the MHub, to make an installation easier without having to connect the ignition line, the source fro ignition can be set to main voltage. To do this, this parameter is enable. If ignition is set to main voltage, the MHub will monitor the input voltage, and if it is above the threshold specified in &quot;Ignition Source from Main Voltage Threshold&quot;, the ignition is ON, and below the threshold, ignition is OFF."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="818" level="10" status="0" datatype="Bit" address="1829" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
@@ -4774,7 +4774,7 @@ NOTE: MAKE SURE POWER MODES->REGULATOR REGISTER 0 = 0, otherwise charge current 
 			<parInfo similarToparID="0">
 				<parName>Ignition Source: Accelerometer</parName>
 				<parDescription>"Ignition Source: Accelerometer"</parDescription>
-				<parNotes>"One more possible source of ignition is to use Accelerometer movement. If Accelerometer movement is greater than the value specified in parameter "Accelerometer Ignition On Threshold", the vehicle is moving. If Accelerometer is to be used as ignition, this parameter is set to 1."</parNotes>
+				<parNotes>"One more possible source of ignition is to use Accelerometer movement. If Accelerometer movement is greater than the value specified in parameter &quot;Accelerometer Ignition On Threshold&quot;, the vehicle is moving. If Accelerometer is to be used as ignition, this parameter is set to 1."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="822" level="10" status="0" datatype="Byte" address="1830" length="1" bitmask="255" dtu="0" units="RPM" min="1" max="255" >
@@ -4812,7 +4812,7 @@ The FMS Standard specifies the baudrate to be 250kbps."</parNotes>
 			<parInfo similarToparID="0">
 				<parName>OBC Sensor RPM</parName>
 				<parDescription>"RPM sourced from sensor"</parDescription>
-				<parNotes>"The MHub can take its source of RPM from various inputs. If RPM is determined by connecting the RPM wite to the "W" terminal, then this parameter must be set to 1."</parNotes>
+				<parNotes>"The MHub can take its source of RPM from various inputs. If RPM is determined by connecting the RPM wite to the &quot;W&quot; terminal, then this parameter must be set to 1."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="853" level="10" status="0" datatype="Bit" address="1832" length="1" bitmask="128" dtu="0" units="" min="0" max="1" >
@@ -4856,7 +4856,7 @@ From OBD2 Enable Vehicle OBD2 Interface "</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Main Voltage Low Report Interval</parName>
 				<parDescription>"Main Voltage Low Interval in seconds"</parDescription>
-				<parNotes>"Main Voltage Low Interval in seconds. If a low main voltage input is detected for longer than 10 seconds, the MHub can send a Main Voltage Low event if configured. Threshold in paramater "Main Voltage Low Threshold". 
+				<parNotes>"Main Voltage Low Interval in seconds. If a low main voltage input is detected for longer than 10 seconds, the MHub can send a Main Voltage Low event if configured. Threshold in paramater &quot;Main Voltage Low Threshold&quot;. 
 Note: Event generation occurs at time-out + 10 seconds. e.g. 3590 seconds + 10 seconds results in 3600 seconds Interval"</parNotes>
 			</parInfo>
 		</Parameter>
@@ -5092,7 +5092,7 @@ None"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Driver Key Leds Enable</parName>
 				<parDescription>"Driver Key Leds Enable"</parDescription>
-				<parNotes>"The driver and passenger key reading receptacles have LED on them. This parameter will control whether those LED's are used or not."</parNotes>
+				<parNotes>"The driver and passenger key reading receptacles have LED on them. This parameter will control whether those LED&apos;s are used or not."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1273" level="10" status="0" datatype="Bit" address="1870" length="1" bitmask="64" dtu="1" units="" min="0" max="1" >
@@ -5196,7 +5196,7 @@ None"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>OBC Free Wheeling Debounce</parName>
 				<parDescription>"OBC Free Wheeling Debounce"</parDescription>
-				<parNotes>"The MHub can detect freewheeling. This is where the driver of a vehicle depresses the clutch while still travelling at a relatively high speed. This is deemed to be a bad driving practise. It is detected when the RPM is below the threshold specified in "Free Wheel RPM Threshold", and the speed is above the threshold specified in "Speed Free Wheel Threshold". It may however be permissable to freewheel for a short period of time. This parameter specifies the minimum amount of time in seconds above which the event will be generated."</parNotes>
+				<parNotes>"The MHub can detect freewheeling. This is where the driver of a vehicle depresses the clutch while still travelling at a relatively high speed. This is deemed to be a bad driving practise. It is detected when the RPM is below the threshold specified in &quot;Free Wheel RPM Threshold&quot;, and the speed is above the threshold specified in &quot;Speed Free Wheel Threshold&quot;. It may however be permissable to freewheel for a short period of time. This parameter specifies the minimum amount of time in seconds above which the event will be generated."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="216" level="10" status="0" datatype="Byte" address="1881" length="1" bitmask="255" dtu="1" units="RPM x 100" min="0" max="65535" >
@@ -5204,7 +5204,7 @@ None"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Free Wheel RPM Threshold</parName>
 				<parDescription>"RPM High limit for Free Wheel condition"</parDescription>
-				<parNotes>"This is the freewheeling RPM threshold on units of x100 RPM. When the vehicle RPM is below this value, and the speed is above the value specified in parameter "Speed Free Wheel Threshold", and this condition persists for more than the time specified in "OBC Free Wheeling Debounce", then the vehicle in in a state of freewheeling, and a freewheeling event can be generated."</parNotes>
+				<parNotes>"This is the freewheeling RPM threshold on units of x100 RPM. When the vehicle RPM is below this value, and the speed is above the value specified in parameter &quot;Speed Free Wheel Threshold&quot;, and this condition persists for more than the time specified in &quot;OBC Free Wheeling Debounce&quot;, then the vehicle in in a state of freewheeling, and a freewheeling event can be generated."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="217" level="10" status="0" datatype="Byte" address="1882" length="1" bitmask="255" dtu="1" units="km/h" min="0" max="255" >
@@ -5212,7 +5212,7 @@ None"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Speed Free Wheel Threshold</parName>
 				<parDescription>"Speed minimum limit for Free Wheel condition"</parDescription>
-				<parNotes>"Freewheeling speed threshold in km/h. When the vehicle speed is above this value, and the RPM is below the value specified in parameter "Free Wheel RPM Threshold", and this condition persists for more than the time specified in "OBC Free Wheeling Debounce", then the vehicle in in a state of freewheeling, and a freewheeling event can be generated."</parNotes>
+				<parNotes>"Freewheeling speed threshold in km/h. When the vehicle speed is above this value, and the RPM is below the value specified in parameter &quot;Free Wheel RPM Threshold&quot;, and this condition persists for more than the time specified in &quot;OBC Free Wheeling Debounce&quot;, then the vehicle in in a state of freewheeling, and a freewheeling event can be generated."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="226" level="10" status="0" datatype="Byte" address="1887" length="1" bitmask="255" dtu="0" units="Flag" min="0" max="1" >
@@ -5220,7 +5220,7 @@ None"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Auto Calibration Activation</parName>
 				<parDescription>"Auto Calibration Activation"</parDescription>
-				<parNotes>"When the source for speed or distance is set to the speed sensor, it is required that the sensor be calibrated first before the vehcile can be used for the readings to be accurate. This is typically done by programming the calibration factor (parameter "OBC ODO Calibration"). There is however an automated way of doing this. The Mhub is aware of its speed in anycase from the GPS sensor, so it is possible to use the GPS sensor to calibrate the speed sensor. If automatic calubration is required, this parameter is set to 1, and the MHub will then attempt to calibrate itself. Once the MHub has successfully calibrated itself, it will clear this parameter to 0."</parNotes>
+				<parNotes>"When the source for speed or distance is set to the speed sensor, it is required that the sensor be calibrated first before the vehcile can be used for the readings to be accurate. This is typically done by programming the calibration factor (parameter &quot;OBC ODO Calibration&quot;). There is however an automated way of doing this. The Mhub is aware of its speed in anycase from the GPS sensor, so it is possible to use the GPS sensor to calibrate the speed sensor. If automatic calubration is required, this parameter is set to 1, and the MHub will then attempt to calibrate itself. Once the MHub has successfully calibrated itself, it will clear this parameter to 0."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="227" level="10" status="0" datatype="Byte" address="1888" length="1" bitmask="255" dtu="0" units="km/h" min="10" max="255" >
@@ -5228,9 +5228,9 @@ None"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Auto Calibration  Speed Threshold</parName>
 				<parDescription>"Auto Calibration  Speed Min Speed"</parDescription>
-				<parNotes>"When the source for speed or distance is set to the speed sensor, it is required that the sensor be calibrated first before the vehcile can be used for the readings to be accurate. This is typically done by programming the calibration factor (parameter "OBC ODO Calibration"). There is however an automated way of doing this. The Mhub is aware of its speed in anycase from the GPS sensor, so it is possible to use the GPS sensor to calibrate the speed sensor. If automatic calubration is required, the parameter "Auto Calibration Activation" is set to 1, and the MHub will then attempt to calibrate itself. This parameter specifies the minimum speed that the MHub will use to calibrate itself. 
+				<parNotes>"When the source for speed or distance is set to the speed sensor, it is required that the sensor be calibrated first before the vehcile can be used for the readings to be accurate. This is typically done by programming the calibration factor (parameter &quot;OBC ODO Calibration&quot;). There is however an automated way of doing this. The Mhub is aware of its speed in anycase from the GPS sensor, so it is possible to use the GPS sensor to calibrate the speed sensor. If automatic calubration is required, the parameter &quot;Auto Calibration Activation&quot; is set to 1, and the MHub will then attempt to calibrate itself. This parameter specifies the minimum speed that the MHub will use to calibrate itself. 
 
-In order to calibrate itself, the Vehicle must travel at a constant speed of greater than the value in this parameter for the time duration specified in "Auto Calibration Debounce"."</parNotes>
+In order to calibrate itself, the Vehicle must travel at a constant speed of greater than the value in this parameter for the time duration specified in &quot;Auto Calibration Debounce&quot;."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="228" level="10" status="0" datatype="Byte" address="1889" length="1" bitmask="255" dtu="0" units="seconds" min="0" max="255" >
@@ -5238,7 +5238,7 @@ In order to calibrate itself, the Vehicle must travel at a constant speed of gre
 			<parInfo similarToparID="0">
 				<parName>Auto Calibration Debounce</parName>
 				<parDescription>"Auto Calibration Debounce debounce time in seconds"</parDescription>
-				<parNotes>"This parameter specifies for how long the vehicle must travel in seconds at a constant speed above the value specified in parameter "Auto Calibration Speed Threshold" for Auto Calibration to occur."</parNotes>
+				<parNotes>"This parameter specifies for how long the vehicle must travel in seconds at a constant speed above the value specified in parameter &quot;Auto Calibration Speed Threshold&quot; for Auto Calibration to occur."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="889" level="15" status="1" datatype="Byte" address="1893" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
@@ -5368,7 +5368,7 @@ None"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Driver ID 1</parName>
 				<parDescription>"Customer Driver ID 1"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="256" level="10" status="1" datatype="Word" address="1987" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -5376,7 +5376,7 @@ None"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Driver ID 2</parName>
 				<parDescription>"Customer Driver ID 2"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="257" level="10" status="1" datatype="Word" address="1989" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -5384,7 +5384,7 @@ None"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Driver ID 3</parName>
 				<parDescription>"Customer Driver ID 3"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="258" level="10" status="1" datatype="Word" address="1991" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -5392,7 +5392,7 @@ None"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Driver ID 4</parName>
 				<parDescription>"Customer Driver ID 4"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="259" level="10" status="1" datatype="Word" address="1993" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -5400,7 +5400,7 @@ None"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Driver ID 5</parName>
 				<parDescription>"Customer Driver ID 5"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="260" level="10" status="1" datatype="Word" address="1995" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -5408,7 +5408,7 @@ None"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Driver ID 6</parName>
 				<parDescription>"Custom Driver ID 6"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="261" level="10" status="1" datatype="Word" address="1997" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -5416,7 +5416,7 @@ None"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Driver ID 7</parName>
 				<parDescription>"Custom Driver ID 7"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="262" level="10" status="1" datatype="Word" address="1999" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -5424,7 +5424,7 @@ None"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Driver ID 8</parName>
 				<parDescription>"Custom Driver ID 8"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="174" level="10" status="0" datatype="Long" address="2001" length="4" bitmask="255" dtu="0" units="meters" min="0" max="2147483647" >
@@ -5541,7 +5541,7 @@ XXX - there is obviously some parameter that will specify what distance prior to
 			<parInfo similarToparID="0">
 				<parName>OBC GPS Speed</parName>
 				<parDescription>"OBC GPS Speed"</parDescription>
-				<parNotes>"Setting the unit to use GPS as it's speed source"</parNotes>
+				<parNotes>"Setting the unit to use GPS as it&apos;s speed source"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1262" level="10" status="0" datatype="Bit" address="2033" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
@@ -5577,7 +5577,7 @@ e.g.
 				<parName>Periodic Temperature only in Trip</parName>
 				<parDescription>"Periodic Temperature event will only be sent inside trip"</parDescription>
 				<parNotes>"0  - Periodic Temperature Event always sent
->0 - Periodic Temperature Event sent only in Trip
+&gt;0 - Periodic Temperature Event sent only in Trip
 "</parNotes>
 			</parInfo>
 		</Parameter>
@@ -5602,7 +5602,7 @@ e.g.
 			<parInfo similarToparID="0">
 				<parName>Maximum ON Time</parName>
 				<parDescription>"Maximum time in seconds the unit should stay ON when something causes any of the logic not to work out"</parDescription>
-				<parNotes>"This parameter specifies the maximum time that the MHub802 will remain on under normal operating instances. So if both GSM and GPS are OK, but the MHub cannot send the SMS, or has too many sms's to send, it will turn OFF after this time."</parNotes>
+				<parNotes>"This parameter specifies the maximum time that the MHub802 will remain on under normal operating instances. So if both GSM and GPS are OK, but the MHub cannot send the SMS, or has too many sms&apos;s to send, it will turn OFF after this time."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="293" level="10" status="0" datatype="Word" address="2043" length="2" bitmask="255" dtu="0" units="Seconds" min="1" max="65535" >
@@ -5674,7 +5674,7 @@ e.g.
 			<parInfo similarToparID="0">
 				<parName>Access Point Node (APN Name)</parName>
 				<parDescription>"Access Point Node identifier e.g. internet"</parDescription>
-				<parNotes>"The APN (Access Point Node) is used when the Mhub will use GPRS to communicate with MProfiler. The GSM service provider will specify what APN Name should be used. A commonly used public APN is "internet" however not all networks will use this. "</parNotes>
+				<parNotes>"The APN (Access Point Node) is used when the Mhub will use GPRS to communicate with MProfiler. The GSM service provider will specify what APN Name should be used. A commonly used public APN is &quot;internet&quot; however not all networks will use this. "</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="32" level="10" status="0" datatype="String" address="2169" length="121" bitmask="255" dtu="0" units="" min="0" max="0" >
@@ -6105,7 +6105,7 @@ Minimum amount of time between Telit Position requests. It is recommended that t
 			<parInfo similarToparID="0">
 				<parName>Driver ID 9</parName>
 				<parDescription>"Customer Driver ID 9"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="978" level="10" status="1" datatype="Word" address="2562" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -6113,7 +6113,7 @@ Minimum amount of time between Telit Position requests. It is recommended that t
 			<parInfo similarToparID="0">
 				<parName>Driver ID 10</parName>
 				<parDescription>"Customer Driver ID 10"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="979" level="10" status="1" datatype="Word" address="2564" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -6121,7 +6121,7 @@ Minimum amount of time between Telit Position requests. It is recommended that t
 			<parInfo similarToparID="0">
 				<parName>Driver ID 11</parName>
 				<parDescription>"Customer Driver ID 11"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="980" level="10" status="1" datatype="Word" address="2566" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -6129,7 +6129,7 @@ Minimum amount of time between Telit Position requests. It is recommended that t
 			<parInfo similarToparID="0">
 				<parName>Driver ID 12</parName>
 				<parDescription>"Customer Driver ID 12"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="981" level="10" status="1" datatype="Word" address="2568" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -6137,7 +6137,7 @@ Minimum amount of time between Telit Position requests. It is recommended that t
 			<parInfo similarToparID="0">
 				<parName>Driver ID 13</parName>
 				<parDescription>"Customer Driver ID 13"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="982" level="10" status="1" datatype="Word" address="2570" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -6145,7 +6145,7 @@ Minimum amount of time between Telit Position requests. It is recommended that t
 			<parInfo similarToparID="0">
 				<parName>Driver ID 14</parName>
 				<parDescription>"Customer Driver ID 14"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="983" level="10" status="1" datatype="Word" address="2572" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -6153,7 +6153,7 @@ Minimum amount of time between Telit Position requests. It is recommended that t
 			<parInfo similarToparID="0">
 				<parName>Driver ID 15</parName>
 				<parDescription>"Customer Driver ID 15"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="984" level="10" status="1" datatype="Word" address="2574" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -6161,7 +6161,7 @@ Minimum amount of time between Telit Position requests. It is recommended that t
 			<parInfo similarToparID="0">
 				<parName>Driver ID 16</parName>
 				<parDescription>"Customer Driver ID 16"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="985" level="10" status="1" datatype="Word" address="2576" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -6169,7 +6169,7 @@ Minimum amount of time between Telit Position requests. It is recommended that t
 			<parInfo similarToparID="0">
 				<parName>Driver ID 17</parName>
 				<parDescription>"Customer Driver ID 17"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="986" level="10" status="1" datatype="Word" address="2578" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -6177,7 +6177,7 @@ Minimum amount of time between Telit Position requests. It is recommended that t
 			<parInfo similarToparID="0">
 				<parName>Driver ID 18</parName>
 				<parDescription>"Customer Driver ID 18"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="987" level="10" status="1" datatype="Word" address="2580" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -6185,7 +6185,7 @@ Minimum amount of time between Telit Position requests. It is recommended that t
 			<parInfo similarToparID="0">
 				<parName>Driver ID 19</parName>
 				<parDescription>"Customer Driver ID 19"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="988" level="10" status="1" datatype="Word" address="2582" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -6193,7 +6193,7 @@ Minimum amount of time between Telit Position requests. It is recommended that t
 			<parInfo similarToparID="0">
 				<parName>Driver ID 20</parName>
 				<parDescription>"Customer Driver ID 20"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="989" level="10" status="1" datatype="Word" address="2584" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -6201,7 +6201,7 @@ Minimum amount of time between Telit Position requests. It is recommended that t
 			<parInfo similarToparID="0">
 				<parName>Driver ID 21</parName>
 				<parDescription>"Customer Driver ID 21"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="990" level="10" status="1" datatype="Word" address="2586" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -6209,7 +6209,7 @@ Minimum amount of time between Telit Position requests. It is recommended that t
 			<parInfo similarToparID="0">
 				<parName>Driver ID 22</parName>
 				<parDescription>"Customer Driver ID 22"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="991" level="10" status="1" datatype="Word" address="2588" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -6217,7 +6217,7 @@ Minimum amount of time between Telit Position requests. It is recommended that t
 			<parInfo similarToparID="0">
 				<parName>Driver ID 23</parName>
 				<parDescription>"Customer Driver ID 23"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="992" level="10" status="1" datatype="Word" address="2590" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -6225,7 +6225,7 @@ Minimum amount of time between Telit Position requests. It is recommended that t
 			<parInfo similarToparID="0">
 				<parName>Driver ID 24</parName>
 				<parDescription>"Customer Driver ID 24"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="993" level="10" status="1" datatype="Word" address="2592" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -6233,7 +6233,7 @@ Minimum amount of time between Telit Position requests. It is recommended that t
 			<parInfo similarToparID="0">
 				<parName>Driver ID 25</parName>
 				<parDescription>"Customer Driver ID 25"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="994" level="10" status="1" datatype="Word" address="2594" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -6241,7 +6241,7 @@ Minimum amount of time between Telit Position requests. It is recommended that t
 			<parInfo similarToparID="0">
 				<parName>Driver ID 26</parName>
 				<parDescription>"Customer Driver ID 26"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="995" level="10" status="1" datatype="Word" address="2596" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -6249,7 +6249,7 @@ Minimum amount of time between Telit Position requests. It is recommended that t
 			<parInfo similarToparID="0">
 				<parName>Driver ID 27</parName>
 				<parDescription>"Customer Driver ID 27"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="996" level="10" status="1" datatype="Word" address="2598" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -6257,7 +6257,7 @@ Minimum amount of time between Telit Position requests. It is recommended that t
 			<parInfo similarToparID="0">
 				<parName>Driver ID 28</parName>
 				<parDescription>"Customer Driver ID 28"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="997" level="10" status="1" datatype="Word" address="2600" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -6265,7 +6265,7 @@ Minimum amount of time between Telit Position requests. It is recommended that t
 			<parInfo similarToparID="0">
 				<parName>Driver ID 29</parName>
 				<parDescription>"Customer Driver ID 29"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="998" level="10" status="1" datatype="Word" address="2602" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -6273,7 +6273,7 @@ Minimum amount of time between Telit Position requests. It is recommended that t
 			<parInfo similarToparID="0">
 				<parName>Driver ID 30</parName>
 				<parDescription>"Customer Driver ID 30"</parDescription>
-				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
+				<parNotes>"When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1238" level="15" status="1" datatype="Byte" address="2604" length="4" bitmask="255" dtu="0" units="" min="0" max="2147483647" >
@@ -6591,11 +6591,11 @@ Disable: Any other value"</parNotes>
 				<parName>Position Frequency Limit</parName>
 				<parDescription>"
 0 - Limit off
->30 - Number of seconds before a successive GSM position request is carried out.
+&gt;30 - Number of seconds before a successive GSM position request is carried out.
 Any set value below 30 seconds is taken as 30 seconds.
 "</parDescription>
 				<parNotes>"0 - Limit off
->30 - Number of seconds before a successive GSM position request is carried out.
+&gt;30 - Number of seconds before a successive GSM position request is carried out.
 Any set value below 30 seconds is taken as 30 seconds.
 "</parNotes>
 			</parInfo>
@@ -6937,8 +6937,8 @@ Timers are reset at trip start."</parNotes>
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Report Fuel Level in Liters</parName>
-				<parDescription>"Report fuel level in Liters in stead of percentage. The Fuel Tank size need to specified in the "Fuel Tank Capacity" parameter."</parDescription>
-				<parNotes>"Report fuel level in Liters in stead of percentage. The Fuel Tank size need to specified in the "Fuel Tank Capacity" parameter."</parNotes>
+				<parDescription>"Report fuel level in Liters in stead of percentage. The Fuel Tank size need to specified in the &quot;Fuel Tank Capacity&quot; parameter."</parDescription>
+				<parNotes>"Report fuel level in Liters in stead of percentage. The Fuel Tank size need to specified in the &quot;Fuel Tank Capacity&quot; parameter."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1750" level="10" status="0" datatype="Bit" address="3103" length="1" bitmask="2" dtu="1" units="" min="0" max="1" >
@@ -7132,7 +7132,7 @@ before enabling.
 1 - Turn OFF USIM Application
 2 - Turn on USIM Application with Sim Toolkit Disabled
 3 - Turn on USIM Application with Sim Toolkit Enabled
-> 3 command is not run.
+&gt; 3 command is not run.
 "</parDescription>
 				<parNotes>"Enables the use of Version 6 and later SIMs.
 Not available on all versions of firmware so make sure this may be used
@@ -7142,7 +7142,7 @@ before enabling.
 1 - Turn OFF USIM Application
 2 - Turn on USIM Application with Sim Toolkit Disabled
 3 - Turn on USIM Application with Sim Toolkit Enabled
-> 3 command is not run.
+&gt; 3 command is not run.
 "</parNotes>
 			</parInfo>
 		</Parameter>
@@ -7540,7 +7540,7 @@ None"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Periodic Position</parName>
 				<parDescription>"Periodic Position Event Configuration"</parDescription>
-				<parNotes>"Events can be configured to be high priority as well as what policy to use for sending it and what optional fields to include in the event report. The policy specify what mediums are allowed for communications and are configured in the "Communications" section.
+				<parNotes>"Events can be configured to be high priority as well as what policy to use for sending it and what optional fields to include in the event report. The policy specify what mediums are allowed for communications and are configured in the &quot;Communications&quot; section.
 
 This parameter is a bitfield where the bits have the following meanings:
 
@@ -7673,7 +7673,7 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 			<parInfo similarToparID="0">
 				<parName>General Purpose IO</parName>
 				<parDescription>"General Purpose IO Event Configuration"</parDescription>
-				<parNotes>"Events can be configured to be high priority as well as what policy to use for sending it and what optional fields to include in the event report. The policy specify what mediums are allowed for communications and are configured in the "Communications" section.
+				<parNotes>"Events can be configured to be high priority as well as what policy to use for sending it and what optional fields to include in the event report. The policy specify what mediums are allowed for communications and are configured in the &quot;Communications&quot; section.
 
 This parameter is a bitfield where the bits have the following meanings:
 
@@ -8623,7 +8623,7 @@ First byte of data defines template of data"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Scope Debug Event Configuration</parName>
 				<parDescription>"Scope Debug event is intended for Unit debug purposes only. Contact Scope Support before enabling this event"</parDescription>
-				<parNotes>"Events can be configured to be high priority as well as what policy to use for sending it and what optional fields to include in the event report. The policy specify what mediums are allowed for communications and are configured in the "Communications" section.
+				<parNotes>"Events can be configured to be high priority as well as what policy to use for sending it and what optional fields to include in the event report. The policy specify what mediums are allowed for communications and are configured in the &quot;Communications&quot; section.
 
 This parameter is a bitfield where the bits have the following meanings:
 
@@ -10019,7 +10019,7 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				</grpValue>
 				<grpValue grpValueName="OBD Basic Setup All Parameters" isDefault="0">
 					<grpValueDescription>
-						Set OBD2 all parameters requested including Service 3 DTC's 
+						Set OBD2 all parameters requested including Service 3 DTC&apos;s 
 					</grpValueDescription>
 					<grpParameterValues>
 						<grpParameterValue parID="1578" value="1" display="1" ovr="0" />
@@ -10038,7 +10038,7 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				</grpValue>
 				<grpValue grpValueName="OBD2 Basic Setup MIL, Speed and RPM" isDefault="0">
 					<grpValueDescription>
-						Set up OBD2 MIL, Speed, RPM and Service 3 DTC's 
+						Set up OBD2 MIL, Speed, RPM and Service 3 DTC&apos;s 
 					</grpValueDescription>
 					<grpParameterValues>
 						<grpParameterValue parID="1578" value="1" display="1" ovr="0" />

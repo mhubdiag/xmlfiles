@@ -1,4 +1,4 @@
-<MhubParameterSet created="2021-08-04T10:50:11+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2021-08-16T14:45:31+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -410,7 +410,7 @@ Accelerometer DMA Enable</Notes>
 		<Parameter name="Verify Speed" level="10" datatype="Bit" address="436" length="1" bitmask="4" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="Flag" />
 			<Help>Set this bit to verify that the selected speed of the vehicle is greater than required minimum</Help>
-			<Notes>Accident reconstruction data is recorded every second. Limitations can be placed on the recording of data to ensure that only relevant data is recorded. The MHub does not really need to record data when the vehicle is standing still. If this value is enabled, then the accident recording will only occur if the speed of the vehicle is greater than the speed specified in the "Minimum Required Speed" parameter under the Accident Reconstruction section.</Notes>
+			<Notes>Accident reconstruction data is recorded every second. Limitations can be placed on the recording of data to ensure that only relevant data is recorded. The MHub does not really need to record data when the vehicle is standing still. If this value is enabled, then the accident recording will only occur if the speed of the vehicle is greater than the speed specified in the &quot;Minimum Required Speed&quot; parameter under the Accident Reconstruction section.</Notes>
 		</Parameter>
 		<Parameter name="Non Trip AR Log" level="10" datatype="Bit" address="436" length="1" bitmask="16" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -599,7 +599,7 @@ If Output 3 is Configured as Buzzer Output
 6 = 200ms beeps 200ms apart
 7 = Fast(100ms) to slow (400ms) beep
 8 = Three x 100ms beeps 100ms apart
-9 = Input and Outputs -> Ouput Beeper Configuration
+9 = Input and Outputs -&gt; Ouput Beeper Configuration
 Other = OFF (No Beep)</Notes>
 		</Parameter>
 		<Parameter name="Beeper 2 Event flag" level="15" datatype="Byte" address="540" length="1" bitmask="255" dtu="0">
@@ -768,14 +768,14 @@ Other = OFF (No Beep)</Notes>
 3. Roaming SMS
 4. Roaming GPRS
 5. Satellite
-The MHub is configured to use the communications mediums in order of priority. Thus an option will be to have GPRS as the highest priority, followed by SMS, and then perhaps Roaming GPRS. This is done in patameter "User CM Preference Order".
+The MHub is configured to use the communications mediums in order of priority. Thus an option will be to have GPRS as the highest priority, followed by SMS, and then perhaps Roaming GPRS. This is done in patameter &quot;User CM Preference Order&quot;.
 What this means is that the MHub will always try to be in a position where it can send data over GPRS, and will send events that have been configured to be sent over GPRS. If however for some reason GPRS is not available, the MHub will fall back to the second priority medium which in this case will be SMS. Now events that have been configured to be sent over SMS will be sent. 
 
 The value of this parameter indicates the amount of time that the particular Communications Medium will be held after the MHub has deemed it to be unavailable, before dropping to the next available Communications Medium. This is to prevent messages being sent over SMS if GPRS becomes available for only a short while. 
 
 For example if the GPRS Debounce Timer  was set to 120 seconds (times are in seconds for the debounce timers) and the GPRS network became unreachable then events that are marked for GPRS transmission will be extracted from the flash and queued for 120 seconds after GPRS has become unavailable. 
 
-Once 120 seconds has passed with no GPRS coverage the next available CM (SMS for example) determined from the "User CM Preference Order" will take over and the current queue will be destroyed and a new queue set up with events that must be sent over that particular CM. In this example, SMS.
+Once 120 seconds has passed with no GPRS coverage the next available CM (SMS for example) determined from the &quot;User CM Preference Order&quot; will take over and the current queue will be destroyed and a new queue set up with events that must be sent over that particular CM. In this example, SMS.
 
 
 </Notes>
@@ -854,197 +854,197 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 		<Parameter name="Comm. Policy 0 - Enable GPRS" level="10" datatype="Bit" address="394" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="2" default="0" previous="" current="" units="" />
 			<Help>Enable GPRS for Communications Medium Policy 0</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 0 - Enable Roaming SMS" level="10" datatype="Bit" address="394" length="1" bitmask="4" dtu="0">
 			<Values min="0" max="4" default="0" previous="" current="" units="" />
 			<Help>Enable Roaming SMS for Communications Medium Policy 0</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 0 - Enable Roaming GPRS" level="10" datatype="Bit" address="394" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="8" default="0" previous="" current="" units="" />
 			<Help>Enable Roaming GPRS for Communications Medium Policy 0</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 0 - Enable Iridium" level="10" datatype="Bit" address="394" length="1" bitmask="16" dtu="0">
 			<Values min="0" max="16" default="0" previous="" current="" units="" />
 			<Help>Enable Iridium Satellite Coms for Communications Medium Policy 0</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 1 - Enable SMS" level="10" datatype="Bit" address="395" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enable SMS for Communications Medium Policy 1</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 1 - Enable GPRS" level="10" datatype="Bit" address="395" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="2" default="0" previous="" current="" units="" />
 			<Help>Enable GPRS for Communications Medium Policy 1</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 1 - Enable Roaming SMS" level="10" datatype="Bit" address="395" length="1" bitmask="4" dtu="0">
 			<Values min="0" max="4" default="0" previous="" current="" units="" />
 			<Help>Enable Roaming SMS for Communications Medium Policy 1</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 1 - Enable Roaming GPRS" level="10" datatype="Bit" address="395" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="8" default="0" previous="" current="" units="" />
 			<Help>Enable Roaming GPRS for Communications Medium Policy 1</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 1 - Enable Iridium" level="10" datatype="Bit" address="395" length="1" bitmask="16" dtu="0">
 			<Values min="0" max="16" default="0" previous="" current="" units="" />
 			<Help>Enable Iridium Satellite Coms for Communications Medium Policy 1</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 2 - Enable SMS" level="10" datatype="Bit" address="396" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enable SMS for Communications Medium Policy 2</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 2 - Enable GPRS" level="10" datatype="Bit" address="396" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="2" default="0" previous="" current="" units="" />
 			<Help>Enable GPRS for Communications Medium Policy 2</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 2 - Enable Roaming SMS" level="10" datatype="Bit" address="396" length="1" bitmask="4" dtu="0">
 			<Values min="0" max="4" default="0" previous="" current="" units="" />
 			<Help>Enable Roaming SMS for Communications Medium Policy 2</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 2 - Enable Roaming GPRS" level="10" datatype="Bit" address="396" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="8" default="0" previous="" current="" units="" />
 			<Help>Enable Roaming GPRS for Communications Medium Policy 2</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 2 - Enable Iridium" level="10" datatype="Bit" address="396" length="1" bitmask="16" dtu="0">
 			<Values min="0" max="16" default="0" previous="" current="" units="" />
 			<Help>Enable Iridium Satellite Coms for Communications Medium Policy 2</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 3 - Enable SMS" level="10" datatype="Bit" address="397" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enable SMS for Communications Medium Policy 3</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 3 - Enable GPRS" level="10" datatype="Bit" address="397" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="2" default="0" previous="" current="" units="" />
 			<Help>Enable GPRS for Communications Medium Policy 3</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 3 - Enable Roaming SMS" level="10" datatype="Bit" address="397" length="1" bitmask="4" dtu="0">
 			<Values min="0" max="4" default="0" previous="" current="" units="" />
 			<Help>Enable Roaming SMS for Communications Medium Policy 3</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 3 - Enable Roaming GPRS" level="10" datatype="Bit" address="397" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="8" default="0" previous="" current="" units="" />
 			<Help>Enable Roaming GPRS for Communications Medium Policy 3</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 3 - Enable Iridium" level="10" datatype="Bit" address="397" length="1" bitmask="16" dtu="0">
 			<Values min="0" max="16" default="0" previous="" current="" units="" />
 			<Help>Enable Iridium Satellite Coms for Communications Medium Policy 3</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 4 - Enable SMS" level="10" datatype="Bit" address="398" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enable SMS for Communications Medium Policy 4</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 4 - Enable GPRS" level="10" datatype="Bit" address="398" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="2" default="0" previous="" current="" units="" />
 			<Help>Enable GPRS for Communications Medium Policy 4</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 4 - Enable Roaming SMS" level="10" datatype="Bit" address="398" length="1" bitmask="4" dtu="0">
 			<Values min="0" max="4" default="0" previous="" current="" units="" />
 			<Help>Enable Roaming SMS for Communications Medium Policy 4</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 4 - Enable Roaming GPRS" level="10" datatype="Bit" address="398" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="8" default="0" previous="" current="" units="" />
 			<Help>Enable Roaming GPRS for Communications Medium Policy 4</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 4 - Enable Iridium" level="10" datatype="Bit" address="398" length="1" bitmask="16" dtu="0">
 			<Values min="0" max="16" default="0" previous="" current="" units="" />
 			<Help>Enable Iridium Satellite Coms for Communications Medium Policy 4</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 5 - Enable SMS" level="10" datatype="Bit" address="399" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enable SMS for Communications Medium Policy 5</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 5 - Enable GPRS" level="10" datatype="Bit" address="399" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="2" default="0" previous="" current="" units="" />
 			<Help>Enable GPRS for Communications Medium Policy 5</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 5 - Enable Roaming SMS" level="10" datatype="Bit" address="399" length="1" bitmask="4" dtu="0">
 			<Values min="0" max="4" default="0" previous="" current="" units="" />
 			<Help>Enable Roaming SMS for Communications Medium Policy 5</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 5 - Enable Roaming GPRS" level="10" datatype="Bit" address="399" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="8" default="0" previous="" current="" units="" />
 			<Help>Enable Roaming GPRS for Communications Medium Policy 5</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 5 - Enable Iridium" level="10" datatype="Bit" address="399" length="1" bitmask="16" dtu="0">
 			<Values min="0" max="16" default="0" previous="" current="" units="" />
 			<Help>Enable Iridium Satellite Coms for Communications Medium Policy 5</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 6 - Enable SMS" level="10" datatype="Bit" address="400" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enable SMS for Communications Medium Policy 6</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm.Policy 6 - Enable GPRS" level="10" datatype="Bit" address="400" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="2" default="0" previous="" current="" units="" />
 			<Help>Enable GPRS for Communications Medium Policy 6</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 6 - Enable Roaming SMS" level="10" datatype="Bit" address="400" length="1" bitmask="4" dtu="0">
 			<Values min="0" max="4" default="0" previous="" current="" units="" />
 			<Help>Enable Roaming SMS for Communications Medium Policy 6</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 6 - Enable Roaming GPRS" level="10" datatype="Bit" address="400" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="8" default="0" previous="" current="" units="" />
 			<Help>Enable Roaming GPRS for Communications Medium Policy 6</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 6 - Enable Iridium" level="10" datatype="Bit" address="400" length="1" bitmask="16" dtu="0">
 			<Values min="0" max="16" default="0" previous="" current="" units="" />
 			<Help>Enable Iridium Satellite Coms for Communications Medium Policy 6</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 7 - Enable SMS" level="10" datatype="Bit" address="401" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enable SMS for Communications Medium Policy 7</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 7 - Enable GPRS" level="10" datatype="Bit" address="401" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="2" default="1" previous="" current="" units="" />
 			<Help>Enable GPRS for Communications Medium Policy 7</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 7 - Enable Roaming SMS" level="10" datatype="Bit" address="401" length="1" bitmask="4" dtu="0">
 			<Values min="0" max="4" default="0" previous="" current="" units="" />
 			<Help>Enable Roaming SMS for Communications Medium Policy 7</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 7 - Enable Roaming GPRS" level="10" datatype="Bit" address="401" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="8" default="0" previous="" current="" units="" />
 			<Help>Enable Roaming GPRS for Communications Medium Policy 7</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="Comm. Policy 7 - Enable Iridium" level="10" datatype="Bit" address="401" length="1" bitmask="16" dtu="0">
 			<Values min="0" max="16" default="0" previous="" current="" units="" />
 			<Help>Enable Iridium Satellite Coms for Communications Medium Policy 7</Help>
-			<Notes>See "Communications Medium Policy 0 - Enable SMS"</Notes>
+			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
 		<Parameter name="CM Immediate SMS Fallback" level="10" datatype="Bit" address="402" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
@@ -1218,7 +1218,7 @@ Setting this parameter to 1 will enable Error Debug messages</Notes>
 		<Parameter name="Enable Box Leds" level="10" datatype="Bit" address="439" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enable Box Leds</Help>
-			<Notes>The MHub has 3 LED's that are used to indicate various operational states of teh MHub, this is particularly usefull during the installation and fault diagnosis processes to determine of the MHub is operating correctly. However from a vehicle being stolen scenario, flashing LED's will draw attention to the MHub. It is thus possible to turn OFF the LED's completely by disabling this parameter.</Notes>
+			<Notes>The MHub has 3 LED&apos;s that are used to indicate various operational states of teh MHub, this is particularly usefull during the installation and fault diagnosis processes to determine of the MHub is operating correctly. However from a vehicle being stolen scenario, flashing LED&apos;s will draw attention to the MHub. It is thus possible to turn OFF the LED&apos;s completely by disabling this parameter.</Notes>
 		</Parameter>
 		<Parameter name="Enable USB Debug" level="5" datatype="Bit" address="439" length="1" bitmask="16" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
@@ -1413,152 +1413,152 @@ e.g. AB0123456 78901 23
 		<Parameter name="Driver ID 1" level="15" datatype="Word" address="1985" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Customer Driver ID 1</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 2" level="10" datatype="Word" address="1987" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Customer Driver ID 2</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 3" level="10" datatype="Word" address="1989" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Customer Driver ID 3</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 4" level="10" datatype="Word" address="1991" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Customer Driver ID 4</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 5" level="10" datatype="Word" address="1993" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Customer Driver ID 5</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 6" level="10" datatype="Word" address="1995" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Custom Driver ID 6</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 7" level="10" datatype="Word" address="1997" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Custom Driver ID 7</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 8" level="10" datatype="Word" address="1999" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Custom Driver ID 8</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 9" level="10" datatype="Word" address="2560" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Customer Driver ID 9</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 10" level="10" datatype="Word" address="2562" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Customer Driver ID 10</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 11" level="10" datatype="Word" address="2564" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Customer Driver ID 11</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 12" level="10" datatype="Word" address="2566" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Customer Driver ID 12</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 13" level="10" datatype="Word" address="2568" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Customer Driver ID 13</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 14" level="10" datatype="Word" address="2570" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Customer Driver ID 14</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 15" level="10" datatype="Word" address="2572" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Customer Driver ID 15</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 16" level="10" datatype="Word" address="2574" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Customer Driver ID 16</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 17" level="10" datatype="Word" address="2576" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Customer Driver ID 17</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 18" level="10" datatype="Word" address="2578" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Customer Driver ID 18</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 19" level="10" datatype="Word" address="2580" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Customer Driver ID 19</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 20" level="10" datatype="Word" address="2582" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Customer Driver ID 20</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 21" level="10" datatype="Word" address="2584" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Customer Driver ID 21</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 22" level="10" datatype="Word" address="2586" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Customer Driver ID 22</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 23" level="10" datatype="Word" address="2588" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Customer Driver ID 23</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 24" level="10" datatype="Word" address="2590" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Customer Driver ID 24</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 25" level="10" datatype="Word" address="2592" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Customer Driver ID 25</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 26" level="10" datatype="Word" address="2594" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Customer Driver ID 26</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 27" level="10" datatype="Word" address="2596" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Customer Driver ID 27</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 28" level="10" datatype="Word" address="2598" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Customer Driver ID 28</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 29" level="10" datatype="Word" address="2600" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Customer Driver ID 29</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 30" level="10" datatype="Word" address="2602" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Customer Driver ID 30</Help>
-			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id's that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 30 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
 		</Parameter>
 		<Parameter name="Driver ID 0 to 30 Black List Mask" level="15" datatype="Byte" address="2604" length="4" bitmask="255" dtu="0">
 			<Values min="0" max="2147483647" default="00000000" previous="" current="" units="" />
@@ -1584,7 +1584,7 @@ None</Notes>
 		<Parameter name="Periodic Position" level="10" datatype="Byte" address="3585" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="255" default="183" previous="" current="" units="" />
 			<Help>Periodic Position Event Configuration</Help>
-			<Notes>Events can be configured to be high priority as well as what policy to use for sending it and what optional fields to include in the event report. The policy specify what mediums are allowed for communications and are configured in the "Communications" section.
+			<Notes>Events can be configured to be high priority as well as what policy to use for sending it and what optional fields to include in the event report. The policy specify what mediums are allowed for communications and are configured in the &quot;Communications&quot; section.
 
 This parameter is a bitfield where the bits have the following meanings:
 
@@ -1672,7 +1672,7 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 		<Parameter name="General Purpose IO" level="10" datatype="Byte" address="3614" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="255" default="183" previous="" current="" units="" />
 			<Help>General Purpose IO Event Configuration</Help>
-			<Notes>Events can be configured to be high priority as well as what policy to use for sending it and what optional fields to include in the event report. The policy specify what mediums are allowed for communications and are configured in the "Communications" section.
+			<Notes>Events can be configured to be high priority as well as what policy to use for sending it and what optional fields to include in the event report. The policy specify what mediums are allowed for communications and are configured in the &quot;Communications&quot; section.
 
 This parameter is a bitfield where the bits have the following meanings:
 
@@ -2271,7 +2271,7 @@ First byte of data defines template of data</Notes>
 		<Parameter name="Scope Debug Event Configuration" level="5" datatype="Byte" address="3839" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
 			<Help>Scope Debug event is intended for Unit debug purposes only. Contact Scope Support before enabling this event</Help>
-			<Notes>Events can be configured to be high priority as well as what policy to use for sending it and what optional fields to include in the event report. The policy specify what mediums are allowed for communications and are configured in the "Communications" section.
+			<Notes>Events can be configured to be high priority as well as what policy to use for sending it and what optional fields to include in the event report. The policy specify what mediums are allowed for communications and are configured in the &quot;Communications&quot; section.
 
 This parameter is a bitfield where the bits have the following meanings:
 
@@ -2450,8 +2450,8 @@ https://wiki.scopetechnology.com/index.php/Consolidated_Fuel_Event_Configuration
 		</Parameter>
 		<Parameter name="Report Fuel Level in Liters" level="10" datatype="Bit" address="3103" length="1" bitmask="1" dtu="1">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Report fuel level in Liters in stead of percentage. The Fuel Tank size need to specified in the "Fuel Tank Capacity" parameter.</Help>
-			<Notes>Report fuel level in Liters in stead of percentage. The Fuel Tank size need to specified in the "Fuel Tank Capacity" parameter.</Notes>
+			<Help>Report fuel level in Liters in stead of percentage. The Fuel Tank size need to specified in the &quot;Fuel Tank Capacity&quot; parameter.</Help>
+			<Notes>Report fuel level in Liters in stead of percentage. The Fuel Tank size need to specified in the &quot;Fuel Tank Capacity&quot; parameter.</Notes>
 		</Parameter>
 		<Parameter name="Fuel Level Sensor Support Liters" level="10" datatype="Bit" address="3103" length="1" bitmask="2" dtu="1">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
@@ -2831,7 +2831,7 @@ The logging for each individual module is controlled using the Debug Mask.</Note
 		<Parameter name="Sealed Unit Enable" level="10" datatype="Bit" address="1166" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>This indicates if the MHub is a sealed unit or not.</Help>
-			<Notes>When the MHub is an 802 unit. This parameter is set, that enables specific MHub802 functioality - XXX change this to MHub802 mode. Let's stop calling it sealed unit.</Notes>
+			<Notes>When the MHub is an 802 unit. This parameter is set, that enables specific MHub802 functioality - XXX change this to MHub802 mode. Let&apos;s stop calling it sealed unit.</Notes>
 		</Parameter>
 		<Parameter name="Enable Test Event" level="0" datatype="Bit" address="1166" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="2" default="0" previous="" current="" units="" />
@@ -2890,7 +2890,7 @@ The Mhub802 can be mounted with a tamper detection in place so that if it is rem
 		<Parameter name="Maximum ON Time" level="10" datatype="Word" address="2041" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="600" previous="" current="" units="Seconds" />
 			<Help>Maximum time in seconds the unit should stay ON when something causes any of the logic not to work out</Help>
-			<Notes>This parameter specifies the maximum time that the MHub802 will remain on under normal operating instances. So if both GSM and GPS are OK, but the MHub cannot send the SMS, or has too many sms's to send, it will turn OFF after this time.</Notes>
+			<Notes>This parameter specifies the maximum time that the MHub802 will remain on under normal operating instances. So if both GSM and GPS are OK, but the MHub cannot send the SMS, or has too many sms&apos;s to send, it will turn OFF after this time.</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Modem - Aux Socket (TCP/UDP)">
@@ -3002,7 +3002,7 @@ UDP Local Port</Notes>
 			<Help>Connects the Enables the debug channel of the CMUX. </Help>
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
-Enables the use of the Telit Trace debug tools. Must used in conjunction with the Custom Functionality->Aux Port Config parameter
+Enables the use of the Telit Trace debug tools. Must used in conjunction with the Custom Functionality-&gt;Aux Port Config parameter
 </Notes>
 		</Parameter>
 		<Parameter name="Modem No-Network Restart Delay" level="0" datatype="Word" address="433" length="2" bitmask="255" dtu="0">
@@ -3100,7 +3100,7 @@ None</Notes>
 		</Parameter>
 		<Parameter name="No Network with Signal Timeout" level="0" datatype="Word" address="379" length="2" bitmask="255" dtu="0">
 			<Values min="900" max="65000" default="7210" previous="" current="" units="" />
-			<Help>If the modem detects a CREG of 2 but has a good CSQ reading i.e >10 for this number of seconds then is performs a network deregistration and re-registration.</Help>
+			<Help>If the modem detects a CREG of 2 but has a good CSQ reading i.e &gt;10 for this number of seconds then is performs a network deregistration and re-registration.</Help>
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
 </Notes>
@@ -3245,7 +3245,7 @@ E.g.
 		<Parameter name="Stack Start Retry Delay" level="5" datatype="Word" address="359" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65000" default="30" previous="" current="" units="Seconds" />
 			<Help>Period of Stack Start retries.</Help>
-			<Notes>If the stack fails to connect to the APN it needs to be restarted. The amount of time in between restarts should be enough to allow the unit time to read any incoming SMS's that may contain new APN information that will allow a successful connection.</Notes>
+			<Notes>If the stack fails to connect to the APN it needs to be restarted. The amount of time in between restarts should be enough to allow the unit time to read any incoming SMS&apos;s that may contain new APN information that will allow a successful connection.</Notes>
 		</Parameter>
 		<Parameter name="Allow APN Standoff Cancellation from Tower change" level="5" datatype="Byte" address="1361" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -3255,7 +3255,7 @@ E.g.
 		<Parameter name="Access Point Node (APN Name)" level="10" datatype="String" address="2048" length="121" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="internet" previous="" current="" units="" />
 			<Help>Access Point Node identifier e.g. internet</Help>
-			<Notes>The APN (Access Point Node) is used when the Mhub will use GPRS to communicate with MProfiler. The GSM service provider will specify what APN Name should be used. A commonly used public APN is "internet" however not all networks will use this. </Notes>
+			<Notes>The APN (Access Point Node) is used when the Mhub will use GPRS to communicate with MProfiler. The GSM service provider will specify what APN Name should be used. A commonly used public APN is &quot;internet&quot; however not all networks will use this. </Notes>
 		</Parameter>
 		<Parameter name="APN User Name" level="10" datatype="String" address="2304" length="64" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="" previous="" current="" units="" />
@@ -3321,11 +3321,11 @@ Minimum amount of time between Telit Position requests. It is recommended that t
 			<Values min="30" max="65535" default="300" previous="" current="" units="Seconds" />
 			<Help>
 0 - Limit off
->30 - Number of seconds before a successive GSM position request is carried out.
+&gt;30 - Number of seconds before a successive GSM position request is carried out.
 Any set value below 30 seconds is taken as 30 seconds.
 </Help>
 			<Notes>0 - Limit off
->30 - Number of seconds before a successive GSM position request is carried out.
+&gt;30 - Number of seconds before a successive GSM position request is carried out.
 Any set value below 30 seconds is taken as 30 seconds.
 </Notes>
 		</Parameter>
@@ -3422,7 +3422,7 @@ None</Notes>
 		</Parameter>
 		<Parameter name="SMS Destination Address" level="5" datatype="String" address="1125" length="21" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>The destination address of the next sms to be sent. This excludes event report sms\'s</Help>
+			<Help>The destination address of the next sms to be sent. This excludes event report sms\&apos;s</Help>
 			<Notes>None</Notes>
 		</Parameter>
 	</Category>
@@ -3564,7 +3564,7 @@ NB: This is a service provided by the network and not only dependant on configur
 		<Parameter name="MProfiler User Name" level="10" datatype="String" address="841" length="65" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="" previous="" current="" units="" />
 			<Help>User name used when logging onto MProfiler over a TCP socket.</Help>
-			<Notes>When connecting to MProfiler using GPRS, the MHub needs to uniquely identify itself to MProfiler before the connection will be accepted. It identifies itself by means of the MProfiler User Name. before the connection will be acc epted, an entity on MProfiler must already exist with the same MProfier User Name as the UnitID on MProfiler. Care must be taken to ensure that no two MHub's are configured with the same MProfiler User Name, as then the information from two different MHub units will be sent o to the client application as a single unit. Typically the MSISDN of the SIM card can be used.</Notes>
+			<Notes>When connecting to MProfiler using GPRS, the MHub needs to uniquely identify itself to MProfiler before the connection will be accepted. It identifies itself by means of the MProfiler User Name. before the connection will be acc epted, an entity on MProfiler must already exist with the same MProfier User Name as the UnitID on MProfiler. Care must be taken to ensure that no two MHub&apos;s are configured with the same MProfiler User Name, as then the information from two different MHub units will be sent o to the client application as a single unit. Typically the MSISDN of the SIM card can be used.</Notes>
 		</Parameter>
 		<Parameter name="MProfiler User Password" level="10" datatype="String" address="906" length="65" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="" previous="" current="" units="None" />
@@ -3611,7 +3611,7 @@ NB: This is a service provided by the network and not only dependant on configur
 		<Parameter name="SIM PIN" level="10" datatype="String" address="297" length="10" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="" previous="" current="" units="" />
 			<Help>Sim PIN</Help>
-			<Notes>When a SIM card is used in the MHub that has a PIN which is not "0000", and the PIN Request on the SIM card is enabled, the value of that PIN is entered here. Great care must be taken to ensure that the PIN on the SIM matched the PIN programmed into this parameter. Faulure to ensure correct values here will result in the SIM being blocked, and then requiring the PUK.</Notes>
+			<Notes>When a SIM card is used in the MHub that has a PIN which is not &quot;0000&quot;, and the PIN Request on the SIM card is enabled, the value of that PIN is entered here. Great care must be taken to ensure that the PIN on the SIM matched the PIN programmed into this parameter. Faulure to ensure correct values here will result in the SIM being blocked, and then requiring the PUK.</Notes>
 		</Parameter>
 		<Parameter name="SIM PIN Last Used" level="0" datatype="String" address="348" length="10" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="Not Set" previous="" current="" units="" />
@@ -3733,7 +3733,7 @@ Number of seconds before the Modem/MHub reboots due to failing to contact the MP
 		<Parameter name="Enable APN Reattachment" level="5" datatype="Byte" address="797" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Perform APN reattachment during Socket Standoff period.</Help>
-			<Notes>This works in conjunction with the "Session Attempts Before Standoff" parameter. If this parameter is enabled then the MHub will do an APN reattachment during the standoff period.</Notes>
+			<Notes>This works in conjunction with the &quot;Session Attempts Before Standoff&quot; parameter. If this parameter is enabled then the MHub will do an APN reattachment during the standoff period.</Notes>
 		</Parameter>
 		<Parameter name="Enable Socket Close Report" level="5" datatype="Bit" address="1124" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
@@ -3998,14 +3998,14 @@ Harsh Acceleration Source:
 			<Values min="0" max="200" default="0" previous="" current="" units="" />
 			<Help>The number of reports that must be generated before the unit will expedite sleep scan to send the reports.
 0 - Disables this feature. The event will only be sent at the next scheduled sleep scan.
->0 - Enables immediate sleep scan once the number of events has been generated.
+&gt;0 - Enables immediate sleep scan once the number of events has been generated.
 This number should be less than or equal to the Mains low report count.
 If this parameter is set to any value and the Report Count is zero then sleep scan will be expedited after the first event.</Help>
 			<Notes>The number of reports that must be generated before the unit will expedite sleep scan to send the reports.
 
 0 - Disables this feature. The event will only be sent at the next scheduled sleep scan.The unit will not wake to sleep scan.
 
->0 - Enables immediate sleep scan once the number of events has been generated.
+&gt;0 - Enables immediate sleep scan once the number of events has been generated.
 
 This number should be less than or equal to the Mains low report count.
 
@@ -4027,12 +4027,12 @@ If set to zero then reports will continue indefinitely</Notes>
 		<Parameter name="Ignition Source: Main Voltage" level="5" datatype="Bit" address="1829" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Ignition Source: Main Voltage</Help>
-			<Notes>In addition to being able to use the ignition line as the source of ignition for the MHub, to make an installation easier without having to connect the ignition line, the source fro ignition can be set to main voltage. To do this, this parameter is enable. If ignition is set to main voltage, the MHub will monitor the input voltage, and if it is above the threshold specified in "Ignition Source from Main Voltage Threshold", the ignition is ON, and below the threshold, ignition is OFF.</Notes>
+			<Notes>In addition to being able to use the ignition line as the source of ignition for the MHub, to make an installation easier without having to connect the ignition line, the source fro ignition can be set to main voltage. To do this, this parameter is enable. If ignition is set to main voltage, the MHub will monitor the input voltage, and if it is above the threshold specified in &quot;Ignition Source from Main Voltage Threshold&quot;, the ignition is ON, and below the threshold, ignition is OFF.</Notes>
 		</Parameter>
 		<Parameter name="Ignition Source: RPM" level="5" datatype="Bit" address="1829" length="1" bitmask="4" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Ignition Source: RPM</Help>
-			<Notes>One more possible source of ignition is to use RPM. If RPM is greater than the value specified in parameter "Ignition Source from RPM Threshold", the engine is running and the ignition is ON. If rpm is to be used as ignition, this parameter is set to 1.</Notes>
+			<Notes>One more possible source of ignition is to use RPM. If RPM is greater than the value specified in parameter &quot;Ignition Source from RPM Threshold&quot;, the engine is running and the ignition is ON. If rpm is to be used as ignition, this parameter is set to 1.</Notes>
 		</Parameter>
 		<Parameter name="Ignition Source: CAN" level="5" datatype="Bit" address="1829" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
@@ -4042,7 +4042,7 @@ If set to zero then reports will continue indefinitely</Notes>
 		<Parameter name="Ignition Source: Speed" level="5" datatype="Bit" address="1829" length="1" bitmask="16" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Ignition Source: Speed</Help>
-			<Notes>One more possible source of ignition is to use Speed. If Speed is greater than the value specified in parameter "Ignition Source from RPM Threshold", the vehicle is moving. If speed is to be used as ignition, this parameter is set to 1.</Notes>
+			<Notes>One more possible source of ignition is to use Speed. If Speed is greater than the value specified in parameter &quot;Ignition Source from RPM Threshold&quot;, the vehicle is moving. If speed is to be used as ignition, this parameter is set to 1.</Notes>
 		</Parameter>
 		<Parameter name="Ignition Source: Trigger" level="5" datatype="Bit" address="1829" length="1" bitmask="32" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
@@ -4052,7 +4052,7 @@ If set to zero then reports will continue indefinitely</Notes>
 		<Parameter name="Ignition Source: Accelerometer" level="5" datatype="Bit" address="1829" length="1" bitmask="64" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Ignition Source: Accelerometer</Help>
-			<Notes>One more possible source of ignition is to use Accelerometer movement. If Accelerometer movement is greater than the value specified in parameter "Accelerometer Ignition On Threshold", the vehicle is moving. If Accelerometer is to be used as ignition, this parameter is set to 1.</Notes>
+			<Notes>One more possible source of ignition is to use Accelerometer movement. If Accelerometer movement is greater than the value specified in parameter &quot;Accelerometer Ignition On Threshold&quot;, the vehicle is moving. If Accelerometer is to be used as ignition, this parameter is set to 1.</Notes>
 		</Parameter>
 		<Parameter name="Ignition Source: Alternate" level="10" datatype="Bit" address="1829" length="1" bitmask="128" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -4075,7 +4075,7 @@ XXX - just a comment - what about a 24V vehicle, will 255 be enough - should the
 		<Parameter name="OBC Sensor RPM" level="10" datatype="Bit" address="1832" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>RPM sourced from sensor</Help>
-			<Notes>The MHub can take its source of RPM from various inputs. If RPM is determined by connecting the RPM wite to the "W" terminal, then this parameter must be set to 1.</Notes>
+			<Notes>The MHub can take its source of RPM from various inputs. If RPM is determined by connecting the RPM wite to the &quot;W&quot; terminal, then this parameter must be set to 1.</Notes>
 		</Parameter>
 		<Parameter name="OBC Vehicle Network RPM" level="10" datatype="Bit" address="1832" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
@@ -4093,7 +4093,7 @@ From OBD2 Enable Vehicle OBD2 Interface </Notes>
 		<Parameter name="Main Voltage Low Report Interval" level="10" datatype="Word" address="1834" length="2" bitmask="255" dtu="0">
 			<Values min="60" max="65535" default="3590" previous="" current="" units="seconds" />
 			<Help>Main Voltage Low Interval in seconds</Help>
-			<Notes>Main Voltage Low Interval in seconds. If a low main voltage input is detected for longer than 10 seconds, the MHub can send a Main Voltage Low event if configured. Threshold in paramater "Main Voltage Low Threshold". 
+			<Notes>Main Voltage Low Interval in seconds. If a low main voltage input is detected for longer than 10 seconds, the MHub can send a Main Voltage Low event if configured. Threshold in paramater &quot;Main Voltage Low Threshold&quot;. 
 Note: Event generation occurs at time-out + 10 seconds. e.g. 3590 seconds + 10 seconds results in 3600 seconds Interval</Notes>
 		</Parameter>
 		<Parameter name="RPM Green Band High" level="15" datatype="Byte" address="1840" length="1" bitmask="255" dtu="0">
@@ -4139,7 +4139,7 @@ Note: Event generation occurs at time-out + 10 seconds. e.g. 3590 seconds + 10 s
 		<Parameter name="Driver Key Leds Enable" level="10" datatype="Bit" address="1870" length="1" bitmask="2" dtu="1">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Driver Key Leds Enable</Help>
-			<Notes>The driver and passenger key reading receptacles have LED on them. This parameter will control whether those LED's are used or not.</Notes>
+			<Notes>The driver and passenger key reading receptacles have LED on them. This parameter will control whether those LED&apos;s are used or not.</Notes>
 		</Parameter>
 		<Parameter name="Output 4 Follows Ignition" level="10" datatype="Bit" address="1870" length="1" bitmask="4" dtu="1">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
@@ -4169,34 +4169,34 @@ Note: Event generation occurs at time-out + 10 seconds. e.g. 3590 seconds + 10 s
 		<Parameter name="OBC Free Wheeling Debounce" level="10" datatype="Byte" address="1880" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="10" previous="" current="" units="seconds" />
 			<Help>OBC Free Wheeling Debounce</Help>
-			<Notes>The MHub can detect freewheeling. This is where the driver of a vehicle depresses the clutch while still travelling at a relatively high speed. This is deemed to be a bad driving practise. It is detected when the RPM is below the threshold specified in "Free Wheel RPM Threshold", and the speed is above the threshold specified in "Speed Free Wheel Threshold". It may however be permissable to freewheel for a short period of time. This parameter specifies the minimum amount of time in seconds above which the event will be generated.</Notes>
+			<Notes>The MHub can detect freewheeling. This is where the driver of a vehicle depresses the clutch while still travelling at a relatively high speed. This is deemed to be a bad driving practise. It is detected when the RPM is below the threshold specified in &quot;Free Wheel RPM Threshold&quot;, and the speed is above the threshold specified in &quot;Speed Free Wheel Threshold&quot;. It may however be permissable to freewheel for a short period of time. This parameter specifies the minimum amount of time in seconds above which the event will be generated.</Notes>
 		</Parameter>
 		<Parameter name="Free Wheel RPM Threshold" level="10" datatype="Byte" address="1881" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="65535" default="10" previous="" current="" units="RPM x 100" />
 			<Help>RPM High limit for Free Wheel condition</Help>
-			<Notes>This is the freewheeling RPM threshold on units of x100 RPM. When the vehicle RPM is below this value, and the speed is above the value specified in parameter "Speed Free Wheel Threshold", and this condition persists for more than the time specified in "OBC Free Wheeling Debounce", then the vehicle in in a state of freewheeling, and a freewheeling event can be generated.</Notes>
+			<Notes>This is the freewheeling RPM threshold on units of x100 RPM. When the vehicle RPM is below this value, and the speed is above the value specified in parameter &quot;Speed Free Wheel Threshold&quot;, and this condition persists for more than the time specified in &quot;OBC Free Wheeling Debounce&quot;, then the vehicle in in a state of freewheeling, and a freewheeling event can be generated.</Notes>
 		</Parameter>
 		<Parameter name="Speed Free Wheel Threshold" level="10" datatype="Byte" address="1882" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="255" default="60" previous="" current="" units="km/h" />
 			<Help>Speed minimum limit for Free Wheel condition</Help>
-			<Notes>Freewheeling speed threshold in km/h. When the vehicle speed is above this value, and the RPM is below the value specified in parameter "Free Wheel RPM Threshold", and this condition persists for more than the time specified in "OBC Free Wheeling Debounce", then the vehicle in in a state of freewheeling, and a freewheeling event can be generated.</Notes>
+			<Notes>Freewheeling speed threshold in km/h. When the vehicle speed is above this value, and the RPM is below the value specified in parameter &quot;Free Wheel RPM Threshold&quot;, and this condition persists for more than the time specified in &quot;OBC Free Wheeling Debounce&quot;, then the vehicle in in a state of freewheeling, and a freewheeling event can be generated.</Notes>
 		</Parameter>
 		<Parameter name="Auto Calibration Activation" level="10" datatype="Byte" address="1887" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="Flag" />
 			<Help>Auto Calibration Activation</Help>
-			<Notes>When the source for speed or distance is set to the speed sensor, it is required that the sensor be calibrated first before the vehcile can be used for the readings to be accurate. This is typically done by programming the calibration factor (parameter "OBC ODO Calibration"). There is however an automated way of doing this. The Mhub is aware of its speed in anycase from the GPS sensor, so it is possible to use the GPS sensor to calibrate the speed sensor. If automatic calubration is required, this parameter is set to 1, and the MHub will then attempt to calibrate itself. Once the MHub has successfully calibrated itself, it will clear this parameter to 0.</Notes>
+			<Notes>When the source for speed or distance is set to the speed sensor, it is required that the sensor be calibrated first before the vehcile can be used for the readings to be accurate. This is typically done by programming the calibration factor (parameter &quot;OBC ODO Calibration&quot;). There is however an automated way of doing this. The Mhub is aware of its speed in anycase from the GPS sensor, so it is possible to use the GPS sensor to calibrate the speed sensor. If automatic calubration is required, this parameter is set to 1, and the MHub will then attempt to calibrate itself. Once the MHub has successfully calibrated itself, it will clear this parameter to 0.</Notes>
 		</Parameter>
 		<Parameter name="Auto Calibration  Speed Threshold" level="10" datatype="Byte" address="1888" length="1" bitmask="255" dtu="0">
 			<Values min="10" max="255" default="60" previous="" current="" units="km/h" />
 			<Help>Auto Calibration  Speed Min Speed</Help>
-			<Notes>When the source for speed or distance is set to the speed sensor, it is required that the sensor be calibrated first before the vehcile can be used for the readings to be accurate. This is typically done by programming the calibration factor (parameter "OBC ODO Calibration"). There is however an automated way of doing this. The Mhub is aware of its speed in anycase from the GPS sensor, so it is possible to use the GPS sensor to calibrate the speed sensor. If automatic calubration is required, the parameter "Auto Calibration Activation" is set to 1, and the MHub will then attempt to calibrate itself. This parameter specifies the minimum speed that the MHub will use to calibrate itself. 
+			<Notes>When the source for speed or distance is set to the speed sensor, it is required that the sensor be calibrated first before the vehcile can be used for the readings to be accurate. This is typically done by programming the calibration factor (parameter &quot;OBC ODO Calibration&quot;). There is however an automated way of doing this. The Mhub is aware of its speed in anycase from the GPS sensor, so it is possible to use the GPS sensor to calibrate the speed sensor. If automatic calubration is required, the parameter &quot;Auto Calibration Activation&quot; is set to 1, and the MHub will then attempt to calibrate itself. This parameter specifies the minimum speed that the MHub will use to calibrate itself. 
 
-In order to calibrate itself, the Vehicle must travel at a constant speed of greater than the value in this parameter for the time duration specified in "Auto Calibration Debounce".</Notes>
+In order to calibrate itself, the Vehicle must travel at a constant speed of greater than the value in this parameter for the time duration specified in &quot;Auto Calibration Debounce&quot;.</Notes>
 		</Parameter>
 		<Parameter name="Auto Calibration Debounce" level="10" datatype="Byte" address="1889" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="10" previous="" current="" units="seconds" />
 			<Help>Auto Calibration Debounce debounce time in seconds</Help>
-			<Notes>This parameter specifies for how long the vehicle must travel in seconds at a constant speed above the value specified in parameter "Auto Calibration Speed Threshold" for Auto Calibration to occur.</Notes>
+			<Notes>This parameter specifies for how long the vehicle must travel in seconds at a constant speed above the value specified in parameter &quot;Auto Calibration Speed Threshold&quot; for Auto Calibration to occur.</Notes>
 		</Parameter>
 		<Parameter name="MHub Description" level="10" datatype="String" address="1949" length="32" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="MHub" previous="" current="" units="" />
@@ -4216,7 +4216,7 @@ In order to calibrate itself, the Vehicle must travel at a constant speed of gre
 		<Parameter name="OBC GPS Speed" level="10" datatype="Bit" address="2033" length="1" bitmask="2" dtu="0">
 			<Values min="1" max="255" default="1" previous="" current="" units="" />
 			<Help>OBC GPS Speed</Help>
-			<Notes>Setting the unit to use GPS as it's speed source</Notes>
+			<Notes>Setting the unit to use GPS as it&apos;s speed source</Notes>
 		</Parameter>
 		<Parameter name="OBC Vehicle Network  Speed" level="10" datatype="Bit" address="2033" length="1" bitmask="4" dtu="0">
 			<Values min="1" max="255" default="0" previous="" current="" units="" />
@@ -4459,17 +4459,17 @@ MProfiler - Keep Alive for 10 Minutes</Notes>
 		<Parameter name="Power Mode time to IDLE" level="10" datatype="Word" address="1162" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="600" previous="" current="" units="seconds" />
 			<Help>Time in seconds to IDLE Mode</Help>
-			<Notes>This parameter specifies in seconds how long the MHub will wait in full power mode after ignition is turned off until it enters IDLE mode. Idle mode must be enable in parameter "Enable IDLE Power Mode" before this will take effect.</Notes>
+			<Notes>This parameter specifies in seconds how long the MHub will wait in full power mode after ignition is turned off until it enters IDLE mode. Idle mode must be enable in parameter &quot;Enable IDLE Power Mode&quot; before this will take effect.</Notes>
 		</Parameter>
 		<Parameter name="Power Mode time to Sleep" level="10" datatype="Word" address="1164" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="28800" previous="" current="" units="seconds" />
 			<Help>Time in seconds to Sleep Mode</Help>
-			<Notes>This parameter specifies in seconds how long the MHub will wait in IDLE power mode before it enters IDLE mode. Sleep mode must be enable in parameter "Enable Sleep Mode" before this will take effect.</Notes>
+			<Notes>This parameter specifies in seconds how long the MHub will wait in IDLE power mode before it enters IDLE mode. Sleep mode must be enable in parameter &quot;Enable Sleep Mode&quot; before this will take effect.</Notes>
 		</Parameter>
 		<Parameter name="Power Mode time to Deep Sleep" level="10" datatype="Word" address="1269" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="1800" previous="" current="" units="" />
 			<Help>Power Mode time to Deep Sleep</Help>
-			<Notes>This parameter specifies in seconds how long the MHub will wait from IDLE power mode before it enters Deep Sleepmode. Deep Sleep mode must be enable in parameter "Enable Deep Sleep Mode" before this will take effect.</Notes>
+			<Notes>This parameter specifies in seconds how long the MHub will wait from IDLE power mode before it enters Deep Sleepmode. Deep Sleep mode must be enable in parameter &quot;Enable Deep Sleep Mode&quot; before this will take effect.</Notes>
 		</Parameter>
 		<Parameter name="Power Sleep Mode Enabled" level="10" datatype="Byte" address="1277" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="204" previous="" current="" units="" />
@@ -4483,14 +4483,14 @@ MProfiler - Keep Alive for 10 Minutes</Notes>
 
 If USB Power Mode is enabled, Charge-In current will be limited to 100mA and SYSOUT will be powered from BAT
 
-NOTE: MAKE SURE POWER MODES->REGULATOR REGISTER 0 = 0, otherwise charge current can be more than USB POWER restrictions</Notes>
+NOTE: MAKE SURE POWER MODES-&gt;REGULATOR REGISTER 0 = 0, otherwise charge current can be more than USB POWER restrictions</Notes>
 		</Parameter>
 		<Parameter name="USB Power Mode No GPS" level="10" datatype="Bit" address="1825" length="1" bitmask="16" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enable the USB Power Mode if no GPS</Help>
 			<Notes>If USB Power Mode is enabled, Charge-In current will be limited to 100mA and SYSOUT will be powered from BAT. 
 
-NOTE: MAKE SURE POWER MODES->REGULATOR REGISTER 0 = 0, otherwise charge current can be more than USB POWER restrictions</Notes>
+NOTE: MAKE SURE POWER MODES-&gt;REGULATOR REGISTER 0 = 0, otherwise charge current can be more than USB POWER restrictions</Notes>
 		</Parameter>
 		<Parameter name="Daily Reset Enable" level="10" datatype="Bit" address="1826" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="Bit" />
@@ -4510,7 +4510,7 @@ NOTE: MAKE SURE POWER MODES->REGULATOR REGISTER 0 = 0, otherwise charge current 
 		<Parameter name="Daily Reset Time" level="10" datatype="Word" address="1827" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="1440" default="60" previous="" current="" units="Minutes" />
 			<Help>Daily Reset Time</Help>
-			<Notes>If the daily reset is enabled in parameter "Daily Reset Enable", this parameter will specify the time offset in minutes from midnight at which time the reste will occur. Keep in mind that the MHUhb operates only on GMT (UTC) time.</Notes>
+			<Notes>If the daily reset is enabled in parameter &quot;Daily Reset Enable&quot;, this parameter will specify the time offset in minutes from midnight at which time the reste will occur. Keep in mind that the MHUhb operates only on GMT (UTC) time.</Notes>
 		</Parameter>
 		<Parameter name="Power Mode time to Sleep Scan" level="10" datatype="Word" address="1860" length="2" bitmask="255" dtu="0">
 			<Values min="1800" max="65535" default="3600" previous="" current="" units="seconds" />
@@ -4810,7 +4810,7 @@ The MHub has the ability to connect to up to a maximum of 4 temperature sensors.
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
 			<Help>Periodic Temperature event will only be sent inside trip</Help>
 			<Notes>0  - Periodic Temperature Event always sent
->0 - Periodic Temperature Event sent only in Trip
+&gt;0 - Periodic Temperature Event sent only in Trip
 </Notes>
 		</Parameter>
 	</Category>

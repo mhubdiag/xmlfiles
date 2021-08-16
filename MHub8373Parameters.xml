@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="3" unitType="MHub8373" created="2021-06-23T09:58:22+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="3" unitType="MHub8373" created="2021-08-04T10:50:07+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="2" level="10" status="0" datatype="Word" address="256" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
@@ -5414,9 +5414,9 @@ None"</parNotes>
 		<Parameter parID="254" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Driver Key used for Immobilisation</parName>
-				<parDescription>"Driver Key Immobilisation"</parDescription>
-				<parNotes>"If the driver key is intended to control the immobilizer connection to the vehicle, then this parameter must be set to 1."</parNotes>
+				<parName>Output used for Immobilisation</parName>
+				<parDescription>"Output used for Immobilisation"</parDescription>
+				<parNotes>"If the driver key is intended to control the immobiliser connection to the vehicle, then this parameter must be set to 1 alternatively if there is no Driver Key used then the Output Follows Ignition Parameter or Bit in the Output A and B can be set to still be able to control immobilisation of the vehicle via the Disablement command."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="826" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
@@ -8571,6 +8571,14 @@ Note that certain vehicles respond to certain DTC requests by turning on the rel
 "</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1852" level="10" status="0" datatype="Byte" address="3535" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Custom Event 15 Configuration</parName>
+				<parDescription>"Custom Event 15 Configuration"</parDescription>
+				<parNotes>"See Periodic Position Event Configuration"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1254" level="0" status="0" datatype="String" address="3542" length="32" bitmask="255" dtu="0" units="" min="0" max="0" >
 			<parValues default="" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -8824,6 +8832,94 @@ Configuration =
 
 How is this value calculated: 
 As an example, configure the event to use policy 5, Include the Location Field, Include the Status Field and is enabled. Use the values in square brackets for each item and add them together, i.e. 5 + 16 + 32 + 128 = 181"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1841" level="10" status="0" datatype="Byte" address="3624" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Custom Event 4 Configuration</parName>
+				<parDescription>"Custom Event 4 Configuration"</parDescription>
+				<parNotes>"See Periodic Position Event Configuration"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1842" level="10" status="0" datatype="Byte" address="3625" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Custom Event 5 Configuration</parName>
+				<parDescription>"Custom Event 5 Configuration"</parDescription>
+				<parNotes>"See Periodic Position Event Configuration"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1843" level="10" status="0" datatype="Byte" address="3626" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Custom Event 6 Configuration</parName>
+				<parDescription>"Custom Event 6 Configuration"</parDescription>
+				<parNotes>"See Periodic Position Event Configuration"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1844" level="10" status="0" datatype="Byte" address="3627" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Custom Event 7 Configuration</parName>
+				<parDescription>"Custom Event 7 Configuration"</parDescription>
+				<parNotes>"See Periodic Position Event Configuration"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1845" level="10" status="0" datatype="Byte" address="3628" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Custom Event 8 Configuration</parName>
+				<parDescription>"Custom Event 8 Configuration"</parDescription>
+				<parNotes>"See Periodic Position Event Configuration"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1846" level="10" status="0" datatype="Byte" address="3629" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Custom Event 9 Configuration</parName>
+				<parDescription>"Custom Event 9 Configuration"</parDescription>
+				<parNotes>"See Periodic Position Event Configuration"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1847" level="10" status="0" datatype="Byte" address="3630" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Custom Event 10 Configuration</parName>
+				<parDescription>"Custom Event 10 Configuration"</parDescription>
+				<parNotes>"See Periodic Position Event Configuration"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1848" level="10" status="0" datatype="Byte" address="3631" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Custom Event 11 Configuration</parName>
+				<parDescription>"Custom Event 11 Configuration"</parDescription>
+				<parNotes>"See Periodic Position Event Configuration"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1849" level="10" status="0" datatype="Byte" address="3632" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Custom Event 12 Configuration</parName>
+				<parDescription>"Custom Event 12 Configuration"</parDescription>
+				<parNotes>"See Periodic Position Event Configuration"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1850" level="10" status="0" datatype="Byte" address="3633" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Custom Event 13 Configuration</parName>
+				<parDescription>"Custom Event 13 Configuration"</parDescription>
+				<parNotes>"See Periodic Position Event Configuration"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1851" level="10" status="0" datatype="Byte" address="3634" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Custom Event 14 Configuration</parName>
+				<parDescription>"Custom Event 12 Configuration"</parDescription>
+				<parNotes>"See Periodic Position Event Configuration"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1545" level="10" status="0" datatype="Byte" address="3654" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
@@ -9429,24 +9525,24 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 		<Parameter parID="869" level="10" status="0" datatype="Byte" address="3806" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Custom Event One Configuration</parName>
-				<parDescription>"Custom Event One Configuration"</parDescription>
+				<parName>Custom Event 1 Configuration</parName>
+				<parDescription>"Custom Event 1 Configuration"</parDescription>
 				<parNotes>"See Periodic Position Event Configuration"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="969" level="10" status="0" datatype="Byte" address="3807" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Custom Event Two Configuration</parName>
-				<parDescription>"Custom Event Two Configuration"</parDescription>
+				<parName>Custom Event 2 Configuration</parName>
+				<parDescription>"Custom Event 2 Configuration"</parDescription>
 				<parNotes>"See Periodic Position Event Configuration"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1076" level="10" status="0" datatype="Byte" address="3808" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Custom Event Three Configuration</parName>
-				<parDescription>"Custom Event Three Configuration"</parDescription>
+				<parName>Custom Event 3 Configuration</parName>
+				<parDescription>"Custom Event 3 Configuration"</parDescription>
 				<parNotes>"See Periodic Position Event Configuration"</parNotes>
 			</parInfo>
 		</Parameter>
@@ -10037,6 +10133,7 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				Event Configuration
 			</catDescription>
 			<catParameters>
+				<catParameter parID="1852" />
 				<catParameter parID="767" />
 				<catParameter parID="768" />
 				<catParameter parID="769" />
@@ -10054,6 +10151,17 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="778" />
 				<catParameter parID="779" />
 				<catParameter parID="1830" />
+				<catParameter parID="1841" />
+				<catParameter parID="1842" />
+				<catParameter parID="1843" />
+				<catParameter parID="1844" />
+				<catParameter parID="1845" />
+				<catParameter parID="1846" />
+				<catParameter parID="1847" />
+				<catParameter parID="1848" />
+				<catParameter parID="1849" />
+				<catParameter parID="1850" />
+				<catParameter parID="1851" />
 				<catParameter parID="1545" />
 				<catParameter parID="1659" />
 				<catParameter parID="1660" />
@@ -10256,9 +10364,9 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="1356" />
 				<catParameter parID="1571" />
 				<catParameter parID="1596" />
-				<catParameter parID="1773" />
 				<catParameter parID="1678" />
 				<catParameter parID="1679" />
+				<catParameter parID="1773" />
 				<catParameter parID="1687" />
 				<catParameter parID="1815" />
 				<catParameter parID="1558" />
@@ -10603,8 +10711,8 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="1275" />
 				<catParameter parID="1419" />
 				<catParameter parID="1424" />
-				<catParameter parID="1420" />
 				<catParameter parID="1427" />
+				<catParameter parID="1420" />
 				<catParameter parID="1421" />
 				<catParameter parID="1422" />
 				<catParameter parID="1423" />
@@ -11301,6 +11409,26 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 						<grpParameterValue parID="171" value="1" display="0" ovr="0" />
 						<grpParameterValue parID="172" value="1" display="0" ovr="0" />
 						<grpParameterValue parID="173" value="1" display="0" ovr="0" />
+					</grpParameterValues>
+				</grpValue>
+			</grpValues>
+		</Group>
+		<Group grpName="Engineering" isDefault="0">
+			<grpDescription>
+				Engineering Tasks
+			</grpDescription>
+			<grpValues>
+				<grpValue grpValueName="Firmware Pull" isDefault="0">
+					<grpValueDescription>
+						
+					</grpValueDescription>
+					<grpParameterValues>
+						<grpParameterValue parID="1325" value="20" display="1" ovr="1" />
+						<grpParameterValue parID="1456" value="178.62.7.116" display="1" ovr="1" />
+						<grpParameterValue parID="1457" value="mhtesting##@#" display="1" ovr="1" />
+						<grpParameterValue parID="1458" value="mhubftp" display="1" ovr="1" />
+						<grpParameterValue parID="1459" value="/home/mhubftp/ftp/" display="1" ovr="1" />
+						<grpParameterValue parID="1460" value="CurrentBuild.bin" display="1" ovr="1" />
 					</grpParameterValues>
 				</grpValue>
 			</grpValues>

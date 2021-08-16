@@ -100,7 +100,7 @@
 		<item id="98" description="Indicates that a data call is active." name="Data Call Active" dtu="1" />
 		<item id="99" description="Clear All Insurance Related variables" name="Clear Insurance" dtu="0" />
 		<item id="100" description="GSM IO Ready" name="GSM IO Ready" dtu="0" />
-		<item id="101" description=" Custom Variables Changed 3" name="Custom Variables Flag 3" dtu="1" />
+		<item id="101" description="Custom Variables Changed 3" name="Custom Variables Flag 3" dtu="1" />
 		<item id="102" description="Safe Mode Active indicator" name="Safe Mode Active indicator" dtu="1" />
 		<item id="103" description="Private (Clear) or Business (Set) trip indicator " name="Private (Clear) or Business (Set) trip indicator " dtu="1" />
 		<item id="104" description="Set Flag to Generate Tachograph Event" name="Raise Tacho Graph" dtu="0" />
@@ -174,7 +174,7 @@
 		<item id="172" description="VNI Suspended" name="VNI Suspended" dtu="1" />
 		<item id="173" description="Personal License Type" name="License Type Personal" dtu="1" />
 		<item id="174" description="Update Telemetry Event Data" name="Update Telemetry" dtu="1" />
-		<item id="175" description="The current geofence's speed limit is used for over speed checking" name="Geofence Speed Limit in Effect" dtu="1" />
+		<item id="175" description="The current geofence&apos;s speed limit is used for over speed checking" name="Geofence Speed Limit in Effect" dtu="1" />
 		<item id="176" description="State of Output 5" name="Output 5 State" dtu="1" />
 		<item id="177" description="IPC Pass Through active indicator" name="IPC Pass Through" dtu="0" />
 		<item id="178" description="Bluetooth Communication Medium State" name="CM Bluetooth" dtu="1" />

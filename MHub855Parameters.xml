@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="5" unitType="MHub855" created="2021-06-23T09:58:23+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="5" unitType="MHub855" created="2021-08-04T10:50:08+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="2" level="10" status="0" datatype="Word" address="256" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
@@ -3161,68 +3161,86 @@ This is the non-scaled values
 e.g. 2 * 0.02 = 0.04g"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1474" level="10" status="0" datatype="Byte" address="791" length="1" bitmask="255" dtu="0" units="" min="255" max="0" >
+		<Parameter parID="1474" level="10" status="0" datatype="Byte" address="791" length="1" bitmask="255" dtu="0" units="" min="0" max="64" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Input A Function</parName>
-				<parDescription>"Input A Function"</parDescription>
-				<parNotes>"Input A Function Configuration: Default Input 1
+				<parDescription>"Sets the function that Input A links to."</parDescription>
+				<parNotes>"Input A Function Configuration: 
+Default: Mapped to behave as Input 1
+Select the function that Input A must perform.
+Add 128 to the index below to invert the logic
+
 1 Input 1
 2 Input 2
 4 Ignition
+5 Input 3  *SEE NOTE 1
+6 Input 4  *SEE NOTE 1
 8 RPM
 16 Speed
-32 Output 1
-64 Output 2
-128 Invert Logic"</parNotes>
+32 Output 1 follows Input A line
+33 Output 3 follows Input A line  *SEE NOTE 1
+34 Output 4 follows Input A line  *SEE NOTE 1
+64 Output 2 follows Input A line
+
+*NOTE 1: This functionality is not available on firmware before XXX-042 and 
+can cause undefined behaviour if used on earlier firmware versions.
+"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1475" level="10" status="0" datatype="Byte" address="792" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+		<Parameter parID="1475" level="10" status="0" datatype="Byte" address="792" length="1" bitmask="255" dtu="0" units="" min="0" max="64" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Input B Function</parName>
-				<parDescription>"Input B Function"</parDescription>
-				<parNotes>"Input B Function Configuration: Default Input 2
+				<parDescription>"Sets the function that Input B maps to
+"</parDescription>
+				<parNotes>"Input B Function Configuration:
+Default: Mapped to behave as Input 2
+Select the function that Input B must perform.
+Add 128 to the index below to invert the logic.
+
 1 Input 1
 2 Input 2
 4 Ignition
+5 Input 3  *SEE NOTE 1
+6 Input 4  *SEE NOTE 1
 8 RPM
 16 Speed
-32 Output 1
-64 Output 2
-128 Invert Logic"</parNotes>
+32 Output 1 follows Input B line
+33 Output 3 follows Input B line  *SEE NOTE 1
+34 Output 4 follows Input B line  *SEE NOTE 1
+64 Output 2 follows Input B line
+ 	
+*NOTE 1: This functionality is not available on firmware before XXX-042 and 
+can cause undefined behaviour if used on earlier firmware versions.
+
+"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1476" level="10" status="0" datatype="Byte" address="793" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Output A Function</parName>
-				<parDescription>"Output A Function"</parDescription>
-				<parNotes>"Output A Function Configuration: Default Output 1
+				<parDescription>"Output A Function Configuration
+"</parDescription>
+				<parNotes>"Output A Function Configuration: 
+Select the function that Output A must perform.
+Add 128 to the function index to invert the logic. 
+
+Default: Behave as Output 1
+
+
 1 Output 1
 2 Output 2
-4 Output Follow Ignition
+4 Output to follow Ignition
+5.Output 3  *SEE NOTE 1
+6.Output 4  *SEE NOTE 1
 8 Buzzer
-16 Immobiliser
-32 Reserved
-64 Reserved
-128 Inverse Logic"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1477" level="10" status="0" datatype="Byte" address="794" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Output B Function</parName>
-				<parDescription>"Output B Function"</parDescription>
-				<parNotes>"Output B Function Configuration: Default Output 2
-1 Output 1
-2 Output 2
-4 Output Follow Ignition
-8 Buzzer
-16 Immobiliser
-32 Reserved
-64 Reserved
-128 Inverse Logic"</parNotes>
+16 Output uses as immobiliser
+
+*NOTE 1: This functionality is not available on firmware before XXX-042 and 
+can cause undefined behaviour if set. 
+"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1497" level="10" status="0" datatype="Bit" address="795" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
@@ -6266,9 +6284,9 @@ None"</parNotes>
 		<Parameter parID="254" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Driver Key used for Immobilisation</parName>
-				<parDescription>"Driver Key Immobilisation"</parDescription>
-				<parNotes>"If the driver key is intended to control the immobilizer connection to the vehicle, then this parameter must be set to 1."</parNotes>
+				<parName>Output used for Immobilisation</parName>
+				<parDescription>"Output used for Immobilisation"</parDescription>
+				<parNotes>"If the driver key is intended to control the immobiliser connection to the vehicle, then this parameter must be set to 1 alternatively if there is no Driver Key used then the Output Follows Ignition Parameter or Bit in the Output A and B can be set to still be able to control immobilisation of the vehicle via the Disablement command."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="826" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
@@ -9258,6 +9276,14 @@ Note that certain vehicles respond to certain DTC requests by turning on the rel
 "</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1852" level="10" status="0" datatype="Byte" address="3535" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Custom Event 15 Configuration</parName>
+				<parDescription>"Custom Event 15 Configuration"</parDescription>
+				<parNotes>"See Periodic Position Event Configuration"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1254" level="0" status="0" datatype="String" address="3542" length="32" bitmask="255" dtu="0" units="" min="0" max="0" >
 			<parValues default="" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -9511,6 +9537,94 @@ Configuration =
 
 How is this value calculated: 
 As an example, configure the event to use policy 5, Include the Location Field, Include the Status Field and is enabled. Use the values in square brackets for each item and add them together, i.e. 5 + 16 + 32 + 128 = 181"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1841" level="10" status="0" datatype="Byte" address="3624" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Custom Event 4 Configuration</parName>
+				<parDescription>"Custom Event 4 Configuration"</parDescription>
+				<parNotes>"See Periodic Position Event Configuration"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1842" level="10" status="0" datatype="Byte" address="3625" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Custom Event 5 Configuration</parName>
+				<parDescription>"Custom Event 5 Configuration"</parDescription>
+				<parNotes>"See Periodic Position Event Configuration"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1843" level="10" status="0" datatype="Byte" address="3626" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Custom Event 6 Configuration</parName>
+				<parDescription>"Custom Event 6 Configuration"</parDescription>
+				<parNotes>"See Periodic Position Event Configuration"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1844" level="10" status="0" datatype="Byte" address="3627" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Custom Event 7 Configuration</parName>
+				<parDescription>"Custom Event 7 Configuration"</parDescription>
+				<parNotes>"See Periodic Position Event Configuration"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1845" level="10" status="0" datatype="Byte" address="3628" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Custom Event 8 Configuration</parName>
+				<parDescription>"Custom Event 8 Configuration"</parDescription>
+				<parNotes>"See Periodic Position Event Configuration"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1846" level="10" status="0" datatype="Byte" address="3629" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Custom Event 9 Configuration</parName>
+				<parDescription>"Custom Event 9 Configuration"</parDescription>
+				<parNotes>"See Periodic Position Event Configuration"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1847" level="10" status="0" datatype="Byte" address="3630" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Custom Event 10 Configuration</parName>
+				<parDescription>"Custom Event 10 Configuration"</parDescription>
+				<parNotes>"See Periodic Position Event Configuration"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1848" level="10" status="0" datatype="Byte" address="3631" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Custom Event 11 Configuration</parName>
+				<parDescription>"Custom Event 11 Configuration"</parDescription>
+				<parNotes>"See Periodic Position Event Configuration"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1849" level="10" status="0" datatype="Byte" address="3632" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Custom Event 12 Configuration</parName>
+				<parDescription>"Custom Event 12 Configuration"</parDescription>
+				<parNotes>"See Periodic Position Event Configuration"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1850" level="10" status="0" datatype="Byte" address="3633" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Custom Event 13 Configuration</parName>
+				<parDescription>"Custom Event 13 Configuration"</parDescription>
+				<parNotes>"See Periodic Position Event Configuration"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1851" level="10" status="0" datatype="Byte" address="3634" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Custom Event 14 Configuration</parName>
+				<parDescription>"Custom Event 12 Configuration"</parDescription>
+				<parNotes>"See Periodic Position Event Configuration"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1545" level="10" status="0" datatype="Byte" address="3654" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
@@ -10116,24 +10230,24 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 		<Parameter parID="869" level="10" status="0" datatype="Byte" address="3806" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Custom Event One Configuration</parName>
-				<parDescription>"Custom Event One Configuration"</parDescription>
+				<parName>Custom Event 1 Configuration</parName>
+				<parDescription>"Custom Event 1 Configuration"</parDescription>
 				<parNotes>"See Periodic Position Event Configuration"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="969" level="10" status="0" datatype="Byte" address="3807" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Custom Event Two Configuration</parName>
-				<parDescription>"Custom Event Two Configuration"</parDescription>
+				<parName>Custom Event 2 Configuration</parName>
+				<parDescription>"Custom Event 2 Configuration"</parDescription>
 				<parNotes>"See Periodic Position Event Configuration"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1076" level="10" status="0" datatype="Byte" address="3808" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Custom Event Three Configuration</parName>
-				<parDescription>"Custom Event Three Configuration"</parDescription>
+				<parName>Custom Event 3 Configuration</parName>
+				<parDescription>"Custom Event 3 Configuration"</parDescription>
 				<parNotes>"See Periodic Position Event Configuration"</parNotes>
 			</parInfo>
 		</Parameter>
@@ -10721,6 +10835,7 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				Event Configuration
 			</catDescription>
 			<catParameters>
+				<catParameter parID="1852" />
 				<catParameter parID="767" />
 				<catParameter parID="768" />
 				<catParameter parID="769" />
@@ -10738,6 +10853,17 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="778" />
 				<catParameter parID="779" />
 				<catParameter parID="1830" />
+				<catParameter parID="1841" />
+				<catParameter parID="1842" />
+				<catParameter parID="1843" />
+				<catParameter parID="1844" />
+				<catParameter parID="1845" />
+				<catParameter parID="1846" />
+				<catParameter parID="1847" />
+				<catParameter parID="1848" />
+				<catParameter parID="1849" />
+				<catParameter parID="1850" />
+				<catParameter parID="1851" />
 				<catParameter parID="1545" />
 				<catParameter parID="1659" />
 				<catParameter parID="1660" />
@@ -10953,8 +11079,8 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="1571" />
 				<catParameter parID="1596" />
 				<catParameter parID="1678" />
-				<catParameter parID="1679" />
 				<catParameter parID="1773" />
+				<catParameter parID="1679" />
 				<catParameter parID="1687" />
 				<catParameter parID="1815" />
 				<catParameter parID="1558" />
@@ -10977,7 +11103,6 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="1474" />
 				<catParameter parID="1475" />
 				<catParameter parID="1476" />
-				<catParameter parID="1477" />
 				<catParameter parID="137" />
 				<catParameter parID="138" />
 				<catParameter parID="139" />
@@ -11349,8 +11474,8 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="101" />
 				<catParameter parID="116" />
 				<catParameter parID="117" />
-				<catParameter parID="846" />
 				<catParameter parID="845" />
+				<catParameter parID="846" />
 				<catParameter parID="69" />
 				<catParameter parID="70" />
 				<catParameter parID="1264" />
@@ -11407,8 +11532,8 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="1275" />
 				<catParameter parID="1419" />
 				<catParameter parID="1424" />
-				<catParameter parID="1420" />
 				<catParameter parID="1427" />
+				<catParameter parID="1420" />
 				<catParameter parID="1421" />
 				<catParameter parID="1422" />
 				<catParameter parID="1423" />
@@ -12187,6 +12312,13 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 						<grpParameterValue parID="173" value="1" display="0" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
+			</grpValues>
+		</Group>
+		<Group grpName="Engineering" isDefault="0">
+			<grpDescription>
+				Engineering Tasks
+			</grpDescription>
+			<grpValues>
 			</grpValues>
 		</Group>
 		<Group grpName="FOTA" isDefault="0">

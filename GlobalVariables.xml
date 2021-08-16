@@ -38,8 +38,8 @@
 		<item id="35" description="The date and time the backup battery was inserted - Julian Time" name="Battery Insertion Date and Time" size="4" scale="1" offset="0" units="Second" min="0" max="4294967295" dtu="0" />
 		<item id="36" description="The state the backup battery is in" name="Current Battery State" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="0" />
 		<item id="37" description="This a count of the current number of triggers defined" name="Triggers Used" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="0" />
-		<item id="38" description="Number of SMS\'s the box sent" name="SMS Tx" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
-		<item id="39" description="Number of SMS\'s received by the box" name="SMS Rx" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="38" description="Number of SMS\&apos;s the box sent" name="SMS Tx" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
+		<item id="39" description="Number of SMS\&apos;s received by the box" name="SMS Rx" size="2" scale="1" offset="0" units="" min="0" max="65535" dtu="0" />
 		<item id="40" description="Number of GPRS Packets sent by the box" name="GPRS Packets Sent" size="2" scale="1" offset="0" units="packets" min="0" max="65535" dtu="0" />
 		<item id="41" description="Number of GPRS Packets received by the box" name="GPRS Packets Received" size="2" scale="1" offset="0" units="packets" min="0" max="65535" dtu="0" />
 		<item id="42" description="The total number of bytes sent by the box over GPRS" name="Total GPRS Data Sent" size="4" scale="1" offset="0" units="bytes" min="0" max="4294967295" dtu="0" />
@@ -110,7 +110,7 @@
 		<item id="108" description="Geoloc Status" name="Geoloc Status" size="1" scale="1" offset="0" units="" min="0" max="4" dtu="0" />
 		<item id="109" description="Current Status of the GPRS Socket Login" name="Socket Login Status" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
 		<item id="110" description="This is the service odometer at which the service event was generated" name="Service Odometer" size="4" scale="1" offset="0" units="m" min="0" max="4294967295" dtu="0" />
-		<item id="111" description="The amount of time that a vehicle\'s speed was below a preset threshold during a trip," name="Stationary Time" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535" dtu="0" />
+		<item id="111" description="The amount of time that a vehicle&apos;s speed was below a preset threshold during a trip," name="Stationary Time" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535" dtu="0" />
 		<item id="112" description="UTC Year from GPS" name="GPS UTC Year" size="1" scale="1" offset="2000" units="Years" min="2000" max="2200" dtu="0" />
 		<item id="113" description="UTC month from GPS" name="GPS UTC Month" size="1" scale="1" offset="0" units="Month" min="1" max="12" dtu="0" />
 		<item id="114" description="UTC Day from GPS" name="GPS UTC Day" size="1" scale="1" offset="0" units="day" min="1" max="31" dtu="0" />
@@ -299,4 +299,14 @@
 		<item id="297" description="Input 14 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 14 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
 		<item id="298" description="Input 15 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 15 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
 		<item id="299" description="Input 16 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 16 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
+		<item id="300" description="The amount of stored electrical charge in the High Voltage Energy Storage System that is available for use by the hybrid system, i.e. “how full is the tank”" name="HVESS Discharge Capacity" size="4" scale="1" offset="0" units="uAh" min="0" max="4294967295" dtu="0" />
+		<item id="301" description="The amount of unused electrical charge storage in the High Voltage Energy Storage System that is available to be filled by charging, i.e. “how much empty space is remaining in the tank”" name="HVESS Charge Capacity" size="4" scale="1" offset="0" units="uAh" min="0" max="4294967295" dtu="0" />
+		<item id="302" description="The voltage level of the high voltage bus, as measured by the High Voltage Energy Storage System" name="HVESS Bus Voltage" size="4" scale="1" offset="0" units="uV" min="0" max="4294967295" dtu="0" />
+		<item id="303" description="The voltage level at the ignition input of the High Voltage Energy Storage System" name="HVESS Ignition Voltage" size="4" scale="1" offset="0" units="uV" min="0" max="4294967295" dtu="0" />
+		<item id="304" description="HVESS Intake Coolant Temperature" name="HVESS Intake Coolant Temperature" size="1" scale="1" offset="-40" units="degC" min="-40" max="210" dtu="0" />
+		<item id="305" description="The temperature of liquid coolant as it exits the High Voltage Energy Storage System" name="HVESS Outlet Temperature" size="1" scale="1" offset="-40" units="degC" min="-40" max="210" dtu="0" />
+		<item id="306" description="The temperature of the electronics or control modules in the High Voltage Energy Storage System" name="HVESS Electronics Temperature" size="1" scale="1" offset="-40" units="degC" min="-40" max="210" dtu="0" />
+		<item id="307" description="The temperature of High Voltage Energy Storage System. The value may be determined from a unique sensor specifically for this purpose, or by aggregating various temperature sensor readings within the system" name="HVESS Temperature" size="1" scale="1" offset="-40" units="degC" min="-40" max="210" dtu="0" />
+		<item id="308" description="The amount of stored electrical energy in High Voltage Energy Storage System that is available for use by the hybrid system, i.e. “how full is the tank”" name="HVESS Discharge Energy Capacity" size="4" scale="1" offset="0" units="W" min="0" max="4294967295" dtu="0" />
+		<item id="309" description="The amount of unused electrical energy storage available to be filled by charging High Voltage Energy Storage System, i.e. “how much empty space is remaining in the tank”" name="HVESS Charge Energy Capacity" size="4" scale="1" offset="0" units="W" min="0" max="4294967295" dtu="0" />
 </GlobalVariables>

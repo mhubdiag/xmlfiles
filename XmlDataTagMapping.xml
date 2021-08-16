@@ -447,6 +447,66 @@
 				<tag id="14" description="Generic 31 Bytes" />
 			</tags>
 		</event>
+		<event id="40" description="Custom Event 4">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="41" description="Custom Event 5">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="42" description="Custom Event 6">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="43" description="Custom Event 7">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="44" description="Custom Event 8">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="45" description="Custom Event 9">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="46" description="Custom Event 10">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="47" description="Custom Event 11">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="48" description="Custom Event 12">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="49" description="Custom Event 13">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="50" description="Custom Event 14">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
+		<event id="51" description="Custom Event 15">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
 		<event id="70" description="Analog Sensor">
 			<tags>
 				<tag id="52" description="Custom Event 3 Data" />

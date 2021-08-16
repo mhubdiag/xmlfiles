@@ -1,4 +1,4 @@
-<MhubParameterSet created="2021-06-23T09:58:25+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2021-08-04T10:50:11+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -1421,10 +1421,10 @@ e.g. AB0123456 78901 23
 			<Help>Vehicle Disablement Delay</Help>
 			<Notes>Vehicle Disablement Delay from request to vehicle disabled in seconds.</Notes>
 		</Parameter>
-		<Parameter name="Driver Key used for Immobilisation" level="10" datatype="Bit" address="1981" length="1" bitmask="1" dtu="0">
+		<Parameter name="Output used for Immobilisation" level="10" datatype="Bit" address="1981" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Driver Key Immobilisation</Help>
-			<Notes>If the driver key is intended to control the immobilizer connection to the vehicle, then this parameter must be set to 1.</Notes>
+			<Help>Output used for Immobilisation</Help>
+			<Notes>If the driver key is intended to control the immobiliser connection to the vehicle, then this parameter must be set to 1 alternatively if there is no Driver Key used then the Output Follows Ignition Parameter or Bit in the Output A and B can be set to still be able to control immobilisation of the vehicle via the Disablement command.</Notes>
 		</Parameter>
 		<Parameter name="Enable Driver Key" level="10" datatype="Bit" address="1981" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
@@ -1620,6 +1620,11 @@ e.g. AB0123456 78901 23
 		</Parameter>
 	</Category>
 	<Category name="Event Configuration">
+		<Parameter name="Custom Event 15 Configuration" level="10" datatype="Byte" address="3535" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 15 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
 		<Parameter name="Event 0 Configuration" level="0" datatype="Byte" address="3584" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="0" previous="" current="" units="" />
 			<Help>This is not a valid event but indicate the start of the event configuration section</Help>
@@ -1732,6 +1737,61 @@ Configuration =
 
 How is this value calculated: 
 As an example, configure the event to use policy 5, Include the Location Field, Include the Status Field and is enabled. Use the values in square brackets for each item and add them together, i.e. 5 + 16 + 32 + 128 = 181</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 4 Configuration" level="10" datatype="Byte" address="3624" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 4 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 5 Configuration" level="10" datatype="Byte" address="3625" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 5 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 6 Configuration" level="10" datatype="Byte" address="3626" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 6 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 7 Configuration" level="10" datatype="Byte" address="3627" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 7 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 8 Configuration" level="10" datatype="Byte" address="3628" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 8 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 9 Configuration" level="10" datatype="Byte" address="3629" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 9 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 10 Configuration" level="10" datatype="Byte" address="3630" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 10 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 11 Configuration" level="10" datatype="Byte" address="3631" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 11 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 12 Configuration" level="10" datatype="Byte" address="3632" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 12 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 13 Configuration" level="10" datatype="Byte" address="3633" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 13 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 14 Configuration" level="10" datatype="Byte" address="3634" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 12 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
 		</Parameter>
 		<Parameter name="Analog Sensor" level="10" datatype="Byte" address="3654" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
@@ -2108,19 +2168,19 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 			<Help>RFID Information Event Configuration</Help>
 			<Notes>See Periodic Position Event Configuration</Notes>
 		</Parameter>
-		<Parameter name="Custom Event One Configuration" level="10" datatype="Byte" address="3806" length="1" bitmask="255" dtu="1">
+		<Parameter name="Custom Event 1 Configuration" level="10" datatype="Byte" address="3806" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Custom Event One Configuration</Help>
+			<Help>Custom Event 1 Configuration</Help>
 			<Notes>See Periodic Position Event Configuration</Notes>
 		</Parameter>
-		<Parameter name="Custom Event Two Configuration" level="10" datatype="Byte" address="3807" length="1" bitmask="255" dtu="1">
+		<Parameter name="Custom Event 2 Configuration" level="10" datatype="Byte" address="3807" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Custom Event Two Configuration</Help>
+			<Help>Custom Event 2 Configuration</Help>
 			<Notes>See Periodic Position Event Configuration</Notes>
 		</Parameter>
-		<Parameter name="Custom Event Three Configuration" level="10" datatype="Byte" address="3808" length="1" bitmask="255" dtu="1">
+		<Parameter name="Custom Event 3 Configuration" level="10" datatype="Byte" address="3808" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Custom Event Three Configuration</Help>
+			<Help>Custom Event 3 Configuration</Help>
 			<Notes>See Periodic Position Event Configuration</Notes>
 		</Parameter>
 		<Parameter name="Bluetooth Low Energy Device Tracking" level="10" datatype="Byte" address="3809" length="1" bitmask="255" dtu="0">

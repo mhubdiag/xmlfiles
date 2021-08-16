@@ -1,4 +1,4 @@
-<MhubParameterSet created="2021-06-23T09:58:26+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2021-08-04T10:50:11+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -774,6 +774,11 @@ Other = OFF (No Beep)</Notes>
 			<Help>Enable BLE Host Capability</Help>
 			<Notes>Enable BLE Host Capability. Host board must be connected.</Notes>
 		</Parameter>
+		<Parameter name="Enable Continuous Scan" level="10" datatype="Bit" address="2724" length="1" bitmask="2" dtu="0">
+			<Values min="0" max="1" default="1" previous="" current="" units="" />
+			<Help></Help>
+			<Notes></Notes>
+		</Parameter>
 		<Parameter name="Limited Tracking List Enable" level="10" datatype="Bit" address="2724" length="1" bitmask="16" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Enables the use of the Limited Tracking List.
@@ -1421,10 +1426,10 @@ e.g. AB0123456 78901 23
 			<Help>Vehicle Disablement Delay</Help>
 			<Notes>Vehicle Disablement Delay from request to vehicle disabled in seconds.</Notes>
 		</Parameter>
-		<Parameter name="Driver Key used for Immobilisation" level="10" datatype="Bit" address="1981" length="1" bitmask="1" dtu="0">
+		<Parameter name="Output used for Immobilisation" level="10" datatype="Bit" address="1981" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Driver Key Immobilisation</Help>
-			<Notes>If the driver key is intended to control the immobilizer connection to the vehicle, then this parameter must be set to 1.</Notes>
+			<Help>Output used for Immobilisation</Help>
+			<Notes>If the driver key is intended to control the immobiliser connection to the vehicle, then this parameter must be set to 1 alternatively if there is no Driver Key used then the Output Follows Ignition Parameter or Bit in the Output A and B can be set to still be able to control immobilisation of the vehicle via the Disablement command.</Notes>
 		</Parameter>
 		<Parameter name="Enable Driver Key" level="10" datatype="Bit" address="1981" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
@@ -1620,6 +1625,11 @@ e.g. AB0123456 78901 23
 		</Parameter>
 	</Category>
 	<Category name="Event Configuration">
+		<Parameter name="Custom Event 15 Configuration" level="10" datatype="Byte" address="3535" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 15 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
 		<Parameter name="Event 0 Configuration" level="0" datatype="Byte" address="3584" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="0" previous="" current="" units="" />
 			<Help>This is not a valid event but indicate the start of the event configuration section</Help>
@@ -1732,6 +1742,61 @@ Configuration =
 
 How is this value calculated: 
 As an example, configure the event to use policy 5, Include the Location Field, Include the Status Field and is enabled. Use the values in square brackets for each item and add them together, i.e. 5 + 16 + 32 + 128 = 181</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 4 Configuration" level="10" datatype="Byte" address="3624" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 4 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 5 Configuration" level="10" datatype="Byte" address="3625" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 5 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 6 Configuration" level="10" datatype="Byte" address="3626" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 6 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 7 Configuration" level="10" datatype="Byte" address="3627" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 7 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 8 Configuration" level="10" datatype="Byte" address="3628" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 8 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 9 Configuration" level="10" datatype="Byte" address="3629" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 9 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 10 Configuration" level="10" datatype="Byte" address="3630" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 10 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 11 Configuration" level="10" datatype="Byte" address="3631" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 11 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 12 Configuration" level="10" datatype="Byte" address="3632" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 12 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 13 Configuration" level="10" datatype="Byte" address="3633" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 13 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 14 Configuration" level="10" datatype="Byte" address="3634" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 12 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
 		</Parameter>
 		<Parameter name="Analog Sensor" level="10" datatype="Byte" address="3654" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
@@ -2108,19 +2173,19 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 			<Help>RFID Information Event Configuration</Help>
 			<Notes>See Periodic Position Event Configuration</Notes>
 		</Parameter>
-		<Parameter name="Custom Event One Configuration" level="10" datatype="Byte" address="3806" length="1" bitmask="255" dtu="1">
+		<Parameter name="Custom Event 1 Configuration" level="10" datatype="Byte" address="3806" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Custom Event One Configuration</Help>
+			<Help>Custom Event 1 Configuration</Help>
 			<Notes>See Periodic Position Event Configuration</Notes>
 		</Parameter>
-		<Parameter name="Custom Event Two Configuration" level="10" datatype="Byte" address="3807" length="1" bitmask="255" dtu="1">
+		<Parameter name="Custom Event 2 Configuration" level="10" datatype="Byte" address="3807" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Custom Event Two Configuration</Help>
+			<Help>Custom Event 2 Configuration</Help>
 			<Notes>See Periodic Position Event Configuration</Notes>
 		</Parameter>
-		<Parameter name="Custom Event Three Configuration" level="10" datatype="Byte" address="3808" length="1" bitmask="255" dtu="1">
+		<Parameter name="Custom Event 3 Configuration" level="10" datatype="Byte" address="3808" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Custom Event Three Configuration</Help>
+			<Help>Custom Event 3 Configuration</Help>
 			<Notes>See Periodic Position Event Configuration</Notes>
 		</Parameter>
 		<Parameter name="Bluetooth Low Energy Device Tracking" level="10" datatype="Byte" address="3809" length="1" bitmask="255" dtu="0">
@@ -2759,56 +2824,77 @@ Allow the GPS to be initialised with the Best Guess position the MHub currently 
 	</Category>
 	<Category name="Inputs and Outputs">
 		<Parameter name="Input A Function" level="10" datatype="Byte" address="791" length="1" bitmask="255" dtu="0">
-			<Values min="255" max="0" default="0" previous="" current="" units="" />
-			<Help>Input A Function</Help>
-			<Notes>Input A Function Configuration: Default Input 1
+			<Values min="0" max="64" default="0" previous="" current="" units="" />
+			<Help>Sets the function that Input A links to.</Help>
+			<Notes>Input A Function Configuration: 
+Default: Mapped to behave as Input 1
+Select the function that Input A must perform.
+Add 128 to the index below to invert the logic
+
 1 Input 1
 2 Input 2
 4 Ignition
+5 Input 3  *SEE NOTE 1
+6 Input 4  *SEE NOTE 1
 8 RPM
 16 Speed
-32 Output 1
-64 Output 2
-128 Invert Logic</Notes>
+32 Output 1 follows Input A line
+33 Output 3 follows Input A line  *SEE NOTE 1
+34 Output 4 follows Input A line  *SEE NOTE 1
+64 Output 2 follows Input A line
+
+*NOTE 1: This functionality is not available on firmware before XXX-042 and 
+can cause undefined behaviour if used on earlier firmware versions.
+</Notes>
 		</Parameter>
 		<Parameter name="Input B Function" level="10" datatype="Byte" address="792" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Input B Function</Help>
-			<Notes>Input B Function Configuration: Default Input 2
+			<Values min="0" max="64" default="0" previous="" current="" units="" />
+			<Help>Sets the function that Input B maps to
+</Help>
+			<Notes>Input B Function Configuration:
+Default: Mapped to behave as Input 2
+Select the function that Input B must perform.
+Add 128 to the index below to invert the logic.
+
 1 Input 1
 2 Input 2
 4 Ignition
+5 Input 3  *SEE NOTE 1
+6 Input 4  *SEE NOTE 1
 8 RPM
 16 Speed
-32 Output 1
-64 Output 2
-128 Invert Logic</Notes>
+32 Output 1 follows Input B line
+33 Output 3 follows Input B line  *SEE NOTE 1
+34 Output 4 follows Input B line  *SEE NOTE 1
+64 Output 2 follows Input B line
+ 	
+*NOTE 1: This functionality is not available on firmware before XXX-042 and 
+can cause undefined behaviour if used on earlier firmware versions.
+
+</Notes>
 		</Parameter>
 		<Parameter name="Output A Function" level="10" datatype="Byte" address="793" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Output A Function</Help>
-			<Notes>Output A Function Configuration: Default Output 1
+			<Help>Output A Function Configuration
+</Help>
+			<Notes>Output A Function Configuration: 
+Select the function that Output A must perform.
+Add 128 to the function index to invert the logic. 
+
+Default: Behave as Output 1
+
+
 1 Output 1
 2 Output 2
-4 Output Follow Ignition
+4 Output to follow Ignition
+5.Output 3  *SEE NOTE 1
+6.Output 4  *SEE NOTE 1
 8 Buzzer
-16 Immobiliser
-32 Reserved
-64 Reserved
-128 Inverse Logic</Notes>
-		</Parameter>
-		<Parameter name="Output B Function" level="10" datatype="Byte" address="794" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Output B Function</Help>
-			<Notes>Output B Function Configuration: Default Output 2
-1 Output 1
-2 Output 2
-4 Output Follow Ignition
-8 Buzzer
-16 Immobiliser
-32 Reserved
-64 Reserved
-128 Inverse Logic</Notes>
+16 Output uses as immobiliser
+
+*NOTE 1: This functionality is not available on firmware before XXX-042 and 
+can cause undefined behaviour if set. 
+</Notes>
 		</Parameter>
 		<Parameter name="Output 1 Style" level="10" datatype="Byte" address="971" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="3" default="0" previous="" current="" units="" />
@@ -4614,15 +4700,15 @@ If set to zero then reports will continue indefinitely</Notes>
 			<Help>Ignition Source: Trigger</Help>
 			<Notes>Ignition Source is set to Trigger which is a software controlled ignition source.</Notes>
 		</Parameter>
-		<Parameter name="Ignition Source: Accelerometer" level="5" datatype="Bit" address="1829" length="1" bitmask="64" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Ignition Source: Accelerometer</Help>
-			<Notes>One more possible source of ignition is to use Accelerometer movement. If Accelerometer movement is greater than the value specified in parameter "Accelerometer Ignition On Threshold", the vehicle is moving. If Accelerometer is to be used as ignition, this parameter is set to 1.</Notes>
-		</Parameter>
 		<Parameter name="Ignition Source: Alternate" level="10" datatype="Bit" address="1829" length="1" bitmask="128" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Ignition Source: Alternate</Help>
 			<Notes>Ignition Source Alternate uses new method for ignition. Configure sources with Trip Source Ignition Line etc.</Notes>
+		</Parameter>
+		<Parameter name="Ignition Source: Accelerometer" level="5" datatype="Bit" address="1829" length="1" bitmask="64" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Ignition Source: Accelerometer</Help>
+			<Notes>One more possible source of ignition is to use Accelerometer movement. If Accelerometer movement is greater than the value specified in parameter "Accelerometer Ignition On Threshold", the vehicle is moving. If Accelerometer is to be used as ignition, this parameter is set to 1.</Notes>
 		</Parameter>
 		<Parameter name="Ignition Source from RPM Threshold" level="10" datatype="Byte" address="1830" length="1" bitmask="255" dtu="0">
 			<Values min="1" max="255" default="3" previous="" current="" units="RPM" />

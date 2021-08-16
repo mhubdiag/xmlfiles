@@ -1,4 +1,4 @@
-<MhubParameterSet created="2021-06-23T09:58:26+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2021-08-04T10:50:11+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -1392,10 +1392,10 @@ e.g. AB0123456 78901 23
 			<Help>Vehicle Disablement Delay</Help>
 			<Notes>Vehicle Disablement Delay from request to vehicle disabled in seconds.</Notes>
 		</Parameter>
-		<Parameter name="Driver Key used for Immobilisation" level="10" datatype="Bit" address="1981" length="1" bitmask="1" dtu="0">
+		<Parameter name="Output used for Immobilisation" level="10" datatype="Bit" address="1981" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Driver Key Immobilisation</Help>
-			<Notes>If the driver key is intended to control the immobilizer connection to the vehicle, then this parameter must be set to 1.</Notes>
+			<Help>Output used for Immobilisation</Help>
+			<Notes>If the driver key is intended to control the immobiliser connection to the vehicle, then this parameter must be set to 1 alternatively if there is no Driver Key used then the Output Follows Ignition Parameter or Bit in the Output A and B can be set to still be able to control immobilisation of the vehicle via the Disablement command.</Notes>
 		</Parameter>
 		<Parameter name="Enable Driver Key" level="10" datatype="Bit" address="1981" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
@@ -1591,6 +1591,11 @@ e.g. AB0123456 78901 23
 		</Parameter>
 	</Category>
 	<Category name="Event Configuration">
+		<Parameter name="Custom Event 15 Configuration" level="10" datatype="Byte" address="3535" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 15 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
 		<Parameter name="Event 0 Configuration" level="0" datatype="Byte" address="3584" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="0" previous="" current="" units="" />
 			<Help>This is not a valid event but indicate the start of the event configuration section</Help>
@@ -1703,6 +1708,61 @@ Configuration =
 
 How is this value calculated: 
 As an example, configure the event to use policy 5, Include the Location Field, Include the Status Field and is enabled. Use the values in square brackets for each item and add them together, i.e. 5 + 16 + 32 + 128 = 181</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 4 Configuration" level="10" datatype="Byte" address="3624" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 4 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 5 Configuration" level="10" datatype="Byte" address="3625" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 5 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 6 Configuration" level="10" datatype="Byte" address="3626" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 6 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 7 Configuration" level="10" datatype="Byte" address="3627" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 7 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 8 Configuration" level="10" datatype="Byte" address="3628" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 8 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 9 Configuration" level="10" datatype="Byte" address="3629" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 9 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 10 Configuration" level="10" datatype="Byte" address="3630" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 10 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 11 Configuration" level="10" datatype="Byte" address="3631" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 11 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 12 Configuration" level="10" datatype="Byte" address="3632" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 12 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 13 Configuration" level="10" datatype="Byte" address="3633" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 13 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 14 Configuration" level="10" datatype="Byte" address="3634" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 12 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
 		</Parameter>
 		<Parameter name="Analog Sensor" level="10" datatype="Byte" address="3654" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
@@ -2079,19 +2139,19 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 			<Help>RFID Information Event Configuration</Help>
 			<Notes>See Periodic Position Event Configuration</Notes>
 		</Parameter>
-		<Parameter name="Custom Event One Configuration" level="10" datatype="Byte" address="3806" length="1" bitmask="255" dtu="1">
+		<Parameter name="Custom Event 1 Configuration" level="10" datatype="Byte" address="3806" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Custom Event One Configuration</Help>
+			<Help>Custom Event 1 Configuration</Help>
 			<Notes>See Periodic Position Event Configuration</Notes>
 		</Parameter>
-		<Parameter name="Custom Event Two Configuration" level="10" datatype="Byte" address="3807" length="1" bitmask="255" dtu="1">
+		<Parameter name="Custom Event 2 Configuration" level="10" datatype="Byte" address="3807" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Custom Event Two Configuration</Help>
+			<Help>Custom Event 2 Configuration</Help>
 			<Notes>See Periodic Position Event Configuration</Notes>
 		</Parameter>
-		<Parameter name="Custom Event Three Configuration" level="10" datatype="Byte" address="3808" length="1" bitmask="255" dtu="1">
+		<Parameter name="Custom Event 3 Configuration" level="10" datatype="Byte" address="3808" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Custom Event Three Configuration</Help>
+			<Help>Custom Event 3 Configuration</Help>
 			<Notes>See Periodic Position Event Configuration</Notes>
 		</Parameter>
 		<Parameter name="Bluetooth Low Energy Device Tracking" level="10" datatype="Byte" address="3809" length="1" bitmask="255" dtu="0">
@@ -3818,15 +3878,15 @@ Number of seconds before the Modem/MHub reboots due to failing to contact the MP
 			<Help>Enables the unit to close a socket so that voice and data calls may be dealt with</Help>
 			<Notes>In order to be able to answer an incomming voice call, the MHub must close a socket connection if it is currently open. Setting this parameter to 1 will allow the socket to be closed. If this is set to 0, then the MHUb will not be able to close the socket, and thus a voice call will not be possible.</Notes>
 		</Parameter>
-		<Parameter name="Permanent TCP Socket" level="10" datatype="Bit" address="477" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>Enables a permanent TCP socket to MProfiler</Help>
-			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will remain permanently open. Enabling this parameter will instruct the MHub to open up a socket and attempt to keep the socket open at all time. Should the socket drop for any reason, the MHub will immediately reopen the socket again.</Notes>
-		</Parameter>
 		<Parameter name="Data Triggered TCP Socket" level="10" datatype="Bit" address="477" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>when enabled the unit will only open a socket if there is data to be sent to MProfiler. This is overidden by the Permanent TCP Socket switch.</Help>
 			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will only be opened if there is data to be sent. Enabling this parameter will instruct the MHub to only open a socket to Mprofiler if there is data to be sent. Note that if the Permanent TCP Socket parameter is also enabled, that that will override this parameter.</Notes>
+		</Parameter>
+		<Parameter name="Permanent TCP Socket" level="10" datatype="Bit" address="477" length="1" bitmask="2" dtu="0">
+			<Values min="0" max="1" default="1" previous="" current="" units="" />
+			<Help>Enables a permanent TCP socket to MProfiler</Help>
+			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will remain permanently open. Enabling this parameter will instruct the MHub to open up a socket and attempt to keep the socket open at all time. Should the socket drop for any reason, the MHub will immediately reopen the socket again.</Notes>
 		</Parameter>
 		<Parameter name="Socket Suspend Time" level="5" datatype="Byte" address="528" length="1" bitmask="0" dtu="0">
 			<Values min="5" max="200" default="15" previous="" current="" units="Seconds" />

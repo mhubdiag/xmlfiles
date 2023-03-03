@@ -1,4 +1,4 @@
-<MhubParameterSet created="2021-08-16T14:45:31+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2023-03-03T10:40:05+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -435,11 +435,13 @@ Accelerometer DMA Enable</Notes>
 			<Notes>Accident Reconstruction Log Sending Delay in seconds. This parameter specifies how many seconds to wait after accident event to start sending Accident Reconstruction log. It allows for more Accident Reconstruction log entries after an accident. </Notes>
 		</Parameter>
 		<Parameter name="Accident Reconstuction Log History Depth" level="10" datatype="Word" address="536" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="65535" default="120" previous="" current="" units="" />
+			<Values min="0" max="600" default="120" previous="" current="" units="" />
 			<Help>Accident Reconstuction Log History Depth</Help>
 			<Notes>Accident Reconstuction Log History Depth is the number of events to send after an accident detection. 
 
-e.g. If configured with 120 ,the accident reconstruction Log will be sent from accident time + accident send delay - log history depth</Notes>
+e.g. If configured with 120 ,the accident reconstruction Log will be sent from accident time + accident send delay - log history depth
+
+Note: The maximum number of logs that can be sent as events is 600. If this value is larger than 600 it will default to 600.</Notes>
 		</Parameter>
 		<Parameter name="Enable Burst Data Standard Deviation Events" level="5" datatype="Bit" address="1544" length="1" bitmask="4" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
@@ -1304,9 +1306,23 @@ None</Notes>
 
 None</Notes>
 		</Parameter>
-		<Parameter name="Module Debug Mask 2" level="0" datatype="Byte" address="2383" length="24" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="000000000000000000000000000000000000000000000000" previous="" current="" units="" />
+		<Parameter name="Module Debug Mask 2" level="0" datatype="Byte" address="2383" length="8" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="" />
 			<Help>Enable debug statements for specific modules - set 2</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+None</Notes>
+		</Parameter>
+		<Parameter name="Module Debug Mask 3" level="0" datatype="Byte" address="2391" length="8" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="" />
+			<Help>Enable debug statements for specific modules - set 3</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+None</Notes>
+		</Parameter>
+		<Parameter name="Module Debug Mask 4" level="0" datatype="Byte" address="2399" length="8" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="" />
+			<Help>Enable debug statements for specific modules - set 4</Help>
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
 None</Notes>
@@ -1421,6 +1437,21 @@ e.g. AB0123456 78901 23
 			<Values min="300" max="65534" default="300" previous="" current="" units="" />
 			<Help>Vehicle Idle Immobilise Time-Out</Help>
 			<Notes>Vehicle Idle Immobilise Time-Out in seconds it the period before vehicle will be immobilised. Value of 0 disables this feature. Minimum time is 300s or 5 minutes.</Notes>
+		</Parameter>
+		<Parameter name="Driver Key Type" level="10" datatype="Byte" address="1774" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="8" previous="" current="" units="" />
+			<Help>The Driver Key Type indicates what kind of Driver Key device is allowed to be used for Driver Identification and vehicle immobilization.
+Values:
+0,8,255 = Standard DS1992 based Scope Driver Key initialized properly using the Scope Driver Key programmer software.
+1 = DS1990 where Bytes 1 and 2 of the device serial number is used as the Driver ID
+170 = ScopeID where the device ID contains the Driver ID, Fleet Code and Vehicle Class
+All other values are reserved</Help>
+			<Notes>The Driver Key Type indicates what kind of Driver Key device is allowed to be used for Driver Identification and vehicle immobilization.
+Values:
+0,8,255 = Standard DS1992 based Scope Driver Key initialized properly using the Scope Driver Key programmer software.
+1 = DS1990 where Bytes 1 and 2 of the device serial number is used as the Driver ID
+170 = ScopeID where the device ID contains the Driver ID, Fleet Code and Vehicle Class
+All other values are reserved</Notes>
 		</Parameter>
 		<Parameter name="Customer Code" level="15" datatype="Byte" address="1893" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
@@ -1631,11 +1662,6 @@ e.g. AB0123456 78901 23
 		</Parameter>
 	</Category>
 	<Category name="Event Configuration">
-		<Parameter name="Custom Event 15 Configuration" level="10" datatype="Byte" address="3535" length="1" bitmask="255" dtu="1">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Custom Event 15 Configuration</Help>
-			<Notes>See Periodic Position Event Configuration</Notes>
-		</Parameter>
 		<Parameter name="Event 0 Configuration" level="0" datatype="Byte" address="3584" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="0" previous="" current="" units="" />
 			<Help>This is not a valid event but indicate the start of the event configuration section</Help>
@@ -1801,7 +1827,12 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 		</Parameter>
 		<Parameter name="Custom Event 14 Configuration" level="10" datatype="Byte" address="3634" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Custom Event 12 Configuration</Help>
+			<Help>Custom Event 14 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 15 Configuration" level="10" datatype="Byte" address="3635" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 15 Configuration</Help>
 			<Notes>See Periodic Position Event Configuration</Notes>
 		</Parameter>
 		<Parameter name="Analog Sensor" level="10" datatype="Byte" address="3654" length="1" bitmask="255" dtu="0">
@@ -2004,7 +2035,7 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 			<Help>Excessive Idle</Help>
 			<Notes>See Periodic Position Event Configuration</Notes>
 		</Parameter>
-		<Parameter name="Start of Speeding" level="10" datatype="Byte" address="3733" length="1" bitmask="255" dtu="0">
+		<Parameter name="Start of Speeding" level="10" datatype="Byte" address="3733" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
 			<Help>See Periodic Position Event Configuration</Help>
 			<Notes></Notes>
@@ -2907,6 +2938,29 @@ Default: Behave as Output 1
 can cause undefined behaviour if set. 
 </Notes>
 		</Parameter>
+		<Parameter name="Output B Function" level="10" datatype="Byte" address="794" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Output B Function Configuration: </Help>
+			<Notes>Output B Function Configuration: 
+
+Select the function that Output B must perform.
+Add 128 to the function index to invert the logic
+
+Default: Behave as Output 2
+
+
+1 Output 1
+2 Output 2
+4 Output to follow Ignition
+5 Output 3 *SEE NOTE 1
+6 Output 4 *SEE NOTE 1
+8 Buzzer
+16 Output used as immobiliser
+
+*NOTE 1: This functionality is not available on firmware before XXX-042 and 
+can cause undefined behaviour if set 
+</Notes>
+		</Parameter>
 		<Parameter name="Output 1 Style" level="10" datatype="Byte" address="971" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="3" default="0" previous="" current="" units="" />
 			<Help>Output Style for Output 1: 0 - Normal, 1 - Timed, 2 - Progressive, 3 - Pattern</Help>
@@ -3026,6 +3080,96 @@ This parameter is also used when the output style is set to progressive. In this
 			<Values min="0" max="65535" default="0" previous="" current="" units="Seconds" />
 			<Help>Delay used for Output Changed Event Generation</Help>
 			<Notes>When an Output changes state ON to OFF or OFF to ON, and an event is to be generated. This parameter specifies the minimum duration in seconds of the new state before the event will be generated.</Notes>
+		</Parameter>
+		<Parameter name="Input E Function" level="5" datatype="Byte" address="1574" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="17" previous="" current="" units="" />
+			<Help>Input E Function Configuration:
+Default: Mapped to over-current indication
+
+Add 128 to the index below to invert the logic
+
+1 Input 1
+2 Input 2
+4 N/A
+5 Input 3 *SEE NOTE 1
+6 Input 4 *SEE NOTE 1
+8 N/A
+16 N/A
+17 Overcurrent Indication on Output E (Default)
+32 Output 1 follows Input E line
+33 Output 3 follows Input E line *SEE NOTE 1
+34 Output 4 follows Input E line *SEE NOTE 1
+64 Output 2 follows Input E line
+
+*NOTE 1: This functionality is not available on firmware before XXX-042 and
+can cause undefined behaviour if used on earlier firmware versions.</Help>
+			<Notes>Input E Function Configuration:
+Default: Mapped to over-current indication
+
+Add 128 to the index below to invert the logic
+
+1 Input 1
+2 Input 2
+4 N/A
+5 Input 3 *SEE NOTE 1
+6 Input 4 *SEE NOTE 1
+8 N/A
+16 N/A
+17 Overcurrent Indication on Output E (Default)
+32 Output 1 follows Input E line
+33 Output 3 follows Input E line *SEE NOTE 1
+34 Output 4 follows Input E line *SEE NOTE 1
+64 Output 2 follows Input E line
+
+*NOTE 1: This functionality is not available on firmware before XXX-042 and
+can cause undefined behaviour if used on earlier firmware versions.</Notes>
+		</Parameter>
+		<Parameter name="Output E Function" level="10" datatype="Byte" address="1575" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Output E Function Configuration:
+
+On the 819 Output E is an active high 5v output capable of supplying 500mA.
+This makes it suitable for powering LEDs, card readers, small relays and 5v buzzers. 
+
+Select the function that Output E must perform.
+Add 128 to the function index to invert the logic
+
+Default: Inactive
+
+
+1 Output 1
+2 Output 2
+4 Output to follow Ignition
+5 Output 3 *SEE NOTE 1
+6 Output 4 *SEE NOTE 1
+8 Buzzer
+16 Output used as immobiliser
+17 Driver Key LED
+
+*NOTE 1: This functionality is not available on firmware before XXX-042 and
+can cause undefined behaviour if set</Help>
+			<Notes>Output E Function Configuration:
+
+On the 819 Output E is an active high 5v output capable of supplying 500mA.
+This makes it suitable for powering LEDs, card readers, small relays and 5v buzzers. 
+
+Select the function that Output E must perform.
+Add 128 to the function index to invert the logic
+
+Default: Inactive
+
+
+1 Output 1
+2 Output 2
+4 Output to follow Ignition
+5 Output 3 *SEE NOTE 1
+6 Output 4 *SEE NOTE 1
+8 Buzzer
+16 Output used as immobiliser
+17 Driver Key LED
+
+*NOTE 1: This functionality is not available on firmware before XXX-042 and
+can cause undefined behaviour if set</Notes>
 		</Parameter>
 		<Parameter name="Input 9 Delay" level="10" datatype="Word" address="1664" length="2" bitmask="255" dtu="1">
 			<Values min="0" max="65535" default="5" previous="" current="" units="" />
@@ -3382,10 +3526,10 @@ UDP Destination Port</Notes>
 
 UDP Local Port</Notes>
 		</Parameter>
-		<Parameter name="UDP Listen Port" level="5" datatype="Word" address="2799" length="2" bitmask="255" dtu="0">
-			<Values min="5000" max="65500" default="52701" previous="" current="" units="" />
-			<Help>Local Port for UDP Listener</Help>
-			<Notes></Notes>
+		<Parameter name="FTP Port " level="5" datatype="Word" address="2799" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65500" default="21" previous="" current="" units="" />
+			<Help>Port used for FTP operations</Help>
+			<Notes>Port used for FTP operations</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Modem - CMux Configuration">
@@ -3462,7 +3606,7 @@ Defines the maximum time the modem will be ON trying to connect to the network</
 		</Parameter>
 	</Category>
 	<Category name="Modem - FOTA Firmware Upgrade">
-		<Parameter name="Telit FOTA Upgrade Enable" level="0" datatype="Byte" address="392" length="1" bitmask="255" dtu="0">
+		<Parameter name="FOTA Upgrade Enable" level="0" datatype="Byte" address="392" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Allows automatic acceptance of Telit issued FOTA upgrades.</Help>
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
@@ -4129,15 +4273,15 @@ Number of seconds before the Modem/MHub reboots due to failing to contact the MP
 			<Help>Enables the unit to close a socket so that voice and data calls may be dealt with</Help>
 			<Notes>In order to be able to answer an incomming voice call, the MHub must close a socket connection if it is currently open. Setting this parameter to 1 will allow the socket to be closed. If this is set to 0, then the MHUb will not be able to close the socket, and thus a voice call will not be possible.</Notes>
 		</Parameter>
-		<Parameter name="Permanent TCP Socket" level="10" datatype="Bit" address="477" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>Enables a permanent TCP socket to MProfiler</Help>
-			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will remain permanently open. Enabling this parameter will instruct the MHub to open up a socket and attempt to keep the socket open at all time. Should the socket drop for any reason, the MHub will immediately reopen the socket again.</Notes>
-		</Parameter>
 		<Parameter name="Data Triggered TCP Socket" level="10" datatype="Bit" address="477" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>when enabled the unit will only open a socket if there is data to be sent to MProfiler. This is overidden by the Permanent TCP Socket switch.</Help>
 			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will only be opened if there is data to be sent. Enabling this parameter will instruct the MHub to only open a socket to Mprofiler if there is data to be sent. Note that if the Permanent TCP Socket parameter is also enabled, that that will override this parameter.</Notes>
+		</Parameter>
+		<Parameter name="Permanent TCP Socket" level="10" datatype="Bit" address="477" length="1" bitmask="2" dtu="0">
+			<Values min="0" max="1" default="1" previous="" current="" units="" />
+			<Help>Enables a permanent TCP socket to MProfiler</Help>
+			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will remain permanently open. Enabling this parameter will instruct the MHub to open up a socket and attempt to keep the socket open at all time. Should the socket drop for any reason, the MHub will immediately reopen the socket again.</Notes>
 		</Parameter>
 		<Parameter name="Allow GPRS Error Modem Reset" level="5" datatype="Byte" address="796" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -4833,7 +4977,7 @@ if set to 0 value will default to 60</Notes>
 			<Help>Enable Unit Sleep Mode 0: Normal 1: Sleep Mode </Help>
 			<Notes>This parameter will allow the MHub to enter the sleep state. This is the lowest power state of the MHub. 1=Enable</Notes>
 		</Parameter>
-		<Parameter name="Enable IDLE Power Mode" level="10" datatype="Bit" address="1157" length="1" bitmask="2" dtu="0">
+		<Parameter name="Enable IDLE Power Mode" level="10" datatype="Bit" address="1157" length="1" bitmask="2" dtu="1">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>GPS to idle power mode. Updates position every 30 seconds. GPS Speed and direction not available. 0: Normal 1: Idle Mode</Help>
 			<Notes>This parameter will allow the Mhub to enter into its IDLE power save mode. In the idle state, GPS positions are updated internally to the MHub every 30 seconds, and speed and direction values are not available. 1=Enable Idle Mode</Notes>
@@ -4870,7 +5014,7 @@ if set to 0 value will default to 60</Notes>
 MHub Diag - Keep Alive for 10 Seconds
 MProfiler - Keep Alive for 10 Minutes</Notes>
 		</Parameter>
-		<Parameter name="Power Mode time to IDLE" level="10" datatype="Word" address="1162" length="2" bitmask="255" dtu="0">
+		<Parameter name="Power Mode time to IDLE" level="10" datatype="Word" address="1162" length="2" bitmask="255" dtu="1">
 			<Values min="0" max="65535" default="600" previous="" current="" units="seconds" />
 			<Help>Time in seconds to IDLE Mode</Help>
 			<Notes>This parameter specifies in seconds how long the MHub will wait in full power mode after ignition is turned off until it enters IDLE mode. Idle mode must be enable in parameter &quot;Enable IDLE Power Mode&quot; before this will take effect.</Notes>
@@ -5183,12 +5327,12 @@ The MHub has the ability to connect to up to a maximum of 4 temperature sensors.
 		<Parameter name="Temperature 1 High Threshold" level="10" datatype="Byte" address="1871" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="255" default="130" previous="" current="" units="Celcius" />
 			<Help>Temperature 1 High Threshold</Help>
-			<Notes>The value of this parameter specifies the high temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the high threshold is to be -10 celcius. </Notes>
+			<Notes>The value of this parameter specifies the high temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the high threshold is to be -10 celcius then set it to 40. </Notes>
 		</Parameter>
 		<Parameter name="Temperature 1 Low Threshold" level="10" datatype="Byte" address="1872" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="255" default="50" previous="" current="" units="Celcius" />
 			<Help>Temperature 1 Low Threshold</Help>
-			<Notes>The value of this parameter specifies the low temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the high threshold is to be -10 celcius. </Notes>
+			<Notes>The value of this parameter specifies the low temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the low threshold is to be -10 celcius then set the value to 40.</Notes>
 		</Parameter>
 		<Parameter name="Temperature 2 High Threshold" level="10" datatype="Byte" address="1873" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="255" default="130" previous="" current="" units="Celsius" />

@@ -73,7 +73,7 @@
 		<item id="71" description="Indicates that an APN session has been initialised" name="APN Registered" dtu="1" />
 		<item id="72" description="Indicates Attachement to the Network" name="GPRS Attached" dtu="0" />
 		<item id="73" description="Flag to indicate that the geofence upload has been completed" name="Gefence Upload Completed" dtu="0" />
-		<item id="74" description="Main Voltage below voltage threshold" name="Main Voltage Low" dtu="1" />
+		<item id="74" description="Main Voltage below voltage threshold - same as Flag 32" name="Mains Voltage Low - Duplicate" dtu="1" />
 		<item id="75" description="Custom Variables Changed" name="Custom Variables Flag" dtu="1" />
 		<item id="76" description="Custom Variables Changed 1" name="Custom Variables Flag 1" dtu="1" />
 		<item id="77" description="Vehicle stationary as per Trip Stationary threshold" name="Vehicle Stationary" dtu="1" />
@@ -206,4 +206,5 @@
 		<item id="204" description="Vehicle is inside the specified Driver Geofence" name="Inside Driver Geofence" dtu="1" />
 		<item id="205" description="This flag will be set if 1 or more geofences are loaded in the RAM geofence area" name="RAM Geofence Defined" dtu="1" />
 		<item id="206" description="This flag will be set it any of the Geofences in the RAM geofence area were set with the set driver geofence command" name="Driver Geofence Defined" dtu="1" />
+		<item id="207" description="High current drain on outputs with over-current detection" name="Output Over-current Detected " dtu="1" />
 </GlobalFlags>

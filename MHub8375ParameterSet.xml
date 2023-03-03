@@ -1,4 +1,4 @@
-<MhubParameterSet created="2021-08-16T14:45:31+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2023-03-03T10:40:06+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -435,11 +435,13 @@ Accelerometer DMA Enable</Notes>
 			<Notes>Accident Reconstruction Log Sending Delay in seconds. This parameter specifies how many seconds to wait after accident event to start sending Accident Reconstruction log. It allows for more Accident Reconstruction log entries after an accident. </Notes>
 		</Parameter>
 		<Parameter name="Accident Reconstuction Log History Depth" level="10" datatype="Word" address="536" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="65535" default="120" previous="" current="" units="" />
+			<Values min="0" max="600" default="120" previous="" current="" units="" />
 			<Help>Accident Reconstuction Log History Depth</Help>
 			<Notes>Accident Reconstuction Log History Depth is the number of events to send after an accident detection. 
 
-e.g. If configured with 120 ,the accident reconstruction Log will be sent from accident time + accident send delay - log history depth</Notes>
+e.g. If configured with 120 ,the accident reconstruction Log will be sent from accident time + accident send delay - log history depth
+
+Note: The maximum number of logs that can be sent as events is 600. If this value is larger than 600 it will default to 600.</Notes>
 		</Parameter>
 		<Parameter name="Enable Burst Data Standard Deviation Events" level="5" datatype="Bit" address="1544" length="1" bitmask="4" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
@@ -1264,9 +1266,23 @@ None</Notes>
 
 None</Notes>
 		</Parameter>
-		<Parameter name="Module Debug Mask 2" level="0" datatype="Byte" address="2383" length="24" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="000000000000000000000000000000000000000000000000" previous="" current="" units="" />
+		<Parameter name="Module Debug Mask 2" level="0" datatype="Byte" address="2383" length="8" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="" />
 			<Help>Enable debug statements for specific modules - set 2</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+None</Notes>
+		</Parameter>
+		<Parameter name="Module Debug Mask 3" level="0" datatype="Byte" address="2391" length="8" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="" />
+			<Help>Enable debug statements for specific modules - set 3</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+None</Notes>
+		</Parameter>
+		<Parameter name="Module Debug Mask 4" level="0" datatype="Byte" address="2399" length="8" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="" />
+			<Help>Enable debug statements for specific modules - set 4</Help>
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
 None</Notes>
@@ -1591,11 +1607,6 @@ e.g. AB0123456 78901 23
 		</Parameter>
 	</Category>
 	<Category name="Event Configuration">
-		<Parameter name="Custom Event 15 Configuration" level="10" datatype="Byte" address="3535" length="1" bitmask="255" dtu="1">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Custom Event 15 Configuration</Help>
-			<Notes>See Periodic Position Event Configuration</Notes>
-		</Parameter>
 		<Parameter name="Event 0 Configuration" level="0" datatype="Byte" address="3584" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="0" previous="" current="" units="" />
 			<Help>This is not a valid event but indicate the start of the event configuration section</Help>
@@ -1761,7 +1772,12 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 		</Parameter>
 		<Parameter name="Custom Event 14 Configuration" level="10" datatype="Byte" address="3634" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Custom Event 12 Configuration</Help>
+			<Help>Custom Event 14 Configuration</Help>
+			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="Custom Event 15 Configuration" level="10" datatype="Byte" address="3635" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Custom Event 15 Configuration</Help>
 			<Notes>See Periodic Position Event Configuration</Notes>
 		</Parameter>
 		<Parameter name="Analog Sensor" level="10" datatype="Byte" address="3654" length="1" bitmask="255" dtu="0">
@@ -1964,7 +1980,7 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 			<Help>Excessive Idle</Help>
 			<Notes>See Periodic Position Event Configuration</Notes>
 		</Parameter>
-		<Parameter name="Start of Speeding" level="10" datatype="Byte" address="3733" length="1" bitmask="255" dtu="0">
+		<Parameter name="Start of Speeding" level="10" datatype="Byte" address="3733" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
 			<Help>See Periodic Position Event Configuration</Help>
 			<Notes></Notes>
@@ -2691,17 +2707,17 @@ Distance in meters from Last Valid position up to which the last valid position 
 			<Help>GPS Software Antenna Connection Status </Help>
 			<Notes>GPS Software Antenna Connection Status detect antenna presence in software instead of hardware detection.</Notes>
 		</Parameter>
+		<Parameter name="Enable GPS FixNow Mode" level="10" datatype="Bit" address="1521" length="1" bitmask="1" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enable GPS FixNow Mode</Help>
+			<Notes>Enable GPS FixNow Mode will use the GPSs internal power manager to cycle the GPS power for idle and sleep mode.</Notes>
+		</Parameter>
 		<Parameter name="Disable GPS Speed Accuracy Filter" level="10" datatype="Bit" address="1521" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Disable GPS Speed Accuracy Filter</Help>
 			<Notes>Disable GPS Speed Accuracy Filter. 
 
 GPS Speed Accuracy Filter will require the current GPS Speed to be greater than the current GPS Speed Accuracy measure to be used in calculations and events. </Notes>
-		</Parameter>
-		<Parameter name="Enable GPS FixNow Mode" level="10" datatype="Bit" address="1521" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enable GPS FixNow Mode</Help>
-			<Notes>Enable GPS FixNow Mode will use the GPSs internal power manager to cycle the GPS power for idle and sleep mode.</Notes>
 		</Parameter>
 		<Parameter name="Enable GPS FixNow Mode in Sleep" level="10" datatype="Bit" address="1521" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
@@ -2987,10 +3003,10 @@ UDP Destination Port</Notes>
 
 UDP Local Port</Notes>
 		</Parameter>
-		<Parameter name="UDP Listen Port" level="5" datatype="Word" address="2799" length="2" bitmask="255" dtu="0">
-			<Values min="5000" max="65500" default="52701" previous="" current="" units="" />
-			<Help>Local Port for UDP Listener</Help>
-			<Notes></Notes>
+		<Parameter name="FTP Port " level="5" datatype="Word" address="2799" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65500" default="21" previous="" current="" units="" />
+			<Help>Port used for FTP operations</Help>
+			<Notes>Port used for FTP operations</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Modem - Band Selection">
@@ -3131,7 +3147,7 @@ Defines the maximum time the modem will be ON trying to connect to the network</
 		</Parameter>
 	</Category>
 	<Category name="Modem - FOTA Firmware Upgrade">
-		<Parameter name="Telit FOTA Upgrade Enable" level="0" datatype="Byte" address="392" length="1" bitmask="255" dtu="0">
+		<Parameter name="FOTA Upgrade Enable" level="0" datatype="Byte" address="392" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Allows automatic acceptance of Telit issued FOTA upgrades.</Help>
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
@@ -3317,6 +3333,26 @@ Number of seconds that that unit waits before and after powering off the modem t
 			<Values min="0" max="255" default="5" previous="" current="" units="Seconds" />
 			<Help>The amount of time that an AT command from outside the MHub will be allowed to complete execution before the MHub gathers the response.</Help>
 			<Notes>This parameter set the timeout for waiting for a response for an AT command sent from outside the MHub, i.e. via the external communications interface.</Notes>
+		</Parameter>
+		<Parameter name="Modem Power Down Recovery Interval" level="0" datatype="Word" address="2543" length="2" bitmask="255" dtu="0">
+			<Values min="360" max="65000" default="2160" previous="" current="" units="Minutes" />
+			<Help>Minimum amount of time that will elapse between Modem Power Down Recovery attemtps. 
+Note that this time is counted while the MHub is awake. Sleep time is not counted.</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Minimum amount of time that will elapse between Modem Power Down Recovery attemtps. 
+Note that this time is counted while the MHub is awake. Sleep time is not counted.</Notes>
+		</Parameter>
+		<Parameter name="Modem Power Down Recovery Standoff Time" level="0" datatype="Byte" address="2545" length="1" bitmask="255" dtu="0">
+			<Values min="5" max="250" default="0" previous="" current="" units="Minutes" />
+			<Help>If the modem is unable to establish an APN session within the allowed attempts then it will power itself down for the configured number of minutes.
+The frequency with which this can occur is governed by the Modem Power Down Recovery Interval parameter.
+Setting this to 0 disables this feature. </Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+If the modem is unable to establish an APN session within the allowed attempts then it will power itself down for the configured number of minutes.
+The frequency with which this can occur is governed by the Modem Power Down Recovery Interval parameter.
+Setting this to 0 disables this feature. </Notes>
 		</Parameter>
 		<Parameter name="Selection of Preferred PLMN List" level="0" datatype="Byte" address="2546" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="2" default="0" previous="" current="" units="" />
@@ -3988,15 +4024,15 @@ Number of seconds before the Modem/MHub reboots due to failing to contact the MP
 			<Help>Enables the unit to close a socket so that voice and data calls may be dealt with</Help>
 			<Notes>In order to be able to answer an incomming voice call, the MHub must close a socket connection if it is currently open. Setting this parameter to 1 will allow the socket to be closed. If this is set to 0, then the MHUb will not be able to close the socket, and thus a voice call will not be possible.</Notes>
 		</Parameter>
-		<Parameter name="Data Triggered TCP Socket" level="10" datatype="Bit" address="477" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>when enabled the unit will only open a socket if there is data to be sent to MProfiler. This is overidden by the Permanent TCP Socket switch.</Help>
-			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will only be opened if there is data to be sent. Enabling this parameter will instruct the MHub to only open a socket to Mprofiler if there is data to be sent. Note that if the Permanent TCP Socket parameter is also enabled, that that will override this parameter.</Notes>
-		</Parameter>
 		<Parameter name="Permanent TCP Socket" level="10" datatype="Bit" address="477" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Enables a permanent TCP socket to MProfiler</Help>
 			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will remain permanently open. Enabling this parameter will instruct the MHub to open up a socket and attempt to keep the socket open at all time. Should the socket drop for any reason, the MHub will immediately reopen the socket again.</Notes>
+		</Parameter>
+		<Parameter name="Data Triggered TCP Socket" level="10" datatype="Bit" address="477" length="1" bitmask="1" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>when enabled the unit will only open a socket if there is data to be sent to MProfiler. This is overidden by the Permanent TCP Socket switch.</Help>
+			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will only be opened if there is data to be sent. Enabling this parameter will instruct the MHub to only open a socket to Mprofiler if there is data to be sent. Note that if the Permanent TCP Socket parameter is also enabled, that that will override this parameter.</Notes>
 		</Parameter>
 		<Parameter name="Socket Suspend Time" level="5" datatype="Byte" address="528" length="1" bitmask="0" dtu="0">
 			<Values min="5" max="200" default="15" previous="" current="" units="Seconds" />
@@ -4349,15 +4385,15 @@ If set to zero then reports will continue indefinitely</Notes>
 			<Help>Ignition Source: Trigger</Help>
 			<Notes>Ignition Source is set to Trigger which is a software controlled ignition source.</Notes>
 		</Parameter>
-		<Parameter name="Ignition Source: Accelerometer" level="5" datatype="Bit" address="1829" length="1" bitmask="64" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Ignition Source: Accelerometer</Help>
-			<Notes>One more possible source of ignition is to use Accelerometer movement. If Accelerometer movement is greater than the value specified in parameter &quot;Accelerometer Ignition On Threshold&quot;, the vehicle is moving. If Accelerometer is to be used as ignition, this parameter is set to 1.</Notes>
-		</Parameter>
 		<Parameter name="Ignition Source: Alternate" level="10" datatype="Bit" address="1829" length="1" bitmask="128" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Ignition Source: Alternate</Help>
 			<Notes>Ignition Source Alternate uses new method for ignition. Configure sources with Trip Source Ignition Line etc.</Notes>
+		</Parameter>
+		<Parameter name="Ignition Source: Accelerometer" level="5" datatype="Bit" address="1829" length="1" bitmask="64" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Ignition Source: Accelerometer</Help>
+			<Notes>One more possible source of ignition is to use Accelerometer movement. If Accelerometer movement is greater than the value specified in parameter &quot;Accelerometer Ignition On Threshold&quot;, the vehicle is moving. If Accelerometer is to be used as ignition, this parameter is set to 1.</Notes>
 		</Parameter>
 		<Parameter name="Ignition Source from RPM Threshold" level="10" datatype="Byte" address="1830" length="1" bitmask="255" dtu="0">
 			<Values min="1" max="255" default="3" previous="" current="" units="RPM" />
@@ -4719,11 +4755,6 @@ if set to 0 value will default to 60</Notes>
 			<Help>Enable Unit Sleep Mode 0: Normal 1: Sleep Mode </Help>
 			<Notes>This parameter will allow the MHub to enter the sleep state. This is the lowest power state of the MHub. 1=Enable</Notes>
 		</Parameter>
-		<Parameter name="Enable IDLE Power Mode" level="10" datatype="Bit" address="1157" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>GPS to idle power mode. Updates position every 30 seconds. GPS Speed and direction not available. 0: Normal 1: Idle Mode</Help>
-			<Notes>This parameter will allow the Mhub to enter into its IDLE power save mode. In the idle state, GPS positions are updated internally to the MHub every 30 seconds, and speed and direction values are not available. 1=Enable Idle Mode</Notes>
-		</Parameter>
 		<Parameter name="Enable Sleep Modem Scan" level="10" datatype="Bit" address="1157" length="1" bitmask="4" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Unit wakes up periodically from sleep to check for messages if Ultra Low Power Mode is disabled.</Help>
@@ -4733,6 +4764,11 @@ if set to 0 value will default to 60</Notes>
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>NOT USED - Enable Modem Power off in Sleep. 0: Modem Idle Mode(W32) 1: Modem Off</Help>
 			<Notes>NOT USED - When the Mhub has enetered sleep mode, the modem can either be turned OFF, or it can enter an idle mode. This idle mode of the modem is called W32K mode, and placed the modem into a very low power state, but still giving the modem the ability to recieve an SMS. If teh modem is turned OFF, it cannit recieve a SMS. This parameter will dictate which power mode for the modem to use: 0: Modem Idle Mode(W32) 1: Modem Off</Notes>
+		</Parameter>
+		<Parameter name="Enable IDLE Power Mode" level="10" datatype="Bit" address="1157" length="1" bitmask="2" dtu="1">
+			<Values min="0" max="1" default="1" previous="" current="" units="" />
+			<Help>GPS to idle power mode. Updates position every 30 seconds. GPS Speed and direction not available. 0: Normal 1: Idle Mode</Help>
+			<Notes>This parameter will allow the Mhub to enter into its IDLE power save mode. In the idle state, GPS positions are updated internally to the MHub every 30 seconds, and speed and direction values are not available. 1=Enable Idle Mode</Notes>
 		</Parameter>
 		<Parameter name="Enable Deep Sleep Power Mode" level="10" datatype="Bit" address="1157" length="1" bitmask="128" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -4756,7 +4792,7 @@ if set to 0 value will default to 60</Notes>
 MHub Diag - Keep Alive for 10 Seconds
 MProfiler - Keep Alive for 10 Minutes</Notes>
 		</Parameter>
-		<Parameter name="Power Mode time to IDLE" level="10" datatype="Word" address="1162" length="2" bitmask="255" dtu="0">
+		<Parameter name="Power Mode time to IDLE" level="10" datatype="Word" address="1162" length="2" bitmask="255" dtu="1">
 			<Values min="0" max="65535" default="600" previous="" current="" units="seconds" />
 			<Help>Time in seconds to IDLE Mode</Help>
 			<Notes>This parameter specifies in seconds how long the MHub will wait in full power mode after ignition is turned off until it enters IDLE mode. Idle mode must be enable in parameter &quot;Enable IDLE Power Mode&quot; before this will take effect.</Notes>
@@ -5069,12 +5105,12 @@ The MHub has the ability to connect to up to a maximum of 4 temperature sensors.
 		<Parameter name="Temperature 1 High Threshold" level="10" datatype="Byte" address="1871" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="255" default="130" previous="" current="" units="Celcius" />
 			<Help>Temperature 1 High Threshold</Help>
-			<Notes>The value of this parameter specifies the high temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the high threshold is to be -10 celcius. </Notes>
+			<Notes>The value of this parameter specifies the high temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the high threshold is to be -10 celcius then set it to 40. </Notes>
 		</Parameter>
 		<Parameter name="Temperature 1 Low Threshold" level="10" datatype="Byte" address="1872" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="255" default="50" previous="" current="" units="Celcius" />
 			<Help>Temperature 1 Low Threshold</Help>
-			<Notes>The value of this parameter specifies the low temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the high threshold is to be -10 celcius. </Notes>
+			<Notes>The value of this parameter specifies the low temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the low threshold is to be -10 celcius then set the value to 40.</Notes>
 		</Parameter>
 		<Parameter name="Temperature 2 High Threshold" level="10" datatype="Byte" address="1873" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="255" default="130" previous="" current="" units="Celsius" />

@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="9" unitType="MHub846Ext" created="2021-08-16T14:45:34+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="9" unitType="MHub846Ext" created="2023-03-03T10:40:04+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="170" level="10" status="0" datatype="Byte" address="430" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
@@ -193,6 +193,45 @@ The intended use is to standoff when another diagnostic tool is detected on the 
 The intended use is to standoff when another diagnostic tool is detected on the bus."</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1857" level="10" status="0" datatype="Byte" address="1774" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="8" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Driver Key Type</parName>
+				<parDescription>"The Driver Key Type indicates what kind of Driver Key device is allowed to be used for Driver Identification and vehicle immobilization.
+Values:
+0,8,255 = Standard DS1992 based Scope Driver Key initialized properly using the Scope Driver Key programmer software.
+1 = DS1990 where Bytes 1 and 2 of the device serial number is used as the Driver ID
+170 = ScopeID where the device ID contains the Driver ID, Fleet Code and Vehicle Class
+All other values are reserved"</parDescription>
+				<parNotes>"The Driver Key Type indicates what kind of Driver Key device is allowed to be used for Driver Identification and vehicle immobilization.
+Values:
+0,8,255 = Standard DS1992 based Scope Driver Key initialized properly using the Scope Driver Key programmer software.
+1 = DS1990 where Bytes 1 and 2 of the device serial number is used as the Driver ID
+170 = ScopeID where the device ID contains the Driver ID, Fleet Code and Vehicle Class
+All other values are reserved"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1707" level="5" status="0" datatype="Bit" address="1777" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>ISO15765 250kBaud Disable</parName>
+				<parDescription>"Disable 250kBaud detection."</parDescription>
+				<parNotes>"Disable 250kBaud detection."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1781" level="5" status="0" datatype="Bit" address="1777" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Lock Fake VIN for EOBD Data Requests</parName>
+				<parDescription>"Prevents the use of the read vehicle VIN for requesting EOBD data.
+If Fake VIN is programmed then only this will be used to request data.
+"</parDescription>
+				<parNotes>"Prevents the use of the read vehicle VIN for requesting EOBD data.
+If Fake VIN is programmed then only this will be used to request data.
+
+"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1705" level="5" status="0" datatype="Bit" address="1777" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -209,27 +248,6 @@ The intended use is to standoff when another diagnostic tool is detected on the 
 "</parDescription>
 				<parNotes>"Relaxes timings on some protocols to enable compatibility with older vehicles.
 "</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1781" level="5" status="0" datatype="Bit" address="1777" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Lock Fake VIN for EOBD Data Requests</parName>
-				<parDescription>"Prevents the use of the read vehicle VIN for requesting EOBD data.
-If Fake VIN is programmed then only this will be used to request data.
-"</parDescription>
-				<parNotes>"Prevents the use of the read vehicle VIN for requesting EOBD data.
-If Fake VIN is programmed then only this will be used to request data.
-
-"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1707" level="5" status="0" datatype="Bit" address="1777" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>ISO15765 250kBaud Disable</parName>
-				<parDescription>"Disable 250kBaud detection."</parDescription>
-				<parNotes>"Disable 250kBaud detection."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1278" level="10" status="0" datatype="Bit" address="1824" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
@@ -249,14 +267,6 @@ Note: Enable J1939 FMS CANBus Interface = 0"</parDescription>
 				<parNotes>"J1939 Filter Disable will allow all CANBus messages to be received from the bus"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1277" level="10" status="0" datatype="Bit" address="1824" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable Vehicle K Line Interface</parName>
-				<parDescription>"Enable Vehicle On Board Diagnostics Interface"</parDescription>
-				<parNotes>"Enable ISO9141 and ISO14230 network interface using the LIN line"</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1700" level="5" status="0" datatype="Bit" address="1824" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -265,12 +275,12 @@ Note: Enable J1939 FMS CANBus Interface = 0"</parDescription>
 				<parNotes>"Enable TP 2.0 Protocol used by VW Group vehicles; VW, Seat, Audi, etc"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="976" level="10" status="0" datatype="Bit" address="1832" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
+		<Parameter parID="1277" level="10" status="0" datatype="Bit" address="1824" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>OBC Active J1939 FMS CANBus</parName>
-				<parDescription>"Enable Active J1939 FMS CANBus"</parDescription>
-				<parNotes>"Verify with vehicle manufacturer if the CANBus should be Active of Passive before setting this parameter."</parNotes>
+				<parName>Enable Vehicle K Line Interface</parName>
+				<parDescription>"Enable Vehicle On Board Diagnostics Interface"</parDescription>
+				<parNotes>"Enable ISO9141 and ISO14230 network interface using the LIN line"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="853" level="10" status="0" datatype="Bit" address="1832" length="1" bitmask="128" dtu="0" units="" min="0" max="1" >
@@ -280,6 +290,14 @@ Note: Enable J1939 FMS CANBus Interface = 0"</parDescription>
 				<parDescription>"Enable J1939 FMS CANBus Interface.
 Note: Enable OBD2 CANBus Interface = 0"</parDescription>
 				<parNotes>"If the J1939 FMS CANBus is connected to the MHub828 CANbus, this parameter needs to be set to 1 to enable the CAN Bus functionality. Disable the OBD2 CANbus interface"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="976" level="10" status="0" datatype="Bit" address="1832" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>OBC Active J1939 FMS CANBus</parName>
+				<parDescription>"Enable Active J1939 FMS CANBus"</parDescription>
+				<parNotes>"Verify with vehicle manufacturer if the CANBus should be Active of Passive before setting this parameter."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1307" level="10" status="0" datatype="Bit" address="1832" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
@@ -332,11 +350,31 @@ None"</parNotes>
 				<parNotes>"If the driver key is used, then this parameter must be set to 1"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1825" level="0" status="0" datatype="Byte" address="2383" length="24" bitmask="255" dtu="0" units="" min="0" max="0" >
-			<parValues default="000000000000000000000000000000000000000000000000" mhub="" current="" prev="" />
+		<Parameter parID="1825" level="0" status="0" datatype="Byte" address="2383" length="8" bitmask="255" dtu="0" units="" min="0" max="0" >
+			<parValues default="0000000000000000" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Module Debug Mask 2</parName>
 				<parDescription>"Enable debug statements for specific modules - set 2"</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+None"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1855" level="0" status="0" datatype="Byte" address="2391" length="8" bitmask="255" dtu="0" units="" min="0" max="0" >
+			<parValues default="0000000000000000" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Module Debug Mask 3</parName>
+				<parDescription>"Enable debug statements for specific modules - set 3"</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+None"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1856" level="0" status="0" datatype="Byte" address="2399" length="8" bitmask="255" dtu="0" units="" min="0" max="0" >
+			<parValues default="0000000000000000" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Module Debug Mask 4</parName>
+				<parDescription>"Enable debug statements for specific modules - set 4"</parDescription>
 				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
 
 None"</parNotes>
@@ -354,6 +392,20 @@ The ID supplied here will be prefaced with PSD_ to safeguard against accidental 
 Note: 
 The length of the VIN must be 13 characters otherwise XPlatform will reject the ID.
 The ID supplied here will be prefaced with PSD_ to safeguard against accidental VIN entry."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1858" level="0" status="0" datatype="Byte" address="2545" length="1" bitmask="255" dtu="0" units="Minutes" min="5" max="250" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Modem Power Down Recovery Standoff Time</parName>
+				<parDescription>"If the modem is unable to establish an APN session within the allowed attempts then it will power itself down for the configured number of minutes.
+The frequency with which this can occur is governed by the Modem Power Down Recovery Interval parameter.
+Setting this to 0 disables this feature. "</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+If the modem is unable to establish an APN session within the allowed attempts then it will power itself down for the configured number of minutes.
+The frequency with which this can occur is governed by the Modem Power Down Recovery Interval parameter.
+Setting this to 0 disables this feature. "</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1706" level="10" status="0" datatype="Long" address="3321" length="4" bitmask="255" dtu="0" units="" min="0" max="230" >
@@ -399,24 +451,6 @@ All other values default to Mobile Eye Parameter Set
 "</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1733" level="5" status="0" datatype="Bit" address="3325" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable KWP2000 ISO14230-3</parName>
-				<parDescription>"Enables the use of the ISO14230-3 Command Set.
-This should only be enabled on vehicles that are known to support this protocol."</parDescription>
-				<parNotes>"Enables the use of the ISO14230-3 Command Set.
-This should only be enabled on vehicles that are known to support this protocol."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1729" level="5" status="0" datatype="Bit" address="3325" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Allow Unsolicited CAN Message Parsing</parName>
-				<parDescription>"Allows the MHub to use MProfiler supplied EOBD data to parse unsolicited vehicle proprietary data. This parameter should be managed by MProfiler."</parDescription>
-				<parNotes>"Allows the MHub to use MProfiler supplied EOBD data to parse unsolicited vehicle proprietary data. This parameter should be managed by MProfiler."</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1726" level="0" status="0" datatype="Bit" address="3325" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -439,6 +473,24 @@ NOTE: This is necessary to recover from some errors"</parDescription>
 
 Enables the controller to go into listen only mode after closing a session.
 NOTE: This is necessary to recover from some errors"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1729" level="5" status="0" datatype="Bit" address="3325" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Allow Unsolicited CAN Message Parsing</parName>
+				<parDescription>"Allows the MHub to use MProfiler supplied EOBD data to parse unsolicited vehicle proprietary data. This parameter should be managed by MProfiler."</parDescription>
+				<parNotes>"Allows the MHub to use MProfiler supplied EOBD data to parse unsolicited vehicle proprietary data. This parameter should be managed by MProfiler."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1733" level="5" status="0" datatype="Bit" address="3325" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable KWP2000 ISO14230-3</parName>
+				<parDescription>"Enables the use of the ISO14230-3 Command Set.
+This should only be enabled on vehicles that are known to support this protocol."</parDescription>
+				<parNotes>"Enables the use of the ISO14230-3 Command Set.
+This should only be enabled on vehicles that are known to support this protocol."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1788" level="10" status="0" datatype="Bit" address="3578" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
@@ -490,6 +542,8 @@ NOTE: This is necessary to recover from some errors"</parNotes>
 				<catParameter parID="1465" />
 				<catParameter parID="239" />
 				<catParameter parID="1825" />
+				<catParameter parID="1855" />
+				<catParameter parID="1856" />
 			</catParameters>
 		</Category>
 		<Category catName="Driver Key">
@@ -497,6 +551,7 @@ NOTE: This is necessary to recover from some errors"</parNotes>
 				Driver Key
 			</catDescription>
 			<catParameters>
+				<catParameter parID="1857" />
 				<catParameter parID="826" />
 			</catParameters>
 		</Category>
@@ -507,6 +562,14 @@ NOTE: This is necessary to recover from some errors"</parNotes>
 			<catParameters>
 				<catParameter parID="203" />
 				<catParameter parID="37" />
+			</catParameters>
+		</Category>
+		<Category catName="Modem - General">
+			<catDescription>
+				Modem - General
+			</catDescription>
+			<catParameters>
+				<catParameter parID="1858" />
 			</catParameters>
 		</Category>
 		<Category catName="OBC">

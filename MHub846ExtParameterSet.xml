@@ -1,4 +1,4 @@
-<MhubParameterSet created="2021-08-16T14:45:31+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2023-03-03T10:40:06+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Beeper">
 		<Parameter name="Output for Buzzer" level="10" datatype="Byte" address="3583" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="5" default="0" previous="" current="" units="" />
@@ -74,15 +74,44 @@ None</Notes>
 
 None</Notes>
 		</Parameter>
-		<Parameter name="Module Debug Mask 2" level="0" datatype="Byte" address="2383" length="24" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="000000000000000000000000000000000000000000000000" previous="" current="" units="" />
+		<Parameter name="Module Debug Mask 2" level="0" datatype="Byte" address="2383" length="8" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="" />
 			<Help>Enable debug statements for specific modules - set 2</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+None</Notes>
+		</Parameter>
+		<Parameter name="Module Debug Mask 3" level="0" datatype="Byte" address="2391" length="8" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="" />
+			<Help>Enable debug statements for specific modules - set 3</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+None</Notes>
+		</Parameter>
+		<Parameter name="Module Debug Mask 4" level="0" datatype="Byte" address="2399" length="8" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="" />
+			<Help>Enable debug statements for specific modules - set 4</Help>
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
 None</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Driver Key">
+		<Parameter name="Driver Key Type" level="10" datatype="Byte" address="1774" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="8" previous="" current="" units="" />
+			<Help>The Driver Key Type indicates what kind of Driver Key device is allowed to be used for Driver Identification and vehicle immobilization.
+Values:
+0,8,255 = Standard DS1992 based Scope Driver Key initialized properly using the Scope Driver Key programmer software.
+1 = DS1990 where Bytes 1 and 2 of the device serial number is used as the Driver ID
+170 = ScopeID where the device ID contains the Driver ID, Fleet Code and Vehicle Class
+All other values are reserved</Help>
+			<Notes>The Driver Key Type indicates what kind of Driver Key device is allowed to be used for Driver Identification and vehicle immobilization.
+Values:
+0,8,255 = Standard DS1992 based Scope Driver Key initialized properly using the Scope Driver Key programmer software.
+1 = DS1990 where Bytes 1 and 2 of the device serial number is used as the Driver ID
+170 = ScopeID where the device ID contains the Driver ID, Fleet Code and Vehicle Class
+All other values are reserved</Notes>
+		</Parameter>
 		<Parameter name="Enable Driver Key" level="10" datatype="Bit" address="1981" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Driver Key Used</Help>
@@ -101,6 +130,19 @@ None</Notes>
 			<Values min="0" max="255" default="5" previous="" current="" units="" />
 			<Help>Maximum number of accumulated errors before the modem is rebooted</Help>
 			<Notes>As described in the parameter Reboot Limit, the MHub will issue a reboot command to the modem if it detects a problem with the modem. However if an error is received in response to an instruction to the modem, the MHub will first retry the instruction. This parameter specifies the number of accumulated errors that the MHub can receive from the modem before it will issue a reboot command to the mode.</Notes>
+		</Parameter>
+	</Category>
+	<Category name="Modem - General">
+		<Parameter name="Modem Power Down Recovery Standoff Time" level="0" datatype="Byte" address="2545" length="1" bitmask="255" dtu="0">
+			<Values min="5" max="250" default="0" previous="" current="" units="Minutes" />
+			<Help>If the modem is unable to establish an APN session within the allowed attempts then it will power itself down for the configured number of minutes.
+The frequency with which this can occur is governed by the Modem Power Down Recovery Interval parameter.
+Setting this to 0 disables this feature. </Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+If the modem is unable to establish an APN session within the allowed attempts then it will power itself down for the configured number of minutes.
+The frequency with which this can occur is governed by the Modem Power Down Recovery Interval parameter.
+Setting this to 0 disables this feature. </Notes>
 		</Parameter>
 	</Category>
 	<Category name="OBC">

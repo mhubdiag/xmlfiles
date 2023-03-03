@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="2" unitType="MHub837" created="2021-08-16T14:45:32+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="2" unitType="MHub837" created="2023-03-03T10:40:02+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="2" level="10" status="0" datatype="Word" address="256" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
@@ -686,7 +686,7 @@ Enables the use of the Telit Trace debug tools. Must used in conjunction with th
 		<Parameter parID="1325" level="0" status="0" datatype="Byte" address="392" length="1" bitmask="255" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Telit FOTA Upgrade Enable</parName>
+				<parName>FOTA Upgrade Enable</parName>
 				<parDescription>"Allows automatic acceptance of Telit issued FOTA upgrades."</parDescription>
 				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
 
@@ -1982,14 +1982,16 @@ Harsh Acceleration Source:
 				<parNotes>"None"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1303" level="10" status="0" datatype="Word" address="536" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
+		<Parameter parID="1303" level="10" status="0" datatype="Word" address="536" length="2" bitmask="255" dtu="0" units="" min="0" max="600" >
 			<parValues default="120" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Accident Reconstuction Log History Depth</parName>
 				<parDescription>"Accident Reconstuction Log History Depth"</parDescription>
 				<parNotes>"Accident Reconstuction Log History Depth is the number of events to send after an accident detection. 
 
-e.g. If configured with 120 ,the accident reconstruction Log will be sent from accident time + accident send delay - log history depth"</parNotes>
+e.g. If configured with 120 ,the accident reconstruction Log will be sent from accident time + accident send delay - log history depth
+
+Note: The maximum number of logs that can be sent as events is 600. If this value is larger than 600 it will default to 600."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="912" level="15" status="0" datatype="Byte" address="538" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
@@ -3359,7 +3361,7 @@ Acc Min Braking Duration is the minimum duration to trigger accident event. Conf
 				<parNotes>"This parameter will allow the MHub to enter the sleep state. This is the lowest power state of the MHub. 1=Enable"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="296" level="10" status="0" datatype="Bit" address="1157" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
+		<Parameter parID="296" level="10" status="0" datatype="Bit" address="1157" length="1" bitmask="2" dtu="1" units="" min="0" max="1" >
 			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Enable IDLE Power Mode</parName>
@@ -3441,7 +3443,7 @@ MProfiler - Keep Alive for 10 Minutes"</parNotes>
 				<parNotes>"The MHub has the ability to be connect to the vehicle in such a way that it is possible to immobilize the vehicle. The recommended way to connect into the vehcile for driver key and immobilizer usage is to connect to the starter motor of the vehicle. This will prevent the vehicle from being started unless a valid driver key is used. However it is also possible to connect the MHub in such a way that it will interrupt the ignition signal to the rest of the vehicle. This will also prevent the vehicle from being started unless a valid driver key is used, but this will also allow the vehcile to be immobilized and the engine turned OFF at any time. In order to provide some safety in this scenario, this parameter specifies a minimum speed, above which the vehcile will not be immobilized, even if instructed to do so. "</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="160" level="10" status="0" datatype="Word" address="1162" length="2" bitmask="255" dtu="0" units="seconds" min="0" max="65535" >
+		<Parameter parID="160" level="10" status="0" datatype="Word" address="1162" length="2" bitmask="255" dtu="1" units="seconds" min="0" max="65535" >
 			<parValues default="600" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Power Mode time to IDLE</parName>
@@ -5042,7 +5044,7 @@ None"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Temperature 1 High Threshold</parName>
 				<parDescription>"Temperature 1 High Threshold"</parDescription>
-				<parNotes>"The value of this parameter specifies the high temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the high threshold is to be -10 celcius. "</parNotes>
+				<parNotes>"The value of this parameter specifies the high temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the high threshold is to be -10 celcius then set it to 40. "</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="207" level="10" status="0" datatype="Byte" address="1872" length="1" bitmask="255" dtu="1" units="Celcius" min="0" max="255" >
@@ -5050,7 +5052,7 @@ None"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Temperature 1 Low Threshold</parName>
 				<parDescription>"Temperature 1 Low Threshold"</parDescription>
-				<parNotes>"The value of this parameter specifies the low temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the high threshold is to be -10 celcius. "</parNotes>
+				<parNotes>"The value of this parameter specifies the low temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the low threshold is to be -10 celcius then set the value to 40."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="208" level="10" status="0" datatype="Byte" address="1873" length="1" bitmask="255" dtu="1" units="Celsius" min="0" max="255" >
@@ -5818,11 +5820,31 @@ Set the threshold of RSCP in 3G Network.
 "</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1825" level="0" status="0" datatype="Byte" address="2383" length="24" bitmask="255" dtu="0" units="" min="0" max="0" >
-			<parValues default="000000000000000000000000000000000000000000000000" mhub="" current="" prev="" />
+		<Parameter parID="1825" level="0" status="0" datatype="Byte" address="2383" length="8" bitmask="255" dtu="0" units="" min="0" max="0" >
+			<parValues default="0000000000000000" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Module Debug Mask 2</parName>
 				<parDescription>"Enable debug statements for specific modules - set 2"</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+None"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1855" level="0" status="0" datatype="Byte" address="2391" length="8" bitmask="255" dtu="0" units="" min="0" max="0" >
+			<parValues default="0000000000000000" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Module Debug Mask 3</parName>
+				<parDescription>"Enable debug statements for specific modules - set 3"</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+None"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1856" level="0" status="0" datatype="Byte" address="2399" length="8" bitmask="255" dtu="0" units="" min="0" max="0" >
+			<parValues default="0000000000000000" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Module Debug Mask 4</parName>
+				<parDescription>"Enable debug statements for specific modules - set 4"</parDescription>
 				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
 
 None"</parNotes>
@@ -6299,12 +6321,12 @@ UDP Destination Port"</parNotes>
 UDP Local Port"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1451" level="5" status="0" datatype="Word" address="2799" length="2" bitmask="255" dtu="0" units="" min="5000" max="65500" >
-			<parValues default="52701" mhub="" current="" prev="" />
+		<Parameter parID="1451" level="5" status="0" datatype="Word" address="2799" length="2" bitmask="255" dtu="0" units="" min="0" max="65500" >
+			<parValues default="21" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>UDP Listen Port</parName>
-				<parDescription>"Local Port for UDP Listener"</parDescription>
-				<parNotes>""</parNotes>
+				<parName>FTP Port </parName>
+				<parDescription>"Port used for FTP operations"</parDescription>
+				<parNotes>"Port used for FTP operations"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1528" level="10" status="0" datatype="Word" address="2809" length="2" bitmask="255" dtu="0" units="100kg" min="0" max="65535" >
@@ -8083,14 +8105,6 @@ Note that certain vehicles respond to certain DTC requests by turning on the rel
 "</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1852" level="10" status="0" datatype="Byte" address="3535" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Custom Event 15 Configuration</parName>
-				<parDescription>"Custom Event 15 Configuration"</parDescription>
-				<parNotes>"See Periodic Position Event Configuration"</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1254" level="0" status="0" datatype="String" address="3542" length="32" bitmask="255" dtu="0" units="" min="0" max="0" >
 			<parValues default="" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -8324,94 +8338,6 @@ Configuration =
 
 How is this value calculated: 
 As an example, configure the event to use policy 5, Include the Location Field, Include the Status Field and is enabled. Use the values in square brackets for each item and add them together, i.e. 5 + 16 + 32 + 128 = 181"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1841" level="10" status="0" datatype="Byte" address="3624" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Custom Event 4 Configuration</parName>
-				<parDescription>"Custom Event 4 Configuration"</parDescription>
-				<parNotes>"See Periodic Position Event Configuration"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1842" level="10" status="0" datatype="Byte" address="3625" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Custom Event 5 Configuration</parName>
-				<parDescription>"Custom Event 5 Configuration"</parDescription>
-				<parNotes>"See Periodic Position Event Configuration"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1843" level="10" status="0" datatype="Byte" address="3626" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Custom Event 6 Configuration</parName>
-				<parDescription>"Custom Event 6 Configuration"</parDescription>
-				<parNotes>"See Periodic Position Event Configuration"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1844" level="10" status="0" datatype="Byte" address="3627" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Custom Event 7 Configuration</parName>
-				<parDescription>"Custom Event 7 Configuration"</parDescription>
-				<parNotes>"See Periodic Position Event Configuration"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1845" level="10" status="0" datatype="Byte" address="3628" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Custom Event 8 Configuration</parName>
-				<parDescription>"Custom Event 8 Configuration"</parDescription>
-				<parNotes>"See Periodic Position Event Configuration"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1846" level="10" status="0" datatype="Byte" address="3629" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Custom Event 9 Configuration</parName>
-				<parDescription>"Custom Event 9 Configuration"</parDescription>
-				<parNotes>"See Periodic Position Event Configuration"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1847" level="10" status="0" datatype="Byte" address="3630" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Custom Event 10 Configuration</parName>
-				<parDescription>"Custom Event 10 Configuration"</parDescription>
-				<parNotes>"See Periodic Position Event Configuration"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1848" level="10" status="0" datatype="Byte" address="3631" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Custom Event 11 Configuration</parName>
-				<parDescription>"Custom Event 11 Configuration"</parDescription>
-				<parNotes>"See Periodic Position Event Configuration"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1849" level="10" status="0" datatype="Byte" address="3632" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Custom Event 12 Configuration</parName>
-				<parDescription>"Custom Event 12 Configuration"</parDescription>
-				<parNotes>"See Periodic Position Event Configuration"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1850" level="10" status="0" datatype="Byte" address="3633" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Custom Event 13 Configuration</parName>
-				<parDescription>"Custom Event 13 Configuration"</parDescription>
-				<parNotes>"See Periodic Position Event Configuration"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1851" level="10" status="0" datatype="Byte" address="3634" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Custom Event 14 Configuration</parName>
-				<parDescription>"Custom Event 12 Configuration"</parDescription>
-				<parNotes>"See Periodic Position Event Configuration"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1545" level="10" status="0" datatype="Byte" address="3654" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
@@ -8734,7 +8660,7 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<parNotes>"See Periodic Position Event Configuration"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1362" level="10" status="0" datatype="Byte" address="3733" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+		<Parameter parID="1362" level="10" status="0" datatype="Byte" address="3733" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Start of Speeding</parName>
@@ -9539,6 +9465,8 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="1465" />
 				<catParameter parID="239" />
 				<catParameter parID="1825" />
+				<catParameter parID="1855" />
+				<catParameter parID="1856" />
 			</catParameters>
 		</Category>
 		<Category catName="Deprecated Parameters">
@@ -9614,7 +9542,6 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				Event Configuration
 			</catDescription>
 			<catParameters>
-				<catParameter parID="1852" />
 				<catParameter parID="767" />
 				<catParameter parID="768" />
 				<catParameter parID="769" />
@@ -9632,17 +9559,6 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="778" />
 				<catParameter parID="779" />
 				<catParameter parID="1830" />
-				<catParameter parID="1841" />
-				<catParameter parID="1842" />
-				<catParameter parID="1843" />
-				<catParameter parID="1844" />
-				<catParameter parID="1845" />
-				<catParameter parID="1846" />
-				<catParameter parID="1847" />
-				<catParameter parID="1848" />
-				<catParameter parID="1849" />
-				<catParameter parID="1850" />
-				<catParameter parID="1851" />
 				<catParameter parID="1545" />
 				<catParameter parID="1659" />
 				<catParameter parID="1660" />
@@ -10181,9 +10097,9 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="1275" />
 				<catParameter parID="1419" />
 				<catParameter parID="1424" />
+				<catParameter parID="1427" />
 				<catParameter parID="1420" />
 				<catParameter parID="1421" />
-				<catParameter parID="1427" />
 				<catParameter parID="1422" />
 				<catParameter parID="1423" />
 				<catParameter parID="1425" />

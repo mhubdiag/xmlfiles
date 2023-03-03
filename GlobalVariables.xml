@@ -68,7 +68,7 @@
 		<item id="65" description="Generic Counter" name="Counter 12" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535" dtu="1" />
 		<item id="66" description="Generic Counter" name="Counter 13" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535" dtu="1" />
 		<item id="67" description="Generic Counter" name="Counter 14" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535" dtu="1" />
-		<item id="68" description="Generic Counter" name="Counter 15" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535" dtu="1" />
+		<item id="68" description="Periodic Non Trip Position Counter - Sealed Mode" name="Periodic Non Trip Position Counter - Sealed Mode" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535" dtu="0" />
 		<item id="69" description="Generic Counter" name="Counter 16" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535" dtu="1" />
 		<item id="70" description="Trip ID is the ID of the current trip" name="Trip ID" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
 		<item id="71" description="Percentage of the trip travel time spent in the the green band" name="Green Band Percentage" size="1" scale="1" offset="0" units="" min="0" max="100" dtu="0" />

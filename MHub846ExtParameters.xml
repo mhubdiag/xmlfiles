@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="9" unitType="MHub846Ext" created="2023-03-03T10:40:04+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="9" unitType="MHub846Ext" created="2024-09-30T11:51:30+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="170" level="10" status="0" datatype="Byte" address="430" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
@@ -332,14 +332,12 @@ n - Custom Functionality n
 300...9600...115200"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="239" level="0" status="0" datatype="Byte" address="1896" length="8" bitmask="255" dtu="0" units="" min="0" max="0" >
+		<Parameter parID="239" level="10" status="0" datatype="Byte" address="1896" length="8" bitmask="255" dtu="0" units="" min="0" max="0" >
 			<parValues default="0000000000000000" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Module Debug Mask</parName>
 				<parDescription>"Enable debug statements for a specific Module"</parDescription>
-				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None"</parNotes>
+				<parNotes>"None"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="826" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
@@ -350,34 +348,28 @@ None"</parNotes>
 				<parNotes>"If the driver key is used, then this parameter must be set to 1"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1825" level="0" status="0" datatype="Byte" address="2383" length="8" bitmask="255" dtu="0" units="" min="0" max="0" >
+		<Parameter parID="1825" level="10" status="0" datatype="Byte" address="2383" length="8" bitmask="255" dtu="0" units="" min="0" max="0" >
 			<parValues default="0000000000000000" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Module Debug Mask 2</parName>
 				<parDescription>"Enable debug statements for specific modules - set 2"</parDescription>
-				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None"</parNotes>
+				<parNotes>"None"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1855" level="0" status="0" datatype="Byte" address="2391" length="8" bitmask="255" dtu="0" units="" min="0" max="0" >
+		<Parameter parID="1855" level="10" status="0" datatype="Byte" address="2391" length="8" bitmask="255" dtu="0" units="" min="0" max="0" >
 			<parValues default="0000000000000000" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Module Debug Mask 3</parName>
 				<parDescription>"Enable debug statements for specific modules - set 3"</parDescription>
-				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None"</parNotes>
+				<parNotes>"None"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1856" level="0" status="0" datatype="Byte" address="2399" length="8" bitmask="255" dtu="0" units="" min="0" max="0" >
+		<Parameter parID="1856" level="10" status="0" datatype="Byte" address="2399" length="8" bitmask="255" dtu="0" units="" min="0" max="0" >
 			<parValues default="0000000000000000" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Module Debug Mask 4</parName>
 				<parDescription>"Enable debug statements for specific modules - set 4"</parDescription>
-				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None"</parNotes>
+				<parNotes>"None"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1768" level="5" status="0" datatype="String" address="2457" length="17" bitmask="255" dtu="0" units="" min="0" max="0" >

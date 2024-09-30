@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GlobalVariables>
+		<item id="0" description="Reserved - DO NOT USE" name="Reserved" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="0" />
 		<item id="1" description="Intake manifold absolute pressure" name="MAP" size="1" scale="1" offset="0" units="kPa" min="0" max="255" dtu="0" />
 		<item id="2" description="Barometric Pressure" name="Barometric Pressure" size="1" scale="1" offset="0" units="kPa" min="0" max="255" dtu="0" />
 		<item id="3" description="Ambient Temperature" name="Ambient Temperature" size="1" scale="1" offset="-40" units="Celcius" min="-40" max="215" dtu="0" />
@@ -35,4 +36,28 @@
 		<item id="33" description="Absolute Engine Load as reported by OBD. This uses a different calculation to Calculated Engine Load" name="Absolute Engine Load" size="2" scale="0.392156" offset="0" units="%" min="0" max="65535" dtu="0" />
 		<item id="34" description="Analog Input 3" name="Analog Input 3" size="2" scale="0.01" offset="0" units="V" min="0" max="655.35" dtu="0" />
 		<item id="35" description="Analog Input 4" name="Analog Input 4" size="2" scale="0.01" offset="0" units="V" min="0" max="655.35" dtu="0" />
+		<item id="36" description="Input 9 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 9 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
+		<item id="37" description="Input 10 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 10 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
+		<item id="38" description="Input 11 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 11 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
+		<item id="39" description="Input 12 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 12 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
+		<item id="40" description="Input 13 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 13 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
+		<item id="41" description="Input 14 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 14 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
+		<item id="42" description="Input 15 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 15 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
+		<item id="43" description="Input 16 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 16 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
+		<item id="44" description="The amount of stored electrical charge in the High Voltage Energy Storage System that is available for use by the hybrid system, i.e. “how full is the tank”" name="HVESS Discharge Capacity" size="4" scale="1" offset="0" units="uAh" min="0" max="4294967295" dtu="0" />
+		<item id="45" description="The amount of unused electrical charge storage in the High Voltage Energy Storage System that is available to be filled by charging, i.e. “how much empty space is remaining in the tank”" name="HVESS Charge Capacity" size="4" scale="1" offset="0" units="uAh" min="0" max="4294967295" dtu="0" />
+		<item id="46" description="The voltage level of the high voltage bus, as measured by the High Voltage Energy Storage System" name="HVESS Bus Voltage" size="4" scale="1" offset="0" units="uV" min="0" max="4294967295" dtu="0" />
+		<item id="47" description="The voltage level at the ignition input of the High Voltage Energy Storage System" name="HVESS Ignition Voltage" size="4" scale="1" offset="0" units="uV" min="0" max="4294967295" dtu="0" />
+		<item id="48" description="HVESS Intake Coolant Temperature" name="HVESS Intake Coolant Temperature" size="1" scale="1" offset="-40" units="degC" min="-40" max="210" dtu="0" />
+		<item id="49" description="The temperature of liquid coolant as it exits the High Voltage Energy Storage System" name="HVESS Outlet Temperature" size="1" scale="1" offset="-40" units="degC" min="-40" max="210" dtu="0" />
+		<item id="50" description="The temperature of the electronics or control modules in the High Voltage Energy Storage System" name="HVESS Electronics Temperature" size="1" scale="1" offset="-40" units="degC" min="-40" max="210" dtu="0" />
+		<item id="51" description="The temperature of High Voltage Energy Storage System. The value may be determined from a unique sensor specifically for this purpose, or by aggregating various temperature sensor readings within the system" name="HVESS Temperature" size="1" scale="1" offset="-40" units="degC" min="-40" max="210" dtu="0" />
+		<item id="52" description="The amount of stored electrical energy in High Voltage Energy Storage System that is available for use by the hybrid system, i.e. “how full is the tank”" name="HVESS Discharge Energy Capacity" size="4" scale="1" offset="0" units="W" min="0" max="4294967295" dtu="0" />
+		<item id="53" description="The amount of unused electrical energy storage available to be filled by charging High Voltage Energy Storage System, i.e. “how much empty space is remaining in the tank”" name="HVESS Charge Energy Capacity" size="4" scale="1" offset="0" units="W" min="0" max="4294967295" dtu="0" />
+		<item id="54" description="Event duration in 10ms" name="Duration 10ms" size="2" scale="1" offset="0" units="10ms" min="0" max="65535" dtu="0" />
+		<item id="55" description="Event distance in m" name="Distance" size="2" scale="1" offset="0" units="m" min="0" max="65535" dtu="0" />
+		<item id="56" description="Accelerometer Max R" name="Max R" size="2" scale="0.01" offset="-327.68" units="0.01g" min="-327.68" max="327.68" dtu="1" />
+		<item id="57" description="Accelerometer Average X" name="Acc X High Res" size="2" scale="0.01" offset="-327.68" units="10mG" min="-327.68" max="327.68" dtu="0" />
+		<item id="58" description="Accelerometer Average Y" name="Acc Y High Res" size="2" scale="0.01" offset="-327." units="10mg" min="-327.68" max="327.68" dtu="0" />
+		<item id="59" description="Accelerometer Average Z" name="Acc Z High Res" size="2" scale="0.01" offset="-327.68" units="10mG" min="-327.68" max="327.68" dtu="0" />
 </GlobalVariables>

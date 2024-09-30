@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="2" unitType="MHub837" created="2023-03-03T10:40:02+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="2" unitType="MHub837" created="2024-09-30T11:51:27+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="2" level="10" status="0" datatype="Word" address="256" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
@@ -11,6 +11,10 @@
 3. Roaming SMS
 4. Roaming GPRS
 5. Satellite
+6. Wifi
+7. Bluetooh
+8. Other
+
 The MHub is configured to use the communications mediums in order of priority. Thus an option will be to have GPRS as the highest priority, followed by SMS, and then perhaps Roaming GPRS. This is done in patameter &quot;User CM Preference Order&quot;.
 What this means is that the MHub will always try to be in a position where it can send data over GPRS, and will send events that have been configured to be sent over GPRS. If however for some reason GPRS is not available, the MHub will fall back to the second priority medium which in this case will be SMS. Now events that have been configured to be sent over SMS will be sent. 
 
@@ -51,8 +55,8 @@ Once 120 seconds has passed with no GPRS coverage the next available CM (SMS for
 		<Parameter parID="6" level="0" status="0" datatype="Word" address="264" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>CM4 Debounce Timer</parName>
-				<parDescription>"Debounce Timer for Communications Medium 4"</parDescription>
+				<parName>Iridium Debounce Timer</parName>
+				<parDescription>"Debounce Timer for Iridium Communications Medium"</parDescription>
 				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
 
 See SMS DebounceTimer"</parNotes>
@@ -61,8 +65,8 @@ See SMS DebounceTimer"</parNotes>
 		<Parameter parID="7" level="0" status="0" datatype="Word" address="266" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>CM5 Debounce Timer</parName>
-				<parDescription>"Debounce Timer for Communications Medium 5"</parDescription>
+				<parName>Wifi Debounce Timer</parName>
+				<parDescription>"Debounce Timer for Wifi Communications Medium"</parDescription>
 				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
 
 See SMS DebounceTimer"</parNotes>
@@ -71,8 +75,8 @@ See SMS DebounceTimer"</parNotes>
 		<Parameter parID="8" level="0" status="0" datatype="Word" address="268" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>CM6 Debounce Timer</parName>
-				<parDescription>"Debounce Timer for Communications Medium 6"</parDescription>
+				<parName>Bluetooth Debounce Timer</parName>
+				<parDescription>"Debounce Timer for Bluetooth Communications Medium"</parDescription>
 				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
 
 See SMS DebounceTimer"</parNotes>
@@ -81,8 +85,8 @@ See SMS DebounceTimer"</parNotes>
 		<Parameter parID="9" level="0" status="0" datatype="Word" address="270" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>CM7 Debounce Timer</parName>
-				<parDescription>"Debounce Timer for Communications Medium 7"</parDescription>
+				<parName>Other CM Debounce Timer</parName>
+				<parDescription>"Debounce Timer for Other Communications Medium"</parDescription>
 				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
 
 See SMS DebounceTimer"</parNotes>
@@ -102,6 +106,9 @@ Each medium has a unique number they are:
  - 02: Roaming SMS
  - 03: Roaming GPRS
  - 04: Iridium Satellite
+ - 05: Wifi
+ - 06: Bluetooth
+ - 07: Other
  - 64: Not Used
 
 As an example: Say we want to specify GPRS then SMS in that order and nothing else you would set it to: 0100646464646464
@@ -957,7 +964,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 		<Parameter parID="760" level="10" status="0" datatype="Bit" address="400" length="1" bitmask="2" dtu="0" units="" min="0" max="2" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Comm.Policy 6 - Enable GPRS</parName>
+				<parName>Comm. Policy 6 - Enable GPRS</parName>
 				<parDescription>"Enable GPRS for Communications Medium Policy 6"</parDescription>
 				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
@@ -1553,7 +1560,7 @@ Setting this parameter to 1 will enable Error Debug messages"</parNotes>
 				<parNotes>"The MHub has 3 LED&apos;s that are used to indicate various operational states of teh MHub, this is particularly usefull during the installation and fault diagnosis processes to determine of the MHub is operating correctly. However from a vehicle being stolen scenario, flashing LED&apos;s will draw attention to the MHub. It is thus possible to turn OFF the LED&apos;s completely by disabling this parameter."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="732" level="5" status="0" datatype="Bit" address="439" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
+		<Parameter parID="732" level="10" status="0" datatype="Bit" address="439" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Enable USB Debug</parName>
@@ -4510,16 +4517,6 @@ Note: Enable J1939 FMS CANBus Interface = 0"</parDescription>
 				<parNotes>"Enable ISO15765 Protocol interface using the CANBus interface. Disable the J1939 FMS CANBus Interface."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1293" level="0" status="0" datatype="Bit" address="1824" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable Output 4 for OBD2 usage</parName>
-				<parDescription>"Enable Output 4 for OBD2 usage"</parDescription>
-				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Enable Output 4 for OBD2 usage"</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1578" level="10" status="0" datatype="Bit" address="1824" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -5177,14 +5174,12 @@ In order to calibrate itself, the Vehicle must travel at a constant speed of gre
 				<parNotes>"Vehicle Disablement Delay from request to vehicle disabled in seconds."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="239" level="0" status="0" datatype="Byte" address="1896" length="8" bitmask="255" dtu="0" units="" min="0" max="0" >
+		<Parameter parID="239" level="10" status="0" datatype="Byte" address="1896" length="8" bitmask="255" dtu="0" units="" min="0" max="0" >
 			<parValues default="0000000000000000" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Module Debug Mask</parName>
 				<parDescription>"Enable debug statements for a specific Module"</parDescription>
-				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None"</parNotes>
+				<parNotes>"None"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="252" level="10" status="0" datatype="String" address="1928" length="21" bitmask="255" dtu="0" units="" min="0" max="0" >
@@ -5820,34 +5815,28 @@ Set the threshold of RSCP in 3G Network.
 "</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1825" level="0" status="0" datatype="Byte" address="2383" length="8" bitmask="255" dtu="0" units="" min="0" max="0" >
+		<Parameter parID="1825" level="10" status="0" datatype="Byte" address="2383" length="8" bitmask="255" dtu="0" units="" min="0" max="0" >
 			<parValues default="0000000000000000" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Module Debug Mask 2</parName>
 				<parDescription>"Enable debug statements for specific modules - set 2"</parDescription>
-				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None"</parNotes>
+				<parNotes>"None"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1855" level="0" status="0" datatype="Byte" address="2391" length="8" bitmask="255" dtu="0" units="" min="0" max="0" >
+		<Parameter parID="1855" level="10" status="0" datatype="Byte" address="2391" length="8" bitmask="255" dtu="0" units="" min="0" max="0" >
 			<parValues default="0000000000000000" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Module Debug Mask 3</parName>
 				<parDescription>"Enable debug statements for specific modules - set 3"</parDescription>
-				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None"</parNotes>
+				<parNotes>"None"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1856" level="0" status="0" datatype="Byte" address="2399" length="8" bitmask="255" dtu="0" units="" min="0" max="0" >
+		<Parameter parID="1856" level="10" status="0" datatype="Byte" address="2399" length="8" bitmask="255" dtu="0" units="" min="0" max="0" >
 			<parValues default="0000000000000000" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Module Debug Mask 4</parName>
 				<parDescription>"Enable debug statements for specific modules - set 4"</parDescription>
-				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None"</parNotes>
+				<parNotes>"None"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1744" level="5" status="0" datatype="Bit" address="2424" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
@@ -7984,22 +7973,6 @@ NOTE: This is necessary to recover from some errors"</parNotes>
 				<parNotes>"Allows the MHub to use MProfiler supplied EOBD data to parse unsolicited vehicle proprietary data. This parameter should be managed by MProfiler."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1731" level="5" status="0" datatype="Bit" address="3325" length="1" bitmask="8" dtu="0" units="" min="0" max="0" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Allow Listen Only CAN Message Parsing</parName>
-				<parDescription>"Allows messages received while the MHub is in Listen Only mode to be parsed and the data collected. 
-NB: Valid EOBD data must be present for this to be used.
-NB: Programming filters may affect the ability of the MHub to use the CAN bus for early ignition detection.
-NB: Listen Only Mode must be enabled for this to work,
-NB: Allow Unsolicited CAN Message Parsing must be enabled for this to work."</parDescription>
-				<parNotes>"Allows messages received while the MHub is in Listen Only mode to be parsed and the data collected. 
-NB: Valid EOBD data must be present for this to be used.
-NB: Programming filters may affect the ability of the MHub to use the CAN bus for early ignition detection.
-NB: Listen Only Mode must be enabled for this to work,
-NB: Allow Unsolicited CAN Message Parsing must be enabled for this to work."</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1733" level="5" status="0" datatype="Bit" address="3325" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -9469,15 +9442,6 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="1856" />
 			</catParameters>
 		</Category>
-		<Category catName="Deprecated Parameters">
-			<catDescription>
-				Deprecated Parameters
-			</catDescription>
-			<catParameters>
-				<catParameter parID="1293" />
-				<catParameter parID="1731" />
-			</catParameters>
-		</Category>
 		<Category catName="Driver Key">
 			<catDescription>
 				Driver Key
@@ -10097,9 +10061,9 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="1275" />
 				<catParameter parID="1419" />
 				<catParameter parID="1424" />
-				<catParameter parID="1427" />
 				<catParameter parID="1420" />
 				<catParameter parID="1421" />
+				<catParameter parID="1427" />
 				<catParameter parID="1422" />
 				<catParameter parID="1423" />
 				<catParameter parID="1425" />
@@ -10217,9 +10181,9 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="1353" />
 				<catParameter parID="110" />
 				<catParameter parID="152" />
-				<catParameter parID="296" />
 				<catParameter parID="297" />
 				<catParameter parID="298" />
+				<catParameter parID="296" />
 				<catParameter parID="855" />
 				<catParameter parID="856" />
 				<catParameter parID="1354" />
@@ -10491,8 +10455,8 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 			</catDescription>
 			<catParameters>
 				<catParameter parID="1732" />
-				<catParameter parID="1781" />
 				<catParameter parID="1705" />
+				<catParameter parID="1781" />
 				<catParameter parID="1768" />
 				<catParameter parID="1729" />
 				<catParameter parID="1733" />

@@ -1,4 +1,4 @@
-<MhubParameterSet created="2023-03-03T10:40:05+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2024-09-30T11:52:11+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -718,6 +718,10 @@ Other = OFF (No Beep)</Notes>
 3. Roaming SMS
 4. Roaming GPRS
 5. Satellite
+6. Wifi
+7. Bluetooh
+8. Other
+
 The MHub is configured to use the communications mediums in order of priority. Thus an option will be to have GPRS as the highest priority, followed by SMS, and then perhaps Roaming GPRS. This is done in patameter &quot;User CM Preference Order&quot;.
 What this means is that the MHub will always try to be in a position where it can send data over GPRS, and will send events that have been configured to be sent over GPRS. If however for some reason GPRS is not available, the MHub will fall back to the second priority medium which in this case will be SMS. Now events that have been configured to be sent over SMS will be sent. 
 
@@ -745,30 +749,30 @@ Once 120 seconds has passed with no GPRS coverage the next available CM (SMS for
 			<Help>Debounce Timer for Roaming GPRS Communications Medium</Help>
 			<Notes>See SMS DebounceTimer</Notes>
 		</Parameter>
-		<Parameter name="CM4 Debounce Timer" level="0" datatype="Word" address="264" length="2" bitmask="255" dtu="0">
+		<Parameter name="Iridium Debounce Timer" level="0" datatype="Word" address="264" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65534" default="120" previous="" current="" units="Seconds" />
-			<Help>Debounce Timer for Communications Medium 4</Help>
+			<Help>Debounce Timer for Iridium Communications Medium</Help>
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
 See SMS DebounceTimer</Notes>
 		</Parameter>
-		<Parameter name="CM5 Debounce Timer" level="0" datatype="Word" address="266" length="2" bitmask="255" dtu="0">
+		<Parameter name="Wifi Debounce Timer" level="0" datatype="Word" address="266" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65534" default="120" previous="" current="" units="Seconds" />
-			<Help>Debounce Timer for Communications Medium 5</Help>
+			<Help>Debounce Timer for Wifi Communications Medium</Help>
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
 See SMS DebounceTimer</Notes>
 		</Parameter>
-		<Parameter name="CM6 Debounce Timer" level="0" datatype="Word" address="268" length="2" bitmask="255" dtu="0">
+		<Parameter name="Bluetooth Debounce Timer" level="0" datatype="Word" address="268" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65534" default="120" previous="" current="" units="Seconds" />
-			<Help>Debounce Timer for Communications Medium 6</Help>
+			<Help>Debounce Timer for Bluetooth Communications Medium</Help>
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
 See SMS DebounceTimer</Notes>
 		</Parameter>
-		<Parameter name="CM7 Debounce Timer" level="0" datatype="Word" address="270" length="2" bitmask="255" dtu="0">
+		<Parameter name="Other CM Debounce Timer" level="0" datatype="Word" address="270" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65534" default="120" previous="" current="" units="Seconds" />
-			<Help>Debounce Timer for Communications Medium 7</Help>
+			<Help>Debounce Timer for Other Communications Medium</Help>
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
 See SMS DebounceTimer</Notes>
@@ -785,6 +789,9 @@ Each medium has a unique number they are:
  - 02: Roaming SMS
  - 03: Roaming GPRS
  - 04: Iridium Satellite
+ - 05: Wifi
+ - 06: Bluetooth
+ - 07: Other
  - 64: Not Used
 
 As an example: Say we want to specify GPRS then SMS in that order and nothing else you would set it to: 0100646464646464
@@ -951,7 +958,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<Help>Enable SMS for Communications Medium Policy 6</Help>
 			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
-		<Parameter name="Comm.Policy 6 - Enable GPRS" level="10" datatype="Bit" address="400" length="1" bitmask="2" dtu="0">
+		<Parameter name="Comm. Policy 6 - Enable GPRS" level="10" datatype="Bit" address="400" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="2" default="0" previous="" current="" units="" />
 			<Help>Enable GPRS for Communications Medium Policy 6</Help>
 			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
@@ -1177,7 +1184,7 @@ Setting this parameter to 1 will enable Error Debug messages</Notes>
 			<Help>Enable Box Leds</Help>
 			<Notes>The MHub has 3 LED&apos;s that are used to indicate various operational states of teh MHub, this is particularly usefull during the installation and fault diagnosis processes to determine of the MHub is operating correctly. However from a vehicle being stolen scenario, flashing LED&apos;s will draw attention to the MHub. It is thus possible to turn OFF the LED&apos;s completely by disabling this parameter.</Notes>
 		</Parameter>
-		<Parameter name="Enable USB Debug" level="5" datatype="Bit" address="439" length="1" bitmask="16" dtu="0">
+		<Parameter name="Enable USB Debug" level="10" datatype="Bit" address="439" length="1" bitmask="16" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enables use of the USB connector for Debug functionality.</Help>
 			<Notes>Set this value to 1 to enable debug information to be streamed out of the USB port, else set it to 0 to disable it</Notes>
@@ -1214,55 +1221,25 @@ None</Notes>
 			<Help>This can be used to indicated version information regarding the configuration that was used</Help>
 			<Notes>This can be used to indicated version information regarding the configuration that was used. Eg. Default V01</Notes>
 		</Parameter>
-		<Parameter name="Module Debug Mask" level="0" datatype="Byte" address="1896" length="8" bitmask="255" dtu="0">
+		<Parameter name="Module Debug Mask" level="10" datatype="Byte" address="1896" length="8" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="" />
 			<Help>Enable debug statements for a specific Module</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
+			<Notes>None</Notes>
 		</Parameter>
-		<Parameter name="Module Debug Mask 2" level="0" datatype="Byte" address="2383" length="8" bitmask="255" dtu="0">
+		<Parameter name="Module Debug Mask 2" level="10" datatype="Byte" address="2383" length="8" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="" />
 			<Help>Enable debug statements for specific modules - set 2</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
+			<Notes>None</Notes>
 		</Parameter>
-		<Parameter name="Module Debug Mask 3" level="0" datatype="Byte" address="2391" length="8" bitmask="255" dtu="0">
+		<Parameter name="Module Debug Mask 3" level="10" datatype="Byte" address="2391" length="8" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="" />
 			<Help>Enable debug statements for specific modules - set 3</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
+			<Notes>None</Notes>
 		</Parameter>
-		<Parameter name="Module Debug Mask 4" level="0" datatype="Byte" address="2399" length="8" bitmask="255" dtu="0">
+		<Parameter name="Module Debug Mask 4" level="10" datatype="Byte" address="2399" length="8" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="" />
 			<Help>Enable debug statements for specific modules - set 4</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
-		</Parameter>
-	</Category>
-	<Category name="Deprecated Parameters">
-		<Parameter name="Enable Output 4 for OBD2 usage" level="0" datatype="Bit" address="1824" length="1" bitmask="4" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enable Output 4 for OBD2 usage</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Enable Output 4 for OBD2 usage</Notes>
-		</Parameter>
-		<Parameter name="Allow Listen Only CAN Message Parsing" level="5" datatype="Bit" address="3325" length="1" bitmask="8" dtu="0">
-			<Values min="0" max="0" default="0" previous="" current="" units="" />
-			<Help>Allows messages received while the MHub is in Listen Only mode to be parsed and the data collected. 
-NB: Valid EOBD data must be present for this to be used.
-NB: Programming filters may affect the ability of the MHub to use the CAN bus for early ignition detection.
-NB: Listen Only Mode must be enabled for this to work,
-NB: Allow Unsolicited CAN Message Parsing must be enabled for this to work.</Help>
-			<Notes>Allows messages received while the MHub is in Listen Only mode to be parsed and the data collected. 
-NB: Valid EOBD data must be present for this to be used.
-NB: Programming filters may affect the ability of the MHub to use the CAN bus for early ignition detection.
-NB: Listen Only Mode must be enabled for this to work,
-NB: Allow Unsolicited CAN Message Parsing must be enabled for this to work.</Notes>
+			<Notes>None</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Driver Key">
@@ -3254,49 +3231,6 @@ For correct opetation of the MHUb, the modem should be set to class XXX
 			<Notes>If the MHub is configured to communicate over GPRS, it needs to attach to the APN of the GSM service provider in order to communicate over GPRS. In some instances a GSM service provider may require that the MHub use a passoword when connecting to the APN. If no passowrd is required, this parameter can be left blank.</Notes>
 		</Parameter>
 	</Category>
-	<Category name="Modem - GSM Operator Selection">
-		<Parameter name="See Roaming Operator as Home Enable" level="0" datatype="Bit" address="327" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>If enabled registration on selected operator networks when roaming will be treated as home network registration allowing normal event reporting.</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-In order to provide flexibility in costing of data transmission using both GPRS and SMS over roaming networks, the MHub has the ability to send certain events only when the MHub is in a local network for instance, and not if it is roaming. However, there may be instances where if a MHub roams on a specific &quot;partner&quot; network, that the data costs are similar to those of the local network. So in order to facilitate this, the MHub is able to regard a certain roaming network as actually being a &quot;Home&quot; netwotk. Enabling this parameter will enable the ability of the Mhub to see a roaming netwotk as a Home network, and apply the Home network data transmission rules.</Notes>
-		</Parameter>
-		<Parameter name="Roaming Operator 1" level="10" datatype="Long" address="328" length="4" bitmask="255" dtu="0">
-			<Values min="0" max="2147483647" default="0" previous="" current="" units="" />
-			<Help>Preferred Roaming Operator 1</Help>
-			<Notes>When a roaming operator provides lower cost data compared to other roaming operators, the operator ID of that roaming operator can be entered into this parameter, and the MHub will then apply its &quot;home&quot; data transmission rules. Also the MHub will always then try to register onto one of these Preferred Roaming Operators if it is available.</Notes>
-		</Parameter>
-		<Parameter name="Roaming Operator 2" level="10" datatype="Long" address="332" length="4" bitmask="255" dtu="0">
-			<Values min="0" max="2147483647" default="0" previous="" current="" units="" />
-			<Help>Preferred Roaming Operator 2</Help>
-			<Notes>When a roaming operator provides lower cost data compared to other roaming operators, the operator ID of that roaming operator can be entered into this parameter, and the MHub will then apply its &quot;home&quot; data transmission rules. Also the MHub will always then try to register onto one of these Preferred Roaming Operators if it is available.</Notes>
-		</Parameter>
-		<Parameter name="Roaming Operator 3" level="10" datatype="Long" address="336" length="4" bitmask="255" dtu="0">
-			<Values min="0" max="2147483647" default="0" previous="" current="" units="" />
-			<Help>Preferred Roaming Operator 3</Help>
-			<Notes>When a roaming operator provides lower cost data compared to other roaming operators, the operator ID of that roaming operator can be entered into this parameter, and the MHub will then apply its &quot;home&quot; data transmission rules. Also the MHub will always then try to register onto one of these Preferred Roaming Operators if it is available.</Notes>
-		</Parameter>
-		<Parameter name="Roaming Operator 4" level="10" datatype="Long" address="340" length="4" bitmask="255" dtu="0">
-			<Values min="0" max="2147483647" default="0" previous="" current="" units="" />
-			<Help>Preferred Roaming Operator 4</Help>
-			<Notes>When a roaming operator provides lower cost data compared to other roaming operators, the operator ID of that roaming operator can be entered into this parameter, and the MHub will then apply its &quot;home&quot; data transmission rules. Also the MHub will always then try to register onto one of these Preferred Roaming Operators if it is available.</Notes>
-		</Parameter>
-		<Parameter name="GSM Network Selection Mode" level="0" datatype="Byte" address="344" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="4" default="0" previous="" current="" units="" />
-			<Help>Refer to AT Command Specification. Do Not set to 3 as this will break the modem when roaming.</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-</Notes>
-		</Parameter>
-		<Parameter name="Preferred Operator Selection" level="0" datatype="Byte" address="393" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enables preferred operator selection. Make sure that the operator SIM supports this before enabling. Do not enable for PTCRB.</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-ATnT do not allow this setting. Check that the operator allows this.</Notes>
-		</Parameter>
-	</Category>
 	<Category name="Modem - Gsm Positioning">
 		<Parameter name="Time before GSM Positioning Active" level="0" datatype="Word" address="781" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="120" previous="" current="" units="Seconds" />
@@ -3822,15 +3756,15 @@ Number of seconds before the Modem/MHub reboots due to failing to contact the MP
 			<Help>Enables the unit to close a socket so that voice and data calls may be dealt with</Help>
 			<Notes>In order to be able to answer an incomming voice call, the MHub must close a socket connection if it is currently open. Setting this parameter to 1 will allow the socket to be closed. If this is set to 0, then the MHUb will not be able to close the socket, and thus a voice call will not be possible.</Notes>
 		</Parameter>
-		<Parameter name="Permanent TCP Socket" level="10" datatype="Bit" address="477" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>Enables a permanent TCP socket to MProfiler</Help>
-			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will remain permanently open. Enabling this parameter will instruct the MHub to open up a socket and attempt to keep the socket open at all time. Should the socket drop for any reason, the MHub will immediately reopen the socket again.</Notes>
-		</Parameter>
 		<Parameter name="Data Triggered TCP Socket" level="10" datatype="Bit" address="477" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>when enabled the unit will only open a socket if there is data to be sent to MProfiler. This is overidden by the Permanent TCP Socket switch.</Help>
 			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will only be opened if there is data to be sent. Enabling this parameter will instruct the MHub to only open a socket to Mprofiler if there is data to be sent. Note that if the Permanent TCP Socket parameter is also enabled, that that will override this parameter.</Notes>
+		</Parameter>
+		<Parameter name="Permanent TCP Socket" level="10" datatype="Bit" address="477" length="1" bitmask="2" dtu="0">
+			<Values min="0" max="1" default="1" previous="" current="" units="" />
+			<Help>Enables a permanent TCP socket to MProfiler</Help>
+			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will remain permanently open. Enabling this parameter will instruct the MHub to open up a socket and attempt to keep the socket open at all time. Should the socket drop for any reason, the MHub will immediately reopen the socket again.</Notes>
 		</Parameter>
 		<Parameter name="Socket Suspend Time" level="5" datatype="Byte" address="528" length="1" bitmask="0" dtu="0">
 			<Values min="5" max="200" default="15" previous="" current="" units="Seconds" />

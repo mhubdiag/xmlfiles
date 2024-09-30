@@ -1,4 +1,4 @@
-<MhubParameterSet created="2023-03-03T10:40:06+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2024-09-30T11:52:12+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Beeper">
 		<Parameter name="Output for Buzzer" level="10" datatype="Byte" address="3583" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="5" default="0" previous="" current="" units="" />
@@ -67,33 +67,25 @@ None</Notes>
 			<Help>This can be used to indicated version information regarding the configuration that was used</Help>
 			<Notes>This can be used to indicated version information regarding the configuration that was used. Eg. Default V01</Notes>
 		</Parameter>
-		<Parameter name="Module Debug Mask" level="0" datatype="Byte" address="1896" length="8" bitmask="255" dtu="0">
+		<Parameter name="Module Debug Mask" level="10" datatype="Byte" address="1896" length="8" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="" />
 			<Help>Enable debug statements for a specific Module</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
+			<Notes>None</Notes>
 		</Parameter>
-		<Parameter name="Module Debug Mask 2" level="0" datatype="Byte" address="2383" length="8" bitmask="255" dtu="0">
+		<Parameter name="Module Debug Mask 2" level="10" datatype="Byte" address="2383" length="8" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="" />
 			<Help>Enable debug statements for specific modules - set 2</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
+			<Notes>None</Notes>
 		</Parameter>
-		<Parameter name="Module Debug Mask 3" level="0" datatype="Byte" address="2391" length="8" bitmask="255" dtu="0">
+		<Parameter name="Module Debug Mask 3" level="10" datatype="Byte" address="2391" length="8" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="" />
 			<Help>Enable debug statements for specific modules - set 3</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
+			<Notes>None</Notes>
 		</Parameter>
-		<Parameter name="Module Debug Mask 4" level="0" datatype="Byte" address="2399" length="8" bitmask="255" dtu="0">
+		<Parameter name="Module Debug Mask 4" level="10" datatype="Byte" address="2399" length="8" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="" />
 			<Help>Enable debug statements for specific modules - set 4</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
+			<Notes>None</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Driver Key">

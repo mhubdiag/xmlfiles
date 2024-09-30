@@ -1,4 +1,4 @@
-<MhubParameterSet created="2023-03-03T10:40:06+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2024-09-30T11:52:12+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -772,6 +772,10 @@ Other = OFF (No Beep)</Notes>
 3. Roaming SMS
 4. Roaming GPRS
 5. Satellite
+6. Wifi
+7. Bluetooh
+8. Other
+
 The MHub is configured to use the communications mediums in order of priority. Thus an option will be to have GPRS as the highest priority, followed by SMS, and then perhaps Roaming GPRS. This is done in patameter &quot;User CM Preference Order&quot;.
 What this means is that the MHub will always try to be in a position where it can send data over GPRS, and will send events that have been configured to be sent over GPRS. If however for some reason GPRS is not available, the MHub will fall back to the second priority medium which in this case will be SMS. Now events that have been configured to be sent over SMS will be sent. 
 
@@ -799,9 +803,9 @@ Once 120 seconds has passed with no GPRS coverage the next available CM (SMS for
 			<Help>Debounce Timer for Roaming GPRS Communications Medium</Help>
 			<Notes>See SMS DebounceTimer</Notes>
 		</Parameter>
-		<Parameter name="CM4 Debounce Timer" level="0" datatype="Word" address="264" length="2" bitmask="255" dtu="0">
+		<Parameter name="Iridium Debounce Timer" level="0" datatype="Word" address="264" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65534" default="120" previous="" current="" units="Seconds" />
-			<Help>Debounce Timer for Communications Medium 4</Help>
+			<Help>Debounce Timer for Iridium Communications Medium</Help>
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
 See SMS DebounceTimer</Notes>
@@ -818,6 +822,9 @@ Each medium has a unique number they are:
  - 02: Roaming SMS
  - 03: Roaming GPRS
  - 04: Iridium Satellite
+ - 05: Wifi
+ - 06: Bluetooth
+ - 07: Other
  - 64: Not Used
 
 As an example: Say we want to specify GPRS then SMS in that order and nothing else you would set it to: 0100646464646464
@@ -984,7 +991,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<Help>Enable SMS for Communications Medium Policy 6</Help>
 			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
-		<Parameter name="Comm.Policy 6 - Enable GPRS" level="10" datatype="Bit" address="400" length="1" bitmask="2" dtu="0">
+		<Parameter name="Comm. Policy 6 - Enable GPRS" level="10" datatype="Bit" address="400" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="2" default="0" previous="" current="" units="" />
 			<Help>Enable GPRS for Communications Medium Policy 6</Help>
 			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
@@ -1230,7 +1237,7 @@ Setting this parameter to 1 will enable Error Debug messages</Notes>
 			<Help>Enable Box Leds</Help>
 			<Notes>The MHub has 3 LED&apos;s that are used to indicate various operational states of teh MHub, this is particularly usefull during the installation and fault diagnosis processes to determine of the MHub is operating correctly. However from a vehicle being stolen scenario, flashing LED&apos;s will draw attention to the MHub. It is thus possible to turn OFF the LED&apos;s completely by disabling this parameter.</Notes>
 		</Parameter>
-		<Parameter name="Enable USB Debug" level="5" datatype="Bit" address="439" length="1" bitmask="16" dtu="0">
+		<Parameter name="Enable USB Debug" level="10" datatype="Bit" address="439" length="1" bitmask="16" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enables use of the USB connector for Debug functionality.</Help>
 			<Notes>Set this value to 1 to enable debug information to be streamed out of the USB port, else set it to 0 to disable it</Notes>
@@ -1267,55 +1274,25 @@ None</Notes>
 			<Help>This can be used to indicated version information regarding the configuration that was used</Help>
 			<Notes>This can be used to indicated version information regarding the configuration that was used. Eg. Default V01</Notes>
 		</Parameter>
-		<Parameter name="Module Debug Mask" level="0" datatype="Byte" address="1896" length="8" bitmask="255" dtu="0">
+		<Parameter name="Module Debug Mask" level="10" datatype="Byte" address="1896" length="8" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="" />
 			<Help>Enable debug statements for a specific Module</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
+			<Notes>None</Notes>
 		</Parameter>
-		<Parameter name="Module Debug Mask 2" level="0" datatype="Byte" address="2383" length="8" bitmask="255" dtu="0">
+		<Parameter name="Module Debug Mask 2" level="10" datatype="Byte" address="2383" length="8" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="" />
 			<Help>Enable debug statements for specific modules - set 2</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
+			<Notes>None</Notes>
 		</Parameter>
-		<Parameter name="Module Debug Mask 3" level="0" datatype="Byte" address="2391" length="8" bitmask="255" dtu="0">
+		<Parameter name="Module Debug Mask 3" level="10" datatype="Byte" address="2391" length="8" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="" />
 			<Help>Enable debug statements for specific modules - set 3</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
+			<Notes>None</Notes>
 		</Parameter>
-		<Parameter name="Module Debug Mask 4" level="0" datatype="Byte" address="2399" length="8" bitmask="255" dtu="0">
+		<Parameter name="Module Debug Mask 4" level="10" datatype="Byte" address="2399" length="8" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="" />
 			<Help>Enable debug statements for specific modules - set 4</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
-		</Parameter>
-	</Category>
-	<Category name="Deprecated Parameters">
-		<Parameter name="Enable Output 4 for OBD2 usage" level="0" datatype="Bit" address="1824" length="1" bitmask="4" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enable Output 4 for OBD2 usage</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Enable Output 4 for OBD2 usage</Notes>
-		</Parameter>
-		<Parameter name="Allow Listen Only CAN Message Parsing" level="5" datatype="Bit" address="3325" length="1" bitmask="8" dtu="0">
-			<Values min="0" max="0" default="0" previous="" current="" units="" />
-			<Help>Allows messages received while the MHub is in Listen Only mode to be parsed and the data collected. 
-NB: Valid EOBD data must be present for this to be used.
-NB: Programming filters may affect the ability of the MHub to use the CAN bus for early ignition detection.
-NB: Listen Only Mode must be enabled for this to work,
-NB: Allow Unsolicited CAN Message Parsing must be enabled for this to work.</Help>
-			<Notes>Allows messages received while the MHub is in Listen Only mode to be parsed and the data collected. 
-NB: Valid EOBD data must be present for this to be used.
-NB: Programming filters may affect the ability of the MHub to use the CAN bus for early ignition detection.
-NB: Listen Only Mode must be enabled for this to work,
-NB: Allow Unsolicited CAN Message Parsing must be enabled for this to work.</Notes>
+			<Notes>None</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Driver Fatigue">
@@ -2715,17 +2692,17 @@ Distance in meters from Last Valid position up to which the last valid position 
 			<Help>GPS Software Antenna Connection Status </Help>
 			<Notes>GPS Software Antenna Connection Status detect antenna presence in software instead of hardware detection.</Notes>
 		</Parameter>
+		<Parameter name="Enable GPS FixNow Mode" level="10" datatype="Bit" address="1521" length="1" bitmask="1" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enable GPS FixNow Mode</Help>
+			<Notes>Enable GPS FixNow Mode will use the GPSs internal power manager to cycle the GPS power for idle and sleep mode.</Notes>
+		</Parameter>
 		<Parameter name="Disable GPS Speed Accuracy Filter" level="10" datatype="Bit" address="1521" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Disable GPS Speed Accuracy Filter</Help>
 			<Notes>Disable GPS Speed Accuracy Filter. 
 
 GPS Speed Accuracy Filter will require the current GPS Speed to be greater than the current GPS Speed Accuracy measure to be used in calculations and events. </Notes>
-		</Parameter>
-		<Parameter name="Enable GPS FixNow Mode" level="10" datatype="Bit" address="1521" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enable GPS FixNow Mode</Help>
-			<Notes>Enable GPS FixNow Mode will use the GPSs internal power manager to cycle the GPS power for idle and sleep mode.</Notes>
 		</Parameter>
 		<Parameter name="Enable GPS FixNow Mode in Sleep" level="10" datatype="Bit" address="1521" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
@@ -5054,15 +5031,15 @@ If set to zero then reports will continue indefinitely</Notes>
 			<Help>Ignition Source: Trigger</Help>
 			<Notes>Ignition Source is set to Trigger which is a software controlled ignition source.</Notes>
 		</Parameter>
-		<Parameter name="Ignition Source: Alternate" level="10" datatype="Bit" address="1829" length="1" bitmask="128" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>Ignition Source: Alternate</Help>
-			<Notes>Ignition Source Alternate uses new method for ignition. Configure sources with Trip Source Ignition Line etc.</Notes>
-		</Parameter>
 		<Parameter name="Ignition Source: Accelerometer" level="5" datatype="Bit" address="1829" length="1" bitmask="64" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Ignition Source: Accelerometer</Help>
 			<Notes>One more possible source of ignition is to use Accelerometer movement. If Accelerometer movement is greater than the value specified in parameter &quot;Accelerometer Ignition On Threshold&quot;, the vehicle is moving. If Accelerometer is to be used as ignition, this parameter is set to 1.</Notes>
+		</Parameter>
+		<Parameter name="Ignition Source: Alternate" level="10" datatype="Bit" address="1829" length="1" bitmask="128" dtu="0">
+			<Values min="0" max="1" default="1" previous="" current="" units="" />
+			<Help>Ignition Source: Alternate</Help>
+			<Notes>Ignition Source Alternate uses new method for ignition. Configure sources with Trip Source Ignition Line etc.</Notes>
 		</Parameter>
 		<Parameter name="Ignition Source from RPM Threshold" level="10" datatype="Byte" address="1830" length="1" bitmask="255" dtu="0">
 			<Values min="1" max="255" default="3" previous="" current="" units="RPM" />
@@ -5439,6 +5416,11 @@ if set to 0 value will default to 60</Notes>
 			<Help>Enable Unit Sleep Mode 0: Normal 1: Sleep Mode </Help>
 			<Notes>This parameter will allow the MHub to enter the sleep state. This is the lowest power state of the MHub. 1=Enable</Notes>
 		</Parameter>
+		<Parameter name="Enable IDLE Power Mode" level="10" datatype="Bit" address="1157" length="1" bitmask="2" dtu="1">
+			<Values min="0" max="1" default="1" previous="" current="" units="" />
+			<Help>GPS to idle power mode. Updates position every 30 seconds. GPS Speed and direction not available. 0: Normal 1: Idle Mode</Help>
+			<Notes>This parameter will allow the Mhub to enter into its IDLE power save mode. In the idle state, GPS positions are updated internally to the MHub every 30 seconds, and speed and direction values are not available. 1=Enable Idle Mode</Notes>
+		</Parameter>
 		<Parameter name="Enable Sleep Modem Scan" level="10" datatype="Bit" address="1157" length="1" bitmask="4" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Unit wakes up periodically from sleep to check for messages if Ultra Low Power Mode is disabled.</Help>
@@ -5448,11 +5430,6 @@ if set to 0 value will default to 60</Notes>
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>NOT USED - Enable Modem Power off in Sleep. 0: Modem Idle Mode(W32) 1: Modem Off</Help>
 			<Notes>NOT USED - When the Mhub has enetered sleep mode, the modem can either be turned OFF, or it can enter an idle mode. This idle mode of the modem is called W32K mode, and placed the modem into a very low power state, but still giving the modem the ability to recieve an SMS. If teh modem is turned OFF, it cannit recieve a SMS. This parameter will dictate which power mode for the modem to use: 0: Modem Idle Mode(W32) 1: Modem Off</Notes>
-		</Parameter>
-		<Parameter name="Enable IDLE Power Mode" level="10" datatype="Bit" address="1157" length="1" bitmask="2" dtu="1">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>GPS to idle power mode. Updates position every 30 seconds. GPS Speed and direction not available. 0: Normal 1: Idle Mode</Help>
-			<Notes>This parameter will allow the Mhub to enter into its IDLE power save mode. In the idle state, GPS positions are updated internally to the MHub every 30 seconds, and speed and direction values are not available. 1=Enable Idle Mode</Notes>
 		</Parameter>
 		<Parameter name="Enable Deep Sleep Power Mode" level="10" datatype="Bit" address="1157" length="1" bitmask="128" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />

@@ -1,4 +1,4 @@
-<MhubParameterSet created="2023-03-03T10:40:06+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2024-09-30T11:52:12+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -770,6 +770,10 @@ Other = OFF (No Beep)</Notes>
 3. Roaming SMS
 4. Roaming GPRS
 5. Satellite
+6. Wifi
+7. Bluetooh
+8. Other
+
 The MHub is configured to use the communications mediums in order of priority. Thus an option will be to have GPRS as the highest priority, followed by SMS, and then perhaps Roaming GPRS. This is done in patameter &quot;User CM Preference Order&quot;.
 What this means is that the MHub will always try to be in a position where it can send data over GPRS, and will send events that have been configured to be sent over GPRS. If however for some reason GPRS is not available, the MHub will fall back to the second priority medium which in this case will be SMS. Now events that have been configured to be sent over SMS will be sent. 
 
@@ -797,30 +801,30 @@ Once 120 seconds has passed with no GPRS coverage the next available CM (SMS for
 			<Help>Debounce Timer for Roaming GPRS Communications Medium</Help>
 			<Notes>See SMS DebounceTimer</Notes>
 		</Parameter>
-		<Parameter name="CM4 Debounce Timer" level="0" datatype="Word" address="264" length="2" bitmask="255" dtu="0">
+		<Parameter name="Iridium Debounce Timer" level="0" datatype="Word" address="264" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65534" default="120" previous="" current="" units="Seconds" />
-			<Help>Debounce Timer for Communications Medium 4</Help>
+			<Help>Debounce Timer for Iridium Communications Medium</Help>
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
 See SMS DebounceTimer</Notes>
 		</Parameter>
-		<Parameter name="CM5 Debounce Timer" level="0" datatype="Word" address="266" length="2" bitmask="255" dtu="0">
+		<Parameter name="Wifi Debounce Timer" level="0" datatype="Word" address="266" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65534" default="120" previous="" current="" units="Seconds" />
-			<Help>Debounce Timer for Communications Medium 5</Help>
+			<Help>Debounce Timer for Wifi Communications Medium</Help>
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
 See SMS DebounceTimer</Notes>
 		</Parameter>
-		<Parameter name="CM6 Debounce Timer" level="0" datatype="Word" address="268" length="2" bitmask="255" dtu="0">
+		<Parameter name="Bluetooth Debounce Timer" level="0" datatype="Word" address="268" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65534" default="120" previous="" current="" units="Seconds" />
-			<Help>Debounce Timer for Communications Medium 6</Help>
+			<Help>Debounce Timer for Bluetooth Communications Medium</Help>
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
 See SMS DebounceTimer</Notes>
 		</Parameter>
-		<Parameter name="CM7 Debounce Timer" level="0" datatype="Word" address="270" length="2" bitmask="255" dtu="0">
+		<Parameter name="Other CM Debounce Timer" level="0" datatype="Word" address="270" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65534" default="120" previous="" current="" units="Seconds" />
-			<Help>Debounce Timer for Communications Medium 7</Help>
+			<Help>Debounce Timer for Other Communications Medium</Help>
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
 See SMS DebounceTimer</Notes>
@@ -837,6 +841,9 @@ Each medium has a unique number they are:
  - 02: Roaming SMS
  - 03: Roaming GPRS
  - 04: Iridium Satellite
+ - 05: Wifi
+ - 06: Bluetooth
+ - 07: Other
  - 64: Not Used
 
 As an example: Say we want to specify GPRS then SMS in that order and nothing else you would set it to: 0100646464646464
@@ -1003,7 +1010,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 			<Help>Enable SMS for Communications Medium Policy 6</Help>
 			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
 		</Parameter>
-		<Parameter name="Comm.Policy 6 - Enable GPRS" level="10" datatype="Bit" address="400" length="1" bitmask="2" dtu="0">
+		<Parameter name="Comm. Policy 6 - Enable GPRS" level="10" datatype="Bit" address="400" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="2" default="0" previous="" current="" units="" />
 			<Help>Enable GPRS for Communications Medium Policy 6</Help>
 			<Notes>See &quot;Communications Medium Policy 0 - Enable SMS&quot;</Notes>
@@ -1222,7 +1229,7 @@ Setting this parameter to 1 will enable Error Debug messages</Notes>
 			<Help>Enable Box Leds</Help>
 			<Notes>The MHub has 3 LED&apos;s that are used to indicate various operational states of teh MHub, this is particularly usefull during the installation and fault diagnosis processes to determine of the MHub is operating correctly. However from a vehicle being stolen scenario, flashing LED&apos;s will draw attention to the MHub. It is thus possible to turn OFF the LED&apos;s completely by disabling this parameter.</Notes>
 		</Parameter>
-		<Parameter name="Enable USB Debug" level="5" datatype="Bit" address="439" length="1" bitmask="16" dtu="0">
+		<Parameter name="Enable USB Debug" level="10" datatype="Bit" address="439" length="1" bitmask="16" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enables use of the USB connector for Debug functionality.</Help>
 			<Notes>Set this value to 1 to enable debug information to be streamed out of the USB port, else set it to 0 to disable it</Notes>
@@ -1259,33 +1266,25 @@ None</Notes>
 			<Help>This can be used to indicated version information regarding the configuration that was used</Help>
 			<Notes>This can be used to indicated version information regarding the configuration that was used. Eg. Default V01</Notes>
 		</Parameter>
-		<Parameter name="Module Debug Mask" level="0" datatype="Byte" address="1896" length="8" bitmask="255" dtu="0">
+		<Parameter name="Module Debug Mask" level="10" datatype="Byte" address="1896" length="8" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="" />
 			<Help>Enable debug statements for a specific Module</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
+			<Notes>None</Notes>
 		</Parameter>
-		<Parameter name="Module Debug Mask 2" level="0" datatype="Byte" address="2383" length="8" bitmask="255" dtu="0">
+		<Parameter name="Module Debug Mask 2" level="10" datatype="Byte" address="2383" length="8" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="" />
 			<Help>Enable debug statements for specific modules - set 2</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
+			<Notes>None</Notes>
 		</Parameter>
-		<Parameter name="Module Debug Mask 3" level="0" datatype="Byte" address="2391" length="8" bitmask="255" dtu="0">
+		<Parameter name="Module Debug Mask 3" level="10" datatype="Byte" address="2391" length="8" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="" />
 			<Help>Enable debug statements for specific modules - set 3</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
+			<Notes>None</Notes>
 		</Parameter>
-		<Parameter name="Module Debug Mask 4" level="0" datatype="Byte" address="2399" length="8" bitmask="255" dtu="0">
+		<Parameter name="Module Debug Mask 4" level="10" datatype="Byte" address="2399" length="8" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="" />
 			<Help>Enable debug statements for specific modules - set 4</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
+			<Notes>None</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Driver Fatigue">
@@ -3285,12 +3284,46 @@ E.g.
 		</Parameter>
 	</Category>
 	<Category name="Modem - GSM Operator Selection">
+		<Parameter name="See Roaming Operator as Home Enable" level="0" datatype="Bit" address="327" length="1" bitmask="1" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>If enabled registration on selected operator networks when roaming will be treated as home network registration allowing normal event reporting.</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+In order to provide flexibility in costing of data transmission using both GPRS and SMS over roaming networks, the MHub has the ability to send certain events only when the MHub is in a local network for instance, and not if it is roaming. However, there may be instances where if a MHub roams on a specific &quot;partner&quot; network, that the data costs are similar to those of the local network. So in order to facilitate this, the MHub is able to regard a certain roaming network as actually being a &quot;Home&quot; netwotk. Enabling this parameter will enable the ability of the Mhub to see a roaming netwotk as a Home network, and apply the Home network data transmission rules.</Notes>
+		</Parameter>
+		<Parameter name="Roaming Operator 1" level="10" datatype="Long" address="328" length="4" bitmask="255" dtu="0">
+			<Values min="0" max="2147483647" default="0" previous="" current="" units="" />
+			<Help>Preferred Roaming Operator 1</Help>
+			<Notes>When a roaming operator provides lower cost data compared to other roaming operators, the operator ID of that roaming operator can be entered into this parameter, and the MHub will then apply its &quot;home&quot; data transmission rules. Also the MHub will always then try to register onto one of these Preferred Roaming Operators if it is available.</Notes>
+		</Parameter>
+		<Parameter name="Roaming Operator 2" level="10" datatype="Long" address="332" length="4" bitmask="255" dtu="0">
+			<Values min="0" max="2147483647" default="0" previous="" current="" units="" />
+			<Help>Preferred Roaming Operator 2</Help>
+			<Notes>When a roaming operator provides lower cost data compared to other roaming operators, the operator ID of that roaming operator can be entered into this parameter, and the MHub will then apply its &quot;home&quot; data transmission rules. Also the MHub will always then try to register onto one of these Preferred Roaming Operators if it is available.</Notes>
+		</Parameter>
+		<Parameter name="Roaming Operator 3" level="10" datatype="Long" address="336" length="4" bitmask="255" dtu="0">
+			<Values min="0" max="2147483647" default="0" previous="" current="" units="" />
+			<Help>Preferred Roaming Operator 3</Help>
+			<Notes>When a roaming operator provides lower cost data compared to other roaming operators, the operator ID of that roaming operator can be entered into this parameter, and the MHub will then apply its &quot;home&quot; data transmission rules. Also the MHub will always then try to register onto one of these Preferred Roaming Operators if it is available.</Notes>
+		</Parameter>
+		<Parameter name="Roaming Operator 4" level="10" datatype="Long" address="340" length="4" bitmask="255" dtu="0">
+			<Values min="0" max="2147483647" default="0" previous="" current="" units="" />
+			<Help>Preferred Roaming Operator 4</Help>
+			<Notes>When a roaming operator provides lower cost data compared to other roaming operators, the operator ID of that roaming operator can be entered into this parameter, and the MHub will then apply its &quot;home&quot; data transmission rules. Also the MHub will always then try to register onto one of these Preferred Roaming Operators if it is available.</Notes>
+		</Parameter>
 		<Parameter name="GSM Network Selection Mode" level="0" datatype="Byte" address="344" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="4" default="0" previous="" current="" units="" />
 			<Help>Refer to AT Command Specification. Do Not set to 3 as this will break the modem when roaming.</Help>
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
 </Notes>
+		</Parameter>
+		<Parameter name="Preferred Operator Selection" level="0" datatype="Byte" address="393" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enables preferred operator selection. Make sure that the operator SIM supports this before enabling. Do not enable for PTCRB.</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+ATnT do not allow this setting. Check that the operator allows this.</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Modem - Gsm Positioning">
@@ -5638,6 +5671,73 @@ Timers are reset at trip start.</Notes>
 0 - Disable function.</Help>
 			<Notes>Number of seconds between update of select J1939 data. Triggering of this event will only occur during a trip if valid J1939 messages are being received for the data contained in the events.
 0 - Disable function.</Notes>
+		</Parameter>
+	</Category>
+	<Category name="Wifi">
+		<Parameter name="Wifi Max Transmission Power" level="5" datatype="Byte" address="1545" length="1" bitmask="255" dtu="0">
+			<Values min="4" max="18" default="4" previous="" current="" units="" />
+			<Help>Sets the Elle Wifi module maximum transmission power.
+4 - Minimum power
+18 -  Maximum power
+This setting is implemented when Wifi is turned on.</Help>
+			<Notes>Sets the Elle Wifi module maximum transmission power.
+4 - Minimum power
+18 -  Maximum power
+This setting is implemented when Wifi is turned on.</Notes>
+		</Parameter>
+		<Parameter name="Wifi Channel Manager Mode" level="5" datatype="Byte" address="1546" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="3" default="3" previous="" current="" units="" />
+			<Help>Sets the mode of operation of the Channel conflict manager
+0 (factory-programmed value): conflict reporting URC disabled
+1: URC enabled, 
+2: URC enabled, semi automatic algorithm
+3: URC enabled, full automatic algorithm</Help>
+			<Notes>Sets the mode of operation of the Channel conflict manager
+0 (factory-programmed value): conflict reporting URC disabled
+1: URC enabled, 
+2: URC enabled, semi automatic algorithm
+3: URC enabled, full automatic algorithm</Notes>
+		</Parameter>
+		<Parameter name="Enable Bridge Mode" level="0" datatype="Bit" address="1554" length="1" bitmask="16" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enables bridge mode versus router mode for the Wifi module.
+NB: Setting this prevents MProfiler connections.</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Enables bridge mode versus router mode for the Wifi module.
+NB: Setting this prevents MProfiler connections.</Notes>
+		</Parameter>
+		<Parameter name="Web User Interface Enable" level="5" datatype="Bit" address="1554" length="1" bitmask="1" dtu="0">
+			<Values min="0" max="1" default="1" previous="" current="" units="" />
+			<Help>Enables / Disables the Wifi WebUI for configuring Wifi specific functionality.</Help>
+			<Notes>Enables / Disables the Wifi WebUI for configuring Wifi specific functionality.</Notes>
+		</Parameter>
+		<Parameter name="Wifi Scan Enable" level="5" datatype="Bit" address="1554" length="1" bitmask="2" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enables periodic scanning of the Wifi environment.
+Note that enabling this causes interruptions in the Wifi service of up to 15 seconds. </Help>
+			<Notes>Enables periodic scanning of the Wifi environment.
+Note that enabling this causes interruptions in the Wifi service of up to 15 seconds. </Notes>
+		</Parameter>
+		<Parameter name="Wifi Enable" level="5" datatype="Bit" address="1864" length="1" bitmask="4" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Turns Wifi ON /OFF on units equipped with WiFi</Help>
+			<Notes>Turns Wifi ON /OFF on units equipped with WiFi</Notes>
+		</Parameter>
+		<Parameter name="PublicAPN" level="10" datatype="String" address="2944" length="32" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="" previous="" current="" units="" />
+			<Help>Public APN that is to be used for external functions such as Wifi and Fota</Help>
+			<Notes>Public APN that is to be used for external functions such as Wifi and Fota</Notes>
+		</Parameter>
+		<Parameter name="Public APN Username" level="10" datatype="String" address="2976" length="16" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="" previous="" current="" units="" />
+			<Help>Username for the Public APN</Help>
+			<Notes>Username for the Public APN</Notes>
+		</Parameter>
+		<Parameter name="Public APN Password" level="10" datatype="String" address="2992" length="16" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="" previous="" current="" units="" />
+			<Help>Password for the public APN.</Help>
+			<Notes>Password for the public APN.</Notes>
 		</Parameter>
 	</Category>
 </MhubParameterSet>

@@ -1,4 +1,4 @@
-<MhubParameterSet created="2024-09-30T11:52:11+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2024-11-04T10:22:21+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -3817,17 +3817,17 @@ NB: This is a service provided by the network and not only dependant on configur
 
 Scope</Notes>
 		</Parameter>
-		<Parameter name="SIM Toolkit Interface Enable" level="5" datatype="Byte" address="378" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="3" default="0" previous="" current="" units="" />
-			<Help>Enables the sim toolkit interface. This is only necessary for US applications. For the US set to 1 else set to 0.</Help>
-			<Notes>Enables the sim toolkit interface. This is only necessary for US applications. For the US set to 1 else set to 0.</Notes>
-		</Parameter>
-		<Parameter name="Sim Operations Disable" level="5" datatype="Bit" address="1252" length="1" bitmask="128" dtu="0">
+		<Parameter name="Daily Clear of Forbidden PLMN List" level="5" datatype="Bit" address="1252" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enabling this bit will disable certain operations relating to Sim Commissioning bit fields.
-The purpose of this bit is to prevent legacy configuration incorrectly enabling features.</Help>
-			<Notes>Enabling this bit will disable certain operations relating to Sim Commissioning bit fields.
-The purpose of this bit is to prevent legacy configuration incorrectly enabling features.</Notes>
+			<Help>If enabled the Forbidden PLMN list will be cleared on the first trip of the day.</Help>
+			<Notes>If enabled the Forbidden PLMN list will be cleared on the first trip of the day.</Notes>
+		</Parameter>
+		<Parameter name="Periodic Forbidden PLMN Clearing" level="5" datatype="Bit" address="1252" length="1" bitmask="4" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>If enabled on MHubs equipped with Telit modems are able to clear the Forbidden PLMN list periodically
+The period is hard coded to 60 minutes</Help>
+			<Notes>If enabled on MHubs equipped with Telit modems are able to clear the Forbidden PLMN list periodically
+The period is hard coded to 60 minutes</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Modem - TCP Socket">
@@ -4240,15 +4240,15 @@ If set to zero then reports will continue indefinitely</Notes>
 			<Help>Ignition Source: Trigger</Help>
 			<Notes>Ignition Source is set to Trigger which is a software controlled ignition source.</Notes>
 		</Parameter>
-		<Parameter name="Ignition Source: Accelerometer" level="5" datatype="Bit" address="1829" length="1" bitmask="64" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Ignition Source: Accelerometer</Help>
-			<Notes>One more possible source of ignition is to use Accelerometer movement. If Accelerometer movement is greater than the value specified in parameter &quot;Accelerometer Ignition On Threshold&quot;, the vehicle is moving. If Accelerometer is to be used as ignition, this parameter is set to 1.</Notes>
-		</Parameter>
 		<Parameter name="Ignition Source: Alternate" level="10" datatype="Bit" address="1829" length="1" bitmask="128" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Ignition Source: Alternate</Help>
 			<Notes>Ignition Source Alternate uses new method for ignition. Configure sources with Trip Source Ignition Line etc.</Notes>
+		</Parameter>
+		<Parameter name="Ignition Source: Accelerometer" level="5" datatype="Bit" address="1829" length="1" bitmask="64" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Ignition Source: Accelerometer</Help>
+			<Notes>One more possible source of ignition is to use Accelerometer movement. If Accelerometer movement is greater than the value specified in parameter &quot;Accelerometer Ignition On Threshold&quot;, the vehicle is moving. If Accelerometer is to be used as ignition, this parameter is set to 1.</Notes>
 		</Parameter>
 		<Parameter name="Ignition Source from RPM Threshold" level="10" datatype="Byte" address="1830" length="1" bitmask="255" dtu="0">
 			<Values min="1" max="255" default="3" previous="" current="" units="RPM" />

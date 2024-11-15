@@ -1,4 +1,4 @@
-<MhubParameterSet created="2024-11-04T10:22:22+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2024-11-15T14:26:54+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -2817,6 +2817,23 @@ The logging for each individual module is controlled using the Debug Mask.</Help
 The logging for each individual module is controlled using the Debug Mask.</Notes>
 		</Parameter>
 	</Category>
+	<Category name="Modem - GPRS UMTS">
+		<Parameter name="PublicAPN" level="10" datatype="String" address="2944" length="32" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="" previous="" current="" units="" />
+			<Help>Public APN that is to be used for external functions such as Wifi and Fota</Help>
+			<Notes>Public APN that is to be used for external functions such as Wifi and Fota</Notes>
+		</Parameter>
+		<Parameter name="Public APN Username" level="10" datatype="String" address="2976" length="16" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="" previous="" current="" units="" />
+			<Help>Username for the Public APN</Help>
+			<Notes>Username for the Public APN</Notes>
+		</Parameter>
+		<Parameter name="Public APN Password" level="10" datatype="String" address="2992" length="16" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="" previous="" current="" units="" />
+			<Help>Password for the public APN.</Help>
+			<Notes>Password for the public APN.</Notes>
+		</Parameter>
+	</Category>
 	<Category name="Modem - GSM Operator Selection">
 		<Parameter name="See Roaming Operator as Home Enable" level="0" datatype="Bit" address="327" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
@@ -4908,21 +4925,6 @@ Note that enabling this causes interruptions in the Wifi service of up to 15 sec
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Turns Wifi ON /OFF on units equipped with WiFi</Help>
 			<Notes>Turns Wifi ON /OFF on units equipped with WiFi</Notes>
-		</Parameter>
-		<Parameter name="PublicAPN" level="10" datatype="String" address="2944" length="32" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>Public APN that is to be used for external functions such as Wifi and Fota</Help>
-			<Notes>Public APN that is to be used for external functions such as Wifi and Fota</Notes>
-		</Parameter>
-		<Parameter name="Public APN Username" level="10" datatype="String" address="2976" length="16" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>Username for the Public APN</Help>
-			<Notes>Username for the Public APN</Notes>
-		</Parameter>
-		<Parameter name="Public APN Password" level="10" datatype="String" address="2992" length="16" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>Password for the public APN.</Help>
-			<Notes>Password for the public APN.</Notes>
 		</Parameter>
 	</Category>
 </MhubParameterSet>

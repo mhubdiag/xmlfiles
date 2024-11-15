@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="19" unitType="MHub819U" created="2024-11-04T09:55:04+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="19" unitType="MHub819U" created="2024-11-15T14:26:29+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="2" level="10" status="0" datatype="Word" address="256" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
@@ -9851,6 +9851,9 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="28" />
 				<catParameter parID="29" />
 				<catParameter parID="30" />
+				<catParameter parID="1453" />
+				<catParameter parID="1454" />
+				<catParameter parID="1455" />
 			</catParameters>
 		</Category>
 		<Category catName="Modem - Gsm Positioning">
@@ -10359,9 +10362,6 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="1779" />
 				<catParameter parID="1780" />
 				<catParameter parID="1446" />
-				<catParameter parID="1453" />
-				<catParameter parID="1454" />
-				<catParameter parID="1455" />
 			</catParameters>
 		</Category>
 	</Categories>

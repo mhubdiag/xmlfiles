@@ -1,4 +1,4 @@
-<MhubParameterSet created="2024-11-04T10:22:22+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2024-11-15T14:26:54+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -2684,6 +2684,13 @@ Distance in meters from Last Valid position up to which the last valid position 
 			<Help>GPS Software Antenna Connection Status </Help>
 			<Notes>GPS Software Antenna Connection Status detect antenna presence in software instead of hardware detection.</Notes>
 		</Parameter>
+		<Parameter name="Disable GPS Speed Accuracy Filter" level="10" datatype="Bit" address="1521" length="1" bitmask="8" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Disable GPS Speed Accuracy Filter</Help>
+			<Notes>Disable GPS Speed Accuracy Filter. 
+
+GPS Speed Accuracy Filter will require the current GPS Speed to be greater than the current GPS Speed Accuracy measure to be used in calculations and events. </Notes>
+		</Parameter>
 		<Parameter name="Enable GPS FixNow Mode" level="10" datatype="Bit" address="1521" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enable GPS FixNow Mode</Help>
@@ -2693,13 +2700,6 @@ Distance in meters from Last Valid position up to which the last valid position 
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enable GPS FixNow Mode in Sleep</Help>
 			<Notes>Enable GPS FixNow Mode in Sleep will have the GPS powered in sleep mode until Power Mode time to Deep Sleep has elapsed.</Notes>
-		</Parameter>
-		<Parameter name="Disable GPS Speed Accuracy Filter" level="10" datatype="Bit" address="1521" length="1" bitmask="8" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Disable GPS Speed Accuracy Filter</Help>
-			<Notes>Disable GPS Speed Accuracy Filter. 
-
-GPS Speed Accuracy Filter will require the current GPS Speed to be greater than the current GPS Speed Accuracy measure to be used in calculations and events. </Notes>
 		</Parameter>
 		<Parameter name="Enable GPS AssistNow Autonomous" level="10" datatype="Bit" address="1521" length="1" bitmask="4" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -3337,6 +3337,21 @@ E.g.
 			<Values min="0" max="0" default="" previous="" current="" units="" />
 			<Help>GSM Network supplied APN Password</Help>
 			<Notes>If the MHub is configured to communicate over GPRS, it needs to attach to the APN of the GSM service provider in order to communicate over GPRS. In some instances a GSM service provider may require that the MHub use a passoword when connecting to the APN. If no passowrd is required, this parameter can be left blank.</Notes>
+		</Parameter>
+		<Parameter name="PublicAPN" level="10" datatype="String" address="2944" length="32" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="" previous="" current="" units="" />
+			<Help>Public APN that is to be used for external functions such as Wifi and Fota</Help>
+			<Notes>Public APN that is to be used for external functions such as Wifi and Fota</Notes>
+		</Parameter>
+		<Parameter name="Public APN Username" level="10" datatype="String" address="2976" length="16" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="" previous="" current="" units="" />
+			<Help>Username for the Public APN</Help>
+			<Notes>Username for the Public APN</Notes>
+		</Parameter>
+		<Parameter name="Public APN Password" level="10" datatype="String" address="2992" length="16" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="" previous="" current="" units="" />
+			<Help>Password for the public APN.</Help>
+			<Notes>Password for the public APN.</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Modem - GSM Operator Selection">
@@ -5891,21 +5906,6 @@ Note that enabling this causes interruptions in the Wifi service of up to 15 sec
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Turns Wifi ON /OFF on units equipped with WiFi</Help>
 			<Notes>Turns Wifi ON /OFF on units equipped with WiFi</Notes>
-		</Parameter>
-		<Parameter name="PublicAPN" level="10" datatype="String" address="2944" length="32" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>Public APN that is to be used for external functions such as Wifi and Fota</Help>
-			<Notes>Public APN that is to be used for external functions such as Wifi and Fota</Notes>
-		</Parameter>
-		<Parameter name="Public APN Username" level="10" datatype="String" address="2976" length="16" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>Username for the Public APN</Help>
-			<Notes>Username for the Public APN</Notes>
-		</Parameter>
-		<Parameter name="Public APN Password" level="10" datatype="String" address="2992" length="16" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>Password for the public APN.</Help>
-			<Notes>Password for the public APN.</Notes>
 		</Parameter>
 	</Category>
 </MhubParameterSet>

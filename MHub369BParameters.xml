@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="20" unitType="MHub369F" created="2024-11-04T09:55:04+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="21" unitType="MHub369B" created="2024-11-15T14:26:28+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="2" level="10" status="0" datatype="Word" address="256" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
@@ -1493,12 +1493,12 @@ Any other value - Same as 0."</parNotes>
 Mains Dev. Threshold"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1425" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
+		<Parameter parID="1424" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Trip Source OBD2 Speed</parName>
-				<parDescription>"Trip Source OBD2 Speed"</parDescription>
-				<parNotes>"Trip Source OBD2 Speed and speed above 0km/h will trigger ignition on"</parNotes>
+				<parName>Trip Source GPS Speed</parName>
+				<parDescription>"Trip Source GPS Speed"</parDescription>
+				<parNotes>"Trip Source GPS Speed the gps speed has to exceed the speed threshold for ignition on. GPS speed is only used if the GPS signal is deemed good e.g. 3D lock for longer than 5 seconds with HDOP less than 100m"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1421" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
@@ -1517,12 +1517,12 @@ Mains Dev. Threshold"</parNotes>
 				<parNotes>"Trip Source Ignition Line using ignition input"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1424" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
+		<Parameter parID="1426" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Trip Source GPS Speed</parName>
-				<parDescription>"Trip Source GPS Speed"</parDescription>
-				<parNotes>"Trip Source GPS Speed the gps speed has to exceed the speed threshold for ignition on. GPS speed is only used if the GPS signal is deemed good e.g. 3D lock for longer than 5 seconds with HDOP less than 100m"</parNotes>
+				<parName>Trip Source OBD2 RPM</parName>
+				<parDescription>"Trip Source OBD2 RPM"</parDescription>
+				<parNotes>"Trip Source OBD2 RPM and RPM above 0 will trigger ignition on"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1422" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
@@ -1541,12 +1541,12 @@ Mains Dev. Threshold"</parNotes>
 				<parNotes>"Trip Source Accelerometer the accelerometer movement has to exceed the accelerometer movement threshold for ignition on"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1426" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
+		<Parameter parID="1425" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Trip Source OBD2 RPM</parName>
-				<parDescription>"Trip Source OBD2 RPM"</parDescription>
-				<parNotes>"Trip Source OBD2 RPM and RPM above 0 will trigger ignition on"</parNotes>
+				<parName>Trip Source OBD2 Speed</parName>
+				<parDescription>"Trip Source OBD2 Speed"</parDescription>
+				<parNotes>"Trip Source OBD2 Speed and speed above 0km/h will trigger ignition on"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1427" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="128" dtu="0" units="" min="0" max="1" >
@@ -5449,20 +5449,20 @@ In order to calibrate itself, the Vehicle must travel at a constant speed of gre
 				<parNotes>"This text description of the MHub in this parameter is used when sending a text SMS event."</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="829" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Verify Driver ID</parName>
+				<parDescription>"Custom Driver ID Used"</parDescription>
+				<parNotes>"The driver key is programmed with a Driver ID value, and the MHub is also programmed with a list of DRiver ID values. This parameter specifies whether the MHub is to compare the Driver ID on the driver key to any of the Driver ID values programmed on the MHub in determinng whether to authenticate a driver key. This means that for the driver key to authenticate, the specific driver ID programmed onto that driver key must have been programmed into the MHub already."</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="254" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Output used for Immobilisation</parName>
 				<parDescription>"Output used for Immobilisation"</parDescription>
 				<parNotes>"If the driver key is intended to control the immobiliser connection to the vehicle, then this parameter must be set to 1 alternatively if there is no Driver Key used then the Output Follows Ignition Parameter or Bit in the Output A and B can be set to still be able to control immobilisation of the vehicle via the Disablement command."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="830" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Verify Customer Code</parName>
-				<parDescription>"Customer ID Used"</parDescription>
-				<parNotes>"The driver key is programmed with a Customer Code, and the MHub is also programmed with a Customer Code. This parameter specifies whether the MHub is to compare the Customer Code on the driver key to the Customer Code programmed on the MHub in determinng whether to authenticate a driver key. If this parameter is enabled, then the two Customer Code values need to match before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="826" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
@@ -5473,28 +5473,20 @@ In order to calibrate itself, the Vehicle must travel at a constant speed of gre
 				<parNotes>"If the driver key is used, then this parameter must be set to 1"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="827" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Verify Fleet Code</parName>
-				<parDescription>"Driver Fleet Used"</parDescription>
-				<parNotes>"The driver key is programmed with a Driver Fleet value, and the MHub is also programmed with a Driver Fleet value. This parameter specifies whether the MHub is to compare the Driver Fleet on the driver key to the Driver Fleet value programmed on the MHub in determinng whether to authenticate a driver key. If this parameter is set to 1, then the two driver fleet values need to match before the MHub will authenticate the driver key."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="829" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Verify Driver ID</parName>
-				<parDescription>"Custom Driver ID Used"</parDescription>
-				<parNotes>"The driver key is programmed with a Driver ID value, and the MHub is also programmed with a list of DRiver ID values. This parameter specifies whether the MHub is to compare the Driver ID on the driver key to any of the Driver ID values programmed on the MHub in determinng whether to authenticate a driver key. This means that for the driver key to authenticate, the specific driver ID programmed onto that driver key must have been programmed into the MHub already."</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="850" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="128" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>CS905 Master Key Used</parName>
 				<parDescription>"CS905 Master Key     0: Not Used 1: Used"</parDescription>
 				<parNotes>"None"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="828" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Verify Driver Class</parName>
+				<parDescription>"Driver Class Used"</parDescription>
+				<parNotes>"The driver key is programmed with a class value, and the MHub is also programmed with a class value. This parameter specifies whether the MHub is to use the class values in determinng whether to authenticate a driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="849" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
@@ -5505,12 +5497,20 @@ In order to calibrate itself, the Vehicle must travel at a constant speed of gre
 				<parNotes>"In order to maintain compatibility with fleets that use existing CS905 type driver keys, the MHub has the ability to read these older type of keys. If these old keys are to be used with the MHub, this parameter must be enabled."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="828" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
+		<Parameter parID="830" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Verify Driver Class</parName>
-				<parDescription>"Driver Class Used"</parDescription>
-				<parNotes>"The driver key is programmed with a class value, and the MHub is also programmed with a class value. This parameter specifies whether the MHub is to use the class values in determinng whether to authenticate a driver key."</parNotes>
+				<parName>Verify Customer Code</parName>
+				<parDescription>"Customer ID Used"</parDescription>
+				<parNotes>"The driver key is programmed with a Customer Code, and the MHub is also programmed with a Customer Code. This parameter specifies whether the MHub is to compare the Customer Code on the driver key to the Customer Code programmed on the MHub in determinng whether to authenticate a driver key. If this parameter is enabled, then the two Customer Code values need to match before the MHub will authenticate the driver key."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="827" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Verify Fleet Code</parName>
+				<parDescription>"Driver Fleet Used"</parDescription>
+				<parNotes>"The driver key is programmed with a Driver Fleet value, and the MHub is also programmed with a Driver Fleet value. This parameter specifies whether the MHub is to compare the Driver Fleet on the driver key to the Driver Fleet value programmed on the MHub in determinng whether to authenticate a driver key. If this parameter is set to 1, then the two driver fleet values need to match before the MHub will authenticate the driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="263" level="10" status="0" datatype="Bit" address="1982" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
@@ -5660,12 +5660,28 @@ XXX - there is obviously some parameter that will specify what distance prior to
 				<parNotes>"See Service Odometer 1"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="279" level="10" status="0" datatype="Bit" address="2033" length="1" bitmask="64" dtu="0" units="" min="1" max="255" >
+		<Parameter parID="274" level="10" status="0" datatype="Bit" address="2033" length="1" bitmask="1" dtu="0" units="" min="1" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>OBC Vehicle Network  Odometer</parName>
-				<parDescription>"OBC Vehicle Network Odometer"</parDescription>
+				<parName>OBC Sensor Speed</parName>
+				<parDescription>"OBC Sensor Speed"</parDescription>
 				<parNotes>"None"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="276" level="10" status="0" datatype="Bit" address="2033" length="1" bitmask="4" dtu="0" units="" min="1" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>OBC Vehicle Network  Speed</parName>
+				<parDescription>"OBC J1939 FMS OBD2 Speed"</parDescription>
+				<parNotes>"None"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="275" level="10" status="0" datatype="Bit" address="2033" length="1" bitmask="2" dtu="0" units="" min="1" max="255" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>OBC GPS Speed</parName>
+				<parDescription>"OBC GPS Speed"</parDescription>
+				<parNotes>"Setting the unit to use GPS as it&apos;s speed source"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="278" level="10" status="0" datatype="Bit" address="2033" length="1" bitmask="32" dtu="0" units="" min="1" max="255" >
@@ -5686,11 +5702,11 @@ XXX - there is obviously some parameter that will specify what distance prior to
 "</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="274" level="10" status="0" datatype="Bit" address="2033" length="1" bitmask="1" dtu="0" units="" min="1" max="255" >
+		<Parameter parID="279" level="10" status="0" datatype="Bit" address="2033" length="1" bitmask="64" dtu="0" units="" min="1" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>OBC Sensor Speed</parName>
-				<parDescription>"OBC Sensor Speed"</parDescription>
+				<parName>OBC Vehicle Network  Odometer</parName>
+				<parDescription>"OBC Vehicle Network Odometer"</parDescription>
 				<parNotes>"None"</parNotes>
 			</parInfo>
 		</Parameter>
@@ -5708,22 +5724,6 @@ XXX - there is obviously some parameter that will specify what distance prior to
 				<parName>OBC High Res. Calibration</parName>
 				<parDescription>"High resolution Odometer calibration"</parDescription>
 				<parNotes>"This bit enables high resolution Odometer calibration."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="276" level="10" status="0" datatype="Bit" address="2033" length="1" bitmask="4" dtu="0" units="" min="1" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>OBC Vehicle Network  Speed</parName>
-				<parDescription>"OBC J1939 FMS OBD2 Speed"</parDescription>
-				<parNotes>"None"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="275" level="10" status="0" datatype="Bit" address="2033" length="1" bitmask="2" dtu="0" units="" min="1" max="255" >
-			<parValues default="1" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>OBC GPS Speed</parName>
-				<parDescription>"OBC GPS Speed"</parDescription>
-				<parNotes>"Setting the unit to use GPS as it&apos;s speed source"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1068" level="10" status="0" datatype="Word" address="2034" length="2" bitmask="255" dtu="0" units="" min="0" max="1440" >
@@ -5779,12 +5779,12 @@ e.g.
 				<parNotes>"This is the time inseconds that the MHub needs to be outisde of the geoloc geofence before the Geoloc Breach event will be triggered."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="294" level="10" status="0" datatype="Bit" address="2045" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
+		<Parameter parID="1373" level="10" status="0" datatype="Bit" address="2045" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Enable Geoloc Functionality</parName>
-				<parDescription>"Switch the Geoloc functionality ON and OFF"</parDescription>
-				<parNotes>"Setting this parameter to 1 will enable Geoloc functionality"</parNotes>
+				<parName>Geoloc Tow Away Enable</parName>
+				<parDescription>"Geoloc Tow Away Enable"</parDescription>
+				<parNotes>"Geoloc Tow Away uses accelerometer to detect vehicle being lifted. Threshold set via Geoloc lift threshold."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1327" level="10" status="0" datatype="Bit" address="2045" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
@@ -5803,20 +5803,20 @@ e.g.
 				<parNotes>"Enable the creation of a Geoloc, for current location, at Trip End. Geoloc will be  disabled after ignition on"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="294" level="10" status="0" datatype="Bit" address="2045" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable Geoloc Functionality</parName>
+				<parDescription>"Switch the Geoloc functionality ON and OFF"</parDescription>
+				<parNotes>"Setting this parameter to 1 will enable Geoloc functionality"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1260" level="10" status="0" datatype="Bit" address="2045" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Geoloc Recovery Mode</parName>
 				<parDescription>"Enable Geoloc Recovery Mode"</parDescription>
 				<parNotes>"When Geoloc Recovery Mode is enabled and the Geoloc is Breached, Active Recovery mode is enabled. A Recovery Message is then sent every 30 seconds for 2 hours."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1373" level="10" status="0" datatype="Bit" address="2045" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Geoloc Tow Away Enable</parName>
-				<parDescription>"Geoloc Tow Away Enable"</parDescription>
-				<parNotes>"Geoloc Tow Away uses accelerometer to detect vehicle being lifted. Threshold set via Geoloc lift threshold."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1466" level="10" status="0" datatype="Bit" address="2045" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
@@ -6199,20 +6199,20 @@ NB: This is a service provided by the network and not only dependant on configur
 				<parNotes>"The amount of seconds of Jamming before the de-bounced jamming flag is set."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1591" level="10" status="0" datatype="Bit" address="2559" length="1" bitmask="1" dtu="1" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Engine Hours from Vehicle Network</parName>
-				<parDescription>"Engine Hours is retrieved from the vehicle network"</parDescription>
-				<parNotes>"Engine Hours is retrieved from the vehicle network"</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1592" level="10" status="0" datatype="Bit" address="2559" length="1" bitmask="2" dtu="1" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Engine Hours from MHub Ignition ON Hours</parName>
 				<parDescription>"Engine Hours is determined by the MHub Ignition ON Hours"</parDescription>
 				<parNotes>"Engine Hours is determined by the MHub Ignition ON Hours"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1591" level="10" status="0" datatype="Bit" address="2559" length="1" bitmask="1" dtu="1" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Engine Hours from Vehicle Network</parName>
+				<parDescription>"Engine Hours is retrieved from the vehicle network"</parDescription>
+				<parNotes>"Engine Hours is retrieved from the vehicle network"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="977" level="10" status="0" datatype="Word" address="2560" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -6433,14 +6433,6 @@ NB: This is a service provided by the network and not only dependant on configur
 				<parNotes>"The MHub has the ability to send a text message when an event occurs in addition to sending the message to Mprofiler. This parameter contains the MSISDN of the mobile phone to which the test message must be transmitted."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1406" level="10" status="0" datatype="Bit" address="2724" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable Continuous Scan</parName>
-				<parDescription>""</parDescription>
-				<parNotes>""</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1547" level="10" status="0" datatype="Bit" address="2724" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
 			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -6449,6 +6441,14 @@ NB: This is a service provided by the network and not only dependant on configur
 Warning: If this is disabled then the MHub will report the appearance of any BLE device that comes within range."</parDescription>
 				<parNotes>"Enables the use of the Limited Tracking List.
 Warning: If this is disabled then the MHub will report the appearance of any BLE device that comes within range."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1406" level="10" status="0" datatype="Bit" address="2724" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable Continuous Scan</parName>
+				<parDescription>""</parDescription>
+				<parNotes>""</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1405" level="10" status="0" datatype="Bit" address="2724" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
@@ -6564,38 +6564,6 @@ Warning: If this is disabled then the MHub will report the appearance of any BLE
 Disable: Any other value"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1088" level="10" status="1" datatype="Bit" address="2817" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Geo Exit Type 1: Audible</parName>
-				<parDescription>"Geo Exit Type 1 Notification via Audible"</parDescription>
-				<parNotes>""</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1087" level="10" status="1" datatype="Bit" address="2817" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Geo Exit Type 1: SMS</parName>
-				<parDescription>"Geo Exit Type 1 Notification via SMS"</parDescription>
-				<parNotes>""</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1089" level="10" status="1" datatype="Bit" address="2817" length="1" bitmask="128" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Geo Exit Type 1: Bluetooth</parName>
-				<parDescription>"Geo Exit Type 1 Notification via Bluetooth"</parDescription>
-				<parNotes>""</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1086" level="10" status="1" datatype="Bit" address="2817" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Geo Exit Type 1: Event </parName>
-				<parDescription>"Geo Exit Type 1 Notification via Event "</parDescription>
-				<parNotes>""</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1082" level="10" status="1" datatype="Bit" address="2817" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -6612,6 +6580,30 @@ Disable: Any other value"</parNotes>
 				<parNotes>""</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1084" level="10" status="1" datatype="Bit" address="2817" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Geo Entry Type 1: Audible</parName>
+				<parDescription>"Geo Entry Type 1 Notification via Audible"</parDescription>
+				<parNotes>""</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1088" level="10" status="1" datatype="Bit" address="2817" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Geo Exit Type 1: Audible</parName>
+				<parDescription>"Geo Exit Type 1 Notification via Audible"</parDescription>
+				<parNotes>""</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1089" level="10" status="1" datatype="Bit" address="2817" length="1" bitmask="128" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Geo Exit Type 1: Bluetooth</parName>
+				<parDescription>"Geo Exit Type 1 Notification via Bluetooth"</parDescription>
+				<parNotes>""</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1085" level="10" status="1" datatype="Bit" address="2817" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -6620,11 +6612,19 @@ Disable: Any other value"</parNotes>
 				<parNotes>""</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1084" level="10" status="1" datatype="Bit" address="2817" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
+		<Parameter parID="1086" level="10" status="1" datatype="Bit" address="2817" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Geo Entry Type 1: Audible</parName>
-				<parDescription>"Geo Entry Type 1 Notification via Audible"</parDescription>
+				<parName>Geo Exit Type 1: Event </parName>
+				<parDescription>"Geo Exit Type 1 Notification via Event "</parDescription>
+				<parNotes>""</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1087" level="10" status="1" datatype="Bit" address="2817" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Geo Exit Type 1: SMS</parName>
+				<parDescription>"Geo Exit Type 1 Notification via SMS"</parDescription>
 				<parNotes>""</parNotes>
 			</parInfo>
 		</Parameter>
@@ -6759,16 +6759,6 @@ n g / 0.02 = N
 				<parNotes>"If Enabled, Accelerometer calibration is verified every 10 minutes inside of a trip. See Accelerometer Recalibration Threshold"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1759" level="0" status="0" datatype="Bit" address="2943" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Accelerometer Task Enable</parName>
-				<parDescription>"Accelerometer RTOS Task"</parDescription>
-				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Accelerometer RTOS Task"</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1760" level="0" status="0" datatype="Bit" address="2943" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
 			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -6779,12 +6769,46 @@ Accelerometer RTOS Task"</parNotes>
 Accelerometer DMA Enable"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1759" level="0" status="0" datatype="Bit" address="2943" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Accelerometer Task Enable</parName>
+				<parDescription>"Accelerometer RTOS Task"</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Accelerometer RTOS Task"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1763" level="10" status="0" datatype="Bit" address="2943" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Enable Uncalibrated Accelerometer SBS</parName>
 				<parDescription>"Enable Uncalibrated Accelerometer SBS"</parDescription>
 				<parNotes>"Enable Uncalibrated Accelerometer SBS. Will always send accelerometer data with Second-by-Second data ignoring calibration state."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1453" level="10" status="0" datatype="String" address="2944" length="32" bitmask="255" dtu="0" units="" min="0" max="0" >
+			<parValues default="" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>PublicAPN</parName>
+				<parDescription>"Public APN that is to be used for external functions such as Wifi and Fota"</parDescription>
+				<parNotes>"Public APN that is to be used for external functions such as Wifi and Fota"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1454" level="10" status="0" datatype="String" address="2976" length="16" bitmask="255" dtu="0" units="" min="0" max="0" >
+			<parValues default="" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Public APN Username</parName>
+				<parDescription>"Username for the Public APN"</parDescription>
+				<parNotes>"Username for the Public APN"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1455" level="10" status="0" datatype="String" address="2992" length="16" bitmask="255" dtu="0" units="" min="0" max="0" >
+			<parValues default="" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Public APN Password</parName>
+				<parDescription>"Password for the public APN."</parDescription>
+				<parNotes>"Password for the public APN."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1636" level="10" status="1" datatype="Byte" address="3072" length="1" bitmask="255" dtu="0" units="Percent" min="0" max="100" >
@@ -6975,20 +6999,20 @@ Timers are reset at trip start and not stored through reboot."</parDescription>
 Timers are reset at trip start."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1683" level="10" status="0" datatype="Bit" address="3103" length="1" bitmask="1" dtu="1" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Report Fuel Level in Liters</parName>
-				<parDescription>"Report fuel level in Liters in stead of percentage. The Fuel Tank size need to specified in the &quot;Fuel Tank Capacity&quot; parameter."</parDescription>
-				<parNotes>"Report fuel level in Liters in stead of percentage. The Fuel Tank size need to specified in the &quot;Fuel Tank Capacity&quot; parameter."</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1750" level="10" status="0" datatype="Bit" address="3103" length="1" bitmask="2" dtu="1" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Fuel Level Sensor Support Liters</parName>
 				<parDescription>"The Fuel Level Sensor support reading the fuel level in the tank as liters"</parDescription>
 				<parNotes>"The Fuel Level Sensor support reading the fuel level in the tank as liters"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1683" level="10" status="0" datatype="Bit" address="3103" length="1" bitmask="1" dtu="1" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Report Fuel Level in Liters</parName>
+				<parDescription>"Report fuel level in Liters in stead of percentage. The Fuel Tank size need to specified in the &quot;Fuel Tank Capacity&quot; parameter."</parDescription>
+				<parNotes>"Report fuel level in Liters in stead of percentage. The Fuel Tank size need to specified in the &quot;Fuel Tank Capacity&quot; parameter."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1628" level="5" status="0" datatype="Word" address="3149" length="2" bitmask="255" dtu="0" units="Seconds" min="1800" max="65500" >
@@ -7114,20 +7138,12 @@ Used in determining more accurately the current level of the fuel in the fuel ta
 				<parNotes>"Use to not change factory configuration of GPS except for enabling GPS Messages."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1839" level="5" status="0" datatype="Bit" address="3197" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
+		<Parameter parID="1753" level="5" status="0" datatype="Bit" address="3197" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
 			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Enable Galileo </parName>
-				<parDescription>"Enable use of the Galileo GPS constellation"</parDescription>
-				<parNotes>"Enable use of the Galileo GPS constellation"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1754" level="5" status="0" datatype="Bit" address="3197" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable SBAS GAGAN</parName>
-				<parDescription>"Enable SBAS GAGAN"</parDescription>
-				<parNotes>"Enable SBAS GAGAN"</parNotes>
+				<parName>Enable SBAS Auto</parName>
+				<parDescription>"Enable SBAS Auto"</parDescription>
+				<parNotes>"Enable SBAS Auto"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1752" level="5" status="0" datatype="Bit" address="3197" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
@@ -7138,14 +7154,6 @@ Used in determining more accurately the current level of the fuel in the fuel ta
 				<parNotes>"Enable BeiDou with GPS"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1751" level="5" status="0" datatype="Bit" address="3197" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable Glonass</parName>
-				<parDescription>"Enable Glonass with GPS"</parDescription>
-				<parNotes>"Enable Glonass with GPS"</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1709" level="10" status="0" datatype="Bit" address="3197" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
 			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -7154,12 +7162,28 @@ Used in determining more accurately the current level of the fuel in the fuel ta
 				<parNotes>"Enable GPS Verbose Logging in Journey Log"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1753" level="5" status="0" datatype="Bit" address="3197" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
+		<Parameter parID="1754" level="5" status="0" datatype="Bit" address="3197" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable SBAS GAGAN</parName>
+				<parDescription>"Enable SBAS GAGAN"</parDescription>
+				<parNotes>"Enable SBAS GAGAN"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1839" level="5" status="0" datatype="Bit" address="3197" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
 			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Enable SBAS Auto</parName>
-				<parDescription>"Enable SBAS Auto"</parDescription>
-				<parNotes>"Enable SBAS Auto"</parNotes>
+				<parName>Enable Galileo </parName>
+				<parDescription>"Enable use of the Galileo GPS constellation"</parDescription>
+				<parNotes>"Enable use of the Galileo GPS constellation"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1751" level="5" status="0" datatype="Bit" address="3197" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable Glonass</parName>
+				<parDescription>"Enable Glonass with GPS"</parDescription>
+				<parNotes>"Enable Glonass with GPS"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1786" level="10" status="0" datatype="Byte" address="3198" length="1" bitmask="255" dtu="1" units="km/h" min="0" max="255" >
@@ -7225,14 +7249,6 @@ Allows the initialisation of OBD when CAN activity is detected.
 Note: Needs Listen Only mode to be enabled to work."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1729" level="5" status="0" datatype="Bit" address="3325" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Allow Unsolicited CAN Message Parsing</parName>
-				<parDescription>"Allows the MHub to use MProfiler supplied EOBD data to parse unsolicited vehicle proprietary data. This parameter should be managed by MProfiler."</parDescription>
-				<parNotes>"Allows the MHub to use MProfiler supplied EOBD data to parse unsolicited vehicle proprietary data. This parameter should be managed by MProfiler."</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1727" level="0" status="0" datatype="Bit" address="3325" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -7245,6 +7261,14 @@ Enables the controller to go into listen only mode after closing a session.
 NOTE: This is necessary to recover from some errors"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1729" level="5" status="0" datatype="Bit" address="3325" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Allow Unsolicited CAN Message Parsing</parName>
+				<parDescription>"Allows the MHub to use MProfiler supplied EOBD data to parse unsolicited vehicle proprietary data. This parameter should be managed by MProfiler."</parDescription>
+				<parNotes>"Allows the MHub to use MProfiler supplied EOBD data to parse unsolicited vehicle proprietary data. This parameter should be managed by MProfiler."</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1733" level="5" status="0" datatype="Bit" address="3325" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -7253,6 +7277,14 @@ NOTE: This is necessary to recover from some errors"</parNotes>
 This should only be enabled on vehicles that are known to support this protocol."</parDescription>
 				<parNotes>"Enables the use of the ISO14230-3 Command Set.
 This should only be enabled on vehicles that are known to support this protocol."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1737" level="5" status="0" datatype="Bit" address="3326" length="1" bitmask="32" dtu="0" units="" min="0" max="0" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable Mode 7 DTC Request</parName>
+				<parDescription>"Enables OBD2 Mode 7 DTC requests"</parDescription>
+				<parNotes>"Enables OBD2 Mode 7 DTC requests"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1739" level="5" status="0" datatype="Bit" address="3326" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
@@ -7273,14 +7305,6 @@ Note that certain vehicles respond to certain DTC requests by turning on the rel
 				<parName>Enable OBD2 DTC Scan on MIL Status Change</parName>
 				<parDescription>"Allows the MHub to perform a Service-3 and Service-7 DTC poll (if enabled) if the MIL status changes during a trip."</parDescription>
 				<parNotes>"Allows the MHub to perform a Service-3 and Service-7 DTC poll (if enabled) if the MIL status changes during a trip."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1737" level="5" status="0" datatype="Bit" address="3326" length="1" bitmask="32" dtu="0" units="" min="0" max="0" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable Mode 7 DTC Request</parName>
-				<parDescription>"Enables OBD2 Mode 7 DTC requests"</parDescription>
-				<parNotes>"Enables OBD2 Mode 7 DTC requests"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1743" level="5" status="0" datatype="Bit" address="3326" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
@@ -9349,6 +9373,9 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="28" />
 				<catParameter parID="29" />
 				<catParameter parID="30" />
+				<catParameter parID="1453" />
+				<catParameter parID="1454" />
+				<catParameter parID="1455" />
 			</catParameters>
 		</Category>
 		<Category catName="Modem - GSM SMS">

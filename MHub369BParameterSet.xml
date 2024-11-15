@@ -1,4 +1,4 @@
-<MhubParameterSet created="2024-11-04T10:22:21+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2024-11-15T14:26:54+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -1394,11 +1394,6 @@ Setting this parameter to 1 will enable Error Debug messages</Notes>
 			<Help>Enables use of the USB connector for Debug functionality.</Help>
 			<Notes>Set this value to 1 to enable debug information to be streamed out of the USB port, else set it to 0 to disable it</Notes>
 		</Parameter>
-		<Parameter name="Insurance Led Style" level="10" datatype="Bit" address="439" length="1" bitmask="32" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Insurance Led Style</Help>
-			<Notes>Insurance Led Style. GREEN Hardware Ok, RED Hardware Fault - Triggers upon device plug in. </Notes>
-		</Parameter>
 		<Parameter name="OBD Diagnostics LED" level="10" datatype="Bit" address="439" length="1" bitmask="64" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enables the use of the RED Led for OBD operation diagnostics.
@@ -1413,6 +1408,11 @@ Off - No OBD operation.
 Flashing - Searching for protocol
 On - OBD protocol found. Short off indicates activity.
 </Notes>
+		</Parameter>
+		<Parameter name="Insurance Led Style" level="10" datatype="Bit" address="439" length="1" bitmask="32" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Insurance Led Style</Help>
+			<Notes>Insurance Led Style. GREEN Hardware Ok, RED Hardware Fault - Triggers upon device plug in. </Notes>
 		</Parameter>
 		<Parameter name="Trace Level" level="0" datatype="Byte" address="598" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="None" />
@@ -3630,6 +3630,21 @@ None</Notes>
 			<Values min="0" max="0" default="" previous="" current="" units="" />
 			<Help>GSM Network supplied APN Password</Help>
 			<Notes>If the MHub is configured to communicate over GPRS, it needs to attach to the APN of the GSM service provider in order to communicate over GPRS. In some instances a GSM service provider may require that the MHub use a passoword when connecting to the APN. If no passowrd is required, this parameter can be left blank.</Notes>
+		</Parameter>
+		<Parameter name="PublicAPN" level="10" datatype="String" address="2944" length="32" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="" previous="" current="" units="" />
+			<Help>Public APN that is to be used for external functions such as Wifi and Fota</Help>
+			<Notes>Public APN that is to be used for external functions such as Wifi and Fota</Notes>
+		</Parameter>
+		<Parameter name="Public APN Username" level="10" datatype="String" address="2976" length="16" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="" previous="" current="" units="" />
+			<Help>Username for the Public APN</Help>
+			<Notes>Username for the Public APN</Notes>
+		</Parameter>
+		<Parameter name="Public APN Password" level="10" datatype="String" address="2992" length="16" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="" previous="" current="" units="" />
+			<Help>Password for the public APN.</Help>
+			<Notes>Password for the public APN.</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Modem - GSM SMS">

@@ -1,4 +1,4 @@
-<MhubParameterSet created="2024-11-15T14:26:54+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2024-11-20T15:56:40+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -2886,11 +2886,75 @@ NB: Numbers in the Whitelist will not be able to call the unit using a voice cal
 			<Notes></Notes>
 		</Parameter>
 	</Category>
-	<Category name="Modem - MProfiler">
+	<Category name="Modem - TCP Socket">
+		<Parameter name="Connection Timeout" level="0" datatype="Word" address="363" length="2" bitmask="255" dtu="0">
+			<Values min="30" max="600" default="120" previous="" current="" units="Seconds" />
+			<Help>Max connection establishment time.</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+DO NOT CHANGE THIS VALUE WITHOUT CONSULTING RELEVANT DOCUMENTATION.</Notes>
+		</Parameter>
+		<Parameter name="Maximum Message Completion time" level="10" datatype="Byte" address="423" length="1" bitmask="255" dtu="0">
+			<Values min="1" max="255" default="5" previous="" current="" units="Seconds" />
+			<Help>This is the maximum amount of time that the unit will wait, after receiving a header, for the rest of a message to be received.</Help>
+			<Notes>When the MHub starts recieving data over GPRS, it needs to wait until the entire message has been recieved bofore it can start decoding the message. If the MHUb recieves only the forst part of the messaage, this parameter defines the time that the MHub will wait to recieve the remainder of the message. If the entire message is not recieved within this time. The MHub will discard the message.</Notes>
+		</Parameter>
+		<Parameter name="Maximum Socket Login Attempts" level="10" datatype="Byte" address="425" length="1" bitmask="255" dtu="0">
+			<Values min="1" max="255" default="3" previous="" current="" units="" />
+			<Help>The maximum number of attempts that a unit may make to login, before tearing down the socket.</Help>
+			<Notes>Using GPRS, the MHub will open a socket connection to the MProfiler server, and then attempt to login into MProfiler. If the login credentials on the MHub are incorrect, MProfiler will reject the the login attempt. This parameter specifies the number of time that the MHub will accept a rejection before closing the socket (XXX - Note - will Mprofiler ever close the socket in the event of incorrect logins)</Notes>
+		</Parameter>
+		<Parameter name="Socket Transmission Timeout" level="10" datatype="Word" address="426" length="2" bitmask="255" dtu="0">
+			<Values min="2" max="65535" default="30" previous="" current="" units="Seconds" />
+			<Help>The time that the (N)Ack may take to reach the MHub before the related transmission attempt expires.</Help>
+			<Notes>When the Mhub send data to the Mprofiler using GPRS, it always expects a message back from the Mprofiler, either a positive of negative acknowledge. However the Mhub will only wait a certain time for this reply from Mprofiler before the message attempt by the Mhub is expired. This parameter specifies the length of time that the MHub will wait for a response from Mprofiler, the default is usually 120 seconds.</Notes>
+		</Parameter>
+		<Parameter name="Socket Block Time" level="5" datatype="Byte" address="428" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="250" default="60" previous="" current="" units="Seconds" />
+			<Help>The amount of time that establishment of a socket will be blocked after a socket is deliberately closed to allow for incoming voice or data calls.</Help>
+			<Notes>When the Mhub has an open socket to Mprofiler and and there is an incommng voice or data call. The MHub has to close the socket. After the call is completed, the MHub may then need to reopen the socket again. In the instance that say the voice call is dropped, and the caller makes the call to the MHub again, we not not want the Mprofiler to immediately open the socket again immediately just to have to close it again with the second call comes in. This parameter will set a time in seconds from when the socket is closed till when the MHub will open up the socket again</Notes>
+		</Parameter>
+		<Parameter name="Maximum Socket Transmission Attempts" level="10" datatype="Byte" address="429" length="1" bitmask="255" dtu="0">
+			<Values min="1" max="255" default="3" previous="" current="" units="" />
+			<Help>Maximum number of attempts the MHub will make to transmit a packet before the socket is torn down. The message is also failed.</Help>
+			<Notes>When the MHub transmits a message over GPRS to the MProfiler, tyhe MHub expects a response to that message. If it does not recieve the response with the time specified in parameter xxx, then the message is failed and needs to be resent. This parameter specifies the number of retries that the MHub will make to send a specific message before the message is failed completely. If the message is an event to be sent to Mprofiler, event though the specific message fails after all the retries, the event(s) will be resent at a later stage.</Notes>
+		</Parameter>
+		<Parameter name="Enable Socket Close Report" level="5" datatype="Bit" address="1124" length="1" bitmask="2" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enables the generation of notifications to MProfiler when a socket is closed.</Help>
+			<Notes>When the MHub closes a socket connection to Mprofiler, it is able to notify MProfiler that it is about to close the socket. Setting this parameter to 1 will enable this functionality</Notes>
+		</Parameter>
+		<Parameter name="Enable Resume Report" level="5" datatype="Bit" address="1124" length="1" bitmask="4" dtu="0">
+			<Values min="0" max="0" default="0" previous="" current="" units="" />
+			<Help>Enables the generation of notifications to MProfiler when a socket is resumed after a suspend.</Help>
+			<Notes>When the MHub resumes a socket connection to Mprofiler after it has been suspended, it is able to notify MProfiler that it has resumed the socket connection. Setting this parameter to 1 will enable this functionality.</Notes>
+		</Parameter>
+		<Parameter name="Enable Power State Report" level="5" datatype="Bit" address="1124" length="1" bitmask="8" dtu="0">
+			<Values min="0" max="0" default="0" previous="" current="" units="" />
+			<Help>Enables the generation of notifications to MProfiler when the power state of the 801 changes.</Help>
+			<Notes>When the MHub changes its power state (Full, IDLe, SLEEP) it is able to notify MProfiler that it is about to change its power state.Setting this parameter to 1 will enable this functionality.</Notes>
+		</Parameter>
+		<Parameter name="MProfiler Session Attempts Before Standoff" level="5" datatype="Byte" address="1274" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="5" previous="" current="" units="" />
+			<Help>The number of attempts that the MHub will make to establish a session with MProfiler before the standoff period comes into effect.</Help>
+			<Notes>When the MHub attempts to make a GPRS connection to Mprofiler, and the attempt is not successful, it will try again. After a number of tries the MHub must assume that a login is not possible at this time, and then enters a standoff period where is will wait for a certain time before trying agan. This parameter specifies the number of login attempts before the standoff period kicks in.</Notes>
+		</Parameter>
+		<Parameter name="TCP Session Standoff Period" level="5" datatype="Word" address="1275" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="600" previous="" current="" units="" />
+			<Help>The amount of time that the MHub will wait in between socket attempts after the maximum number of unsuccessful session attempts.</Help>
+			<Notes>After the standoff period starts as defined in parameter xxx, this parameter specifies the time in seconds that the standoff period will last before the MHub attempts to log into Mprofiler again.</Notes>
+		</Parameter>
+	</Category>
+	<Category name="MProfiler Connection">
 		<Parameter name="TCP Port ID" level="10" datatype="Word" address="421" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="52767" previous="" current="" units="" />
 			<Help>TCP Port through which the socket will be opened</Help>
 			<Notes>When the MHub connects to MProfiler vis GPRS the Mhub opens up a socket to the MProfiler Server. This parameter specifies the port through which the socket will be opened.</Notes>
+		</Parameter>
+		<Parameter name="MProfiler TCP Socket Enable" level="10" datatype="Bit" address="477" length="1" bitmask="2" dtu="0">
+			<Values min="0" max="1" default="1" previous="" current="" units="" />
+			<Help>Enables a permanent TCP socket to MProfiler</Help>
+			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will remain permanently open. Enabling this parameter will instruct the MHub to open up a socket and attempt to keep the socket open at all time. Should the socket drop for any reason, the MHub will immediately reopen the socket again.</Notes>
 		</Parameter>
 		<Parameter name="TCP Socket Login Timeout" level="10" datatype="Word" address="596" length="2" bitmask="255" dtu="0">
 			<Values min="10" max="65000" default="120" previous="" current="" units="Seconds" />
@@ -2941,75 +3005,6 @@ NB: Numbers in the Whitelist will not be able to call the unit using a voice cal
 			<Values min="0" max="0" default="" previous="" current="" units="" />
 			<Help>Destination 5 MSISDN for Text messages</Help>
 			<Notes>The MHub has the ability to send a text message when an event occurs in addition to sending the message to Mprofiler. This parameter contains the MSISDN of the mobile phone to which the test message must be transmitted.</Notes>
-		</Parameter>
-	</Category>
-	<Category name="Modem - TCP Socket">
-		<Parameter name="Connection Timeout" level="0" datatype="Word" address="363" length="2" bitmask="255" dtu="0">
-			<Values min="30" max="600" default="120" previous="" current="" units="Seconds" />
-			<Help>Max connection establishment time.</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-DO NOT CHANGE THIS VALUE WITHOUT CONSULTING RELEVANT DOCUMENTATION.</Notes>
-		</Parameter>
-		<Parameter name="Maximum Message Completion time" level="10" datatype="Byte" address="423" length="1" bitmask="255" dtu="0">
-			<Values min="1" max="255" default="5" previous="" current="" units="Seconds" />
-			<Help>This is the maximum amount of time that the unit will wait, after receiving a header, for the rest of a message to be received.</Help>
-			<Notes>When the MHub starts recieving data over GPRS, it needs to wait until the entire message has been recieved bofore it can start decoding the message. If the MHUb recieves only the forst part of the messaage, this parameter defines the time that the MHub will wait to recieve the remainder of the message. If the entire message is not recieved within this time. The MHub will discard the message.</Notes>
-		</Parameter>
-		<Parameter name="Maximum Socket Login Attempts" level="10" datatype="Byte" address="425" length="1" bitmask="255" dtu="0">
-			<Values min="1" max="255" default="3" previous="" current="" units="" />
-			<Help>The maximum number of attempts that a unit may make to login, before tearing down the socket.</Help>
-			<Notes>Using GPRS, the MHub will open a socket connection to the MProfiler server, and then attempt to login into MProfiler. If the login credentials on the MHub are incorrect, MProfiler will reject the the login attempt. This parameter specifies the number of time that the MHub will accept a rejection before closing the socket (XXX - Note - will Mprofiler ever close the socket in the event of incorrect logins)</Notes>
-		</Parameter>
-		<Parameter name="Socket Transmission Timeout" level="10" datatype="Word" address="426" length="2" bitmask="255" dtu="0">
-			<Values min="2" max="65535" default="30" previous="" current="" units="Seconds" />
-			<Help>The time that the (N)Ack may take to reach the MHub before the related transmission attempt expires.</Help>
-			<Notes>When the Mhub send data to the Mprofiler using GPRS, it always expects a message back from the Mprofiler, either a positive of negative acknowledge. However the Mhub will only wait a certain time for this reply from Mprofiler before the message attempt by the Mhub is expired. This parameter specifies the length of time that the MHub will wait for a response from Mprofiler, the default is usually 120 seconds.</Notes>
-		</Parameter>
-		<Parameter name="Socket Block Time" level="5" datatype="Byte" address="428" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="250" default="60" previous="" current="" units="Seconds" />
-			<Help>The amount of time that establishment of a socket will be blocked after a socket is deliberately closed to allow for incoming voice or data calls.</Help>
-			<Notes>When the Mhub has an open socket to Mprofiler and and there is an incommng voice or data call. The MHub has to close the socket. After the call is completed, the MHub may then need to reopen the socket again. In the instance that say the voice call is dropped, and the caller makes the call to the MHub again, we not not want the Mprofiler to immediately open the socket again immediately just to have to close it again with the second call comes in. This parameter will set a time in seconds from when the socket is closed till when the MHub will open up the socket again</Notes>
-		</Parameter>
-		<Parameter name="Maximum Socket Transmission Attempts" level="10" datatype="Byte" address="429" length="1" bitmask="255" dtu="0">
-			<Values min="1" max="255" default="3" previous="" current="" units="" />
-			<Help>Maximum number of attempts the MHub will make to transmit a packet before the socket is torn down. The message is also failed.</Help>
-			<Notes>When the MHub transmits a message over GPRS to the MProfiler, tyhe MHub expects a response to that message. If it does not recieve the response with the time specified in parameter xxx, then the message is failed and needs to be resent. This parameter specifies the number of retries that the MHub will make to send a specific message before the message is failed completely. If the message is an event to be sent to Mprofiler, event though the specific message fails after all the retries, the event(s) will be resent at a later stage.</Notes>
-		</Parameter>
-		<Parameter name="Permanent TCP Socket" level="10" datatype="Bit" address="477" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>Enables a permanent TCP socket to MProfiler</Help>
-			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will remain permanently open. Enabling this parameter will instruct the MHub to open up a socket and attempt to keep the socket open at all time. Should the socket drop for any reason, the MHub will immediately reopen the socket again.</Notes>
-		</Parameter>
-		<Parameter name="Data Triggered TCP Socket" level="10" datatype="Bit" address="477" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>when enabled the unit will only open a socket if there is data to be sent to MProfiler. This is overidden by the Permanent TCP Socket switch.</Help>
-			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will only be opened if there is data to be sent. Enabling this parameter will instruct the MHub to only open a socket to Mprofiler if there is data to be sent. Note that if the Permanent TCP Socket parameter is also enabled, that that will override this parameter.</Notes>
-		</Parameter>
-		<Parameter name="Enable Socket Close Report" level="5" datatype="Bit" address="1124" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enables the generation of notifications to MProfiler when a socket is closed.</Help>
-			<Notes>When the MHub closes a socket connection to Mprofiler, it is able to notify MProfiler that it is about to close the socket. Setting this parameter to 1 will enable this functionality</Notes>
-		</Parameter>
-		<Parameter name="Enable Resume Report" level="5" datatype="Bit" address="1124" length="1" bitmask="4" dtu="0">
-			<Values min="0" max="0" default="0" previous="" current="" units="" />
-			<Help>Enables the generation of notifications to MProfiler when a socket is resumed after a suspend.</Help>
-			<Notes>When the MHub resumes a socket connection to Mprofiler after it has been suspended, it is able to notify MProfiler that it has resumed the socket connection. Setting this parameter to 1 will enable this functionality.</Notes>
-		</Parameter>
-		<Parameter name="Enable Power State Report" level="5" datatype="Bit" address="1124" length="1" bitmask="8" dtu="0">
-			<Values min="0" max="0" default="0" previous="" current="" units="" />
-			<Help>Enables the generation of notifications to MProfiler when the power state of the 801 changes.</Help>
-			<Notes>When the MHub changes its power state (Full, IDLe, SLEEP) it is able to notify MProfiler that it is about to change its power state.Setting this parameter to 1 will enable this functionality.</Notes>
-		</Parameter>
-		<Parameter name="MProfiler Session Attempts Before Standoff" level="5" datatype="Byte" address="1274" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="5" previous="" current="" units="" />
-			<Help>The number of attempts that the MHub will make to establish a session with MProfiler before the standoff period comes into effect.</Help>
-			<Notes>When the MHub attempts to make a GPRS connection to Mprofiler, and the attempt is not successful, it will try again. After a number of tries the MHub must assume that a login is not possible at this time, and then enters a standoff period where is will wait for a certain time before trying agan. This parameter specifies the number of login attempts before the standoff period kicks in.</Notes>
-		</Parameter>
-		<Parameter name="TCP Session Standoff Period" level="5" datatype="Word" address="1275" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="65535" default="600" previous="" current="" units="" />
-			<Help>The amount of time that the MHub will wait in between socket attempts after the maximum number of unsuccessful session attempts.</Help>
-			<Notes>After the standoff period starts as defined in parameter xxx, this parameter specifies the time in seconds that the standoff period will last before the MHub attempts to log into Mprofiler again.</Notes>
 		</Parameter>
 	</Category>
 	<Category name="OBC">
@@ -3300,15 +3295,15 @@ If set to zero then reports will continue indefinitely</Notes>
 			<Help>Ignition Source: Trigger</Help>
 			<Notes>Ignition Source is set to Trigger which is a software controlled ignition source.</Notes>
 		</Parameter>
-		<Parameter name="Ignition Source: Alternate" level="10" datatype="Bit" address="1829" length="1" bitmask="128" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>Ignition Source: Alternate</Help>
-			<Notes>Ignition Source Alternate uses new method for ignition. Configure sources with Trip Source Ignition Line etc.</Notes>
-		</Parameter>
 		<Parameter name="Ignition Source: Accelerometer" level="5" datatype="Bit" address="1829" length="1" bitmask="64" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Ignition Source: Accelerometer</Help>
 			<Notes>One more possible source of ignition is to use Accelerometer movement. If Accelerometer movement is greater than the value specified in parameter &quot;Accelerometer Ignition On Threshold&quot;, the vehicle is moving. If Accelerometer is to be used as ignition, this parameter is set to 1.</Notes>
+		</Parameter>
+		<Parameter name="Ignition Source: Alternate" level="10" datatype="Bit" address="1829" length="1" bitmask="128" dtu="0">
+			<Values min="0" max="1" default="1" previous="" current="" units="" />
+			<Help>Ignition Source: Alternate</Help>
+			<Notes>Ignition Source Alternate uses new method for ignition. Configure sources with Trip Source Ignition Line etc.</Notes>
 		</Parameter>
 		<Parameter name="Ignition Source from RPM Threshold" level="10" datatype="Byte" address="1830" length="1" bitmask="255" dtu="0">
 			<Values min="1" max="255" default="3" previous="" current="" units="RPM" />

@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="17" unitType="MHub837S2" created="2024-11-15T14:26:31+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="17" unitType="MHub837S2" created="2024-11-20T15:56:27+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="2" level="10" status="0" datatype="Word" address="256" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
@@ -819,11 +819,11 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="747" level="10" status="0" datatype="Bit" address="397" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
+		<Parameter parID="748" level="10" status="0" datatype="Bit" address="397" length="1" bitmask="2" dtu="0" units="" min="0" max="2" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Comm. Policy 3 - Enable SMS</parName>
-				<parDescription>"Enable SMS for Communications Medium Policy 3"</parDescription>
+				<parName>Comm. Policy 3 - Enable GPRS</parName>
+				<parDescription>"Enable GPRS for Communications Medium Policy 3"</parDescription>
 				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
@@ -843,11 +843,11 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="748" level="10" status="0" datatype="Bit" address="397" length="1" bitmask="2" dtu="0" units="" min="0" max="2" >
+		<Parameter parID="747" level="10" status="0" datatype="Bit" address="397" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Comm. Policy 3 - Enable GPRS</parName>
-				<parDescription>"Enable GPRS for Communications Medium Policy 3"</parDescription>
+				<parName>Comm. Policy 3 - Enable SMS</parName>
+				<parDescription>"Enable SMS for Communications Medium Policy 3"</parDescription>
 				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
@@ -1426,14 +1426,6 @@ Calibrate Thermistor reading for correct temperature read out"</parNotes>
 				<parNotes>"Non Trip AR Log every 60s"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1587" level="10" status="0" datatype="Bit" address="436" length="1" bitmask="128" dtu="0" units="" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Accelerometer Unplug Verification</parName>
-				<parDescription>"Accelerometer Unplug Verification"</parDescription>
-				<parNotes>"Accelerometer Unplug Verification is used in conjunction with Mains Voltage to determine if a unit is being unplugged and moved."</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="233" level="10" status="0" datatype="Bit" address="436" length="1" bitmask="4" dtu="0" units="Flag" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -1448,6 +1440,14 @@ Calibrate Thermistor reading for correct temperature read out"</parNotes>
 				<parName>Verify Ignition On</parName>
 				<parDescription>"Only write accident reconstruction records if ignition is ON"</parDescription>
 				<parNotes>"When accident reconstruction is enabled on the MHub, certain information is recorded every second that is to be used in the event of an accident to reconstruct the accident. Limitations can be placed on the recording of the accident data. Enabling this parameter will result in the accident data only being recorded when ignition is ON. "</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1587" level="10" status="0" datatype="Bit" address="436" length="1" bitmask="128" dtu="0" units="" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Accelerometer Unplug Verification</parName>
+				<parDescription>"Accelerometer Unplug Verification"</parDescription>
+				<parNotes>"Accelerometer Unplug Verification is used in conjunction with Mains Voltage to determine if a unit is being unplugged and moved."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="231" level="10" status="0" datatype="Bit" address="436" length="1" bitmask="1" dtu="0" units="Flag" min="0" max="1" >
@@ -1594,12 +1594,12 @@ Any other value - Same as 0."</parNotes>
 Mains Dev. Threshold"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1427" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="128" dtu="0" units="" min="0" max="1" >
+		<Parameter parID="1426" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Trip Source CANBus</parName>
-				<parDescription>"Trip Source CANBus"</parDescription>
-				<parNotes>"Trip Source CANBus if CANBus activity is present ignition on. Most vehicles switch off the Vehicle CANBus outside of trip. Verify in the vehicle before enabling."</parNotes>
+				<parName>Trip Source OBD2 RPM</parName>
+				<parDescription>"Trip Source OBD2 RPM"</parDescription>
+				<parNotes>"Trip Source OBD2 RPM and RPM above 0 will trigger ignition on"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1420" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
@@ -1626,12 +1626,20 @@ Mains Dev. Threshold"</parNotes>
 				<parNotes>"Trip Source Mains Dev."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1426" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
+		<Parameter parID="1423" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Trip Source Accelerometer</parName>
+				<parDescription>"Trip Source Accelerometer"</parDescription>
+				<parNotes>"Trip Source Accelerometer the accelerometer movement has to exceed the accelerometer movement threshold for ignition on"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1427" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="128" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Trip Source OBD2 RPM</parName>
-				<parDescription>"Trip Source OBD2 RPM"</parDescription>
-				<parNotes>"Trip Source OBD2 RPM and RPM above 0 will trigger ignition on"</parNotes>
+				<parName>Trip Source CANBus</parName>
+				<parDescription>"Trip Source CANBus"</parDescription>
+				<parNotes>"Trip Source CANBus if CANBus activity is present ignition on. Most vehicles switch off the Vehicle CANBus outside of trip. Verify in the vehicle before enabling."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1425" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
@@ -1650,12 +1658,12 @@ Mains Dev. Threshold"</parNotes>
 				<parNotes>"Trip Source GPS Speed the gps speed has to exceed the speed threshold for ignition on. GPS speed is only used if the GPS signal is deemed good e.g. 3D lock for longer than 5 seconds with HDOP less than 100m"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1423" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
+		<Parameter parID="1697" level="10" status="0" datatype="Bit" address="473" length="1" bitmask="8" dtu="1" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Trip Source Accelerometer</parName>
-				<parDescription>"Trip Source Accelerometer"</parDescription>
-				<parNotes>"Trip Source Accelerometer the accelerometer movement has to exceed the accelerometer movement threshold for ignition on"</parNotes>
+				<parName>Trip Source Mains Delta</parName>
+				<parDescription>"Trip Source Mains Delta"</parDescription>
+				<parNotes>"Determines if ignition is on by measuring the difference between the current voltage level and the previous level"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1429" level="10" status="0" datatype="Bit" address="473" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
@@ -1664,14 +1672,6 @@ Mains Dev. Threshold"</parNotes>
 				<parName>Trip Source Trigger</parName>
 				<parDescription>"Trip Source Trigger"</parDescription>
 				<parNotes>"Trip Source Trigger the trigger mechanism can be used to enable ignition on. Can be used for application where standard ignition sources are not available."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1697" level="10" status="0" datatype="Bit" address="473" length="1" bitmask="8" dtu="1" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Trip Source Mains Delta</parName>
-				<parDescription>"Trip Source Mains Delta"</parDescription>
-				<parNotes>"Determines if ignition is on by measuring the difference between the current voltage level and the previous level"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1430" level="10" status="0" datatype="Bit" address="473" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
@@ -1698,28 +1698,20 @@ Mains Dev. Threshold"</parNotes>
 				<parNotes>"As described in the parameter Reboot Limit, the MHub will issue a reboot command to the modem if it detects a problem with the modem. However if an error is received in response to an instruction to the modem, the MHub will first retry the instruction. This parameter specifies the number of accumulated errors that the MHub can receive from the modem before it will issue a reboot command to the mode."</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="845" level="10" status="0" datatype="Bit" address="477" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>MProfiler TCP Socket Enable</parName>
+				<parDescription>"Enables a permanent TCP socket to MProfiler"</parDescription>
+				<parNotes>"The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will remain permanently open. Enabling this parameter will instruct the MHub to open up a socket and attempt to keep the socket open at all time. Should the socket drop for any reason, the MHub will immediately reopen the socket again."</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="117" level="5" status="0" datatype="Bit" address="477" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
 			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Enable Socket Close</parName>
 				<parDescription>"Enables the unit to close a socket so that voice and data calls may be dealt with"</parDescription>
 				<parNotes>"In order to be able to answer an incomming voice call, the MHub must close a socket connection if it is currently open. Setting this parameter to 1 will allow the socket to be closed. If this is set to 0, then the MHUb will not be able to close the socket, and thus a voice call will not be possible."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="846" level="10" status="0" datatype="Bit" address="477" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Data Triggered TCP Socket</parName>
-				<parDescription>"when enabled the unit will only open a socket if there is data to be sent to MProfiler. This is overidden by the Permanent TCP Socket switch."</parDescription>
-				<parNotes>"The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will only be opened if there is data to be sent. Enabling this parameter will instruct the MHub to only open a socket to Mprofiler if there is data to be sent. Note that if the Permanent TCP Socket parameter is also enabled, that that will override this parameter."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="845" level="10" status="0" datatype="Bit" address="477" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Permanent TCP Socket</parName>
-				<parDescription>"Enables a permanent TCP socket to MProfiler"</parDescription>
-				<parNotes>"The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will remain permanently open. Enabling this parameter will instruct the MHub to open up a socket and attempt to keep the socket open at all time. Should the socket drop for any reason, the MHub will immediately reopen the socket again."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="42" level="0" status="1" datatype="Byte" address="480" length="1" bitmask="255" dtu="0" units="" min="0" max="3" >
@@ -2780,12 +2772,44 @@ The MHub has the ability to connect to up to a maximum of 4 temperature sensors.
 The MHub has the ability to connect to up to a maximum of 4 temperature sensors. The temperature sensors are pre calibrated digital temperature sensors, and all communicate to the MHub by means of the same communications wire. In order for the MHub to know which of the 4 sensors it is communicating with, this parameter is programmed with the ID value of one of the temperature sensors."</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="892" level="5" status="0" datatype="Bit" address="840" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>GPS Hardware Reset</parName>
+				<parDescription>"Enable GPS Hardware Reset"</parDescription>
+				<parNotes>"If this bit is set the unit may power-cycle to try and recover GPS lock"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1356" level="10" status="0" datatype="Bit" address="840" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>GPS Aid Request Disable</parName>
+				<parDescription>"GPS Aid Request Disabled"</parDescription>
+				<parNotes>"GPS Aid Request Disabled. To Not Allow the unit to request GPS Aid from MProfiler."</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1571" level="10" status="0" datatype="Bit" address="840" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>GPS 10Hz Mode</parName>
 				<parDescription>"GPS 10Hz Mode"</parDescription>
 				<parNotes>"GPS 10Hz Mode. Will output GPS Speed at 10Hz."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="815" level="5" status="0" datatype="Bit" address="840" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>GPS Nmea Enable</parName>
+				<parDescription>"GPS Nmea Enable"</parDescription>
+				<parNotes>"The MHub can Output RS232 NMEA data to be used by an external device such as a PDA for input into a navigation program. Enabling this will turn ON the NMEA output onto Pin xx of the 15 way cable harnass. Baud rate is 19200"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1241" level="5" status="0" datatype="Bit" address="840" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>GPS Coordinate Distance</parName>
+				<parDescription>"Calculate distance from GPS coordinates."</parDescription>
+				<parNotes>"If GPS speed is used to calculate trip distance, the accuracy of trip distance will be negatively affected when GPS lock is lost. By adding the distance between the last known position and position where GPS lock was obtained again, this error can be reduced. "</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="972" level="5" status="0" datatype="Bit" address="840" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
@@ -2810,38 +2834,6 @@ The MHub has the ability to connect to up to a maximum of 4 temperature sensors.
 				<parName>GPS Antenna Event</parName>
 				<parDescription>"Sends input 8 on/off event when GPS antenna is connected/disconnected"</parDescription>
 				<parNotes>"Sends input 8 on/off event when GPS antenna is connected/disconnected"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1241" level="5" status="0" datatype="Bit" address="840" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>GPS Coordinate Distance</parName>
-				<parDescription>"Calculate distance from GPS coordinates."</parDescription>
-				<parNotes>"If GPS speed is used to calculate trip distance, the accuracy of trip distance will be negatively affected when GPS lock is lost. By adding the distance between the last known position and position where GPS lock was obtained again, this error can be reduced. "</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="892" level="5" status="0" datatype="Bit" address="840" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>GPS Hardware Reset</parName>
-				<parDescription>"Enable GPS Hardware Reset"</parDescription>
-				<parNotes>"If this bit is set the unit may power-cycle to try and recover GPS lock"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1356" level="10" status="0" datatype="Bit" address="840" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>GPS Aid Request Disable</parName>
-				<parDescription>"GPS Aid Request Disabled"</parDescription>
-				<parNotes>"GPS Aid Request Disabled. To Not Allow the unit to request GPS Aid from MProfiler."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="815" level="5" status="0" datatype="Bit" address="840" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>GPS Nmea Enable</parName>
-				<parDescription>"GPS Nmea Enable"</parDescription>
-				<parNotes>"The MHub can Output RS232 NMEA data to be used by an external device such as a PDA for input into a navigation program. Enabling this will turn ON the NMEA output onto Pin xx of the 15 way cable harnass. Baud rate is 19200"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="89" level="10" status="0" datatype="String" address="841" length="65" bitmask="255" dtu="0" units="" min="0" max="0" >
@@ -4547,20 +4539,20 @@ NOTE: MAKE SURE POWER MODES-&gt;REGULATOR REGISTER 0 = 0, otherwise charge curre
 				<parNotes>"If the daily reset is enabled in parameter &quot;Daily Reset Enable&quot;, this parameter will specify the time offset in minutes from midnight at which time the reste will occur. Keep in mind that the MHUhb operates only on GMT (UTC) time."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="818" level="10" status="0" datatype="Bit" address="1829" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Ignition Source: Ignition Line</parName>
-				<parDescription>"Ignition Source: Ignition Line"</parDescription>
-				<parNotes>"For correct operation of the Mhub in a vehicle, the MHub needs to know the state of the ignition line of the vehicle. There is however more than one way that the MHUb can detect the state of ignition. If the IGnition wire input of the MHub is conbnected to the ignition of the vehicle, then this value must be set to 1, and the MHub will use the ignition line as the source of ignition."</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1432" level="10" status="0" datatype="Bit" address="1829" length="1" bitmask="128" dtu="0" units="" min="0" max="1" >
 			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Ignition Source: Alternate</parName>
 				<parDescription>"Ignition Source: Alternate"</parDescription>
 				<parNotes>"Ignition Source Alternate uses new method for ignition. Configure sources with Trip Source Ignition Line etc."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="819" level="5" status="0" datatype="Bit" address="1829" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Ignition Source: Main Voltage</parName>
+				<parDescription>"Ignition Source: Main Voltage"</parDescription>
+				<parNotes>"In addition to being able to use the ignition line as the source of ignition for the MHub, to make an installation easier without having to connect the ignition line, the source fro ignition can be set to main voltage. To do this, this parameter is enable. If ignition is set to main voltage, the MHub will monitor the input voltage, and if it is above the threshold specified in &quot;Ignition Source from Main Voltage Threshold&quot;, the ignition is ON, and below the threshold, ignition is OFF."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="820" level="5" status="0" datatype="Bit" address="1829" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
@@ -4587,12 +4579,12 @@ NOTE: MAKE SURE POWER MODES-&gt;REGULATOR REGISTER 0 = 0, otherwise charge curre
 				<parNotes>"One more possible source of ignition is to use Accelerometer movement. If Accelerometer movement is greater than the value specified in parameter &quot;Accelerometer Ignition On Threshold&quot;, the vehicle is moving. If Accelerometer is to be used as ignition, this parameter is set to 1."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="819" level="5" status="0" datatype="Bit" address="1829" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
+		<Parameter parID="818" level="10" status="0" datatype="Bit" address="1829" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Ignition Source: Main Voltage</parName>
-				<parDescription>"Ignition Source: Main Voltage"</parDescription>
-				<parNotes>"In addition to being able to use the ignition line as the source of ignition for the MHub, to make an installation easier without having to connect the ignition line, the source fro ignition can be set to main voltage. To do this, this parameter is enable. If ignition is set to main voltage, the MHub will monitor the input voltage, and if it is above the threshold specified in &quot;Ignition Source from Main Voltage Threshold&quot;, the ignition is ON, and below the threshold, ignition is OFF."</parNotes>
+				<parName>Ignition Source: Ignition Line</parName>
+				<parDescription>"Ignition Source: Ignition Line"</parDescription>
+				<parNotes>"For correct operation of the Mhub in a vehicle, the MHub needs to know the state of the ignition line of the vehicle. There is however more than one way that the MHUb can detect the state of ignition. If the IGnition wire input of the MHub is conbnected to the ignition of the vehicle, then this value must be set to 1, and the MHub will use the ignition line as the source of ignition."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1017" level="5" status="0" datatype="Bit" address="1829" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
@@ -4638,15 +4630,6 @@ XXX - just a comment - what about a 24V vehicle, will 255 be enough - should the
 				<parNotes>"Verify with vehicle manufacturer if the CANBus should be Active of Passive before setting this parameter."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="853" level="10" status="0" datatype="Bit" address="1832" length="1" bitmask="128" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable J1939 FMS CANBus Interface</parName>
-				<parDescription>"Enable J1939 FMS CANBus Interface.
-Note: Enable OBD2 CANBus Interface = 0"</parDescription>
-				<parNotes>"If the J1939 FMS CANBus is connected to the MHub828 CANbus, this parameter needs to be set to 1 to enable the CAN Bus functionality. Disable the OBD2 CANbus interface"</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1307" level="10" status="0" datatype="Bit" address="1832" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -4674,6 +4657,15 @@ From OBD2 Enable Vehicle OBD2 Interface "</parNotes>
 				<parName>OBC Sensor RPM</parName>
 				<parDescription>"RPM sourced from sensor"</parDescription>
 				<parNotes>"The MHub can take its source of RPM from various inputs. If RPM is determined by connecting the RPM wite to the &quot;W&quot; terminal, then this parameter must be set to 1."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="853" level="10" status="0" datatype="Bit" address="1832" length="1" bitmask="128" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable J1939 FMS CANBus Interface</parName>
+				<parDescription>"Enable J1939 FMS CANBus Interface.
+Note: Enable OBD2 CANBus Interface = 0"</parDescription>
+				<parNotes>"If the J1939 FMS CANBus is connected to the MHub828 CANbus, this parameter needs to be set to 1 to enable the CAN Bus functionality. Disable the OBD2 CANbus interface"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="858" level="10" status="0" datatype="Byte" address="1833" length="1" bitmask="255" dtu="0" units="0.1 V" min="0" max="255" >
@@ -4937,14 +4929,6 @@ None"</parNotes>
 				<parNotes>"if the Global Vehicle Disablement Allowed bit is set, a command can remotely disable the vehicle overriding the Driver Key."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="205" level="10" status="0" datatype="Bit" address="1870" length="1" bitmask="1" dtu="1" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper Output Enable</parName>
-				<parDescription>"Beeper Output Enable"</parDescription>
-				<parNotes>"If a beeper is connected to the MHub, this parameter will enable or disable the beeper operation."</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1269" level="10" status="0" datatype="Bit" address="1870" length="1" bitmask="16" dtu="1" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -4959,6 +4943,14 @@ None"</parNotes>
 				<parName>Input 1 Active Tracking</parName>
 				<parDescription>"Input 1 to trigger Active Tracking mode"</parDescription>
 				<parNotes>"Input 1 to trigger Active Tracking mode"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="205" level="10" status="0" datatype="Bit" address="1870" length="1" bitmask="1" dtu="1" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper Output Enable</parName>
+				<parDescription>"Beeper Output Enable"</parDescription>
+				<parNotes>"If a beeper is connected to the MHub, this parameter will enable or disable the beeper operation."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="206" level="10" status="0" datatype="Byte" address="1871" length="1" bitmask="255" dtu="1" units="Celcius" min="0" max="255" >
@@ -5123,6 +5115,22 @@ In order to calibrate itself, the Vehicle must travel at a constant speed of gre
 				<parNotes>"This text description of the MHub in this parameter is used when sending a text SMS event."</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="829" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Verify Driver ID</parName>
+				<parDescription>"Custom Driver ID Used"</parDescription>
+				<parNotes>"The driver key is programmed with a Driver ID value, and the MHub is also programmed with a list of DRiver ID values. This parameter specifies whether the MHub is to compare the Driver ID on the driver key to any of the Driver ID values programmed on the MHub in determinng whether to authenticate a driver key. This means that for the driver key to authenticate, the specific driver ID programmed onto that driver key must have been programmed into the MHub already."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="830" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Verify Customer Code</parName>
+				<parDescription>"Customer ID Used"</parDescription>
+				<parNotes>"The driver key is programmed with a Customer Code, and the MHub is also programmed with a Customer Code. This parameter specifies whether the MHub is to compare the Customer Code on the driver key to the Customer Code programmed on the MHub in determinng whether to authenticate a driver key. If this parameter is enabled, then the two Customer Code values need to match before the MHub will authenticate the driver key."</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="254" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -5147,22 +5155,6 @@ In order to calibrate itself, the Vehicle must travel at a constant speed of gre
 				<parNotes>"In order to maintain compatibility with fleets that use existing CS905 type driver keys, the MHub has the ability to read these older type of keys. If these old keys are to be used with the MHub, this parameter must be enabled."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="830" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Verify Customer Code</parName>
-				<parDescription>"Customer ID Used"</parDescription>
-				<parNotes>"The driver key is programmed with a Customer Code, and the MHub is also programmed with a Customer Code. This parameter specifies whether the MHub is to compare the Customer Code on the driver key to the Customer Code programmed on the MHub in determinng whether to authenticate a driver key. If this parameter is enabled, then the two Customer Code values need to match before the MHub will authenticate the driver key."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="828" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Verify Driver Class</parName>
-				<parDescription>"Driver Class Used"</parDescription>
-				<parNotes>"The driver key is programmed with a class value, and the MHub is also programmed with a class value. This parameter specifies whether the MHub is to use the class values in determinng whether to authenticate a driver key."</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="827" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -5179,12 +5171,12 @@ In order to calibrate itself, the Vehicle must travel at a constant speed of gre
 				<parNotes>"If the driver key is used, then this parameter must be set to 1"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="829" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
+		<Parameter parID="828" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Verify Driver ID</parName>
-				<parDescription>"Custom Driver ID Used"</parDescription>
-				<parNotes>"The driver key is programmed with a Driver ID value, and the MHub is also programmed with a list of DRiver ID values. This parameter specifies whether the MHub is to compare the Driver ID on the driver key to any of the Driver ID values programmed on the MHub in determinng whether to authenticate a driver key. This means that for the driver key to authenticate, the specific driver ID programmed onto that driver key must have been programmed into the MHub already."</parNotes>
+				<parName>Verify Driver Class</parName>
+				<parDescription>"Driver Class Used"</parDescription>
+				<parNotes>"The driver key is programmed with a class value, and the MHub is also programmed with a class value. This parameter specifies whether the MHub is to use the class values in determinng whether to authenticate a driver key."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="263" level="10" status="0" datatype="Bit" address="1982" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
@@ -6487,16 +6479,6 @@ n g / 0.02 = N
 				<parNotes>"Driver ID to be used when de-immobilizing a vehicle with a card"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1760" level="0" status="0" datatype="Bit" address="2943" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Accelerometer DMA Enable</parName>
-				<parDescription>"Accelerometer DMA Enable"</parDescription>
-				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Accelerometer DMA Enable"</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1759" level="0" status="0" datatype="Bit" address="2943" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
 			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -6507,12 +6489,14 @@ Accelerometer DMA Enable"</parNotes>
 Accelerometer RTOS Task"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1763" level="10" status="0" datatype="Bit" address="2943" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
+		<Parameter parID="1760" level="0" status="0" datatype="Bit" address="2943" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Enable Uncalibrated Accelerometer SBS</parName>
-				<parDescription>"Enable Uncalibrated Accelerometer SBS"</parDescription>
-				<parNotes>"Enable Uncalibrated Accelerometer SBS. Will always send accelerometer data with Second-by-Second data ignoring calibration state."</parNotes>
+				<parName>Accelerometer DMA Enable</parName>
+				<parDescription>"Accelerometer DMA Enable"</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Accelerometer DMA Enable"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1764" level="10" status="0" datatype="Bit" address="2943" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
@@ -6521,6 +6505,14 @@ Accelerometer RTOS Task"</parNotes>
 				<parName>Accelerometer Calibration Verification</parName>
 				<parDescription>"Accelerometer Calibration Verification in trip"</parDescription>
 				<parNotes>"If Enabled, Accelerometer calibration is verified every 10 minutes inside of a trip. See Accelerometer Recalibration Threshold"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1763" level="10" status="0" datatype="Bit" address="2943" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable Uncalibrated Accelerometer SBS</parName>
+				<parDescription>"Enable Uncalibrated Accelerometer SBS"</parDescription>
+				<parNotes>"Enable Uncalibrated Accelerometer SBS. Will always send accelerometer data with Second-by-Second data ignoring calibration state."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1453" level="10" status="0" datatype="String" address="2944" length="32" bitmask="255" dtu="0" units="" min="0" max="0" >
@@ -6930,6 +6922,14 @@ Mode of operation:
 1 - Get position at start-up if Best guess is not available."</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1751" level="5" status="0" datatype="Bit" address="3197" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable Glonass</parName>
+				<parDescription>"Enable Glonass with GPS"</parDescription>
+				<parNotes>"Enable Glonass with GPS"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1709" level="10" status="0" datatype="Bit" address="3197" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
 			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -6946,12 +6946,12 @@ Mode of operation:
 				<parNotes>"Use to not change factory configuration of GPS except for enabling GPS Messages."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1754" level="5" status="0" datatype="Bit" address="3197" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
+		<Parameter parID="1752" level="5" status="0" datatype="Bit" address="3197" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Enable SBAS GAGAN</parName>
-				<parDescription>"Enable SBAS GAGAN"</parDescription>
-				<parNotes>"Enable SBAS GAGAN"</parNotes>
+				<parName>Enable BeiDou</parName>
+				<parDescription>"Enable BeiDou"</parDescription>
+				<parNotes>"Enable BeiDou with GPS"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1753" level="5" status="0" datatype="Bit" address="3197" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
@@ -6962,20 +6962,12 @@ Mode of operation:
 				<parNotes>"Enable SBAS Auto"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1752" level="5" status="0" datatype="Bit" address="3197" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
+		<Parameter parID="1754" level="5" status="0" datatype="Bit" address="3197" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Enable BeiDou</parName>
-				<parDescription>"Enable BeiDou"</parDescription>
-				<parNotes>"Enable BeiDou with GPS"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1751" level="5" status="0" datatype="Bit" address="3197" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable Glonass</parName>
-				<parDescription>"Enable Glonass with GPS"</parDescription>
-				<parNotes>"Enable Glonass with GPS"</parNotes>
+				<parName>Enable SBAS GAGAN</parName>
+				<parDescription>"Enable SBAS GAGAN"</parDescription>
+				<parNotes>"Enable SBAS GAGAN"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1839" level="5" status="0" datatype="Bit" address="3197" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
@@ -7079,16 +7071,13 @@ This should only be enabled on vehicles that are known to support this protocol.
 This should only be enabled on vehicles that are known to support this protocol."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1739" level="5" status="0" datatype="Bit" address="3326" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
+		<Parameter parID="1743" level="5" status="0" datatype="Bit" address="3326" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Enable Detailed DTC Requests</parName>
-				<parDescription>"Enables UDS and KWP2000 DTC requests using services defined by the vehicle settings in XPlatform.
-
-Note that certain vehicles respond to certain DTC requests by turning on the relevant sections. this could result in windscreen wipers activating or dashboard lights flickering or displaying warnings."</parDescription>
-				<parNotes>"Enables UDS and KWP2000 DTC requests using services defined by the vehicle settings in XPlatform.
-
-Note that certain vehicles respond to certain DTC requests by turning on the relevant sections. this could result in windscreen wipers activating or dashboard lights flickering or displaying warnings."</parNotes>
+				<parName>Enable Mode 3 DTC Request</parName>
+				<parDescription>"Enable OBD2 Mode3 DTC polling.
+"</parDescription>
+				<parNotes>"Enable OBD2 Mode3 DTC polling."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1594" level="10" status="0" datatype="Bit" address="3326" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
@@ -7099,21 +7088,24 @@ Note that certain vehicles respond to certain DTC requests by turning on the rel
 				<parNotes>"Allows the MHub to perform a Service-3 and Service-7 DTC poll (if enabled) if the MIL status changes during a trip."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1743" level="5" status="0" datatype="Bit" address="3326" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable Mode 3 DTC Request</parName>
-				<parDescription>"Enable OBD2 Mode3 DTC polling.
-"</parDescription>
-				<parNotes>"Enable OBD2 Mode3 DTC polling."</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1737" level="5" status="0" datatype="Bit" address="3326" length="1" bitmask="32" dtu="0" units="" min="0" max="0" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Enable Mode 7 DTC Request</parName>
 				<parDescription>"Enables OBD2 Mode 7 DTC requests"</parDescription>
 				<parNotes>"Enables OBD2 Mode 7 DTC requests"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1739" level="5" status="0" datatype="Bit" address="3326" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable Detailed DTC Requests</parName>
+				<parDescription>"Enables UDS and KWP2000 DTC requests using services defined by the vehicle settings in XPlatform.
+
+Note that certain vehicles respond to certain DTC requests by turning on the relevant sections. this could result in windscreen wipers activating or dashboard lights flickering or displaying warnings."</parDescription>
+				<parNotes>"Enables UDS and KWP2000 DTC requests using services defined by the vehicle settings in XPlatform.
+
+Note that certain vehicles respond to certain DTC requests by turning on the relevant sections. this could result in windscreen wipers activating or dashboard lights flickering or displaying warnings."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1745" level="15" status="1" datatype="Byte" address="3327" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
@@ -9201,24 +9193,6 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="1588" />
 			</catParameters>
 		</Category>
-		<Category catName="Modem - MProfiler">
-			<catDescription>
-				Modem - MProfiler
-			</catDescription>
-			<catParameters>
-				<catParameter parID="31" />
-				<catParameter parID="86" />
-				<catParameter parID="89" />
-				<catParameter parID="90" />
-				<catParameter parID="102" />
-				<catParameter parID="252" />
-				<catParameter parID="32" />
-				<catParameter parID="1345" />
-				<catParameter parID="1344" />
-				<catParameter parID="1346" />
-				<catParameter parID="1347" />
-			</catParameters>
-		</Category>
 		<Category catName="Modem - SIM Operations">
 			<catDescription>
 				Modem - SIM Operations
@@ -9247,8 +9221,6 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="100" />
 				<catParameter parID="101" />
 				<catParameter parID="117" />
-				<catParameter parID="846" />
-				<catParameter parID="845" />
 				<catParameter parID="1264" />
 				<catParameter parID="1263" />
 				<catParameter parID="119" />
@@ -9256,6 +9228,25 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="121" />
 				<catParameter parID="831" />
 				<catParameter parID="832" />
+			</catParameters>
+		</Category>
+		<Category catName="MProfiler Connection">
+			<catDescription>
+				MProfiler Connection
+			</catDescription>
+			<catParameters>
+				<catParameter parID="31" />
+				<catParameter parID="845" />
+				<catParameter parID="86" />
+				<catParameter parID="89" />
+				<catParameter parID="90" />
+				<catParameter parID="102" />
+				<catParameter parID="252" />
+				<catParameter parID="32" />
+				<catParameter parID="1345" />
+				<catParameter parID="1344" />
+				<catParameter parID="1346" />
+				<catParameter parID="1347" />
 			</catParameters>
 		</Category>
 		<Category catName="OBC">
@@ -9313,8 +9304,8 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="821" />
 				<catParameter parID="1017" />
 				<catParameter parID="1072" />
-				<catParameter parID="1432" />
 				<catParameter parID="1418" />
+				<catParameter parID="1432" />
 				<catParameter parID="822" />
 				<catParameter parID="823" />
 				<catParameter parID="851" />

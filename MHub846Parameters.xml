@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="4" unitType="MHub846" created="2024-11-15T14:26:31+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="4" unitType="MHub846" created="2024-11-20T15:56:27+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="2" level="10" status="0" datatype="Word" address="256" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
@@ -1779,17 +1779,9 @@ Mains Dev. Threshold"</parNotes>
 		<Parameter parID="845" level="10" status="0" datatype="Bit" address="477" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
 			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Permanent TCP Socket</parName>
+				<parName>MProfiler TCP Socket Enable</parName>
 				<parDescription>"Enables a permanent TCP socket to MProfiler"</parDescription>
 				<parNotes>"The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will remain permanently open. Enabling this parameter will instruct the MHub to open up a socket and attempt to keep the socket open at all time. Should the socket drop for any reason, the MHub will immediately reopen the socket again."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="846" level="10" status="0" datatype="Bit" address="477" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Data Triggered TCP Socket</parName>
-				<parDescription>"when enabled the unit will only open a socket if there is data to be sent to MProfiler. This is overidden by the Permanent TCP Socket switch."</parDescription>
-				<parNotes>"The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will only be opened if there is data to be sent. Enabling this parameter will instruct the MHub to only open a socket to Mprofiler if there is data to be sent. Note that if the Permanent TCP Socket parameter is also enabled, that that will override this parameter."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="40" level="0" status="0" datatype="Byte" address="478" length="1" bitmask="255" dtu="0" units="" min="0" max="1" >
@@ -10780,8 +10772,8 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="1596" />
 				<catParameter parID="1678" />
 				<catParameter parID="1679" />
-				<catParameter parID="1687" />
 				<catParameter parID="1773" />
+				<catParameter parID="1687" />
 				<catParameter parID="1815" />
 				<catParameter parID="1558" />
 				<catParameter parID="893" />
@@ -11088,24 +11080,6 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="1588" />
 			</catParameters>
 		</Category>
-		<Category catName="Modem - MProfiler">
-			<catDescription>
-				Modem - MProfiler
-			</catDescription>
-			<catParameters>
-				<catParameter parID="31" />
-				<catParameter parID="86" />
-				<catParameter parID="89" />
-				<catParameter parID="90" />
-				<catParameter parID="102" />
-				<catParameter parID="252" />
-				<catParameter parID="32" />
-				<catParameter parID="1345" />
-				<catParameter parID="1344" />
-				<catParameter parID="1346" />
-				<catParameter parID="1347" />
-			</catParameters>
-		</Category>
 		<Category catName="Modem - SIM Operations">
 			<catDescription>
 				Modem - SIM Operations
@@ -11145,8 +11119,6 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="101" />
 				<catParameter parID="116" />
 				<catParameter parID="117" />
-				<catParameter parID="846" />
-				<catParameter parID="845" />
 				<catParameter parID="69" />
 				<catParameter parID="70" />
 				<catParameter parID="1264" />
@@ -11158,6 +11130,25 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="831" />
 				<catParameter parID="832" />
 				<catParameter parID="1767" />
+			</catParameters>
+		</Category>
+		<Category catName="MProfiler Connection">
+			<catDescription>
+				MProfiler Connection
+			</catDescription>
+			<catParameters>
+				<catParameter parID="31" />
+				<catParameter parID="845" />
+				<catParameter parID="86" />
+				<catParameter parID="89" />
+				<catParameter parID="90" />
+				<catParameter parID="102" />
+				<catParameter parID="252" />
+				<catParameter parID="32" />
+				<catParameter parID="1345" />
+				<catParameter parID="1344" />
+				<catParameter parID="1346" />
+				<catParameter parID="1347" />
 			</catParameters>
 		</Category>
 		<Category catName="OBC">

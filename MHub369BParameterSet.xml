@@ -1,4 +1,4 @@
-<MhubParameterSet created="2024-11-15T14:26:54+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2024-11-20T15:56:39+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -1394,6 +1394,11 @@ Setting this parameter to 1 will enable Error Debug messages</Notes>
 			<Help>Enables use of the USB connector for Debug functionality.</Help>
 			<Notes>Set this value to 1 to enable debug information to be streamed out of the USB port, else set it to 0 to disable it</Notes>
 		</Parameter>
+		<Parameter name="Insurance Led Style" level="10" datatype="Bit" address="439" length="1" bitmask="32" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Insurance Led Style</Help>
+			<Notes>Insurance Led Style. GREEN Hardware Ok, RED Hardware Fault - Triggers upon device plug in. </Notes>
+		</Parameter>
 		<Parameter name="OBD Diagnostics LED" level="10" datatype="Bit" address="439" length="1" bitmask="64" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enables the use of the RED Led for OBD operation diagnostics.
@@ -1408,11 +1413,6 @@ Off - No OBD operation.
 Flashing - Searching for protocol
 On - OBD protocol found. Short off indicates activity.
 </Notes>
-		</Parameter>
-		<Parameter name="Insurance Led Style" level="10" datatype="Bit" address="439" length="1" bitmask="32" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Insurance Led Style</Help>
-			<Notes>Insurance Led Style. GREEN Hardware Ok, RED Hardware Fault - Triggers upon device plug in. </Notes>
 		</Parameter>
 		<Parameter name="Trace Level" level="0" datatype="Byte" address="598" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="None" />
@@ -3762,63 +3762,6 @@ NB: This is a service provided by the network and not only dependant on configur
 			<Notes>The amount of seconds of Jamming before the de-bounced jamming flag is set.</Notes>
 		</Parameter>
 	</Category>
-	<Category name="Modem - MProfiler">
-		<Parameter name="TCP Port ID" level="10" datatype="Word" address="421" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="65535" default="52767" previous="" current="" units="" />
-			<Help>TCP Port through which the socket will be opened</Help>
-			<Notes>When the MHub connects to MProfiler vis GPRS the Mhub opens up a socket to the MProfiler Server. This parameter specifies the port through which the socket will be opened.</Notes>
-		</Parameter>
-		<Parameter name="TCP Socket Login Timeout" level="10" datatype="Word" address="596" length="2" bitmask="255" dtu="0">
-			<Values min="10" max="65000" default="120" previous="" current="" units="Seconds" />
-			<Help>The amount of time that the unit will allow a login challenge to go unanswered before retrying.</Help>
-			<Notes>When the MHub opens a socket an logs into Mprofiler, the Mhub sends a specific login request. If it does not recieve a response to this request within the time specified by this parameter, it will resend the login request again. (XXX how does this compare to the other parameter that says about the same thing for response times)</Notes>
-		</Parameter>
-		<Parameter name="MProfiler User Name" level="10" datatype="String" address="841" length="65" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>User name used when logging onto MProfiler over a TCP socket.</Help>
-			<Notes>When connecting to MProfiler using GPRS, the MHub needs to uniquely identify itself to MProfiler before the connection will be accepted. It identifies itself by means of the MProfiler User Name. before the connection will be acc epted, an entity on MProfiler must already exist with the same MProfier User Name as the UnitID on MProfiler. Care must be taken to ensure that no two MHub&apos;s are configured with the same MProfiler User Name, as then the information from two different MHub units will be sent o to the client application as a single unit. Typically the MSISDN of the SIM card can be used.</Notes>
-		</Parameter>
-		<Parameter name="MProfiler User Password" level="10" datatype="String" address="906" length="65" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="None" />
-			<Help>Password used to log onto a TCP socket session with MProfiler.</Help>
-			<Notes>If the MProfiler login requires a password from the MHub whe the MHub logs into the MProfiler, that password is stored in this parameter. </Notes>
-		</Parameter>
-		<Parameter name="MProfiler MSISDN" level="10" datatype="String" address="1003" length="21" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>MSISDN of the MProfiler SMS Gateway.</Help>
-			<Notes>The MHub always sends data to the MProfiler, this includes sending data to MProfiler via GPRS and SMS. When data is sent via SMS, the MHub needs to know where the SMS must be sent to - this will typically be a SMPP Gateway or even a modem directly connected to the MHub.</Notes>
-		</Parameter>
-		<Parameter name="Text SMS Destination MSISDN 1" level="10" datatype="String" address="1928" length="21" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>Destination 1 MSISDN for Text messages</Help>
-			<Notes>The MHub has the ability to send a text message when an event occurs in addition to sending the message to Mprofiler. This parameter contains the MSISDN of the mobile phone to which the test message must be transmitted.</Notes>
-		</Parameter>
-		<Parameter name="MProfiler URL" level="10" datatype="String" address="2169" length="121" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="global.scopemp.net" previous="" current="" units="" />
-			<Help>This is the URL of the MProfiler Server. It is used by the MHub to know where to open up a socket to.</Help>
-			<Notes>This is the URL of the MProfiler Server. It is used by the MHub to know where to open up a socket to.</Notes>
-		</Parameter>
-		<Parameter name="Text SMS Destination MSISDN 2" level="10" datatype="String" address="2608" length="21" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>Destination 2 MSISDN for Text messages</Help>
-			<Notes>The MHub has the ability to send a text message when an event occurs in addition to sending the message to Mprofiler. This parameter contains the MSISDN of the mobile phone to which the test message must be transmitted.</Notes>
-		</Parameter>
-		<Parameter name="Text SMS Destination MSISDN 3" level="10" datatype="String" address="2629" length="21" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>Destination 3 MSISDN for Text messages</Help>
-			<Notes>The MHub has the ability to send a text message when an event occurs in addition to sending the message to Mprofiler. This parameter contains the MSISDN of the mobile phone to which the test message must be transmitted.</Notes>
-		</Parameter>
-		<Parameter name="Text SMS Destination MSISDN 4" level="10" datatype="String" address="2650" length="21" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>Destination 4 MSISDN for Text messages</Help>
-			<Notes>The MHub has the ability to send a text message when an event occurs in addition to sending the message to Mprofiler. This parameter contains the MSISDN of the mobile phone to which the test message must be transmitted.</Notes>
-		</Parameter>
-		<Parameter name="Text SMS Destination MSISDN 5" level="10" datatype="String" address="2671" length="21" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>Destination 5 MSISDN for Text messages</Help>
-			<Notes>The MHub has the ability to send a text message when an event occurs in addition to sending the message to Mprofiler. This parameter contains the MSISDN of the mobile phone to which the test message must be transmitted.</Notes>
-		</Parameter>
-	</Category>
 	<Category name="Modem - SIM Operations">
 		<Parameter name="SIM PIN" level="10" datatype="String" address="297" length="10" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="" previous="" current="" units="" />
@@ -3921,16 +3864,6 @@ Number of seconds before the Modem/MHub reboots due to failing to contact the MP
 			<Help>Enables the unit to close a socket so that voice and data calls may be dealt with</Help>
 			<Notes>In order to be able to answer an incomming voice call, the MHub must close a socket connection if it is currently open. Setting this parameter to 1 will allow the socket to be closed. If this is set to 0, then the MHUb will not be able to close the socket, and thus a voice call will not be possible.</Notes>
 		</Parameter>
-		<Parameter name="Permanent TCP Socket" level="10" datatype="Bit" address="477" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>Enables a permanent TCP socket to MProfiler</Help>
-			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will remain permanently open. Enabling this parameter will instruct the MHub to open up a socket and attempt to keep the socket open at all time. Should the socket drop for any reason, the MHub will immediately reopen the socket again.</Notes>
-		</Parameter>
-		<Parameter name="Data Triggered TCP Socket" level="10" datatype="Bit" address="477" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>when enabled the unit will only open a socket if there is data to be sent to MProfiler. This is overidden by the Permanent TCP Socket switch.</Help>
-			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will only be opened if there is data to be sent. Enabling this parameter will instruct the MHub to only open a socket to Mprofiler if there is data to be sent. Note that if the Permanent TCP Socket parameter is also enabled, that that will override this parameter.</Notes>
-		</Parameter>
 		<Parameter name="Allow GPRS Error Modem Reset" level="5" datatype="Byte" address="796" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help></Help>
@@ -3965,6 +3898,68 @@ Number of seconds before the Modem/MHub reboots due to failing to contact the MP
 			<Values min="0" max="65535" default="600" previous="" current="" units="" />
 			<Help>The amount of time that the MHub will wait in between socket attempts after the maximum number of unsuccessful session attempts.</Help>
 			<Notes>After the standoff period starts as defined in parameter xxx, this parameter specifies the time in seconds that the standoff period will last before the MHub attempts to log into Mprofiler again.</Notes>
+		</Parameter>
+	</Category>
+	<Category name="MProfiler Connection">
+		<Parameter name="TCP Port ID" level="10" datatype="Word" address="421" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="52767" previous="" current="" units="" />
+			<Help>TCP Port through which the socket will be opened</Help>
+			<Notes>When the MHub connects to MProfiler vis GPRS the Mhub opens up a socket to the MProfiler Server. This parameter specifies the port through which the socket will be opened.</Notes>
+		</Parameter>
+		<Parameter name="MProfiler TCP Socket Enable" level="10" datatype="Bit" address="477" length="1" bitmask="2" dtu="0">
+			<Values min="0" max="1" default="1" previous="" current="" units="" />
+			<Help>Enables a permanent TCP socket to MProfiler</Help>
+			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will remain permanently open. Enabling this parameter will instruct the MHub to open up a socket and attempt to keep the socket open at all time. Should the socket drop for any reason, the MHub will immediately reopen the socket again.</Notes>
+		</Parameter>
+		<Parameter name="TCP Socket Login Timeout" level="10" datatype="Word" address="596" length="2" bitmask="255" dtu="0">
+			<Values min="10" max="65000" default="120" previous="" current="" units="Seconds" />
+			<Help>The amount of time that the unit will allow a login challenge to go unanswered before retrying.</Help>
+			<Notes>When the MHub opens a socket an logs into Mprofiler, the Mhub sends a specific login request. If it does not recieve a response to this request within the time specified by this parameter, it will resend the login request again. (XXX how does this compare to the other parameter that says about the same thing for response times)</Notes>
+		</Parameter>
+		<Parameter name="MProfiler User Name" level="10" datatype="String" address="841" length="65" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="" previous="" current="" units="" />
+			<Help>User name used when logging onto MProfiler over a TCP socket.</Help>
+			<Notes>When connecting to MProfiler using GPRS, the MHub needs to uniquely identify itself to MProfiler before the connection will be accepted. It identifies itself by means of the MProfiler User Name. before the connection will be acc epted, an entity on MProfiler must already exist with the same MProfier User Name as the UnitID on MProfiler. Care must be taken to ensure that no two MHub&apos;s are configured with the same MProfiler User Name, as then the information from two different MHub units will be sent o to the client application as a single unit. Typically the MSISDN of the SIM card can be used.</Notes>
+		</Parameter>
+		<Parameter name="MProfiler User Password" level="10" datatype="String" address="906" length="65" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="" previous="" current="" units="None" />
+			<Help>Password used to log onto a TCP socket session with MProfiler.</Help>
+			<Notes>If the MProfiler login requires a password from the MHub whe the MHub logs into the MProfiler, that password is stored in this parameter. </Notes>
+		</Parameter>
+		<Parameter name="MProfiler MSISDN" level="10" datatype="String" address="1003" length="21" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="" previous="" current="" units="" />
+			<Help>MSISDN of the MProfiler SMS Gateway.</Help>
+			<Notes>The MHub always sends data to the MProfiler, this includes sending data to MProfiler via GPRS and SMS. When data is sent via SMS, the MHub needs to know where the SMS must be sent to - this will typically be a SMPP Gateway or even a modem directly connected to the MHub.</Notes>
+		</Parameter>
+		<Parameter name="Text SMS Destination MSISDN 1" level="10" datatype="String" address="1928" length="21" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="" previous="" current="" units="" />
+			<Help>Destination 1 MSISDN for Text messages</Help>
+			<Notes>The MHub has the ability to send a text message when an event occurs in addition to sending the message to Mprofiler. This parameter contains the MSISDN of the mobile phone to which the test message must be transmitted.</Notes>
+		</Parameter>
+		<Parameter name="MProfiler URL" level="10" datatype="String" address="2169" length="121" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="global.scopemp.net" previous="" current="" units="" />
+			<Help>This is the URL of the MProfiler Server. It is used by the MHub to know where to open up a socket to.</Help>
+			<Notes>This is the URL of the MProfiler Server. It is used by the MHub to know where to open up a socket to.</Notes>
+		</Parameter>
+		<Parameter name="Text SMS Destination MSISDN 2" level="10" datatype="String" address="2608" length="21" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="" previous="" current="" units="" />
+			<Help>Destination 2 MSISDN for Text messages</Help>
+			<Notes>The MHub has the ability to send a text message when an event occurs in addition to sending the message to Mprofiler. This parameter contains the MSISDN of the mobile phone to which the test message must be transmitted.</Notes>
+		</Parameter>
+		<Parameter name="Text SMS Destination MSISDN 3" level="10" datatype="String" address="2629" length="21" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="" previous="" current="" units="" />
+			<Help>Destination 3 MSISDN for Text messages</Help>
+			<Notes>The MHub has the ability to send a text message when an event occurs in addition to sending the message to Mprofiler. This parameter contains the MSISDN of the mobile phone to which the test message must be transmitted.</Notes>
+		</Parameter>
+		<Parameter name="Text SMS Destination MSISDN 4" level="10" datatype="String" address="2650" length="21" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="" previous="" current="" units="" />
+			<Help>Destination 4 MSISDN for Text messages</Help>
+			<Notes>The MHub has the ability to send a text message when an event occurs in addition to sending the message to Mprofiler. This parameter contains the MSISDN of the mobile phone to which the test message must be transmitted.</Notes>
+		</Parameter>
+		<Parameter name="Text SMS Destination MSISDN 5" level="10" datatype="String" address="2671" length="21" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="" previous="" current="" units="" />
+			<Help>Destination 5 MSISDN for Text messages</Help>
+			<Notes>The MHub has the ability to send a text message when an event occurs in addition to sending the message to Mprofiler. This parameter contains the MSISDN of the mobile phone to which the test message must be transmitted.</Notes>
 		</Parameter>
 	</Category>
 	<Category name="OBC">
@@ -4255,15 +4250,15 @@ If set to zero then reports will continue indefinitely</Notes>
 			<Help>Ignition Source: Trigger</Help>
 			<Notes>Ignition Source is set to Trigger which is a software controlled ignition source.</Notes>
 		</Parameter>
-		<Parameter name="Ignition Source: Alternate" level="10" datatype="Bit" address="1829" length="1" bitmask="128" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>Ignition Source: Alternate</Help>
-			<Notes>Ignition Source Alternate uses new method for ignition. Configure sources with Trip Source Ignition Line etc.</Notes>
-		</Parameter>
 		<Parameter name="Ignition Source: Accelerometer" level="5" datatype="Bit" address="1829" length="1" bitmask="64" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Ignition Source: Accelerometer</Help>
 			<Notes>One more possible source of ignition is to use Accelerometer movement. If Accelerometer movement is greater than the value specified in parameter &quot;Accelerometer Ignition On Threshold&quot;, the vehicle is moving. If Accelerometer is to be used as ignition, this parameter is set to 1.</Notes>
+		</Parameter>
+		<Parameter name="Ignition Source: Alternate" level="10" datatype="Bit" address="1829" length="1" bitmask="128" dtu="0">
+			<Values min="0" max="1" default="1" previous="" current="" units="" />
+			<Help>Ignition Source: Alternate</Help>
+			<Notes>Ignition Source Alternate uses new method for ignition. Configure sources with Trip Source Ignition Line etc.</Notes>
 		</Parameter>
 		<Parameter name="Ignition Source from RPM Threshold" level="10" datatype="Byte" address="1830" length="1" bitmask="255" dtu="0">
 			<Values min="1" max="255" default="3" previous="" current="" units="RPM" />

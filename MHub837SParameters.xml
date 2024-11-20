@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="16" unitType="MHub837S" created="2024-11-15T14:26:31+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="16" unitType="MHub837S" created="2024-11-20T15:56:26+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="2" level="10" status="0" datatype="Word" address="256" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
@@ -205,22 +205,6 @@ Minimum time between Tachograph events or minimum time that direction needs to b
 				<parNotes>"If Fuel Used is not provided by the vehicle FMS network, but Fuel Rate is, you can estimate fuel used."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1313" level="10" status="0" datatype="Bit" address="320" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>OBC Calculate J1939 FMS Fuel Used</parName>
-				<parDescription>"Calculate J1939 FMS Fuel Used"</parDescription>
-				<parNotes>"If Fuel Used is not provided by the vehicle FMS network, but Fuel Economy is, you can estimate fuel used. "</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1495" level="10" status="0" datatype="Bit" address="320" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>OBC Calculate Fuel from Equation</parName>
-				<parDescription>"OBC Calculate Fuel from Equation"</parDescription>
-				<parNotes>"OBC Calculate Fuel from Equation. Populate OBC Weight and Fuel Model parameters"</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1315" level="10" status="0" datatype="Bit" address="320" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -235,6 +219,22 @@ Minimum time between Tachograph events or minimum time that direction needs to b
 				<parName>OBC Use  J1939 FMS Trip Fuel</parName>
 				<parDescription>"Use the J1939 FMS Trip Fuel variable for Trip Fuel"</parDescription>
 				<parNotes>"Use the J1939 FMS Trip Fuel variable for Trip Fuel. Not standard FMS Variable."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1495" level="10" status="0" datatype="Bit" address="320" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>OBC Calculate Fuel from Equation</parName>
+				<parDescription>"OBC Calculate Fuel from Equation"</parDescription>
+				<parNotes>"OBC Calculate Fuel from Equation. Populate OBC Weight and Fuel Model parameters"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1313" level="10" status="0" datatype="Bit" address="320" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>OBC Calculate J1939 FMS Fuel Used</parName>
+				<parDescription>"Calculate J1939 FMS Fuel Used"</parDescription>
+				<parNotes>"If Fuel Used is not provided by the vehicle FMS network, but Fuel Economy is, you can estimate fuel used. "</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1367" level="0" status="1" datatype="Byte" address="322" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
@@ -406,14 +406,6 @@ NB: Numbers in the Whitelist will not be able to call the unit using a voice cal
 ATnT do not allow this setting. Check that the operator allows this."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="736" level="10" status="0" datatype="Bit" address="394" length="1" bitmask="2" dtu="0" units="" min="0" max="2" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Comm. Policy 0 - Enable GPRS</parName>
-				<parDescription>"Enable GPRS for Communications Medium Policy 0"</parDescription>
-				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="735" level="10" status="0" datatype="Bit" address="394" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -425,11 +417,27 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 "</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="738" level="10" status="0" datatype="Bit" address="394" length="1" bitmask="8" dtu="0" units="" min="0" max="8" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Comm. Policy 0 - Enable Roaming GPRS</parName>
+				<parDescription>"Enable Roaming GPRS for Communications Medium Policy 0"</parDescription>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="871" level="10" status="0" datatype="Bit" address="394" length="1" bitmask="16" dtu="0" units="" min="0" max="16" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 0 - Enable Iridium</parName>
 				<parDescription>"Enable Iridium Satellite Coms for Communications Medium Policy 0"</parDescription>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="736" level="10" status="0" datatype="Bit" address="394" length="1" bitmask="2" dtu="0" units="" min="0" max="2" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Comm. Policy 0 - Enable GPRS</parName>
+				<parDescription>"Enable GPRS for Communications Medium Policy 0"</parDescription>
 				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
@@ -441,11 +449,11 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="738" level="10" status="0" datatype="Bit" address="394" length="1" bitmask="8" dtu="0" units="" min="0" max="8" >
+		<Parameter parID="740" level="10" status="0" datatype="Bit" address="395" length="1" bitmask="2" dtu="0" units="" min="0" max="2" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Comm. Policy 0 - Enable Roaming GPRS</parName>
-				<parDescription>"Enable Roaming GPRS for Communications Medium Policy 0"</parDescription>
+				<parName>Comm. Policy 1 - Enable GPRS</parName>
+				<parDescription>"Enable GPRS for Communications Medium Policy 1"</parDescription>
 				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
@@ -457,11 +465,11 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="740" level="10" status="0" datatype="Bit" address="395" length="1" bitmask="2" dtu="0" units="" min="0" max="2" >
+		<Parameter parID="741" level="10" status="0" datatype="Bit" address="395" length="1" bitmask="4" dtu="0" units="" min="0" max="4" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Comm. Policy 1 - Enable GPRS</parName>
-				<parDescription>"Enable GPRS for Communications Medium Policy 1"</parDescription>
+				<parName>Comm. Policy 1 - Enable Roaming SMS</parName>
+				<parDescription>"Enable Roaming SMS for Communications Medium Policy 1"</parDescription>
 				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
@@ -473,19 +481,27 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="741" level="10" status="0" datatype="Bit" address="395" length="1" bitmask="4" dtu="0" units="" min="0" max="4" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Comm. Policy 1 - Enable Roaming SMS</parName>
-				<parDescription>"Enable Roaming SMS for Communications Medium Policy 1"</parDescription>
-				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="742" level="10" status="0" datatype="Bit" address="395" length="1" bitmask="8" dtu="0" units="" min="0" max="8" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 1 - Enable Roaming GPRS</parName>
 				<parDescription>"Enable Roaming GPRS for Communications Medium Policy 1"</parDescription>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="873" level="10" status="0" datatype="Bit" address="396" length="1" bitmask="16" dtu="0" units="" min="0" max="16" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Comm. Policy 2 - Enable Iridium</parName>
+				<parDescription>"Enable Iridium Satellite Coms for Communications Medium Policy 2"</parDescription>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="744" level="10" status="0" datatype="Bit" address="396" length="1" bitmask="2" dtu="0" units="" min="0" max="2" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Comm. Policy 2 - Enable GPRS</parName>
+				<parDescription>"Enable GPRS for Communications Medium Policy 2"</parDescription>
 				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
@@ -513,19 +529,19 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="873" level="10" status="0" datatype="Bit" address="396" length="1" bitmask="16" dtu="0" units="" min="0" max="16" >
+		<Parameter parID="748" level="10" status="0" datatype="Bit" address="397" length="1" bitmask="2" dtu="0" units="" min="0" max="2" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Comm. Policy 2 - Enable Iridium</parName>
-				<parDescription>"Enable Iridium Satellite Coms for Communications Medium Policy 2"</parDescription>
+				<parName>Comm. Policy 3 - Enable GPRS</parName>
+				<parDescription>"Enable GPRS for Communications Medium Policy 3"</parDescription>
 				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="744" level="10" status="0" datatype="Bit" address="396" length="1" bitmask="2" dtu="0" units="" min="0" max="2" >
+		<Parameter parID="750" level="10" status="0" datatype="Bit" address="397" length="1" bitmask="8" dtu="0" units="" min="0" max="8" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Comm. Policy 2 - Enable GPRS</parName>
-				<parDescription>"Enable GPRS for Communications Medium Policy 2"</parDescription>
+				<parName>Comm. Policy 3 - Enable Roaming GPRS</parName>
+				<parDescription>"Enable Roaming GPRS for Communications Medium Policy 3"</parDescription>
 				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
@@ -545,35 +561,11 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="750" level="10" status="0" datatype="Bit" address="397" length="1" bitmask="8" dtu="0" units="" min="0" max="8" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Comm. Policy 3 - Enable Roaming GPRS</parName>
-				<parDescription>"Enable Roaming GPRS for Communications Medium Policy 3"</parDescription>
-				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="874" level="10" status="0" datatype="Bit" address="397" length="1" bitmask="16" dtu="0" units="" min="0" max="16" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 3 - Enable Iridium</parName>
 				<parDescription>"Enable Iridium Satellite Coms for Communications Medium Policy 3"</parDescription>
-				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="748" level="10" status="0" datatype="Bit" address="397" length="1" bitmask="2" dtu="0" units="" min="0" max="2" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Comm. Policy 3 - Enable GPRS</parName>
-				<parDescription>"Enable GPRS for Communications Medium Policy 3"</parDescription>
-				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="751" level="10" status="0" datatype="Bit" address="398" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Comm. Policy 4 - Enable SMS</parName>
-				<parDescription>"Enable SMS for Communications Medium Policy 4"</parDescription>
 				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
@@ -585,19 +577,19 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="875" level="10" status="0" datatype="Bit" address="398" length="1" bitmask="16" dtu="0" units="" min="0" max="16" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Comm. Policy 4 - Enable Iridium</parName>
-				<parDescription>"Enable Iridium Satellite Coms for Communications Medium Policy 4"</parDescription>
-				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="753" level="10" status="0" datatype="Bit" address="398" length="1" bitmask="4" dtu="0" units="" min="0" max="4" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 4 - Enable Roaming SMS</parName>
 				<parDescription>"Enable Roaming SMS for Communications Medium Policy 4"</parDescription>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="875" level="10" status="0" datatype="Bit" address="398" length="1" bitmask="16" dtu="0" units="" min="0" max="16" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Comm. Policy 4 - Enable Iridium</parName>
+				<parDescription>"Enable Iridium Satellite Coms for Communications Medium Policy 4"</parDescription>
 				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
@@ -609,19 +601,11 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="758" level="10" status="0" datatype="Bit" address="399" length="1" bitmask="8" dtu="0" units="" min="0" max="8" >
+		<Parameter parID="751" level="10" status="0" datatype="Bit" address="398" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Comm. Policy 5 - Enable Roaming GPRS</parName>
-				<parDescription>"Enable Roaming GPRS for Communications Medium Policy 5"</parDescription>
-				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="755" level="10" status="0" datatype="Bit" address="399" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Comm. Policy 5 - Enable SMS</parName>
-				<parDescription>"Enable SMS for Communications Medium Policy 5"</parDescription>
+				<parName>Comm. Policy 4 - Enable SMS</parName>
+				<parDescription>"Enable SMS for Communications Medium Policy 4"</parDescription>
 				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
@@ -633,11 +617,27 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="758" level="10" status="0" datatype="Bit" address="399" length="1" bitmask="8" dtu="0" units="" min="0" max="8" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Comm. Policy 5 - Enable Roaming GPRS</parName>
+				<parDescription>"Enable Roaming GPRS for Communications Medium Policy 5"</parDescription>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="876" level="10" status="0" datatype="Bit" address="399" length="1" bitmask="16" dtu="0" units="" min="0" max="16" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 5 - Enable Iridium</parName>
 				<parDescription>"Enable Iridium Satellite Coms for Communications Medium Policy 5"</parDescription>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="755" level="10" status="0" datatype="Bit" address="399" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Comm. Policy 5 - Enable SMS</parName>
+				<parDescription>"Enable SMS for Communications Medium Policy 5"</parDescription>
 				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
@@ -649,19 +649,19 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="762" level="10" status="0" datatype="Bit" address="400" length="1" bitmask="8" dtu="0" units="" min="0" max="8" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Comm. Policy 6 - Enable Roaming GPRS</parName>
+				<parDescription>"Enable Roaming GPRS for Communications Medium Policy 6"</parDescription>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="760" level="10" status="0" datatype="Bit" address="400" length="1" bitmask="2" dtu="0" units="" min="0" max="2" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Comm. Policy 6 - Enable GPRS</parName>
 				<parDescription>"Enable GPRS for Communications Medium Policy 6"</parDescription>
-				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="761" level="10" status="0" datatype="Bit" address="400" length="1" bitmask="4" dtu="0" units="" min="0" max="4" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Comm. Policy 6 - Enable Roaming SMS</parName>
-				<parDescription>"Enable Roaming SMS for Communications Medium Policy 6"</parDescription>
 				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
@@ -681,11 +681,27 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="762" level="10" status="0" datatype="Bit" address="400" length="1" bitmask="8" dtu="0" units="" min="0" max="8" >
+		<Parameter parID="761" level="10" status="0" datatype="Bit" address="400" length="1" bitmask="4" dtu="0" units="" min="0" max="4" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Comm. Policy 6 - Enable Roaming GPRS</parName>
-				<parDescription>"Enable Roaming GPRS for Communications Medium Policy 6"</parDescription>
+				<parName>Comm. Policy 6 - Enable Roaming SMS</parName>
+				<parDescription>"Enable Roaming SMS for Communications Medium Policy 6"</parDescription>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="766" level="10" status="0" datatype="Bit" address="401" length="1" bitmask="8" dtu="0" units="" min="0" max="8" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Comm. Policy 7 - Enable Roaming GPRS</parName>
+				<parDescription>"Enable Roaming GPRS for Communications Medium Policy 7"</parDescription>
+				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="878" level="10" status="0" datatype="Bit" address="401" length="1" bitmask="16" dtu="0" units="" min="0" max="16" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Comm. Policy 7 - Enable Iridium</parName>
+				<parDescription>"Enable Iridium Satellite Coms for Communications Medium Policy 7"</parDescription>
 				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
@@ -713,20 +729,12 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="878" level="10" status="0" datatype="Bit" address="401" length="1" bitmask="16" dtu="0" units="" min="0" max="16" >
+		<Parameter parID="1022" level="10" status="0" datatype="Bit" address="402" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Comm. Policy 7 - Enable Iridium</parName>
-				<parDescription>"Enable Iridium Satellite Coms for Communications Medium Policy 7"</parDescription>
-				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="766" level="10" status="0" datatype="Bit" address="401" length="1" bitmask="8" dtu="0" units="" min="0" max="8" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Comm. Policy 7 - Enable Roaming GPRS</parName>
-				<parDescription>"Enable Roaming GPRS for Communications Medium Policy 7"</parDescription>
-				<parNotes>"See &quot;Communications Medium Policy 0 - Enable SMS&quot;"</parNotes>
+				<parName>CM Immediate SMS Fallback</parName>
+				<parDescription>"CM Immediate SMS Fallback during VOICE/DATA call"</parDescription>
+				<parNotes>"CM Immediate SMS Fallback during VOICE/DATA call will invalidate the GPRS medium and force events to be sent using SMS."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1416" level="10" status="0" datatype="Bit" address="402" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
@@ -735,14 +743,6 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 				<parName>CM High Priority Packed Event</parName>
 				<parDescription>"CM High Priority Packed Event"</parDescription>
 				<parNotes>"CM High Priority Packed Event will pack more than 1 high priority event per message if more than one event is available. This can be up to 8 events per message."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1022" level="10" status="0" datatype="Bit" address="402" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>CM Immediate SMS Fallback</parName>
-				<parDescription>"CM Immediate SMS Fallback during VOICE/DATA call"</parDescription>
-				<parNotes>"CM Immediate SMS Fallback during VOICE/DATA call will invalidate the GPRS medium and force events to be sent using SMS."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1350" level="0" status="0" datatype="Word" address="407" length="2" bitmask="255" dtu="0" units="meters" min="100" max="10000" >
@@ -942,12 +942,12 @@ Set Global Pass-through enable.
 				<parNotes>"Exclude any positional information from the Second-by-Second logs"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1671" level="10" status="0" datatype="Bit" address="420" length="1" bitmask="128" dtu="0" units="" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
+		<Parameter parID="1491" level="5" status="0" datatype="Bit" address="420" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Enable Full Rate Data Streaming</parName>
-				<parDescription>"Enable Full Rate Data Streaming"</parDescription>
-				<parNotes>"Enable Full Rate Data Streaming will send all accelerometer samples. If not enabled the data will be sub-sampled to 50 samples per second."</parNotes>
+				<parName>Use Second-by-Second version 2 records</parName>
+				<parDescription>"By enabling this the logs reported will exclude the Z axis G-Force and include Altitude information"</parDescription>
+				<parNotes>"By enabling this the logs reported will exclude the Z axis G-Force and include Altitude information"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1555" level="5" status="0" datatype="Bit" address="420" length="1" bitmask="16" dtu="1" units="" min="0" max="1" >
@@ -966,20 +966,20 @@ Set Global Pass-through enable.
 				<parNotes>"Enable sending the journey log data in DDS format"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1671" level="10" status="0" datatype="Bit" address="420" length="1" bitmask="128" dtu="0" units="" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable Full Rate Data Streaming</parName>
+				<parDescription>"Enable Full Rate Data Streaming"</parDescription>
+				<parNotes>"Enable Full Rate Data Streaming will send all accelerometer samples. If not enabled the data will be sub-sampled to 50 samples per second."</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1625" level="10" status="0" datatype="Bit" address="420" length="1" bitmask="64" dtu="1" units="" min="0" max="1" >
 			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Enable Data Streaming</parName>
 				<parDescription>"Enable Data Streaming"</parDescription>
 				<parNotes>"Enable Data Streaming"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1491" level="5" status="0" datatype="Bit" address="420" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Use Second-by-Second version 2 records</parName>
-				<parDescription>"By enabling this the logs reported will exclude the Z axis G-Force and include Altitude information"</parDescription>
-				<parNotes>"By enabling this the logs reported will exclude the Z axis G-Force and include Altitude information"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="31" level="10" status="1" datatype="Word" address="421" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -1038,6 +1038,16 @@ Set Global Pass-through enable.
 				<parNotes>"The value represents the debug time-out in minutes. Setting the value to 255 is a special case causing the debugs to be permanently active."</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="295" level="0" status="0" datatype="Bit" address="431" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable System Log</parName>
+				<parDescription>"Enable the system log"</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+None"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1819" level="5" status="0" datatype="Bit" address="431" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -1048,14 +1058,12 @@ The logging for each individual module is controlled using the Debug Mask."</par
 The logging for each individual module is controlled using the Debug Mask."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="295" level="0" status="0" datatype="Bit" address="431" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
+		<Parameter parID="1231" level="5" status="0" datatype="Bit" address="431" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Enable System Log</parName>
-				<parDescription>"Enable the system log"</parDescription>
-				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None"</parNotes>
+				<parName>Enable System Log Event: Critical</parName>
+				<parDescription>"Enable Sending Scope Debug Event for System Log Critical Entries."</parDescription>
+				<parNotes>""</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1230" level="5" status="0" datatype="Bit" address="431" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
@@ -1074,11 +1082,11 @@ None"</parNotes>
 				<parNotes>"Enable Sending Scope Debug Event for System Log Info Entries. Scope Debug Event has to be Configured."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1231" level="5" status="0" datatype="Bit" address="431" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
+		<Parameter parID="1229" level="5" status="0" datatype="Bit" address="431" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Enable System Log Event: Critical</parName>
-				<parDescription>"Enable Sending Scope Debug Event for System Log Critical Entries."</parDescription>
+				<parName>Enable System Log Event: Failure</parName>
+				<parDescription>"Enable Sending Scope Debug Event for System Log Failure Entries."</parDescription>
 				<parNotes>""</parNotes>
 			</parInfo>
 		</Parameter>
@@ -1087,14 +1095,6 @@ None"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Enable System Log Event: Warning</parName>
 				<parDescription>"Enable Sending Scope Debug Event for System Log Warning Entries."</parDescription>
-				<parNotes>""</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1229" level="5" status="0" datatype="Bit" address="431" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable System Log Event: Failure</parName>
-				<parDescription>"Enable Sending Scope Debug Event for System Log Failure Entries."</parDescription>
 				<parNotes>""</parNotes>
 			</parInfo>
 		</Parameter>
@@ -1108,20 +1108,12 @@ None"</parNotes>
 Calibrate Thermistor reading for correct temperature read out"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="231" level="10" status="0" datatype="Bit" address="436" length="1" bitmask="1" dtu="0" units="Flag" min="0" max="1" >
+		<Parameter parID="1587" level="10" status="0" datatype="Bit" address="436" length="1" bitmask="128" dtu="0" units="" min="0" max="1" >
 			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Enable Accident Reconstruction Logging</parName>
-				<parDescription>"Enable Accident Reconstruction Logging "</parDescription>
-				<parNotes>"Turning ON this parameter will enable the accident reconstruction functionality of the MHub918."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="233" level="10" status="0" datatype="Bit" address="436" length="1" bitmask="4" dtu="0" units="Flag" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Verify Speed</parName>
-				<parDescription>"Set this bit to verify that the selected speed of the vehicle is greater than required minimum"</parDescription>
-				<parNotes>"Accident reconstruction data is recorded every second. Limitations can be placed on the recording of data to ensure that only relevant data is recorded. The MHub does not really need to record data when the vehicle is standing still. If this value is enabled, then the accident recording will only occur if the speed of the vehicle is greater than the speed specified in the &quot;Minimum Required Speed&quot; parameter under the Accident Reconstruction section."</parNotes>
+				<parName>Accelerometer Unplug Verification</parName>
+				<parDescription>"Accelerometer Unplug Verification"</parDescription>
+				<parNotes>"Accelerometer Unplug Verification is used in conjunction with Mains Voltage to determine if a unit is being unplugged and moved."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1436" level="10" status="0" datatype="Bit" address="436" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
@@ -1132,20 +1124,12 @@ Calibrate Thermistor reading for correct temperature read out"</parNotes>
 				<parNotes>"Accelerometer Wake-up from sleep"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1587" level="10" status="0" datatype="Bit" address="436" length="1" bitmask="128" dtu="0" units="" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
+		<Parameter parID="233" level="10" status="0" datatype="Bit" address="436" length="1" bitmask="4" dtu="0" units="Flag" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Accelerometer Unplug Verification</parName>
-				<parDescription>"Accelerometer Unplug Verification"</parDescription>
-				<parNotes>"Accelerometer Unplug Verification is used in conjunction with Mains Voltage to determine if a unit is being unplugged and moved."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="232" level="10" status="0" datatype="Bit" address="436" length="1" bitmask="2" dtu="0" units="Flag" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Verify Ignition On</parName>
-				<parDescription>"Only write accident reconstruction records if ignition is ON"</parDescription>
-				<parNotes>"When accident reconstruction is enabled on the MHub, certain information is recorded every second that is to be used in the event of an accident to reconstruct the accident. Limitations can be placed on the recording of the accident data. Enabling this parameter will result in the accident data only being recorded when ignition is ON. "</parNotes>
+				<parName>Verify Speed</parName>
+				<parDescription>"Set this bit to verify that the selected speed of the vehicle is greater than required minimum"</parDescription>
+				<parNotes>"Accident reconstruction data is recorded every second. Limitations can be placed on the recording of data to ensure that only relevant data is recorded. The MHub does not really need to record data when the vehicle is standing still. If this value is enabled, then the accident recording will only occur if the speed of the vehicle is greater than the speed specified in the &quot;Minimum Required Speed&quot; parameter under the Accident Reconstruction section."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1359" level="5" status="0" datatype="Bit" address="436" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
@@ -1162,6 +1146,22 @@ Calibrate Thermistor reading for correct temperature read out"</parNotes>
 				<parName>Non Trip AR Log</parName>
 				<parDescription>"Non Trip AR Log every 60s"</parDescription>
 				<parNotes>"Non Trip AR Log every 60s"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="231" level="10" status="0" datatype="Bit" address="436" length="1" bitmask="1" dtu="0" units="Flag" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable Accident Reconstruction Logging</parName>
+				<parDescription>"Enable Accident Reconstruction Logging "</parDescription>
+				<parNotes>"Turning ON this parameter will enable the accident reconstruction functionality of the MHub918."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="232" level="10" status="0" datatype="Bit" address="436" length="1" bitmask="2" dtu="0" units="Flag" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Verify Ignition On</parName>
+				<parDescription>"Only write accident reconstruction records if ignition is ON"</parDescription>
+				<parNotes>"When accident reconstruction is enabled on the MHub, certain information is recorded every second that is to be used in the event of an accident to reconstruct the accident. Limitations can be placed on the recording of the accident data. Enabling this parameter will result in the accident data only being recorded when ignition is ON. "</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1311" level="5" status="0" datatype="Bit" address="436" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
@@ -1190,12 +1190,22 @@ Calibrate Thermistor reading for correct temperature read out"</parNotes>
 1 = Expanded Memory"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1593" level="10" status="0" datatype="Bit" address="439" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
+		<Parameter parID="719" level="10" status="0" datatype="Bit" address="439" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Insurance Led Style</parName>
-				<parDescription>"Insurance Led Style"</parDescription>
-				<parNotes>"Insurance Led Style. GREEN Hardware Ok, RED Hardware Fault - Triggers upon device plug in. "</parNotes>
+				<parName>Enable Box Leds</parName>
+				<parDescription>"Enable Box Leds"</parDescription>
+				<parNotes>"The MHub has 3 LED&apos;s that are used to indicate various operational states of teh MHub, this is particularly usefull during the installation and fault diagnosis processes to determine of the MHub is operating correctly. However from a vehicle being stolen scenario, flashing LED&apos;s will draw attention to the MHub. It is thus possible to turn OFF the LED&apos;s completely by disabling this parameter."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="173" level="0" status="0" datatype="Bit" address="439" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable Error Debug Messages</parName>
+				<parDescription>"Enable Error Debug Messages"</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Setting this parameter to 1 will enable Error Debug messages"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="172" level="0" status="0" datatype="Bit" address="439" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
@@ -1226,22 +1236,20 @@ On - OBD protocol found. Short off indicates activity.
 "</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1593" level="10" status="0" datatype="Bit" address="439" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Insurance Led Style</parName>
+				<parDescription>"Insurance Led Style"</parDescription>
+				<parNotes>"Insurance Led Style. GREEN Hardware Ok, RED Hardware Fault - Triggers upon device plug in. "</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="732" level="10" status="0" datatype="Bit" address="439" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Enable USB Debug</parName>
 				<parDescription>"Enables use of the USB connector for Debug functionality."</parDescription>
 				<parNotes>"Set this value to 1 to enable debug information to be streamed out of the USB port, else set it to 0 to disable it"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="173" level="0" status="0" datatype="Bit" address="439" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable Error Debug Messages</parName>
-				<parDescription>"Enable Error Debug Messages"</parDescription>
-				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Setting this parameter to 1 will enable Error Debug messages"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="171" level="0" status="0" datatype="Bit" address="439" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
@@ -1252,14 +1260,6 @@ Setting this parameter to 1 will enable Error Debug messages"</parNotes>
 				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
 
 Setting this parameter to 1 will enable Info Debug messages"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="719" level="10" status="0" datatype="Bit" address="439" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable Box Leds</parName>
-				<parDescription>"Enable Box Leds"</parDescription>
-				<parNotes>"The MHub has 3 LED&apos;s that are used to indicate various operational states of teh MHub, this is particularly usefull during the installation and fault diagnosis processes to determine of the MHub is operating correctly. However from a vehicle being stolen scenario, flashing LED&apos;s will draw attention to the MHub. It is thus possible to turn OFF the LED&apos;s completely by disabling this parameter."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1390" level="10" status="1" datatype="Byte" address="440" length="1" bitmask="255" dtu="0" units="" min="0" max="1" >
@@ -1284,20 +1284,44 @@ Any other value - Same as 0."</parNotes>
 Mains Dev. Threshold"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1424" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Trip Source GPS Speed</parName>
+				<parDescription>"Trip Source GPS Speed"</parDescription>
+				<parNotes>"Trip Source GPS Speed the gps speed has to exceed the speed threshold for ignition on. GPS speed is only used if the GPS signal is deemed good e.g. 3D lock for longer than 5 seconds with HDOP less than 100m"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1421" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Trip Source Mains Voltage</parName>
+				<parDescription>"Trip Source Mains Voltage"</parDescription>
+				<parNotes>"Trip Source Mains Voltage the mains supply voltage has to exceed the threshold for ignition on"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1423" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Trip Source Accelerometer</parName>
+				<parDescription>"Trip Source Accelerometer"</parDescription>
+				<parNotes>"Trip Source Accelerometer the accelerometer movement has to exceed the accelerometer movement threshold for ignition on"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1420" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Trip Source Ignition Line</parName>
+				<parDescription>"Trip Source Ignition Line "</parDescription>
+				<parNotes>"Trip Source Ignition Line using ignition input"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1422" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
 			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Trip Source Mains Dev.</parName>
 				<parDescription>"Trip Source Mains Dev"</parDescription>
 				<parNotes>"Trip Source Mains Dev."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1427" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="128" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Trip Source CANBus</parName>
-				<parDescription>"Trip Source CANBus"</parDescription>
-				<parNotes>"Trip Source CANBus if CANBus activity is present ignition on. Most vehicles switch off the Vehicle CANBus outside of trip. Verify in the vehicle before enabling."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1425" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
@@ -1316,36 +1340,12 @@ Mains Dev. Threshold"</parNotes>
 				<parNotes>"Trip Source OBD2 RPM and RPM above 0 will trigger ignition on"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1424" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
+		<Parameter parID="1427" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="128" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Trip Source GPS Speed</parName>
-				<parDescription>"Trip Source GPS Speed"</parDescription>
-				<parNotes>"Trip Source GPS Speed the gps speed has to exceed the speed threshold for ignition on. GPS speed is only used if the GPS signal is deemed good e.g. 3D lock for longer than 5 seconds with HDOP less than 100m"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1420" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Trip Source Ignition Line</parName>
-				<parDescription>"Trip Source Ignition Line "</parDescription>
-				<parNotes>"Trip Source Ignition Line using ignition input"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1421" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Trip Source Mains Voltage</parName>
-				<parDescription>"Trip Source Mains Voltage"</parDescription>
-				<parNotes>"Trip Source Mains Voltage the mains supply voltage has to exceed the threshold for ignition on"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1423" level="10" status="0" datatype="Bit" address="472" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Trip Source Accelerometer</parName>
-				<parDescription>"Trip Source Accelerometer"</parDescription>
-				<parNotes>"Trip Source Accelerometer the accelerometer movement has to exceed the accelerometer movement threshold for ignition on"</parNotes>
+				<parName>Trip Source CANBus</parName>
+				<parDescription>"Trip Source CANBus"</parDescription>
+				<parNotes>"Trip Source CANBus if CANBus activity is present ignition on. Most vehicles switch off the Vehicle CANBus outside of trip. Verify in the vehicle before enabling."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1428" level="10" status="0" datatype="Bit" address="473" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
@@ -1380,18 +1380,10 @@ Mains Dev. Threshold"</parNotes>
 				<parNotes>"Trip Source GSM if the unit detects movement of the unit relative to cell towers ignition on"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="846" level="10" status="0" datatype="Bit" address="477" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Data Triggered TCP Socket</parName>
-				<parDescription>"when enabled the unit will only open a socket if there is data to be sent to MProfiler. This is overidden by the Permanent TCP Socket switch."</parDescription>
-				<parNotes>"The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will only be opened if there is data to be sent. Enabling this parameter will instruct the MHub to only open a socket to Mprofiler if there is data to be sent. Note that if the Permanent TCP Socket parameter is also enabled, that that will override this parameter."</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="845" level="10" status="0" datatype="Bit" address="477" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
 			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Permanent TCP Socket</parName>
+				<parName>MProfiler TCP Socket Enable</parName>
 				<parDescription>"Enables a permanent TCP socket to MProfiler"</parDescription>
 				<parNotes>"The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will remain permanently open. Enabling this parameter will instruct the MHub to open up a socket and attempt to keep the socket open at all time. Should the socket drop for any reason, the MHub will immediately reopen the socket again."</parNotes>
 			</parInfo>
@@ -1470,18 +1462,6 @@ Value of 0 Disables Reckless Acceleration and Braking Checking"</parNotes>
  2 g = 100"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1324" level="0" status="0" datatype="Bit" address="529" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Harsh Acceleration Source</parName>
-				<parDescription>"Harsh Acceleration Source"</parDescription>
-				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Harsh Acceleration Source:
-0 : Sensor
-1 : Accelerometer"</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="904" level="0" status="0" datatype="Bit" address="529" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
 			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -1492,6 +1472,18 @@ Harsh Acceleration Source:
 Harsh Braking Source:
  0 : Sensor
  1 : Accelerometer"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1324" level="0" status="0" datatype="Bit" address="529" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Harsh Acceleration Source</parName>
+				<parDescription>"Harsh Acceleration Source"</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Harsh Acceleration Source:
+0 : Sensor
+1 : Accelerometer"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1303" level="10" status="0" datatype="Word" address="536" length="2" bitmask="255" dtu="0" units="" min="0" max="600" >
@@ -2187,6 +2179,14 @@ e.g. 2 * 0.02 = 0.04g"</parNotes>
 				<parNotes>"Wake Up Source Accelerometer"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1499" level="10" status="0" datatype="Bit" address="795" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Wake Up Source Input B</parName>
+				<parDescription>"Wake Up Source Input B"</parDescription>
+				<parNotes>"Wake Up Source Input B State Change"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1498" level="10" status="0" datatype="Bit" address="795" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -2201,14 +2201,6 @@ e.g. 2 * 0.02 = 0.04g"</parNotes>
 				<parName>Wake Up Source Ignition</parName>
 				<parDescription>"Wake Up Source: Ignition"</parDescription>
 				<parNotes>"Wake Up Source: Ignition"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1499" level="10" status="0" datatype="Bit" address="795" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Wake Up Source Input B</parName>
-				<parDescription>"Wake Up Source Input B"</parDescription>
-				<parNotes>"Wake Up Source Input B State Change"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="805" level="0" status="0" datatype="Byte" address="808" length="8" bitmask="255" dtu="0" units="64-Bit ID" min="0" max="0" >
@@ -7894,24 +7886,6 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="1049" />
 			</catParameters>
 		</Category>
-		<Category catName="Modem - MProfiler">
-			<catDescription>
-				Modem - MProfiler
-			</catDescription>
-			<catParameters>
-				<catParameter parID="31" />
-				<catParameter parID="86" />
-				<catParameter parID="89" />
-				<catParameter parID="90" />
-				<catParameter parID="102" />
-				<catParameter parID="252" />
-				<catParameter parID="32" />
-				<catParameter parID="1345" />
-				<catParameter parID="1344" />
-				<catParameter parID="1346" />
-				<catParameter parID="1347" />
-			</catParameters>
-		</Category>
 		<Category catName="Modem - TCP Socket">
 			<catDescription>
 				Modem - TCP Socket
@@ -7923,13 +7897,30 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="99" />
 				<catParameter parID="100" />
 				<catParameter parID="101" />
-				<catParameter parID="845" />
-				<catParameter parID="846" />
 				<catParameter parID="119" />
 				<catParameter parID="120" />
 				<catParameter parID="121" />
 				<catParameter parID="831" />
 				<catParameter parID="832" />
+			</catParameters>
+		</Category>
+		<Category catName="MProfiler Connection">
+			<catDescription>
+				MProfiler Connection
+			</catDescription>
+			<catParameters>
+				<catParameter parID="31" />
+				<catParameter parID="845" />
+				<catParameter parID="86" />
+				<catParameter parID="89" />
+				<catParameter parID="90" />
+				<catParameter parID="102" />
+				<catParameter parID="252" />
+				<catParameter parID="32" />
+				<catParameter parID="1345" />
+				<catParameter parID="1344" />
+				<catParameter parID="1346" />
+				<catParameter parID="1347" />
 			</catParameters>
 		</Category>
 		<Category catName="OBC">

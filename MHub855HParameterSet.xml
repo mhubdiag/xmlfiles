@@ -1,4 +1,4 @@
-<MhubParameterSet created="2024-11-20T15:56:41+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2024-11-20T16:22:15+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -4641,7 +4641,7 @@ Set to 1 for Active low i.e. open collector output is ON (low) for amplifier mut
 			<Help>TCP Port through which the socket will be opened</Help>
 			<Notes>When the MHub connects to MProfiler vis GPRS the Mhub opens up a socket to the MProfiler Server. This parameter specifies the port through which the socket will be opened.</Notes>
 		</Parameter>
-		<Parameter name="MProfiler TCP Socket Enable" level="10" datatype="Bit" address="477" length="1" bitmask="2" dtu="0">
+		<Parameter name="GPRS / LTE TCP Socket Enable" level="10" datatype="Bit" address="477" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Enables a permanent TCP socket to MProfiler</Help>
 			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will remain permanently open. Enabling this parameter will instruct the MHub to open up a socket and attempt to keep the socket open at all time. Should the socket drop for any reason, the MHub will immediately reopen the socket again.</Notes>
@@ -5026,15 +5026,15 @@ If set to zero then reports will continue indefinitely</Notes>
 			<Help>Ignition Source: Trigger</Help>
 			<Notes>Ignition Source is set to Trigger which is a software controlled ignition source.</Notes>
 		</Parameter>
-		<Parameter name="Ignition Source: Accelerometer" level="5" datatype="Bit" address="1829" length="1" bitmask="64" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Ignition Source: Accelerometer</Help>
-			<Notes>One more possible source of ignition is to use Accelerometer movement. If Accelerometer movement is greater than the value specified in parameter &quot;Accelerometer Ignition On Threshold&quot;, the vehicle is moving. If Accelerometer is to be used as ignition, this parameter is set to 1.</Notes>
-		</Parameter>
 		<Parameter name="Ignition Source: Alternate" level="10" datatype="Bit" address="1829" length="1" bitmask="128" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Ignition Source: Alternate</Help>
 			<Notes>Ignition Source Alternate uses new method for ignition. Configure sources with Trip Source Ignition Line etc.</Notes>
+		</Parameter>
+		<Parameter name="Ignition Source: Accelerometer" level="5" datatype="Bit" address="1829" length="1" bitmask="64" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Ignition Source: Accelerometer</Help>
+			<Notes>One more possible source of ignition is to use Accelerometer movement. If Accelerometer movement is greater than the value specified in parameter &quot;Accelerometer Ignition On Threshold&quot;, the vehicle is moving. If Accelerometer is to be used as ignition, this parameter is set to 1.</Notes>
 		</Parameter>
 		<Parameter name="Ignition Source from RPM Threshold" level="10" datatype="Byte" address="1830" length="1" bitmask="255" dtu="0">
 			<Values min="1" max="255" default="3" previous="" current="" units="RPM" />

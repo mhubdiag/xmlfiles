@@ -1,4 +1,4 @@
-<MhubParameterSet created="2024-11-20T15:56:40+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2024-11-20T16:22:14+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -2640,6 +2640,13 @@ Distance in meters from Last Valid position up to which the last valid position 
 			<Help>GPS Software Antenna Connection Status </Help>
 			<Notes>GPS Software Antenna Connection Status detect antenna presence in software instead of hardware detection.</Notes>
 		</Parameter>
+		<Parameter name="Disable GPS Speed Accuracy Filter" level="10" datatype="Bit" address="1521" length="1" bitmask="8" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Disable GPS Speed Accuracy Filter</Help>
+			<Notes>Disable GPS Speed Accuracy Filter. 
+
+GPS Speed Accuracy Filter will require the current GPS Speed to be greater than the current GPS Speed Accuracy measure to be used in calculations and events. </Notes>
+		</Parameter>
 		<Parameter name="Enable GPS FixNow Mode" level="10" datatype="Bit" address="1521" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enable GPS FixNow Mode</Help>
@@ -2649,13 +2656,6 @@ Distance in meters from Last Valid position up to which the last valid position 
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enable GPS FixNow Mode in Sleep</Help>
 			<Notes>Enable GPS FixNow Mode in Sleep will have the GPS powered in sleep mode until Power Mode time to Deep Sleep has elapsed.</Notes>
-		</Parameter>
-		<Parameter name="Disable GPS Speed Accuracy Filter" level="10" datatype="Bit" address="1521" length="1" bitmask="8" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Disable GPS Speed Accuracy Filter</Help>
-			<Notes>Disable GPS Speed Accuracy Filter. 
-
-GPS Speed Accuracy Filter will require the current GPS Speed to be greater than the current GPS Speed Accuracy measure to be used in calculations and events. </Notes>
 		</Parameter>
 		<Parameter name="Enable GPS AssistNow Autonomous" level="10" datatype="Bit" address="1521" length="1" bitmask="4" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -4333,7 +4333,7 @@ Number of seconds before the Modem/MHub reboots due to failing to contact the MP
 			<Help>TCP Port through which the socket will be opened</Help>
 			<Notes>When the MHub connects to MProfiler vis GPRS the Mhub opens up a socket to the MProfiler Server. This parameter specifies the port through which the socket will be opened.</Notes>
 		</Parameter>
-		<Parameter name="MProfiler TCP Socket Enable" level="10" datatype="Bit" address="477" length="1" bitmask="2" dtu="0">
+		<Parameter name="GPRS / LTE TCP Socket Enable" level="10" datatype="Bit" address="477" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Enables a permanent TCP socket to MProfiler</Help>
 			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will remain permanently open. Enabling this parameter will instruct the MHub to open up a socket and attempt to keep the socket open at all time. Should the socket drop for any reason, the MHub will immediately reopen the socket again.</Notes>
@@ -4446,11 +4446,6 @@ Mains Dev. Threshold</Notes>
 			<Help>Trip Source GPS Speed</Help>
 			<Notes>Trip Source GPS Speed the gps speed has to exceed the speed threshold for ignition on. GPS speed is only used if the GPS signal is deemed good e.g. 3D lock for longer than 5 seconds with HDOP less than 100m</Notes>
 		</Parameter>
-		<Parameter name="Trip Source CANBus" level="10" datatype="Bit" address="472" length="1" bitmask="128" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Trip Source CANBus</Help>
-			<Notes>Trip Source CANBus if CANBus activity is present ignition on. Most vehicles switch off the Vehicle CANBus outside of trip. Verify in the vehicle before enabling.</Notes>
-		</Parameter>
 		<Parameter name="Trip Source Ignition Line" level="10" datatype="Bit" address="472" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Trip Source Ignition Line </Help>
@@ -4460,6 +4455,11 @@ Mains Dev. Threshold</Notes>
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Trip Source Mains Voltage</Help>
 			<Notes>Trip Source Mains Voltage the mains supply voltage has to exceed the threshold for ignition on</Notes>
+		</Parameter>
+		<Parameter name="Trip Source CANBus" level="10" datatype="Bit" address="472" length="1" bitmask="128" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Trip Source CANBus</Help>
+			<Notes>Trip Source CANBus if CANBus activity is present ignition on. Most vehicles switch off the Vehicle CANBus outside of trip. Verify in the vehicle before enabling.</Notes>
 		</Parameter>
 		<Parameter name="Trip Source Mains Dev." level="10" datatype="Bit" address="472" length="1" bitmask="4" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />

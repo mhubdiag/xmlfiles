@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="12" unitType="MHub8463" created="2024-11-20T15:56:27+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="12" unitType="MHub8463" created="2024-11-20T16:22:00+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="2" level="10" status="0" datatype="Word" address="256" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
@@ -1739,7 +1739,7 @@ Mains Dev. Threshold"</parNotes>
 		<Parameter parID="845" level="10" status="0" datatype="Bit" address="477" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
 			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>MProfiler TCP Socket Enable</parName>
+				<parName>GPRS / LTE TCP Socket Enable</parName>
 				<parDescription>"Enables a permanent TCP socket to MProfiler"</parDescription>
 				<parNotes>"The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will remain permanently open. Enabling this parameter will instruct the MHub to open up a socket and attempt to keep the socket open at all time. Should the socket drop for any reason, the MHub will immediately reopen the socket again."</parNotes>
 			</parInfo>

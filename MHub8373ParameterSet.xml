@@ -1,4 +1,4 @@
-<MhubParameterSet created="2024-11-20T15:56:40+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2024-11-20T16:22:14+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -3984,7 +3984,7 @@ Number of seconds before the Modem/MHub reboots due to failing to contact the MP
 			<Help>TCP Port through which the socket will be opened</Help>
 			<Notes>When the MHub connects to MProfiler vis GPRS the Mhub opens up a socket to the MProfiler Server. This parameter specifies the port through which the socket will be opened.</Notes>
 		</Parameter>
-		<Parameter name="MProfiler TCP Socket Enable" level="10" datatype="Bit" address="477" length="1" bitmask="2" dtu="0">
+		<Parameter name="GPRS / LTE TCP Socket Enable" level="10" datatype="Bit" address="477" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Enables a permanent TCP socket to MProfiler</Help>
 			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will remain permanently open. Enabling this parameter will instruct the MHub to open up a socket and attempt to keep the socket open at all time. Should the socket drop for any reason, the MHub will immediately reopen the socket again.</Notes>

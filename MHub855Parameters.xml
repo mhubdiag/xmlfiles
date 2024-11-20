@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="5" unitType="MHub855" created="2024-11-20T16:22:01+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="5" unitType="MHub855" created="2024-11-20T21:49:53+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="2" level="10" status="0" datatype="Word" address="256" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
@@ -242,9 +242,11 @@ None"</parNotes>
 		<Parameter parID="1031" level="15" status="0" datatype="Byte" address="307" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Text Auth-List Enable</parName>
-				<parDescription>"Enables Auth List security for Text SMS commands."</parDescription>
-				<parNotes>"Enables Auth List security for Text SMS commands."</parNotes>
+				<parName>Text Auth-List ONLY Enable</parName>
+				<parDescription>"Enables Auth List ONLY security for Text SMS commands.
+Any MSISDN on the Auth list is always allowed."</parDescription>
+				<parNotes>"Enables Auth List ONLY security for Text SMS commands.
+Any MSISDN on the Auth list is always allowed."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1043" level="15" status="0" datatype="Byte" address="308" length="1" bitmask="255" dtu="0" units="" min="0" max="3" >
@@ -2840,7 +2842,7 @@ For correct opetation of the MHUb, the modem should be set to class XXX
 		<Parameter parID="1027" level="15" status="0" datatype="String" address="643" length="20" bitmask="255" dtu="0" units="" min="0" max="0" >
 			<parValues default="" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>White List MSISDN 3</parName>
+				<parName>Auth List MSISDN 3</parName>
 				<parDescription>"MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.
 "</parDescription>
 				<parNotes>""</parNotes>
@@ -3852,14 +3854,6 @@ Acc Min Braking Duration is the minimum duration to trigger accident event. Conf
 				<parNotes>"None"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="110" level="15" status="0" datatype="Word" address="1112" length="2" bitmask="255" dtu="1" units="Seconds" min="0" max="65535" >
-			<parValues default="600" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>PDA Off Delay</parName>
-				<parDescription>"Delay for PDA Power Down with ignition off in seconds"</parDescription>
-				<parNotes>"Delay for PDA Power Down with ignition off in seconds"</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="111" level="10" status="0" datatype="Word" address="1114" length="2" bitmask="255" dtu="1" units="Seconds" min="0" max="65535" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -4090,14 +4084,6 @@ Acc Min Braking Duration is the minimum duration to trigger accident event. Conf
 				<parName>Enable Deep Sleep Power Mode</parName>
 				<parDescription>"Enable Deep Sleep Power Mode: Master Clock running 32Khz. Modem Sleep Scan Not Available. Wake-up from Ignition Only."</parDescription>
 				<parNotes>"In addition to the IDLE and SLEEP power modes of the Mhub, there is also an Deep Sleep Power state, where the MHub will only wake up from the ignition line being turned ON. It cannot periodically wake up to check for incomming messages. Setting this parameter will enable this Deep Sleep Power Mode."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="856" level="10" status="0" datatype="Bit" address="1157" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable Modem W32 Sleep Scan</parName>
-				<parDescription>"NOT USED - Sleep scan mode from sleep will be entered by Modem Activity. This is dependant on network e.g. Unpredictable."</parDescription>
-				<parNotes>"NOT USED - When the Mhub is in SLEEP mode, and the modem enabled to be in W32K idle mode, the modem is able to recieve a SMS message. Now ehen the modem recieves a SMS message, it will send a message to the MHub, the mhub will then wake up and read the SMS from the modem. The drawback of this is that the MHub will wake up if anything is sent from the modem to the MHub. For instance if for some reason the modem switches to a different GSM tower while in W32K mode, it will also send a message to the MHub, and the MHub will then wake up - see that there is not really a SMS, and go back to SLEEP modem again. Thus the Mhub wakes up from sleep mode without really having to. Setting this value to 1 will enable this functionality."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1354" level="10" status="0" datatype="Bit" address="1157" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
@@ -11289,7 +11275,6 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 			</catDescription>
 			<catParameters>
 				<catParameter parID="22" />
-				<catParameter parID="1031" />
 				<catParameter parID="1261" />
 				<catParameter parID="1276" />
 				<catParameter parID="92" />
@@ -11302,12 +11287,6 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="47" />
 				<catParameter parID="71" />
 				<catParameter parID="72" />
-				<catParameter parID="1025" />
-				<catParameter parID="1026" />
-				<catParameter parID="1027" />
-				<catParameter parID="1028" />
-				<catParameter parID="1029" />
-				<catParameter parID="1030" />
 				<catParameter parID="1397" />
 				<catParameter parID="1398" />
 				<catParameter parID="1486" />
@@ -11377,6 +11356,13 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="19" />
 				<catParameter parID="20" />
 				<catParameter parID="23" />
+				<catParameter parID="1031" />
+				<catParameter parID="1025" />
+				<catParameter parID="1026" />
+				<catParameter parID="1027" />
+				<catParameter parID="1028" />
+				<catParameter parID="1029" />
+				<catParameter parID="1030" />
 				<catParameter parID="103" />
 				<catParameter parID="1305" />
 				<catParameter parID="122" />
@@ -11677,13 +11663,11 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="1503" />
 				<catParameter parID="1504" />
 				<catParameter parID="1353" />
-				<catParameter parID="110" />
 				<catParameter parID="152" />
 				<catParameter parID="296" />
 				<catParameter parID="297" />
 				<catParameter parID="298" />
 				<catParameter parID="855" />
-				<catParameter parID="856" />
 				<catParameter parID="1354" />
 				<catParameter parID="1355" />
 				<catParameter parID="160" />

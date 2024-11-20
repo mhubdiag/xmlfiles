@@ -1,4 +1,4 @@
-<MhubParameterSet created="2024-11-20T16:22:15+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2024-11-20T21:50:03+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -3507,11 +3507,6 @@ File name of the GSM firmware file to be uploaded</Notes>
 
 None</Notes>
 		</Parameter>
-		<Parameter name="Text Auth-List Enable" level="15" datatype="Byte" address="307" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Enables Auth List security for Text SMS commands.</Help>
-			<Notes>Enables Auth List security for Text SMS commands.</Notes>
-		</Parameter>
 		<Parameter name="No Network with Signal Timeout" level="0" datatype="Word" address="379" length="2" bitmask="255" dtu="0">
 			<Values min="900" max="65000" default="7210" previous="" current="" units="" />
 			<Help>If the modem detects a CREG of 2 but has a good CSQ reading i.e &gt;10 for this number of seconds then is performs a network deregistration and re-registration.</Help>
@@ -3593,37 +3588,6 @@ None</Notes>
 			<Values min="0" max="65535" default="15" previous="" current="" units="Seconds" />
 			<Help>Number of seconds between checking net information during maintenance cycles</Help>
 			<Notes>None</Notes>
-		</Parameter>
-		<Parameter name="Auth List MSISDN 1" level="15" datatype="String" address="603" length="20" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Help>
-			<Notes>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Notes>
-		</Parameter>
-		<Parameter name="Auth List MSISDN 2" level="15" datatype="String" address="623" length="20" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Help>
-			<Notes>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Notes>
-		</Parameter>
-		<Parameter name="White List MSISDN 3" level="15" datatype="String" address="643" length="20" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.
-</Help>
-			<Notes></Notes>
-		</Parameter>
-		<Parameter name="Auth List MSISDN 4" level="15" datatype="String" address="663" length="20" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Help>
-			<Notes>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Notes>
-		</Parameter>
-		<Parameter name="Auth List MSISDN 5" level="15" datatype="String" address="683" length="20" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Help>
-			<Notes>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Notes>
-		</Parameter>
-		<Parameter name="Auth List MSISDN 6" level="15" datatype="String" address="703" length="20" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Help>
-			<Notes>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Notes>
 		</Parameter>
 		<Parameter name="Maximum Modem Lockout Time" level="0" datatype="Word" address="761" length="2" bitmask="255" dtu="0">
 			<Values min="300" max="65535" default="1800" previous="" current="" units="Seconds" />
@@ -3914,6 +3878,44 @@ None</Notes>
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
 None</Notes>
+		</Parameter>
+		<Parameter name="Text Auth-List ONLY Enable" level="15" datatype="Byte" address="307" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Enables Auth List ONLY security for Text SMS commands.
+Any MSISDN on the Auth list is always allowed.</Help>
+			<Notes>Enables Auth List ONLY security for Text SMS commands.
+Any MSISDN on the Auth list is always allowed.</Notes>
+		</Parameter>
+		<Parameter name="Auth List MSISDN 1" level="15" datatype="String" address="603" length="20" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="" previous="" current="" units="" />
+			<Help>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Help>
+			<Notes>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Notes>
+		</Parameter>
+		<Parameter name="Auth List MSISDN 2" level="15" datatype="String" address="623" length="20" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="" previous="" current="" units="" />
+			<Help>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Help>
+			<Notes>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Notes>
+		</Parameter>
+		<Parameter name="Auth List MSISDN 3" level="15" datatype="String" address="643" length="20" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="" previous="" current="" units="" />
+			<Help>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.
+</Help>
+			<Notes></Notes>
+		</Parameter>
+		<Parameter name="Auth List MSISDN 4" level="15" datatype="String" address="663" length="20" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="" previous="" current="" units="" />
+			<Help>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Help>
+			<Notes>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Notes>
+		</Parameter>
+		<Parameter name="Auth List MSISDN 5" level="15" datatype="String" address="683" length="20" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="" previous="" current="" units="" />
+			<Help>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Help>
+			<Notes>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Notes>
+		</Parameter>
+		<Parameter name="Auth List MSISDN 6" level="15" datatype="String" address="703" length="20" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="" previous="" current="" units="" />
+			<Help>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Help>
+			<Notes>MSISDN of SIM cards that are allowed to send commands to the MHub. NOTE: Using short numbers (less than 9 digits) degrades the security provided by this feature.</Notes>
 		</Parameter>
 		<Parameter name="Service Centre Address (1)" level="10" datatype="String" address="1024" length="21" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="" previous="" current="" units="" />
@@ -5401,11 +5403,6 @@ if set to 0 value will default to 60</Notes>
 			<Help>Voltage threshold when unit will sleep quicker.</Help>
 			<Notes>Voltage threshold when unit will sleep quicker. In case the vehicle is parked for many days, reduce the impact of the MHub running at full power drain.</Notes>
 		</Parameter>
-		<Parameter name="PDA Off Delay" level="15" datatype="Word" address="1112" length="2" bitmask="255" dtu="1">
-			<Values min="0" max="65535" default="600" previous="" current="" units="Seconds" />
-			<Help>Delay for PDA Power Down with ignition off in seconds</Help>
-			<Notes>Delay for PDA Power Down with ignition off in seconds</Notes>
-		</Parameter>
 		<Parameter name="Enable Sleep Mode" level="10" datatype="Bit" address="1157" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Enable Unit Sleep Mode 0: Normal 1: Sleep Mode </Help>
@@ -5430,11 +5427,6 @@ if set to 0 value will default to 60</Notes>
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Enable Deep Sleep Power Mode: Master Clock running 32Khz. Modem Sleep Scan Not Available. Wake-up from Ignition Only.</Help>
 			<Notes>In addition to the IDLE and SLEEP power modes of the Mhub, there is also an Deep Sleep Power state, where the MHub will only wake up from the ignition line being turned ON. It cannot periodically wake up to check for incomming messages. Setting this parameter will enable this Deep Sleep Power Mode.</Notes>
-		</Parameter>
-		<Parameter name="Enable Modem W32 Sleep Scan" level="10" datatype="Bit" address="1157" length="1" bitmask="16" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>NOT USED - Sleep scan mode from sleep will be entered by Modem Activity. This is dependant on network e.g. Unpredictable.</Help>
-			<Notes>NOT USED - When the Mhub is in SLEEP mode, and the modem enabled to be in W32K idle mode, the modem is able to recieve a SMS message. Now ehen the modem recieves a SMS message, it will send a message to the MHub, the mhub will then wake up and read the SMS from the modem. The drawback of this is that the MHub will wake up if anything is sent from the modem to the MHub. For instance if for some reason the modem switches to a different GSM tower while in W32K mode, it will also send a message to the MHub, and the MHub will then wake up - see that there is not really a SMS, and go back to SLEEP modem again. Thus the Mhub wakes up from sleep mode without really having to. Setting this value to 1 will enable this functionality.</Notes>
 		</Parameter>
 		<Parameter name="Enable Fast Sleep" level="10" datatype="Bit" address="1157" length="1" bitmask="32" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />

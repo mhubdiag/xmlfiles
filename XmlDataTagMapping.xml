@@ -507,6 +507,11 @@
 				<tag id="14" description="Generic 31 Bytes" />
 			</tags>
 		</event>
+		<event id="69" description="OTA Status">
+			<tags>
+				<tag id="14" description="Generic 31 Bytes" />
+			</tags>
+		</event>
 		<event id="70" description="Analog Sensor">
 			<tags>
 				<tag id="52" description="Custom Event 3 Data" />

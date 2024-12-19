@@ -507,7 +507,7 @@
 				<tag id="14" description="Generic 31 Bytes" />
 			</tags>
 		</event>
-		<event id="69" description="OTA Status">
+		<event id="69" description="OTA Notice">
 			<tags>
 				<tag id="14" description="Generic 31 Bytes" />
 			</tags>

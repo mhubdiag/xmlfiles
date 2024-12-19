@@ -1,4 +1,4 @@
-<MhubParameterSet created="2024-11-20T21:50:02+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2024-12-19T11:38:01+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -1931,6 +1931,11 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
 			<Help>Custom Event 15 Configuration</Help>
 			<Notes>See Periodic Position Event Configuration</Notes>
+		</Parameter>
+		<Parameter name="OTA (Over The Air Operations) Status " level="10" datatype="Byte" address="3653" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Status of Over the Air operations eg Firmware upgrades</Help>
+			<Notes>Status of Over the Air operations eg Firmware upgrades</Notes>
 		</Parameter>
 		<Parameter name="Analog Sensor" level="10" datatype="Byte" address="3654" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />

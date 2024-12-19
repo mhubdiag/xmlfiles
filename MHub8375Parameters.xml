@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="11" unitType="MHub8375" created="2024-12-19T11:32:22+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="11" unitType="MHub8375" created="2024-12-19T20:12:15+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="2" level="10" status="0" datatype="Word" address="256" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
@@ -1075,7 +1075,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 Distance in meters from Last Valid position up to which the last valid position is still considered valid"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1351" level="0" status="0" datatype="Word" address="409" length="2" bitmask="255" dtu="0" units="seconds" min="60" max="600" >
+		<Parameter parID="1351" level="0" status="0" datatype="Word" address="409" length="2" bitmask="255" dtu="0" units="minutes" min="60" max="65500" >
 			<parValues default="120" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Best Guess Position Time Threshold</parName>
@@ -9580,8 +9580,8 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<catParameter parID="821" />
 				<catParameter parID="1017" />
 				<catParameter parID="1072" />
-				<catParameter parID="1432" />
 				<catParameter parID="1418" />
+				<catParameter parID="1432" />
 				<catParameter parID="822" />
 				<catParameter parID="823" />
 				<catParameter parID="851" />

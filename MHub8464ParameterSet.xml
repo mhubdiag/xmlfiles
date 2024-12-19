@@ -1,4 +1,4 @@
-<MhubParameterSet created="2024-12-19T11:38:02+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2024-12-19T20:12:29+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -2672,7 +2672,7 @@ Value of 0 Disables Geoloc lift detection</Notes>
 Distance in meters from Last Valid position up to which the last valid position is still considered valid</Notes>
 		</Parameter>
 		<Parameter name="Best Guess Position Time Threshold" level="0" datatype="Word" address="409" length="2" bitmask="255" dtu="0">
-			<Values min="60" max="600" default="120" previous="" current="" units="seconds" />
+			<Values min="60" max="65500" default="120" previous="" current="" units="minutes" />
 			<Help>Maximum age of the Last Valid position before the position is considered invalid.</Help>
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
@@ -4725,15 +4725,15 @@ If set to zero then reports will continue indefinitely</Notes>
 			<Help>Ignition Source: Trigger</Help>
 			<Notes>Ignition Source is set to Trigger which is a software controlled ignition source.</Notes>
 		</Parameter>
-		<Parameter name="Ignition Source: Alternate" level="10" datatype="Bit" address="1829" length="1" bitmask="128" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>Ignition Source: Alternate</Help>
-			<Notes>Ignition Source Alternate uses new method for ignition. Configure sources with Trip Source Ignition Line etc.</Notes>
-		</Parameter>
 		<Parameter name="Ignition Source: Accelerometer" level="5" datatype="Bit" address="1829" length="1" bitmask="64" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Ignition Source: Accelerometer</Help>
 			<Notes>One more possible source of ignition is to use Accelerometer movement. If Accelerometer movement is greater than the value specified in parameter &quot;Accelerometer Ignition On Threshold&quot;, the vehicle is moving. If Accelerometer is to be used as ignition, this parameter is set to 1.</Notes>
+		</Parameter>
+		<Parameter name="Ignition Source: Alternate" level="10" datatype="Bit" address="1829" length="1" bitmask="128" dtu="0">
+			<Values min="0" max="1" default="1" previous="" current="" units="" />
+			<Help>Ignition Source: Alternate</Help>
+			<Notes>Ignition Source Alternate uses new method for ignition. Configure sources with Trip Source Ignition Line etc.</Notes>
 		</Parameter>
 		<Parameter name="Ignition Source from RPM Threshold" level="10" datatype="Byte" address="1830" length="1" bitmask="255" dtu="0">
 			<Values min="1" max="255" default="3" previous="" current="" units="RPM" />

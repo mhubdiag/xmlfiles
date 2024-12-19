@@ -1,4 +1,4 @@
-<MhubParameterSet created="2024-12-19T11:38:01+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2024-12-19T20:12:28+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Accelerometer Events in trip only" level="5" datatype="Bit" address="436" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -2395,7 +2395,7 @@ NB The MHub will have to move a considerable distance before a Geolock breach wi
 Distance in meters from Last Valid position up to which the last valid position is still considered valid</Notes>
 		</Parameter>
 		<Parameter name="Best Guess Position Time Threshold" level="0" datatype="Word" address="409" length="2" bitmask="255" dtu="0">
-			<Values min="60" max="600" default="120" previous="" current="" units="seconds" />
+			<Values min="60" max="65500" default="120" previous="" current="" units="minutes" />
 			<Help>Maximum age of the Last Valid position before the position is considered invalid.</Help>
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
@@ -3883,11 +3883,6 @@ Mains Dev. Threshold</Notes>
 			<Help>Trip Source GPS Speed</Help>
 			<Notes>Trip Source GPS Speed the gps speed has to exceed the speed threshold for ignition on. GPS speed is only used if the GPS signal is deemed good e.g. 3D lock for longer than 5 seconds with HDOP less than 100m</Notes>
 		</Parameter>
-		<Parameter name="Trip Source CANBus" level="10" datatype="Bit" address="472" length="1" bitmask="128" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Trip Source CANBus</Help>
-			<Notes>Trip Source CANBus if CANBus activity is present ignition on. Most vehicles switch off the Vehicle CANBus outside of trip. Verify in the vehicle before enabling.</Notes>
-		</Parameter>
 		<Parameter name="Trip Source Ignition Line" level="10" datatype="Bit" address="472" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Trip Source Ignition Line </Help>
@@ -3897,6 +3892,11 @@ Mains Dev. Threshold</Notes>
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Trip Source Mains Voltage</Help>
 			<Notes>Trip Source Mains Voltage the mains supply voltage has to exceed the threshold for ignition on</Notes>
+		</Parameter>
+		<Parameter name="Trip Source CANBus" level="10" datatype="Bit" address="472" length="1" bitmask="128" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Trip Source CANBus</Help>
+			<Notes>Trip Source CANBus if CANBus activity is present ignition on. Most vehicles switch off the Vehicle CANBus outside of trip. Verify in the vehicle before enabling.</Notes>
 		</Parameter>
 		<Parameter name="Trip Source Mains Dev." level="10" datatype="Bit" address="472" length="1" bitmask="4" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />

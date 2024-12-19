@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="19" unitType="MHub819U" created="2024-12-19T11:32:21+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="19" unitType="MHub819U" created="2024-12-19T20:12:14+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="2" level="10" status="0" datatype="Word" address="256" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
@@ -995,7 +995,7 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 Distance in meters from Last Valid position up to which the last valid position is still considered valid"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1351" level="0" status="0" datatype="Word" address="409" length="2" bitmask="255" dtu="0" units="seconds" min="60" max="600" >
+		<Parameter parID="1351" level="0" status="0" datatype="Word" address="409" length="2" bitmask="255" dtu="0" units="minutes" min="60" max="65500" >
 			<parValues default="120" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Best Guess Position Time Threshold</parName>

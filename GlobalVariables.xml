@@ -269,7 +269,7 @@
 		<item id="267" description="Average Crank Voltage" name="Average Crank Voltage" size="2" scale="0.01" offset="0" units="V" min="0" max="655.35" dtu="0" />
 		<item id="268" description="Average Crank Voltage Time" name="Average Crank Voltage Time" size="2" scale="0.01" offset="0" units="s" min="0" max="655.35" dtu="0" />
 		<item id="269" description="Post Crank Voltage" name="Post Crank Voltage" size="2" scale="0.01" offset="0" units="V" min="0" max="655.35" dtu="0" />
-		<item id="270" description="Analog 0" name="Analog 0" size="2" scale="0.01" offset="0" units="V" min="0" max="655.35" dtu="0" />
+		<item id="270" description="Analog Input 0" name="Analog Input 0" size="2" scale="0.01" offset="0" units="V" min="0" max="655.35" dtu="0" />
 		<item id="271" description="GPS Automatic Gain Control Value" name="GPS AGC" size="1" scale="0.4" offset="0" units="Gain %" min="0" max="255" dtu="0" />
 		<item id="272" description="GPS Carrier to Noise ratio" name="GPS CNo" size="1" scale="1" offset="0" units="dBHz" min="0" max="255" dtu="0" />
 		<item id="273" description="GPS Carrier to Noise ratio for Strongest Signal" name="GPS CNo Max" size="1" scale="1" offset="0" units="dBHz" min="0" max="255" dtu="0" />
@@ -289,8 +289,8 @@
 		<item id="287" description="Air Equivalence Ratio currently used by the vehicle" name="Air Equivalence Ratio" size="2" scale="0.0000305" offset="0" units="" min="0" max="2" dtu="0" />
 		<item id="288" description="Lean or richness of fuel mixture" name="Short Term Fuel Trim " size="1" scale="0.78125" offset="-128" units="%" min="-100" max="99" dtu="0" />
 		<item id="289" description="Absolute Engine Load as reported by OBD. This uses a different calculation to Calculated Engine Load" name="Absolute Engine Load" size="2" scale="0.392156" offset="0" units="%" min="0" max="65535" dtu="0" />
-		<item id="290" description="Analog Input 3" name="Analog Input 3" size="2" scale="0.01" offset="0" units="V" min="0" max="655.35" dtu="0" />
-		<item id="291" description="Analog Input 4" name="Analog Input 4" size="2" scale="0.01" offset="0" units="V" min="0" max="655.35" dtu="0" />
+		<item id="290" description="Analog Input 2" name="Analog Input 2" size="2" scale="0.01" offset="0" units="V" min="0" max="655.35" dtu="1" />
+		<item id="291" description="Analog Input 3" name="Analog Input 3" size="2" scale="0.01" offset="0" units="V" min="0" max="655.35" dtu="1" />
 		<item id="292" description="Input 9 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 9 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
 		<item id="293" description="Input 10 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 10 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
 		<item id="294" description="Input 11 transitions. Will increment on every edge e.g. 0 to 1 and 1 to 0 transitions" name="Input 11 Count" size="2" scale="0.5" offset="0" units="count" min="0" max="32767" dtu="1" />
@@ -313,6 +313,9 @@
 		<item id="311" description="Event distance in m" name="Distance" size="2" scale="1" offset="0" units="m" min="0" max="65535" dtu="0" />
 		<item id="312" description="Accelerometer Max R" name="Max R" size="2" scale="0.01" offset="-327.68" units="0.01g" min="-327.68" max="327.68" dtu="1" />
 		<item id="313" description="Accelerometer Average X" name="Acc X High Res" size="2" scale="0.01" offset="-327.68" units="10mG" min="-327.68" max="327.68" dtu="0" />
-		<item id="314" description="Accelerometer Average Y" name="Acc Y High Res" size="2" scale="0.01" offset="-327." units="10mg" min="-327.68" max="327.68" dtu="0" />
+		<item id="314" description="Accelerometer Average Y" name="Acc Y High Res" size="2" scale="0.01" offset="-327.68" units="10mG" min="-327.68" max="327.68" dtu="0" />
 		<item id="315" description="Accelerometer Average Z" name="Acc Z High Res" size="2" scale="0.01" offset="-327.68" units="10mG" min="-327.68" max="327.68" dtu="0" />
+		<item id="316" description="Analog Input 1" name="Analog Input 1" size="2" scale="0.01" offset="0" units="V" min="0" max="655.35" dtu="1" />
+		<item id="317" description="Physical Inputs Bitfield" name="Physical Inputs" size="4" scale="1" offset="0" units="Bits" min="0" max="4294967295" dtu="1" />
+		<item id="318" description="Physical Outputs Bitfield" name="Physical Outputs" size="4" scale="1" offset="0" units="Bits" min="0" max="4294967295" dtu="1" />
 </GlobalVariables>

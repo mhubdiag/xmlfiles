@@ -1,4 +1,4 @@
-<MhubParameterSet created="2024-12-19T20:12:29+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2025-02-19T14:34:58+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Beeper">
 		<Parameter name="Output for Buzzer" level="10" datatype="Byte" address="3583" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="5" default="0" previous="" current="" units="" />
@@ -7,6 +7,12 @@
 		</Parameter>
 	</Category>
 	<Category name="Custom Functionality">
+		<Parameter name="Aux Port Baudrate" level="10" datatype="Long" address="1843" length="4" bitmask="255" dtu="0">
+			<Values min="300" max="115200" default="115200" previous="" current="" units="Baud" />
+			<Help>Aux Port Baudrate</Help>
+			<Notes>Aux Port Baudrate:
+300...9600...115200</Notes>
+		</Parameter>
 		<Parameter name="Aux Port Configuration" level="10" datatype="Byte" address="1836" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
 			<Help>Aux Port Configuration</Help>
@@ -16,12 +22,6 @@
 n - Custom Functionality n
 255 - NMEA Port</Notes>
 		</Parameter>
-		<Parameter name="Aux Port Baudrate" level="10" datatype="Long" address="1843" length="4" bitmask="255" dtu="0">
-			<Values min="300" max="115200" default="115200" previous="" current="" units="Baud" />
-			<Help>Aux Port Baudrate</Help>
-			<Notes>Aux Port Baudrate:
-300...9600...115200</Notes>
-		</Parameter>
 		<Parameter name="Enable IPC" level="10" datatype="Bit" address="3578" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enable the IPC comms to the MHub Extender</Help>
@@ -29,10 +29,22 @@ n - Custom Functionality n
 		</Parameter>
 	</Category>
 	<Category name="Debug">
+		<Parameter name="Config Version Info" level="10" datatype="String" address="1051" length="20" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="Default" previous="" current="" units="" />
+			<Help>This can be used to indicated version information regarding the configuration that was used</Help>
+			<Notes>This can be used to indicated version information regarding the configuration that was used. Eg. Default V01</Notes>
+		</Parameter>
 		<Parameter name="Enable All Debug" level="10" datatype="Byte" address="430" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
 			<Help>Switch all debug statements ON or OFF</Help>
 			<Notes>The value represents the debug time-out in minutes. Setting the value to 255 is a special case causing the debugs to be permanently active.</Notes>
+		</Parameter>
+		<Parameter name="Enable Error Debug Messages" level="0" datatype="Bit" address="439" length="1" bitmask="4" dtu="0">
+			<Values min="0" max="1" default="1" previous="" current="" units="" />
+			<Help>Enable Error Debug Messages</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Setting this parameter to 1 will enable Error Debug messages</Notes>
 		</Parameter>
 		<Parameter name="Enable Info Debug Messages" level="0" datatype="Bit" address="439" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -47,25 +59,6 @@ Setting this parameter to 1 will enable Info Debug messages</Notes>
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
 Setting this parameter to 1 will enable Warning Debug messages</Notes>
-		</Parameter>
-		<Parameter name="Enable Error Debug Messages" level="0" datatype="Bit" address="439" length="1" bitmask="4" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>Enable Error Debug Messages</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Setting this parameter to 1 will enable Error Debug messages</Notes>
-		</Parameter>
-		<Parameter name="Trace Level" level="0" datatype="Byte" address="598" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="None" />
-			<Help>This is the level of trace information that would be sent to the debug port</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-None</Notes>
-		</Parameter>
-		<Parameter name="Config Version Info" level="10" datatype="String" address="1051" length="20" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="Default" previous="" current="" units="" />
-			<Help>This can be used to indicated version information regarding the configuration that was used</Help>
-			<Notes>This can be used to indicated version information regarding the configuration that was used. Eg. Default V01</Notes>
 		</Parameter>
 		<Parameter name="Module Debug Mask" level="10" datatype="Byte" address="1896" length="8" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="" />
@@ -86,6 +79,13 @@ None</Notes>
 			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="" />
 			<Help>Enable debug statements for specific modules - set 4</Help>
 			<Notes>None</Notes>
+		</Parameter>
+		<Parameter name="Trace Level" level="0" datatype="Byte" address="598" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="None" />
+			<Help>This is the level of trace information that would be sent to the debug port</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+None</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Driver Key">
@@ -111,17 +111,17 @@ All other values are reserved</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Modem - CMux Configuration">
+		<Parameter name="Error Limit" level="5" datatype="Byte" address="475" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="5" previous="" current="" units="" />
+			<Help>Maximum number of accumulated errors before the modem is rebooted</Help>
+			<Notes>As described in the parameter Reboot Limit, the MHub will issue a reboot command to the modem if it detects a problem with the modem. However if an error is received in response to an instruction to the modem, the MHub will first retry the instruction. This parameter specifies the number of accumulated errors that the MHub can receive from the modem before it will issue a reboot command to the mode.</Notes>
+		</Parameter>
 		<Parameter name="Modem No-Network Restart Delay" level="0" datatype="Word" address="433" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="300" previous="" current="" units="Seconds" />
 			<Help>The amount of time that the unit will wait after rebooting the modem before repeating the process.</Help>
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
 None</Notes>
-		</Parameter>
-		<Parameter name="Error Limit" level="5" datatype="Byte" address="475" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="5" previous="" current="" units="" />
-			<Help>Maximum number of accumulated errors before the modem is rebooted</Help>
-			<Notes>As described in the parameter Reboot Limit, the MHub will issue a reboot command to the modem if it detects a problem with the modem. However if an error is received in response to an instruction to the modem, the MHub will first retry the instruction. This parameter specifies the number of accumulated errors that the MHub can receive from the modem before it will issue a reboot command to the mode.</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Modem - General">
@@ -175,6 +175,23 @@ The MHub has the ability to connect to up to a maximum of 4 temperature sensors.
 		</Parameter>
 	</Category>
 	<Category name="VNI - EOBD / UDS / KWP2000">
+		<Parameter name="Allow Unsolicited CAN Message Parsing" level="5" datatype="Bit" address="3325" length="1" bitmask="4" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Allows the MHub to use MProfiler supplied EOBD data to parse unsolicited vehicle proprietary data. This parameter should be managed by MProfiler.</Help>
+			<Notes>Allows the MHub to use MProfiler supplied EOBD data to parse unsolicited vehicle proprietary data. This parameter should be managed by MProfiler.</Notes>
+		</Parameter>
+		<Parameter name="Enable KWP2000 ISO14230-3" level="5" datatype="Bit" address="3325" length="1" bitmask="16" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enables the use of the ISO14230-3 Command Set.
+This should only be enabled on vehicles that are known to support this protocol.</Help>
+			<Notes>Enables the use of the ISO14230-3 Command Set.
+This should only be enabled on vehicles that are known to support this protocol.</Notes>
+		</Parameter>
+		<Parameter name="Enable UDS/ISO14229" level="5" datatype="Bit" address="1777" length="1" bitmask="8" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enables UDS/ISO14229 commands sent from XPlatform. </Help>
+			<Notes>Enables UDS/ISO14229 commands sent from XPlatform.</Notes>
+		</Parameter>
 		<Parameter name="EOBD Function Control" level="5" datatype="Byte" address="1371" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="172" default="0" previous="" current="" units="" />
 			<Help>Manages how the CAN bus is used by the MHub
@@ -200,11 +217,6 @@ If Fake VIN is programmed then only this will be used to request data.
 
 </Notes>
 		</Parameter>
-		<Parameter name="Enable UDS/ISO14229" level="5" datatype="Bit" address="1777" length="1" bitmask="8" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enables UDS/ISO14229 commands sent from XPlatform. </Help>
-			<Notes>Enables UDS/ISO14229 commands sent from XPlatform.</Notes>
-		</Parameter>
 		<Parameter name="Pseudo (Fake) VIN" level="5" datatype="String" address="2457" length="17" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="00000000000000000" previous="" current="" units="" />
 			<Help>Used for requesting a parameter set from XPlatform that will be used to retrieve the true VIN from a particular vehicle type.
@@ -216,18 +228,6 @@ Note:
 The length of the VIN must be 13 characters otherwise XPlatform will reject the ID.
 The ID supplied here will be prefaced with PSD_ to safeguard against accidental VIN entry.</Notes>
 		</Parameter>
-		<Parameter name="Allow Unsolicited CAN Message Parsing" level="5" datatype="Bit" address="3325" length="1" bitmask="4" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Allows the MHub to use MProfiler supplied EOBD data to parse unsolicited vehicle proprietary data. This parameter should be managed by MProfiler.</Help>
-			<Notes>Allows the MHub to use MProfiler supplied EOBD data to parse unsolicited vehicle proprietary data. This parameter should be managed by MProfiler.</Notes>
-		</Parameter>
-		<Parameter name="Enable KWP2000 ISO14230-3" level="5" datatype="Bit" address="3325" length="1" bitmask="16" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enables the use of the ISO14230-3 Command Set.
-This should only be enabled on vehicles that are known to support this protocol.</Help>
-			<Notes>Enables the use of the ISO14230-3 Command Set.
-This should only be enabled on vehicles that are known to support this protocol.</Notes>
-		</Parameter>
 	</Category>
 	<Category name="VNI - J1939 / FMS">
 		<Parameter name="J1939 Filter Disable" level="10" datatype="Bit" address="1824" length="1" bitmask="128" dtu="0">
@@ -237,12 +237,6 @@ This should only be enabled on vehicles that are known to support this protocol.
 		</Parameter>
 	</Category>
 	<Category name="VNI - OBD-II / J1979 Operation">
-		<Parameter name="OBD2 Lockout" level="10" datatype="Byte" address="763" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="10" previous="" current="" units="" />
-			<Help>OBD2 Lockout time in seconds</Help>
-			<Notes>OBD2 Lockout time in seconds. If the MHub detects a scantool trying to log into CanBus the MHub will stand off for the Lockout period in seconds. Maximum of 254 seconds. 
-Values of 0 and 255 will disable this feature.</Notes>
-		</Parameter>
 		<Parameter name="Enable OBD2 Login on CAN activity" level="0" datatype="Bit" address="3325" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Allows the initialisation of OBD when CAN activity is detected. 
@@ -252,20 +246,20 @@ Note: Needs Listen Only mode to be enabled to work.</Help>
 Allows the initialisation of OBD when CAN activity is detected. 
 Note: Needs Listen Only mode to be enabled to work.</Notes>
 		</Parameter>
+		<Parameter name="OBD2 Lockout" level="10" datatype="Byte" address="763" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="10" previous="" current="" units="" />
+			<Help>OBD2 Lockout time in seconds</Help>
+			<Notes>OBD2 Lockout time in seconds. If the MHub detects a scantool trying to log into CanBus the MHub will stand off for the Lockout period in seconds. Maximum of 254 seconds. 
+Values of 0 and 255 will disable this feature.</Notes>
+		</Parameter>
 	</Category>
 	<Category name="VNI - Protocol Configuration">
-		<Parameter name="Enable CAN Controller Automatic Retries" level="0" datatype="Byte" address="1363" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="179" default="0" previous="" current="" units="" />
-			<Help>Allow the CAN controller to automatically retry any failed transmissions. On some vehicles this can cause buss interference.
-0xAC (172) - Enable Automatic Retries
-0x53 (83) - Disable Automatic Retries
-Any other value leaves the default state of Automatic Retries active.</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Allow the CAN controller to automatically retry any failed transmissions. On some vehicles this can cause buss interference.
-0xAC (172) - Enable Automatic Retries
-0x53 (83) - Disable Automatic Retries
-Any other value leaves the default state of Automatic Retries active.</Notes>
+		<Parameter name="CAN Triggered Standoff Time " level="10" datatype="Byte" address="1555" length="1" bitmask="255" dtu="0">
+			<Values min="1" max="250" default="10" previous="" current="" units="Minutes" />
+			<Help>Sets the number of minutes that the unit will stand off from the CAN bus when a message from an ECU ID corresponding with CAN Standoff Trigger on XPlatform is detected. 
+The intended use is to standoff when another diagnostic tool is detected on the bus.</Help>
+			<Notes>Sets the number of minutes that the unit will stand off from the CAN bus when a message from an ECU ID corresponding with CAN Standoff Trigger on XPlatform is detected. 
+The intended use is to standoff when another diagnostic tool is detected on the bus.</Notes>
 		</Parameter>
 		<Parameter name="Enable CAN Controller Automatic Bus Off" level="0" datatype="Byte" address="1364" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="179" default="0" previous="" current="" units="" />
@@ -282,40 +276,18 @@ NB: IT IS HIGHTLY RECOMMENDED NOT TO CHANGE THIS PARAMETER
 0x53 (83) - Disable Auto Buss Off
 Any other value leaves the default state of Automatic Retries active.</Notes>
 		</Parameter>
-		<Parameter name="CAN Triggered Standoff Time " level="10" datatype="Byte" address="1555" length="1" bitmask="255" dtu="0">
-			<Values min="1" max="250" default="10" previous="" current="" units="Minutes" />
-			<Help>Sets the number of minutes that the unit will stand off from the CAN bus when a message from an ECU ID corresponding with CAN Standoff Trigger on XPlatform is detected. 
-The intended use is to standoff when another diagnostic tool is detected on the bus.</Help>
-			<Notes>Sets the number of minutes that the unit will stand off from the CAN bus when a message from an ECU ID corresponding with CAN Standoff Trigger on XPlatform is detected. 
-The intended use is to standoff when another diagnostic tool is detected on the bus.</Notes>
-		</Parameter>
-		<Parameter name="VNI Compatibility Mode" level="5" datatype="Bit" address="1777" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Relaxes timings on some protocols to enable compatibility with older vehicles.
-</Help>
-			<Notes>Relaxes timings on some protocols to enable compatibility with older vehicles.
-</Notes>
-		</Parameter>
-		<Parameter name="ISO15765 250kBaud Disable" level="5" datatype="Bit" address="1777" length="1" bitmask="16" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>Disable 250kBaud detection.</Help>
-			<Notes>Disable 250kBaud detection.</Notes>
-		</Parameter>
-		<Parameter name="Enable Vehicle K Line Interface" level="10" datatype="Bit" address="1824" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enable Vehicle On Board Diagnostics Interface</Help>
-			<Notes>Enable ISO9141 and ISO14230 network interface using the LIN line</Notes>
-		</Parameter>
-		<Parameter name="Enable Vehicle CANBus Interface" level="10" datatype="Bit" address="1824" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>Enable Vehicle On Board Diagnostics CANBus Interface
-Note: Enable J1939 FMS CANBus Interface = 0</Help>
-			<Notes>Enable ISO15765 Protocol interface using the CANBus interface. Disable the J1939 FMS CANBus Interface.</Notes>
-		</Parameter>
-		<Parameter name="TP 2.0 Enable" level="5" datatype="Bit" address="1824" length="1" bitmask="64" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enable TP 2.0 Protocol used by VW Group vehicles; VW, Seat, Audi, etc</Help>
-			<Notes>Enable TP 2.0 Protocol used by VW Group vehicles; VW, Seat, Audi, etc</Notes>
+		<Parameter name="Enable CAN Controller Automatic Retries" level="0" datatype="Byte" address="1363" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="179" default="0" previous="" current="" units="" />
+			<Help>Allow the CAN controller to automatically retry any failed transmissions. On some vehicles this can cause buss interference.
+0xAC (172) - Enable Automatic Retries
+0x53 (83) - Disable Automatic Retries
+Any other value leaves the default state of Automatic Retries active.</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Allow the CAN controller to automatically retry any failed transmissions. On some vehicles this can cause buss interference.
+0xAC (172) - Enable Automatic Retries
+0x53 (83) - Disable Automatic Retries
+Any other value leaves the default state of Automatic Retries active.</Notes>
 		</Parameter>
 		<Parameter name="Enable J1939 FMS CANBus Interface" level="10" datatype="Bit" address="1832" length="1" bitmask="128" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
@@ -323,18 +295,25 @@ Note: Enable J1939 FMS CANBus Interface = 0</Help>
 Note: Enable OBD2 CANBus Interface = 0</Help>
 			<Notes>If the J1939 FMS CANBus is connected to the MHub828 CANbus, this parameter needs to be set to 1 to enable the CAN Bus functionality. Disable the OBD2 CANbus interface</Notes>
 		</Parameter>
-		<Parameter name="OBC Active J1939 FMS CANBus" level="10" datatype="Bit" address="1832" length="1" bitmask="64" dtu="0">
+		<Parameter name="Enable Listen Only Mode" level="0" datatype="Bit" address="3325" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enable Active J1939 FMS CANBus</Help>
-			<Notes>Verify with vehicle manufacturer if the CANBus should be Active of Passive before setting this parameter.</Notes>
-		</Parameter>
-		<Parameter name="OBC 500kbps J1939 FMS CANBus" level="10" datatype="Bit" address="1832" length="1" bitmask="32" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Verify with vehicle manufacturer if the CANBus should be 500kbps Baudrate before setting this parameter.</Help>
-			<Notes>For 250kbps set OBC 500kbps J1939 FMS CANBus = 0,
-for 500kbps set OBC 500kbps J1939 FMS CANBus = 1.
+			<Help>Enables the controller to go into listen only mode after closing a session.
+NOTE: This is necessary to recover from some errors</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
-The FMS Standard specifies the baudrate to be 250kbps.</Notes>
+Enables the controller to go into listen only mode after closing a session.
+NOTE: This is necessary to recover from some errors</Notes>
+		</Parameter>
+		<Parameter name="Enable Vehicle CANBus Interface" level="10" datatype="Bit" address="1824" length="1" bitmask="2" dtu="0">
+			<Values min="0" max="1" default="1" previous="" current="" units="" />
+			<Help>Enable Vehicle On Board Diagnostics CANBus Interface
+Note: Enable J1939 FMS CANBus Interface = 0</Help>
+			<Notes>Enable ISO15765 Protocol interface using the CANBus interface. Disable the J1939 FMS CANBus Interface.</Notes>
+		</Parameter>
+		<Parameter name="Enable Vehicle K Line Interface" level="10" datatype="Bit" address="1824" length="1" bitmask="1" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enable Vehicle On Board Diagnostics Interface</Help>
+			<Notes>Enable ISO9141 and ISO14230 network interface using the LIN line</Notes>
 		</Parameter>
 		<Parameter name="Enhanced Protocol Selection ID" level="10" datatype="Long" address="3321" length="4" bitmask="255" dtu="0">
 			<Values min="0" max="230" default="0" previous="" current="" units="" />
@@ -376,14 +355,35 @@ All other values default to Mobile Eye Parameter Set
 
 </Notes>
 		</Parameter>
-		<Parameter name="Enable Listen Only Mode" level="0" datatype="Bit" address="3325" length="1" bitmask="1" dtu="0">
+		<Parameter name="ISO15765 250kBaud Disable" level="5" datatype="Bit" address="1777" length="1" bitmask="16" dtu="0">
+			<Values min="0" max="1" default="1" previous="" current="" units="" />
+			<Help>Disable 250kBaud detection.</Help>
+			<Notes>Disable 250kBaud detection.</Notes>
+		</Parameter>
+		<Parameter name="OBC 500kbps J1939 FMS CANBus" level="10" datatype="Bit" address="1832" length="1" bitmask="32" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enables the controller to go into listen only mode after closing a session.
-NOTE: This is necessary to recover from some errors</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+			<Help>Verify with vehicle manufacturer if the CANBus should be 500kbps Baudrate before setting this parameter.</Help>
+			<Notes>For 250kbps set OBC 500kbps J1939 FMS CANBus = 0,
+for 500kbps set OBC 500kbps J1939 FMS CANBus = 1.
 
-Enables the controller to go into listen only mode after closing a session.
-NOTE: This is necessary to recover from some errors</Notes>
+The FMS Standard specifies the baudrate to be 250kbps.</Notes>
+		</Parameter>
+		<Parameter name="OBC Active J1939 FMS CANBus" level="10" datatype="Bit" address="1832" length="1" bitmask="64" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enable Active J1939 FMS CANBus</Help>
+			<Notes>Verify with vehicle manufacturer if the CANBus should be Active of Passive before setting this parameter.</Notes>
+		</Parameter>
+		<Parameter name="TP 2.0 Enable" level="5" datatype="Bit" address="1824" length="1" bitmask="64" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enable TP 2.0 Protocol used by VW Group vehicles; VW, Seat, Audi, etc</Help>
+			<Notes>Enable TP 2.0 Protocol used by VW Group vehicles; VW, Seat, Audi, etc</Notes>
+		</Parameter>
+		<Parameter name="VNI Compatibility Mode" level="5" datatype="Bit" address="1777" length="1" bitmask="2" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Relaxes timings on some protocols to enable compatibility with older vehicles.
+</Help>
+			<Notes>Relaxes timings on some protocols to enable compatibility with older vehicles.
+</Notes>
 		</Parameter>
 	</Category>
 </MhubParameterSet>

@@ -318,4 +318,5 @@
 		<item id="316" description="Analog Input 1" name="Analog Input 1" size="2" scale="0.01" offset="0" units="V" min="0" max="655.35" dtu="1" />
 		<item id="317" description="Physical Inputs Bitfield" name="Physical Inputs" size="4" scale="1" offset="0" units="Bits" min="0" max="4294967295" dtu="1" />
 		<item id="318" description="Physical Outputs Bitfield" name="Physical Outputs" size="4" scale="1" offset="0" units="Bits" min="0" max="4294967295" dtu="1" />
+		<item id="319" description="Full 8 bytes of the Dallas ID" name="Full Dallas ID" size="8" scale="1" offset="0" units="Bytes" min="0" max="255" dtu="0" />
 </GlobalVariables>

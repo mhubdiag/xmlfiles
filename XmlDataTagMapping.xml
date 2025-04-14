@@ -342,6 +342,9 @@
 	<tag id="63" description="DriverIDData">
 		<data config="0" name="DriverID32Bit" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
 	</tag>
+	<tag id="64" description="DatathatFollowsFormat-Src|Size|Index">
+		<data config="0" name="Delay" size="2" scale="1" offset="0" units="Seconds" min="0" max="65535"/>
+	</tag>
 	<events>
 		<event id="1" description="Periodic Position">
 			<tags>
@@ -662,6 +665,16 @@
 			</tags>
 		</event>
 		<event id="126" description="GSM Notice">
+			<tags>
+				<tag id="52" description="Custom Event 3 Data" />
+			</tags>
+		</event>
+		<event id="127" description="Vehicle Immobilization">
+			<tags>
+				<tag id="64" description="Data that Follows Format - Src|Size|Index" />
+			</tags>
+		</event>
+		<event id="128" description="GPS Notice">
 			<tags>
 				<tag id="52" description="Custom Event 3 Data" />
 			</tags>

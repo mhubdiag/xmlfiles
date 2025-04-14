@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="15" unitType="MHub8464" created="2025-02-19T14:34:10+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="15" unitType="MHub8464" created="2025-04-14T18:04:31+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="1385" level="0" status="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0" units="10ms" min="0" max="255" >
 			<parValues default="50" mhub="" current="" prev="" />
@@ -436,12 +436,14 @@ Note: The maximum number of logs that can be sent as events is 600. If this valu
 				<parNotes>"See Periodic Position Event Configuration"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1538" level="10" status="0" datatype="Byte" address="1789" length="1" bitmask="255" dtu="0" units="" min="1" max="254" >
+		<Parameter parID="1538" level="0" status="0" datatype="Byte" address="1789" length="1" bitmask="255" dtu="0" units="" min="1" max="254" >
 			<parValues default="68" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Analog Sensor Offset DS2450</parName>
 				<parDescription>"Analog Sensor Voltage Offset"</parDescription>
-				<parNotes>"Analog Sensor Voltage Offset in 0.01V units for DS2450 1-Wire ADC.
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Analog Sensor Voltage Offset in 0.01V units for DS2450 1-Wire ADC.
 Offset value is Parameter Value - 128 * 0.01 V
 To calculate Parameter Value, take Required Voltage offset divide by 0.01 and add 128
 0 and 255 disables this feature
@@ -2211,6 +2213,14 @@ e.g ( Speeding + Cornering + Accident ) = ( 1 + 64 + 256 ) = 321"</parNotes>
 				<parNotes>"See Periodic Position Event Configuration"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="254" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Driver Key controls output used for Immobilisation</parName>
+				<parDescription>"Driver Key controls Output used for Immobilisation"</parDescription>
+				<parNotes>"If the driver key is intended to control the immobiliser connection to the vehicle, then this parameter must be set to 1 alternatively if there is no Driver Key used then the Output Follows Ignition Parameter or Bit in the Output A and B can be set to still be able to control immobilisation of the vehicle via the Disablement command."</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="854" level="10" status="0" datatype="Bit" address="1870" length="1" bitmask="2" dtu="1" units="" min="0" max="1" >
 			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -2231,9 +2241,10 @@ Values:
 All other values are reserved"</parDescription>
 				<parNotes>"The Driver Key Type indicates what kind of Driver Key device is allowed to be used for Driver Identification and vehicle immobilization.
 Values:
-0,8,255 = Standard DS1992 based Scope Driver Key initialized properly using the Scope Driver Key programmer software.
+0,8 = Standard DS1992 based Scope Driver Key initialized properly using the Scope Driver Key programmer software.
 1 = DS1990 where Bytes 1 and 2 of the device serial number is used as the Driver ID
 170 = ScopeID where the device ID contains the Driver ID, Fleet Code and Vehicle Class
+255 = Any supported key
 All other values are reserved"</parNotes>
 			</parInfo>
 		</Parameter>
@@ -6383,9 +6394,9 @@ can cause undefined behaviour if set.
 		<Parameter parID="1794" level="10" status="1" datatype="Byte" address="3583" length="1" bitmask="255" dtu="0" units="" min="0" max="5" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Output for Buzzer</parName>
-				<parDescription>"Output connected to the buzzer"</parDescription>
-				<parNotes>"This is the output that is connected to the buzzer"</parNotes>
+				<parName>Output for Buzzer on Extender</parName>
+				<parDescription>"Output connected to the buzzer on the Extender"</parDescription>
+				<parNotes>"This is the output that is connected to the buzzer on the Extender"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="250" level="10" status="0" datatype="Byte" address="1923" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
@@ -6458,14 +6469,6 @@ can cause undefined behaviour if set.
 				<parName>Output One Wire Led 2 Style Map</parName>
 				<parDescription>"Output Style Map One Wire Led 2 for Pattern and  Progressive Output"</parDescription>
 				<parNotes>"see Output 1 Style Map"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="254" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Output used for Immobilisation</parName>
-				<parDescription>"Output used for Immobilisation"</parDescription>
-				<parNotes>"If the driver key is intended to control the immobiliser connection to the vehicle, then this parameter must be set to 1 alternatively if there is no Driver Key used then the Output Follows Ignition Parameter or Bit in the Output A and B can be set to still be able to control immobilisation of the vehicle via the Disablement command."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="240" level="10" status="0" datatype="Byte" address="1904" length="1" bitmask="255" dtu="1" units="" min="0" max="3" >
@@ -8956,6 +8959,14 @@ before enabling.
 				<parNotes>"If enabled the Vehicle will Immobilise if Idle time-out period is reached"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1894" level="10" status="0" datatype="Byte" address="3711" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Vehicle Immobilization</parName>
+				<parDescription>"Vehicle Immobilization Event Configuration"</parDescription>
+				<parNotes>"Vehicle Immobilization Event Configuration"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1741" level="10" status="1" datatype="Word" address="1374" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
 			<parValues default="65535" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -9337,6 +9348,7 @@ n deltaV = N x 0.02
 				<catParameter parID="927" />
 				<catParameter parID="928" />
 				<catParameter parID="929" />
+				<catParameter parID="205" />
 				<catParameter parID="1794" />
 			</catParameters>
 		</Category>
@@ -9511,6 +9523,7 @@ n deltaV = N x 0.02
 				<catParameter parID="261" />
 				<catParameter parID="262" />
 				<catParameter parID="977" />
+				<catParameter parID="254" />
 				<catParameter parID="1857" />
 				<catParameter parID="1590" />
 				<catParameter parID="826" />
@@ -9665,6 +9678,7 @@ n deltaV = N x 0.02
 				<catParameter parID="785" />
 				<catParameter parID="1045" />
 				<catParameter parID="787" />
+				<catParameter parID="1894" />
 				<catParameter parID="1734" />
 				<catParameter parID="1370" />
 				<catParameter parID="1544" />
@@ -9804,7 +9818,6 @@ n deltaV = N x 0.02
 			<catParameters>
 				<catParameter parID="159" />
 				<catParameter parID="908" />
-				<catParameter parID="254" />
 				<catParameter parID="1033" />
 				<catParameter parID="1516" />
 				<catParameter parID="1513" />
@@ -10173,7 +10186,6 @@ n deltaV = N x 0.02
 				<catParameter parID="227" />
 				<catParameter parID="226" />
 				<catParameter parID="228" />
-				<catParameter parID="205" />
 				<catParameter parID="175" />
 				<catParameter parID="1246" />
 				<catParameter parID="1247" />

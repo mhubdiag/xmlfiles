@@ -1,4 +1,4 @@
-<MhubParameterSet created="2025-02-19T14:34:58+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2025-04-14T18:04:45+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Acc Max Bump Duration " level="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="50" previous="" current="" units="10ms" />
@@ -761,6 +761,11 @@ Other = OFF (No Beep)</Notes>
 			<Help>Beeping style assigned to Beeper 9</Help>
 			<Notes>See Beeper 1 Style</Notes>
 		</Parameter>
+		<Parameter name="Beeper Output Enable" level="10" datatype="Bit" address="1870" length="1" bitmask="1" dtu="1">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Beeper Output Enable</Help>
+			<Notes>If a beeper is connected to the MHub, this parameter will enable or disable the beeper operation.</Notes>
+		</Parameter>
 	</Category>
 	<Category name="Communications">
 		<Parameter name="CM High Priority Packed Event" level="10" datatype="Bit" address="402" length="1" bitmask="2" dtu="0">
@@ -1489,6 +1494,11 @@ None</Notes>
 			<Values min="0" max="65535" default="0" previous="" current="" units="" />
 			<Help>Customer Driver ID 9</Help>
 			<Notes>When the driver key authentication is set to compare the driver ID on the driver key to one of the pre programmed Driver ID codes on the MHub, this parameter is one of the driver id&apos;s that will be compared. One of the 8 Customer Driver ID fields will have to match that on the driver key before the MHub will authenticate the driver key.</Notes>
+		</Parameter>
+		<Parameter name="Driver Key controls output used for Immobilisation" level="10" datatype="Bit" address="1981" length="1" bitmask="1" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Driver Key controls Output used for Immobilisation</Help>
+			<Notes>If the driver key is intended to control the immobiliser connection to the vehicle, then this parameter must be set to 1 alternatively if there is no Driver Key used then the Output Follows Ignition Parameter or Bit in the Output A and B can be set to still be able to control immobilisation of the vehicle via the Disablement command.</Notes>
 		</Parameter>
 		<Parameter name="Enable Custom Driver Key Authorisation" level="10" datatype="Bit" address="1522" length="1" bitmask="16" dtu="1">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
@@ -2274,6 +2284,11 @@ First byte of data defines template of data</Notes>
 			<Help>Vehicle Disabled Event Configuration</Help>
 			<Notes>See Periodic Position Event Configuration</Notes>
 		</Parameter>
+		<Parameter name="Vehicle Immobilization" level="10" datatype="Byte" address="3711" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Vehicle Immobilization Event Configuration</Help>
+			<Notes>Vehicle Immobilization Event Configuration</Notes>
+		</Parameter>
 		<Parameter name="Vehicle Information Event" level="10" datatype="Byte" address="3679" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
 			<Help>Vehicle Information Event Configuration</Help>
@@ -2818,11 +2833,6 @@ Include position accuracy and position source in each event</Notes>
 			<Help>Global Vehicle Disablement Allowed</Help>
 			<Notes>if the Global Vehicle Disablement Allowed bit is set, a command can remotely disable the vehicle overriding the Driver Key.</Notes>
 		</Parameter>
-		<Parameter name="Output used for Immobilisation" level="10" datatype="Bit" address="1981" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Output used for Immobilisation</Help>
-			<Notes>If the driver key is intended to control the immobiliser connection to the vehicle, then this parameter must be set to 1 alternatively if there is no Driver Key used then the Output Follows Ignition Parameter or Bit in the Output A and B can be set to still be able to control immobilisation of the vehicle via the Disablement command.</Notes>
-		</Parameter>
 		<Parameter name="Vehicle Disablement Delay" level="10" datatype="Byte" address="1894" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
 			<Help>Vehicle Disablement Delay</Help>
@@ -2850,10 +2860,12 @@ Include position accuracy and position source in each event</Notes>
 			<Help>Threshold at which the Analog Low event will be triggered</Help>
 			<Notes>Threshold at which the Analog Low event will be triggered. The value should be stated in 0.1 Volt increments, e.g. 12V = 120</Notes>
 		</Parameter>
-		<Parameter name="Analog Sensor Offset DS2450" level="10" datatype="Byte" address="1789" length="1" bitmask="255" dtu="0">
+		<Parameter name="Analog Sensor Offset DS2450" level="0" datatype="Byte" address="1789" length="1" bitmask="255" dtu="0">
 			<Values min="1" max="254" default="68" previous="" current="" units="" />
 			<Help>Analog Sensor Voltage Offset</Help>
-			<Notes>Analog Sensor Voltage Offset in 0.01V units for DS2450 1-Wire ADC.
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Analog Sensor Voltage Offset in 0.01V units for DS2450 1-Wire ADC.
 Offset value is Parameter Value - 128 * 0.01 V
 To calculate Parameter Value, take Required Voltage offset divide by 0.01 and add 128
 0 and 255 disables this feature
@@ -4798,11 +4810,6 @@ In order to calibrate itself, the Vehicle must travel at a constant speed of gre
 			<Values min="0" max="255" default="10" previous="" current="" units="seconds" />
 			<Help>Auto Calibration Debounce debounce time in seconds</Help>
 			<Notes>This parameter specifies for how long the vehicle must travel in seconds at a constant speed above the value specified in parameter &quot;Auto Calibration Speed Threshold&quot; for Auto Calibration to occur.</Notes>
-		</Parameter>
-		<Parameter name="Beeper Output Enable" level="10" datatype="Bit" address="1870" length="1" bitmask="1" dtu="1">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Beeper Output Enable</Help>
-			<Notes>If a beeper is connected to the MHub, this parameter will enable or disable the beeper operation.</Notes>
 		</Parameter>
 		<Parameter name="Braking Limit" level="10" datatype="Byte" address="1169" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="255" default="12" previous="" current="" units="km/h/s" />

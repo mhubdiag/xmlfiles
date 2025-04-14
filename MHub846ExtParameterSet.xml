@@ -1,9 +1,9 @@
-<MhubParameterSet created="2025-02-19T14:34:58+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2025-04-14T18:04:45+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Beeper">
-		<Parameter name="Output for Buzzer" level="10" datatype="Byte" address="3583" length="1" bitmask="255" dtu="0">
+		<Parameter name="Output for Buzzer on Extender" level="10" datatype="Byte" address="3583" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="5" default="0" previous="" current="" units="" />
-			<Help>Output connected to the buzzer</Help>
-			<Notes>This is the output that is connected to the buzzer</Notes>
+			<Help>Output connected to the buzzer on the Extender</Help>
+			<Notes>This is the output that is connected to the buzzer on the Extender</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Custom Functionality">
@@ -99,9 +99,10 @@ Values:
 All other values are reserved</Help>
 			<Notes>The Driver Key Type indicates what kind of Driver Key device is allowed to be used for Driver Identification and vehicle immobilization.
 Values:
-0,8,255 = Standard DS1992 based Scope Driver Key initialized properly using the Scope Driver Key programmer software.
+0,8 = Standard DS1992 based Scope Driver Key initialized properly using the Scope Driver Key programmer software.
 1 = DS1990 where Bytes 1 and 2 of the device serial number is used as the Driver ID
 170 = ScopeID where the device ID contains the Driver ID, Fleet Code and Vehicle Class
+255 = Any supported key
 All other values are reserved</Notes>
 		</Parameter>
 		<Parameter name="Enable Driver Key" level="10" datatype="Bit" address="1981" length="1" bitmask="2" dtu="0">

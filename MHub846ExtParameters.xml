@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="9" unitType="MHub846Ext" created="2025-02-19T14:34:10+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="9" unitType="MHub846Ext" created="2025-04-14T18:04:31+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="1729" level="5" status="0" datatype="Bit" address="3325" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
@@ -59,9 +59,10 @@ Values:
 All other values are reserved"</parDescription>
 				<parNotes>"The Driver Key Type indicates what kind of Driver Key device is allowed to be used for Driver Identification and vehicle immobilization.
 Values:
-0,8,255 = Standard DS1992 based Scope Driver Key initialized properly using the Scope Driver Key programmer software.
+0,8 = Standard DS1992 based Scope Driver Key initialized properly using the Scope Driver Key programmer software.
 1 = DS1990 where Bytes 1 and 2 of the device serial number is used as the Driver ID
 170 = ScopeID where the device ID contains the Driver ID, Fleet Code and Vehicle Class
+255 = Any supported key
 All other values are reserved"</parNotes>
 			</parInfo>
 		</Parameter>
@@ -414,9 +415,9 @@ Values of 0 and 255 will disable this feature."</parNotes>
 		<Parameter parID="1794" level="10" status="0" datatype="Byte" address="3583" length="1" bitmask="255" dtu="0" units="" min="0" max="5" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Output for Buzzer</parName>
-				<parDescription>"Output connected to the buzzer"</parDescription>
-				<parNotes>"This is the output that is connected to the buzzer"</parNotes>
+				<parName>Output for Buzzer on Extender</parName>
+				<parDescription>"Output connected to the buzzer on the Extender"</parDescription>
+				<parNotes>"This is the output that is connected to the buzzer on the Extender"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1768" level="5" status="0" datatype="String" address="2457" length="17" bitmask="255" dtu="0" units="" min="0" max="0" >

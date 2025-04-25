@@ -1,4 +1,4 @@
-<MhubParameterSet created="2025-04-14T18:04:44+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2025-04-25T10:20:33+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Acc Max Bump Duration " level="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="50" previous="" current="" units="10ms" />
@@ -4296,10 +4296,10 @@ DO NOT CHANGE THIS VALUE WITHOUT CONSULTING RELEVANT DOCUMENTATION.</Notes>
 		</Parameter>
 	</Category>
 	<Category name="MProfiler Connection">
-		<Parameter name="GPRS / LTE TCP Socket Enable" level="10" datatype="Bit" address="477" length="1" bitmask="2" dtu="0">
+		<Parameter name="Connection Type  TCP / GPRS  TCP / LTE" level="10" datatype="Bit" address="477" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>Enables a permanent TCP socket to MProfiler</Help>
-			<Notes>The ways in which the MHub can implement GPRS usage is very flexible, to be able to cater for various client requirements and customize such things as data usage etc. One method of GPRS operation is to specify that GPRS socket will remain permanently open. Enabling this parameter will instruct the MHub to open up a socket and attempt to keep the socket open at all time. Should the socket drop for any reason, the MHub will immediately reopen the socket again.</Notes>
+			<Help>Enables a GPRS or LTE connection to MProfiler</Help>
+			<Notes>Enables a GPRS or LTE connection to MProfiler</Notes>
 		</Parameter>
 		<Parameter name="MProfiler MSISDN" level="10" datatype="String" address="1003" length="21" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="" previous="" current="" units="" />

@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="2" unitType="MHub837" created="2025-04-25T10:20:19+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="2" unitType="MHub837" created="2025-04-26T17:41:15+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="1385" level="0" status="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0" units="10ms" min="0" max="255" >
 			<parValues default="50" mhub="" current="" prev="" />
@@ -1692,11 +1692,22 @@ DO NOT CHANGE THIS VALUE WITHOUT CONSULTING RELEVANT DOCUMENTATION."</parNotes>
 				<parNotes>"The MHub has the ability to reset itself once a day. Setting this to 1 will enable this daily reset."</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="879" level="10" status="0" datatype="Bit" address="1826" length="1" bitmask="2" dtu="0" units="Bit" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Daily Reset Hardware Reset Enable</parName>
+				<parDescription>"At the Daily Reset a full hardware reset will be performed. It is recommended to leave this enabled."</parDescription>
+				<parNotes>"When the daily reset is executed, it is only a restart of the system program. If this bit is set, the daily reset will also perform a hardware reset of the various components of the MHub as well."</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="817" level="10" status="0" datatype="Word" address="1827" length="2" bitmask="255" dtu="0" units="Minutes" min="0" max="1440" >
 			<parValues default="60" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Daily Reset Time</parName>
-				<parDescription>"Daily Reset Time"</parDescription>
+				<parName>Daily Reset UTC Offset</parName>
+				<parDescription>"Daily Reset offset from UTC in minutes. Positive offset only. 
+E.g 
+UTC + 2hrs =&gt; 120
+UTC - 2hrs -&gt; 1440 - 120 = 1320"</parDescription>
 				<parNotes>"If the daily reset is enabled in parameter &quot;Daily Reset Enable&quot;, this parameter will specify the time offset in minutes from midnight at which time the reste will occur. Keep in mind that the MHUhb operates only on GMT (UTC) time."</parNotes>
 			</parInfo>
 		</Parameter>
@@ -2296,14 +2307,6 @@ Any other value leaves the default state of Automatic Retries active."</parNotes
 				<parNotes>"Enable sending the journey log data in DDS format"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="855" level="10" status="0" datatype="Bit" address="1157" length="1" bitmask="128" dtu="0" units="" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable Deep Sleep Power Mode</parName>
-				<parDescription>"Enable Deep Sleep Power Mode: Master Clock running 32Khz. Modem Sleep Scan Not Available. Wake-up from Ignition Only."</parDescription>
-				<parNotes>"In addition to the IDLE and SLEEP power modes of the Mhub, there is also an Deep Sleep Power state, where the MHub will only wake up from the ignition line being turned ON. It cannot periodically wake up to check for incomming messages. Setting this parameter will enable this Deep Sleep Power Mode."</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1739" level="5" status="0" datatype="Bit" address="3326" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -2340,14 +2343,6 @@ Setting this parameter to 1 will enable Error Debug messages"</parNotes>
 				<parName>Enable Excessive Acceleration Exception Log Send</parName>
 				<parDescription>"Enable Sending of part of the Journey Log as events around the Excessive Acceleration Transgression"</parDescription>
 				<parNotes>"Enable Sending of part of the Journey Log as events around the Excessive Acceleration Transgression"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1354" level="10" status="0" datatype="Bit" address="1157" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable Fast Sleep</parName>
-				<parDescription>"Enable Fast Sleep"</parDescription>
-				<parNotes>"If enabled the unit will go to sleep faster if Mains voltage drops below the Mains Voltage Sleep Threshold"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="730" level="5" status="0" datatype="Byte" address="1814" length="8" bitmask="255" dtu="0" units="" min="0" max="255" >
@@ -2445,14 +2440,6 @@ This parameter works in conjunction with Permanent TCP socket. If the unit expec
 				<parNotes>"Enable Sending of part of the Journey Log as events around the Harsh Braking Transgression"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="296" level="10" status="0" datatype="Bit" address="1157" length="1" bitmask="2" dtu="1" units="" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable IDLE Power Mode</parName>
-				<parDescription>"GPS to idle power mode. Updates position every 30 seconds. GPS Speed and direction not available. 0: Normal 1: Idle Mode"</parDescription>
-				<parNotes>"This parameter will allow the Mhub to enter into its IDLE power save mode. In the idle state, GPS positions are updated internally to the MHub every 30 seconds, and speed and direction values are not available. 1=Enable Idle Mode"</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1755" level="5" status="0" datatype="Bit" address="1544" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
 			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -2486,16 +2473,6 @@ Setting this parameter to 1 will enable Info Debug messages"</parNotes>
 				<parDescription>"Enable J1939 FMS CANBus Interface.
 Note: Enable OBD2 CANBus Interface = 0"</parDescription>
 				<parNotes>"If the J1939 FMS CANBus is connected to the MHub828 CANbus, this parameter needs to be set to 1 to enable the CAN Bus functionality. Disable the OBD2 CANbus interface"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1355" level="10" status="0" datatype="Bit" address="1157" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable Keep Alive</parName>
-				<parDescription>"Enable to keep unit alive if comms from MHub Diagnostic or MProfiler"</parDescription>
-				<parNotes>"Enable to keep unit alive if comms from MHub Diagnostic or MProfiler. 
-MHub Diag - Keep Alive for 10 Seconds
-MProfiler - Keep Alive for 10 Minutes"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1733" level="5" status="0" datatype="Bit" address="3325" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
@@ -2535,14 +2512,6 @@ NOTE: This is necessary to recover from some errors"</parNotes>
 				<parName>Enable Mode 7 DTC Request</parName>
 				<parDescription>"Enables OBD2 Mode 7 DTC requests"</parDescription>
 				<parNotes>"Enables OBD2 Mode 7 DTC requests"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="298" level="10" status="0" datatype="Bit" address="1157" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable Modem Power off in Sleep</parName>
-				<parDescription>"NOT USED - Enable Modem Power off in Sleep. 0: Modem Idle Mode(W32) 1: Modem Off"</parDescription>
-				<parNotes>"NOT USED - When the Mhub has enetered sleep mode, the modem can either be turned OFF, or it can enter an idle mode. This idle mode of the modem is called W32K mode, and placed the modem into a very low power state, but still giving the modem the ability to recieve an SMS. If teh modem is turned OFF, it cannit recieve a SMS. This parameter will dictate which power mode for the modem to use: 0: Modem Idle Mode(W32) 1: Modem Off"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1578" level="10" status="0" datatype="Bit" address="1824" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
@@ -2644,22 +2613,6 @@ Note: Needs Listen Only mode to be enabled to work."</parNotes>
 				<parDescription>"Global Sentinel Enable. "</parDescription>
 				<parNotes>"Enable: 111
 Disable: Any other value"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="152" level="10" status="0" datatype="Bit" address="1157" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable Sleep Mode</parName>
-				<parDescription>"Enable Unit Sleep Mode 0: Normal 1: Sleep Mode "</parDescription>
-				<parNotes>"This parameter will allow the MHub to enter the sleep state. This is the lowest power state of the MHub. 1=Enable"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="297" level="10" status="0" datatype="Bit" address="1157" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable Sleep Modem Scan</parName>
-				<parDescription>"Unit wakes up periodically from sleep to check for messages if Ultra Low Power Mode is disabled."</parDescription>
-				<parNotes>"When sleep mode is enabled, and the MHub has entered sleep mode, it is possible to configure the MHub to still periodically wake up and check to see if there are any SMS messages that have been sent to the MHub while it was in sleep mode. Setting this parameter will enable this functionality."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="117" level="5" status="0" datatype="Bit" address="477" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
@@ -4963,14 +4916,6 @@ Number of seconds before the Modem/MHub reboots due to failing to contact the MP
 "</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="879" level="10" status="0" datatype="Bit" address="1826" length="1" bitmask="2" dtu="0" units="Bit" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Hardware Reset Enable</parName>
-				<parDescription>"Hardware Reset Enable when doing daily reset"</parDescription>
-				<parNotes>"When the daily reset is executed, it is only a restart of the system program. If this bit is set, the daily reset will also perform a hardware reset of the various components of the MHub as well."</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1324" level="0" status="0" datatype="Bit" address="529" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
 			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -5673,14 +5618,6 @@ Note: Event generation occurs at time-out + 10 seconds. e.g. 3590 seconds + 10 s
 				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
 
 Mains Dev. Threshold"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1353" level="10" status="0" datatype="Word" address="1047" length="2" bitmask="255" dtu="0" units="" min="1100" max="1245" >
-			<parValues default="1220" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Mains Voltage Sleep Threshold</parName>
-				<parDescription>"Voltage threshold when unit will sleep quicker."</parDescription>
-				<parNotes>"Voltage threshold when unit will sleep quicker. In case the vehicle is parked for many days, reduce the impact of the MHub running at full power drain."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="299" level="10" status="0" datatype="Word" address="2046" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65535" >
@@ -6644,11 +6581,83 @@ Any set value below 30 seconds is taken as 30 seconds.
 				<parNotes>"Power Lockout at boot. This will prevent the modem from starting if Li-ion battery power is too low. Maximum Lockout time is 240s (4 minutes)"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1071" level="10" status="0" datatype="Word" address="1269" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
+			<parValues default="1800" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Power Mode Deep-Sleep Delay from Sleep</parName>
+				<parDescription>"The amount of time from entering Sleep mode to going into Deep-Sleep ultra-low power mode. "</parDescription>
+				<parNotes>"This parameter specifies in seconds how long the MHub will wait from IDLE power mode before it enters Deep Sleepmode. Deep Sleep mode must be enable in parameter &quot;Enable Deep Sleep Mode&quot; before this will take effect."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="855" level="10" status="0" datatype="Bit" address="1157" length="1" bitmask="128" dtu="0" units="" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Power Mode Deep-Sleep Enable</parName>
+				<parDescription>"Enable Deep Sleep Power Mode: Master Clock running 32Khz. Modem Sleep Scan Not Available. Wake-up from Ignition Only."</parDescription>
+				<parNotes>"In addition to the IDLE and SLEEP power modes of the Mhub, there is also an Deep Sleep Power state, where the MHub will only wake up from the ignition line being turned ON. It cannot periodically wake up to check for incomming messages. Setting this parameter will enable this Deep Sleep Power Mode."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1354" level="10" status="0" datatype="Bit" address="1157" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Power Mode Fast-Sleep Enable</parName>
+				<parDescription>"Enable Fast Sleep. This allows the unit to shortcut the delays going into low power mode when the mains voltage drops below the configured threshold, e.g. in the case where a vehicle&apos;s battery charge has been depleted."</parDescription>
+				<parNotes>"If enabled the unit will go to sleep faster if Mains voltage drops below the Mains Voltage Sleep Threshold"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1353" level="10" status="0" datatype="Word" address="1047" length="2" bitmask="255" dtu="0" units="" min="1100" max="1245" >
+			<parValues default="1220" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Power Mode Fast-Sleep Mains Voltage Threshold</parName>
+				<parDescription>"Voltage threshold when unit will enter Sleep Mode quicker."</parDescription>
+				<parNotes>"Voltage threshold when unit will sleep quicker. In case the vehicle is parked for many days, reduce the impact of the MHub running at full power drain."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="160" level="10" status="0" datatype="Word" address="1162" length="2" bitmask="255" dtu="1" units="seconds" min="0" max="65535" >
+			<parValues default="600" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Power Mode Idle Delay from Full </parName>
+				<parDescription>"Time in seconds to IDLE Mode from FULL Power mode"</parDescription>
+				<parNotes>"This parameter specifies in seconds how long the MHub will wait in full power mode after ignition is turned off until it enters IDLE mode. Idle mode must be enable in parameter &quot;Enable IDLE Power Mode&quot; before this will take effect."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="296" level="10" status="0" datatype="Bit" address="1157" length="1" bitmask="2" dtu="1" units="" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Power Mode Idle Mode Enable</parName>
+				<parDescription>"GPS to idle power mode. Updates position every 30 seconds. GPS Speed and direction not available. 0: Normal 1: Idle Mode"</parDescription>
+				<parNotes>"This parameter will allow the Mhub to enter into its IDLE power save mode. In the idle state, GPS positions are updated internally to the MHub every 30 seconds, and speed and direction values are not available. 1=Enable Idle Mode"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="161" level="10" status="0" datatype="Word" address="1164" length="2" bitmask="255" dtu="0" units="seconds" min="0" max="65535" >
+			<parValues default="28800" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Power Mode Sleep Delay From Idle</parName>
+				<parDescription>"Time in seconds to Sleep Mode from Idle"</parDescription>
+				<parNotes>"This parameter specifies in seconds how long the MHub will wait in IDLE power mode before it enters IDLE mode. Sleep mode must be enable in parameter &quot;Enable Sleep Mode&quot; before this will take effect."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="152" level="10" status="0" datatype="Bit" address="1157" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Power Mode Sleep Mode Enable</parName>
+				<parDescription>"Enable Unit Sleep Mode 0: Normal 1: Sleep Mode "</parDescription>
+				<parNotes>"This parameter will allow the MHub to enter the sleep state. This is the lowest power state of the MHub. 1=Enable"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1000" level="10" status="0" datatype="Byte" address="1277" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="204" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Power Mode Sleep Mode Function Enable</parName>
+				<parDescription>"Global Power Sleep Mode Enablement variable. Program with value 0xCC to enable power sleep mode and any other value to disable."</parDescription>
+				<parNotes>"Global Power Sleep Mode Enablement variable. Program with value 0xCC to enable power sleep mode and any other value to disable."</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1631" level="15" status="0" datatype="Byte" address="3153" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Power Mode Sleep Scan Limit</parName>
-				<parDescription>"Power Mode Sleep Scan Limit"</parDescription>
+				<parName>Power Mode Sleep Scan Cycle Limit</parName>
+				<parDescription>"Power Mode Sleep Scan Cycle Limit"</parDescription>
 				<parNotes>"Power Mode Sleep Scan Limit. The maximum number of sleep scan cycles before sleep scan is disabled. Sleep Scan counter is cleared with ignition on.
 
 0 - Disabled
@@ -6657,52 +6666,46 @@ Any set value below 30 seconds is taken as 30 seconds.
 "</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1071" level="10" status="0" datatype="Word" address="1269" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
-			<parValues default="1800" mhub="" current="" prev="" />
+		<Parameter parID="196" level="10" status="0" datatype="Word" address="1860" length="2" bitmask="255" dtu="0" units="seconds" min="1800" max="65535" >
+			<parValues default="3600" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Power Mode time to Deep Sleep</parName>
-				<parDescription>"Power Mode time to Deep Sleep"</parDescription>
-				<parNotes>"This parameter specifies in seconds how long the MHub will wait from IDLE power mode before it enters Deep Sleepmode. Deep Sleep mode must be enable in parameter &quot;Enable Deep Sleep Mode&quot; before this will take effect."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="160" level="10" status="0" datatype="Word" address="1162" length="2" bitmask="255" dtu="1" units="seconds" min="0" max="65535" >
-			<parValues default="600" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Power Mode time to IDLE</parName>
-				<parDescription>"Time in seconds to IDLE Mode"</parDescription>
-				<parNotes>"This parameter specifies in seconds how long the MHub will wait in full power mode after ignition is turned off until it enters IDLE mode. Idle mode must be enable in parameter &quot;Enable IDLE Power Mode&quot; before this will take effect."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="161" level="10" status="0" datatype="Word" address="1164" length="2" bitmask="255" dtu="0" units="seconds" min="0" max="65535" >
-			<parValues default="28800" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Power Mode time to Sleep</parName>
-				<parDescription>"Time in seconds to Sleep Mode"</parDescription>
-				<parNotes>"This parameter specifies in seconds how long the MHub will wait in IDLE power mode before it enters IDLE mode. Sleep mode must be enable in parameter &quot;Enable Sleep Mode&quot; before this will take effect."</parNotes>
+				<parName>Power Mode Sleep Scan Period</parName>
+				<parDescription>"Time in seconds to Sleep Modem Scan from entering Sleep Mode."</parDescription>
+				<parNotes>"When the unit is configured for Sleep mode it has to wake up every now and again to scan for any message that it might have received while sleeping. This parameter sets that time (in seconds)"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="200" level="10" status="0" datatype="Word" address="1865" length="2" bitmask="255" dtu="0" units="seconds" min="1" max="65535" >
 			<parValues default="240" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Power Mode Time To Sleep From Sleep Scan</parName>
-				<parDescription>"Time in Seconds to Sleep from Sleep Scan Mode"</parDescription>
+				<parName>Power Mode Sleep Scan Time</parName>
+				<parDescription>"Time in Seconds Sleep Scan will operate before returning to Sleep Mode"</parDescription>
 				<parNotes>"When the unit is configured for Sleep mode it has to wake up every now and again to scan for any message that it might have received while sleeping. After it woke up it has to go back to sleep after a set time. This parameter sets that time (in seconds)"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="196" level="10" status="0" datatype="Word" address="1860" length="2" bitmask="255" dtu="0" units="seconds" min="1800" max="65535" >
-			<parValues default="3600" mhub="" current="" prev="" />
+		<Parameter parID="197" level="5" status="0" datatype="Word" address="1862" length="2" bitmask="255" dtu="0" units="seconds" min="35" max="1800" >
+			<parValues default="35" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Power Mode time to Sleep Scan</parName>
-				<parDescription>"Time in seconds to Sleep Modem Scan"</parDescription>
-				<parNotes>"When the unit is configured for Sleep mode it has to wake up every now and again to scan for any message that it might have received while sleeping. This parameter sets that time (in seconds)"</parNotes>
+				<parName>Power Mode Sleep Standoff for Modem Power Down</parName>
+				<parDescription>"Time in seconds Sleep will be delayed for the Modem to complete its power down."</parDescription>
+				<parNotes>"When the unit is configured for sleep mode it first powers the modem down and then goes into sleep mode. This parameters set the time in seconds from when the modem is powered down to when the unit goes into sleep mode."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1000" level="10" status="0" datatype="Byte" address="1277" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="204" mhub="" current="" prev="" />
+		<Parameter parID="297" level="10" status="0" datatype="Bit" address="1157" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Power Sleep Mode Enabled</parName>
-				<parDescription>"Global Power Sleep Mode Enablement variable. Program with value 0xCC to enable power sleep mode and any other value to disable."</parDescription>
-				<parNotes>"Global Power Sleep Mode Enablement variable. Program with value 0xCC to enable power sleep mode and any other value to disable."</parNotes>
+				<parName>Power Mode Sleep-Scan Enable</parName>
+				<parDescription>"Unit wakes up periodically from sleep to check for messages if Ultra Low Power Mode is disabled."</parDescription>
+				<parNotes>"When sleep mode is enabled, and the MHub has entered sleep mode, it is possible to configure the MHub to still periodically wake up and check to see if there are any SMS messages that have been sent to the MHub while it was in sleep mode. Setting this parameter will enable this functionality."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1355" level="10" status="0" datatype="Bit" address="1157" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Power Modes Keep Alive</parName>
+				<parDescription>"If enabled the unit will be prevented from entering Sleep mode if communication from MHub Diagnostic or MProfiler is received"</parDescription>
+				<parNotes>"Enable to keep unit alive if comms from MHub Diagnostic or MProfiler. 
+MHub Diag - Keep Alive for 10 Seconds
+MProfiler - Keep Alive for 10 Minutes"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="123" level="10" status="0" datatype="Byte" address="1146" length="1" bitmask="255" dtu="0" units="seconds" min="0" max="255" >
@@ -8358,14 +8361,6 @@ Any MSISDN on the Auth list is always allowed."</parNotes>
 				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
 
 This is the maximum age of a GPS position to when the unit begins requesting GSM positions"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="197" level="10" status="0" datatype="Word" address="1862" length="2" bitmask="255" dtu="0" units="seconds" min="35" max="1800" >
-			<parValues default="35" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Time delay from Modem Power Down to sleep</parName>
-				<parDescription>"Time in seconds allowed for Modem Power Down"</parDescription>
-				<parNotes>"When the unit is configured for sleep mode it first powers the modem down and then goes into sleep mode. This parameters set the time in seconds from when the modem is powered down to when the unit goes into sleep mode."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="287" level="10" status="0" datatype="Word" address="1167" length="2" bitmask="255" dtu="0" units="seconds" min="5" max="65535" >
@@ -10177,30 +10172,29 @@ n deltaV = N x 0.02
 			</catDescription>
 			<catParameters>
 				<catParameter parID="816" />
-				<catParameter parID="817" />
-				<catParameter parID="855" />
-				<catParameter parID="1354" />
-				<catParameter parID="296" />
-				<catParameter parID="1355" />
-				<catParameter parID="298" />
-				<catParameter parID="152" />
-				<catParameter parID="297" />
 				<catParameter parID="879" />
-				<catParameter parID="1353" />
+				<catParameter parID="817" />
 				<catParameter parID="1388" />
 				<catParameter parID="1585" />
-				<catParameter parID="1631" />
 				<catParameter parID="1071" />
+				<catParameter parID="855" />
+				<catParameter parID="1354" />
+				<catParameter parID="1353" />
 				<catParameter parID="160" />
+				<catParameter parID="296" />
 				<catParameter parID="161" />
-				<catParameter parID="200" />
-				<catParameter parID="196" />
+				<catParameter parID="152" />
 				<catParameter parID="1000" />
+				<catParameter parID="1631" />
+				<catParameter parID="196" />
+				<catParameter parID="200" />
+				<catParameter parID="197" />
+				<catParameter parID="297" />
+				<catParameter parID="1355" />
 				<catParameter parID="1073" />
 				<catParameter parID="1367" />
 				<catParameter parID="1368" />
 				<catParameter parID="1369" />
-				<catParameter parID="197" />
 				<catParameter parID="1361" />
 				<catParameter parID="1710" />
 				<catParameter parID="1501" />

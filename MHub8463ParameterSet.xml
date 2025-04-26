@@ -1,4 +1,4 @@
-<MhubParameterSet created="2025-04-26T18:02:17+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2025-04-26T18:14:55+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Acc Max Bump Duration " level="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="50" previous="" current="" units="10ms" />
@@ -5099,6 +5099,13 @@ Maximum Lockout time is 240s (4 minutes)</Notes>
 MHub Diag - Keep Alive for 10 Seconds
 MProfiler - Keep Alive for 10 Minutes</Notes>
 		</Parameter>
+		<Parameter name="Power USB Charge Current Limit if No GPS" level="5" datatype="Bit" address="1825" length="1" bitmask="16" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>If GPS is no visible then limit the charge current</Help>
+			<Notes>If USB Power Mode is enabled, Charge-In current will be limited to 100mA and SYSOUT will be powered from BAT. 
+
+NOTE: MAKE SURE POWER MODES-&gt;REGULATOR REGISTER 0 = 0, otherwise charge current can be more than USB POWER restrictions</Notes>
+		</Parameter>
 		<Parameter name="Power USB Current Limit with No GPS" level="0" datatype="Bit" address="1825" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="2" default="0" previous="" current="" units="" />
 			<Help>Enable the USB Power Mode.</Help>
@@ -5161,13 +5168,6 @@ Bit 1 Bit 0
 01 2.90V
 10 2.85V
 11 2.80V</Notes>
-		</Parameter>
-		<Parameter name="USB Power Mode No GPS" level="10" datatype="Bit" address="1825" length="1" bitmask="16" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enable the USB Power Mode if no GPS</Help>
-			<Notes>If USB Power Mode is enabled, Charge-In current will be limited to 100mA and SYSOUT will be powered from BAT. 
-
-NOTE: MAKE SURE POWER MODES-&gt;REGULATOR REGISTER 0 = 0, otherwise charge current can be more than USB POWER restrictions</Notes>
 		</Parameter>
 		<Parameter name="Wake Up Source 1-Wire Button" level="10" datatype="Bit" address="795" length="1" bitmask="16" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />

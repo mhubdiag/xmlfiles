@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="12" unitType="MHub8463" created="2025-04-26T18:01:58+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="12" unitType="MHub8463" created="2025-04-26T18:14:45+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="1385" level="0" status="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0" units="10ms" min="0" max="255" >
 			<parValues default="50" mhub="" current="" prev="" />
@@ -6713,6 +6713,16 @@ MHub Diag - Keep Alive for 10 Seconds
 MProfiler - Keep Alive for 10 Minutes"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1710" level="5" status="0" datatype="Bit" address="1825" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Power USB Charge Current Limit if No GPS</parName>
+				<parDescription>"If GPS is no visible then limit the charge current"</parDescription>
+				<parNotes>"If USB Power Mode is enabled, Charge-In current will be limited to 100mA and SYSOUT will be powered from BAT. 
+
+NOTE: MAKE SURE POWER MODES-&gt;REGULATOR REGISTER 0 = 0, otherwise charge current can be more than USB POWER restrictions"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1361" level="0" status="0" datatype="Bit" address="1825" length="1" bitmask="2" dtu="0" units="" min="0" max="2" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -8768,16 +8778,6 @@ Any other value - Same as 0."</parDescription>
 Any other value - Same as 0."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1710" level="10" status="0" datatype="Bit" address="1825" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>USB Power Mode No GPS</parName>
-				<parDescription>"Enable the USB Power Mode if no GPS"</parDescription>
-				<parNotes>"If USB Power Mode is enabled, Charge-In current will be limited to 100mA and SYSOUT will be powered from BAT. 
-
-NOTE: MAKE SURE POWER MODES-&gt;REGULATOR REGISTER 0 = 0, otherwise charge current can be more than USB POWER restrictions"</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1470" level="10" status="0" datatype="Bit" address="1825" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -10233,12 +10233,12 @@ n deltaV = N x 0.02
 				<catParameter parID="197" />
 				<catParameter parID="297" />
 				<catParameter parID="1355" />
+				<catParameter parID="1710" />
 				<catParameter parID="1361" />
 				<catParameter parID="1073" />
 				<catParameter parID="1367" />
 				<catParameter parID="1368" />
 				<catParameter parID="1369" />
-				<catParameter parID="1710" />
 				<catParameter parID="1501" />
 				<catParameter parID="1500" />
 				<catParameter parID="1502" />

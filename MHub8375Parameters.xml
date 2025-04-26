@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="11" unitType="MHub8375" created="2025-04-26T17:41:16+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="11" unitType="MHub8375" created="2025-04-26T18:01:57+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="1385" level="0" status="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0" units="10ms" min="0" max="255" >
 			<parValues default="50" mhub="" current="" prev="" />
@@ -6117,9 +6117,10 @@ Any set value below 30 seconds is taken as 30 seconds.
 		<Parameter parID="1585" level="10" status="0" datatype="Bit" address="1826" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
 			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Power Lockout</parName>
-				<parDescription>"Power Lockout"</parDescription>
-				<parNotes>"Power Lockout at boot. This will prevent the modem from starting if Li-ion battery power is too low. Maximum Lockout time is 240s (4 minutes)"</parNotes>
+				<parName>Power High Power Peripheral Lockout at startup</parName>
+				<parDescription>"High Power Peripheral Lockout"</parDescription>
+				<parNotes>"This prevents high power peripherals e.g. Modem, from powering up directly after system boot if the internal battery charge level is too low. 
+Maximum Lockout time is 240s (4 minutes)"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1071" level="10" status="0" datatype="Word" address="1269" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -6194,7 +6195,7 @@ Any set value below 30 seconds is taken as 30 seconds.
 				<parNotes>"Global Power Sleep Mode Enablement variable. Program with value 0xCC to enable power sleep mode and any other value to disable."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1631" level="15" status="0" datatype="Byte" address="3153" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+		<Parameter parID="1631" level="10" status="0" datatype="Byte" address="3153" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Power Mode Sleep Scan Cycle Limit</parName>
@@ -6247,6 +6248,18 @@ Any set value below 30 seconds is taken as 30 seconds.
 				<parNotes>"Enable to keep unit alive if comms from MHub Diagnostic or MProfiler. 
 MHub Diag - Keep Alive for 10 Seconds
 MProfiler - Keep Alive for 10 Minutes"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1361" level="0" status="0" datatype="Bit" address="1825" length="1" bitmask="2" dtu="0" units="" min="0" max="2" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Power USB Current Limit with No GPS</parName>
+				<parDescription>"Enable the USB Power Mode."</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+If USB Power Mode is enabled, Charge-In current will be limited to 100mA and SYSOUT will be powered from BAT
+
+NOTE: MAKE SURE POWER MODES-&gt;REGULATOR REGISTER 0 = 0, otherwise charge current can be more than USB POWER restrictions"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="123" level="10" status="1" datatype="Byte" address="1146" length="1" bitmask="255" dtu="0" units="seconds" min="0" max="255" >
@@ -8282,18 +8295,6 @@ Any other value - Same as 0."</parDescription>
 Any other value - Same as 0."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1361" level="0" status="0" datatype="Bit" address="1825" length="1" bitmask="2" dtu="0" units="" min="0" max="2" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>USB Power Mode</parName>
-				<parDescription>"Enable the USB Power Mode."</parDescription>
-				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
-
-If USB Power Mode is enabled, Charge-In current will be limited to 100mA and SYSOUT will be powered from BAT
-
-NOTE: MAKE SURE POWER MODES-&gt;REGULATOR REGISTER 0 = 0, otherwise charge current can be more than USB POWER restrictions"</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1710" level="10" status="0" datatype="Bit" address="1825" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -9707,11 +9708,11 @@ n deltaV = N x 0.02
 				<catParameter parID="197" />
 				<catParameter parID="297" />
 				<catParameter parID="1355" />
+				<catParameter parID="1361" />
 				<catParameter parID="1073" />
 				<catParameter parID="1367" />
 				<catParameter parID="1368" />
 				<catParameter parID="1369" />
-				<catParameter parID="1361" />
 				<catParameter parID="1710" />
 				<catParameter parID="1501" />
 				<catParameter parID="1500" />

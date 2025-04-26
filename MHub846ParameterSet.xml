@@ -1,4 +1,4 @@
-<MhubParameterSet created="2025-04-26T17:41:46+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2025-04-26T18:02:16+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Acc Max Bump Duration " level="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="50" previous="" current="" units="10ms" />
@@ -5055,10 +5055,11 @@ UTC - 2hrs -&gt; 1440 - 120 = 1320</Help>
 PDA Connection Retry in seconds
 if set to 0 value will default to 60</Notes>
 		</Parameter>
-		<Parameter name="Power Lockout" level="10" datatype="Bit" address="1826" length="1" bitmask="4" dtu="0">
+		<Parameter name="Power High Power Peripheral Lockout at startup" level="10" datatype="Bit" address="1826" length="1" bitmask="4" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>Power Lockout</Help>
-			<Notes>Power Lockout at boot. This will prevent the modem from starting if Li-ion battery power is too low. Maximum Lockout time is 240s (4 minutes)</Notes>
+			<Help>High Power Peripheral Lockout</Help>
+			<Notes>This prevents high power peripherals e.g. Modem, from powering up directly after system boot if the internal battery charge level is too low. 
+Maximum Lockout time is 240s (4 minutes)</Notes>
 		</Parameter>
 		<Parameter name="Power Mode Deep-Sleep Delay from Sleep" level="10" datatype="Word" address="1269" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="1800" previous="" current="" units="" />
@@ -5105,7 +5106,7 @@ if set to 0 value will default to 60</Notes>
 			<Help>Global Power Sleep Mode Enablement variable. Program with value 0xCC to enable power sleep mode and any other value to disable.</Help>
 			<Notes>Global Power Sleep Mode Enablement variable. Program with value 0xCC to enable power sleep mode and any other value to disable.</Notes>
 		</Parameter>
-		<Parameter name="Power Mode Sleep Scan Cycle Limit" level="15" datatype="Byte" address="3153" length="1" bitmask="255" dtu="0">
+		<Parameter name="Power Mode Sleep Scan Cycle Limit" level="10" datatype="Byte" address="3153" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
 			<Help>Power Mode Sleep Scan Cycle Limit</Help>
 			<Notes>Power Mode Sleep Scan Limit. The maximum number of sleep scan cycles before sleep scan is disabled. Sleep Scan counter is cleared with ignition on.
@@ -5141,6 +5142,15 @@ if set to 0 value will default to 60</Notes>
 			<Notes>Enable to keep unit alive if comms from MHub Diagnostic or MProfiler. 
 MHub Diag - Keep Alive for 10 Seconds
 MProfiler - Keep Alive for 10 Minutes</Notes>
+		</Parameter>
+		<Parameter name="Power USB Current Limit with No GPS" level="0" datatype="Bit" address="1825" length="1" bitmask="2" dtu="0">
+			<Values min="0" max="2" default="0" previous="" current="" units="" />
+			<Help>Enable the USB Power Mode.</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+If USB Power Mode is enabled, Charge-In current will be limited to 100mA and SYSOUT will be powered from BAT
+
+NOTE: MAKE SURE POWER MODES-&gt;REGULATOR REGISTER 0 = 0, otherwise charge current can be more than USB POWER restrictions</Notes>
 		</Parameter>
 		<Parameter name="Receive SMS RI Pulse Length" level="0" datatype="Word" address="375" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="1150" default="100" previous="" current="" units="msec" />
@@ -5195,15 +5205,6 @@ Bit 1 Bit 0
 01 2.90V
 10 2.85V
 11 2.80V</Notes>
-		</Parameter>
-		<Parameter name="USB Power Mode" level="0" datatype="Bit" address="1825" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="2" default="0" previous="" current="" units="" />
-			<Help>Enable the USB Power Mode.</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-If USB Power Mode is enabled, Charge-In current will be limited to 100mA and SYSOUT will be powered from BAT
-
-NOTE: MAKE SURE POWER MODES-&gt;REGULATOR REGISTER 0 = 0, otherwise charge current can be more than USB POWER restrictions</Notes>
 		</Parameter>
 		<Parameter name="USB Power Mode No GPS" level="10" datatype="Bit" address="1825" length="1" bitmask="16" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />

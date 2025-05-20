@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="9" unitType="MHub846Ext" created="2025-04-26T18:14:46+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="9" unitType="MHub846Ext" created="2025-05-20T17:39:15+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="1729" level="5" status="0" datatype="Bit" address="3325" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
@@ -39,12 +39,76 @@ The intended use is to standoff when another diagnostic tool is detected on the 
 The intended use is to standoff when another diagnostic tool is detected on the bus."</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1600" level="10" status="0" datatype="Bit" address="2930" length="1" bitmask="1" dtu="1" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Card Reader control immobilization</parName>
+				<parDescription>"When a valid card is read the vehicle is de-immobilized"</parDescription>
+				<parNotes>"When a valid card is read the vehicle is de-immobilized"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1601" level="10" status="0" datatype="Bit" address="2930" length="1" bitmask="2" dtu="1" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Card Reader Dangerous Goods control immobilization</parName>
+				<parDescription>"When a valid card is read and the license type indicate dangerous goods the vehicle is de-immobilized"</parDescription>
+				<parNotes>"When a valid card is read and the license type indicate dangerous goods the vehicle is de-immobilized"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1602" level="10" status="0" datatype="Word" address="2932" length="2" bitmask="255" dtu="1" units="" min="0" max="65535" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Card Reader Driver ID</parName>
+				<parDescription>"Driver ID to be used when de-immobilizing a vehicle with a card"</parDescription>
+				<parNotes>"Driver ID to be used when de-immobilizing a vehicle with a card"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1535" level="10" status="0" datatype="Bit" address="1535" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Clear Fuel Flow Counts on Event</parName>
+				<parDescription>"Clear the Fuel Flow Meter Count values when the event is generated"</parDescription>
+				<parNotes>"Clear the Fuel Flow Meter Count values when the event is generated"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1465" level="10" status="0" datatype="String" address="1051" length="20" bitmask="255" dtu="0" units="" min="0" max="0" >
 			<parValues default="Default" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Config Version Info</parName>
 				<parDescription>"This can be used to indicated version information regarding the configuration that was used"</parDescription>
 				<parNotes>"This can be used to indicated version information regarding the configuration that was used. Eg. Default V01"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1691" level="10" status="0" datatype="String" address="1280" length="20" bitmask="255" dtu="0" units="" min="0" max="0" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Customer Field 1</parName>
+				<parDescription>"Text field to store customer information to be used with custom functions."</parDescription>
+				<parNotes>"Text field to store customer information to be used with custom functions."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1692" level="10" status="0" datatype="String" address="1300" length="20" bitmask="255" dtu="0" units="" min="0" max="0" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Customer Field 2</parName>
+				<parDescription>"Text field to store customer information to be used with custom functions."</parDescription>
+				<parNotes>"Text field to store customer information to be used with custom functions."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1694" level="10" status="0" datatype="String" address="1320" length="20" bitmask="255" dtu="0" units="" min="0" max="0" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Customer Field 3</parName>
+				<parDescription>"Text field to store customer information to be used with custom functions."</parDescription>
+				<parNotes>"Text field to store customer information to be used with custom functions."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1695" level="10" status="0" datatype="String" address="1340" length="20" bitmask="255" dtu="0" units="" min="0" max="0" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Customer Field 4</parName>
+				<parDescription>"Text field to store customer information to be used with custom functions."</parDescription>
+				<parNotes>"Text field to store customer information to be used with custom functions."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1857" level="10" status="0" datatype="Byte" address="1774" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
@@ -222,6 +286,14 @@ Note: Enable J1939 FMS CANBus Interface = 0"</parDescription>
 Setting this parameter to 1 will enable Warning Debug messages"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1520" level="10" status="0" datatype="Bit" address="1526" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable Weight Sensor on Analog 1</parName>
+				<parDescription>"Enable Weight Sensor on Analog Input 1"</parDescription>
+				<parNotes>"Enable Weight Sensor on Analog Input 1"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1706" level="10" status="0" datatype="Long" address="3321" length="4" bitmask="255" dtu="0" units="" min="0" max="230" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -283,6 +355,14 @@ Do not enable this if you do not understand the side effects and implications."<
 Do not enable this if you do not understand the side effects and implications."</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1589" level="10" status="0" datatype="Word" address="2814" length="2" bitmask="255" dtu="1" units="None" min="0" max="65535" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>ERM Relay ID</parName>
+				<parDescription>"ERM Remote Relay ID"</parDescription>
+				<parNotes>"The ID of the ERM Remote Relay"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="37" level="5" status="0" datatype="Byte" address="475" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
 			<parValues default="5" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -291,12 +371,75 @@ Do not enable this if you do not understand the side effects and implications."<
 				<parNotes>"As described in the parameter Reboot Limit, the MHub will issue a reboot command to the modem if it detects a problem with the modem. However if an error is received in response to an instruction to the modem, the MHub will first retry the instruction. This parameter specifies the number of accumulated errors that the MHub can receive from the modem before it will issue a reboot command to the mode."</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1533" level="10" status="0" datatype="Bit" address="1535" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Fuel Data Event at End of Trip</parName>
+				<parDescription>"Send the Fuel Data event at the end of a trip"</parDescription>
+				<parNotes>"Send the Fuel Data event at the end of a trip"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1532" level="10" status="0" datatype="Bit" address="1535" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Fuel Data Event at Start of Trip</parName>
+				<parDescription>"Send the Fuel Data event at the start of a trip"</parDescription>
+				<parNotes>"Send the Fuel Data event at the start of a trip"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1534" level="10" status="0" datatype="Bit" address="1535" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Fuel Data Event on Cap Status Change</parName>
+				<parDescription>"Send the Fuel Data event at when the status of the Fuel Cap status changed"</parDescription>
+				<parNotes>"Send the Fuel Data event at when the status of the Fuel Cap status changed"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1536" level="10" status="0" datatype="Bit" address="1535" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Fuel Data Fuel Level Event</parName>
+				<parDescription>"Fuel Data Fuel Level Event"</parDescription>
+				<parNotes>"Fuel Data Fuel Level Event will generate OBD2 Fuel Level event and overwrite CANBus Fuel Level."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1599" level="5" status="0" datatype="Byte" address="2931" length="1" bitmask="255" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Garmin Fleet Functions</parName>
+				<parDescription>"0 Garmin Fleet Function disabled
+1 Garmin Fleet Function enabled"</parDescription>
+				<parNotes>"0 Garmin Fleet Function disabled
+1 Garmin Fleet Function enabled"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1443" level="0" status="0" datatype="Byte" address="419" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Global Pass-through enable</parName>
+				<parDescription>"Global Pass-through enable"</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Set Global Pass-through enable. 
+1 to enable Modem, GPS, Acc, OBD2,Sim passthrough modes
+2 to enable CAN Socket Passthrough"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1341" level="10" status="0" datatype="Byte" address="1046" length="1" bitmask="255" dtu="1" units="10omV" min="1" max="255" >
 			<parValues default="128" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Ignition OFF Source from Main Voltage Threshold</parName>
 				<parDescription>"Main Voltage Threshold for Ignition Off if Ignition Source from Main Voltage"</parDescription>
 				<parNotes>"When main voltage is used as the source of ignition, this parameter is the voltage threshold below which ignition will be assumed OFF. Typically in a 12V vehicle this should be 13V, the parameter is in 100mv steps, thus the value of the parameter will be 130. Setting this value to 0 switches off this functionality and the unit will fall back to normal ignition off detection."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1829" level="10" status="0" datatype="Bit" address="3578" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>IO Expander Installed</parName>
+				<parDescription>"The IO Expander have been installed and connected to the MHub"</parDescription>
+				<parNotes>"Enable communications with the IO Expander that would give the unit an extra 8 Inputs, 4 Outputs and 2 Analog Inputs.
+It is important to note that the IO Expander is an external device connected to the MHub."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1707" level="5" status="0" datatype="Bit" address="1777" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
@@ -326,6 +469,14 @@ If Fake VIN is programmed then only this will be used to request data.
 If Fake VIN is programmed then only this will be used to request data.
 
 "</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1528" level="10" status="0" datatype="Word" address="2809" length="2" bitmask="255" dtu="0" units="100kg" min="0" max="65535" >
+			<parValues default="50" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Maximum Vehicle Carry Weight</parName>
+				<parDescription>"Maximum weight that the vehicle can carry"</parDescription>
+				<parNotes>"Maximum weight that the vehicle can carry. Used for calibration of the weight sensor connected to Analog input 1"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="203" level="0" status="0" datatype="Word" address="433" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65535" >
@@ -434,6 +585,22 @@ The length of the VIN must be 13 characters otherwise XPlatform will reject the 
 The ID supplied here will be prefaced with PSD_ to safeguard against accidental VIN entry."</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1522" level="10" status="0" datatype="Bit" address="1526" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Send Weight Sensor Data on Trip End</parName>
+				<parDescription>"Send Weight Sensor Data on Trip End"</parDescription>
+				<parNotes>"Send Weight Sensor Data on Trip End"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1521" level="10" status="0" datatype="Bit" address="1526" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Send Weight Sensor Data on Trip Start</parName>
+				<parDescription>"Send Weight Sensor Data on Trip Start"</parDescription>
+				<parNotes>"Send Weight Sensor Data on Trip Start"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="805" level="0" status="0" datatype="Byte" address="808" length="8" bitmask="255" dtu="0" units="64-Bit ID" min="0" max="0" >
 			<parValues default="0000000000000000" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -492,6 +659,22 @@ The MHub has the ability to connect to up to a maximum of 4 temperature sensors.
 None"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1741" level="10" status="0" datatype="Word" address="1374" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
+			<parValues default="65535" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Vehicle Info Event Mask</parName>
+				<parDescription>"Vehicle Info Event Mask"</parDescription>
+				<parNotes>"Vehicle Info Event Mask: To get configuration value calculate the total value by adding the individual event values together. A value of 65535 will enable all events and 0 will disable all events.
+Mobileye Brakes 1
+Mobileye Left Indicator 2
+Mobileye Right Indicator 4
+Mobileye Wipers 8
+Mobileye Low Beam 16
+Mobileye High Beam 32
+Mobileye Tamper 64
+Mobileye No Comms 128"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1702" level="5" status="0" datatype="Bit" address="1777" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -500,6 +683,24 @@ None"</parNotes>
 "</parDescription>
 				<parNotes>"Relaxes timings on some protocols to enable compatibility with older vehicles.
 "</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1530" level="0" status="0" datatype="Byte" address="1778" length="9" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="000000000000000000" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Weight Sensor Calibration Vector</parName>
+				<parDescription>"Weight Sensor Calibration Vector"</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Weight Sensor Calibration Vector"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1529" level="10" status="0" datatype="Word" address="2811" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
+			<parValues default="300" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Weight Sensor Data Interval</parName>
+				<parDescription>"This is the interval in seconds between successive Weight Sensor Events."</parDescription>
+				<parNotes>"This is the interval in seconds between successive Weight Sensor Events. 0 disables the feature"</parNotes>
 			</parInfo>
 		</Parameter>
 	</Parameters>
@@ -519,7 +720,30 @@ None"</parNotes>
 			<catParameters>
 				<catParameter parID="1019" />
 				<catParameter parID="868" />
+				<catParameter parID="1600" />
+				<catParameter parID="1601" />
+				<catParameter parID="1602" />
+				<catParameter parID="1535" />
+				<catParameter parID="1691" />
+				<catParameter parID="1692" />
+				<catParameter parID="1694" />
+				<catParameter parID="1695" />
 				<catParameter parID="1788" />
+				<catParameter parID="1520" />
+				<catParameter parID="1589" />
+				<catParameter parID="1533" />
+				<catParameter parID="1532" />
+				<catParameter parID="1534" />
+				<catParameter parID="1536" />
+				<catParameter parID="1599" />
+				<catParameter parID="1443" />
+				<catParameter parID="1829" />
+				<catParameter parID="1528" />
+				<catParameter parID="1522" />
+				<catParameter parID="1521" />
+				<catParameter parID="1741" />
+				<catParameter parID="1530" />
+				<catParameter parID="1529" />
 			</catParameters>
 		</Category>
 		<Category catName="Debug">

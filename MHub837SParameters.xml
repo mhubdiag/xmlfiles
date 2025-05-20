@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="16" unitType="MHub837S" created="2025-04-26T18:14:45+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="16" unitType="MHub837S" created="2025-05-20T17:39:14+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="1385" level="0" status="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0" units="10ms" min="0" max="255" >
 			<parValues default="50" mhub="" current="" prev="" />
@@ -520,7 +520,7 @@ n - Custom Functionality n
 		<Parameter parID="912" level="15" status="0" datatype="Byte" address="538" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Beeper 1 Event flag</parName>
+				<parName>Beeper 01 Event flag</parName>
 				<parDescription>"Flag assigned to Beeper 1"</parDescription>
 				<parNotes>"Select one of the following flags. When this flag is active, the beeper will beep according to the corresponding beep code on the Beeper Style parameter:
 DO NOT USE A VALUE OTHER THAN LISTED BELOW
@@ -541,7 +541,7 @@ DO NOT USE A VALUE OTHER THAN LISTED BELOW
 		<Parameter parID="913" level="15" status="0" datatype="Byte" address="539" length="1" bitmask="255" dtu="0" units="" min="0" max="8" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Beeper 1 Style</parName>
+				<parName>Beeper 01 Style</parName>
 				<parDescription>"Beeping style assigned to Beeper 1"</parDescription>
 				<parNotes>"Select Ring tone from 1 to 32
 -- or -- 
@@ -556,6 +556,134 @@ If Output 3 is Configured as Buzzer Output
 8 = Three x 100ms beeps 100ms apart
 9 = Input and Outputs -&gt; Ouput Beeper Configuration
 Other = OFF (No Beep)"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="914" level="15" status="0" datatype="Byte" address="540" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 02 Event flag</parName>
+				<parDescription>"Flag assigned to Beeper 2"</parDescription>
+				<parNotes>"See Beeper 1 Event flag"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="915" level="15" status="0" datatype="Byte" address="541" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 02 Style</parName>
+				<parDescription>"Beeping style assigned to Beeper 2"</parDescription>
+				<parNotes>"See Beeper 1 Style"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="916" level="15" status="0" datatype="Byte" address="542" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 03 Event flag</parName>
+				<parDescription>"Flag assigned to Beeper 3"</parDescription>
+				<parNotes>"See Beeper 1 Event flag"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="917" level="15" status="0" datatype="Byte" address="543" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 03 Style</parName>
+				<parDescription>"Beeping style assigned to Beeper 3"</parDescription>
+				<parNotes>"See Beeper 1 Style"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="918" level="15" status="0" datatype="Byte" address="544" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 04 Event flag</parName>
+				<parDescription>"Flag assigned to Beeper 4"</parDescription>
+				<parNotes>"See Beeper 1 Event flag"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="919" level="15" status="0" datatype="Byte" address="545" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 04 Style</parName>
+				<parDescription>"Beeping style assigned to Beeper 4"</parDescription>
+				<parNotes>"See Beeper 1 Style"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="920" level="15" status="0" datatype="Byte" address="546" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 05 Event flag</parName>
+				<parDescription>"Flag assigned to Beeper 5"</parDescription>
+				<parNotes>"See Beeper 1 Event flag"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="921" level="15" status="0" datatype="Byte" address="547" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 05 Style</parName>
+				<parDescription>"Beeping style assigned to Beeper 5"</parDescription>
+				<parNotes>"See Beeper 1 Style"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="922" level="15" status="0" datatype="Byte" address="548" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 06 Event flag</parName>
+				<parDescription>"Flag assigned to Beeper 6"</parDescription>
+				<parNotes>"See Beeper 1 Event flag"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="923" level="15" status="0" datatype="Byte" address="549" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 06 Style</parName>
+				<parDescription>"Beeping style assigned to Beeper 6"</parDescription>
+				<parNotes>"See Beeper 1 Style"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="924" level="15" status="0" datatype="Byte" address="550" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 07 Event flag</parName>
+				<parDescription>"Flag assigned to Beeper 7"</parDescription>
+				<parNotes>"See Beeper 1 Event flag"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="925" level="15" status="0" datatype="Byte" address="551" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 07 Style</parName>
+				<parDescription>"Beeping style assigned to Beeper 7"</parDescription>
+				<parNotes>"See Beeper 1 Style"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="926" level="15" status="0" datatype="Byte" address="552" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 08 Event flag</parName>
+				<parDescription>"Flag assigned to Beeper 8"</parDescription>
+				<parNotes>"See Beeper 1 Event flag"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="927" level="15" status="0" datatype="Byte" address="553" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 08 Style</parName>
+				<parDescription>"Beeping style assigned to Beeper 8"</parDescription>
+				<parNotes>"See Beeper 1 Style"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="928" level="15" status="0" datatype="Byte" address="554" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 09 Event flag</parName>
+				<parDescription>"Flag assigned to Beeper 9"</parDescription>
+				<parNotes>"See Beeper 1 Event flag"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="929" level="15" status="0" datatype="Byte" address="555" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 09 Style</parName>
+				<parDescription>"Beeping style assigned to Beeper 9"</parDescription>
+				<parNotes>"See Beeper 1 Style"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="930" level="15" status="0" datatype="Byte" address="556" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
@@ -667,134 +795,6 @@ Other = OFF (No Beep)"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Beeper 16 Style</parName>
 				<parDescription>"Beeping style assigned to Beeper 16"</parDescription>
-				<parNotes>"See Beeper 1 Style"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="914" level="15" status="0" datatype="Byte" address="540" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 2 Event flag</parName>
-				<parDescription>"Flag assigned to Beeper 2"</parDescription>
-				<parNotes>"See Beeper 1 Event flag"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="915" level="15" status="0" datatype="Byte" address="541" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 2 Style</parName>
-				<parDescription>"Beeping style assigned to Beeper 2"</parDescription>
-				<parNotes>"See Beeper 1 Style"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="916" level="15" status="0" datatype="Byte" address="542" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 3 Event flag</parName>
-				<parDescription>"Flag assigned to Beeper 3"</parDescription>
-				<parNotes>"See Beeper 1 Event flag"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="917" level="15" status="0" datatype="Byte" address="543" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 3 Style</parName>
-				<parDescription>"Beeping style assigned to Beeper 3"</parDescription>
-				<parNotes>"See Beeper 1 Style"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="918" level="15" status="0" datatype="Byte" address="544" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 4 Event flag</parName>
-				<parDescription>"Flag assigned to Beeper 4"</parDescription>
-				<parNotes>"See Beeper 1 Event flag"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="919" level="15" status="0" datatype="Byte" address="545" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 4 Style</parName>
-				<parDescription>"Beeping style assigned to Beeper 4"</parDescription>
-				<parNotes>"See Beeper 1 Style"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="920" level="15" status="0" datatype="Byte" address="546" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 5 Event flag</parName>
-				<parDescription>"Flag assigned to Beeper 5"</parDescription>
-				<parNotes>"See Beeper 1 Event flag"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="921" level="15" status="0" datatype="Byte" address="547" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 5 Style</parName>
-				<parDescription>"Beeping style assigned to Beeper 5"</parDescription>
-				<parNotes>"See Beeper 1 Style"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="922" level="15" status="0" datatype="Byte" address="548" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 6 Event flag</parName>
-				<parDescription>"Flag assigned to Beeper 6"</parDescription>
-				<parNotes>"See Beeper 1 Event flag"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="923" level="15" status="0" datatype="Byte" address="549" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 6 Style</parName>
-				<parDescription>"Beeping style assigned to Beeper 6"</parDescription>
-				<parNotes>"See Beeper 1 Style"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="924" level="15" status="0" datatype="Byte" address="550" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 7 Event flag</parName>
-				<parDescription>"Flag assigned to Beeper 7"</parDescription>
-				<parNotes>"See Beeper 1 Event flag"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="925" level="15" status="0" datatype="Byte" address="551" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 7 Style</parName>
-				<parDescription>"Beeping style assigned to Beeper 7"</parDescription>
-				<parNotes>"See Beeper 1 Style"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="926" level="15" status="0" datatype="Byte" address="552" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 8 Event flag</parName>
-				<parDescription>"Flag assigned to Beeper 8"</parDescription>
-				<parNotes>"See Beeper 1 Event flag"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="927" level="15" status="0" datatype="Byte" address="553" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 8 Style</parName>
-				<parDescription>"Beeping style assigned to Beeper 8"</parDescription>
-				<parNotes>"See Beeper 1 Style"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="928" level="15" status="0" datatype="Byte" address="554" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 9 Event flag</parName>
-				<parDescription>"Flag assigned to Beeper 9"</parDescription>
-				<parNotes>"See Beeper 1 Event flag"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="929" level="15" status="0" datatype="Byte" address="555" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 9 Style</parName>
-				<parDescription>"Beeping style assigned to Beeper 9"</parDescription>
 				<parNotes>"See Beeper 1 Style"</parNotes>
 			</parInfo>
 		</Parameter>
@@ -1525,6 +1525,38 @@ DO NOT CHANGE THIS VALUE WITHOUT CONSULTING RELEVANT DOCUMENTATION."</parNotes>
 				<parName>Customer Code</parName>
 				<parDescription>"This allows a key to be linked to a specific customer."</parDescription>
 				<parNotes>"If this feature is enabled, only keys containing the same code as written to this parameter will allow access to the vehicle."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1691" level="10" status="0" datatype="String" address="1280" length="20" bitmask="255" dtu="0" units="" min="0" max="0" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Customer Field 1</parName>
+				<parDescription>"Text field to store customer information to be used with custom functions."</parDescription>
+				<parNotes>"Text field to store customer information to be used with custom functions."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1692" level="10" status="0" datatype="String" address="1300" length="20" bitmask="255" dtu="0" units="" min="0" max="0" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Customer Field 2</parName>
+				<parDescription>"Text field to store customer information to be used with custom functions."</parDescription>
+				<parNotes>"Text field to store customer information to be used with custom functions."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1694" level="10" status="0" datatype="String" address="1320" length="20" bitmask="255" dtu="0" units="" min="0" max="0" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Customer Field 3</parName>
+				<parDescription>"Text field to store customer information to be used with custom functions."</parDescription>
+				<parNotes>"Text field to store customer information to be used with custom functions."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1695" level="10" status="0" datatype="String" address="1340" length="20" bitmask="255" dtu="0" units="" min="0" max="0" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Customer Field 4</parName>
+				<parDescription>"Text field to store customer information to be used with custom functions."</parDescription>
+				<parNotes>"Text field to store customer information to be used with custom functions."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1051" level="10" status="0" datatype="Byte" address="3818" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
@@ -3398,6 +3430,16 @@ https://wiki.scopetechnology.com/index.php/Consolidated_Fuel_Event_Configuration
 				<parNotes>"Fuel Vehicle Weight in Kg."</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1599" level="5" status="0" datatype="Byte" address="2931" length="1" bitmask="255" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Garmin Fleet Functions</parName>
+				<parDescription>"0 Garmin Fleet Function disabled
+1 Garmin Fleet Function enabled"</parDescription>
+				<parNotes>"0 Garmin Fleet Function disabled
+1 Garmin Fleet Function enabled"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1830" level="10" status="0" datatype="Byte" address="3614" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
 			<parValues default="183" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -4220,6 +4262,15 @@ e.g.
 				<parNotes>"Insurance Led Style. GREEN Hardware Ok, RED Hardware Fault - Triggers upon device plug in. "</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1829" level="10" status="0" datatype="Bit" address="3578" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>IO Expander Installed</parName>
+				<parDescription>"The IO Expander have been installed and connected to the MHub"</parDescription>
+				<parNotes>"Enable communications with the IO Expander that would give the unit an extra 8 Inputs, 4 Outputs and 2 Analog Inputs.
+It is important to note that the IO Expander is an external device connected to the MHub."</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="6" level="0" status="0" datatype="Word" address="264" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -4605,14 +4656,6 @@ Mains Dev. Threshold"</parNotes>
 				<parName>MProfiler User Name</parName>
 				<parDescription>"User name used when logging onto MProfiler over a TCP socket."</parDescription>
 				<parNotes>"When connecting to MProfiler using GPRS, the MHub needs to uniquely identify itself to MProfiler before the connection will be accepted. It identifies itself by means of the MProfiler User Name. before the connection will be acc epted, an entity on MProfiler must already exist with the same MProfier User Name as the UnitID on MProfiler. Care must be taken to ensure that no two MHub&apos;s are configured with the same MProfiler User Name, as then the information from two different MHub units will be sent o to the client application as a single unit. Typically the MSISDN of the SIM card can be used."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="90" level="10" status="0" datatype="String" address="906" length="65" bitmask="255" dtu="0" units="None" min="0" max="0" >
-			<parValues default="" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>MProfiler User Password</parName>
-				<parDescription>"Password used to log onto a TCP socket session with MProfiler."</parDescription>
-				<parNotes>"If the MProfiler login requires a password from the MHub whe the MHub logs into the MProfiler, that password is stored in this parameter. "</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1352" level="10" status="0" datatype="Bit" address="436" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
@@ -5123,6 +5166,14 @@ See SMS DebounceTimer"</parNotes>
 				<parNotes>"See Periodic Position Event Configuration"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="90" level="5" status="0" datatype="String" address="906" length="65" bitmask="255" dtu="0" units="None" min="0" max="0" >
+			<parValues default="" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Password Seed</parName>
+				<parDescription>"Used in communications to a mobile phone for certificate management."</parDescription>
+				<parNotes>"Used in communications to a mobile phone for certificate management."</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1388" level="0" status="1" datatype="Byte" address="366" length="1" bitmask="255" dtu="0" units="seconds" min="0" max="255" >
 			<parValues default="60" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -5356,12 +5407,14 @@ Maximum Lockout time is 240s (4 minutes)"</parNotes>
 				<parNotes>"This parameter will allow the MHub to enter the sleep state. This is the lowest power state of the MHub. 1=Enable"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1000" level="10" status="0" datatype="Byte" address="1277" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+		<Parameter parID="1000" level="0" status="0" datatype="Byte" address="1277" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
 			<parValues default="204" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Power Mode Sleep Mode Function Enable</parName>
 				<parDescription>"Global Power Sleep Mode Enablement variable. Program with value 0xCC to enable power sleep mode and any other value to disable."</parDescription>
-				<parNotes>"Global Power Sleep Mode Enablement variable. Program with value 0xCC to enable power sleep mode and any other value to disable."</parNotes>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Global Power Sleep Mode Enablement variable. Program with value 0xCC to enable power sleep mode and any other value to disable."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1631" level="10" status="0" datatype="Byte" address="3153" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
@@ -7219,7 +7272,7 @@ Weight Sensor Calibration Vector"</parNotes>
 See SMS DebounceTimer"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1446" level="5" status="0" datatype="Bit" address="1864" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
+		<Parameter parID="1446" level="10" status="0" datatype="Bit" address="1864" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Wifi Enable</parName>
@@ -7386,20 +7439,6 @@ n deltaV = N x 0.02
 			<catParameters>
 				<catParameter parID="912" />
 				<catParameter parID="913" />
-				<catParameter parID="930" />
-				<catParameter parID="931" />
-				<catParameter parID="932" />
-				<catParameter parID="933" />
-				<catParameter parID="934" />
-				<catParameter parID="935" />
-				<catParameter parID="936" />
-				<catParameter parID="937" />
-				<catParameter parID="938" />
-				<catParameter parID="939" />
-				<catParameter parID="940" />
-				<catParameter parID="941" />
-				<catParameter parID="942" />
-				<catParameter parID="943" />
 				<catParameter parID="914" />
 				<catParameter parID="915" />
 				<catParameter parID="916" />
@@ -7416,6 +7455,20 @@ n deltaV = N x 0.02
 				<catParameter parID="927" />
 				<catParameter parID="928" />
 				<catParameter parID="929" />
+				<catParameter parID="930" />
+				<catParameter parID="931" />
+				<catParameter parID="932" />
+				<catParameter parID="933" />
+				<catParameter parID="934" />
+				<catParameter parID="935" />
+				<catParameter parID="936" />
+				<catParameter parID="937" />
+				<catParameter parID="938" />
+				<catParameter parID="939" />
+				<catParameter parID="940" />
+				<catParameter parID="941" />
+				<catParameter parID="942" />
+				<catParameter parID="943" />
 				<catParameter parID="205" />
 			</catParameters>
 		</Category>
@@ -7489,6 +7542,10 @@ n deltaV = N x 0.02
 				<catParameter parID="1601" />
 				<catParameter parID="1602" />
 				<catParameter parID="1535" />
+				<catParameter parID="1691" />
+				<catParameter parID="1692" />
+				<catParameter parID="1694" />
+				<catParameter parID="1695" />
 				<catParameter parID="1788" />
 				<catParameter parID="1520" />
 				<catParameter parID="1589" />
@@ -7496,7 +7553,9 @@ n deltaV = N x 0.02
 				<catParameter parID="1532" />
 				<catParameter parID="1534" />
 				<catParameter parID="1536" />
+				<catParameter parID="1599" />
 				<catParameter parID="1443" />
+				<catParameter parID="1829" />
 				<catParameter parID="1528" />
 				<catParameter parID="1522" />
 				<catParameter parID="1521" />
@@ -7861,6 +7920,14 @@ n deltaV = N x 0.02
 				<catParameter parID="1558" />
 			</catParameters>
 		</Category>
+		<Category catName="Ignition Detection">
+			<catDescription>
+				Ignition Detection
+			</catDescription>
+			<catParameters>
+				<catParameter parID="1017" />
+			</catParameters>
+		</Category>
 		<Category catName="Immobilization">
 			<catDescription>
 				Immobilization
@@ -8003,7 +8070,6 @@ n deltaV = N x 0.02
 				<catParameter parID="818" />
 				<catParameter parID="819" />
 				<catParameter parID="820" />
-				<catParameter parID="1017" />
 				<catParameter parID="1072" />
 				<catParameter parID="1271" />
 				<catParameter parID="1542" />

@@ -1,4 +1,4 @@
-<MhubParameterSet created="2025-04-26T18:14:55+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2025-05-20T17:39:55+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Acc Max Bump Duration " level="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="50" previous="" current="" units="10ms" />
@@ -569,7 +569,7 @@ Scaling 0.4
 		</Parameter>
 	</Category>
 	<Category name="Beeper">
-		<Parameter name="Beeper 1 Event flag" level="15" datatype="Byte" address="538" length="1" bitmask="255" dtu="0">
+		<Parameter name="Beeper 01 Event flag" level="15" datatype="Byte" address="538" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
 			<Help>Flag assigned to Beeper 1</Help>
 			<Notes>Select one of the following flags. When this flag is active, the beeper will beep according to the corresponding beep code on the Beeper Style parameter:
@@ -587,7 +587,7 @@ DO NOT USE A VALUE OTHER THAN LISTED BELOW
 
 </Notes>
 		</Parameter>
-		<Parameter name="Beeper 1 Style" level="15" datatype="Byte" address="539" length="1" bitmask="255" dtu="0">
+		<Parameter name="Beeper 01 Style" level="15" datatype="Byte" address="539" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="8" default="0" previous="" current="" units="" />
 			<Help>Beeping style assigned to Beeper 1</Help>
 			<Notes>Select Ring tone from 1 to 32
@@ -603,6 +603,86 @@ If Output 3 is Configured as Buzzer Output
 8 = Three x 100ms beeps 100ms apart
 9 = Input and Outputs -&gt; Ouput Beeper Configuration
 Other = OFF (No Beep)</Notes>
+		</Parameter>
+		<Parameter name="Beeper 02 Event flag" level="15" datatype="Byte" address="540" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Flag assigned to Beeper 2</Help>
+			<Notes>See Beeper 1 Event flag</Notes>
+		</Parameter>
+		<Parameter name="Beeper 02 Style" level="15" datatype="Byte" address="541" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Beeping style assigned to Beeper 2</Help>
+			<Notes>See Beeper 1 Style</Notes>
+		</Parameter>
+		<Parameter name="Beeper 03 Event flag" level="15" datatype="Byte" address="542" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Flag assigned to Beeper 3</Help>
+			<Notes>See Beeper 1 Event flag</Notes>
+		</Parameter>
+		<Parameter name="Beeper 03 Style" level="15" datatype="Byte" address="543" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Beeping style assigned to Beeper 3</Help>
+			<Notes>See Beeper 1 Style</Notes>
+		</Parameter>
+		<Parameter name="Beeper 04 Event flag" level="15" datatype="Byte" address="544" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Flag assigned to Beeper 4</Help>
+			<Notes>See Beeper 1 Event flag</Notes>
+		</Parameter>
+		<Parameter name="Beeper 04 Style" level="15" datatype="Byte" address="545" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Beeping style assigned to Beeper 4</Help>
+			<Notes>See Beeper 1 Style</Notes>
+		</Parameter>
+		<Parameter name="Beeper 05 Event flag" level="15" datatype="Byte" address="546" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Flag assigned to Beeper 5</Help>
+			<Notes>See Beeper 1 Event flag</Notes>
+		</Parameter>
+		<Parameter name="Beeper 05 Style" level="15" datatype="Byte" address="547" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Beeping style assigned to Beeper 5</Help>
+			<Notes>See Beeper 1 Style</Notes>
+		</Parameter>
+		<Parameter name="Beeper 06 Event flag" level="15" datatype="Byte" address="548" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Flag assigned to Beeper 6</Help>
+			<Notes>See Beeper 1 Event flag</Notes>
+		</Parameter>
+		<Parameter name="Beeper 06 Style" level="15" datatype="Byte" address="549" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Beeping style assigned to Beeper 6</Help>
+			<Notes>See Beeper 1 Style</Notes>
+		</Parameter>
+		<Parameter name="Beeper 07 Event flag" level="15" datatype="Byte" address="550" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Flag assigned to Beeper 7</Help>
+			<Notes>See Beeper 1 Event flag</Notes>
+		</Parameter>
+		<Parameter name="Beeper 07 Style" level="15" datatype="Byte" address="551" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Beeping style assigned to Beeper 7</Help>
+			<Notes>See Beeper 1 Style</Notes>
+		</Parameter>
+		<Parameter name="Beeper 08 Event flag" level="15" datatype="Byte" address="552" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Flag assigned to Beeper 8</Help>
+			<Notes>See Beeper 1 Event flag</Notes>
+		</Parameter>
+		<Parameter name="Beeper 08 Style" level="15" datatype="Byte" address="553" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Beeping style assigned to Beeper 8</Help>
+			<Notes>See Beeper 1 Style</Notes>
+		</Parameter>
+		<Parameter name="Beeper 09 Event flag" level="15" datatype="Byte" address="554" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Flag assigned to Beeper 9</Help>
+			<Notes>See Beeper 1 Event flag</Notes>
+		</Parameter>
+		<Parameter name="Beeper 09 Style" level="15" datatype="Byte" address="555" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Beeping style assigned to Beeper 9</Help>
+			<Notes>See Beeper 1 Style</Notes>
 		</Parameter>
 		<Parameter name="Beeper 10 Event flag" level="15" datatype="Byte" address="556" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
@@ -672,86 +752,6 @@ Other = OFF (No Beep)</Notes>
 		<Parameter name="Beeper 16 Style" level="15" datatype="Byte" address="569" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
 			<Help>Beeping style assigned to Beeper 16</Help>
-			<Notes>See Beeper 1 Style</Notes>
-		</Parameter>
-		<Parameter name="Beeper 2 Event flag" level="15" datatype="Byte" address="540" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Flag assigned to Beeper 2</Help>
-			<Notes>See Beeper 1 Event flag</Notes>
-		</Parameter>
-		<Parameter name="Beeper 2 Style" level="15" datatype="Byte" address="541" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Beeping style assigned to Beeper 2</Help>
-			<Notes>See Beeper 1 Style</Notes>
-		</Parameter>
-		<Parameter name="Beeper 3 Event flag" level="15" datatype="Byte" address="542" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Flag assigned to Beeper 3</Help>
-			<Notes>See Beeper 1 Event flag</Notes>
-		</Parameter>
-		<Parameter name="Beeper 3 Style" level="15" datatype="Byte" address="543" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Beeping style assigned to Beeper 3</Help>
-			<Notes>See Beeper 1 Style</Notes>
-		</Parameter>
-		<Parameter name="Beeper 4 Event flag" level="15" datatype="Byte" address="544" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Flag assigned to Beeper 4</Help>
-			<Notes>See Beeper 1 Event flag</Notes>
-		</Parameter>
-		<Parameter name="Beeper 4 Style" level="15" datatype="Byte" address="545" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Beeping style assigned to Beeper 4</Help>
-			<Notes>See Beeper 1 Style</Notes>
-		</Parameter>
-		<Parameter name="Beeper 5 Event flag" level="15" datatype="Byte" address="546" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Flag assigned to Beeper 5</Help>
-			<Notes>See Beeper 1 Event flag</Notes>
-		</Parameter>
-		<Parameter name="Beeper 5 Style" level="15" datatype="Byte" address="547" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Beeping style assigned to Beeper 5</Help>
-			<Notes>See Beeper 1 Style</Notes>
-		</Parameter>
-		<Parameter name="Beeper 6 Event flag" level="15" datatype="Byte" address="548" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Flag assigned to Beeper 6</Help>
-			<Notes>See Beeper 1 Event flag</Notes>
-		</Parameter>
-		<Parameter name="Beeper 6 Style" level="15" datatype="Byte" address="549" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Beeping style assigned to Beeper 6</Help>
-			<Notes>See Beeper 1 Style</Notes>
-		</Parameter>
-		<Parameter name="Beeper 7 Event flag" level="15" datatype="Byte" address="550" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Flag assigned to Beeper 7</Help>
-			<Notes>See Beeper 1 Event flag</Notes>
-		</Parameter>
-		<Parameter name="Beeper 7 Style" level="15" datatype="Byte" address="551" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Beeping style assigned to Beeper 7</Help>
-			<Notes>See Beeper 1 Style</Notes>
-		</Parameter>
-		<Parameter name="Beeper 8 Event flag" level="15" datatype="Byte" address="552" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Flag assigned to Beeper 8</Help>
-			<Notes>See Beeper 1 Event flag</Notes>
-		</Parameter>
-		<Parameter name="Beeper 8 Style" level="15" datatype="Byte" address="553" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Beeping style assigned to Beeper 8</Help>
-			<Notes>See Beeper 1 Style</Notes>
-		</Parameter>
-		<Parameter name="Beeper 9 Event flag" level="15" datatype="Byte" address="554" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Flag assigned to Beeper 9</Help>
-			<Notes>See Beeper 1 Event flag</Notes>
-		</Parameter>
-		<Parameter name="Beeper 9 Style" level="15" datatype="Byte" address="555" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Beeping style assigned to Beeper 9</Help>
 			<Notes>See Beeper 1 Style</Notes>
 		</Parameter>
 		<Parameter name="Beeper Output Enable" level="10" datatype="Bit" address="1870" length="1" bitmask="1" dtu="1">
@@ -1225,133 +1225,6 @@ default: 0100030264646464</Notes>
 See SMS DebounceTimer</Notes>
 		</Parameter>
 	</Category>
-	<Category name="Custom Functionality">
-		<Parameter name="Aux Port Baudrate" level="10" datatype="Long" address="1843" length="4" bitmask="255" dtu="0">
-			<Values min="300" max="115200" default="115200" previous="" current="" units="Baud" />
-			<Help>Aux Port Baudrate</Help>
-			<Notes>Aux Port Baudrate:
-300...9600...115200</Notes>
-		</Parameter>
-		<Parameter name="Aux Port Configuration" level="10" datatype="Byte" address="1836" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Aux Port Configuration</Help>
-			<Notes>Aux Port Configuration Parameter.
-0 - Standard 81 Protocol Port
-1 - Custom Functionality 1
-n - Custom Functionality n
-255 - NMEA Port</Notes>
-		</Parameter>
-		<Parameter name="Card Reader control immobilization" level="10" datatype="Bit" address="2930" length="1" bitmask="1" dtu="1">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>When a valid card is read the vehicle is de-immobilized</Help>
-			<Notes>When a valid card is read the vehicle is de-immobilized</Notes>
-		</Parameter>
-		<Parameter name="Card Reader Dangerous Goods control immobilization" level="10" datatype="Bit" address="2930" length="1" bitmask="2" dtu="1">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>When a valid card is read and the license type indicate dangerous goods the vehicle is de-immobilized</Help>
-			<Notes>When a valid card is read and the license type indicate dangerous goods the vehicle is de-immobilized</Notes>
-		</Parameter>
-		<Parameter name="Card Reader Driver ID" level="10" datatype="Word" address="2932" length="2" bitmask="255" dtu="1">
-			<Values min="0" max="65535" default="0" previous="" current="" units="" />
-			<Help>Driver ID to be used when de-immobilizing a vehicle with a card</Help>
-			<Notes>Driver ID to be used when de-immobilizing a vehicle with a card</Notes>
-		</Parameter>
-		<Parameter name="Clear Fuel Flow Counts on Event" level="10" datatype="Bit" address="1535" length="1" bitmask="8" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Clear the Fuel Flow Meter Count values when the event is generated</Help>
-			<Notes>Clear the Fuel Flow Meter Count values when the event is generated</Notes>
-		</Parameter>
-		<Parameter name="Enable IPC" level="10" datatype="Bit" address="3578" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enable the IPC comms to the MHub Extender</Help>
-			<Notes>Enable the IPC comms to the MHub Extender</Notes>
-		</Parameter>
-		<Parameter name="Enable Weight Sensor on Analog 1" level="10" datatype="Bit" address="1526" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enable Weight Sensor on Analog Input 1</Help>
-			<Notes>Enable Weight Sensor on Analog Input 1</Notes>
-		</Parameter>
-		<Parameter name="ERM Relay ID" level="10" datatype="Word" address="2814" length="2" bitmask="255" dtu="1">
-			<Values min="0" max="65535" default="0" previous="" current="" units="None" />
-			<Help>ERM Remote Relay ID</Help>
-			<Notes>The ID of the ERM Remote Relay</Notes>
-		</Parameter>
-		<Parameter name="Fuel Data Event at End of Trip" level="10" datatype="Bit" address="1535" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Send the Fuel Data event at the end of a trip</Help>
-			<Notes>Send the Fuel Data event at the end of a trip</Notes>
-		</Parameter>
-		<Parameter name="Fuel Data Event at Start of Trip" level="10" datatype="Bit" address="1535" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Send the Fuel Data event at the start of a trip</Help>
-			<Notes>Send the Fuel Data event at the start of a trip</Notes>
-		</Parameter>
-		<Parameter name="Fuel Data Event on Cap Status Change" level="10" datatype="Bit" address="1535" length="1" bitmask="4" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Send the Fuel Data event at when the status of the Fuel Cap status changed</Help>
-			<Notes>Send the Fuel Data event at when the status of the Fuel Cap status changed</Notes>
-		</Parameter>
-		<Parameter name="Fuel Data Fuel Level Event" level="10" datatype="Bit" address="1535" length="1" bitmask="16" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Fuel Data Fuel Level Event</Help>
-			<Notes>Fuel Data Fuel Level Event will generate OBD2 Fuel Level event and overwrite CANBus Fuel Level.</Notes>
-		</Parameter>
-		<Parameter name="Global Pass-through enable" level="0" datatype="Byte" address="419" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Global Pass-through enable</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Set Global Pass-through enable. 
-1 to enable Modem, GPS, Acc, OBD2,Sim passthrough modes
-2 to enable CAN Socket Passthrough</Notes>
-		</Parameter>
-		<Parameter name="IO Expander Installed" level="10" datatype="Bit" address="3578" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>The IO Expander have been installed and connected to the MHub</Help>
-			<Notes>Enable communications with the IO Expander that would give the unit an extra 8 Inputs, 4 Outputs and 2 Analog Inputs.
-It is important to note that the IO Expander is an external device connected to the MHub.</Notes>
-		</Parameter>
-		<Parameter name="Maximum Vehicle Carry Weight" level="10" datatype="Word" address="2809" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="65535" default="50" previous="" current="" units="100kg" />
-			<Help>Maximum weight that the vehicle can carry</Help>
-			<Notes>Maximum weight that the vehicle can carry. Used for calibration of the weight sensor connected to Analog input 1</Notes>
-		</Parameter>
-		<Parameter name="Send Weight Sensor Data on Trip End" level="10" datatype="Bit" address="1526" length="1" bitmask="4" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Send Weight Sensor Data on Trip End</Help>
-			<Notes>Send Weight Sensor Data on Trip End</Notes>
-		</Parameter>
-		<Parameter name="Send Weight Sensor Data on Trip Start" level="10" datatype="Bit" address="1526" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Send Weight Sensor Data on Trip Start</Help>
-			<Notes>Send Weight Sensor Data on Trip Start</Notes>
-		</Parameter>
-		<Parameter name="Vehicle Info Event Mask" level="10" datatype="Word" address="1374" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="65535" default="65535" previous="" current="" units="" />
-			<Help>Vehicle Info Event Mask</Help>
-			<Notes>Vehicle Info Event Mask: To get configuration value calculate the total value by adding the individual event values together. A value of 65535 will enable all events and 0 will disable all events.
-Mobileye Brakes 1
-Mobileye Left Indicator 2
-Mobileye Right Indicator 4
-Mobileye Wipers 8
-Mobileye Low Beam 16
-Mobileye High Beam 32
-Mobileye Tamper 64
-Mobileye No Comms 128</Notes>
-		</Parameter>
-		<Parameter name="Weight Sensor Calibration Vector" level="0" datatype="Byte" address="1778" length="9" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="000000000000000000" previous="" current="" units="" />
-			<Help>Weight Sensor Calibration Vector</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Weight Sensor Calibration Vector</Notes>
-		</Parameter>
-		<Parameter name="Weight Sensor Data Interval" level="10" datatype="Word" address="2811" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="65535" default="300" previous="" current="" units="" />
-			<Help>This is the interval in seconds between successive Weight Sensor Events.</Help>
-			<Notes>This is the interval in seconds between successive Weight Sensor Events. 0 disables the feature</Notes>
-		</Parameter>
-	</Category>
 	<Category name="Debug">
 		<Parameter name="Box Led Override Time" level="10" datatype="Word" address="290" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="300" previous="" current="" units="" />
@@ -1445,28 +1318,6 @@ On - OBD protocol found. Short off indicates activity.
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
 None</Notes>
-		</Parameter>
-	</Category>
-	<Category name="Driver Fatigue">
-		<Parameter name="Driver Fatigue Maximum Time Above Speed Threshold" level="10" datatype="Word" address="3160" length="2" bitmask="255" dtu="1">
-			<Values min="5" max="1440" default="120" previous="" current="" units="Minutes" />
-			<Help>Driver Fatigue Maximum Time Above Speed Threshold in Minutes</Help>
-			<Notes>This is the maximum time (minutes) a driver is allowed to spend above a configured speed threshold before a mandatory rest period is needed.</Notes>
-		</Parameter>
-		<Parameter name="Driver Fatigue Minimum Rest Period" level="10" datatype="Word" address="3158" length="2" bitmask="255" dtu="1">
-			<Values min="0" max="65535" default="15" previous="" current="" units="Minutes" />
-			<Help>Driver Fatigue Minimum Rest Period in minutes</Help>
-			<Notes>This parameter specifies the minimum time (minutes) a driver has to rest before he is allowed to drive again.</Notes>
-		</Parameter>
-		<Parameter name="Driver Fatigue Speed Threshold" level="10" datatype="Byte" address="3157" length="1" bitmask="255" dtu="1">
-			<Values min="0" max="255" default="50" previous="" current="" units="km/h" />
-			<Help>Driver Fatigue Speed Threshold</Help>
-			<Notes>The Driver Fatigue Speed Threshold is the speed above which the unit will accumulate time spent above this threshold.</Notes>
-		</Parameter>
-		<Parameter name="Enable Driver Fatigue Module" level="10" datatype="Bit" address="3156" length="1" bitmask="1" dtu="1">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enable the Driver Fatigue Management and Reporting module</Help>
-			<Notes>This parameter will Enable the Driver Fatigue Management and Reporting module which monitors the drivers time at a speed above a certain threshold and reminds him through the use of a beeper to stop  for a minimum configurable time. If the driver does not stop for the minimum time a violation event will be raised and reported.</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Driver Key">
@@ -2962,6 +2813,19 @@ GPS Position Accuracy Filter combined with minimum satellite count
 
 Include position accuracy and position source in each event</Notes>
 		</Parameter>
+		<Parameter name="Trip Start Aid Fetch Enable" level="10" datatype="Byte" address="1576" length="1" bitmask="31" dtu="0">
+			<Values min="4" max="31" default="0" previous="" current="" units="" />
+			<Help>Setting this to a value from 4 to 31 will enable an immediate GPS aid fetch if the number satellites with ephemeris are below the indicated number. 
+Valid for MHubs with uBlox M10 GPS</Help>
+			<Notes>Setting this to a value from 4 to 31 will enable an immediate GPS aid fetch if the number satellites with ephemeris are below the indicated number. </Notes>
+		</Parameter>
+	</Category>
+	<Category name="Ignition Detection">
+		<Parameter name="Ignition Source: Speed" level="5" datatype="Bit" address="1829" length="1" bitmask="16" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Ignition Source: Speed</Help>
+			<Notes>One more possible source of ignition is to use Speed. If Speed is greater than the value specified in parameter &quot;Ignition Source from RPM Threshold&quot;, the vehicle is moving. If speed is to be used as ignition, this parameter is set to 1.</Notes>
+		</Parameter>
 	</Category>
 	<Category name="Immobilization">
 		<Parameter name="Disable on Ignition OFF" level="10" datatype="Bit" address="1522" length="1" bitmask="64" dtu="0">
@@ -3516,92 +3380,6 @@ The logging for each individual module is controlled using the Debug Mask.</Help
 The logging for each individual module is controlled using the Debug Mask.</Notes>
 		</Parameter>
 	</Category>
-	<Category name="MHub802">
-		<Parameter name="Enable Test Event" level="0" datatype="Bit" address="1166" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="2" default="0" previous="" current="" units="" />
-			<Help>ABSOLETE: Enable Test Event</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Not used</Notes>
-		</Parameter>
-		<Parameter name="Force Wakeup Event Timeout" level="10" datatype="Word" address="1798" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="65535" default="120" previous="" current="" units="Seconds" />
-			<Help>This is the time in seconds before forcing the unit to send the Wakeup event even when it does not have a 3D GPS lock</Help>
-			<Notes>When the MHub802 wakes up, one of its tasks is to get a 3D GPS lock as quickly as possible. However it may be that it is impossible for the MHub802 to get a GPS location at all. To prevent the MHub802 from staying ON for too long and thus reducing the battery life, this parameter specifies a maximum time in seconds that the MHub802 will wait for a 3D GPS lock. If a lock is not achieved after waiting this amount of time, the event will be sent in anyway, indicating that the GPS lock wan not valid.</Notes>
-		</Parameter>
-		<Parameter name="Maximum ON Time" level="10" datatype="Word" address="2041" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="65535" default="600" previous="" current="" units="Seconds" />
-			<Help>Maximum time in seconds the unit should stay ON when something causes any of the logic not to work out</Help>
-			<Notes>This parameter specifies the maximum time that the MHub802 will remain on under normal operating instances. So if both GSM and GPS are OK, but the MHub cannot send the SMS, or has too many sms&apos;s to send, it will turn OFF after this time.</Notes>
-		</Parameter>
-		<Parameter name="Maximum ON Time with Ignition" level="10" datatype="Word" address="1796" length="2" bitmask="255" dtu="0">
-			<Values min="1" max="65535" default="1800" previous="" current="" units="Seconds" />
-			<Help>Maximum on time in seconds with ignition on</Help>
-			<Notes>XXX - Change this to tamper instead of ignition
-
-The Mhub802 can be mounted with a tamper detection in place so that if it is removed from its mounting place, it will wake up immediately. This operation is outside of the noemal operation of the MHub802. When the tamper it triggered, this parameter specifies for how long the MHub801 will remain on before turning OFF again. Note that it the tamper detection is still triggererd by the time the MHub is supposed to turn OFF again, it will not turn OFF.</Notes>
-		</Parameter>
-		<Parameter name="RTC Offset Type" level="10" datatype="Bit" address="1166" length="2" bitmask="12" dtu="0">
-			<Values min="0" max="3" default="1" previous="" current="" units="" />
-			<Help>_X: RTC Time Offset from 00:00  X_: RTC Periodic Offset from current time XX: RTC HH:MM Offset from 00:00</Help>
-			<Notes>The operation of the MHub802 is such that it wakes up, send a message and switches off again.
-1(01 old) = RTC Time Offset. This tells the MHub that the value stored in the Sealed Unit RTC Wake-up time are minute intervals from 12:00 midnight at which to wake up. e.g. Sealed Unit RTC Wake-up time = 360, unit will wake up 06:00, 12:00, 18:00 and 00:00
-2(10 old) = RTC Periodic Offset. This tells the MHub that the value stored in the Sealed Unit RTC Wake-up time are minutes from the current time at which to wake up again. Sealed Unit RTC Wake-up time = 360, if the current time is 13:09 the next wake up time will be 19:09
-3(11 old) = RTC HH:MM Offset. There are 4 parameters that are used to specify the time that the MHub802 must wake up. This parameter specifies how these 4 time parameters are interpreted by the MHub802. The 4 time parameters are RTC Wake-Up Time 0 to 3 and entered in minutes.</Notes>
-		</Parameter>
-		<Parameter name="RTC Wake-Up Time 0" level="10" datatype="Word" address="800" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="1440" default="0" previous="" current="" units="Minutes" />
-			<Help>RTC Wake-Up Time 0 in Minutes from 00:00</Help>
-			<Notes>This is one of the 4 times that are used to specify at what time the MHub802 will wake up. IT is minutes taken from midnight GMT (UTC)</Notes>
-		</Parameter>
-		<Parameter name="RTC Wake-Up Time 1" level="10" datatype="Word" address="802" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="1440" default="0" previous="" current="" units="Minutes" />
-			<Help>RTC Wake-Up Time 1 in Minutes from 00:00</Help>
-			<Notes>See RTC Wake-UP Time 0</Notes>
-		</Parameter>
-		<Parameter name="RTC Wake-Up Time 2" level="10" datatype="Word" address="804" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="1440" default="0" previous="" current="" units="Minutes" />
-			<Help>RTC Wake-Up Time 2 in Minutes from 00:00</Help>
-			<Notes>See RTC Wake-UP Time 0</Notes>
-		</Parameter>
-		<Parameter name="RTC Wake-Up Time 3" level="10" datatype="Word" address="806" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="1440" default="0" previous="" current="" units="Minutes" />
-			<Help>RTC Wake-Up Time 3 in Minutes from 00:00</Help>
-			<Notes>See RTC Wake-UP Time 0</Notes>
-		</Parameter>
-		<Parameter name="Sealed Unit Enable" level="10" datatype="Bit" address="1166" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>This indicates if the MHub is a sealed unit or not.</Help>
-			<Notes>When the MHub is an 802 unit. This parameter is set, that enables specific MHub802 functioality - XXX change this to MHub802 mode. Let&apos;s stop calling it sealed unit.</Notes>
-		</Parameter>
-		<Parameter name="Sealed Unit GPS off after lock" level="10" datatype="Bit" address="1166" length="1" bitmask="16" dtu="0">
-			<Values min="0" max="1" default="1" previous="" current="" units="" />
-			<Help>If set GPS goes to low power mode after 3D lock</Help>
-			<Notes>The principle behind the long battery life of the MHub802 is that it perform its required functions as quickly as possible, and then turn off again. When the MHub802 turn ON, it needs to register on the GSM network, wait for a GPS position to be computed, send the SMS and then shut down again. If a GPS position is attained before the GSM network registration is achieved, it makes no real sense to keep the GPS on. However one the MHub has a valid GPS lock, remaining ON may actually improve the accuracy of that position somewhat. However in most instances the initial 3D lock is acceptable. This parameter specifies that the GPS must turn OFF immedaitely after getting a 3D lock. If set to 1, the GPS will trun OFF immediately after a 3D lock</Notes>
-		</Parameter>
-		<Parameter name="Sealed Unit RTC wake-up time" level="10" datatype="Word" address="1794" length="2" bitmask="255" dtu="0">
-			<Values min="1" max="65535" default="720" previous="" current="" units="Minutes" />
-			<Help>Sealed Unit RTC wake-up time in Minutes</Help>
-			<Notes>This is the timer that is used with the mode is set to XXX. Time is in minutes - Really should write somehting better here</Notes>
-		</Parameter>
-		<Parameter name="Time on after event sent" level="10" datatype="Word" address="1167" length="2" bitmask="255" dtu="0">
-			<Values min="5" max="65535" default="60" previous="" current="" units="seconds" />
-			<Help>This is the time in seconds the unit should stay ON after the wakeup event was sent</Help>
-			<Notes>XXX - What wakeup event.
-
-After the MHub802 has sent the event, it is possible that there may have been a message that has been sent to the MHub802. And thus some time needs to be allowed to be able to recieve that event. This parameter specifies the time in seconds that the MHUb802 will remain ON after the event has been sent.</Notes>
-		</Parameter>
-		<Parameter name="Time to wait for GPS Lock" level="10" datatype="Word" address="2037" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="65535" default="180" previous="" current="" units="seconds" />
-			<Help>Time in seconds to wait for a good GPS Lock</Help>
-			<Notes>This is the maximum time in seconds that the MHub will wait to get a GPS position, if it does not have a valid position at the end of this time, the MHub will turn off.</Notes>
-		</Parameter>
-		<Parameter name="Time to wait for GSM coverage" level="10" datatype="Word" address="2039" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="65535" default="180" previous="" current="" units="Seconds" />
-			<Help>Time in seconds to wait for GSM Network coverage</Help>
-			<Notes>This is the maximum time in seconds that the MHub will wait to register onto the GSM network, if it does not register onto the network by the end of this time, it will turn off.</Notes>
-		</Parameter>
-	</Category>
 	<Category name="Modem - Aux Socket (TCP/UDP)">
 		<Parameter name="Auxiliary TCP Socket Enable" level="10" datatype="Bit" address="1864" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
@@ -4004,10 +3782,10 @@ DO NOT CHANGE THIS VALUE WITHOUT CONSULTING RELEVANT DOCUMENTATION.</Notes>
 			<Help>User name used when logging onto MProfiler over a TCP socket.</Help>
 			<Notes>When connecting to MProfiler using GPRS, the MHub needs to uniquely identify itself to MProfiler before the connection will be accepted. It identifies itself by means of the MProfiler User Name. before the connection will be acc epted, an entity on MProfiler must already exist with the same MProfier User Name as the UnitID on MProfiler. Care must be taken to ensure that no two MHub&apos;s are configured with the same MProfiler User Name, as then the information from two different MHub units will be sent o to the client application as a single unit. Typically the MSISDN of the SIM card can be used.</Notes>
 		</Parameter>
-		<Parameter name="MProfiler User Password" level="10" datatype="String" address="906" length="65" bitmask="255" dtu="0">
+		<Parameter name="Password Seed" level="5" datatype="String" address="906" length="65" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="" previous="" current="" units="None" />
-			<Help>Password used to log onto a TCP socket session with MProfiler.</Help>
-			<Notes>If the MProfiler login requires a password from the MHub whe the MHub logs into the MProfiler, that password is stored in this parameter. </Notes>
+			<Help>Used in communications to a mobile phone for certificate management.</Help>
+			<Notes>Used in communications to a mobile phone for certificate management.</Notes>
 		</Parameter>
 		<Parameter name="TCP Port ID" level="10" datatype="Word" address="421" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="52767" previous="" current="" units="" />
@@ -4234,11 +4012,6 @@ XXX - just a comment - what about a 24V vehicle, will 255 be enough - should the
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Ignition Source: RPM</Help>
 			<Notes>One more possible source of ignition is to use RPM. If RPM is greater than the value specified in parameter &quot;Ignition Source from RPM Threshold&quot;, the engine is running and the ignition is ON. If rpm is to be used as ignition, this parameter is set to 1.</Notes>
-		</Parameter>
-		<Parameter name="Ignition Source: Speed" level="5" datatype="Bit" address="1829" length="1" bitmask="16" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Ignition Source: Speed</Help>
-			<Notes>One more possible source of ignition is to use Speed. If Speed is greater than the value specified in parameter &quot;Ignition Source from RPM Threshold&quot;, the vehicle is moving. If speed is to be used as ignition, this parameter is set to 1.</Notes>
 		</Parameter>
 		<Parameter name="Ignition Source: Trigger" level="5" datatype="Bit" address="1829" length="1" bitmask="32" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
@@ -4630,10 +4403,12 @@ Maximum Lockout time is 240s (4 minutes)</Notes>
 			<Help>Enable Unit Sleep Mode 0: Normal 1: Sleep Mode </Help>
 			<Notes>This parameter will allow the MHub to enter the sleep state. This is the lowest power state of the MHub. 1=Enable</Notes>
 		</Parameter>
-		<Parameter name="Power Mode Sleep Mode Function Enable" level="10" datatype="Byte" address="1277" length="1" bitmask="255" dtu="0">
+		<Parameter name="Power Mode Sleep Mode Function Enable" level="0" datatype="Byte" address="1277" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="204" previous="" current="" units="" />
 			<Help>Global Power Sleep Mode Enablement variable. Program with value 0xCC to enable power sleep mode and any other value to disable.</Help>
-			<Notes>Global Power Sleep Mode Enablement variable. Program with value 0xCC to enable power sleep mode and any other value to disable.</Notes>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Global Power Sleep Mode Enablement variable. Program with value 0xCC to enable power sleep mode and any other value to disable.</Notes>
 		</Parameter>
 		<Parameter name="Power Mode Sleep Scan Cycle Limit" level="10" datatype="Byte" address="3153" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
@@ -5895,7 +5670,7 @@ NB: Setting this prevents MProfiler connections.</Notes>
 2: URC enabled, semi automatic algorithm
 3: URC enabled, full automatic algorithm</Notes>
 		</Parameter>
-		<Parameter name="Wifi Enable" level="5" datatype="Bit" address="1864" length="1" bitmask="4" dtu="0">
+		<Parameter name="Wifi Enable" level="10" datatype="Bit" address="1864" length="1" bitmask="4" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Turns Wifi ON /OFF on units equipped with WiFi</Help>
 			<Notes>Turns Wifi ON /OFF on units equipped with WiFi</Notes>

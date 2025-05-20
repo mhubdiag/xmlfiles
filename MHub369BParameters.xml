@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="21" unitType="MHub369B" created="2025-04-26T18:14:43+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="21" unitType="MHub369B" created="2025-05-20T17:39:13+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="1385" level="0" status="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0" units="10ms" min="0" max="255" >
 			<parValues default="50" mhub="" current="" prev="" />
@@ -554,27 +554,6 @@ In order to calibrate itself, the Vehicle must travel at a constant speed of gre
 				<parNotes>"This parameter specifies for how long the vehicle must travel in seconds at a constant speed above the value specified in parameter &quot;Auto Calibration Speed Threshold&quot; for Auto Calibration to occur."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1019" level="10" status="0" datatype="Long" address="1843" length="4" bitmask="255" dtu="0" units="Baud" min="300" max="115200" >
-			<parValues default="115200" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Aux Port Baudrate</parName>
-				<parDescription>"Aux Port Baudrate"</parDescription>
-				<parNotes>"Aux Port Baudrate:
-300...9600...115200"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="868" level="10" status="0" datatype="Byte" address="1836" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Aux Port Configuration</parName>
-				<parDescription>"Aux Port Configuration"</parDescription>
-				<parNotes>"Aux Port Configuration Parameter.
-0 - Standard 81 Protocol Port
-1 - Custom Functionality 1
-n - Custom Functionality n
-255 - NMEA Port"</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="199" level="10" status="0" datatype="Bit" address="1864" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -644,7 +623,7 @@ n - Custom Functionality n
 		<Parameter parID="912" level="15" status="0" datatype="Byte" address="538" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Beeper 1 Event flag</parName>
+				<parName>Beeper 01 Event flag</parName>
 				<parDescription>"Flag assigned to Beeper 1"</parDescription>
 				<parNotes>"Select one of the following flags. When this flag is active, the beeper will beep according to the corresponding beep code on the Beeper Style parameter:
 DO NOT USE A VALUE OTHER THAN LISTED BELOW
@@ -665,7 +644,7 @@ DO NOT USE A VALUE OTHER THAN LISTED BELOW
 		<Parameter parID="913" level="15" status="0" datatype="Byte" address="539" length="1" bitmask="255" dtu="0" units="" min="0" max="8" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
-				<parName>Beeper 1 Style</parName>
+				<parName>Beeper 01 Style</parName>
 				<parDescription>"Beeping style assigned to Beeper 1"</parDescription>
 				<parNotes>"Select Ring tone from 1 to 32
 -- or -- 
@@ -680,6 +659,134 @@ If Output 3 is Configured as Buzzer Output
 8 = Three x 100ms beeps 100ms apart
 9 = Input and Outputs -&gt; Ouput Beeper Configuration
 Other = OFF (No Beep)"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="914" level="15" status="0" datatype="Byte" address="540" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 02 Event flag</parName>
+				<parDescription>"Flag assigned to Beeper 2"</parDescription>
+				<parNotes>"See Beeper 1 Event flag"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="915" level="15" status="0" datatype="Byte" address="541" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 02 Style</parName>
+				<parDescription>"Beeping style assigned to Beeper 2"</parDescription>
+				<parNotes>"See Beeper 1 Style"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="916" level="15" status="0" datatype="Byte" address="542" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 03 Event flag</parName>
+				<parDescription>"Flag assigned to Beeper 3"</parDescription>
+				<parNotes>"See Beeper 1 Event flag"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="917" level="15" status="0" datatype="Byte" address="543" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 03 Style</parName>
+				<parDescription>"Beeping style assigned to Beeper 3"</parDescription>
+				<parNotes>"See Beeper 1 Style"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="918" level="15" status="0" datatype="Byte" address="544" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 04 Event flag</parName>
+				<parDescription>"Flag assigned to Beeper 4"</parDescription>
+				<parNotes>"See Beeper 1 Event flag"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="919" level="15" status="0" datatype="Byte" address="545" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 04 Style</parName>
+				<parDescription>"Beeping style assigned to Beeper 4"</parDescription>
+				<parNotes>"See Beeper 1 Style"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="920" level="15" status="0" datatype="Byte" address="546" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 05 Event flag</parName>
+				<parDescription>"Flag assigned to Beeper 5"</parDescription>
+				<parNotes>"See Beeper 1 Event flag"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="921" level="15" status="0" datatype="Byte" address="547" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 05 Style</parName>
+				<parDescription>"Beeping style assigned to Beeper 5"</parDescription>
+				<parNotes>"See Beeper 1 Style"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="922" level="15" status="0" datatype="Byte" address="548" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 06 Event flag</parName>
+				<parDescription>"Flag assigned to Beeper 6"</parDescription>
+				<parNotes>"See Beeper 1 Event flag"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="923" level="15" status="0" datatype="Byte" address="549" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 06 Style</parName>
+				<parDescription>"Beeping style assigned to Beeper 6"</parDescription>
+				<parNotes>"See Beeper 1 Style"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="924" level="15" status="0" datatype="Byte" address="550" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 07 Event flag</parName>
+				<parDescription>"Flag assigned to Beeper 7"</parDescription>
+				<parNotes>"See Beeper 1 Event flag"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="925" level="15" status="0" datatype="Byte" address="551" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 07 Style</parName>
+				<parDescription>"Beeping style assigned to Beeper 7"</parDescription>
+				<parNotes>"See Beeper 1 Style"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="926" level="15" status="0" datatype="Byte" address="552" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 08 Event flag</parName>
+				<parDescription>"Flag assigned to Beeper 8"</parDescription>
+				<parNotes>"See Beeper 1 Event flag"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="927" level="15" status="0" datatype="Byte" address="553" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 08 Style</parName>
+				<parDescription>"Beeping style assigned to Beeper 8"</parDescription>
+				<parNotes>"See Beeper 1 Style"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="928" level="15" status="0" datatype="Byte" address="554" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 09 Event flag</parName>
+				<parDescription>"Flag assigned to Beeper 9"</parDescription>
+				<parNotes>"See Beeper 1 Event flag"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="929" level="15" status="0" datatype="Byte" address="555" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Beeper 09 Style</parName>
+				<parDescription>"Beeping style assigned to Beeper 9"</parDescription>
+				<parNotes>"See Beeper 1 Style"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="930" level="15" status="0" datatype="Byte" address="556" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
@@ -791,134 +898,6 @@ Other = OFF (No Beep)"</parNotes>
 			<parInfo similarToparID="0">
 				<parName>Beeper 16 Style</parName>
 				<parDescription>"Beeping style assigned to Beeper 16"</parDescription>
-				<parNotes>"See Beeper 1 Style"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="914" level="15" status="0" datatype="Byte" address="540" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 2 Event flag</parName>
-				<parDescription>"Flag assigned to Beeper 2"</parDescription>
-				<parNotes>"See Beeper 1 Event flag"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="915" level="15" status="0" datatype="Byte" address="541" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 2 Style</parName>
-				<parDescription>"Beeping style assigned to Beeper 2"</parDescription>
-				<parNotes>"See Beeper 1 Style"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="916" level="15" status="0" datatype="Byte" address="542" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 3 Event flag</parName>
-				<parDescription>"Flag assigned to Beeper 3"</parDescription>
-				<parNotes>"See Beeper 1 Event flag"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="917" level="15" status="0" datatype="Byte" address="543" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 3 Style</parName>
-				<parDescription>"Beeping style assigned to Beeper 3"</parDescription>
-				<parNotes>"See Beeper 1 Style"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="918" level="15" status="0" datatype="Byte" address="544" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 4 Event flag</parName>
-				<parDescription>"Flag assigned to Beeper 4"</parDescription>
-				<parNotes>"See Beeper 1 Event flag"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="919" level="15" status="0" datatype="Byte" address="545" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 4 Style</parName>
-				<parDescription>"Beeping style assigned to Beeper 4"</parDescription>
-				<parNotes>"See Beeper 1 Style"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="920" level="15" status="0" datatype="Byte" address="546" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 5 Event flag</parName>
-				<parDescription>"Flag assigned to Beeper 5"</parDescription>
-				<parNotes>"See Beeper 1 Event flag"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="921" level="15" status="0" datatype="Byte" address="547" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 5 Style</parName>
-				<parDescription>"Beeping style assigned to Beeper 5"</parDescription>
-				<parNotes>"See Beeper 1 Style"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="922" level="15" status="0" datatype="Byte" address="548" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 6 Event flag</parName>
-				<parDescription>"Flag assigned to Beeper 6"</parDescription>
-				<parNotes>"See Beeper 1 Event flag"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="923" level="15" status="0" datatype="Byte" address="549" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 6 Style</parName>
-				<parDescription>"Beeping style assigned to Beeper 6"</parDescription>
-				<parNotes>"See Beeper 1 Style"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="924" level="15" status="0" datatype="Byte" address="550" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 7 Event flag</parName>
-				<parDescription>"Flag assigned to Beeper 7"</parDescription>
-				<parNotes>"See Beeper 1 Event flag"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="925" level="15" status="0" datatype="Byte" address="551" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 7 Style</parName>
-				<parDescription>"Beeping style assigned to Beeper 7"</parDescription>
-				<parNotes>"See Beeper 1 Style"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="926" level="15" status="0" datatype="Byte" address="552" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 8 Event flag</parName>
-				<parDescription>"Flag assigned to Beeper 8"</parDescription>
-				<parNotes>"See Beeper 1 Event flag"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="927" level="15" status="0" datatype="Byte" address="553" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 8 Style</parName>
-				<parDescription>"Beeping style assigned to Beeper 8"</parDescription>
-				<parNotes>"See Beeper 1 Style"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="928" level="15" status="0" datatype="Byte" address="554" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 9 Event flag</parName>
-				<parDescription>"Flag assigned to Beeper 9"</parDescription>
-				<parNotes>"See Beeper 1 Event flag"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="929" level="15" status="0" datatype="Byte" address="555" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Beeper 9 Style</parName>
-				<parDescription>"Beeping style assigned to Beeper 9"</parDescription>
 				<parNotes>"See Beeper 1 Style"</parNotes>
 			</parInfo>
 		</Parameter>
@@ -1062,30 +1041,6 @@ The intended use is to standoff when another diagnostic tool is detected on the 
 The intended use is to standoff when another diagnostic tool is detected on the bus."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1600" level="10" status="1" datatype="Bit" address="2930" length="1" bitmask="1" dtu="1" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Card Reader control immobilization</parName>
-				<parDescription>"When a valid card is read the vehicle is de-immobilized"</parDescription>
-				<parNotes>"When a valid card is read the vehicle is de-immobilized"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1601" level="10" status="1" datatype="Bit" address="2930" length="1" bitmask="2" dtu="1" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Card Reader Dangerous Goods control immobilization</parName>
-				<parDescription>"When a valid card is read and the license type indicate dangerous goods the vehicle is de-immobilized"</parDescription>
-				<parNotes>"When a valid card is read and the license type indicate dangerous goods the vehicle is de-immobilized"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1602" level="10" status="1" datatype="Word" address="2932" length="2" bitmask="255" dtu="1" units="" min="0" max="65535" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Card Reader Driver ID</parName>
-				<parDescription>"Driver ID to be used when de-immobilizing a vehicle with a card"</parDescription>
-				<parNotes>"Driver ID to be used when de-immobilizing a vehicle with a card"</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1652" level="10" status="1" datatype="Word" address="3091" length="2" bitmask="255" dtu="0" units="degC" min="0" max="2008" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -1108,14 +1063,6 @@ The intended use is to standoff when another diagnostic tool is detected on the 
 				<parName>Cargo Weight Change Limit</parName>
 				<parDescription>"Change in Cargo weight (kg) from start of trip exceeding this limit will be reported. 0 disables the function."</parDescription>
 				<parNotes>"Change in Cargo weight (kg) from start of trip exceeding this limit will be reported. 0 disables the function."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1535" level="10" status="0" datatype="Bit" address="1535" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Clear Fuel Flow Counts on Event</parName>
-				<parDescription>"Clear the Fuel Flow Meter Count values when the event is generated"</parDescription>
-				<parNotes>"Clear the Fuel Flow Meter Count values when the event is generated"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1267" level="10" status="0" datatype="Bit" address="1891" length="1" bitmask="1" dtu="1" units="" min="0" max="1" >
@@ -2080,30 +2027,6 @@ e.g ( Speeding + Cornering + Accident ) = ( 1 + 64 + 256 ) = 321"</parNotes>
 				<parNotes>"See Periodic Position Event Configuration"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1669" level="10" status="1" datatype="Word" address="3160" length="2" bitmask="255" dtu="1" units="Minutes" min="5" max="1440" >
-			<parValues default="120" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Driver Fatigue Maximum Time Above Speed Threshold</parName>
-				<parDescription>"Driver Fatigue Maximum Time Above Speed Threshold in Minutes"</parDescription>
-				<parNotes>"This is the maximum time (minutes) a driver is allowed to spend above a configured speed threshold before a mandatory rest period is needed."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1668" level="10" status="1" datatype="Word" address="3158" length="2" bitmask="255" dtu="1" units="Minutes" min="0" max="65535" >
-			<parValues default="15" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Driver Fatigue Minimum Rest Period</parName>
-				<parDescription>"Driver Fatigue Minimum Rest Period in minutes"</parDescription>
-				<parNotes>"This parameter specifies the minimum time (minutes) a driver has to rest before he is allowed to drive again."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1667" level="10" status="1" datatype="Byte" address="3157" length="1" bitmask="255" dtu="1" units="km/h" min="0" max="255" >
-			<parValues default="50" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Driver Fatigue Speed Threshold</parName>
-				<parDescription>"Driver Fatigue Speed Threshold"</parDescription>
-				<parNotes>"The Driver Fatigue Speed Threshold is the speed above which the unit will accumulate time spent above this threshold."</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1238" level="15" status="0" datatype="Byte" address="2604" length="4" bitmask="255" dtu="0" units="" min="0" max="2147483647" >
 			<parValues default="00000000" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -2573,14 +2496,6 @@ Note that certain vehicles respond to certain DTC requests by turning on the rel
 Note that certain vehicles respond to certain DTC requests by turning on the relevant sections. this could result in windscreen wipers activating or dashboard lights flickering or displaying warnings."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1666" level="10" status="1" datatype="Bit" address="3156" length="1" bitmask="1" dtu="1" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable Driver Fatigue Module</parName>
-				<parDescription>"Enable the Driver Fatigue Management and Reporting module"</parDescription>
-				<parNotes>"This parameter will Enable the Driver Fatigue Management and Reporting module which monitors the drivers time at a speed above a certain threshold and reminds him through the use of a beeper to stop  for a minimum configurable time. If the driver does not stop for the minimum time a violation event will be raised and reported."</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="826" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -2734,14 +2649,6 @@ This parameter works in conjunction with Permanent TCP socket. If the unit expec
 				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
 
 Setting this parameter to 1 will enable Info Debug messages"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1788" level="10" status="0" datatype="Bit" address="3578" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable IPC</parName>
-				<parDescription>"Enable the IPC comms to the MHub Extender"</parDescription>
-				<parNotes>"Enable the IPC comms to the MHub Extender"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="853" level="10" status="0" datatype="Bit" address="1832" length="1" bitmask="128" dtu="0" units="" min="0" max="1" >
@@ -2995,16 +2902,6 @@ None"</parNotes>
 				<parNotes>"Enable TCO Change Event Generation will generate a FMS Data event everytime TCO variable changes value. FMS Data Event has to enables under Event Configuraion."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="713" level="0" status="0" datatype="Bit" address="1166" length="1" bitmask="2" dtu="0" units="" min="0" max="2" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable Test Event</parName>
-				<parDescription>"ABSOLETE: Enable Test Event"</parDescription>
-				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Not used"</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1705" level="5" status="0" datatype="Bit" address="1777" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -3089,14 +2986,6 @@ The logging for each individual module is controlled using the Debug Mask."</par
 				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
 
 Setting this parameter to 1 will enable Warning Debug messages"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1520" level="10" status="0" datatype="Bit" address="1526" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable Weight Sensor on Analog 1</parName>
-				<parDescription>"Enable Weight Sensor on Analog Input 1"</parDescription>
-				<parNotes>"Enable Weight Sensor on Analog Input 1"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1795" level="5" status="0" datatype="Bit" address="1544" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
@@ -3342,14 +3231,6 @@ Do not enable this if you do not understand the side effects and implications."<
 Do not enable this if you do not understand the side effects and implications."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1589" level="10" status="1" datatype="Word" address="2814" length="2" bitmask="255" dtu="1" units="None" min="0" max="65535" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>ERM Relay ID</parName>
-				<parDescription>"ERM Remote Relay ID"</parDescription>
-				<parNotes>"The ID of the ERM Remote Relay"</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="767" level="0" status="0" datatype="Byte" address="3584" length="1" bitmask="255" dtu="0" units="" min="0" max="0" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -3479,14 +3360,6 @@ NB BE SURE TO SELECT MAF Calculation Source if this parameter is set"</parDescri
 NB BE SURE TO SELECT MAF Calculation Source if this parameter is set"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="724" level="10" status="0" datatype="Word" address="1798" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65535" >
-			<parValues default="120" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Force Wakeup Event Timeout</parName>
-				<parDescription>"This is the time in seconds before forcing the unit to send the Wakeup event even when it does not have a 3D GPS lock"</parDescription>
-				<parNotes>"When the MHub802 wakes up, one of its tasks is to get a 3D GPS lock as quickly as possible. However it may be that it is impossible for the MHub802 to get a GPS location at all. To prevent the MHub802 from staying ON for too long and thus reducing the battery life, this parameter specifies a maximum time in seconds that the MHub802 will wait for a 3D GPS lock. If a lock is not achieved after waiting this amount of time, the event will be sent in anyway, indicating that the GPS lock wan not valid."</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="216" level="10" status="0" datatype="Byte" address="1881" length="1" bitmask="255" dtu="1" units="RPM x 100" min="0" max="65535" >
 			<parValues default="10" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -3559,38 +3432,6 @@ https://wiki.scopetechnology.com/index.php/Consolidated_Fuel_Event_Configuration
 				<parName>Fuel Data</parName>
 				<parDescription>"Fuel Data Event"</parDescription>
 				<parNotes>"See Periodic Position Event for configuration options"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1533" level="10" status="0" datatype="Bit" address="1535" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Fuel Data Event at End of Trip</parName>
-				<parDescription>"Send the Fuel Data event at the end of a trip"</parDescription>
-				<parNotes>"Send the Fuel Data event at the end of a trip"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1532" level="10" status="0" datatype="Bit" address="1535" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Fuel Data Event at Start of Trip</parName>
-				<parDescription>"Send the Fuel Data event at the start of a trip"</parDescription>
-				<parNotes>"Send the Fuel Data event at the start of a trip"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1534" level="10" status="0" datatype="Bit" address="1535" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Fuel Data Event on Cap Status Change</parName>
-				<parDescription>"Send the Fuel Data event at when the status of the Fuel Cap status changed"</parDescription>
-				<parNotes>"Send the Fuel Data event at when the status of the Fuel Cap status changed"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1536" level="10" status="0" datatype="Bit" address="1535" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Fuel Data Fuel Level Event</parName>
-				<parDescription>"Fuel Data Fuel Level Event"</parDescription>
-				<parNotes>"Fuel Data Fuel Level Event will generate OBD2 Fuel Level event and overwrite CANBus Fuel Level."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1531" level="10" status="0" datatype="Word" address="1787" length="2" bitmask="255" dtu="0" units="seconds" min="0" max="65535" >
@@ -4086,18 +3927,6 @@ Value of 0 Disables Geoloc lift detection"</parNotes>
 				<parName>Geoloc Trip End Enable</parName>
 				<parDescription>"Enable Geoloc Trip End"</parDescription>
 				<parNotes>"Enable the creation of a Geoloc, for current location, at Trip End. Geoloc will be  disabled after ignition on"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1443" level="0" status="0" datatype="Byte" address="419" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Global Pass-through enable</parName>
-				<parDescription>"Global Pass-through enable"</parDescription>
-				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Set Global Pass-through enable. 
-1 to enable Modem, GPS, Acc, OBD2,Sim passthrough modes
-2 to enable CAN Socket Passthrough"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1014" level="0" status="0" datatype="Word" address="367" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="600" >
@@ -5051,15 +4880,6 @@ e.g.
 				<parNotes>"Insurance Led Style. GREEN Hardware Ok, RED Hardware Fault - Triggers upon device plug in. "</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1829" level="10" status="0" datatype="Bit" address="3578" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>IO Expander Installed</parName>
-				<parDescription>"The IO Expander have been installed and connected to the MHub"</parDescription>
-				<parNotes>"Enable communications with the IO Expander that would give the unit an extra 8 Inputs, 4 Outputs and 2 Analog Inputs.
-It is important to note that the IO Expander is an external device connected to the MHub."</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="6" level="0" status="0" datatype="Word" address="264" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65534" >
 			<parValues default="120" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -5357,24 +5177,6 @@ Mains Dev. Threshold"</parNotes>
 				<parNotes>"When the MHub starts recieving data over GPRS, it needs to wait until the entire message has been recieved bofore it can start decoding the message. If the MHUb recieves only the forst part of the messaage, this parameter defines the time that the MHub will wait to recieve the remainder of the message. If the entire message is not recieved within this time. The MHub will discard the message."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="292" level="10" status="0" datatype="Word" address="2041" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65535" >
-			<parValues default="600" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Maximum ON Time</parName>
-				<parDescription>"Maximum time in seconds the unit should stay ON when something causes any of the logic not to work out"</parDescription>
-				<parNotes>"This parameter specifies the maximum time that the MHub802 will remain on under normal operating instances. So if both GSM and GPS are OK, but the MHub cannot send the SMS, or has too many sms&apos;s to send, it will turn OFF after this time."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="716" level="10" status="0" datatype="Word" address="1796" length="2" bitmask="255" dtu="0" units="Seconds" min="1" max="65535" >
-			<parValues default="1800" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Maximum ON Time with Ignition</parName>
-				<parDescription>"Maximum on time in seconds with ignition on"</parDescription>
-				<parNotes>"XXX - Change this to tamper instead of ignition
-
-The Mhub802 can be mounted with a tamper detection in place so that if it is removed from its mounting place, it will wake up immediately. This operation is outside of the noemal operation of the MHub802. When the tamper it triggered, this parameter specifies for how long the MHub801 will remain on before turning OFF again. Note that it the tamper detection is still triggererd by the time the MHub is supposed to turn OFF again, it will not turn OFF."</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="98" level="10" status="0" datatype="Byte" address="425" length="1" bitmask="255" dtu="0" units="" min="1" max="255" >
 			<parValues default="3" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -5389,14 +5191,6 @@ The Mhub802 can be mounted with a tamper detection in place so that if it is rem
 				<parName>Maximum Socket Transmission Attempts</parName>
 				<parDescription>"Maximum number of attempts the MHub will make to transmit a packet before the socket is torn down. The message is also failed."</parDescription>
 				<parNotes>"When the MHub transmits a message over GPRS to the MProfiler, tyhe MHub expects a response to that message. If it does not recieve the response with the time specified in parameter xxx, then the message is failed and needs to be resent. This parameter specifies the number of retries that the MHub will make to send a specific message before the message is failed completely. If the message is an event to be sent to Mprofiler, event though the specific message fails after all the retries, the event(s) will be resent at a later stage."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1528" level="10" status="0" datatype="Word" address="2809" length="2" bitmask="255" dtu="0" units="100kg" min="0" max="65535" >
-			<parValues default="50" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Maximum Vehicle Carry Weight</parName>
-				<parDescription>"Maximum weight that the vehicle can carry"</parDescription>
-				<parNotes>"Maximum weight that the vehicle can carry. Used for calibration of the weight sensor connected to Analog input 1"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="253" level="10" status="0" datatype="String" address="1949" length="32" bitmask="255" dtu="0" units="" min="0" max="0" >
@@ -5517,14 +5311,6 @@ The Mhub802 can be mounted with a tamper detection in place so that if it is rem
 				<parName>MProfiler User Name</parName>
 				<parDescription>"User name used when logging onto MProfiler over a TCP socket."</parDescription>
 				<parNotes>"When connecting to MProfiler using GPRS, the MHub needs to uniquely identify itself to MProfiler before the connection will be accepted. It identifies itself by means of the MProfiler User Name. before the connection will be acc epted, an entity on MProfiler must already exist with the same MProfier User Name as the UnitID on MProfiler. Care must be taken to ensure that no two MHub&apos;s are configured with the same MProfiler User Name, as then the information from two different MHub units will be sent o to the client application as a single unit. Typically the MSISDN of the SIM card can be used."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="90" level="10" status="0" datatype="String" address="906" length="65" bitmask="255" dtu="0" units="None" min="0" max="0" >
-			<parValues default="" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>MProfiler User Password</parName>
-				<parDescription>"Password used to log onto a TCP socket session with MProfiler."</parDescription>
-				<parNotes>"If the MProfiler login requires a password from the MHub whe the MHub logs into the MProfiler, that password is stored in this parameter. "</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="72" level="5" status="0" datatype="Word" address="534" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65535" >
@@ -6398,6 +6184,14 @@ DO NOT CHANGE THIS VALUE WITHOUT CONSULTING RELEVANT DOCUMENTATION."</parNotes>
 				<parNotes>"Pre shared key or password to attach to the AP"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="90" level="5" status="0" datatype="String" address="906" length="65" bitmask="255" dtu="0" units="None" min="0" max="0" >
+			<parValues default="" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Password Seed</parName>
+				<parDescription>"Used in communications to a mobile phone for certificate management."</parDescription>
+				<parNotes>"Used in communications to a mobile phone for certificate management."</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1636" level="10" status="1" datatype="Byte" address="3072" length="1" bitmask="255" dtu="0" units="Percent" min="0" max="100" >
 			<parValues default="100" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -6638,12 +6432,14 @@ Maximum Lockout time is 240s (4 minutes)"</parNotes>
 				<parNotes>"This parameter will allow the MHub to enter the sleep state. This is the lowest power state of the MHub. 1=Enable"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1000" level="10" status="0" datatype="Byte" address="1277" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+		<Parameter parID="1000" level="0" status="0" datatype="Byte" address="1277" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
 			<parValues default="204" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Power Mode Sleep Mode Function Enable</parName>
 				<parDescription>"Global Power Sleep Mode Enablement variable. Program with value 0xCC to enable power sleep mode and any other value to disable."</parDescription>
-				<parNotes>"Global Power Sleep Mode Enablement variable. Program with value 0xCC to enable power sleep mode and any other value to disable."</parNotes>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Global Power Sleep Mode Enablement variable. Program with value 0xCC to enable power sleep mode and any other value to disable."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1631" level="10" status="0" datatype="Byte" address="3153" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
@@ -7131,49 +6927,6 @@ Bit 1 Bit 0
 				<parNotes>"This is the RPM limit in x100 RPM units above which the vehicle will be deemed to be exceeding the RPM limit."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="717" level="10" status="0" datatype="Bit" address="1166" length="2" bitmask="12" dtu="0" units="" min="0" max="3" >
-			<parValues default="1" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>RTC Offset Type</parName>
-				<parDescription>"_X: RTC Time Offset from 00:00  X_: RTC Periodic Offset from current time XX: RTC HH:MM Offset from 00:00"</parDescription>
-				<parNotes>"The operation of the MHub802 is such that it wakes up, send a message and switches off again.
-1(01 old) = RTC Time Offset. This tells the MHub that the value stored in the Sealed Unit RTC Wake-up time are minute intervals from 12:00 midnight at which to wake up. e.g. Sealed Unit RTC Wake-up time = 360, unit will wake up 06:00, 12:00, 18:00 and 00:00
-2(10 old) = RTC Periodic Offset. This tells the MHub that the value stored in the Sealed Unit RTC Wake-up time are minutes from the current time at which to wake up again. Sealed Unit RTC Wake-up time = 360, if the current time is 13:09 the next wake up time will be 19:09
-3(11 old) = RTC HH:MM Offset. There are 4 parameters that are used to specify the time that the MHub802 must wake up. This parameter specifies how these 4 time parameters are interpreted by the MHub802. The 4 time parameters are RTC Wake-Up Time 0 to 3 and entered in minutes."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="720" level="10" status="0" datatype="Word" address="800" length="2" bitmask="255" dtu="0" units="Minutes" min="0" max="1440" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>RTC Wake-Up Time 0</parName>
-				<parDescription>"RTC Wake-Up Time 0 in Minutes from 00:00"</parDescription>
-				<parNotes>"This is one of the 4 times that are used to specify at what time the MHub802 will wake up. IT is minutes taken from midnight GMT (UTC)"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="721" level="10" status="0" datatype="Word" address="802" length="2" bitmask="255" dtu="0" units="Minutes" min="0" max="1440" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>RTC Wake-Up Time 1</parName>
-				<parDescription>"RTC Wake-Up Time 1 in Minutes from 00:00"</parDescription>
-				<parNotes>"See RTC Wake-UP Time 0"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="722" level="10" status="0" datatype="Word" address="804" length="2" bitmask="255" dtu="0" units="Minutes" min="0" max="1440" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>RTC Wake-Up Time 2</parName>
-				<parDescription>"RTC Wake-Up Time 2 in Minutes from 00:00"</parDescription>
-				<parNotes>"See RTC Wake-UP Time 0"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="723" level="10" status="0" datatype="Word" address="806" length="2" bitmask="255" dtu="0" units="Minutes" min="0" max="1440" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>RTC Wake-Up Time 3</parName>
-				<parDescription>"RTC Wake-Up Time 3 in Minutes from 00:00"</parDescription>
-				<parNotes>"See RTC Wake-UP Time 0"</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1236" level="10" status="1" datatype="Byte" address="2867" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -7223,30 +6976,6 @@ How is this value calculated:
 As an example, configure the event to use policy 5, Include the Location Field, Include the Status Field and is enabled. Use the values in square brackets for each item and add them together, i.e. 5 + 16 + 32 + 128 = 181"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="286" level="10" status="0" datatype="Bit" address="1166" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Sealed Unit Enable</parName>
-				<parDescription>"This indicates if the MHub is a sealed unit or not."</parDescription>
-				<parNotes>"When the MHub is an 802 unit. This parameter is set, that enables specific MHub802 functioality - XXX change this to MHub802 mode. Let&apos;s stop calling it sealed unit."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="718" level="10" status="0" datatype="Bit" address="1166" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
-			<parValues default="1" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Sealed Unit GPS off after lock</parName>
-				<parDescription>"If set GPS goes to low power mode after 3D lock"</parDescription>
-				<parNotes>"The principle behind the long battery life of the MHub802 is that it perform its required functions as quickly as possible, and then turn off again. When the MHub802 turn ON, it needs to register on the GSM network, wait for a GPS position to be computed, send the SMS and then shut down again. If a GPS position is attained before the GSM network registration is achieved, it makes no real sense to keep the GPS on. However one the MHub has a valid GPS lock, remaining ON may actually improve the accuracy of that position somewhat. However in most instances the initial 3D lock is acceptable. This parameter specifies that the GPS must turn OFF immedaitely after getting a 3D lock. If set to 1, the GPS will trun OFF immediately after a 3D lock"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="715" level="10" status="0" datatype="Word" address="1794" length="2" bitmask="255" dtu="0" units="Minutes" min="1" max="65535" >
-			<parValues default="720" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Sealed Unit RTC wake-up time</parName>
-				<parDescription>"Sealed Unit RTC wake-up time in Minutes"</parDescription>
-				<parNotes>"This is the timer that is used with the mode is set to XXX. Time is in minutes - Really should write somehting better here"</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1468" level="5" status="0" datatype="Bit" address="420" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -7261,22 +6990,6 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 				<parName>Selected Speed Signal Loss Event</parName>
 				<parDescription>"Selected Speed loss of signal indicating possible tampering or malfunctioning speed sensor device"</parDescription>
 				<parNotes>"Selected Speed loss of signal indicating possible tampering or malfunctioning speed sensor device"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1522" level="10" status="0" datatype="Bit" address="1526" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Send Weight Sensor Data on Trip End</parName>
-				<parDescription>"Send Weight Sensor Data on Trip End"</parDescription>
-				<parNotes>"Send Weight Sensor Data on Trip End"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1521" level="10" status="0" datatype="Bit" address="1526" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Send Weight Sensor Data on Trip Start</parName>
-				<parDescription>"Send Weight Sensor Data on Trip Start"</parDescription>
-				<parNotes>"Send Weight Sensor Data on Trip Start"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="192" level="10" status="0" datatype="String" address="1376" length="60" bitmask="255" dtu="0" units="" min="0" max="0" >
@@ -7927,32 +7640,6 @@ Any MSISDN on the Auth list is always allowed."</parNotes>
 				<parNotes>"The MHub has the ability to send a text message when an event occurs in addition to sending the message to Mprofiler. This parameter contains the MSISDN of the mobile phone to which the test message must be transmitted."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="287" level="10" status="0" datatype="Word" address="1167" length="2" bitmask="255" dtu="0" units="seconds" min="5" max="65535" >
-			<parValues default="60" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Time on after event sent</parName>
-				<parDescription>"This is the time in seconds the unit should stay ON after the wakeup event was sent"</parDescription>
-				<parNotes>"XXX - What wakeup event.
-
-After the MHub802 has sent the event, it is possible that there may have been a message that has been sent to the MHub802. And thus some time needs to be allowed to be able to recieve that event. This parameter specifies the time in seconds that the MHUb802 will remain ON after the event has been sent."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="290" level="10" status="0" datatype="Word" address="2037" length="2" bitmask="255" dtu="0" units="seconds" min="0" max="65535" >
-			<parValues default="180" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Time to wait for GPS Lock</parName>
-				<parDescription>"Time in seconds to wait for a good GPS Lock"</parDescription>
-				<parNotes>"This is the maximum time in seconds that the MHub will wait to get a GPS position, if it does not have a valid position at the end of this time, the MHub will turn off."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="291" level="10" status="0" datatype="Word" address="2039" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65535" >
-			<parValues default="180" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Time to wait for GSM coverage</parName>
-				<parDescription>"Time in seconds to wait for GSM Network coverage"</parDescription>
-				<parNotes>"This is the maximum time in seconds that the MHub will wait to register onto the GSM network, if it does not register onto the network by the end of this time, it will turn off."</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1700" level="5" status="0" datatype="Bit" address="1824" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -8215,6 +7902,15 @@ None"</parNotes>
 				<parNotes>"See Periodic Position Event Configuration"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1898" level="10" status="0" datatype="Byte" address="1576" length="1" bitmask="31" dtu="0" units="" min="4" max="31" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Trip Start Aid Fetch Enable</parName>
+				<parDescription>"Setting this to a value from 4 to 31 will enable an immediate GPS aid fetch if the number satellites with ephemeris are below the indicated number. 
+Valid for MHubs with uBlox M10 GPS"</parDescription>
+				<parNotes>"Setting this to a value from 4 to 31 will enable an immediate GPS aid fetch if the number satellites with ephemeris are below the indicated number. "</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="125" level="10" status="0" datatype="Byte" address="1148" length="1" bitmask="255" dtu="1" units="seconds" min="0" max="255" >
 			<parValues default="10" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -8348,22 +8044,6 @@ default: 0100030264646464"</parNotes>
 				<parName>Vehicle Immobilization</parName>
 				<parDescription>"Vehicle Immobilization Event Configuration"</parDescription>
 				<parNotes>"Vehicle Immobilization Event Configuration"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1741" level="10" status="1" datatype="Word" address="1374" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
-			<parValues default="65535" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Vehicle Info Event Mask</parName>
-				<parDescription>"Vehicle Info Event Mask"</parDescription>
-				<parNotes>"Vehicle Info Event Mask: To get configuration value calculate the total value by adding the individual event values together. A value of 65535 will enable all events and 0 will disable all events.
-Mobileye Brakes 1
-Mobileye Left Indicator 2
-Mobileye Right Indicator 4
-Mobileye Wipers 8
-Mobileye Low Beam 16
-Mobileye High Beam 32
-Mobileye Tamper 64
-Mobileye No Comms 128"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1734" level="10" status="0" datatype="Byte" address="3679" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
@@ -8546,24 +8226,6 @@ Mobileye No Comms 128"</parNotes>
 				<parNotes>"See Periodic Position Event Configuration"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1530" level="0" status="0" datatype="Byte" address="1778" length="9" bitmask="255" dtu="0" units="" min="0" max="255" >
-			<parValues default="000000000000000000" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Weight Sensor Calibration Vector</parName>
-				<parDescription>"Weight Sensor Calibration Vector"</parDescription>
-				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Weight Sensor Calibration Vector"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1529" level="10" status="0" datatype="Word" address="2811" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
-			<parValues default="300" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Weight Sensor Data Interval</parName>
-				<parDescription>"This is the interval in seconds between successive Weight Sensor Events."</parDescription>
-				<parNotes>"This is the interval in seconds between successive Weight Sensor Events. 0 disables the feature"</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1758" level="5" status="0" datatype="Byte" address="1546" length="1" bitmask="255" dtu="0" units="" min="0" max="3" >
 			<parValues default="3" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -8590,7 +8252,7 @@ Weight Sensor Calibration Vector"</parNotes>
 See SMS DebounceTimer"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1446" level="5" status="0" datatype="Bit" address="1864" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
+		<Parameter parID="1446" level="10" status="0" datatype="Bit" address="1864" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Wifi Enable</parName>
@@ -8757,20 +8419,6 @@ n deltaV = N x 0.02
 			<catParameters>
 				<catParameter parID="912" />
 				<catParameter parID="913" />
-				<catParameter parID="930" />
-				<catParameter parID="931" />
-				<catParameter parID="932" />
-				<catParameter parID="933" />
-				<catParameter parID="934" />
-				<catParameter parID="935" />
-				<catParameter parID="936" />
-				<catParameter parID="937" />
-				<catParameter parID="938" />
-				<catParameter parID="939" />
-				<catParameter parID="940" />
-				<catParameter parID="941" />
-				<catParameter parID="942" />
-				<catParameter parID="943" />
 				<catParameter parID="914" />
 				<catParameter parID="915" />
 				<catParameter parID="916" />
@@ -8787,6 +8435,20 @@ n deltaV = N x 0.02
 				<catParameter parID="927" />
 				<catParameter parID="928" />
 				<catParameter parID="929" />
+				<catParameter parID="930" />
+				<catParameter parID="931" />
+				<catParameter parID="932" />
+				<catParameter parID="933" />
+				<catParameter parID="934" />
+				<catParameter parID="935" />
+				<catParameter parID="936" />
+				<catParameter parID="937" />
+				<catParameter parID="938" />
+				<catParameter parID="939" />
+				<catParameter parID="940" />
+				<catParameter parID="941" />
+				<catParameter parID="942" />
+				<catParameter parID="943" />
 				<catParameter parID="205" />
 			</catParameters>
 		</Category>
@@ -8886,34 +8548,6 @@ n deltaV = N x 0.02
 				<catParameter parID="7" />
 			</catParameters>
 		</Category>
-		<Category catName="Custom Functionality">
-			<catDescription>
-				Custom Functionality
-			</catDescription>
-			<catParameters>
-				<catParameter parID="1019" />
-				<catParameter parID="868" />
-				<catParameter parID="1600" />
-				<catParameter parID="1601" />
-				<catParameter parID="1602" />
-				<catParameter parID="1535" />
-				<catParameter parID="1788" />
-				<catParameter parID="1520" />
-				<catParameter parID="1589" />
-				<catParameter parID="1533" />
-				<catParameter parID="1532" />
-				<catParameter parID="1534" />
-				<catParameter parID="1536" />
-				<catParameter parID="1443" />
-				<catParameter parID="1829" />
-				<catParameter parID="1528" />
-				<catParameter parID="1522" />
-				<catParameter parID="1521" />
-				<catParameter parID="1741" />
-				<catParameter parID="1530" />
-				<catParameter parID="1529" />
-			</catParameters>
-		</Category>
 		<Category catName="Debug">
 			<catDescription>
 				Debug
@@ -8934,17 +8568,6 @@ n deltaV = N x 0.02
 				<catParameter parID="1856" />
 				<catParameter parID="1716" />
 				<catParameter parID="88" />
-			</catParameters>
-		</Category>
-		<Category catName="Driver Fatigue">
-			<catDescription>
-				Driver Fatigue
-			</catDescription>
-			<catParameters>
-				<catParameter parID="1669" />
-				<catParameter parID="1668" />
-				<catParameter parID="1667" />
-				<catParameter parID="1666" />
 			</catParameters>
 		</Category>
 		<Category catName="Driver Key">
@@ -9269,6 +8892,15 @@ n deltaV = N x 0.02
 				<catParameter parID="972" />
 				<catParameter parID="1596" />
 				<catParameter parID="1558" />
+				<catParameter parID="1898" />
+			</catParameters>
+		</Category>
+		<Category catName="Ignition Detection">
+			<catDescription>
+				Ignition Detection
+			</catDescription>
+			<catParameters>
+				<catParameter parID="1017" />
 			</catParameters>
 		</Category>
 		<Category catName="Immobilization">
@@ -9365,28 +8997,6 @@ n deltaV = N x 0.02
 				<catParameter parID="1227" />
 				<catParameter parID="1228" />
 				<catParameter parID="1819" />
-			</catParameters>
-		</Category>
-		<Category catName="MHub802">
-			<catDescription>
-				MHub802
-			</catDescription>
-			<catParameters>
-				<catParameter parID="713" />
-				<catParameter parID="724" />
-				<catParameter parID="292" />
-				<catParameter parID="716" />
-				<catParameter parID="717" />
-				<catParameter parID="720" />
-				<catParameter parID="721" />
-				<catParameter parID="722" />
-				<catParameter parID="723" />
-				<catParameter parID="286" />
-				<catParameter parID="718" />
-				<catParameter parID="715" />
-				<catParameter parID="287" />
-				<catParameter parID="290" />
-				<catParameter parID="291" />
 			</catParameters>
 		</Category>
 		<Category catName="Modem - Aux Socket (TCP/UDP)">
@@ -9554,7 +9164,6 @@ n deltaV = N x 0.02
 				<catParameter parID="818" />
 				<catParameter parID="819" />
 				<catParameter parID="820" />
-				<catParameter parID="1017" />
 				<catParameter parID="1072" />
 				<catParameter parID="1271" />
 				<catParameter parID="1542" />
@@ -9981,8 +9590,6 @@ n deltaV = N x 0.02
 						Settings specific to the HID Magstripe Card Reader&amp;lt;hr /&amp;gt;&amp;lt;table&amp;gt;&amp;lt;tr&amp;gt;&amp;lt;th colspan=&amp;quot;2&amp;quot;&amp;gt;Specifications&amp;lt;/th&amp;gt;&amp;lt;/tr&amp;gt;&amp;lt;tr&amp;gt;&amp;lt;td class=&amp;quot;sub&amp;quot;&amp;gt;Manufacturer&amp;lt;/td&amp;gt;&amp;lt;td class=&amp;quot;value&amp;quot;&amp;gt;HID Global&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;&amp;lt;tr&amp;gt;&amp;lt;td class=&amp;quot;sub&amp;quot;&amp;gt;Interface&amp;lt;/td&amp;gt;&amp;lt;td class=&amp;quot;value&amp;quot;&amp;gt;Serial&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;&amp;lt;/table&amp;gt;&amp;lt;br /&amp;gt;
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="868" value="13" display="0" ovr="0" />
-						<grpParameterValue parID="1019" value="9600" display="0" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
 				<grpValue grpValueName="MHub Extender Add-on" isDefault="0">
@@ -9990,7 +9597,6 @@ n deltaV = N x 0.02
 						Enable the communications between the MHub and the MHub846 Extender when a MHub Extender is connected to the MHub846-3/4 or 5
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="1788" value="1" display="0" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
 				<grpValue grpValueName="No Serial Add-on device" isDefault="0">
@@ -9998,8 +9604,6 @@ n deltaV = N x 0.02
 						Auxiliary port is configured as a standard serial port at a baud-rate of 115200 with no add-on device connected to it
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="1019" value="115200" display="0" ovr="1" />
-						<grpParameterValue parID="868" value="0" display="0" ovr="1" />
 					</grpParameterValues>
 				</grpValue>
 				<grpValue grpValueName="UL202 Fuel Level Probe - Serial" isDefault="0">
@@ -10007,8 +9611,6 @@ n deltaV = N x 0.02
 						UL202 Fuel Level Probe
 					</grpValueDescription>
 					<grpParameterValues>
-						<grpParameterValue parID="1019" value="9600" display="0" ovr="0" />
-						<grpParameterValue parID="868" value="35" display="0" ovr="0" />
 					</grpParameterValues>
 				</grpValue>
 			</grpValues>

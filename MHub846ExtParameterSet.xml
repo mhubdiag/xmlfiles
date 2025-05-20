@@ -1,4 +1,4 @@
-<MhubParameterSet created="2025-04-26T18:14:56+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2025-05-20T17:39:56+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Beeper">
 		<Parameter name="Output for Buzzer on Extender" level="10" datatype="Byte" address="3583" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="5" default="0" previous="" current="" units="" />
@@ -22,10 +22,142 @@
 n - Custom Functionality n
 255 - NMEA Port</Notes>
 		</Parameter>
+		<Parameter name="Card Reader control immobilization" level="10" datatype="Bit" address="2930" length="1" bitmask="1" dtu="1">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>When a valid card is read the vehicle is de-immobilized</Help>
+			<Notes>When a valid card is read the vehicle is de-immobilized</Notes>
+		</Parameter>
+		<Parameter name="Card Reader Dangerous Goods control immobilization" level="10" datatype="Bit" address="2930" length="1" bitmask="2" dtu="1">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>When a valid card is read and the license type indicate dangerous goods the vehicle is de-immobilized</Help>
+			<Notes>When a valid card is read and the license type indicate dangerous goods the vehicle is de-immobilized</Notes>
+		</Parameter>
+		<Parameter name="Card Reader Driver ID" level="10" datatype="Word" address="2932" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="0" previous="" current="" units="" />
+			<Help>Driver ID to be used when de-immobilizing a vehicle with a card</Help>
+			<Notes>Driver ID to be used when de-immobilizing a vehicle with a card</Notes>
+		</Parameter>
+		<Parameter name="Clear Fuel Flow Counts on Event" level="10" datatype="Bit" address="1535" length="1" bitmask="8" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Clear the Fuel Flow Meter Count values when the event is generated</Help>
+			<Notes>Clear the Fuel Flow Meter Count values when the event is generated</Notes>
+		</Parameter>
+		<Parameter name="Customer Field 1" level="10" datatype="String" address="1280" length="20" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="0" previous="" current="" units="" />
+			<Help>Text field to store customer information to be used with custom functions.</Help>
+			<Notes>Text field to store customer information to be used with custom functions.</Notes>
+		</Parameter>
+		<Parameter name="Customer Field 2" level="10" datatype="String" address="1300" length="20" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="0" previous="" current="" units="" />
+			<Help>Text field to store customer information to be used with custom functions.</Help>
+			<Notes>Text field to store customer information to be used with custom functions.</Notes>
+		</Parameter>
+		<Parameter name="Customer Field 3" level="10" datatype="String" address="1320" length="20" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="0" previous="" current="" units="" />
+			<Help>Text field to store customer information to be used with custom functions.</Help>
+			<Notes>Text field to store customer information to be used with custom functions.</Notes>
+		</Parameter>
+		<Parameter name="Customer Field 4" level="10" datatype="String" address="1340" length="20" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="0" previous="" current="" units="" />
+			<Help>Text field to store customer information to be used with custom functions.</Help>
+			<Notes>Text field to store customer information to be used with custom functions.</Notes>
+		</Parameter>
 		<Parameter name="Enable IPC" level="10" datatype="Bit" address="3578" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enable the IPC comms to the MHub Extender</Help>
 			<Notes>Enable the IPC comms to the MHub Extender</Notes>
+		</Parameter>
+		<Parameter name="Enable Weight Sensor on Analog 1" level="10" datatype="Bit" address="1526" length="1" bitmask="1" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enable Weight Sensor on Analog Input 1</Help>
+			<Notes>Enable Weight Sensor on Analog Input 1</Notes>
+		</Parameter>
+		<Parameter name="ERM Relay ID" level="10" datatype="Word" address="2814" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="0" previous="" current="" units="None" />
+			<Help>ERM Remote Relay ID</Help>
+			<Notes>The ID of the ERM Remote Relay</Notes>
+		</Parameter>
+		<Parameter name="Fuel Data Event at End of Trip" level="10" datatype="Bit" address="1535" length="1" bitmask="2" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Send the Fuel Data event at the end of a trip</Help>
+			<Notes>Send the Fuel Data event at the end of a trip</Notes>
+		</Parameter>
+		<Parameter name="Fuel Data Event at Start of Trip" level="10" datatype="Bit" address="1535" length="1" bitmask="1" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Send the Fuel Data event at the start of a trip</Help>
+			<Notes>Send the Fuel Data event at the start of a trip</Notes>
+		</Parameter>
+		<Parameter name="Fuel Data Event on Cap Status Change" level="10" datatype="Bit" address="1535" length="1" bitmask="4" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Send the Fuel Data event at when the status of the Fuel Cap status changed</Help>
+			<Notes>Send the Fuel Data event at when the status of the Fuel Cap status changed</Notes>
+		</Parameter>
+		<Parameter name="Fuel Data Fuel Level Event" level="10" datatype="Bit" address="1535" length="1" bitmask="16" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Fuel Data Fuel Level Event</Help>
+			<Notes>Fuel Data Fuel Level Event will generate OBD2 Fuel Level event and overwrite CANBus Fuel Level.</Notes>
+		</Parameter>
+		<Parameter name="Garmin Fleet Functions" level="5" datatype="Byte" address="2931" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>0 Garmin Fleet Function disabled
+1 Garmin Fleet Function enabled</Help>
+			<Notes>0 Garmin Fleet Function disabled
+1 Garmin Fleet Function enabled</Notes>
+		</Parameter>
+		<Parameter name="Global Pass-through enable" level="0" datatype="Byte" address="419" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Global Pass-through enable</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Set Global Pass-through enable. 
+1 to enable Modem, GPS, Acc, OBD2,Sim passthrough modes
+2 to enable CAN Socket Passthrough</Notes>
+		</Parameter>
+		<Parameter name="IO Expander Installed" level="10" datatype="Bit" address="3578" length="1" bitmask="2" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>The IO Expander have been installed and connected to the MHub</Help>
+			<Notes>Enable communications with the IO Expander that would give the unit an extra 8 Inputs, 4 Outputs and 2 Analog Inputs.
+It is important to note that the IO Expander is an external device connected to the MHub.</Notes>
+		</Parameter>
+		<Parameter name="Maximum Vehicle Carry Weight" level="10" datatype="Word" address="2809" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="50" previous="" current="" units="100kg" />
+			<Help>Maximum weight that the vehicle can carry</Help>
+			<Notes>Maximum weight that the vehicle can carry. Used for calibration of the weight sensor connected to Analog input 1</Notes>
+		</Parameter>
+		<Parameter name="Send Weight Sensor Data on Trip End" level="10" datatype="Bit" address="1526" length="1" bitmask="4" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Send Weight Sensor Data on Trip End</Help>
+			<Notes>Send Weight Sensor Data on Trip End</Notes>
+		</Parameter>
+		<Parameter name="Send Weight Sensor Data on Trip Start" level="10" datatype="Bit" address="1526" length="1" bitmask="2" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Send Weight Sensor Data on Trip Start</Help>
+			<Notes>Send Weight Sensor Data on Trip Start</Notes>
+		</Parameter>
+		<Parameter name="Vehicle Info Event Mask" level="10" datatype="Word" address="1374" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="65535" previous="" current="" units="" />
+			<Help>Vehicle Info Event Mask</Help>
+			<Notes>Vehicle Info Event Mask: To get configuration value calculate the total value by adding the individual event values together. A value of 65535 will enable all events and 0 will disable all events.
+Mobileye Brakes 1
+Mobileye Left Indicator 2
+Mobileye Right Indicator 4
+Mobileye Wipers 8
+Mobileye Low Beam 16
+Mobileye High Beam 32
+Mobileye Tamper 64
+Mobileye No Comms 128</Notes>
+		</Parameter>
+		<Parameter name="Weight Sensor Calibration Vector" level="0" datatype="Byte" address="1778" length="9" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="000000000000000000" previous="" current="" units="" />
+			<Help>Weight Sensor Calibration Vector</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Weight Sensor Calibration Vector</Notes>
+		</Parameter>
+		<Parameter name="Weight Sensor Data Interval" level="10" datatype="Word" address="2811" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="300" previous="" current="" units="" />
+			<Help>This is the interval in seconds between successive Weight Sensor Events.</Help>
+			<Notes>This is the interval in seconds between successive Weight Sensor Events. 0 disables the feature</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Debug">

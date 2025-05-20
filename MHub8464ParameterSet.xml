@@ -1,4 +1,4 @@
-<MhubParameterSet created="2025-04-26T18:14:56+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2025-05-20T17:39:56+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Acc Max Bump Duration " level="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="50" previous="" current="" units="10ms" />
@@ -569,7 +569,7 @@ Scaling 0.4
 		</Parameter>
 	</Category>
 	<Category name="Beeper">
-		<Parameter name="Beeper 1 Event flag" level="15" datatype="Byte" address="538" length="1" bitmask="255" dtu="0">
+		<Parameter name="Beeper 01 Event flag" level="15" datatype="Byte" address="538" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
 			<Help>Flag assigned to Beeper 1</Help>
 			<Notes>Select one of the following flags. When this flag is active, the beeper will beep according to the corresponding beep code on the Beeper Style parameter:
@@ -587,7 +587,7 @@ DO NOT USE A VALUE OTHER THAN LISTED BELOW
 
 </Notes>
 		</Parameter>
-		<Parameter name="Beeper 1 Style" level="15" datatype="Byte" address="539" length="1" bitmask="255" dtu="0">
+		<Parameter name="Beeper 01 Style" level="15" datatype="Byte" address="539" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="8" default="0" previous="" current="" units="" />
 			<Help>Beeping style assigned to Beeper 1</Help>
 			<Notes>Select Ring tone from 1 to 32
@@ -603,6 +603,86 @@ If Output 3 is Configured as Buzzer Output
 8 = Three x 100ms beeps 100ms apart
 9 = Input and Outputs -&gt; Ouput Beeper Configuration
 Other = OFF (No Beep)</Notes>
+		</Parameter>
+		<Parameter name="Beeper 02 Event flag" level="15" datatype="Byte" address="540" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Flag assigned to Beeper 2</Help>
+			<Notes>See Beeper 1 Event flag</Notes>
+		</Parameter>
+		<Parameter name="Beeper 02 Style" level="15" datatype="Byte" address="541" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Beeping style assigned to Beeper 2</Help>
+			<Notes>See Beeper 1 Style</Notes>
+		</Parameter>
+		<Parameter name="Beeper 03 Event flag" level="15" datatype="Byte" address="542" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Flag assigned to Beeper 3</Help>
+			<Notes>See Beeper 1 Event flag</Notes>
+		</Parameter>
+		<Parameter name="Beeper 03 Style" level="15" datatype="Byte" address="543" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Beeping style assigned to Beeper 3</Help>
+			<Notes>See Beeper 1 Style</Notes>
+		</Parameter>
+		<Parameter name="Beeper 04 Event flag" level="15" datatype="Byte" address="544" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Flag assigned to Beeper 4</Help>
+			<Notes>See Beeper 1 Event flag</Notes>
+		</Parameter>
+		<Parameter name="Beeper 04 Style" level="15" datatype="Byte" address="545" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Beeping style assigned to Beeper 4</Help>
+			<Notes>See Beeper 1 Style</Notes>
+		</Parameter>
+		<Parameter name="Beeper 05 Event flag" level="15" datatype="Byte" address="546" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Flag assigned to Beeper 5</Help>
+			<Notes>See Beeper 1 Event flag</Notes>
+		</Parameter>
+		<Parameter name="Beeper 05 Style" level="15" datatype="Byte" address="547" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Beeping style assigned to Beeper 5</Help>
+			<Notes>See Beeper 1 Style</Notes>
+		</Parameter>
+		<Parameter name="Beeper 06 Event flag" level="15" datatype="Byte" address="548" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Flag assigned to Beeper 6</Help>
+			<Notes>See Beeper 1 Event flag</Notes>
+		</Parameter>
+		<Parameter name="Beeper 06 Style" level="15" datatype="Byte" address="549" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Beeping style assigned to Beeper 6</Help>
+			<Notes>See Beeper 1 Style</Notes>
+		</Parameter>
+		<Parameter name="Beeper 07 Event flag" level="15" datatype="Byte" address="550" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Flag assigned to Beeper 7</Help>
+			<Notes>See Beeper 1 Event flag</Notes>
+		</Parameter>
+		<Parameter name="Beeper 07 Style" level="15" datatype="Byte" address="551" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Beeping style assigned to Beeper 7</Help>
+			<Notes>See Beeper 1 Style</Notes>
+		</Parameter>
+		<Parameter name="Beeper 08 Event flag" level="15" datatype="Byte" address="552" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Flag assigned to Beeper 8</Help>
+			<Notes>See Beeper 1 Event flag</Notes>
+		</Parameter>
+		<Parameter name="Beeper 08 Style" level="15" datatype="Byte" address="553" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Beeping style assigned to Beeper 8</Help>
+			<Notes>See Beeper 1 Style</Notes>
+		</Parameter>
+		<Parameter name="Beeper 09 Event flag" level="15" datatype="Byte" address="554" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Flag assigned to Beeper 9</Help>
+			<Notes>See Beeper 1 Event flag</Notes>
+		</Parameter>
+		<Parameter name="Beeper 09 Style" level="15" datatype="Byte" address="555" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Beeping style assigned to Beeper 9</Help>
+			<Notes>See Beeper 1 Style</Notes>
 		</Parameter>
 		<Parameter name="Beeper 10 Event flag" level="15" datatype="Byte" address="556" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
@@ -672,86 +752,6 @@ Other = OFF (No Beep)</Notes>
 		<Parameter name="Beeper 16 Style" level="15" datatype="Byte" address="569" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
 			<Help>Beeping style assigned to Beeper 16</Help>
-			<Notes>See Beeper 1 Style</Notes>
-		</Parameter>
-		<Parameter name="Beeper 2 Event flag" level="15" datatype="Byte" address="540" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Flag assigned to Beeper 2</Help>
-			<Notes>See Beeper 1 Event flag</Notes>
-		</Parameter>
-		<Parameter name="Beeper 2 Style" level="15" datatype="Byte" address="541" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Beeping style assigned to Beeper 2</Help>
-			<Notes>See Beeper 1 Style</Notes>
-		</Parameter>
-		<Parameter name="Beeper 3 Event flag" level="15" datatype="Byte" address="542" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Flag assigned to Beeper 3</Help>
-			<Notes>See Beeper 1 Event flag</Notes>
-		</Parameter>
-		<Parameter name="Beeper 3 Style" level="15" datatype="Byte" address="543" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Beeping style assigned to Beeper 3</Help>
-			<Notes>See Beeper 1 Style</Notes>
-		</Parameter>
-		<Parameter name="Beeper 4 Event flag" level="15" datatype="Byte" address="544" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Flag assigned to Beeper 4</Help>
-			<Notes>See Beeper 1 Event flag</Notes>
-		</Parameter>
-		<Parameter name="Beeper 4 Style" level="15" datatype="Byte" address="545" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Beeping style assigned to Beeper 4</Help>
-			<Notes>See Beeper 1 Style</Notes>
-		</Parameter>
-		<Parameter name="Beeper 5 Event flag" level="15" datatype="Byte" address="546" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Flag assigned to Beeper 5</Help>
-			<Notes>See Beeper 1 Event flag</Notes>
-		</Parameter>
-		<Parameter name="Beeper 5 Style" level="15" datatype="Byte" address="547" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Beeping style assigned to Beeper 5</Help>
-			<Notes>See Beeper 1 Style</Notes>
-		</Parameter>
-		<Parameter name="Beeper 6 Event flag" level="15" datatype="Byte" address="548" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Flag assigned to Beeper 6</Help>
-			<Notes>See Beeper 1 Event flag</Notes>
-		</Parameter>
-		<Parameter name="Beeper 6 Style" level="15" datatype="Byte" address="549" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Beeping style assigned to Beeper 6</Help>
-			<Notes>See Beeper 1 Style</Notes>
-		</Parameter>
-		<Parameter name="Beeper 7 Event flag" level="15" datatype="Byte" address="550" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Flag assigned to Beeper 7</Help>
-			<Notes>See Beeper 1 Event flag</Notes>
-		</Parameter>
-		<Parameter name="Beeper 7 Style" level="15" datatype="Byte" address="551" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Beeping style assigned to Beeper 7</Help>
-			<Notes>See Beeper 1 Style</Notes>
-		</Parameter>
-		<Parameter name="Beeper 8 Event flag" level="15" datatype="Byte" address="552" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Flag assigned to Beeper 8</Help>
-			<Notes>See Beeper 1 Event flag</Notes>
-		</Parameter>
-		<Parameter name="Beeper 8 Style" level="15" datatype="Byte" address="553" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Beeping style assigned to Beeper 8</Help>
-			<Notes>See Beeper 1 Style</Notes>
-		</Parameter>
-		<Parameter name="Beeper 9 Event flag" level="15" datatype="Byte" address="554" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Flag assigned to Beeper 9</Help>
-			<Notes>See Beeper 1 Event flag</Notes>
-		</Parameter>
-		<Parameter name="Beeper 9 Style" level="15" datatype="Byte" address="555" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="255" default="0" previous="" current="" units="" />
-			<Help>Beeping style assigned to Beeper 9</Help>
 			<Notes>See Beeper 1 Style</Notes>
 		</Parameter>
 		<Parameter name="Beeper Output Enable" level="10" datatype="Bit" address="1870" length="1" bitmask="1" dtu="1">
@@ -1146,6 +1146,26 @@ n - Custom Functionality n
 			<Help>Clear the Fuel Flow Meter Count values when the event is generated</Help>
 			<Notes>Clear the Fuel Flow Meter Count values when the event is generated</Notes>
 		</Parameter>
+		<Parameter name="Customer Field 1" level="10" datatype="String" address="1280" length="20" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="0" previous="" current="" units="" />
+			<Help>Text field to store customer information to be used with custom functions.</Help>
+			<Notes>Text field to store customer information to be used with custom functions.</Notes>
+		</Parameter>
+		<Parameter name="Customer Field 2" level="10" datatype="String" address="1300" length="20" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="0" previous="" current="" units="" />
+			<Help>Text field to store customer information to be used with custom functions.</Help>
+			<Notes>Text field to store customer information to be used with custom functions.</Notes>
+		</Parameter>
+		<Parameter name="Customer Field 3" level="10" datatype="String" address="1320" length="20" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="0" previous="" current="" units="" />
+			<Help>Text field to store customer information to be used with custom functions.</Help>
+			<Notes>Text field to store customer information to be used with custom functions.</Notes>
+		</Parameter>
+		<Parameter name="Customer Field 4" level="10" datatype="String" address="1340" length="20" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="0" previous="" current="" units="" />
+			<Help>Text field to store customer information to be used with custom functions.</Help>
+			<Notes>Text field to store customer information to be used with custom functions.</Notes>
+		</Parameter>
 		<Parameter name="Enable IPC" level="10" datatype="Bit" address="3578" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enable the IPC comms to the MHub Extender</Help>
@@ -1181,6 +1201,13 @@ n - Custom Functionality n
 			<Help>Fuel Data Fuel Level Event</Help>
 			<Notes>Fuel Data Fuel Level Event will generate OBD2 Fuel Level event and overwrite CANBus Fuel Level.</Notes>
 		</Parameter>
+		<Parameter name="Garmin Fleet Functions" level="5" datatype="Byte" address="2931" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>0 Garmin Fleet Function disabled
+1 Garmin Fleet Function enabled</Help>
+			<Notes>0 Garmin Fleet Function disabled
+1 Garmin Fleet Function enabled</Notes>
+		</Parameter>
 		<Parameter name="Global Pass-through enable" level="0" datatype="Byte" address="419" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
 			<Help>Global Pass-through enable</Help>
@@ -1189,6 +1216,12 @@ n - Custom Functionality n
 Set Global Pass-through enable. 
 1 to enable Modem, GPS, Acc, OBD2,Sim passthrough modes
 2 to enable CAN Socket Passthrough</Notes>
+		</Parameter>
+		<Parameter name="IO Expander Installed" level="10" datatype="Bit" address="3578" length="1" bitmask="2" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>The IO Expander have been installed and connected to the MHub</Help>
+			<Notes>Enable communications with the IO Expander that would give the unit an extra 8 Inputs, 4 Outputs and 2 Analog Inputs.
+It is important to note that the IO Expander is an external device connected to the MHub.</Notes>
 		</Parameter>
 		<Parameter name="Maximum Vehicle Carry Weight" level="10" datatype="Word" address="2809" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="50" previous="" current="" units="100kg" />
@@ -2857,6 +2890,13 @@ GPS Position Accuracy Filter combined with minimum satellite count
 Include position accuracy and position source in each event</Notes>
 		</Parameter>
 	</Category>
+	<Category name="Ignition Detection">
+		<Parameter name="Ignition Source: Speed" level="5" datatype="Bit" address="1829" length="1" bitmask="16" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Ignition Source: Speed</Help>
+			<Notes>One more possible source of ignition is to use Speed. If Speed is greater than the value specified in parameter &quot;Ignition Source from RPM Threshold&quot;, the vehicle is moving. If speed is to be used as ignition, this parameter is set to 1.</Notes>
+		</Parameter>
+	</Category>
 	<Category name="Immobilization">
 		<Parameter name="Disable Speed Threshold" level="10" datatype="Byte" address="1161" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="10" previous="" current="" units="km/h" />
@@ -3248,6 +3288,11 @@ The logging for each individual module is controlled using the Debug Mask.</Note
 		</Parameter>
 	</Category>
 	<Category name="MHub802">
+		<Parameter name="Emergency Mode Periodic Position Interval" level="10" datatype="Word" address="1802" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="120" previous="" current="" units="Seconds" />
+			<Help>Periodic Position Interval when the unit is in Emergency Mode - in seconds</Help>
+			<Notes>This is where an emergency event is sent to the MHub to place it into an Emergency mode. In this mode this parameter specifies the time interval in seconds that periodic positions will be sent.</Notes>
+		</Parameter>
 		<Parameter name="Enable Test Event" level="0" datatype="Bit" address="1166" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="2" default="0" previous="" current="" units="" />
 			<Help>ABSOLETE: Enable Test Event</Help>
@@ -3259,6 +3304,11 @@ Not used</Notes>
 			<Values min="0" max="65535" default="120" previous="" current="" units="Seconds" />
 			<Help>This is the time in seconds before forcing the unit to send the Wakeup event even when it does not have a 3D GPS lock</Help>
 			<Notes>When the MHub802 wakes up, one of its tasks is to get a 3D GPS lock as quickly as possible. However it may be that it is impossible for the MHub802 to get a GPS location at all. To prevent the MHub802 from staying ON for too long and thus reducing the battery life, this parameter specifies a maximum time in seconds that the MHub802 will wait for a 3D GPS lock. If a lock is not achieved after waiting this amount of time, the event will be sent in anyway, indicating that the GPS lock wan not valid.</Notes>
+		</Parameter>
+		<Parameter name="Geoloc Breach Periodic Position" level="10" datatype="Word" address="1800" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="120" previous="" current="" units="Seconds" />
+			<Help>Periodic Positions for when the geoloc has been breached - in seconds</Help>
+			<Notes>The Mhub802 has geoloc functionality, whereby a command is sent to the MHub802 that will cause it to create a geofence around its current location. Every time the MHub802 wakes up, the location is checked to see if it is still inside this geoloc geofence. If it is outside of the geofence, the MHub802 will enter an Alarm mode and will send periodic locations at the interval specified by this parameter in seconds.</Notes>
 		</Parameter>
 		<Parameter name="Maximum ON Time" level="10" datatype="Word" address="2041" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="600" previous="" current="" units="Seconds" />
@@ -3314,6 +3364,13 @@ The Mhub802 can be mounted with a tamper detection in place so that if it is rem
 			<Values min="1" max="65535" default="720" previous="" current="" units="Minutes" />
 			<Help>Sealed Unit RTC wake-up time in Minutes</Help>
 			<Notes>This is the timer that is used with the mode is set to XXX. Time is in minutes - Really should write somehting better here</Notes>
+		</Parameter>
+		<Parameter name="Tamper Mode Periodic Position Interval" level="10" datatype="Word" address="1804" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="120" previous="" current="" units="Seconds" />
+			<Help>Periodic Position Interval for when the unit is in Tamper Mode - in seconds</Help>
+			<Notes>The tamper mode described in XXX will also result in the MHub802 sending periodic location events. This parameter specifies the interval at which the MHub802 will send periodic events while in Tamper mode.
+
+</Notes>
 		</Parameter>
 		<Parameter name="Time on after event sent" level="10" datatype="Word" address="1167" length="2" bitmask="255" dtu="0">
 			<Values min="5" max="65535" default="60" previous="" current="" units="seconds" />
@@ -4452,10 +4509,10 @@ DO NOT CHANGE THIS VALUE WITHOUT CONSULTING RELEVANT DOCUMENTATION.</Notes>
 			<Help>User name used when logging onto MProfiler over a TCP socket.</Help>
 			<Notes>When connecting to MProfiler using GPRS, the MHub needs to uniquely identify itself to MProfiler before the connection will be accepted. It identifies itself by means of the MProfiler User Name. before the connection will be acc epted, an entity on MProfiler must already exist with the same MProfier User Name as the UnitID on MProfiler. Care must be taken to ensure that no two MHub&apos;s are configured with the same MProfiler User Name, as then the information from two different MHub units will be sent o to the client application as a single unit. Typically the MSISDN of the SIM card can be used.</Notes>
 		</Parameter>
-		<Parameter name="MProfiler User Password" level="10" datatype="String" address="906" length="65" bitmask="255" dtu="0">
+		<Parameter name="Password Seed" level="5" datatype="String" address="906" length="65" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="" previous="" current="" units="None" />
-			<Help>Password used to log onto a TCP socket session with MProfiler.</Help>
-			<Notes>If the MProfiler login requires a password from the MHub whe the MHub logs into the MProfiler, that password is stored in this parameter. </Notes>
+			<Help>Used in communications to a mobile phone for certificate management.</Help>
+			<Notes>Used in communications to a mobile phone for certificate management.</Notes>
 		</Parameter>
 		<Parameter name="TCP Port ID" level="10" datatype="Word" address="421" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="52767" previous="" current="" units="" />
@@ -4682,11 +4739,6 @@ XXX - just a comment - what about a 24V vehicle, will 255 be enough - should the
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Ignition Source: RPM</Help>
 			<Notes>One more possible source of ignition is to use RPM. If RPM is greater than the value specified in parameter &quot;Ignition Source from RPM Threshold&quot;, the engine is running and the ignition is ON. If rpm is to be used as ignition, this parameter is set to 1.</Notes>
-		</Parameter>
-		<Parameter name="Ignition Source: Speed" level="5" datatype="Bit" address="1829" length="1" bitmask="16" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Ignition Source: Speed</Help>
-			<Notes>One more possible source of ignition is to use Speed. If Speed is greater than the value specified in parameter &quot;Ignition Source from RPM Threshold&quot;, the vehicle is moving. If speed is to be used as ignition, this parameter is set to 1.</Notes>
 		</Parameter>
 		<Parameter name="Ignition Source: Trigger" level="5" datatype="Bit" address="1829" length="1" bitmask="32" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
@@ -5091,10 +5143,12 @@ Maximum Lockout time is 240s (4 minutes)</Notes>
 			<Help>Enable Unit Sleep Mode 0: Normal 1: Sleep Mode </Help>
 			<Notes>This parameter will allow the MHub to enter the sleep state. This is the lowest power state of the MHub. 1=Enable</Notes>
 		</Parameter>
-		<Parameter name="Power Mode Sleep Mode Function Enable" level="10" datatype="Byte" address="1277" length="1" bitmask="255" dtu="0">
+		<Parameter name="Power Mode Sleep Mode Function Enable" level="0" datatype="Byte" address="1277" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="204" previous="" current="" units="" />
 			<Help>Global Power Sleep Mode Enablement variable. Program with value 0xCC to enable power sleep mode and any other value to disable.</Help>
-			<Notes>Global Power Sleep Mode Enablement variable. Program with value 0xCC to enable power sleep mode and any other value to disable.</Notes>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Global Power Sleep Mode Enablement variable. Program with value 0xCC to enable power sleep mode and any other value to disable.</Notes>
 		</Parameter>
 		<Parameter name="Power Mode Sleep Scan Cycle Limit" level="10" datatype="Byte" address="3153" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />

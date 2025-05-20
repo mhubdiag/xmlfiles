@@ -1,4 +1,4 @@
-<MhubParameterSet created="2025-05-20T17:39:56+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2025-05-20T18:57:43+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Beeper">
 		<Parameter name="Output for Buzzer on Extender" level="10" datatype="Byte" address="3583" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="5" default="0" previous="" current="" units="" />

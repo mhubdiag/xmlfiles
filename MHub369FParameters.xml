@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="20" unitType="MHub369F" created="2025-05-20T17:39:13+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="20" unitType="MHub369F" created="2025-05-20T18:57:11+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="1385" level="0" status="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0" units="10ms" min="0" max="255" >
 			<parValues default="50" mhub="" current="" prev="" />
@@ -2027,6 +2027,30 @@ e.g ( Speeding + Cornering + Accident ) = ( 1 + 64 + 256 ) = 321"</parNotes>
 				<parNotes>"See Periodic Position Event Configuration"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1669" level="10" status="0" datatype="Word" address="3160" length="2" bitmask="255" dtu="1" units="Minutes" min="5" max="1440" >
+			<parValues default="120" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Driver Fatigue Maximum Time Above Speed Threshold</parName>
+				<parDescription>"Driver Fatigue Maximum Time Above Speed Threshold in Minutes"</parDescription>
+				<parNotes>"This is the maximum time (minutes) a driver is allowed to spend above a configured speed threshold before a mandatory rest period is needed."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1668" level="10" status="0" datatype="Word" address="3158" length="2" bitmask="255" dtu="1" units="Minutes" min="0" max="65535" >
+			<parValues default="15" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Driver Fatigue Minimum Rest Period</parName>
+				<parDescription>"Driver Fatigue Minimum Rest Period in minutes"</parDescription>
+				<parNotes>"This parameter specifies the minimum time (minutes) a driver has to rest before he is allowed to drive again."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1667" level="10" status="0" datatype="Byte" address="3157" length="1" bitmask="255" dtu="1" units="km/h" min="0" max="255" >
+			<parValues default="50" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Driver Fatigue Speed Threshold</parName>
+				<parDescription>"Driver Fatigue Speed Threshold"</parDescription>
+				<parNotes>"The Driver Fatigue Speed Threshold is the speed above which the unit will accumulate time spent above this threshold."</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1238" level="15" status="0" datatype="Byte" address="2604" length="4" bitmask="255" dtu="0" units="" min="0" max="2147483647" >
 			<parValues default="00000000" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -2494,6 +2518,14 @@ Note that certain vehicles respond to certain DTC requests by turning on the rel
 				<parNotes>"Enables UDS and KWP2000 DTC requests using services defined by the vehicle settings in XPlatform.
 
 Note that certain vehicles respond to certain DTC requests by turning on the relevant sections. this could result in windscreen wipers activating or dashboard lights flickering or displaying warnings."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1666" level="10" status="0" datatype="Bit" address="3156" length="1" bitmask="1" dtu="1" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable Driver Fatigue Module</parName>
+				<parDescription>"Enable the Driver Fatigue Management and Reporting module"</parDescription>
+				<parNotes>"This parameter will Enable the Driver Fatigue Management and Reporting module which monitors the drivers time at a speed above a certain threshold and reminds him through the use of a beeper to stop  for a minimum configurable time. If the driver does not stop for the minimum time a violation event will be raised and reported."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="826" level="10" status="0" datatype="Bit" address="1981" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
@@ -8568,6 +8600,17 @@ n deltaV = N x 0.02
 				<catParameter parID="1856" />
 				<catParameter parID="1716" />
 				<catParameter parID="88" />
+			</catParameters>
+		</Category>
+		<Category catName="Driver Fatigue">
+			<catDescription>
+				Driver Fatigue
+			</catDescription>
+			<catParameters>
+				<catParameter parID="1669" />
+				<catParameter parID="1668" />
+				<catParameter parID="1667" />
+				<catParameter parID="1666" />
 			</catParameters>
 		</Category>
 		<Category catName="Driver Key">

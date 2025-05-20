@@ -1,4 +1,4 @@
-<MhubParameterSet created="2025-05-20T17:39:55+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2025-05-20T18:57:42+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Acc Max Bump Duration " level="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="50" previous="" current="" units="10ms" />
@@ -1318,6 +1318,28 @@ On - OBD protocol found. Short off indicates activity.
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
 None</Notes>
+		</Parameter>
+	</Category>
+	<Category name="Driver Fatigue">
+		<Parameter name="Driver Fatigue Maximum Time Above Speed Threshold" level="10" datatype="Word" address="3160" length="2" bitmask="255" dtu="1">
+			<Values min="5" max="1440" default="120" previous="" current="" units="Minutes" />
+			<Help>Driver Fatigue Maximum Time Above Speed Threshold in Minutes</Help>
+			<Notes>This is the maximum time (minutes) a driver is allowed to spend above a configured speed threshold before a mandatory rest period is needed.</Notes>
+		</Parameter>
+		<Parameter name="Driver Fatigue Minimum Rest Period" level="10" datatype="Word" address="3158" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="15" previous="" current="" units="Minutes" />
+			<Help>Driver Fatigue Minimum Rest Period in minutes</Help>
+			<Notes>This parameter specifies the minimum time (minutes) a driver has to rest before he is allowed to drive again.</Notes>
+		</Parameter>
+		<Parameter name="Driver Fatigue Speed Threshold" level="10" datatype="Byte" address="3157" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="50" previous="" current="" units="km/h" />
+			<Help>Driver Fatigue Speed Threshold</Help>
+			<Notes>The Driver Fatigue Speed Threshold is the speed above which the unit will accumulate time spent above this threshold.</Notes>
+		</Parameter>
+		<Parameter name="Enable Driver Fatigue Module" level="10" datatype="Bit" address="3156" length="1" bitmask="1" dtu="1">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enable the Driver Fatigue Management and Reporting module</Help>
+			<Notes>This parameter will Enable the Driver Fatigue Management and Reporting module which monitors the drivers time at a speed above a certain threshold and reminds him through the use of a beeper to stop  for a minimum configurable time. If the driver does not stop for the minimum time a violation event will be raised and reported.</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Driver Key">

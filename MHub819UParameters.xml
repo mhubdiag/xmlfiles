@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="19" unitType="MHub819U" created="2025-05-20T18:57:11+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="19" unitType="MHub819U" created="2025-05-21T17:04:41+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="1385" level="0" status="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0" units="10ms" min="0" max="255" >
 			<parValues default="50" mhub="" current="" prev="" />
@@ -938,24 +938,20 @@ Other = OFF (No Beep)"</parNotes>
 				<parNotes>"If a beeper is connected to the MHub, this parameter will enable or disable the beeper operation."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1350" level="0" status="0" datatype="Word" address="407" length="2" bitmask="255" dtu="0" units="meters" min="100" max="10000" >
+		<Parameter parID="1350" level="10" status="0" datatype="Word" address="407" length="2" bitmask="255" dtu="0" units="meters" min="100" max="10000" >
 			<parValues default="500" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Best Guess Position Distance Threshold</parName>
 				<parDescription>"Distance from Last Valid position up to which the last valid position is still considered valid"</parDescription>
-				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Distance in meters from Last Valid position up to which the last valid position is still considered valid"</parNotes>
+				<parNotes>"Distance in meters from Last Valid position up to which the last valid position is still considered valid"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1351" level="0" status="0" datatype="Word" address="409" length="2" bitmask="255" dtu="0" units="minutes" min="60" max="65500" >
+		<Parameter parID="1351" level="10" status="0" datatype="Word" address="409" length="2" bitmask="255" dtu="0" units="minutes" min="60" max="65500" >
 			<parValues default="120" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Best Guess Position Time Threshold</parName>
 				<parDescription>"Maximum age of the Last Valid position before the position is considered invalid."</parDescription>
-				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
-
-"</parNotes>
+				<parNotes>""</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1802" level="10" status="0" datatype="Byte" address="3836" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >

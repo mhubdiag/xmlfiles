@@ -1,4 +1,4 @@
-<MhubParameterSet created="2025-05-20T18:57:43+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2025-05-21T17:04:53+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Acc Max Bump Duration " level="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="50" previous="" current="" units="10ms" />
@@ -2660,19 +2660,15 @@ Value of 0 Disables Geoloc lift detection</Notes>
 		</Parameter>
 	</Category>
 	<Category name="GPS">
-		<Parameter name="Best Guess Position Distance Threshold" level="0" datatype="Word" address="407" length="2" bitmask="255" dtu="0">
+		<Parameter name="Best Guess Position Distance Threshold" level="10" datatype="Word" address="407" length="2" bitmask="255" dtu="0">
 			<Values min="100" max="10000" default="500" previous="" current="" units="meters" />
 			<Help>Distance from Last Valid position up to which the last valid position is still considered valid</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Distance in meters from Last Valid position up to which the last valid position is still considered valid</Notes>
+			<Notes>Distance in meters from Last Valid position up to which the last valid position is still considered valid</Notes>
 		</Parameter>
-		<Parameter name="Best Guess Position Time Threshold" level="0" datatype="Word" address="409" length="2" bitmask="255" dtu="0">
+		<Parameter name="Best Guess Position Time Threshold" level="10" datatype="Word" address="409" length="2" bitmask="255" dtu="0">
 			<Values min="60" max="65500" default="120" previous="" current="" units="minutes" />
 			<Help>Maximum age of the Last Valid position before the position is considered invalid.</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-</Notes>
+			<Notes></Notes>
 		</Parameter>
 		<Parameter name="Disable GPS Speed Accuracy Filter" level="10" datatype="Bit" address="1521" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />

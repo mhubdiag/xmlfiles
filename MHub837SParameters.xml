@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="16" unitType="MHub837S" created="2025-05-21T17:04:42+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="16" unitType="MHub837S" created="2025-05-21T17:35:00+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="1385" level="0" status="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0" units="10ms" min="0" max="255" >
 			<parValues default="50" mhub="" current="" prev="" />
@@ -804,22 +804,6 @@ Other = OFF (No Beep)"</parNotes>
 				<parName>Beeper Output Enable</parName>
 				<parDescription>"Beeper Output Enable"</parDescription>
 				<parNotes>"If a beeper is connected to the MHub, this parameter will enable or disable the beeper operation."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1350" level="10" status="0" datatype="Word" address="407" length="2" bitmask="255" dtu="0" units="meters" min="100" max="10000" >
-			<parValues default="500" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Best Guess Position Distance Threshold</parName>
-				<parDescription>"Distance from Last Valid position up to which the last valid position is still considered valid"</parDescription>
-				<parNotes>"Distance in meters from Last Valid position up to which the last valid position is still considered valid"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1351" level="10" status="0" datatype="Word" address="409" length="2" bitmask="255" dtu="0" units="minutes" min="60" max="65500" >
-			<parValues default="120" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Best Guess Position Time Threshold</parName>
-				<parDescription>"Maximum age of the Last Valid position before the position is considered invalid."</parDescription>
-				<parNotes>""</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1802" level="10" status="0" datatype="Byte" address="3836" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
@@ -4375,6 +4359,23 @@ Timers are reset at trip start."</parNotes>
 				<parNotes>""</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1350" level="10" status="0" datatype="Word" address="407" length="2" bitmask="255" dtu="0" units="meters" min="100" max="10000" >
+			<parValues default="500" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Last Position Distance Threshold</parName>
+				<parDescription>"Distance from Last Valid position up to which the last valid position is still considered valid"</parDescription>
+				<parNotes>"Distance in meters from Last Valid position up to which the last valid position is still considered valid"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1351" level="10" status="0" datatype="Word" address="409" length="2" bitmask="255" dtu="0" units="minutes" min="60" max="65500" >
+			<parValues default="1440" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Last Position Time Threshold</parName>
+				<parDescription>"Maximum age of the Last Valid position before the position is considered invalid.
+1440 = 1 day"</parDescription>
+				<parNotes>""</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1781" level="5" status="0" datatype="Bit" address="1777" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
 			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -7887,8 +7888,6 @@ n deltaV = N x 0.02
 				GPS
 			</catDescription>
 			<catParameters>
-				<catParameter parID="1350" />
-				<catParameter parID="1351" />
 				<catParameter parID="1773" />
 				<catParameter parID="1752" />
 				<catParameter parID="1751" />
@@ -7914,6 +7913,8 @@ n deltaV = N x 0.02
 				<catParameter parID="972" />
 				<catParameter parID="1596" />
 				<catParameter parID="1558" />
+				<catParameter parID="1350" />
+				<catParameter parID="1351" />
 			</catParameters>
 		</Category>
 		<Category catName="Ignition Detection">

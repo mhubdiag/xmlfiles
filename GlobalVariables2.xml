@@ -64,4 +64,9 @@
 		<item id="61" description="Physical Inputs Bitfield" name="Physical Inputs" size="4" scale="1" offset="0" units="Bits" min="0" max="4294967295" dtu="1" />
 		<item id="62" description="Physical Outputs Bitfield" name="Physical Outputs" size="4" scale="1" offset="0" units="Bits" min="0" max="4294967295" dtu="1" />
 		<item id="63" description="Full 8 bytes of the Dallas ID" name="Full Dallas ID" size="8" scale="1" offset="0" units="Bytes" min="0" max="255" dtu="0" />
+		<item id="64" description="Cell ID or Wifi Network Raw Data" name="NetworkInfo" size="21" scale="1" offset="0" units="Bytes" min="0" max="255" dtu="0" />
+		<item id="65" description="Count of the number of satellites for which the GNSS module has valid ephemeris data." name="GPS Ephemeris Count" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="66" description="Count of the number of satellites for which the GNSS module has valid almanac data." name="GNSS Almanac Count" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="67" description="Count of the number of satellites for which the GNSS has valid Offline predictive data" name="GNSS Offline Count" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
+		<item id="68" description="Count of the number of satellites for which the GNSS has valid autonomous prediction data." name="GNSS Autonomous Data Count" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
 </GlobalVariables>

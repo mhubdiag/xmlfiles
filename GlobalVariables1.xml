@@ -32,7 +32,7 @@
 		<item id="29" description="The Hour part of the current Time" name="Hour" size="1" scale="1" offset="0" units="Hr" min="0" max="23" dtu="1" />
 		<item id="30" description="The Minute part of the current time" name="Minute" size="1" scale="1" offset="0" units="Minute" min="0" max="59" dtu="1" />
 		<item id="31" description="The Second part of the current time" name="Second" size="1" scale="1" offset="0" units="Second" min="0" max="59" dtu="1" />
-		<item id="32" description="Mains Voltage" name="Battery Voltage" size="1" scale="0.1" offset="0" units="V" min="0" max="25.5" dtu="0" />
+		<item id="32" description="Main Input Voltage" name="Main Input Voltage" size="1" scale="0.1" offset="0" units="V" min="0" max="25.5" dtu="0" />
 		<item id="33" description="The number of times the battery has been charged" name="Charge Cycles" size="1" scale="1" offset="0" units="Cycle" min="0" max="255" dtu="0" />
 		<item id="34" description="Temperature of the internal backup battery" name="Battery Temperature" size="1" scale="0.5" offset="0" units="Degrees C" min="0" max="127" dtu="0" />
 		<item id="35" description="The date and time the backup battery was inserted - Julian Time" name="Battery Insertion Date and Time" size="4" scale="1" offset="0" units="Second" min="0" max="4294967295" dtu="0" />

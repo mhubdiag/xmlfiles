@@ -1,4 +1,4 @@
-<MhubParameterSet created="2025-05-30T13:59:41+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2025-06-27T19:18:13+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Acc Max Bump Duration " level="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="50" previous="" current="" units="10ms" />
@@ -1223,6 +1223,30 @@ default: 0100030264646464</Notes>
 			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
 
 See SMS DebounceTimer</Notes>
+		</Parameter>
+	</Category>
+	<Category name="Custom Functionality">
+		<Parameter name="Global Pass-through enable" level="0" datatype="Byte" address="419" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Global Pass-through enable</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Set Global Pass-through enable. 
+1 to enable Modem, GPS, Acc, OBD2,Sim passthrough modes
+2 to enable CAN Socket Passthrough</Notes>
+		</Parameter>
+		<Parameter name="Vehicle Info Event Mask" level="10" datatype="Word" address="1374" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="65535" previous="" current="" units="" />
+			<Help>Vehicle Info Event Mask</Help>
+			<Notes>Vehicle Info Event Mask: To get configuration value calculate the total value by adding the individual event values together. A value of 65535 will enable all events and 0 will disable all events.
+Mobileye Brakes 1
+Mobileye Left Indicator 2
+Mobileye Right Indicator 4
+Mobileye Wipers 8
+Mobileye Low Beam 16
+Mobileye High Beam 32
+Mobileye Tamper 64
+Mobileye No Comms 128</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Debug">
@@ -2767,6 +2791,29 @@ Allow the GPS to be initialised with the Best Guess position the MHub currently 
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Calculate distance from GPS coordinates.</Help>
 			<Notes>If GPS speed is used to calculate trip distance, the accuracy of trip distance will be negatively affected when GPS lock is lost. By adding the distance between the last known position and position where GPS lock was obtained again, this error can be reduced. </Notes>
+		</Parameter>
+		<Parameter name="GPS Dynamic Model" level="0" datatype="Byte" address="1577" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>All values other than those below set the uBlox GPS to Automotive model
+128 - Stationary
+129 - Portable Device
+130 - Sea
+131 - Air1
+132 - Air2
+133 - Air4
+135 - Wrist (Check availability)
+136 - Bike (Check availability)</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+All values other than those below set the uBlox GPS to Automotive model
+128 - Stationary
+129 - Portable Device
+130 - Sea
+131 - Air1
+132 - Air2
+133 - Air4
+135 - Wrist (Check availability)
+136 - Bike (Check availability)</Notes>
 		</Parameter>
 		<Parameter name="GPS Hardware Reset" level="5" datatype="Bit" address="840" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />

@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="20" unitType="MHub369F" created="2025-05-30T13:59:30+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="20" unitType="MHub369F" created="2025-06-27T19:18:03+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="1385" level="0" status="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0" units="10ms" min="0" max="255" >
 			<parValues default="50" mhub="" current="" prev="" />
@@ -3941,6 +3941,18 @@ Value of 0 Disables Geoloc lift detection"</parNotes>
 				<parNotes>"Enable the creation of a Geoloc, for current location, at Trip End. Geoloc will be  disabled after ignition on"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1443" level="0" status="0" datatype="Byte" address="419" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Global Pass-through enable</parName>
+				<parDescription>"Global Pass-through enable"</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Set Global Pass-through enable. 
+1 to enable Modem, GPS, Acc, OBD2,Sim passthrough modes
+2 to enable CAN Socket Passthrough"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1014" level="0" status="0" datatype="Word" address="367" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="600" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -4047,6 +4059,32 @@ Allow the GPS to be initialised with the Best Guess position the MHub currently 
 				<parName>GPS Coordinate Distance</parName>
 				<parDescription>"Calculate distance from GPS coordinates."</parDescription>
 				<parNotes>"If GPS speed is used to calculate trip distance, the accuracy of trip distance will be negatively affected when GPS lock is lost. By adding the distance between the last known position and position where GPS lock was obtained again, this error can be reduced. "</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1899" level="0" status="0" datatype="Byte" address="1577" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>GPS Dynamic Model</parName>
+				<parDescription>"All values other than those below set the uBlox GPS to Automotive model
+128 - Stationary
+129 - Portable Device
+130 - Sea
+131 - Air1
+132 - Air2
+133 - Air4
+135 - Wrist (Check availability)
+136 - Bike (Check availability)"</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+All values other than those below set the uBlox GPS to Automotive model
+128 - Stationary
+129 - Portable Device
+130 - Sea
+131 - Air1
+132 - Air2
+133 - Air4
+135 - Wrist (Check availability)
+136 - Bike (Check availability)"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="892" level="5" status="0" datatype="Bit" address="840" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
@@ -8075,6 +8113,22 @@ default: 0100030264646464"</parNotes>
 				<parNotes>"Vehicle Immobilization Event Configuration"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1741" level="10" status="0" datatype="Word" address="1374" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
+			<parValues default="65535" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Vehicle Info Event Mask</parName>
+				<parDescription>"Vehicle Info Event Mask"</parDescription>
+				<parNotes>"Vehicle Info Event Mask: To get configuration value calculate the total value by adding the individual event values together. A value of 65535 will enable all events and 0 will disable all events.
+Mobileye Brakes 1
+Mobileye Left Indicator 2
+Mobileye Right Indicator 4
+Mobileye Wipers 8
+Mobileye Low Beam 16
+Mobileye High Beam 32
+Mobileye Tamper 64
+Mobileye No Comms 128"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1734" level="10" status="0" datatype="Byte" address="3679" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -8577,6 +8631,15 @@ n deltaV = N x 0.02
 				<catParameter parID="7" />
 			</catParameters>
 		</Category>
+		<Category catName="Custom Functionality">
+			<catDescription>
+				Custom Functionality
+			</catDescription>
+			<catParameters>
+				<catParameter parID="1443" />
+				<catParameter parID="1741" />
+			</catParameters>
+		</Category>
 		<Category catName="Debug">
 			<catDescription>
 				Debug
@@ -8923,6 +8986,7 @@ n deltaV = N x 0.02
 				<catParameter parID="1259" />
 				<catParameter parID="1349" />
 				<catParameter parID="1241" />
+				<catParameter parID="1899" />
 				<catParameter parID="892" />
 				<catParameter parID="893" />
 				<catParameter parID="1815" />

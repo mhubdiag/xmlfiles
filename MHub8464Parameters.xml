@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="15" unitType="MHub8464" created="2025-06-27T19:18:05+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="15" unitType="MHub8464" created="2025-06-30T10:41:38+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="1385" level="0" status="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0" units="10ms" min="0" max="255" >
 			<parValues default="50" mhub="" current="" prev="" />
@@ -5224,12 +5224,12 @@ NB: This is a service provided by the network and not only dependant on configur
 				<parNotes>"Distance in meters from Last Valid position up to which the last valid position is still considered valid"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1351" level="10" status="0" datatype="Word" address="409" length="2" bitmask="255" dtu="0" units="minutes" min="60" max="65500" >
+		<Parameter parID="1351" level="10" status="0" datatype="Word" address="409" length="2" bitmask="255" dtu="0" units="Seconds" min="60" max="65500" >
 			<parValues default="1440" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>Last Position Time Threshold</parName>
-				<parDescription>"Maximum age of the Last Valid position before the position is considered invalid.
-1440 = 1 day"</parDescription>
+				<parDescription>"Maximum age of the Last Valid position while a trip is in progress before the position is considered invalid and no longer used in events.
+"</parDescription>
 				<parNotes>""</parNotes>
 			</parInfo>
 		</Parameter>

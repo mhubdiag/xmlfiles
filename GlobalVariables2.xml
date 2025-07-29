@@ -70,4 +70,5 @@
 		<item id="67" description="Count of the number of satellites for which the GNSS has valid Offline predictive data" name="GNSS Offline Count" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
 		<item id="68" description="Count of the number of satellites for which the GNSS has valid autonomous prediction data." name="GNSS Autonomous Data Count" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="1" />
 		<item id="69" description="General Task Percentage" name="Task Percentage" size="1" scale="0.5" offset="0" units="%" min="0" max="255" dtu="0" />
+		<item id="70" description="Time to first position from the start of a Trip" name="In-Trip TTFF" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="0" />
 </GlobalVariables>

@@ -48,7 +48,7 @@
 	<tag id="10" description="PowerFailure">
 	</tag>
 	<tag id="11" description="BatteryStatus">
-		<data config="0" name="BatteryVoltage" size="1" scale="0.1" offset="0" units="V" min="0" max="25.5"/>
+		<data config="0" name="MainInputVoltage" size="1" scale="0.1" offset="0" units="V" min="0" max="25.5"/>
 		<data config="0" name="BatteryTemperature" size="1" scale="0.5" offset="0" units="Degrees C" min="0" max="127"/>
 		<data config="0" name="ChargeCycles" size="1" scale="1" offset="0" units="Cycle" min="0" max="255"/>
 	</tag>
@@ -187,7 +187,7 @@
 	</tag>
 	<tag id="43" description="MainsVoltageData">
 		<data config="1" name="MainVoltageLowThreshold" size="1" scale="1" offset="0" units="0.1 V" min="0" max="255"/>
-		<data config="0" name="BatteryVoltage" size="1" scale="0.1" offset="0" units="V" min="0" max="25.5"/>
+		<data config="0" name="MainInputVoltage" size="1" scale="0.1" offset="0" units="V" min="0" max="25.5"/>
 	</tag>
 	<tag id="44" description="GeofenceUploadData">
 		<data config="0" name="GeofenceUploadToken" size="2" scale="1" offset="0" units="" min="0" max="65535"/>
@@ -265,7 +265,7 @@
 		<data config="0" name="Custom3Variable6" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
 	</tag>
 	<tag id="53" description="ScopeDebug">
-		<data config="0" name="BatteryVoltage" size="1" scale="0.1" offset="0" units="V" min="0" max="25.5"/>
+		<data config="0" name="MainInputVoltage" size="1" scale="0.1" offset="0" units="V" min="0" max="25.5"/>
 		<data config="0" name="GSMRSSI" size="1" scale="1" offset="0" units="dB" min="0" max="99"/>
 	</tag>
 	<tag id="54" description="TripDurationExtension">

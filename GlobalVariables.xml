@@ -327,4 +327,5 @@
 		<item id="325" description="General Task Percentage" name="Task Percentage" size="1" scale="0.5" offset="0" units="%" min="0" max="255" dtu="0" />
 		<item id="326" description="Time to first position from the start of a Trip" name="Trip Time TFF" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="0" />
 		<item id="327" description="Distance between the Best Guess at the start of a trip and the first valid position in a trip." name="Trip Distance TFF" size="4" scale="1" offset="0" units="" min="0" max="4294967295" dtu="0" />
+		<item id="328" description="Power Management IC Status" name="PMIC Status" size="1" scale="1" offset="0" units="" min="0" max="255" dtu="0" />
 </GlobalVariables>

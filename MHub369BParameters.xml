@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="21" unitType="MHub369B" created="2025-06-30T10:41:35+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="21" unitType="MHub369B" created="2025-08-01T14:29:28+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="1385" level="0" status="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0" units="10ms" min="0" max="255" >
 			<parValues default="50" mhub="" current="" prev="" />
@@ -989,6 +989,16 @@ See SMS DebounceTimer"</parNotes>
 				<parName>Braking Limit</parName>
 				<parDescription>"Braking Limit in km/h/s"</parDescription>
 				<parNotes>"The MHub detects the acceleration and deceleration of the vehcile by using the speed sensor. If the MHub decelerates faster than the value specified in this parameter, is it deemed to be in the harch braking violation state. The units of this parameter is in km/h/s."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1900" level="0" status="0" datatype="Byte" address="1578" length="1" bitmask="255" dtu="0" units="" min="0" max="100" >
+			<parValues default="6" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>C/No Min Threshold</parName>
+				<parDescription>"Minimum C/No required for a satellite to be used in the solution"</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1813" level="5" status="0" datatype="Word" address="1562" length="2" bitmask="255" dtu="0" units="" min="0" max="65000" >
@@ -4003,14 +4013,6 @@ DO NOT CHANGE THIS VALUE WITHOUT CONSULTING RELEVANT DOCUMENTATION."</parNotes>
 				<parNotes>"GPS minimum Accuracy Threshold required for some gps calculation. If the gps position accuracy is not better than the threshold e.g. lower value, then gps w ill not be used in calculation. For example not to do geofence checks if the GPS accuracy radius is larger than the geofence radius."</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1628" level="5" status="0" datatype="Word" address="3149" length="2" bitmask="255" dtu="0" units="Seconds" min="1800" max="65500" >
-			<parValues default="14390" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>GPS AID Ephemeris Validity</parName>
-				<parDescription>"Amount of time in seconds that the GPS AID Ephemeris data is deemed good enough to upload to the GNSS "</parDescription>
-				<parNotes>"Amount of time in seconds that the GPS AID Ephemeris data is deemed good enough to upload to the GNSS "</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1356" level="10" status="0" datatype="Bit" address="840" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -4025,16 +4027,6 @@ DO NOT CHANGE THIS VALUE WITHOUT CONSULTING RELEVANT DOCUMENTATION."</parNotes>
 				<parName>GPS Aid Request Interval</parName>
 				<parDescription>"Minimum time GPS will wait between GPS Aid requests in seconds"</parDescription>
 				<parNotes>"Minimum time GPS will wait between GPS Aid requests in seconds"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1622" level="0" status="1" datatype="Bit" address="3575" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>GPS Aid Seed Position from Best-Guess</parName>
-				<parDescription>"Allow the GPS to be initialised with the Best Guess position the MHub currently has."</parDescription>
-				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Allow the GPS to be initialised with the Best Guess position the MHub currently has."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1259" level="15" status="0" datatype="Bit" address="840" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
@@ -5274,6 +5266,16 @@ Mains Dev. Threshold"</parNotes>
 				<parName>MIL Status</parName>
 				<parDescription>"MIL Status Event Configuration"</parDescription>
 				<parNotes>"See Periodic Position Event Configuration"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1901" level="0" status="0" datatype="Byte" address="1579" length="1" bitmask="255" dtu="0" units="" min="0" max="100" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Minimum C/No Satellite Count</parName>
+				<parDescription>"Number satellites required to have the minimum C/No before a lock will be attempted"</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="115" level="10" status="0" datatype="Word" address="1122" length="2" bitmask="255" dtu="1" units="Seconds" min="0" max="65535" >
@@ -8967,6 +8969,7 @@ n deltaV = N x 0.02
 				GPS
 			</catDescription>
 			<catParameters>
+				<catParameter parID="1900" />
 				<catParameter parID="1773" />
 				<catParameter parID="1752" />
 				<catParameter parID="1839" />
@@ -8979,10 +8982,8 @@ n deltaV = N x 0.02
 				<catParameter parID="1754" />
 				<catParameter parID="1571" />
 				<catParameter parID="1414" />
-				<catParameter parID="1628" />
 				<catParameter parID="1356" />
 				<catParameter parID="1340" />
-				<catParameter parID="1622" />
 				<catParameter parID="1259" />
 				<catParameter parID="1349" />
 				<catParameter parID="1241" />
@@ -8996,6 +8997,7 @@ n deltaV = N x 0.02
 				<catParameter parID="1558" />
 				<catParameter parID="1350" />
 				<catParameter parID="1351" />
+				<catParameter parID="1901" />
 				<catParameter parID="1898" />
 			</catParameters>
 		</Category>

@@ -1,4 +1,4 @@
-<MhubParameterSet created="2025-06-30T10:41:46+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2025-08-01T14:29:39+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Acc Max Bump Duration " level="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="50" previous="" current="" units="10ms" />
@@ -2689,6 +2689,13 @@ Value of 0 Disables Geoloc lift detection</Notes>
 		</Parameter>
 	</Category>
 	<Category name="GPS">
+		<Parameter name="C/No Min Threshold" level="0" datatype="Byte" address="1578" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="100" default="6" previous="" current="" units="" />
+			<Help>Minimum C/No required for a satellite to be used in the solution</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+</Notes>
+		</Parameter>
 		<Parameter name="Disable GPS Speed Accuracy Filter" level="10" datatype="Bit" address="1521" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Disable GPS Speed Accuracy Filter</Help>
@@ -2755,11 +2762,6 @@ may be significantly worse than fixes using only broadcast ephemerides.
 			<Help>GPS minimum Accuracy Threshold in meters</Help>
 			<Notes>GPS minimum Accuracy Threshold required for some gps calculation. If the gps position accuracy is not better than the threshold e.g. lower value, then gps w ill not be used in calculation. For example not to do geofence checks if the GPS accuracy radius is larger than the geofence radius.</Notes>
 		</Parameter>
-		<Parameter name="GPS AID Ephemeris Validity" level="5" datatype="Word" address="3149" length="2" bitmask="255" dtu="0">
-			<Values min="1800" max="65500" default="14390" previous="" current="" units="Seconds" />
-			<Help>Amount of time in seconds that the GPS AID Ephemeris data is deemed good enough to upload to the GNSS </Help>
-			<Notes>Amount of time in seconds that the GPS AID Ephemeris data is deemed good enough to upload to the GNSS </Notes>
-		</Parameter>
 		<Parameter name="GPS Aid Request Disable" level="10" datatype="Bit" address="840" length="1" bitmask="32" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>GPS Aid Request Disabled</Help>
@@ -2769,13 +2771,6 @@ may be significantly worse than fixes using only broadcast ephemerides.
 			<Values min="1800" max="65500" default="10800" previous="" current="" units="" />
 			<Help>Minimum time GPS will wait between GPS Aid requests in seconds</Help>
 			<Notes>Minimum time GPS will wait between GPS Aid requests in seconds</Notes>
-		</Parameter>
-		<Parameter name="GPS Aid Seed Position from Best-Guess" level="0" datatype="Bit" address="3575" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Allow the GPS to be initialised with the Best Guess position the MHub currently has.</Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-Allow the GPS to be initialised with the Best Guess position the MHub currently has.</Notes>
 		</Parameter>
 		<Parameter name="GPS Antenna Event" level="15" datatype="Bit" address="840" length="1" bitmask="16" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
@@ -2878,6 +2873,13 @@ Include position accuracy and position source in each event</Notes>
 			<Help>Maximum age of the Last Valid position while a trip is in progress before the position is considered invalid and no longer used in events.
 </Help>
 			<Notes></Notes>
+		</Parameter>
+		<Parameter name="Minimum C/No Satellite Count" level="0" datatype="Byte" address="1579" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="100" default="0" previous="" current="" units="" />
+			<Help>Number satellites required to have the minimum C/No before a lock will be attempted</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+</Notes>
 		</Parameter>
 		<Parameter name="Trip Start Aid Fetch Enable" level="10" datatype="Byte" address="1576" length="1" bitmask="31" dtu="0">
 			<Values min="4" max="31" default="0" previous="" current="" units="" />

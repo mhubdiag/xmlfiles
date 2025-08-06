@@ -1,4 +1,4 @@
-<MhubParameterSet created="2025-08-01T14:29:39+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2025-08-06T17:22:28+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Acc Max Bump Duration " level="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="50" previous="" current="" units="10ms" />
@@ -1533,6 +1533,13 @@ None</Notes>
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Driver Key controls Output used for Immobilisation</Help>
 			<Notes>If the driver key is intended to control the immobiliser connection to the vehicle, then this parameter must be set to 1 alternatively if there is no Driver Key used then the Output Follows Ignition Parameter or Bit in the Output A and B can be set to still be able to control immobilisation of the vehicle via the Disablement command.</Notes>
+		</Parameter>
+		<Parameter name="Driver Key Size" level="10" datatype="Byte" address="2422" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Driver Key Size reported in events</Help>
+			<Notes>This specify the Driver Key Size reported in events, currently only two values are supported: 
+0 = 16 Bits, 
+1 = 32 Bits.</Notes>
 		</Parameter>
 		<Parameter name="Driver Key Type" level="10" datatype="Byte" address="1774" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="8" previous="" current="" units="" />

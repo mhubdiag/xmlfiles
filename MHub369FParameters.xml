@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="20" unitType="MHub369F" created="2025-08-01T14:29:28+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="20" unitType="MHub369F" created="2025-08-06T17:22:15+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="1385" level="0" status="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0" units="10ms" min="0" max="255" >
 			<parValues default="50" mhub="" current="" prev="" />
@@ -2313,6 +2313,16 @@ e.g ( Speeding + Cornering + Accident ) = ( 1 + 64 + 256 ) = 321"</parNotes>
 				<parName>Driver Key Leds Enable</parName>
 				<parDescription>"Driver Key Leds Enable"</parDescription>
 				<parNotes>"The driver and passenger key reading receptacles have LED on them. This parameter will control whether those LED&apos;s are used or not."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1902" level="10" status="0" datatype="Byte" address="2422" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Driver Key Size</parName>
+				<parDescription>"Driver Key Size reported in events"</parDescription>
+				<parNotes>"This specify the Driver Key Size reported in events, currently only two values are supported: 
+0 = 16 Bits, 
+1 = 32 Bits."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1857" level="10" status="0" datatype="Byte" address="1774" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
@@ -8713,6 +8723,7 @@ n deltaV = N x 0.02
 				<catParameter parID="262" />
 				<catParameter parID="977" />
 				<catParameter parID="254" />
+				<catParameter parID="1902" />
 				<catParameter parID="1857" />
 				<catParameter parID="1590" />
 				<catParameter parID="826" />

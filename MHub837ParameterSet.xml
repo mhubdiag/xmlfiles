@@ -1,4 +1,4 @@
-<MhubParameterSet created="2025-08-06T17:22:28+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2025-08-13T12:11:30+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Acc Max Bump Duration " level="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="50" previous="" current="" units="10ms" />
@@ -5604,6 +5604,16 @@ The MHub has the ability to connect to up to a maximum of 4 temperature sensors.
 		</Parameter>
 	</Category>
 	<Category name="Trip">
+		<Parameter name="Trip Delay End" level="10" datatype="Byte" address="1149" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="10" previous="" current="" units="seconds" />
+			<Help>Delay after Ignition off before trip end indication</Help>
+			<Notes>This is similar to the trip start delay, whereby after ignition is turned off, the MHUb will wait for the number of seconds before generating the Trip End Event. </Notes>
+		</Parameter>
+		<Parameter name="Trip Delay Start" level="10" datatype="Byte" address="1148" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="10" previous="" current="" units="seconds" />
+			<Help>Delay after Ignition on before trip start indication</Help>
+			<Notes>When starting a vehicle, the cranking of the engine may result in the battery voltage fluctuating substantially, enough so to cause the ignition detection of the MHub to detect multiple ON/OFF transitions on the ignition line. Also if a driver is struggling to start a vehicle, the driver may attempt a number of sarts before the vehicle finally starts. In these cases the MHub should not generate many trip start end end events. In order to prevent multiple start and end events, this parameter will specify the time in seconds over hich the ignition line must be constantly ON before a valid trip start is detected. The default parameter is 10 seconds</Notes>
+		</Parameter>
 		<Parameter name="Trip Distance from GPS" level="10" datatype="Bit" address="1152" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Trip Distance from GPS</Help>
@@ -5618,11 +5628,6 @@ The MHub has the ability to connect to up to a maximum of 4 temperature sensors.
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Trip Distance from Vehicle Network</Help>
 			<Notes>Setting this parameter will instruct the MHub to use the Vehicle Network read distance as the source for distance (odometer) of the MHub. </Notes>
-		</Parameter>
-		<Parameter name="Trip End Delay" level="10" datatype="Byte" address="1149" length="1" bitmask="255" dtu="1">
-			<Values min="0" max="255" default="10" previous="" current="" units="seconds" />
-			<Help>Delay after Ignition off before trip end indication</Help>
-			<Notes>This is similar to the trip start delay, whereby after ignition is turned off, the MHUb will wait for the number of seconds before generating the Trip End Event. </Notes>
 		</Parameter>
 		<Parameter name="Trip End Event Flush" level="10" datatype="Bit" address="1837" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -5643,11 +5648,6 @@ The MHub has the ability to connect to up to a maximum of 4 temperature sensors.
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Trip Speed from Vehicle Network</Help>
 			<Notes>Setting this parameter will instruct the MHub to use the speed provided by the Vehicle Network connection as the source for speed of the MHub.</Notes>
-		</Parameter>
-		<Parameter name="Trip Start Delay" level="10" datatype="Byte" address="1148" length="1" bitmask="255" dtu="1">
-			<Values min="0" max="255" default="10" previous="" current="" units="seconds" />
-			<Help>Delay after Ignition on before trip start indication</Help>
-			<Notes>When starting a vehicle, the cranking of the engine may result in the battery voltage fluctuating substantially, enough so to cause the ignition detection of the MHub to detect multiple ON/OFF transitions on the ignition line. Also if a driver is struggling to start a vehicle, the driver may attempt a number of sarts before the vehicle finally starts. In these cases the MHub should not generate many trip start end end events. In order to prevent multiple start and end events, this parameter will specify the time in seconds over hich the ignition line must be constantly ON before a valid trip start is detected. The default parameter is 10 seconds</Notes>
 		</Parameter>
 		<Parameter name="Trip Stationary Threshold" level="10" datatype="Byte" address="1150" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="10" default="5" previous="" current="" units="km/h" />
@@ -6059,12 +6059,6 @@ Allow the CAN controller to automatically retry any failed transmissions. On som
 0x53 (83) - Disable Automatic Retries
 Any other value leaves the default state of Automatic Retries active.</Notes>
 		</Parameter>
-		<Parameter name="Enable J1939 FMS CANBus Interface" level="10" datatype="Bit" address="1832" length="1" bitmask="128" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enable J1939 FMS CANBus Interface.
-Note: Enable OBD2 CANBus Interface = 0</Help>
-			<Notes>If the J1939 FMS CANBus is connected to the MHub828 CANbus, this parameter needs to be set to 1 to enable the CAN Bus functionality. Disable the OBD2 CANbus interface</Notes>
-		</Parameter>
 		<Parameter name="Enable Listen Only Mode" level="0" datatype="Bit" address="3325" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enables the controller to go into listen only mode after closing a session.
@@ -6130,18 +6124,26 @@ All other values default to Mobile Eye Parameter Set
 			<Help>Disable 250kBaud detection.</Help>
 			<Notes>Disable 250kBaud detection.</Notes>
 		</Parameter>
-		<Parameter name="OBC 500kbps J1939 FMS CANBus" level="10" datatype="Bit" address="1832" length="1" bitmask="32" dtu="0">
+		<Parameter name="J1939 FMS CANBus 500kbps" level="10" datatype="Bit" address="1832" length="1" bitmask="32" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Verify with vehicle manufacturer if the CANBus should be 500kbps Baudrate before setting this parameter.</Help>
 			<Notes>For 250kbps set OBC 500kbps J1939 FMS CANBus = 0,
 for 500kbps set OBC 500kbps J1939 FMS CANBus = 1.
 
-The FMS Standard specifies the baudrate to be 250kbps.</Notes>
+The FMS Standard specifies the baudrate to be 250kbps.
+Verify with vehicle manufacturer if the CANBus should be 500kbps Baudrate before setting this parameter.</Notes>
 		</Parameter>
-		<Parameter name="OBC Active J1939 FMS CANBus" level="10" datatype="Bit" address="1832" length="1" bitmask="64" dtu="0">
+		<Parameter name="J1939 FMS CANBus Active" level="10" datatype="Bit" address="1832" length="1" bitmask="64" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enable Active J1939 FMS CANBus</Help>
-			<Notes>Verify with vehicle manufacturer if the CANBus should be Active of Passive before setting this parameter.</Notes>
+			<Notes>Enable Active J1939 FMS CANBus
+Verify with vehicle manufacturer if the CANBus should be Active of Passive before setting this parameter.</Notes>
+		</Parameter>
+		<Parameter name="J1939 FMS CANBus Enable" level="10" datatype="Bit" address="1832" length="1" bitmask="128" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enable J1939 FMS CANBus Interface.
+Note: Enable OBD2 CANBus Interface = 0</Help>
+			<Notes>If the J1939 FMS CANBus is connected to the MHub828 CANbus, this parameter needs to be set to 1 to enable the CAN Bus functionality. Disable the OBD2 CANbus interface</Notes>
 		</Parameter>
 		<Parameter name="TP 2.0 Enable" level="5" datatype="Bit" address="1824" length="1" bitmask="64" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />

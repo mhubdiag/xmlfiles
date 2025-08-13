@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="6" unitType="MHub855H" created="2025-08-06T17:22:18+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="6" unitType="MHub855H" created="2025-08-13T12:11:17+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="1385" level="0" status="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0" units="10ms" min="0" max="255" >
 			<parValues default="50" mhub="" current="" prev="" />
@@ -1970,22 +1970,6 @@ DO NOT CHANGE THIS VALUE WITHOUT CONSULTING RELEVANT DOCUMENTATION."</parNotes>
 				<parNotes>"See Periodic Position Event Configuration"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="967" level="10" status="0" datatype="Word" address="574" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Custom J1939 PGN 0</parName>
-				<parDescription>"Custom J1939 Parameter Group Number 0"</parDescription>
-				<parNotes>"Custom J1939 Parameter Group Number 0. A three byte, 24bit number that uniquely identifies a particular Parameter Group."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="968" level="10" status="0" datatype="Word" address="576" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Custom J1939 PGN 1</parName>
-				<parDescription>"Custom J1939 Parameter Group Number 1."</parDescription>
-				<parNotes>"Custom J1939 Parameter Group Number 1. A three byte, 24bit number that uniquely identifies a particular Parameter Group."</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="889" level="15" status="0" datatype="Byte" address="1893" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -2890,15 +2874,6 @@ Setting this parameter to 1 will enable Info Debug messages"</parNotes>
 				<parName>Enable IPC</parName>
 				<parDescription>"Enable the IPC comms to the MHub Extender"</parDescription>
 				<parNotes>"Enable the IPC comms to the MHub Extender"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="853" level="10" status="0" datatype="Bit" address="1832" length="1" bitmask="128" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable J1939 FMS CANBus Interface</parName>
-				<parDescription>"Enable J1939 FMS CANBus Interface.
-Note: Enable OBD2 CANBus Interface = 0"</parDescription>
-				<parNotes>"If the J1939 FMS CANBus is connected to the MHub828 CANbus, this parameter needs to be set to 1 to enable the CAN Bus functionality. Disable the OBD2 CANbus interface"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1733" level="5" status="0" datatype="Bit" address="3325" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
@@ -6166,6 +6141,22 @@ NB: MAILBOX CHECKS ARE CHARGED FOR"</parNotes>
 				<parNotes>"Disable 250kBaud detection."</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="967" level="10" status="0" datatype="Word" address="574" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>J1939 Custom PGN 0</parName>
+				<parDescription>"Custom J1939 Parameter Group Number 0"</parDescription>
+				<parNotes>"Custom J1939 Parameter Group Number 0. A three byte, 24bit number that uniquely identifies a particular Parameter Group."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="968" level="10" status="0" datatype="Word" address="576" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>J1939 Custom PGN 1</parName>
+				<parDescription>"Custom J1939 Parameter Group Number 1."</parDescription>
+				<parNotes>"Custom J1939 Parameter Group Number 1. A three byte, 24bit number that uniquely identifies a particular Parameter Group."</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1657" level="5" status="0" datatype="Word" address="3101" length="2" bitmask="255" dtu="0" units="seconds" min="5" max="43200" >
 			<parValues default="60" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -6182,6 +6173,69 @@ Timers are reset at trip start."</parNotes>
 				<parName>J1939 Filter Disable</parName>
 				<parDescription>"J1939 Filter Disable"</parDescription>
 				<parNotes>"J1939 Filter Disable will allow all CANBus messages to be received from the bus"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1307" level="10" status="0" datatype="Bit" address="1832" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>J1939 FMS CANBus 500kbps</parName>
+				<parDescription>"Verify with vehicle manufacturer if the CANBus should be 500kbps Baudrate before setting this parameter."</parDescription>
+				<parNotes>"For 250kbps set OBC 500kbps J1939 FMS CANBus = 0,
+for 500kbps set OBC 500kbps J1939 FMS CANBus = 1.
+
+The FMS Standard specifies the baudrate to be 250kbps.
+Verify with vehicle manufacturer if the CANBus should be 500kbps Baudrate before setting this parameter."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="976" level="10" status="0" datatype="Bit" address="1832" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>J1939 FMS CANBus Active</parName>
+				<parDescription>"Enable Active J1939 FMS CANBus"</parDescription>
+				<parNotes>"Enable Active J1939 FMS CANBus
+Verify with vehicle manufacturer if the CANBus should be Active of Passive before setting this parameter."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="853" level="10" status="0" datatype="Bit" address="1832" length="1" bitmask="128" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>J1939 FMS CANBus Enable</parName>
+				<parDescription>"Enable J1939 FMS CANBus Interface.
+Note: Enable OBD2 CANBus Interface = 0"</parDescription>
+				<parNotes>"If the J1939 FMS CANBus is connected to the MHub828 CANbus, this parameter needs to be set to 1 to enable the CAN Bus functionality. Disable the OBD2 CANbus interface"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1316" level="10" status="0" datatype="Bit" address="320" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>J1939 FMS Fuel Used (Calculate from L per hour)</parName>
+				<parDescription>"OBC Calculate J1939 FMS Fuel Used from L per hour"</parDescription>
+				<parNotes>"OBC Calculate J1939 FMS Fuel Used from L per hour
+If Fuel Used is not provided by the vehicle FMS network, but Fuel Rate is, you can estimate fuel used."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1315" level="10" status="0" datatype="Bit" address="320" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>J1939 FMS Fuel Used (Calculate from Total Fuel)</parName>
+				<parDescription>"OBC Calculate J1939 FMS Fuel Used from Total Fuel"</parDescription>
+				<parNotes>"OBC Calculate J1939 FMS Fuel Used from Total Fuel. The difference of total fuel at the beginning and end of the trip is used to calculate Fuel"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1313" level="10" status="0" datatype="Bit" address="320" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>J1939 FMS Fuel Used (Calculated)</parName>
+				<parDescription>"Calculate J1939 FMS Fuel Used"</parDescription>
+				<parNotes>"If Fuel Used is not provided by the vehicle FMS network, but Fuel Economy is, you can estimate fuel used. "</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1314" level="10" status="0" datatype="Bit" address="320" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>J1939 FMS Trip Fuel</parName>
+				<parDescription>"Use the J1939 FMS Trip Fuel variable for Trip Fuel"</parDescription>
+				<parNotes>"Use the J1939 FMS Trip Fuel variable for Trip Fuel. Not standard FMS Variable."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1002" level="10" status="0" datatype="Byte" address="3673" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
@@ -6847,55 +6901,12 @@ The Default value used to be 0. It has now been changed to 1 as the ATZ can caus
 Calibrate Thermistor reading for correct temperature read out"</parNotes>
 			</parInfo>
 		</Parameter>
-		<Parameter parID="1307" level="10" status="0" datatype="Bit" address="1832" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>OBC 500kbps J1939 FMS CANBus</parName>
-				<parDescription>"Verify with vehicle manufacturer if the CANBus should be 500kbps Baudrate before setting this parameter."</parDescription>
-				<parNotes>"For 250kbps set OBC 500kbps J1939 FMS CANBus = 0,
-for 500kbps set OBC 500kbps J1939 FMS CANBus = 1.
-
-The FMS Standard specifies the baudrate to be 250kbps."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="976" level="10" status="0" datatype="Bit" address="1832" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>OBC Active J1939 FMS CANBus</parName>
-				<parDescription>"Enable Active J1939 FMS CANBus"</parDescription>
-				<parNotes>"Verify with vehicle manufacturer if the CANBus should be Active of Passive before setting this parameter."</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1495" level="10" status="0" datatype="Bit" address="320" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
 				<parName>OBC Calculate Fuel from Equation</parName>
 				<parDescription>"OBC Calculate Fuel from Equation"</parDescription>
 				<parNotes>"OBC Calculate Fuel from Equation. Populate OBC Weight and Fuel Model parameters"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1313" level="10" status="0" datatype="Bit" address="320" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>OBC Calculate J1939 FMS Fuel Used</parName>
-				<parDescription>"Calculate J1939 FMS Fuel Used"</parDescription>
-				<parNotes>"If Fuel Used is not provided by the vehicle FMS network, but Fuel Economy is, you can estimate fuel used. "</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1316" level="10" status="0" datatype="Bit" address="320" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>OBC Calculate J1939 FMS Fuel Used from L per hour</parName>
-				<parDescription>"OBC Calculate J1939 FMS Fuel Used from L per hour"</parDescription>
-				<parNotes>"If Fuel Used is not provided by the vehicle FMS network, but Fuel Rate is, you can estimate fuel used."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1315" level="10" status="0" datatype="Bit" address="320" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>OBC Calculate J1939 FMS Fuel Used from Total Fuel</parName>
-				<parDescription>"OBC Calculate J1939 FMS Fuel Used from Total Fuel"</parDescription>
-				<parNotes>"OBC Calculate J1939 FMS Fuel Used from Total Fuel. The difference of total fuel at the beginning and end of the trip is used to calculate Fuel"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="215" level="10" status="0" datatype="Byte" address="1880" length="1" bitmask="255" dtu="0" units="seconds" min="0" max="255" >
@@ -7022,14 +7033,6 @@ This parameter effectively defines the time period over which the RPM pulses are
 				<parName>OBC Speed Pulse Threshold</parName>
 				<parDescription>"OBC Speed Pulse Threshold"</parDescription>
 				<parNotes>"OBC Speed Pulse Threshold. Only Speed pulses greater than this threshold will result in speed being calculated from Speed Pulses. Only use this if spurious low speed readings are observed."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1314" level="10" status="0" datatype="Bit" address="320" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>OBC Use  J1939 FMS Trip Fuel</parName>
-				<parDescription>"Use the J1939 FMS Trip Fuel variable for Trip Fuel"</parDescription>
-				<parNotes>"Use the J1939 FMS Trip Fuel variable for Trip Fuel. Not standard FMS Variable."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="279" level="10" status="0" datatype="Bit" address="2033" length="1" bitmask="64" dtu="0" units="" min="1" max="255" >
@@ -9728,6 +9731,22 @@ None"</parNotes>
 				<parNotes>"See Periodic Position Event Configuration"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="126" level="10" status="0" datatype="Byte" address="1149" length="1" bitmask="255" dtu="1" units="seconds" min="0" max="255" >
+			<parValues default="10" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Trip Delay End</parName>
+				<parDescription>"Delay after Ignition off before trip end indication"</parDescription>
+				<parNotes>"This is similar to the trip start delay, whereby after ignition is turned off, the MHUb will wait for the number of seconds before generating the Trip End Event. "</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="125" level="10" status="0" datatype="Byte" address="1148" length="1" bitmask="255" dtu="1" units="seconds" min="0" max="255" >
+			<parValues default="10" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Trip Delay Start</parName>
+				<parDescription>"Delay after Ignition on before trip start indication"</parDescription>
+				<parNotes>"When starting a vehicle, the cranking of the engine may result in the battery voltage fluctuating substantially, enough so to cause the ignition detection of the MHub to detect multiple ON/OFF transitions on the ignition line. Also if a driver is struggling to start a vehicle, the driver may attempt a number of sarts before the vehicle finally starts. In these cases the MHub should not generate many trip start end end events. In order to prevent multiple start and end events, this parameter will specify the time in seconds over hich the ignition line must be constantly ON before a valid trip start is detected. The default parameter is 10 seconds"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="132" level="10" status="0" datatype="Bit" address="1152" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
 			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -9758,14 +9777,6 @@ None"</parNotes>
 				<parName>Trip End</parName>
 				<parDescription>"Trip End Event Configuration"</parDescription>
 				<parNotes>"See Periodic Position Event Configuration"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="126" level="10" status="0" datatype="Byte" address="1149" length="1" bitmask="255" dtu="1" units="seconds" min="0" max="255" >
-			<parValues default="10" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Trip End Delay</parName>
-				<parDescription>"Delay after Ignition off before trip end indication"</parDescription>
-				<parNotes>"This is similar to the trip start delay, whereby after ignition is turned off, the MHUb will wait for the number of seconds before generating the Trip End Event. "</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="891" level="10" status="0" datatype="Bit" address="1837" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
@@ -9914,14 +9925,6 @@ None"</parNotes>
 				<parName>Trip Start</parName>
 				<parDescription>"Trip Start Event Configuration"</parDescription>
 				<parNotes>"See Periodic Position Event Configuration"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="125" level="10" status="0" datatype="Byte" address="1148" length="1" bitmask="255" dtu="1" units="seconds" min="0" max="255" >
-			<parValues default="10" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Trip Start Delay</parName>
-				<parDescription>"Delay after Ignition on before trip start indication"</parDescription>
-				<parNotes>"When starting a vehicle, the cranking of the engine may result in the battery voltage fluctuating substantially, enough so to cause the ignition detection of the MHub to detect multiple ON/OFF transitions on the ignition line. Also if a driver is struggling to start a vehicle, the driver may attempt a number of sarts before the vehicle finally starts. In these cases the MHub should not generate many trip start end end events. In order to prevent multiple start and end events, this parameter will specify the time in seconds over hich the ignition line must be constantly ON before a valid trip start is detected. The default parameter is 10 seconds"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="127" level="10" status="0" datatype="Byte" address="1150" length="1" bitmask="255" dtu="1" units="km/h" min="0" max="10" >
@@ -11949,15 +11952,15 @@ n deltaV = N x 0.02
 				Trip
 			</catDescription>
 			<catParameters>
+				<catParameter parID="126" />
+				<catParameter parID="125" />
 				<catParameter parID="132" />
 				<catParameter parID="131" />
 				<catParameter parID="133" />
-				<catParameter parID="126" />
 				<catParameter parID="891" />
 				<catParameter parID="129" />
 				<catParameter parID="128" />
 				<catParameter parID="130" />
-				<catParameter parID="125" />
 				<catParameter parID="127" />
 			</catParameters>
 		</Category>
@@ -12038,7 +12041,6 @@ n deltaV = N x 0.02
 				<catParameter parID="1785" />
 				<catParameter parID="1715" />
 				<catParameter parID="1714" />
-				<catParameter parID="853" />
 				<catParameter parID="1727" />
 				<catParameter parID="1278" />
 				<catParameter parID="1277" />
@@ -12046,6 +12048,7 @@ n deltaV = N x 0.02
 				<catParameter parID="1707" />
 				<catParameter parID="1307" />
 				<catParameter parID="976" />
+				<catParameter parID="853" />
 				<catParameter parID="1700" />
 				<catParameter parID="1821" />
 				<catParameter parID="1702" />
@@ -12064,8 +12067,6 @@ n deltaV = N x 0.02
 				<catParameter parID="1652" />
 				<catParameter parID="1651" />
 				<catParameter parID="1656" />
-				<catParameter parID="967" />
-				<catParameter parID="968" />
 				<catParameter parID="1077" />
 				<catParameter parID="1075" />
 				<catParameter parID="1645" />
@@ -12078,14 +12079,16 @@ n deltaV = N x 0.02
 				<catParameter parID="1641" />
 				<catParameter parID="1640" />
 				<catParameter parID="1806" />
+				<catParameter parID="967" />
+				<catParameter parID="968" />
 				<catParameter parID="1657" />
+				<catParameter parID="1316" />
+				<catParameter parID="1315" />
+				<catParameter parID="1313" />
+				<catParameter parID="1314" />
 				<catParameter parID="1003" />
 				<catParameter parID="1820" />
 				<catParameter parID="1495" />
-				<catParameter parID="1313" />
-				<catParameter parID="1316" />
-				<catParameter parID="1315" />
-				<catParameter parID="1314" />
 				<catParameter parID="1636" />
 				<catParameter parID="1637" />
 				<catParameter parID="109" />

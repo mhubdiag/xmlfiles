@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="9" unitType="MHub846Ext" created="2025-08-06T17:22:18+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="9" unitType="MHub846Ext" created="2025-08-13T12:11:17+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="1729" level="5" status="0" datatype="Bit" address="3325" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
@@ -206,15 +206,6 @@ Setting this parameter to 1 will enable Info Debug messages"</parNotes>
 				<parName>Enable IPC</parName>
 				<parDescription>"Enable the IPC comms to the MHub Extender"</parDescription>
 				<parNotes>"Enable the IPC comms to the MHub Extender"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="853" level="10" status="0" datatype="Bit" address="1832" length="1" bitmask="128" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>Enable J1939 FMS CANBus Interface</parName>
-				<parDescription>"Enable J1939 FMS CANBus Interface.
-Note: Enable OBD2 CANBus Interface = 0"</parDescription>
-				<parNotes>"If the J1939 FMS CANBus is connected to the MHub828 CANbus, this parameter needs to be set to 1 to enable the CAN Bus functionality. Disable the OBD2 CANbus interface"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1733" level="5" status="0" datatype="Bit" address="3325" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
@@ -458,6 +449,36 @@ It is important to note that the IO Expander is an external device connected to 
 				<parNotes>"J1939 Filter Disable will allow all CANBus messages to be received from the bus"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1307" level="10" status="0" datatype="Bit" address="1832" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>J1939 FMS CANBus 500kbps</parName>
+				<parDescription>"Verify with vehicle manufacturer if the CANBus should be 500kbps Baudrate before setting this parameter."</parDescription>
+				<parNotes>"For 250kbps set OBC 500kbps J1939 FMS CANBus = 0,
+for 500kbps set OBC 500kbps J1939 FMS CANBus = 1.
+
+The FMS Standard specifies the baudrate to be 250kbps.
+Verify with vehicle manufacturer if the CANBus should be 500kbps Baudrate before setting this parameter."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="976" level="10" status="0" datatype="Bit" address="1832" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>J1939 FMS CANBus Active</parName>
+				<parDescription>"Enable Active J1939 FMS CANBus"</parDescription>
+				<parNotes>"Enable Active J1939 FMS CANBus
+Verify with vehicle manufacturer if the CANBus should be Active of Passive before setting this parameter."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="853" level="10" status="0" datatype="Bit" address="1832" length="1" bitmask="128" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>J1939 FMS CANBus Enable</parName>
+				<parDescription>"Enable J1939 FMS CANBus Interface.
+Note: Enable OBD2 CANBus Interface = 0"</parDescription>
+				<parNotes>"If the J1939 FMS CANBus is connected to the MHub828 CANbus, this parameter needs to be set to 1 to enable the CAN Bus functionality. Disable the OBD2 CANbus interface"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1781" level="5" status="0" datatype="Bit" address="1777" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
 			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -533,25 +554,6 @@ Setting this to 0 disables this feature. "</parNotes>
 				<parName>Module Debug Mask 4</parName>
 				<parDescription>"Enable debug statements for specific modules - set 4"</parDescription>
 				<parNotes>"None"</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="1307" level="10" status="0" datatype="Bit" address="1832" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>OBC 500kbps J1939 FMS CANBus</parName>
-				<parDescription>"Verify with vehicle manufacturer if the CANBus should be 500kbps Baudrate before setting this parameter."</parDescription>
-				<parNotes>"For 250kbps set OBC 500kbps J1939 FMS CANBus = 0,
-for 500kbps set OBC 500kbps J1939 FMS CANBus = 1.
-
-The FMS Standard specifies the baudrate to be 250kbps."</parNotes>
-			</parInfo>
-		</Parameter>
-		<Parameter parID="976" level="10" status="0" datatype="Bit" address="1832" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
-			<parValues default="0" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName>OBC Active J1939 FMS CANBus</parName>
-				<parDescription>"Enable Active J1939 FMS CANBus"</parDescription>
-				<parNotes>"Verify with vehicle manufacturer if the CANBus should be Active of Passive before setting this parameter."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1409" level="10" status="0" datatype="Byte" address="763" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
@@ -846,7 +848,6 @@ Weight Sensor Calibration Vector"</parNotes>
 				<catParameter parID="1785" />
 				<catParameter parID="1715" />
 				<catParameter parID="1714" />
-				<catParameter parID="853" />
 				<catParameter parID="1727" />
 				<catParameter parID="1278" />
 				<catParameter parID="1277" />
@@ -854,6 +855,7 @@ Weight Sensor Calibration Vector"</parNotes>
 				<catParameter parID="1707" />
 				<catParameter parID="1307" />
 				<catParameter parID="976" />
+				<catParameter parID="853" />
 				<catParameter parID="1700" />
 				<catParameter parID="1702" />
 			</catParameters>

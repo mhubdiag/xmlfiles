@@ -1,4 +1,4 @@
-<MhubParameterSet created="2025-08-06T17:22:28+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2025-08-13T12:11:31+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Acc Max Bump Duration " level="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="50" previous="" current="" units="10ms" />
@@ -6198,6 +6198,16 @@ The MHub has the ability to connect to up to a maximum of 4 temperature sensors.
 		</Parameter>
 	</Category>
 	<Category name="Trip">
+		<Parameter name="Trip Delay End" level="10" datatype="Byte" address="1149" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="10" previous="" current="" units="seconds" />
+			<Help>Delay after Ignition off before trip end indication</Help>
+			<Notes>This is similar to the trip start delay, whereby after ignition is turned off, the MHUb will wait for the number of seconds before generating the Trip End Event. </Notes>
+		</Parameter>
+		<Parameter name="Trip Delay Start" level="10" datatype="Byte" address="1148" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="10" previous="" current="" units="seconds" />
+			<Help>Delay after Ignition on before trip start indication</Help>
+			<Notes>When starting a vehicle, the cranking of the engine may result in the battery voltage fluctuating substantially, enough so to cause the ignition detection of the MHub to detect multiple ON/OFF transitions on the ignition line. Also if a driver is struggling to start a vehicle, the driver may attempt a number of sarts before the vehicle finally starts. In these cases the MHub should not generate many trip start end end events. In order to prevent multiple start and end events, this parameter will specify the time in seconds over hich the ignition line must be constantly ON before a valid trip start is detected. The default parameter is 10 seconds</Notes>
+		</Parameter>
 		<Parameter name="Trip Distance from GPS" level="10" datatype="Bit" address="1152" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Trip Distance from GPS</Help>
@@ -6212,11 +6222,6 @@ The MHub has the ability to connect to up to a maximum of 4 temperature sensors.
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Trip Distance from Vehicle Network</Help>
 			<Notes>Setting this parameter will instruct the MHub to use the Vehicle Network read distance as the source for distance (odometer) of the MHub. </Notes>
-		</Parameter>
-		<Parameter name="Trip End Delay" level="10" datatype="Byte" address="1149" length="1" bitmask="255" dtu="1">
-			<Values min="0" max="255" default="10" previous="" current="" units="seconds" />
-			<Help>Delay after Ignition off before trip end indication</Help>
-			<Notes>This is similar to the trip start delay, whereby after ignition is turned off, the MHUb will wait for the number of seconds before generating the Trip End Event. </Notes>
 		</Parameter>
 		<Parameter name="Trip End Event Flush" level="10" datatype="Bit" address="1837" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -6237,11 +6242,6 @@ The MHub has the ability to connect to up to a maximum of 4 temperature sensors.
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Trip Speed from Vehicle Network</Help>
 			<Notes>Setting this parameter will instruct the MHub to use the speed provided by the Vehicle Network connection as the source for speed of the MHub.</Notes>
-		</Parameter>
-		<Parameter name="Trip Start Delay" level="10" datatype="Byte" address="1148" length="1" bitmask="255" dtu="1">
-			<Values min="0" max="255" default="10" previous="" current="" units="seconds" />
-			<Help>Delay after Ignition on before trip start indication</Help>
-			<Notes>When starting a vehicle, the cranking of the engine may result in the battery voltage fluctuating substantially, enough so to cause the ignition detection of the MHub to detect multiple ON/OFF transitions on the ignition line. Also if a driver is struggling to start a vehicle, the driver may attempt a number of sarts before the vehicle finally starts. In these cases the MHub should not generate many trip start end end events. In order to prevent multiple start and end events, this parameter will specify the time in seconds over hich the ignition line must be constantly ON before a valid trip start is detected. The default parameter is 10 seconds</Notes>
 		</Parameter>
 		<Parameter name="Trip Stationary Threshold" level="10" datatype="Byte" address="1150" length="1" bitmask="255" dtu="1">
 			<Values min="0" max="10" default="5" previous="" current="" units="km/h" />
@@ -6653,12 +6653,6 @@ Allow the CAN controller to automatically retry any failed transmissions. On som
 0x53 (83) - Disable Automatic Retries
 Any other value leaves the default state of Automatic Retries active.</Notes>
 		</Parameter>
-		<Parameter name="Enable J1939 FMS CANBus Interface" level="10" datatype="Bit" address="1832" length="1" bitmask="128" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Enable J1939 FMS CANBus Interface.
-Note: Enable OBD2 CANBus Interface = 0</Help>
-			<Notes>If the J1939 FMS CANBus is connected to the MHub828 CANbus, this parameter needs to be set to 1 to enable the CAN Bus functionality. Disable the OBD2 CANbus interface</Notes>
-		</Parameter>
 		<Parameter name="Enable Listen Only Mode" level="0" datatype="Bit" address="3325" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enables the controller to go into listen only mode after closing a session.
@@ -6724,18 +6718,26 @@ All other values default to Mobile Eye Parameter Set
 			<Help>Disable 250kBaud detection.</Help>
 			<Notes>Disable 250kBaud detection.</Notes>
 		</Parameter>
-		<Parameter name="OBC 500kbps J1939 FMS CANBus" level="10" datatype="Bit" address="1832" length="1" bitmask="32" dtu="0">
+		<Parameter name="J1939 FMS CANBus 500kbps" level="10" datatype="Bit" address="1832" length="1" bitmask="32" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Verify with vehicle manufacturer if the CANBus should be 500kbps Baudrate before setting this parameter.</Help>
 			<Notes>For 250kbps set OBC 500kbps J1939 FMS CANBus = 0,
 for 500kbps set OBC 500kbps J1939 FMS CANBus = 1.
 
-The FMS Standard specifies the baudrate to be 250kbps.</Notes>
+The FMS Standard specifies the baudrate to be 250kbps.
+Verify with vehicle manufacturer if the CANBus should be 500kbps Baudrate before setting this parameter.</Notes>
 		</Parameter>
-		<Parameter name="OBC Active J1939 FMS CANBus" level="10" datatype="Bit" address="1832" length="1" bitmask="64" dtu="0">
+		<Parameter name="J1939 FMS CANBus Active" level="10" datatype="Bit" address="1832" length="1" bitmask="64" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enable Active J1939 FMS CANBus</Help>
-			<Notes>Verify with vehicle manufacturer if the CANBus should be Active of Passive before setting this parameter.</Notes>
+			<Notes>Enable Active J1939 FMS CANBus
+Verify with vehicle manufacturer if the CANBus should be Active of Passive before setting this parameter.</Notes>
+		</Parameter>
+		<Parameter name="J1939 FMS CANBus Enable" level="10" datatype="Bit" address="1832" length="1" bitmask="128" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enable J1939 FMS CANBus Interface.
+Note: Enable OBD2 CANBus Interface = 0</Help>
+			<Notes>If the J1939 FMS CANBus is connected to the MHub828 CANbus, this parameter needs to be set to 1 to enable the CAN Bus functionality. Disable the OBD2 CANbus interface</Notes>
 		</Parameter>
 		<Parameter name="TP 2.0 Enable" level="5" datatype="Bit" address="1824" length="1" bitmask="64" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
@@ -6816,16 +6818,6 @@ The FMS Standard specifies the baudrate to be 250kbps.</Notes>
 			<Help>Change in Cargo weight (kg) from start of trip exceeding this limit will be reported. 0 disables the function.</Help>
 			<Notes>Change in Cargo weight (kg) from start of trip exceeding this limit will be reported. 0 disables the function.</Notes>
 		</Parameter>
-		<Parameter name="Custom J1939 PGN 0" level="10" datatype="Word" address="574" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="65535" default="0" previous="" current="" units="" />
-			<Help>Custom J1939 Parameter Group Number 0</Help>
-			<Notes>Custom J1939 Parameter Group Number 0. A three byte, 24bit number that uniquely identifies a particular Parameter Group.</Notes>
-		</Parameter>
-		<Parameter name="Custom J1939 PGN 1" level="10" datatype="Word" address="576" length="2" bitmask="255" dtu="0">
-			<Values min="0" max="65535" default="0" previous="" current="" units="" />
-			<Help>Custom J1939 Parameter Group Number 1.</Help>
-			<Notes>Custom J1939 Parameter Group Number 1. A three byte, 24bit number that uniquely identifies a particular Parameter Group.</Notes>
-		</Parameter>
 		<Parameter name="Enable Custom 3 Event " level="5" datatype="Bit" address="1869" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enable Custom 3 Event triggered by Driver Identification change</Help>
@@ -6898,12 +6890,43 @@ NB BE SURE TO SELECT MAF Calculation Source if this parameter is set</Help>
 			<Notes>If enabled the MAF will be calculated from RPM and Engine Load and not read MAF. 
 NB BE SURE TO SELECT MAF Calculation Source if this parameter is set</Notes>
 		</Parameter>
+		<Parameter name="J1939 Custom PGN 0" level="10" datatype="Word" address="574" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="0" previous="" current="" units="" />
+			<Help>Custom J1939 Parameter Group Number 0</Help>
+			<Notes>Custom J1939 Parameter Group Number 0. A three byte, 24bit number that uniquely identifies a particular Parameter Group.</Notes>
+		</Parameter>
+		<Parameter name="J1939 Custom PGN 1" level="10" datatype="Word" address="576" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="0" previous="" current="" units="" />
+			<Help>Custom J1939 Parameter Group Number 1.</Help>
+			<Notes>Custom J1939 Parameter Group Number 1. A three byte, 24bit number that uniquely identifies a particular Parameter Group.</Notes>
+		</Parameter>
 		<Parameter name="J1939 Event Debounce Time" level="5" datatype="Word" address="3101" length="2" bitmask="255" dtu="0">
 			<Values min="5" max="43200" default="60" previous="" current="" units="seconds" />
 			<Help>Number of seconds between repeats of the same event to prevent malfunctioning sensors or boundary conditions from causing excessive events.
 Timers are reset at trip start and not stored through reboot.</Help>
 			<Notes>Number of seconds between repeats of the same event to prevent malfunctioning sensors or boundary conditions from causing excessive events.
 Timers are reset at trip start.</Notes>
+		</Parameter>
+		<Parameter name="J1939 FMS Fuel Used (Calculate from L per hour)" level="10" datatype="Bit" address="320" length="1" bitmask="8" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>OBC Calculate J1939 FMS Fuel Used from L per hour</Help>
+			<Notes>OBC Calculate J1939 FMS Fuel Used from L per hour
+If Fuel Used is not provided by the vehicle FMS network, but Fuel Rate is, you can estimate fuel used.</Notes>
+		</Parameter>
+		<Parameter name="J1939 FMS Fuel Used (Calculate from Total Fuel)" level="10" datatype="Bit" address="320" length="1" bitmask="4" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>OBC Calculate J1939 FMS Fuel Used from Total Fuel</Help>
+			<Notes>OBC Calculate J1939 FMS Fuel Used from Total Fuel. The difference of total fuel at the beginning and end of the trip is used to calculate Fuel</Notes>
+		</Parameter>
+		<Parameter name="J1939 FMS Fuel Used (Calculated)" level="10" datatype="Bit" address="320" length="1" bitmask="1" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Calculate J1939 FMS Fuel Used</Help>
+			<Notes>If Fuel Used is not provided by the vehicle FMS network, but Fuel Economy is, you can estimate fuel used. </Notes>
+		</Parameter>
+		<Parameter name="J1939 FMS Trip Fuel" level="10" datatype="Bit" address="320" length="1" bitmask="2" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Use the J1939 FMS Trip Fuel variable for Trip Fuel</Help>
+			<Notes>Use the J1939 FMS Trip Fuel variable for Trip Fuel. Not standard FMS Variable.</Notes>
 		</Parameter>
 		<Parameter name="J1939 FMS Vehicle Info Report Interval" level="10" datatype="Word" address="1278" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="600" previous="" current="" units="seconds" />
@@ -6929,26 +6952,6 @@ Note that unless the Force MAF calculation setting is enabled, read MAF will alw
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>OBC Calculate Fuel from Equation</Help>
 			<Notes>OBC Calculate Fuel from Equation. Populate OBC Weight and Fuel Model parameters</Notes>
-		</Parameter>
-		<Parameter name="OBC Calculate J1939 FMS Fuel Used" level="10" datatype="Bit" address="320" length="1" bitmask="1" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Calculate J1939 FMS Fuel Used</Help>
-			<Notes>If Fuel Used is not provided by the vehicle FMS network, but Fuel Economy is, you can estimate fuel used. </Notes>
-		</Parameter>
-		<Parameter name="OBC Calculate J1939 FMS Fuel Used from L per hour" level="10" datatype="Bit" address="320" length="1" bitmask="8" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>OBC Calculate J1939 FMS Fuel Used from L per hour</Help>
-			<Notes>If Fuel Used is not provided by the vehicle FMS network, but Fuel Rate is, you can estimate fuel used.</Notes>
-		</Parameter>
-		<Parameter name="OBC Calculate J1939 FMS Fuel Used from Total Fuel" level="10" datatype="Bit" address="320" length="1" bitmask="4" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>OBC Calculate J1939 FMS Fuel Used from Total Fuel</Help>
-			<Notes>OBC Calculate J1939 FMS Fuel Used from Total Fuel. The difference of total fuel at the beginning and end of the trip is used to calculate Fuel</Notes>
-		</Parameter>
-		<Parameter name="OBC Use  J1939 FMS Trip Fuel" level="10" datatype="Bit" address="320" length="1" bitmask="2" dtu="0">
-			<Values min="0" max="1" default="0" previous="" current="" units="" />
-			<Help>Use the J1939 FMS Trip Fuel variable for Trip Fuel</Help>
-			<Notes>Use the J1939 FMS Trip Fuel variable for Trip Fuel. Not standard FMS Variable.</Notes>
 		</Parameter>
 		<Parameter name="Percent Clutch Slip" level="10" datatype="Byte" address="3072" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="100" default="100" previous="" current="" units="Percent" />

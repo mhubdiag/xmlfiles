@@ -1,5 +1,12 @@
-<MhubParameterSet created="2025-08-13T12:11:30+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2025-09-23T16:26:08+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
+		<Parameter name="" level="0" datatype="Byte" address="0" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="" previous="" current="" units="" />
+			<Help></Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+</Notes>
+		</Parameter>
 		<Parameter name="Acc Max Bump Duration " level="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="50" previous="" current="" units="10ms" />
 			<Help>Acc Max Bump Duration </Help>
@@ -5503,6 +5510,11 @@ Note: Enable OBD2 CANBus Interface = 0</Help>
 			<Values min="0" max="32000" default="0" previous="" current="" units="kg" />
 			<Help>Change in Cargo weight (kg) from start of trip exceeding this limit will be reported. 0 disables the function.</Help>
 			<Notes>Change in Cargo weight (kg) from start of trip exceeding this limit will be reported. 0 disables the function.</Notes>
+		</Parameter>
+		<Parameter name="Enable CAN Sniffer" level="10" datatype="Bit" address="1869" length="1" bitmask="4" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enable CAN Sniffer</Help>
+			<Notes>Track CAN messages received on the bus, can send over MQTT</Notes>
 		</Parameter>
 		<Parameter name="Enable Custom 3 Event " level="5" datatype="Bit" address="1869" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />

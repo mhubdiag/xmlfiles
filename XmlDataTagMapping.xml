@@ -20,7 +20,7 @@
 	</tag>
 	<tag id="5" description="TripBoundryData">
 		<data config="0" name="TripID" size="1" scale="1" offset="0" units="" min="0" max="255"/>
-		<data config="1" name="TripStartDelay" size="1" scale="1" offset="0" units="seconds" min="0" max="255"/>
+		<data config="1" name="TripDelayStart" size="1" scale="1" offset="0" units="seconds" min="0" max="255"/>
 	</tag>
 	<tag id="6" description="SpecificTripEnd">
 		<data config="0" name="GreenBandPercentage" size="1" scale="1" offset="0" units="" min="0" max="100"/>
@@ -220,10 +220,10 @@
 		<data config="0" name="TotalEngineHours-CANBus" size="4" scale="1" offset="0" units="h" min="0" max="4294967295"/>
 	</tag>
 	<tag id="48" description="CustomCANMessageData">
-		<data config="1" name="CustomJ1939PGN0" size="2" scale="1" offset="0" units="" min="0" max="65535"/>
+		<data config="1" name="J1939CustomPGN0" size="2" scale="1" offset="0" units="" min="0" max="65535"/>
 		<data config="0" name="FMSCustomMessageData0Byte0to3" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
 		<data config="0" name="FMSCustomMessageData0Byte4to7" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
-		<data config="1" name="CustomJ1939PGN1" size="2" scale="1" offset="0" units="" min="0" max="65535"/>
+		<data config="1" name="J1939CustomPGN1" size="2" scale="1" offset="0" units="" min="0" max="65535"/>
 		<data config="0" name="FMSCustomMessageData1Byte0to3" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
 		<data config="0" name="FMSCustomMessageData1Byte4to7" size="4" scale="1" offset="0" units="" min="0" max="4294967295"/>
 	</tag>

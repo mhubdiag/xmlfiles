@@ -1,5 +1,15 @@
-<MHubParameters unitTypeID="21" unitType="MHub369B" created="2025-08-13T12:11:14+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="21" unitType="MHub369B" created="2025-09-23T16:25:20+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
+		<Parameter parID="1897" level="0" status="0" datatype="Byte" address="0" length="1" bitmask="255" dtu="0" units="" min="0" max="0" >
+			<parValues default="" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName></parName>
+				<parDescription>""</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1385" level="0" status="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0" units="10ms" min="0" max="255" >
 			<parValues default="50" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -2450,6 +2460,14 @@ Allow the CAN controller to automatically retry any failed transmissions. On som
 0xAC (172) - Enable Automatic Retries
 0x53 (83) - Disable Automatic Retries
 Any other value leaves the default state of Automatic Retries active."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1903" level="10" status="0" datatype="Bit" address="1869" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable CAN Sniffer</parName>
+				<parDescription>"Enable CAN Sniffer"</parDescription>
+				<parNotes>"Track CAN messages received on the bus, can send over MQTT"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1406" level="10" status="0" datatype="Bit" address="2724" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
@@ -8403,6 +8421,7 @@ n deltaV = N x 0.02
 				Accelerometer
 			</catDescription>
 			<catParameters>
+				<catParameter parID="1897" />
 				<catParameter parID="1385" />
 				<catParameter parID="1386" />
 				<catParameter parID="1383" />
@@ -9574,6 +9593,7 @@ n deltaV = N x 0.02
 				<catParameter parID="1652" />
 				<catParameter parID="1651" />
 				<catParameter parID="1656" />
+				<catParameter parID="1903" />
 				<catParameter parID="1077" />
 				<catParameter parID="1075" />
 				<catParameter parID="1645" />

@@ -207,4 +207,7 @@
 		<item id="205" description="This flag will be set if 1 or more geofences are loaded in the RAM geofence area" name="RAM Geofence Defined" dtu="1" />
 		<item id="206" description="This flag will be set it any of the Geofences in the RAM geofence area were set with the set driver geofence command" name="Driver Geofence Defined" dtu="1" />
 		<item id="207" description="High current drain on outputs with over-current detection" name="Output Over-current Detected " dtu="1" />
+		<item id="208" description="Charging or Charging Complete" name="HVESS Charging Status" dtu="1" />
+		<item id="209" description="Charging Gun Connected or Kept" name="HVESS Charging Gun Status" dtu="1" />
+		<item id="210" description="While true the MHub will try to maintain a connection to the MQTT broker. " name="MQTT Connect" dtu="1" />
 </GlobalFlags>

@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="20" unitType="MHub369F" created="2026-01-22T09:55:42+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="20" unitType="MHub369F" created="2026-01-22T12:12:58+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="1385" level="0" status="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0" units="10ms" min="0" max="255" >
 			<parValues default="50" mhub="" current="" prev="" />

@@ -1,12 +1,5 @@
-<MhubParameterSet created="2025-09-23T16:26:09+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2026-01-22T09:56:10+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
-		<Parameter name="" level="0" datatype="Byte" address="0" length="1" bitmask="255" dtu="0">
-			<Values min="0" max="0" default="" previous="" current="" units="" />
-			<Help></Help>
-			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
-
-</Notes>
-		</Parameter>
 		<Parameter name="Acc Max Bump Duration " level="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="50" previous="" current="" units="10ms" />
 			<Help>Acc Max Bump Duration </Help>
@@ -772,7 +765,7 @@ Other = OFF (No Beep)</Notes>
 			<Notes>This is the output that is connected to the buzzer on the Extender</Notes>
 		</Parameter>
 	</Category>
-	<Category name="Bluetooth Low Energy">
+	<Category name="BLE (Bluetooth Low Energy)">
 		<Parameter name="BLE Enable" level="10" datatype="Bit" address="2724" length="1" bitmask="1" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>Enable BLE Host Capability</Help>
@@ -783,10 +776,158 @@ Other = OFF (No Beep)</Notes>
 			<Help>Amount of time that the MHub will wait before determining that a fixed Asset Tracking device is no longer visible.</Help>
 			<Notes>Amount of time that the MHub will wait before determining that a fixed Asset Tracking device is no longer visible.</Notes>
 		</Parameter>
+		<Parameter name="Characteristic Update Period" level="10" datatype="Word" address="2805" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65000" default="10" previous="" current="" units="Seconds" />
+			<Help>Period at which the generic characteristics are read during a session.</Help>
+			<Notes>Period at which the generic characteristics are read during a session.</Notes>
+		</Parameter>
+		<Parameter name="Connect to Heart Rate Monitors" level="10" datatype="Bit" address="3320" length="1" bitmask="2" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Setting this pin will cause the unit to connect to a Bluetooth Smart heart rate monitor and monitor the reading</Help>
+			<Notes>Setting this pin will cause the unit to connect to a Bluetooth Smart heart rate monitor and monitor the reading</Notes>
+		</Parameter>
+		<Parameter name="Enable Accelerometer" level="0" datatype="Bit" address="2291" length="1" bitmask="4" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Switches on the Accelerometer on capable devices.
+WARNING: This significantly reduces battery life.</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Switches on the Accelerometer on capable devices.
+WARNING: This significantly reduces battery life.</Notes>
+		</Parameter>
+		<Parameter name="Enable Accelerometer Always On" level="0" datatype="Bit" address="2290" length="1" bitmask="32" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Keeps the accelerometer active even while processor is asleep. 
+WARNING: Significantly shortens battery life.</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Keeps the accelerometer active even while processor is asleep. 
+WARNING: Significantly shortens battery life.</Notes>
+		</Parameter>
+		<Parameter name="Enable Accelerometer Full Power" level="0" datatype="Bit" address="2290" length="1" bitmask="64" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Switches off the Accelerometer Power saving on the remote device.
+WARNING: Significantly shortens battery life.</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Switches off the Accelerometer Power saving on the remote device.
+WARNING: Significantly shortens battery life.</Notes>
+		</Parameter>
+		<Parameter name="Enable Connection Status LED" level="0" datatype="Bit" address="2291" length="1" bitmask="1" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enables the flashing of an LED on the remote device to denote that the device is currently in a connection with a master device.</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Enables the flashing of an LED on the remote device to denote that the device is currently in a connection with a master device.</Notes>
+		</Parameter>
 		<Parameter name="Enable Continuous Scan" level="10" datatype="Bit" address="2724" length="1" bitmask="2" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help></Help>
 			<Notes></Notes>
+		</Parameter>
+		<Parameter name="Enable LED Feedback on Input" level="0" datatype="Bit" address="2291" length="1" bitmask="2" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Causes an LED to indicate that an input has been activated.
+WARNING: Significantly reduces battery life.</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Causes an LED to indicate that an input has been activated.
+WARNING: Significantly reduces battery life.</Notes>
+		</Parameter>
+		<Parameter name="Enable LED State for life of connection" level="0" datatype="Bit" address="2290" length="1" bitmask="128" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Any LED state that is sent to the remote device will timeout. Setting this enforces the LED state for the life of the connection.
+WARNING: Enabling this can reduce battery life.</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Any LED state that is sent to the remote device will timeout. Setting this enforces the LED state for the life of the connection.
+WARNING: Enabling this can reduce battery life.</Notes>
+		</Parameter>
+		<Parameter name="Enable LED Status Update" level="0" datatype="Bit" address="2290" length="1" bitmask="1" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Configures the the remote BLE device to echo the current status of its LED to the master. </Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Configures the the remote BLE device to echo the current status of its LED to the master. </Notes>
+		</Parameter>
+		<Parameter name="Enable Pairing" level="5" datatype="Bit" address="2724" length="1" bitmask="8" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enables Pairing with first device detected</Help>
+			<Notes></Notes>
+		</Parameter>
+		<Parameter name="Enable Unsolicited Accelerometer Updates" level="0" datatype="Bit" address="2290" length="1" bitmask="2" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enables unsolicited Accelerometer updates.</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Enables unsolicited Accelerometer updates.</Notes>
+		</Parameter>
+		<Parameter name="Enable Unsolicited BatteryUpdates" level="0" datatype="Bit" address="2290" length="1" bitmask="16" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enables the sending of unsolicited battery status messages to the master.</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Enables the sending of unsolicited battery status messages to the master.</Notes>
+		</Parameter>
+		<Parameter name="Enable Unsolicited Input Status Updates" level="0" datatype="Bit" address="2290" length="1" bitmask="8" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enables the unsolicited sending of input / button statuses to the master device.</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Enables the unsolicited sending of input / button statuses to the master device.</Notes>
+		</Parameter>
+		<Parameter name="Enable Unsolicited Temperature Updates" level="0" datatype="Bit" address="2290" length="1" bitmask="4" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enables the sending of Temperature updates from the remote sensor.</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Enables the sending of Temperature updates from the remote sensor.</Notes>
+		</Parameter>
+		<Parameter name="Filter Duplicate Adverts" level="0" datatype="Bit" address="2724" length="1" bitmask="4" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Causes duplicate adverts received during a single scan cycle to be discarded.</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Causes duplicate adverts received during a single scan cycle to be discarded.</Notes>
+		</Parameter>
+		<Parameter name="Handles High" level="0" datatype="Word" address="2803" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="65535" previous="" current="" units="" />
+			<Help>High Limit of handles to seatch</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+</Notes>
+		</Parameter>
+		<Parameter name="Handles Low" level="0" datatype="Word" address="2801" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="32" previous="" current="" units="" />
+			<Help>Low limit of handles to search.</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Low limit of handles to search.</Notes>
+		</Parameter>
+		<Parameter name="I/O Extension 1 Functionality" level="10" datatype="Word" address="3136" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="0" previous="" current="" units="" />
+			<Help>Use the wizard to set this parameter</Help>
+			<Notes>Use the wizard to set this parameter</Notes>
+		</Parameter>
+		<Parameter name="I/O Extension 2 Functionality" level="10" datatype="Word" address="3138" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="0" previous="" current="" units="" />
+			<Help>Use the wizard to set this parameter</Help>
+			<Notes>Use the wizard to set this parameter</Notes>
+		</Parameter>
+		<Parameter name="I/O Extension 3 Functionality" level="10" datatype="Word" address="3140" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="0" previous="" current="" units="" />
+			<Help>Use the wizard to set this parameter</Help>
+			<Notes>Use the wizard to set this parameter</Notes>
+		</Parameter>
+		<Parameter name="I/O Extension 4 Functionality" level="10" datatype="Word" address="3142" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="0" previous="" current="" units="" />
+			<Help>Use the wizard to set this parameter</Help>
+			<Notes>Use the wizard to set this parameter</Notes>
+		</Parameter>
+		<Parameter name="I/O Extension 5 Functionality" level="10" datatype="Word" address="3144" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="0" previous="" current="" units="" />
+			<Help>Use the wizard to set this parameter</Help>
+			<Notes>Use the wizard to set this parameter</Notes>
 		</Parameter>
 		<Parameter name="Limited Tracking List Enable" level="10" datatype="Bit" address="2724" length="1" bitmask="16" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
@@ -800,10 +941,90 @@ Warning: If this is disabled then the MHub will report the appearance of any BLE
 			<Help>Low warning level for tyre pressure in 0.1 KPa units</Help>
 			<Notes>Low warning level for tyre pressure in 0.1 KPa units. As an example: set the level to 1.2bar = 120 KPa = 1200 0.1KPa units</Notes>
 		</Parameter>
+		<Parameter name="Max Connection Interval" level="0" datatype="Word" address="2718" length="2" bitmask="255" dtu="0">
+			<Values min="6" max="3200" default="80" previous="" current="" units="x 1.25ms" />
+			<Help>Maximum Connection Interval. Do not modify this parameter unless you understand the implications.</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Maximum Connection Interval. Do not modify this parameter unless you understand the implications.</Notes>
+		</Parameter>
+		<Parameter name="Min Connection Interval" level="0" datatype="Word" address="2716" length="2" bitmask="255" dtu="0">
+			<Values min="6" max="3200" default="80" previous="" current="" units="x 1.25ms" />
+			<Help>Minimum Connection Interval</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Minimum Connection Interval. Do not modify this unless you understand the implications.</Notes>
+		</Parameter>
+		<Parameter name="Minimum valid RSSI (Remote)" level="5" datatype="Byte" address="2942" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="250" default="0" previous="" current="" units="" />
+			<Help>The minimum RSSI that a device has to attain before its considered close enough to be present. Devices further away will still be tracked but sessions will not be established with them.</Help>
+			<Notes>The minimum RSSI that a device has to attain before its considered close enough to be present. Devices further away will still be tracked but sessions will not be established with them.</Notes>
+		</Parameter>
 		<Parameter name="Periodic Tyre Pressure Report Interval" level="10" datatype="Word" address="1567" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="0" previous="" current="" units="seconds" />
 			<Help>Periodic Tyre Pressure Report Interval in seconds</Help>
 			<Notes>Periodic Tyre Pressure Report Interval in seconds. If the value is 0 this functionality is disabled</Notes>
+		</Parameter>
+		<Parameter name="Preferred Automatic Update Interval (Remote)" level="5" datatype="Word" address="2292" length="2" bitmask="255" dtu="0">
+			<Values min="15" max="32767" default="90" previous="" current="" units="Seconds" />
+			<Help>Preferred Advertising Interval
+Preferred period that the sensor will send through measurement data. 
+0 - No automatic update. Turn off Advertising. (Not recommended)
+less or equal to 32767 time in seconds
+greater than 32767 --  Time in minutes(s) = Value - 32768
+</Help>
+			<Notes>Preferred Advertising Interval
+Preferred period that the sensor will send through measurement data. 
+0 - No automatic update. Turn off Advertising. (Not recommended)
+less or equal to 32767 time in seconds
+greater than 32767 --  Time in minutes(s) = Value - 32768
+</Notes>
+		</Parameter>
+		<Parameter name="Remote Controller Functionality" level="10" datatype="Word" address="3146" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="65535" default="0" previous="" current="" units="" />
+			<Help>Use the wizard to set this parameter</Help>
+			<Notes>Use the wizard to set this parameter</Notes>
+		</Parameter>
+		<Parameter name="Sensor Limited Tracking List" level="5" datatype="Byte" address="3200" length="120" bitmask="255" dtu="0">
+			<Values min="0" max="0" default="FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF" previous="" current="" units="" />
+			<Help>If Limited Tracking is enabled then only devices on this list will be tracked for proximity. All other devices will be ignored. 
+This list is maintained through automated processes and should not be modified manually.
+
+</Help>
+			<Notes>If Limited Tracking is enabled then only devices on this list will be tracked for proximity. All other devices will be ignored. 
+This list is maintained through automated processes and should not be modified manually.
+</Notes>
+		</Parameter>
+		<Parameter name="Slave Latency " level="0" datatype="Word" address="2720" length="2" bitmask="255" dtu="0">
+			<Values min="0" max="499" default="0" previous="" current="" units="" />
+			<Help>Slave Latency</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Slave Latency</Notes>
+		</Parameter>
+		<Parameter name="Supervision Timeout" level="0" datatype="Word" address="2722" length="2" bitmask="255" dtu="0">
+			<Values min="10" max="3200" default="3000" previous="" current="" units="x 10ms" />
+			<Help>Supervision Timeout</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Supervision Timeout</Notes>
+		</Parameter>
+		<Parameter name="Synchronise Sensor Configuration" level="5" datatype="Bit" address="2294" length="1" bitmask="1" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Keeps the configuration on any Sensor that connects to a MHub synchronised with the MHubs BLE Config. </Help>
+			<Notes>Keeps the configuration on any Sensor that connects to a MHub synchronised with the MHubs BLE Config. </Notes>
+		</Parameter>
+		<Parameter name="Track Heart Rate monitors" level="10" datatype="Bit" address="3320" length="1" bitmask="1" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enables the tracking of Heart Rate monitors. When a device with heart rate functionality comes into range a tracking event (if enabled) will be generated</Help>
+			<Notes>Enables the tracking of Heart Rate monitors. When a device with heart rate functionality comes into range a tracking event (if enabled) will be generated</Notes>
+		</Parameter>
+		<Parameter name="Track Only Scope BLE Devices" level="0" datatype="Bit" address="2724" length="1" bitmask="32" dtu="0">
+			<Values min="0" max="1" default="1" previous="" current="" units="" />
+			<Help>Track only Scope Authenticated Devices</Help>
+			<Notes>!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Track only Scope Authenticated Devices</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Communications">

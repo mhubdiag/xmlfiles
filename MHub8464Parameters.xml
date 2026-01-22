@@ -1,15 +1,5 @@
-<MHubParameters unitTypeID="15" unitType="MHub8464" created="2025-09-23T16:25:23+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="15" unitType="MHub8464" created="2026-01-22T09:55:45+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
-		<Parameter parID="1897" level="0" status="0" datatype="Byte" address="0" length="1" bitmask="255" dtu="0" units="" min="0" max="0" >
-			<parValues default="" mhub="" current="" prev="" />
-			<parInfo similarToparID="0">
-				<parName></parName>
-				<parDescription>""</parDescription>
-				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
-
-"</parNotes>
-			</parInfo>
-		</Parameter>
 		<Parameter parID="1385" level="0" status="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0" units="10ms" min="0" max="255" >
 			<parValues default="50" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -1138,6 +1128,14 @@ None"</parNotes>
 0 - Disables Gsm positioning."</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1483" level="10" status="0" datatype="Word" address="2805" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65000" >
+			<parValues default="10" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Characteristic Update Period</parName>
+				<parDescription>"Period at which the generic characteristics are read during a session."</parDescription>
+				<parNotes>"Period at which the generic characteristics are read during a session."</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1535" level="10" status="0" datatype="Bit" address="1535" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -1499,6 +1497,14 @@ The Communications Medium Policies (of which there are 8) are used to specify fo
 				<parName>Config Version Info</parName>
 				<parDescription>"This can be used to indicated version information regarding the configuration that was used"</parDescription>
 				<parNotes>"This can be used to indicated version information regarding the configuration that was used. Eg. Default V01"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1686" level="10" status="0" datatype="Bit" address="3320" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Connect to Heart Rate Monitors</parName>
+				<parDescription>"Setting this pin will cause the unit to connect to a Bluetooth Smart heart rate monitor and monitor the reading"</parDescription>
+				<parNotes>"Setting this pin will cause the unit to connect to a Bluetooth Smart heart rate monitor and monitor the reading"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1015" level="0" status="1" datatype="Word" address="363" length="2" bitmask="255" dtu="0" units="Seconds" min="30" max="600" >
@@ -2297,6 +2303,42 @@ All other values are reserved"</parNotes>
 				<parNotes>"This is where an emergency event is sent to the MHub to place it into an Emergency mode. In this mode this parameter specifies the time interval in seconds that periodic positions will be sent."</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1617" level="0" status="0" datatype="Bit" address="2291" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable Accelerometer</parName>
+				<parDescription>"Switches on the Accelerometer on capable devices.
+WARNING: This significantly reduces battery life."</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Switches on the Accelerometer on capable devices.
+WARNING: This significantly reduces battery life."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1612" level="0" status="0" datatype="Bit" address="2290" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable Accelerometer Always On</parName>
+				<parDescription>"Keeps the accelerometer active even while processor is asleep. 
+WARNING: Significantly shortens battery life."</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Keeps the accelerometer active even while processor is asleep. 
+WARNING: Significantly shortens battery life."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1613" level="0" status="0" datatype="Bit" address="2290" length="1" bitmask="64" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable Accelerometer Full Power</parName>
+				<parDescription>"Switches off the Accelerometer Power saving on the remote device.
+WARNING: Significantly shortens battery life."</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Switches off the Accelerometer Power saving on the remote device.
+WARNING: Significantly shortens battery life."</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="231" level="10" status="0" datatype="Bit" address="436" length="1" bitmask="1" dtu="0" units="Flag" min="0" max="1" >
 			<parValues default="1" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -2391,6 +2433,16 @@ Allow the CAN controller to automatically retry any failed transmissions. On som
 0xAC (172) - Enable Automatic Retries
 0x53 (83) - Disable Automatic Retries
 Any other value leaves the default state of Automatic Retries active."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1615" level="0" status="0" datatype="Bit" address="2291" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable Connection Status LED</parName>
+				<parDescription>"Enables the flashing of an LED on the remote device to denote that the device is currently in a connection with a master device."</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Enables the flashing of an LED on the remote device to denote that the device is currently in a connection with a master device."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1406" level="10" status="0" datatype="Bit" address="2724" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
@@ -2618,6 +2670,40 @@ This should only be enabled on vehicles that are known to support this protocol.
 This should only be enabled on vehicles that are known to support this protocol."</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1616" level="0" status="0" datatype="Bit" address="2291" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable LED Feedback on Input</parName>
+				<parDescription>"Causes an LED to indicate that an input has been activated.
+WARNING: Significantly reduces battery life."</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Causes an LED to indicate that an input has been activated.
+WARNING: Significantly reduces battery life."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1614" level="0" status="0" datatype="Bit" address="2290" length="1" bitmask="128" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable LED State for life of connection</parName>
+				<parDescription>"Any LED state that is sent to the remote device will timeout. Setting this enforces the LED state for the life of the connection.
+WARNING: Enabling this can reduce battery life."</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Any LED state that is sent to the remote device will timeout. Setting this enforces the LED state for the life of the connection.
+WARNING: Enabling this can reduce battery life."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1607" level="0" status="0" datatype="Bit" address="2290" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable LED Status Update</parName>
+				<parDescription>"Configures the the remote BLE device to echo the current status of its LED to the master. "</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Configures the the remote BLE device to echo the current status of its LED to the master. "</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1727" level="0" status="0" datatype="Bit" address="3325" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -2673,6 +2759,14 @@ Note: Needs Listen Only mode to be enabled to work."</parDescription>
 
 Allows the initialisation of OBD when CAN activity is detected. 
 Note: Needs Listen Only mode to be enabled to work."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1407" level="5" status="0" datatype="Bit" address="2724" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable Pairing</parName>
+				<parDescription>"Enables Pairing with first device detected"</parDescription>
+				<parNotes>""</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1514" level="10" status="0" datatype="Bit" address="1522" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
@@ -2890,6 +2984,46 @@ Not used"</parNotes>
 				<parName>Enable Uncalibrated Accelerometer SBS</parName>
 				<parDescription>"Enable Uncalibrated Accelerometer SBS"</parDescription>
 				<parNotes>"Enable Uncalibrated Accelerometer SBS. Will always send accelerometer data with Second-by-Second data ignoring calibration state."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1608" level="0" status="0" datatype="Bit" address="2290" length="1" bitmask="2" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable Unsolicited Accelerometer Updates</parName>
+				<parDescription>"Enables unsolicited Accelerometer updates."</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Enables unsolicited Accelerometer updates."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1611" level="0" status="0" datatype="Bit" address="2290" length="1" bitmask="16" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable Unsolicited BatteryUpdates</parName>
+				<parDescription>"Enables the sending of unsolicited battery status messages to the master."</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Enables the sending of unsolicited battery status messages to the master."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1610" level="0" status="0" datatype="Bit" address="2290" length="1" bitmask="8" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable Unsolicited Input Status Updates</parName>
+				<parDescription>"Enables the unsolicited sending of input / button statuses to the master device."</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Enables the unsolicited sending of input / button statuses to the master device."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1609" level="0" status="0" datatype="Bit" address="2290" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable Unsolicited Temperature Updates</parName>
+				<parDescription>"Enables the sending of Temperature updates from the remote sensor."</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Enables the sending of Temperature updates from the remote sensor."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="733" level="10" status="0" datatype="Bit" address="1825" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
@@ -3356,6 +3490,16 @@ A value of 0 leaves the value as default 0.5s interval.
 If set to 0 then multiple downloads disabled. "</parDescription>
 				<parNotes>"Number of files that comprise the complete download.
 If set to 0 then multiple downloads disabled. "</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1672" level="0" status="0" datatype="Bit" address="2724" length="1" bitmask="4" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Filter Duplicate Adverts</parName>
+				<parDescription>"Causes duplicate adverts received during a single scan cycle to be discarded."</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Causes duplicate adverts received during a single scan cycle to be discarded."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="153" level="10" status="0" datatype="Word" address="1158" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
@@ -4413,6 +4557,26 @@ None"</parNotes>
 				<parNotes>"Time in seconds that the unit will wait until determining that the unit has left the area."</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1482" level="0" status="0" datatype="Word" address="2803" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
+			<parValues default="65535" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Handles High</parName>
+				<parDescription>"High Limit of handles to seatch"</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1481" level="0" status="0" datatype="Word" address="2801" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
+			<parValues default="32" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Handles Low</parName>
+				<parDescription>"Low limit of handles to search."</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Low limit of handles to search."</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1321" level="0" status="0" datatype="Word" address="389" length="2" bitmask="255" dtu="0" units="Seconds" min="600" max="65000" >
 			<parValues default="3600" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -4574,6 +4738,46 @@ Network.
 After a frequency scan in 3G bands, if the power
 measured of a carrier is above of SAT3G that carrier
 is counted as possible jammed carrier."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1554" level="10" status="0" datatype="Word" address="3136" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>I/O Extension 1 Functionality</parName>
+				<parDescription>"Use the wizard to set this parameter"</parDescription>
+				<parNotes>"Use the wizard to set this parameter"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1561" level="10" status="0" datatype="Word" address="3138" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>I/O Extension 2 Functionality</parName>
+				<parDescription>"Use the wizard to set this parameter"</parDescription>
+				<parNotes>"Use the wizard to set this parameter"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1562" level="10" status="0" datatype="Word" address="3140" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>I/O Extension 3 Functionality</parName>
+				<parDescription>"Use the wizard to set this parameter"</parDescription>
+				<parNotes>"Use the wizard to set this parameter"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1563" level="10" status="0" datatype="Word" address="3142" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>I/O Extension 4 Functionality</parName>
+				<parDescription>"Use the wizard to set this parameter"</parDescription>
+				<parNotes>"Use the wizard to set this parameter"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1564" level="10" status="0" datatype="Word" address="3144" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>I/O Extension 5 Functionality</parName>
+				<parDescription>"Use the wizard to set this parameter"</parDescription>
+				<parNotes>"Use the wizard to set this parameter"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1341" level="10" status="0" datatype="Byte" address="1046" length="1" bitmask="255" dtu="1" units="10omV" min="1" max="255" >
@@ -5453,6 +5657,16 @@ Mains Dev. Threshold"</parNotes>
 "</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1401" level="0" status="0" datatype="Word" address="2718" length="2" bitmask="255" dtu="0" units="x 1.25ms" min="6" max="3200" >
+			<parValues default="80" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Max Connection Interval</parName>
+				<parDescription>"Maximum Connection Interval. Do not modify this parameter unless you understand the implications."</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Maximum Connection Interval. Do not modify this parameter unless you understand the implications."</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="299" level="10" status="0" datatype="Word" address="2046" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65535" >
 			<parValues default="120" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -5547,6 +5761,16 @@ The Mhub802 can be mounted with a tamper detection in place so that if it is rem
 				<parNotes>"See Periodic Position Event Configuration"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1400" level="0" status="0" datatype="Word" address="2716" length="2" bitmask="255" dtu="0" units="x 1.25ms" min="6" max="3200" >
+			<parValues default="80" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Min Connection Interval</parName>
+				<parDescription>"Minimum Connection Interval"</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Minimum Connection Interval. Do not modify this unless you understand the implications."</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="115" level="10" status="0" datatype="Word" address="1122" length="2" bitmask="255" dtu="1" units="Seconds" min="0" max="65535" >
 			<parValues default="2" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -5577,6 +5801,14 @@ The Mhub802 can be mounted with a tamper detection in place so that if it is rem
 				<parName>Minimum Speeding Time</parName>
 				<parDescription>"Minimum time of excessive speed before a Speeding Event is generated"</parDescription>
 				<parNotes>"In order to provide a driver with a bit of leeway with regard to speeding - for instance when overtaking and exceeding the speed limit for only a short period, the MHub implements a minimum speeding time. The vehicle must therefore be speeding for longer than the minimum time before a speeding event is generated. This parameter specifies that minimum speeding time in seconds."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1621" level="5" status="0" datatype="Byte" address="2942" length="1" bitmask="255" dtu="0" units="" min="0" max="250" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Minimum valid RSSI (Remote)</parName>
+				<parDescription>"The minimum RSSI that a device has to attain before its considered close enough to be present. Devices further away will still be tracked but sessions will not be established with them."</parDescription>
+				<parNotes>"The minimum RSSI that a device has to attain before its considered close enough to be present. Devices further away will still be tracked but sessions will not be established with them."</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1044" level="15" status="0" datatype="Byte" address="309" length="1" bitmask="255" dtu="0" units="" min="0" max="2" >
@@ -6872,6 +7104,24 @@ NOTE: MAKE SURE POWER MODES-&gt;REGULATOR REGISTER 0 = 0, otherwise charge curre
 				<parNotes>"This is relevant when a driver key is used, and linked to the immobilizer function of the MHub. When the driver key is inserted, and the MHub authenticates it, it will turn the relevant output on for a certain time, whicle waiting for the ignition to be turned ON. If ignition is not turned on within the time indicated by this parameter, the output will be turned OFF, and the driver will then need to reinsert the key again before the vehcile can be driven. The value is in seconds and the default is 30 seconds"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1569" level="5" status="0" datatype="Word" address="2292" length="2" bitmask="255" dtu="0" units="Seconds" min="15" max="32767" >
+			<parValues default="90" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Preferred Automatic Update Interval (Remote)</parName>
+				<parDescription>"Preferred Advertising Interval
+Preferred period that the sensor will send through measurement data. 
+0 - No automatic update. Turn off Advertising. (Not recommended)
+less or equal to 32767 time in seconds
+greater than 32767 --  Time in minutes(s) = Value - 32768
+"</parDescription>
+				<parNotes>"Preferred Advertising Interval
+Preferred period that the sensor will send through measurement data. 
+0 - No automatic update. Turn off Advertising. (Not recommended)
+less or equal to 32767 time in seconds
+greater than 32767 --  Time in minutes(s) = Value - 32768
+"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1365" level="0" status="0" datatype="Byte" address="393" length="1" bitmask="255" dtu="0" units="" min="0" max="1" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -7090,6 +7340,14 @@ Bit 1 Bit 0
 01 2.90V
 10 2.85V
 11 2.80V"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1556" level="10" status="0" datatype="Word" address="3146" length="2" bitmask="255" dtu="0" units="" min="0" max="65535" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Remote Controller Functionality</parName>
+				<parDescription>"Use the wizard to set this parameter"</parDescription>
+				<parNotes>"Use the wizard to set this parameter"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1683" level="10" status="0" datatype="Bit" address="3103" length="1" bitmask="1" dtu="1" units="" min="0" max="1" >
@@ -7564,6 +7822,19 @@ Default is 0. (User controlled PLMN selection)"</parNotes>
 				<parNotes>"Send Weight Sensor Data on Trip Start"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1546" level="5" status="0" datatype="Byte" address="3200" length="120" bitmask="255" dtu="0" units="" min="0" max="0" >
+			<parValues default="FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Sensor Limited Tracking List</parName>
+				<parDescription>"If Limited Tracking is enabled then only devices on this list will be tracked for proximity. All other devices will be ignored. 
+This list is maintained through automated processes and should not be modified manually.
+
+"</parDescription>
+				<parNotes>"If Limited Tracking is enabled then only devices on this list will be tracked for proximity. All other devices will be ignored. 
+This list is maintained through automated processes and should not be modified manually.
+"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="192" level="10" status="0" datatype="String" address="1376" length="60" bitmask="255" dtu="0" units="" min="0" max="0" >
 			<parValues default="" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -7815,6 +8086,16 @@ Scaling 0.4
 "</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1402" level="0" status="0" datatype="Word" address="2720" length="2" bitmask="255" dtu="0" units="" min="0" max="499" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Slave Latency </parName>
+				<parDescription>"Slave Latency"</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Slave Latency"</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="16" level="0" status="0" datatype="Byte" address="285" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -8063,6 +8344,24 @@ This sets the minimum time threshold for the Standard Deviation calculation. Thi
 				<parName>Start of Speeding</parName>
 				<parDescription>"See Periodic Position Event Configuration"</parDescription>
 				<parNotes>""</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1403" level="0" status="0" datatype="Word" address="2722" length="2" bitmask="255" dtu="0" units="x 10ms" min="10" max="3200" >
+			<parValues default="3000" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Supervision Timeout</parName>
+				<parDescription>"Supervision Timeout"</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Supervision Timeout"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1619" level="5" status="0" datatype="Bit" address="2294" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Synchronise Sensor Configuration</parName>
+				<parDescription>"Keeps the configuration on any Sensor that connects to a MHub synchronised with the MHubs BLE Config. "</parDescription>
+				<parNotes>"Keeps the configuration on any Sensor that connects to a MHub synchronised with the MHubs BLE Config. "</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="771" level="10" status="0" datatype="Byte" address="3593" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
@@ -8511,6 +8810,24 @@ After the MHub802 has sent the event, it is possible that there may have been a 
 				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
 
 None"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1685" level="10" status="0" datatype="Bit" address="3320" length="1" bitmask="1" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Track Heart Rate monitors</parName>
+				<parDescription>"Enables the tracking of Heart Rate monitors. When a device with heart rate functionality comes into range a tracking event (if enabled) will be generated"</parDescription>
+				<parNotes>"Enables the tracking of Heart Rate monitors. When a device with heart rate functionality comes into range a tracking event (if enabled) will be generated"</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1548" level="0" status="0" datatype="Bit" address="2724" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
+			<parValues default="1" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Track Only Scope BLE Devices</parName>
+				<parDescription>"Track only Scope Authenticated Devices"</parDescription>
+				<parNotes>"!!! DO NOT MODIFY THIS PARAMETER !!!
+
+Track only Scope Authenticated Devices"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1655" level="10" status="1" datatype="Word" address="3097" length="2" bitmask="255" dtu="0" units="kg" min="0" max="32000" >
@@ -9289,7 +9606,6 @@ n deltaV = N x 0.02
 				Accelerometer
 			</catDescription>
 			<catParameters>
-				<catParameter parID="1897" />
 				<catParameter parID="1385" />
 				<catParameter parID="1386" />
 				<catParameter parID="1383" />
@@ -9438,17 +9754,50 @@ n deltaV = N x 0.02
 				<catParameter parID="1794" />
 			</catParameters>
 		</Category>
-		<Category catName="Bluetooth Low Energy">
+		<Category catName="BLE (Bluetooth Low Energy)">
 			<catDescription>
-				Bluetooth Low Energy
+				BLE (Bluetooth Low Energy)
 			</catDescription>
 			<catParameters>
 				<catParameter parID="1405" />
 				<catParameter parID="1484" />
+				<catParameter parID="1483" />
+				<catParameter parID="1686" />
+				<catParameter parID="1617" />
+				<catParameter parID="1612" />
+				<catParameter parID="1613" />
+				<catParameter parID="1615" />
 				<catParameter parID="1406" />
+				<catParameter parID="1616" />
+				<catParameter parID="1614" />
+				<catParameter parID="1607" />
+				<catParameter parID="1407" />
+				<catParameter parID="1608" />
+				<catParameter parID="1611" />
+				<catParameter parID="1610" />
+				<catParameter parID="1609" />
+				<catParameter parID="1672" />
+				<catParameter parID="1482" />
+				<catParameter parID="1481" />
+				<catParameter parID="1554" />
+				<catParameter parID="1561" />
+				<catParameter parID="1562" />
+				<catParameter parID="1563" />
+				<catParameter parID="1564" />
 				<catParameter parID="1547" />
 				<catParameter parID="1805" />
+				<catParameter parID="1401" />
+				<catParameter parID="1400" />
+				<catParameter parID="1621" />
 				<catParameter parID="1816" />
+				<catParameter parID="1569" />
+				<catParameter parID="1556" />
+				<catParameter parID="1546" />
+				<catParameter parID="1402" />
+				<catParameter parID="1403" />
+				<catParameter parID="1619" />
+				<catParameter parID="1685" />
+				<catParameter parID="1548" />
 			</catParameters>
 		</Category>
 		<Category catName="Communications">

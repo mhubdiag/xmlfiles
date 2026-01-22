@@ -1,4 +1,4 @@
-<MhubParameterSet created="2026-01-22T12:13:11+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2026-01-22T12:16:07+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Acc Max Bump Duration " level="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="50" previous="" current="" units="10ms" />
@@ -3713,6 +3713,14 @@ None</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Modem - General">
+		<Parameter name="MQTT Control" level="10" datatype="Byte" address="1580" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Controls MQTT Functionality</Help>
+			<Notes>Controls MQTT Functionality
+
+73 - Disable MQTT connection on boot
+All other values have no effect. </Notes>
+		</Parameter>
 		<Parameter name="Net Info Check Period" level="5" datatype="Word" address="534" length="2" bitmask="255" dtu="0">
 			<Values min="0" max="65535" default="15" previous="" current="" units="Seconds" />
 			<Help>Number of seconds between checking net information during maintenance cycles</Help>

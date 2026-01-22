@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="20" unitType="MHub369F" created="2026-01-22T12:12:58+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="20" unitType="MHub369F" created="2026-01-22T12:16:00+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="1385" level="0" status="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0" units="10ms" min="0" max="255" >
 			<parValues default="50" mhub="" current="" prev="" />
@@ -5696,6 +5696,17 @@ Minimum Connection Interval. Do not modify this unless you understand the implic
 				<parNotes>"When connecting to MProfiler using GPRS, the MHub needs to uniquely identify itself to MProfiler before the connection will be accepted. It identifies itself by means of the MProfiler User Name. before the connection will be acc epted, an entity on MProfiler must already exist with the same MProfier User Name as the UnitID on MProfiler. Care must be taken to ensure that no two MHub&apos;s are configured with the same MProfiler User Name, as then the information from two different MHub units will be sent o to the client application as a single unit. Typically the MSISDN of the SIM card can be used."</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1904" level="10" status="0" datatype="Byte" address="1580" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>MQTT Control</parName>
+				<parDescription>"Controls MQTT Functionality"</parDescription>
+				<parNotes>"Controls MQTT Functionality
+
+73 - Disable MQTT connection on boot
+All other values have no effect. "</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="72" level="5" status="0" datatype="Word" address="534" length="2" bitmask="255" dtu="0" units="Seconds" min="0" max="65535" >
 			<parValues default="15" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -9512,6 +9523,7 @@ n deltaV = N x 0.02
 				Modem - General
 			</catDescription>
 			<catParameters>
+				<catParameter parID="1904" />
 				<catParameter parID="72" />
 				<catParameter parID="1261" />
 				<catParameter parID="71" />

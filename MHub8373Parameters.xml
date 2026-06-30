@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="3" unitType="MHub8373" created="2026-01-22T12:16:00+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="3" unitType="MHub8373" created="2026-06-30T14:16:57+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="1385" level="0" status="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0" units="10ms" min="0" max="255" >
 			<parValues default="50" mhub="" current="" prev="" />
@@ -5834,6 +5834,14 @@ If Fuel Used is not provided by the vehicle FMS network, but Fuel Rate is, you c
 				<parNotes>"J1939 FMS Vehicle Info Report Interval in seconds. This Event will only be sent during trip."</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1915" level="10" status="0" datatype="Byte" address="3671" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>J1939 Generic</parName>
+				<parDescription>"J1939 Generic event"</parDescription>
+				<parNotes>"J1939 Generic event is a single event type that covers all reporting modes for remotely-provisioned J1939 parameters. SubType field in the payload selects the variant: threshold breach/reset, trip start/end snapshot, periodic report, value-delta, or on-change."</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1665" level="10" status="0" datatype="Byte" address="3670" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -6981,7 +6989,7 @@ This parameter is a bitfield where the bits have the following meanings:
 
 Configuration = 
    Bits 1,2,3 [0-7] : Policy, value between 0 and 7
-   Bit  4 : Not Used
+   Bit  4 : [8] : Generate Event only during Active Hours
    Bit  5 [16]  : Include Location Optional Field
    Bit  6 [32]  : Include Status Optional Field
    Bit  7 [64]  : Event is High Priority
@@ -10180,6 +10188,7 @@ n deltaV = N x 0.02
 				<catParameter parID="952" />
 				<catParameter parID="1268" />
 				<catParameter parID="1002" />
+				<catParameter parID="1915" />
 				<catParameter parID="1665" />
 				<catParameter parID="1664" />
 				<catParameter parID="1663" />

@@ -1,4 +1,4 @@
-<MhubParameterSet created="2026-01-22T12:16:07+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2026-06-30T14:17:22+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Acc Max Bump Duration " level="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="50" previous="" current="" units="10ms" />
@@ -1454,6 +1454,21 @@ See SMS DebounceTimer</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Custom Functionality">
+		<Parameter name="Aux Port Baudrate" level="10" datatype="Long" address="1843" length="4" bitmask="255" dtu="0">
+			<Values min="300" max="115200" default="115200" previous="" current="" units="Baud" />
+			<Help>Aux Port Baudrate</Help>
+			<Notes>Aux Port Baudrate:
+300...9600...115200</Notes>
+		</Parameter>
+		<Parameter name="Aux Port Configuration" level="10" datatype="Byte" address="1836" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>Aux Port Configuration</Help>
+			<Notes>Aux Port Configuration Parameter.
+0 - Standard 81 Protocol Port
+1 - Custom Functionality 1
+n - Custom Functionality n
+255 - NMEA Port</Notes>
+		</Parameter>
 		<Parameter name="Global Pass-through enable" level="0" datatype="Byte" address="419" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
 			<Help>Global Pass-through enable</Help>
@@ -2272,6 +2287,11 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 			<Help>J1939 FMS Vehicle Info Event Configuration</Help>
 			<Notes>See Periodic Position Event Configuration</Notes>
 		</Parameter>
+		<Parameter name="J1939 Generic" level="10" datatype="Byte" address="3671" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>J1939 Generic event</Help>
+			<Notes>J1939 Generic event is a single event type that covers all reporting modes for remotely-provisioned J1939 parameters. SubType field in the payload selects the variant: threshold breach/reset, trip start/end snapshot, periodic report, value-delta, or on-change.</Notes>
+		</Parameter>
 		<Parameter name="J1939 Parameter State Change " level="10" datatype="Byte" address="3670" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
 			<Help></Help>
@@ -2386,7 +2406,7 @@ This parameter is a bitfield where the bits have the following meanings:
 
 Configuration = 
    Bits 1,2,3 [0-7] : Policy, value between 0 and 7
-   Bit  4 : Not Used
+   Bit  4 : [8] : Generate Event only during Active Hours
    Bit  5 [16]  : Include Location Optional Field
    Bit  6 [32]  : Include Status Optional Field
    Bit  7 [64]  : Event is High Priority
@@ -2615,6 +2635,13 @@ First byte of data defines template of data</Notes>
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Include the Trigger ID in event reports so that the trigger responsible for the event can be identified</Help>
 			<Notes>When an event is sent by the MHub, that event can be configured to include the Trigger ID of the trigger that caused the event. If this parameter is set to 1, then all events transmitted will include the trigger ID.</Notes>
+		</Parameter>
+	</Category>
+	<Category name="Events">
+		<Parameter name="Enable Active Hours Checking" level="10" datatype="Byte" address="1583" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enable Active Hours checking for events. If this parameter is set then events that have the Active  Hours bit set will only be raised during the configured Active Hours</Help>
+			<Notes>Enable Active Hours checking for events. If this parameter is set then events that have the Active  Hours bit set will only be raised during the configured Active Hours</Notes>
 		</Parameter>
 	</Category>
 	<Category name="Fuel">
@@ -5108,6 +5135,51 @@ Calibrate Thermistor reading for correct temperature read out</Notes>
 			<Values min="0" max="255" default="50" previous="" current="" units="Celsius" />
 			<Help>Temperature 4 Low Threshold</Help>
 			<Notes>See Temperature 1 Low Threshold</Notes>
+		</Parameter>
+		<Parameter name="Temperature 5 High Threshold" level="10" datatype="Byte" address="2490" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="130" previous="" current="" units="Celcius" />
+			<Help>Temperature 5 High Threshold</Help>
+			<Notes>The value of this parameter specifies the high temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the high threshold is to be -10 celcius then set it to 40. </Notes>
+		</Parameter>
+		<Parameter name="Temperature 5 Low Threshold" level="10" datatype="Byte" address="2491" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="50" previous="" current="" units="Celcius" />
+			<Help>Temperature 5 Low Threshold</Help>
+			<Notes>The value of this parameter specifies the low temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the low threshold is to be -10 celcius then set the value to 40.</Notes>
+		</Parameter>
+		<Parameter name="Temperature 6 High Threshold" level="10" datatype="Byte" address="2492" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="130" previous="" current="" units="Celcius" />
+			<Help>Temperature 6 High Threshold</Help>
+			<Notes>The value of this parameter specifies the high temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the high threshold is to be -10 celcius then set it to 40. </Notes>
+		</Parameter>
+		<Parameter name="Temperature 6 Low Threshold" level="10" datatype="Byte" address="2493" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="50" previous="" current="" units="Celcius" />
+			<Help>Temperature 6 Low Threshold</Help>
+			<Notes>The value of this parameter specifies the low temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the low threshold is to be -10 celcius then set the value to 40.</Notes>
+		</Parameter>
+		<Parameter name="Temperature 7 High Threshold" level="10" datatype="Byte" address="2493" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="130" previous="" current="" units="Celcius" />
+			<Help>Temperature 7 High Threshold</Help>
+			<Notes>The value of this parameter specifies the high temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the high threshold is to be -10 celcius then set it to 40. </Notes>
+		</Parameter>
+		<Parameter name="Temperature 7 Low Threshold" level="10" datatype="Byte" address="2494" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="50" previous="" current="" units="Celcius" />
+			<Help>Temperature 7 Low Threshold</Help>
+			<Notes>The value of this parameter specifies the low temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the low threshold is to be -10 celcius then set the value to 40.</Notes>
+		</Parameter>
+		<Parameter name="Temperature 8 High Threshold" level="10" datatype="Byte" address="2495" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="130" previous="" current="" units="Celcius" />
+			<Help>Temperature 8 High Threshold</Help>
+			<Notes>The value of this parameter specifies the high temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the high threshold is to be -10 celcius then set it to 40. </Notes>
+		</Parameter>
+		<Parameter name="Temperature 8 Low Threshold" level="10" datatype="Byte" address="2496" length="1" bitmask="255" dtu="1">
+			<Values min="0" max="255" default="50" previous="" current="" units="Celcius" />
+			<Help>Temperature 8 Low Threshold</Help>
+			<Notes>The value of this parameter specifies the low temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the low threshold is to be -10 celcius then set the value to 40.</Notes>
+		</Parameter>
+		<Parameter name="Temperature Damping" level="10" datatype="Word" address="1581" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="0" previous="" current="" units="Seconds" />
+			<Help>Time in seconds that a temperature would need to be outside of the normal range before the High or Low event is triggered, while in this state the High or Low event will be repeatedly sent at the Periodic Temperature Interval</Help>
+			<Notes>Time in seconds that a temperature would need to be outside of the normal range before the High or Low event is triggered, while in this state the High or Low event will be repeatedly sent at the Periodic Temperature Interval until the temperature is back in the normal range. Setting this value to zero will disable this functionality and restore normal High and Low Event handling.</Notes>
 		</Parameter>
 		<Parameter name="Temperature Sensor 1 ID" level="0" datatype="Byte" address="808" length="8" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="64-Bit ID" />

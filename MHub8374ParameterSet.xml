@@ -1,4 +1,4 @@
-<MhubParameterSet created="2026-01-22T12:16:08+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2026-06-30T14:17:22+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Acc Max Bump Duration " level="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="50" previous="" current="" units="10ms" />
@@ -2007,6 +2007,11 @@ As an example, configure the event to use policy 5, Include the Location Field, 
 			<Help>J1939 FMS Vehicle Info Event Configuration</Help>
 			<Notes>See Periodic Position Event Configuration</Notes>
 		</Parameter>
+		<Parameter name="J1939 Generic" level="10" datatype="Byte" address="3671" length="1" bitmask="255" dtu="0">
+			<Values min="0" max="255" default="0" previous="" current="" units="" />
+			<Help>J1939 Generic event</Help>
+			<Notes>J1939 Generic event is a single event type that covers all reporting modes for remotely-provisioned J1939 parameters. SubType field in the payload selects the variant: threshold breach/reset, trip start/end snapshot, periodic report, value-delta, or on-change.</Notes>
+		</Parameter>
 		<Parameter name="J1939 Parameter State Change " level="10" datatype="Byte" address="3670" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="0" previous="" current="" units="" />
 			<Help></Help>
@@ -2116,7 +2121,7 @@ This parameter is a bitfield where the bits have the following meanings:
 
 Configuration = 
    Bits 1,2,3 [0-7] : Policy, value between 0 and 7
-   Bit  4 : Not Used
+   Bit  4 : [8] : Generate Event only during Active Hours
    Bit  5 [16]  : Include Location Optional Field
    Bit  6 [32]  : Include Status Optional Field
    Bit  7 [64]  : Event is High Priority

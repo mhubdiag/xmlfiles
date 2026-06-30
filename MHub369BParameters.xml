@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="21" unitType="MHub369B" created="2026-01-22T12:15:59+01:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="21" unitType="MHub369B" created="2026-06-30T14:16:56+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="1385" level="0" status="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0" units="10ms" min="0" max="255" >
 			<parValues default="50" mhub="" current="" prev="" />
@@ -2402,6 +2402,14 @@ WARNING: Significantly shortens battery life."</parNotes>
 				<parName>Enable Accident Reconstruction Logging</parName>
 				<parDescription>"Enable Accident Reconstruction Logging "</parDescription>
 				<parNotes>"Turning ON this parameter will enable the accident reconstruction functionality of the MHub918."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1914" level="10" status="0" datatype="Byte" address="1583" length="1" bitmask="255" dtu="1" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Enable Active Hours Checking</parName>
+				<parDescription>"Enable Active Hours checking for events. If this parameter is set then events that have the Active  Hours bit set will only be raised during the configured Active Hours"</parDescription>
+				<parNotes>"Enable Active Hours checking for events. If this parameter is set then events that have the Active  Hours bit set will only be raised during the configured Active Hours"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="170" level="10" status="0" datatype="Byte" address="430" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
@@ -5260,6 +5268,14 @@ If Fuel Used is not provided by the vehicle FMS network, but Fuel Rate is, you c
 				<parNotes>"J1939 FMS Vehicle Info Report Interval in seconds. This Event will only be sent during trip."</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1915" level="10" status="0" datatype="Byte" address="3671" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>J1939 Generic</parName>
+				<parDescription>"J1939 Generic event"</parDescription>
+				<parNotes>"J1939 Generic event is a single event type that covers all reporting modes for remotely-provisioned J1939 parameters. SubType field in the payload selects the variant: threshold breach/reset, trip start/end snapshot, periodic report, value-delta, or on-change."</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="1665" level="10" status="0" datatype="Byte" address="3670" length="1" bitmask="255" dtu="0" units="" min="0" max="255" >
 			<parValues default="0" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -6600,7 +6616,7 @@ This parameter is a bitfield where the bits have the following meanings:
 
 Configuration = 
    Bits 1,2,3 [0-7] : Policy, value between 0 and 7
-   Bit  4 : Not Used
+   Bit  4 : [8] : Generate Event only during Active Hours
    Bit  5 [16]  : Include Location Optional Field
    Bit  6 [32]  : Include Status Optional Field
    Bit  7 [64]  : Event is High Priority
@@ -7960,6 +7976,78 @@ First byte of data defines template of data"</parNotes>
 				<parNotes>"See Periodic Position Event Configuration"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1905" level="10" status="0" datatype="Byte" address="2490" length="1" bitmask="255" dtu="1" units="Celcius" min="0" max="255" >
+			<parValues default="130" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Temperature 5 High Threshold</parName>
+				<parDescription>"Temperature 5 High Threshold"</parDescription>
+				<parNotes>"The value of this parameter specifies the high temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the high threshold is to be -10 celcius then set it to 40. "</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1906" level="10" status="0" datatype="Byte" address="2491" length="1" bitmask="255" dtu="1" units="Celcius" min="0" max="255" >
+			<parValues default="50" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Temperature 5 Low Threshold</parName>
+				<parDescription>"Temperature 5 Low Threshold"</parDescription>
+				<parNotes>"The value of this parameter specifies the low temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the low threshold is to be -10 celcius then set the value to 40."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1907" level="10" status="0" datatype="Byte" address="2492" length="1" bitmask="255" dtu="1" units="Celcius" min="0" max="255" >
+			<parValues default="130" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Temperature 6 High Threshold</parName>
+				<parDescription>"Temperature 6 High Threshold"</parDescription>
+				<parNotes>"The value of this parameter specifies the high temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the high threshold is to be -10 celcius then set it to 40. "</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1912" level="10" status="0" datatype="Byte" address="2493" length="1" bitmask="255" dtu="1" units="Celcius" min="0" max="255" >
+			<parValues default="50" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Temperature 6 Low Threshold</parName>
+				<parDescription>"Temperature 6 Low Threshold"</parDescription>
+				<parNotes>"The value of this parameter specifies the low temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the low threshold is to be -10 celcius then set the value to 40."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1908" level="10" status="0" datatype="Byte" address="2493" length="1" bitmask="255" dtu="1" units="Celcius" min="0" max="255" >
+			<parValues default="130" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Temperature 7 High Threshold</parName>
+				<parDescription>"Temperature 7 High Threshold"</parDescription>
+				<parNotes>"The value of this parameter specifies the high temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the high threshold is to be -10 celcius then set it to 40. "</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1909" level="10" status="0" datatype="Byte" address="2494" length="1" bitmask="255" dtu="1" units="Celcius" min="0" max="255" >
+			<parValues default="50" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Temperature 7 Low Threshold</parName>
+				<parDescription>"Temperature 7 Low Threshold"</parDescription>
+				<parNotes>"The value of this parameter specifies the low temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the low threshold is to be -10 celcius then set the value to 40."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1910" level="10" status="0" datatype="Byte" address="2495" length="1" bitmask="255" dtu="1" units="Celcius" min="0" max="255" >
+			<parValues default="130" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Temperature 8 High Threshold</parName>
+				<parDescription>"Temperature 8 High Threshold"</parDescription>
+				<parNotes>"The value of this parameter specifies the high temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the high threshold is to be -10 celcius then set it to 40. "</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1911" level="10" status="0" datatype="Byte" address="2496" length="1" bitmask="255" dtu="1" units="Celcius" min="0" max="255" >
+			<parValues default="50" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Temperature 8 Low Threshold</parName>
+				<parDescription>"Temperature 8 Low Threshold"</parDescription>
+				<parNotes>"The value of this parameter specifies the low temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the low threshold is to be -10 celcius then set the value to 40."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1913" level="10" status="0" datatype="Word" address="1581" length="2" bitmask="255" dtu="1" units="Seconds" min="0" max="65535" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Temperature Damping</parName>
+				<parDescription>"Time in seconds that a temperature would need to be outside of the normal range before the High or Low event is triggered, while in this state the High or Low event will be repeatedly sent at the Periodic Temperature Interval"</parDescription>
+				<parNotes>"Time in seconds that a temperature would need to be outside of the normal range before the High or Low event is triggered, while in this state the High or Low event will be repeatedly sent at the Periodic Temperature Interval until the temperature is back in the normal range. Setting this value to zero will disable this functionality and restore normal High and Low Event handling."</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="809" level="10" status="0" datatype="Word" address="512" length="2" bitmask="255" dtu="1" units="Seconds" min="0" max="65535" >
 			<parValues default="300" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -9214,6 +9302,7 @@ n deltaV = N x 0.02
 				<catParameter parID="952" />
 				<catParameter parID="1268" />
 				<catParameter parID="1002" />
+				<catParameter parID="1915" />
 				<catParameter parID="1665" />
 				<catParameter parID="1664" />
 				<catParameter parID="1663" />
@@ -9284,6 +9373,14 @@ n deltaV = N x 0.02
 				<catParameter parID="1038" />
 				<catParameter parID="728" />
 				<catParameter parID="731" />
+			</catParameters>
+		</Category>
+		<Category catName="Events">
+			<catDescription>
+				Events
+			</catDescription>
+			<catParameters>
+				<catParameter parID="1914" />
 			</catParameters>
 		</Category>
 		<Category catName="Fuel">
@@ -9839,6 +9936,15 @@ n deltaV = N x 0.02
 				<catParameter parID="211" />
 				<catParameter parID="212" />
 				<catParameter parID="213" />
+				<catParameter parID="1905" />
+				<catParameter parID="1906" />
+				<catParameter parID="1907" />
+				<catParameter parID="1912" />
+				<catParameter parID="1908" />
+				<catParameter parID="1909" />
+				<catParameter parID="1910" />
+				<catParameter parID="1911" />
+				<catParameter parID="1913" />
 				<catParameter parID="805" />
 				<catParameter parID="806" />
 				<catParameter parID="807" />

@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="2" unitType="MHub837" created="2026-06-30T14:16:57+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="2" unitType="MHub837" created="2026-09-29T17:19:05+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="1385" level="0" status="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0" units="10ms" min="0" max="255" >
 			<parValues default="50" mhub="" current="" prev="" />
@@ -10044,7 +10044,6 @@ n deltaV = N x 0.02
 				<catParameter parID="1787" />
 				<catParameter parID="264" />
 				<catParameter parID="1745" />
-				<catParameter parID="809" />
 				<catParameter parID="1423" />
 				<catParameter parID="1427" />
 				<catParameter parID="1428" />
@@ -10296,6 +10295,7 @@ n deltaV = N x 0.02
 				<catParameter parID="211" />
 				<catParameter parID="212" />
 				<catParameter parID="213" />
+				<catParameter parID="809" />
 				<catParameter parID="805" />
 				<catParameter parID="806" />
 				<catParameter parID="807" />

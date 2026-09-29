@@ -1,4 +1,4 @@
-<MhubParameterSet created="2026-06-30T14:17:23+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2026-09-29T17:19:33+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Acc Max Bump Duration " level="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="50" previous="" current="" units="10ms" />
@@ -4972,11 +4972,6 @@ From OBD2 Enable Vehicle OBD2 Interface </Notes>
 			<Help>Telemetry Template</Help>
 			<Notes>Telemetry Template</Notes>
 		</Parameter>
-		<Parameter name="Temperature Report Interval" level="10" datatype="Word" address="512" length="2" bitmask="255" dtu="1">
-			<Values min="0" max="65535" default="300" previous="" current="" units="Seconds" />
-			<Help>Periodic Temperature Report Interval</Help>
-			<Notes>The MHub is able to periodically send the values of all 4 the temperature sensors. This parameter specifies the interval in seconds for sending the Periodic Temperature Event. </Notes>
-		</Parameter>
 		<Parameter name="Trip Source Accelerometer" level="10" datatype="Bit" address="472" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Trip Source Accelerometer</Help>
@@ -5512,6 +5507,11 @@ Calibrate Thermistor reading for correct temperature read out</Notes>
 			<Values min="0" max="255" default="50" previous="" current="" units="Celsius" />
 			<Help>Temperature 4 Low Threshold</Help>
 			<Notes>See Temperature 1 Low Threshold</Notes>
+		</Parameter>
+		<Parameter name="Temperature Report Interval" level="10" datatype="Word" address="512" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="300" previous="" current="" units="Seconds" />
+			<Help>Periodic Temperature Report Interval</Help>
+			<Notes>The MHub is able to periodically send the values of all 4 the temperature sensors. This parameter specifies the interval in seconds for sending the Periodic Temperature Event. </Notes>
 		</Parameter>
 		<Parameter name="Temperature Sensor 1 ID" level="0" datatype="Byte" address="808" length="8" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="64-Bit ID" />

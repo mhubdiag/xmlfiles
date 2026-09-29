@@ -1,4 +1,4 @@
-<MhubParameterSet created="2026-06-30T14:17:22+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MhubParameterSet created="2026-09-29T17:19:32+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Category name="Accelerometer">
 		<Parameter name="Acc Max Bump Duration " level="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0">
 			<Values min="0" max="255" default="50" previous="" current="" units="10ms" />
@@ -3957,12 +3957,24 @@ NB: This is a service provided by the network and not only dependant on configur
 			<Help>If enabled the Forbidden PLMN list will be cleared on the first trip of the day.</Help>
 			<Notes>If enabled the Forbidden PLMN list will be cleared on the first trip of the day.</Notes>
 		</Parameter>
+		<Parameter name="Daily SIM Info Report" level="10" datatype="Bit" address="1252" length="1" bitmask="32" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Sends a daily report of the IMSI and CCID after the modem reboot. </Help>
+			<Notes>Sends a daily report of the IMSI and CCID after the modem reboot. </Notes>
+		</Parameter>
 		<Parameter name="Periodic Forbidden PLMN Clearing" level="5" datatype="Bit" address="1252" length="1" bitmask="4" dtu="0">
 			<Values min="0" max="1" default="0" previous="" current="" units="" />
 			<Help>If enabled on MHubs equipped with Telit modems are able to clear the Forbidden PLMN list periodically
 The period is hard coded to 60 minutes</Help>
 			<Notes>If enabled on MHubs equipped with Telit modems are able to clear the Forbidden PLMN list periodically
 The period is hard coded to 60 minutes</Notes>
+		</Parameter>
+		<Parameter name="Sim Operations Disable" level="5" datatype="Bit" address="1252" length="1" bitmask="128" dtu="0">
+			<Values min="0" max="1" default="0" previous="" current="" units="" />
+			<Help>Enabling this bit will disable certain operations relating to Sim Commissioning bit fields.
+The purpose of this bit is to prevent legacy configuration incorrectly enabling features.</Help>
+			<Notes>Enabling this bit will disable certain operations relating to Sim Commissioning bit fields.
+The purpose of this bit is to prevent legacy configuration incorrectly enabling features.</Notes>
 		</Parameter>
 		<Parameter name="SIM PIN" level="10" datatype="String" address="297" length="10" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="" previous="" current="" units="" />
@@ -4610,11 +4622,6 @@ From OBD2 Enable Vehicle OBD2 Interface </Notes>
 			<Help>Telemetry Template</Help>
 			<Notes>Telemetry Template</Notes>
 		</Parameter>
-		<Parameter name="Temperature Report Interval" level="10" datatype="Word" address="512" length="2" bitmask="255" dtu="1">
-			<Values min="0" max="65535" default="300" previous="" current="" units="Seconds" />
-			<Help>Periodic Temperature Report Interval</Help>
-			<Notes>The MHub is able to periodically send the values of all 4 the temperature sensors. This parameter specifies the interval in seconds for sending the Periodic Temperature Event. </Notes>
-		</Parameter>
 		<Parameter name="Trip Source Accelerometer" level="10" datatype="Bit" address="472" length="1" bitmask="8" dtu="0">
 			<Values min="0" max="1" default="1" previous="" current="" units="" />
 			<Help>Trip Source Accelerometer</Help>
@@ -5176,10 +5183,20 @@ Calibrate Thermistor reading for correct temperature read out</Notes>
 			<Help>Temperature 8 Low Threshold</Help>
 			<Notes>The value of this parameter specifies the low temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the low threshold is to be -10 celcius then set the value to 40.</Notes>
 		</Parameter>
+		<Parameter name="Temperature Alarm Report Interval" level="10" datatype="Word" address="1584" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="300" previous="" current="" units="Seconds" />
+			<Help>Periodic Temperature Alarm Report Interval</Help>
+			<Notes>The MHub is able to periodically send any temperature alarm conditions at a specific rate. This parameter works with the Temperature Dampening parameter to set the interval at which these alarm events will be sent</Notes>
+		</Parameter>
 		<Parameter name="Temperature Damping" level="10" datatype="Word" address="1581" length="2" bitmask="255" dtu="1">
 			<Values min="0" max="65535" default="0" previous="" current="" units="Seconds" />
 			<Help>Time in seconds that a temperature would need to be outside of the normal range before the High or Low event is triggered, while in this state the High or Low event will be repeatedly sent at the Periodic Temperature Interval</Help>
 			<Notes>Time in seconds that a temperature would need to be outside of the normal range before the High or Low event is triggered, while in this state the High or Low event will be repeatedly sent at the Periodic Temperature Interval until the temperature is back in the normal range. Setting this value to zero will disable this functionality and restore normal High and Low Event handling.</Notes>
+		</Parameter>
+		<Parameter name="Temperature Report Interval" level="10" datatype="Word" address="512" length="2" bitmask="255" dtu="1">
+			<Values min="0" max="65535" default="300" previous="" current="" units="Seconds" />
+			<Help>Periodic Temperature Report Interval</Help>
+			<Notes>The MHub is able to periodically send the values of all 4 the temperature sensors. This parameter specifies the interval in seconds for sending the Periodic Temperature Event. </Notes>
 		</Parameter>
 		<Parameter name="Temperature Sensor 1 ID" level="0" datatype="Byte" address="808" length="8" bitmask="255" dtu="0">
 			<Values min="0" max="0" default="0000000000000000" previous="" current="" units="64-Bit ID" />

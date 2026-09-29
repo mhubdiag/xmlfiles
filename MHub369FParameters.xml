@@ -1,4 +1,4 @@
-<MHubParameters unitTypeID="20" unitType="MHub369F" created="2026-06-30T14:16:56+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
+<MHubParameters unitTypeID="20" unitType="MHub369F" created="2026-09-29T17:19:05+02:00" xmlns="http://tempuri.org/XMLFile1.xsd">
 	<Parameters>
 		<Parameter parID="1385" level="0" status="0" datatype="Byte" address="592" length="1" bitmask="255" dtu="0" units="10ms" min="0" max="255" >
 			<parValues default="50" mhub="" current="" prev="" />
@@ -1858,6 +1858,14 @@ E.g
 UTC + 2hrs =&gt; 120
 UTC - 2hrs -&gt; 1440 - 120 = 1320"</parDescription>
 				<parNotes>"If the daily reset is enabled in parameter &quot;Daily Reset Enable&quot;, this parameter will specify the time offset in minutes from midnight at which time the reste will occur. Keep in mind that the MHUhb operates only on GMT (UTC) time."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1916" level="10" status="0" datatype="Bit" address="1252" length="1" bitmask="32" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Daily SIM Info Report</parName>
+				<parDescription>"Sends a daily report of the IMSI and CCID after the modem reboot. "</parDescription>
+				<parNotes>"Sends a daily report of the IMSI and CCID after the modem reboot. "</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1050" level="10" status="0" datatype="Byte" address="3817" length="1" bitmask="255" dtu="1" units="" min="0" max="255" >
@@ -7510,6 +7518,16 @@ XXX - there is obviously some parameter that will specify what distance prior to
 				<parNotes>"See Service Odometer 1"</parNotes>
 			</parInfo>
 		</Parameter>
+		<Parameter parID="1784" level="5" status="0" datatype="Bit" address="1252" length="1" bitmask="128" dtu="0" units="" min="0" max="1" >
+			<parValues default="0" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Sim Operations Disable</parName>
+				<parDescription>"Enabling this bit will disable certain operations relating to Sim Commissioning bit fields.
+The purpose of this bit is to prevent legacy configuration incorrectly enabling features."</parDescription>
+				<parNotes>"Enabling this bit will disable certain operations relating to Sim Commissioning bit fields.
+The purpose of this bit is to prevent legacy configuration incorrectly enabling features."</parNotes>
+			</parInfo>
+		</Parameter>
 		<Parameter parID="27" level="10" status="0" datatype="String" address="297" length="10" bitmask="255" dtu="0" units="" min="0" max="0" >
 			<parValues default="" mhub="" current="" prev="" />
 			<parInfo similarToparID="0">
@@ -8059,6 +8077,14 @@ First byte of data defines template of data"</parNotes>
 				<parName>Temperature 8 Low Threshold</parName>
 				<parDescription>"Temperature 8 Low Threshold"</parDescription>
 				<parNotes>"The value of this parameter specifies the low temperature threshold of temperature sensor 1. Note that the units of this parameter are celcius+50. Thus if the value for the low threshold is to be -10 celcius then set the value to 40."</parNotes>
+			</parInfo>
+		</Parameter>
+		<Parameter parID="1917" level="10" status="0" datatype="Word" address="1584" length="2" bitmask="255" dtu="1" units="Seconds" min="0" max="65535" >
+			<parValues default="300" mhub="" current="" prev="" />
+			<parInfo similarToparID="0">
+				<parName>Temperature Alarm Report Interval</parName>
+				<parDescription>"Periodic Temperature Alarm Report Interval"</parDescription>
+				<parNotes>"The MHub is able to periodically send any temperature alarm conditions at a specific rate. This parameter works with the Temperature Dampening parameter to set the interval at which these alarm events will be sent"</parNotes>
 			</parInfo>
 		</Parameter>
 		<Parameter parID="1913" level="10" status="0" datatype="Word" address="1581" length="2" bitmask="255" dtu="1" units="Seconds" min="0" max="65535" >
@@ -9701,7 +9727,9 @@ n deltaV = N x 0.02
 			</catDescription>
 			<catParameters>
 				<catParameter parID="1783" />
+				<catParameter parID="1916" />
 				<catParameter parID="1782" />
+				<catParameter parID="1784" />
 				<catParameter parID="27" />
 				<catParameter parID="824" />
 			</catParameters>
@@ -9837,7 +9865,6 @@ n deltaV = N x 0.02
 				<catParameter parID="149" />
 				<catParameter parID="264" />
 				<catParameter parID="1745" />
-				<catParameter parID="809" />
 				<catParameter parID="1423" />
 				<catParameter parID="1427" />
 				<catParameter parID="1428" />
@@ -9967,7 +9994,9 @@ n deltaV = N x 0.02
 				<catParameter parID="1909" />
 				<catParameter parID="1910" />
 				<catParameter parID="1911" />
+				<catParameter parID="1917" />
 				<catParameter parID="1913" />
+				<catParameter parID="809" />
 				<catParameter parID="805" />
 				<catParameter parID="806" />
 				<catParameter parID="807" />
